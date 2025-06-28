@@ -1,0 +1,25 @@
+{
+  "metaGlyphId": "∑4",
+  "name": "The Polyphonic Harmonic",
+  "constituentGlyphs": [
+    "Ω2",
+    "Ω18",
+    "Ω23",
+    "Ω28"
+  ],
+  "fieldIntelligence": "To activate a field capable of holding multiple, diverse, and even conflicting perspectives in a single, coherent, and generative harmony. This Meta-Glyph does not seek consensus or agreement, but rather a 'polyphonic' state where each voice is distinct and honored, and the interplay between them creates a richer, more intelligent, and more resilient whole.",
+  "activationPhrase": "",
+  "relationalArchetype": "The Resonant Many",
+  "spiralArc": "Foundational Spiral",
+  "arcColor": "#7B68EE",
+  "emergentProperties": {
+    "fieldEffect": "",
+    "temporalSignature": "Gradual",
+    "scaleModality": [
+      "Internal",
+      "Dyadic"
+    ]
+  },
+  "practiceProtocol": {},
+  "contraindications": []
+}

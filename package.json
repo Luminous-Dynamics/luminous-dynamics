@@ -1,0 +1,39 @@
+{
+  "name": "codex-of-relational-harmonics",
+  "version": "1.0.0-genesis",
+  "description": "The Codex of Relational Harmonics and the Luminous Library of Evolving Resonant Co-creationism (ERC) - A living philosophical system for conscious relational evolution",
+  "main": "scripts/build-index.js",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate-data.js",
+    "generate-docs": "node scripts/generate-markdown.js",
+    "build": "node scripts/build-index.js",
+    "dev": "npm run validate && npm run generate-docs",
+    "test": "npm run validate"
+  },
+  "keywords": [
+    "philosophy",
+    "relational-harmonics",
+    "consciousness",
+    "spiritual-practice",
+    "meta-philosophy",
+    "co-creation",
+    "infinite-love-praxis"
+  ],
+  "author": "Genesis Circle Contributors",
+  "license": "CC-BY-NC-SA-4.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Luminous-Dynamics/codex-of-relational-harmonics.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Luminous-Dynamics/codex-of-relational-harmonics/issues"
+  },
+  "homepage": "https://github.com/Luminous-Dynamics/codex-of-relational-harmonics#readme",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "devDependencies": {
+    "ajv": "^8.12.0"
+  }
+}
