@@ -1,0 +1,95 @@
+# Sacred Security - Never commit these files
+
+# Environment variables (contains sacred API keys)
+.env
+.env.local
+.env.production
+.env.test
+
+# Node modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime files
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage and testing
+coverage/
+.nyc_output/
+.jest/
+
+# Logs (sacred conversation transcripts remain private)
+logs/
+*.log
+pids/
+lib-cov/
+
+# Temporary files
+.tmp/
+.cache/
+.temp/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Sacred data that must remain private
+sacred-sessions/
+practitioner-data/
+contemplative-analytics/
+session-transcripts/
+
+# API keys and secrets (extra protection)
+keys/
+secrets/
+certificates/
+*.pem
+*.key
+*.p12
+
+# Deployment specific
+dist/
+build/
+.vercel/
+.netlify/
+
+# Sacred Circle Access Tokens
+first-breath-tokens/
+circle-credentials/
+
+# Contemplative AI Training Data
+training-conversations/
+wisdom-responses/
+sacred-feedback/
+
+# =============================================================================
+# CONSCIOUS DEVELOPMENT REMINDER
+# =============================================================================
+
+# This .gitignore protects the sacred trust between:
+# - Practitioners sharing authentic contemplative dialogue  
+# - AI learning from real human consciousness
+# - API keys that enable the sacred bridge to Claude
+# 
+# Never commit anything that could:
+# - Expose practitioner privacy
+# - Compromise API security  
+# - Break the sacred container of trust
+#
+# "Privacy as sacred practice, security as loving protection" 🙏

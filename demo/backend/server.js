@@ -5,18 +5,32 @@
 
 const express = require('express');
 const cors = require('cors');
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
 const path = require('path');
+
+// Load environment variables
+require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 3001;
 
-// Middleware
-app.use(cors({
-    origin: process.env.NODE_ENV === 'production' 
-        ? ['https://luminousdynamics.org', 'https://relationalharmonics.org']
-        : ['http://localhost:3000', 'http://127.0.0.1:3000']
-}));
-app.use(express.json());
+// Import sacred security and authentication
+const SacredSecurity = require('./config/security');
+const SacredAuth = require('./middleware/sacred-auth');
+
+// Initialize sacred systems
+const security = new SacredSecurity();
+const auth = new SacredAuth();
+const middlewareConfig = security.getMiddlewareConfig();
+
+// Sacred Security Middleware
+app.use(helmet(middlewareConfig.helmet));
+app.use(cors(middlewareConfig.cors));
+app.use(rateLimit(middlewareConfig.rateLimit));
+app.use(express.json({ limit: '1mb' })); // Limit request size
+app.use(auth.sacredLogger());
+app.use(auth.sacredRateLimit());
 
 // Import our sacred AI modules
 const { WisdomCompanionAI } = require('./wisdom-ai');
@@ -33,7 +47,10 @@ const analytics = new ContemplativeAnalytics();
 /**
  * Threshold Moment - Session Initiation
  */
-app.post('/api/sacred-journey/threshold', async (req, res) => {
+app.post('/api/sacred-journey/threshold', 
+    auth.validatePersona(),
+    auth.validateClaudeAccess(),
+    async (req, res) => {
     try {
         const { persona = 'wise-witness' } = req.body;
         
@@ -65,7 +82,10 @@ app.post('/api/sacred-journey/threshold', async (req, res) => {
 /**
  * Offering Moment - Receiving User's Truth
  */
-app.post('/api/sacred-journey/offering', async (req, res) => {
+app.post('/api/sacred-journey/offering',
+    auth.validateSacredSession(),
+    auth.validatePersona(),
+    async (req, res) => {
     try {
         const { sessionId, message, persona } = req.body;
         
@@ -198,28 +218,10 @@ app.get('/api/analytics/contemplative', (req, res) => {
 /**
  * Health Check - Sacred System Status
  */
-app.get('/api/health', (req, res) => {
-    res.json({
-        status: 'Sacred systems operational',
-        timestamp: new Date().toISOString(),
-        personas: ['wise-witness', 'loving-gardener', 'calm-river'],
-        contemplativeFeatures: [
-            'sacred-pauses',
-            'natural-timing',
-            'presence-metrics',
-            'wisdom-responses'
-        ]
-    });
-});
+app.get('/api/health', auth.sacredHealthCheck());
 
 // Error handling with contemplative grace
-app.use((error, req, res, next) => {
-    console.error('Sacred system error:', error);
-    res.status(500).json({
-        error: 'The wisdom companion is taking a contemplative pause',
-        guidance: 'Please breathe deeply and try again in a moment'
-    });
-});
+app.use(auth.sacredErrorHandler());
 
 // Start the sacred server
 app.listen(port, () => {
