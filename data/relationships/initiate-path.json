@@ -1,0 +1,69 @@
+{
+  "$schema": "../schemas/relationship-schema.json",
+  "relationshipId": "initiate-path-001",
+  "name": "The Initiate's Path",
+  "description": "The foundational triad for entering the Codex practice, establishing presence, openness, and sacred commitment.",
+  "glyphs": ["Ω0", "Ω2", "Ω1"],
+  "type": "sequential",
+  "temporalSignature": "Sequential",
+  "scaleModality": ["Internal", "Dyadic", "Field"],
+  "isPortal": true,
+  
+  "fieldEffect": "Creates a complete foundational attunement: from pure presence (Ω0), through receptive openness (Ω2), to sacred commitment (Ω1). This sequence establishes the essential field conditions for all deeper Codex work.",
+  
+  "practiceNote": "Always begin with Ω0 to establish presence. Allow at least 2-3 minutes with each glyph before moving to the next. The sequence builds naturally—each glyph prepares the field for what follows.",
+  
+  "sequenceDetails": {
+    "steps": [
+      {
+        "glyph": "Ω0",
+        "duration": "3-5 minutes",
+        "purpose": "Establish foundational presence and clear the field",
+        "transition": "When stillness is stable, maintain it while beginning Ω2"
+      },
+      {
+        "glyph": "Ω2", 
+        "duration": "3-5 minutes",
+        "purpose": "Open receptive channels while maintaining presence",
+        "transition": "When openness feels natural, add the commitment of Ω1"
+      },
+      {
+        "glyph": "Ω1",
+        "duration": "5-10 minutes", 
+        "purpose": "Seal the practice with sacred commitment",
+        "transition": "Rest in the full field created by all three glyphs"
+      }
+    ]
+  },
+  
+  "prerequisites": [],
+  
+  "evolutionaryOutcome": "Practitioner establishes a reliable 'home base' of centered, open, committed presence. This becomes the foundation from which all other glyphs and practices can be safely explored.",
+  
+  "riskFactors": [
+    "Rushing through the sequence without allowing each glyph to fully activate",
+    "Treating it as a mental exercise rather than embodied practice",
+    "Skipping Ω0 and starting directly with Ω2 or Ω1"
+  ],
+  
+  "supportingPractices": [
+    "Daily journaling to track the evolution of experience",
+    "Partner practice to explore the dyadic dimensions",
+    "Regular return to this sequence whenever feeling ungrounded"
+  ],
+  
+  "relationshipDynamics": {
+    "Ω0→Ω2": {
+      "type": "preparatory",
+      "description": "Presence creates the stable ground from which authentic openness can safely emerge"
+    },
+    "Ω2→Ω1": {
+      "type": "amplifying", 
+      "description": "Openness allows the covenant to be felt as connection rather than constraint"
+    },
+    "Ω0+Ω2+Ω1": {
+      "type": "synergistic",
+      "description": "Together they create a field far greater than their sum—a complete relational foundation"
+    }
+  }
+}
