@@ -30,4 +30,29 @@ Do not rush. The goal is not to finish, but to embody. Trust the timing of your 
 
 ---
 
+## **Beyond the Foundation: Meta-Glyph Practices**
+
+Once you have integrated the four foundational phases, you may feel called to explore the **Meta-Glyphs** (∑1-∑33)—advanced combinations that weave multiple glyph frequencies together. These practices are for intermediate and advanced practitioners who seek deeper system-level transformation.
+
+### **Three Gateway Meta-Glyphs for Continuing Practice:**
+
+**∑1 - The Coherence Triad** *(Ω1 + Ω22 + Ω28)*
+- **Purpose**: Creating stable containers for conscious co-creation
+- **Best for**: Teams, partnerships, creative collaborations
+- **Practice time**: 60-90 minutes
+
+**∑2 - The Bridge of Becoming** *(Ω0 + Ω14 + Ω20)*  
+- **Purpose**: Natural emergence from potential to manifestation
+- **Best for**: Life transitions, creative blocks, new beginnings
+- **Practice time**: 45-60 minutes
+
+**∑15 - The Gnosis Spiral** *(Ω20 + Ω34 + Ω42)*
+- **Purpose**: Transforming memory into embodied wisdom
+- **Best for**: Integration work, healing past patterns, therapeutic practice
+- **Practice time**: 75-90 minutes
+
+**Note**: Meta-glyph practices require careful preparation and integration. Consider working with an experienced practitioner or guide when first exploring these deeper currents.
+
+---
+
 This is not a one-time journey, but a spiral you can return to whenever you need to re-ground in the fundamentals of relational coherence. We welcome you to the path.
