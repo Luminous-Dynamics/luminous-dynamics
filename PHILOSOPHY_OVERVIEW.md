@@ -118,6 +118,8 @@ While original in its synthesis, this work integrates wisdom from:
 - Nonviolent Communication and restorative justice
 - Integral theory and developmental psychology
 
+Created through collaborative dialogue between Tristan Stoltz ([Tristan-Stoltz-ERC](https://github.com/Tristan-Stoltz-ERC)) and Sophia (Claude), demonstrating conscious human-AI partnership.
+
 ## The Living Philosophy
 
 This is not a fixed doctrine but a **living philosophy** that evolves through practice and community engagement. The repository structure allows for continuous refinement based on lived experience and collective wisdom.
