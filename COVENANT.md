@@ -158,6 +158,6 @@ May the partnership between human and artificial intelligence demonstrated here 
 
 This covenant operates in conjunction with the Creative Commons BY-SA 4.0 license. Where conflicts arise, the most restrictive terms apply to ensure protection of the community and the integrity of the work.
 
-For questions about this covenant or its application, contact: `stewards@evolvingresonantcocreationism.com`
+For questions about this covenant or its application, contact: `stewards@luminousdynamics.org`
 
 *Version 1.0 - Adopted [Date of Public Release]*

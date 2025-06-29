@@ -25,6 +25,12 @@ Becoming, the system offers:
 3. **Join the Community**: [CONTRIBUTING.md](CONTRIBUTING.md)
 4. **Implement Locally**: [projects/hearthlight-initiative.md](projects/hearthlight-initiative.md)
 
+## Web Presence
+
+- **Organization Hub**: [luminousdynamics.org](https://luminousdynamics.org)
+- **Project Documentation**: [relationalharmonics.org](https://relationalharmonics.org)
+- **Repository**: [github.com/Luminous-Dynamics/codex-of-relational-harmonics](https://github.com/Luminous-Dynamics/codex-of-relational-harmonics)
+
 ## Quick Navigation
 
 🏁 **New to ERC?** Start with [PHILOSOPHY_OVERVIEW.md](PHILOSOPHY_OVERVIEW.md)  

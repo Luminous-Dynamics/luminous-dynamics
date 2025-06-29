@@ -135,7 +135,7 @@ This Code of Conduct is itself a living document that evolves through community 
 Community stewards are responsible for clarifying and enforcing these standards and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.
 
 Current stewards include:
-- Tristan Stoltz (primary contact: tristan.stoltz@evolvingresonantcocreationism.com)
+- Tristan Stoltz (primary contact: tristan@luminousdynamics.org)
 - Community Steward Council (rotating membership)
 
 ## Scope

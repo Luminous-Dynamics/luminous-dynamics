@@ -40,7 +40,7 @@ We maintain security for the following versions:
 ### For Technical Issues
 Please **do not** report security vulnerabilities through public GitHub issues.
 
-Instead, email us directly at: `security@evolvingresonantcocreationism.com`
+Instead, email us directly at: `security@luminousdynamics.org`
 
 Include:
 - Description of the vulnerability
@@ -51,7 +51,7 @@ Include:
 ### For Content Safety Issues
 For concerns about practice safety or content that could cause harm:
 
-Email: `safety@evolvingresonantcocreationism.com`
+Email: `safety@luminousdynamics.org`
 
 Include:
 - Specific content or practice of concern
@@ -141,9 +141,9 @@ We are committed to protecting any personal information shared in:
 
 ## Contact Information
 
-**Security Team**: `security@evolvingresonantcocreationism.com`
-**Safety Team**: `safety@evolvingresonantcocreationism.com`  
-**General Contact**: `stewards@evolvingresonantcocreationism.com`
+**Security Team**: `security@luminousdynamics.org`
+**Safety Team**: `safety@luminousdynamics.org`  
+**General Contact**: `stewards@luminousdynamics.org`
 
 **Emergency**: If someone is in immediate danger, contact local emergency services first, then notify us.
 
