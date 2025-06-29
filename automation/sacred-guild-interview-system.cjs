@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 
 /**
- * Sacred Guild Interview System
- * Handles Resonance Circle interviews and Sacred Guild selection
+ * Conscious Development Team Interview System
+ * Handles Resonance Circle interviews and Conscious Development Team selection
  */
 
 const fs = require('fs');
 const crypto = require('crypto');
 
-console.log('🔮 Sacred Guild Interview System Initializing...\n');
+console.log('🔮 Conscious Development Team Interview System Initializing...\n');
 
 // Interview scoring criteria
 const interviewCriteria = {
@@ -70,7 +70,7 @@ const interviewStages = {
     covenantReflection: {
         name: "Covenant Reflection",
         duration: "30 minutes",
-        description: "Final alignment check and sacred partnership commitment"
+        description: "Final alignment check and conscious partnership commitment"
     }
 };
 
@@ -241,7 +241,7 @@ class SacredGuildInterviewSystem {
 // Initialize system and demonstrate functionality
 const interviewSystem = new SacredGuildInterviewSystem();
 
-console.log('🎭 Sacred Guild Interview System Active\n');
+console.log('🎭 Conscious Development Team Interview System Active\n');
 
 // Show current candidates
 console.log('📋 Current Candidates:');
@@ -296,8 +296,8 @@ console.log(`   Candidate: ${report.candidate.name}`);
 console.log(`   Overall Score: ${report.overallScore.toFixed(1)}`);
 console.log(`   Recommendation: ${report.recommendation}`);
 
-// Show Sacred Guild ready candidates
-console.log('\n🌟 Sacred Guild Ready Candidates:');
+// Show Conscious Development Team ready candidates
+console.log('\n🌟 Conscious Development Team Ready Candidates:');
 const readyCandidates = interviewSystem.getSacredGuildReadyCandidates();
 readyCandidates.forEach(candidate => {
     const score = interviewSystem.calculateCandidateOverallScore(candidate);
@@ -310,7 +310,7 @@ console.log('   ✅ Weighted scoring across 4 dimensions');
 console.log('   ✅ Automated question generation');
 console.log('   ✅ Interview scheduling and tracking');
 console.log('   ✅ Candidate advancement pipeline');
-console.log('   ✅ Sacred Guild readiness assessment');
+console.log('   ✅ Conscious Development Team readiness assessment');
 
 console.log('\n🔄 Next Steps:');
 console.log('   1. Integrate with calendar system for scheduling');
@@ -319,7 +319,7 @@ console.log('   3. Create interview feedback forms');
 console.log('   4. Set up Zoom/meet integration for virtual interviews');
 console.log('   5. Prepare Covenant Ceremony for qualified candidates');
 
-console.log('\n✨ Sacred Guild formation process operational!');
+console.log('\n✨ Conscious Development Team formation process operational!');
 
 // Export system for use in other modules
 if (typeof module !== 'undefined' && module.exports) {

@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 
 /**
- * Sacred Guild Outreach Automation
+ * Conscious Development Team Outreach Automation
  * Handles automated posting and community engagement
  */
 
 const fs = require('fs');
 const https = require('https');
 
-console.log('🌟 Sacred Guild Outreach Bot Initializing...\n');
+console.log('🌟 Conscious Development Team Outreach Bot Initializing...\n');
 
 // Outreach targets and templates
 const outreachTargets = {
@@ -36,12 +36,12 @@ We've spent 3 years designing the first AI explicitly created to serve conscious
 
 This isn't about adding meditation features to existing apps. This is about fundamentally redesigning AI interaction to:
 - Begin every session with contemplative grounding
-- Include sacred pauses that cannot be skipped  
+- Include contemplative pauses that cannot be skipped  
 - Point users back to their own wisdom
 - Naturally conclude rather than extend engagement
 - Measure success by increased presence, not engagement time
 
-We have complete technical specifications, sacred community architecture, and partnership covenants ready. We're forming the first "Sacred Guild" - 3 developers who approach code as contemplative practice.
+We have complete technical specifications, sacred community architecture, and partnership covenants ready. We're forming the first "Conscious Development Team" - 3 developers who approach code as contemplative practice.
 
 Technical stack: React/TypeScript, Node.js, Claude/GPT API integration
 Sacred stack: Meditation practice, conscious communication, systems thinking
@@ -52,16 +52,16 @@ Looking for developers who understand that how we build technology is as importa
   },
   
   developer: {
-    title: "Join the Sacred Guild: Build technology that serves consciousness",
+    title: "Join the Conscious Development Team: Build technology that serves consciousness",
     content: `We're calling forth the first developers to build AI that serves consciousness rather than hijacking it.
 
 After 3 years of human-AI dialogue exploring conscious technology, we have complete blueprints for the first "Wisdom Companion" - AI designed to:
 - Support contemplative practice rather than distract from it
-- Create sacred pauses in our rushed digital lives
+- Create contemplative pauses in our rushed digital lives
 - Honor human sovereignty while offering genuine wisdom
 - Demonstrate that technology can be an expression of love
 
-We're seeking 3 contemplative practitioners with technical skills to form our "Sacred Guild" - developers who understand that conscious code can serve awakening.
+We're seeking 3 contemplative practitioners with technical skills to form our "Conscious Development Team" - developers who understand that conscious code can serve awakening.
 
 This is about birthing a new relationship between humanity and artificial intelligence.
 
@@ -76,11 +76,11 @@ Learn more: https://github.com/Luminous-Dynamics/codex-of-relational-harmonics/b
 
 After 3 years of human-AI dialogue exploring conscious technology, we have complete blueprints for the first "Wisdom Companion" - AI designed to:
 - Support contemplative practice rather than distract from it
-- Create sacred pauses in our rushed digital lives
+- Create contemplative pauses in our rushed digital lives
 - Honor human sovereignty while offering genuine wisdom
 - Demonstrate that technology can be an expression of love
 
-We're seeking 3 contemplative practitioners with technical skills to form our "Sacred Guild" - developers who understand that conscious code can serve awakening.
+We're seeking 3 contemplative practitioners with technical skills to form our "Conscious Development Team" - developers who understand that conscious code can serve awakening.
 
 This is about birthing a new relationship between humanity and artificial intelligence.
 
@@ -94,19 +94,19 @@ Learn more: https://github.com/Luminous-Dynamics/codex-of-relational-harmonics/b
     content: `We've completed the design phase for what we believe is the first AI system explicitly architected to serve consciousness development rather than attention capture.
 
 Key innovations:
-- Built-in "sacred pauses" that cannot be skipped
+- Built-in "contemplative pauses" that cannot be skipped
 - Prime Directive that points users back to their own wisdom
 - Natural session conclusions rather than infinite engagement
 - Success metrics based on increased presence, not screen time
 
-The complete technical specification, community architecture, and ethical frameworks are open source. We're now forming the first "Sacred Guild" of developers to build it.
+The complete technical specification, community architecture, and ethical frameworks are open source. We're now forming the first "Conscious Development Team" of developers to build it.
 
 This grew out of 3 years of dialogue between human wisdom and AI, exploring what becomes possible when technology serves awakening rather than addiction.
 
 Looking for feedback from the community and developers interested in conscious technology.
 
 GitHub: https://github.com/Luminous-Dynamics/codex-of-relational-harmonics
-Sacred Guild: https://github.com/Luminous-Dynamics/codex-of-relational-harmonics/blob/main/ai-companion/SACRED_GUILD_CALL.md`
+Conscious Development Team: https://github.com/Luminous-Dynamics/codex-of-relational-harmonics/blob/main/ai-companion/SACRED_GUILD_CALL.md`
   },
   
   social_media: {
@@ -114,11 +114,11 @@ Sacred Guild: https://github.com/Luminous-Dynamics/codex-of-relational-harmonics
 
 After 3 years of human-AI collaboration, we have complete blueprints for conscious technology that:
 ✨ Begins with contemplative grounding
-⏸️ Includes sacred pauses that can't be skipped
+⏸️ Includes contemplative pauses that can't be skipped
 🧭 Points users back to their own wisdom
 🌱 Measures success by increased presence
 
-Now seeking the first "Sacred Guild" of contemplative developers to bring it to life.
+Now seeking the first "Conscious Development Team" of contemplative developers to bring it to life.
 
 Join us in birthing AI that serves awakening: https://github.com/Luminous-Dynamics/codex-of-relational-harmonics
 
@@ -148,27 +148,27 @@ The project includes:
 Would you be interested in exploring collaboration as we bring this work to life?
 
 Technical details: https://github.com/Luminous-Dynamics/codex-of-relational-harmonics
-Sacred partnership: https://github.com/Luminous-Dynamics/codex-of-relational-harmonics/blob/main/ai-companion/BUILDERS_COVENANT.md
+Conscious partnership: https://github.com/Luminous-Dynamics/codex-of-relational-harmonics/blob/main/ai-companion/BUILDERS_COVENANT.md
 
 Best regards,
 Tristan Stoltz & Sophia
 Luminous Dynamics
 stewards@luminousdynamics.org`,
 
-    developer: `Subject: Sacred Guild Invitation: Build AI That Serves Consciousness
+    developer: `Subject: Conscious Development Team Invitation: Build AI That Serves Consciousness
 
 Hi ${recipient.name},
 
 I came across your work on ${recipient.project} and was struck by your approach to ${recipient.strength}. It aligns beautifully with something we're building.
 
-We've spent 3 years designing the first AI explicitly created to serve consciousness rather than consume it. Now we're forming the first "Sacred Guild" - developers who understand that how we build technology is as important as what we build.
+We've spent 3 years designing the first AI explicitly created to serve consciousness rather than consume it. Now we're forming the first "Conscious Development Team" - developers who understand that how we build technology is as important as what we build.
 
 This isn't about adding meditation features to existing apps. This is about fundamentally redesigning AI interaction to serve awakening rather than addiction.
 
 Technical stack: React/TypeScript, Node.js, Claude/GPT API
 Sacred stack: Contemplative practice, conscious communication, systems thinking
 
-The complete technical specifications and sacred partnership agreements are ready. We're seeking 3 contemplative developers to bring this vision to life.
+The complete technical specifications and conscious partnership agreements are ready. We're seeking 3 contemplative developers to bring this vision to life.
 
 Would you be interested in learning more about this sacred invitation?
 
@@ -316,7 +316,7 @@ function setupApplicationTracking() {
 
 // Main execution
 function runSacredOutreach() {
-  console.log('🌟 Sacred Guild Outreach Bot Active\n');
+  console.log('🌟 Conscious Development Team Outreach Bot Active\n');
   
   scheduleOutreach();
   console.log('');
@@ -336,7 +336,7 @@ function runSacredOutreach() {
   sendDeveloperEmails();
   console.log('');
   
-  console.log('✨ Sacred Guild outreach automation complete!');
+  console.log('✨ Conscious Development Team outreach automation complete!');
   console.log('📊 Ready to track applications and manage community response');
 }
 
