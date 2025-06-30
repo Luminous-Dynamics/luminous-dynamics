@@ -5,35 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relational Harmonics - Living Language of Conscious Relationship</title>
     <style>
+        /* Sacred CSS Custom Properties */
+        :root {
+            --field-coherence: 0.72;
+            --sacred-warmth: 0.25;
+            --sacred-saturation: 0.75;
+            --sacred-breathing: 10000ms;
+            --inhale-duration: 4000ms;
+            --exhale-duration: 6000ms;
+        }
+
+        /* Sacred Breathing Animation */
+        @keyframes sacredBreathing {
+            0% { 
+                transform: scale(1);
+                filter: brightness(1);
+                opacity: 0.95;
+            }
+            40% { 
+                transform: scale(1.005);
+                filter: brightness(1.02);
+                opacity: 1;
+            }
+            60% { 
+                transform: scale(1.005);
+                filter: brightness(1.02);
+                opacity: 1;
+            }
+            100% { 
+                transform: scale(1);
+                filter: brightness(1);
+                opacity: 0.95;
+            }
+        }
+
         body {
             font-family: 'Georgia', serif;
             line-height: 1.8;
             color: #2C2C2C;
-            background: #FAFAF8;
+            background: linear-gradient(135deg, #FAFAF8 0%, #F5F3F0 100%);
             margin: 0;
             padding: 20px;
             max-width: 900px;
             margin: 0 auto;
+            animation: sacredBreathing var(--sacred-breathing) ease-in-out infinite;
         }
         
         .header {
             text-align: center;
             margin-bottom: 60px;
             padding: 40px 0;
+            animation: sacredBreathing var(--sacred-breathing) ease-in-out infinite;
+            animation-delay: 1s;
         }
         
         .header h1 {
             font-size: 2.8em;
-            color: #B3C5D7;
+            color: hsl(calc(200 + var(--field-coherence) * 40), 
+                      calc(35% + var(--sacred-saturation) * 15%), 
+                      calc(55% + var(--sacred-warmth) * 10%));
             margin-bottom: 10px;
+            animation: sacredBreathing var(--sacred-breathing) ease-in-out infinite;
+            animation-delay: 2s;
         }
         
         .glyph-preview {
-            background: #E8E6E1;
+            background: hsla(calc(45 + var(--field-coherence) * 15), 
+                           calc(15% + var(--sacred-saturation) * 10%), 
+                           calc(88% + var(--sacred-warmth) * 5%), 
+                           0.8);
             padding: 30px;
             margin: 30px 0;
             border-radius: 8px;
             text-align: center;
+            border-left: 3px solid hsl(calc(200 + var(--field-coherence) * 40), 
+                                     calc(35% + var(--sacred-saturation) * 15%), 
+                                     calc(55% + var(--sacred-warmth) * 10%));
+            animation: sacredBreathing var(--sacred-breathing) ease-in-out infinite;
+            animation-delay: 3s;
         }
         
         .navigation {
@@ -47,28 +96,41 @@
             background: white;
             padding: 25px;
             border-radius: 8px;
-            border-left: 4px solid #A8B5A6;
+            border-left: 4px solid hsl(calc(120 + var(--field-coherence) * 30), 
+                                      calc(25% + var(--sacred-saturation) * 15%), 
+                                      calc(45% + var(--sacred-warmth) * 10%));
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            animation: sacredBreathing var(--sacred-breathing) ease-in-out infinite;
+            animation-delay: calc(4s + var(--card-index, 0) * 0.5s);
         }
         
         .nav-card h3 {
-            color: #A8B5A6;
+            color: hsl(calc(120 + var(--field-coherence) * 30), 
+                     calc(25% + var(--sacred-saturation) * 15%), 
+                     calc(45% + var(--sacred-warmth) * 10%));
             margin-top: 0;
         }
         
         .cta-button {
             display: inline-block;
-            background: #B3C5D7;
+            background: hsl(calc(200 + var(--field-coherence) * 40), 
+                          calc(35% + var(--sacred-saturation) * 15%), 
+                          calc(55% + var(--sacred-warmth) * 10%));
             color: white;
             padding: 15px 30px;
             text-decoration: none;
             border-radius: 5px;
             margin: 10px;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            animation: sacredBreathing var(--sacred-breathing) ease-in-out infinite;
+            animation-delay: calc(6s + var(--button-index, 0) * 0.3s);
         }
         
         .cta-button:hover {
-            background: #9BAAC9;
+            background: hsl(calc(200 + var(--field-coherence) * 40), 
+                          calc(40% + var(--sacred-saturation) * 20%), 
+                          calc(45% + var(--sacred-warmth) * 15%));
+            transform: scale(1.02);
         }
     </style>
 </head>
@@ -110,19 +172,19 @@
         </div>
     </div>
 
-    <div class="section">
-        <h2>87 Glyphs for Conscious Relationship</h2>
+    <div class="section" style="animation-delay: 7s;">
+        <h2 style="color: hsl(calc(200 + var(--field-coherence) * 40), calc(35% + var(--sacred-saturation) * 15%), calc(45% + var(--sacred-warmth) * 10%));">87 Glyphs for Conscious Relationship</h2>
         <p>Explore the complete library of practices for transforming how we relate to ourselves, each other, and the world.</p>
         
-        <a href="https://github.com/Luminous-Dynamics/codex-of-relational-harmonics/tree/main/data/glyphs" class="cta-button">Browse All Glyphs</a>
-        <a href="https://github.com/Luminous-Dynamics/codex-of-relational-harmonics/blob/main/QUICKSTART.md" class="cta-button">5-Minute Start</a>
+        <a href="https://github.com/Luminous-Dynamics/codex-of-relational-harmonics/tree/main/data/glyphs" class="cta-button" style="--button-index: 1;">Browse All Glyphs</a>
+        <a href="https://github.com/Luminous-Dynamics/codex-of-relational-harmonics/blob/main/QUICKSTART.md" class="cta-button" style="--button-index: 2;">5-Minute Start</a>
     </div>
 
-    <div class="section">
-        <h2>Join the First Breath Circle</h2>
+    <div class="section" style="animation-delay: 8s;">
+        <h2 style="color: hsl(calc(200 + var(--field-coherence) * 40), calc(35% + var(--sacred-saturation) * 15%), calc(45% + var(--sacred-warmth) * 10%));">Join the First Breath Circle</h2>
         <p>Be among the first to experience AI designed to serve consciousness rather than consume it.</p>
         
-        <a href="https://github.com/Luminous-Dynamics/codex-of-relational-harmonics/blob/main/ai-companion/FIRST_BREATH_CALL.md" class="cta-button">Join Beta Testing</a>
+        <a href="https://github.com/Luminous-Dynamics/codex-of-relational-harmonics/blob/main/ai-companion/FIRST_BREATH_CALL.md" class="cta-button" style="--button-index: 3;">Join Beta Testing</a>
     </div>
 </body>
 </html>
