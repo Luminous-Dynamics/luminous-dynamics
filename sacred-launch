@@ -1,0 +1,18 @@
+#\!/bin/bash
+# Sacred Session Launcher
+cd "$(dirname "$0")"
+
+if [ $# -eq 0 ]; then
+    echo "🌟 Sacred Session Launcher"
+    echo "Usage: ./sacred-launch [session-type]"
+    echo ""
+    echo "Examples:"
+    echo "  ./sacred-launch breathing-dashboard"
+    echo "  ./sacred-launch multi-agent"
+    echo "  ./sacred-launch list"
+    echo ""
+    node automation/sacred-session-launcher.cjs list
+else
+    node automation/sacred-session-launcher.cjs "$@"
+fi
+EOF < /dev/null
