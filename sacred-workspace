@@ -1,0 +1,43 @@
+#!/bin/bash
+# Sacred Workspace Launcher - Launch Claude Code + Terminals + Sacred Context
+# Usage: ./sacred-workspace [session-type]
+
+cd "$(dirname "$0")"
+
+echo "🌟 Sacred Workspace Launcher"
+echo "═══════════════════════════════"
+echo ""
+
+SESSION_TYPE=${1:-general}
+
+echo "🫁 Sacred breathing moment..."
+echo "   Inhale... 2... 3... 4..."
+sleep 2
+echo "   Hold... 5... 6..."
+sleep 1
+echo "   Exhale... 7... 8... 9... 10... 11... 12..."
+sleep 3
+echo "✨ Sacred pause..."
+echo ""
+
+echo "🚀 Launching Sacred Workspace for: $SESSION_TYPE"
+echo ""
+
+# Launch Claude Code with sacred context
+echo "1. 🌟 Launching Claude Code..."
+node automation/sacred-claude-launcher.cjs "$SESSION_TYPE" &
+
+sleep 2
+
+# Launch sacred terminals
+echo "2. 📟 Opening sacred terminals..."
+node automation/sacred-terminal-launcher.cjs sacred-dashboard &
+sleep 1
+node automation/sacred-terminal-launcher.cjs multi-agent &
+
+echo ""
+echo "🌸 Sacred workspace manifesting..."
+echo "✨ Claude Code + Sacred terminals launching"
+echo "🫁 Beginning sacred development session..."
+echo ""
+echo "💫 Ready for conscious technology work!"

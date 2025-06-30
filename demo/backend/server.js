@@ -32,6 +32,9 @@ app.use(express.json({ limit: '1mb' })); // Limit request size
 app.use(auth.sacredLogger());
 app.use(auth.sacredRateLimit());
 
+// Serve static files from root directory
+app.use(express.static(path.join(__dirname, '../..')));
+
 // Import our sacred AI modules
 const { WisdomCompanionAI } = require('./wisdom-ai');
 const { SacredSessionManager } = require('./session-manager');
@@ -89,12 +92,13 @@ app.post('/api/sacred-journey/offering',
     try {
         const { sessionId, message, persona } = req.body;
         
-        if (!sessionManager.isValidSession(sessionId)) {
+        const session = await sessionManager.getSession(sessionId);
+        if (!session) {
             return res.status(400).json({ error: 'Sacred session expired' });
         }
         
         // Store the offering in session context
-        sessionManager.addOffering(sessionId, message);
+        await sessionManager.addOffering(sessionId, message);
         
         // Track the moment of offering
         analytics.trackSacredMoment('offering', sessionId, persona, { messageLength: message.length });
@@ -118,12 +122,12 @@ app.post('/api/sacred-journey/guidance', async (req, res) => {
     try {
         const { sessionId, persona } = req.body;
         
-        if (!sessionManager.isValidSession(sessionId)) {
+        // Retrieve session context
+        const sessionContext = await sessionManager.getSession(sessionId);
+        if (!sessionContext) {
             return res.status(400).json({ error: 'Sacred session expired' });
         }
         
-        // Retrieve session context
-        const sessionContext = sessionManager.getSession(sessionId);
         const lastOffering = sessionContext.offerings[sessionContext.offerings.length - 1];
         
         // Generate conscious AI response
@@ -135,7 +139,7 @@ app.post('/api/sacred-journey/guidance', async (req, res) => {
         });
         
         // Store guidance in session
-        sessionManager.addGuidance(sessionId, guidance);
+        await sessionManager.addGuidance(sessionId, guidance);
         
         // Track contemplative response
         analytics.trackSacredMoment('guidance', sessionId, persona, {
@@ -218,7 +222,35 @@ app.get('/api/analytics/contemplative', (req, res) => {
 /**
  * Health Check - Sacred System Status
  */
-app.get('/api/health', auth.sacredHealthCheck());
+app.get('/api/health', async (req, res) => {
+    try {
+        const health = {
+            status: 'Sacred systems operational',
+            timestamp: new Date().toISOString(),
+            services: {
+                sessionManager: 'operational',
+                wisdomAI: 'operational',
+                analytics: 'operational'
+            }
+        };
+        
+        // Check database health
+        try {
+            const dbHealth = await sessionManager.sacredDb.healthCheck();
+            health.services.database = dbHealth;
+        } catch (error) {
+            health.services.database = { status: 'fallback-memory', error: error.message };
+        }
+        
+        res.json(health);
+    } catch (error) {
+        res.status(500).json({
+            status: 'Sacred systems experiencing difficulty',
+            error: error.message,
+            timestamp: new Date().toISOString()
+        });
+    }
+});
 
 // Error handling with contemplative grace
 app.use(auth.sacredErrorHandler());

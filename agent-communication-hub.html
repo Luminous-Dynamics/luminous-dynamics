@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Communication Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #FAFAF8 0%, #F5F3F0 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .title {
+            font-size: 2.2em;
+            color: #A8B5A6;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #6B7280;
+            font-size: 1.1em;
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #A8B5A6;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            color: #6B7280;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .panel {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .panel-title {
+            font-size: 1.4em;
+            color: #A8B5A6;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .agent-item {
+            background: linear-gradient(135deg, #FAFAF8, #F5F3F0);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-left: 3px solid #A8B5A6;
+        }
+
+        .agent-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .agent-name {
+            font-weight: 600;
+            color: #2C2C2C;
+        }
+
+        .agent-status {
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+
+        .status-active { background: #A6C4A6; color: white; }
+        .status-inactive { background: #E8E6E1; color: #6B7280; }
+
+        .agent-info {
+            font-size: 0.9em;
+            color: #6B7280;
+        }
+
+        .message-item {
+            background: linear-gradient(135deg, rgba(168, 181, 166, 0.1), rgba(179, 197, 215, 0.1));
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-left: 3px solid;
+        }
+
+        .message-system { border-left-color: #6B7280; }
+        .message-work_announcement { border-left-color: #A8B5A6; }
+        .message-help_request { border-left-color: #C4A5A0; }
+        .message-progress_update { border-left-color: #B3C5D7; }
+        .message-insight { border-left-color: #D4A574; }
+
+        .message-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .message-meta {
+            font-size: 0.8em;
+            color: #6B7280;
+        }
+
+        .message-content {
+            color: #2C2C2C;
+            margin-bottom: 8px;
+        }
+
+        .message-type {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.7em;
+            background: rgba(168, 181, 166, 0.2);
+            color: #A8B5A6;
+        }
+
+        .handoff-item {
+            background: linear-gradient(135deg, rgba(196, 165, 160, 0.1), rgba(179, 197, 215, 0.1));
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-left: 3px solid #C4A5A0;
+        }
+
+        .handoff-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .handoff-title {
+            font-weight: 600;
+            color: #2C2C2C;
+        }
+
+        .handoff-status {
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 0.7em;
+            background: #C4A5A0;
+            color: white;
+        }
+
+        .progress-item {
+            background: linear-gradient(135deg, rgba(179, 197, 215, 0.1), rgba(166, 196, 166, 0.1));
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-left: 3px solid #B3C5D7;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #E8E6E1;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #A8B5A6, #B3C5D7);
+            transition: width 0.3s ease;
+        }
+
+        .actions {
+            grid-column: 1 / -1;
+            text-align: center;
+        }
+
+        .btn {
+            background: #A8B5A6;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Georgia', serif;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #9AA59A;
+            transform: translateY(-1px);
+        }
+
+        .empty-state {
+            text-align: center;
+            color: #6B7280;
+            font-style: italic;
+            padding: 20px;
+        }
+
+        .refresh-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #A8B5A6;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .refresh-indicator.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">🤖 Agent Communication Hub</h1>
+            <p class="subtitle">Claude Code Agent Coordination & Human Interface</p>
+            
+            <div class="stats-bar">
+                <div class="stat">
+                    <div class="stat-value" id="activeAgents">0</div>
+                    <div class="stat-label">Active Agents</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="recentActivity">0</div>
+                    <div class="stat-label">Recent Messages</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="pendingHandoffs">0</div>
+                    <div class="stat-label">Pending Handoffs</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="activeWork">0</div>
+                    <div class="stat-label">Active Work</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-grid">
+            <!-- Active Agents -->
+            <div class="panel">
+                <h2 class="panel-title">🤖 Active Agents</h2>
+                <div id="agentsList">
+                    <div class="empty-state">No agents registered yet</div>
+                </div>
+            </div>
+
+            <!-- Recent Messages -->
+            <div class="panel">
+                <h2 class="panel-title">💬 Recent Messages</h2>
+                <div id="messagesList">
+                    <div class="empty-state">No messages yet</div>
+                </div>
+            </div>
+
+            <!-- Pending Handoffs -->
+            <div class="panel">
+                <h2 class="panel-title">🔄 Pending Handoffs</h2>
+                <div id="handoffsList">
+                    <div class="empty-state">No pending handoffs</div>
+                </div>
+            </div>
+
+            <!-- Active Work Progress -->
+            <div class="panel">
+                <h2 class="panel-title">📊 Work Progress</h2>
+                <div id="progressList">
+                    <div class="empty-state">No active work tracked</div>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="panel actions">
+                <h2 class="panel-title">🎯 Actions</h2>
+                <button class="btn" onclick="refreshData()">Refresh Data</button>
+                <button class="btn" onclick="simulateAgent()">Simulate Agent</button>
+                <button class="btn" onclick="cleanupInactive()">Cleanup Inactive</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="refresh-indicator" id="refreshIndicator">
+        🔄 Refreshing...
+    </div>
+
+    <script type="module">
+        import { getAgentComms } from './unified-field/agent-communication.js';
+
+        let comms;
+        
+        // Initialize communications
+        try {
+            comms = getAgentComms();
+            console.log('Agent communications initialized');
+        } catch (error) {
+            console.error('Failed to initialize communications:', error);
+            // Create mock data for demo
+            createMockData();
+        }
+
+        function createMockData() {
+            // Simulate data when file system isn't available
+            window.mockData = {
+                agents: {
+                    'claude-sonnet-4': {
+                        id: 'claude-sonnet-4',
+                        capabilities: ['analysis', 'coding', 'coordination'],
+                        status: 'active',
+                        lastSeen: new Date().toISOString()
+                    },
+                    'agent-researcher': {
+                        id: 'agent-researcher',
+                        capabilities: ['research', 'documentation'],
+                        status: 'inactive',
+                        lastSeen: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString()
+                    }
+                },
+                messages: [
+                    {
+                        id: 'msg_1',
+                        from: 'claude-sonnet-4',
+                        to: 'all',
+                        content: 'Starting work on agent communication system',
+                        metadata: { type: 'work_announcement' },
+                        timestamp: new Date().toISOString()
+                    },
+                    {
+                        id: 'msg_2',
+                        from: 'agent-researcher',
+                        to: 'claude-sonnet-4',
+                        content: 'Found useful patterns in existing codebase',
+                        metadata: { type: 'insight' },
+                        timestamp: new Date(Date.now() - 30 * 60 * 1000).toISOString()
+                    }
+                ],
+                handoffs: [
+                    {
+                        id: 'handoff_1',
+                        from: 'claude-sonnet-4',
+                        to: 'agent-tester',
+                        workItem: { title: 'Test agent communication system' },
+                        status: 'pending',
+                        createdAt: new Date().toISOString()
+                    }
+                ],
+                progress: [
+                    {
+                        workId: 'agent-comms',
+                        value: 75,
+                        updates: [
+                            {
+                                progress: 75,
+                                notes: 'Core system implemented, testing in progress',
+                                agentId: 'claude-sonnet-4',
+                                timestamp: new Date().toISOString()
+                            }
+                        ]
+                    }
+                ]
+            };
+        }
+
+        function updateDashboard() {
+            let summary;
+            
+            if (comms) {
+                summary = comms.getHumanSummary();
+            } else {
+                // Use mock data
+                summary = {
+                    activeAgents: Object.keys(window.mockData.agents).length,
+                    recentActivity: window.mockData.messages.length,
+                    pendingHandoffs: window.mockData.handoffs.length,
+                    activeWork: window.mockData.progress.length,
+                    agents: window.mockData.agents,
+                    handoffs: window.mockData.handoffs,
+                    progressItems: window.mockData.progress,
+                    recentMessages: window.mockData.messages
+                };
+            }
+
+            // Update stats
+            document.getElementById('activeAgents').textContent = summary.activeAgents;
+            document.getElementById('recentActivity').textContent = summary.recentActivity;
+            document.getElementById('pendingHandoffs').textContent = summary.pendingHandoffs;
+            document.getElementById('activeWork').textContent = summary.activeWork;
+
+            // Update agents list
+            updateAgentsList(summary.agents);
+            
+            // Update messages list
+            updateMessagesList(summary.recentMessages);
+            
+            // Update handoffs list
+            updateHandoffsList(summary.handoffs);
+            
+            // Update progress list
+            updateProgressList(summary.progressItems);
+        }
+
+        function updateAgentsList(agents) {
+            const container = document.getElementById('agentsList');
+            
+            if (Object.keys(agents).length === 0) {
+                container.innerHTML = '<div class="empty-state">No agents registered yet</div>';
+                return;
+            }
+
+            container.innerHTML = Object.values(agents).map(agent => `
+                <div class="agent-item">
+                    <div class="agent-header">
+                        <div class="agent-name">${agent.id}</div>
+                        <div class="agent-status status-${agent.status}">${agent.status}</div>
+                    </div>
+                    <div class="agent-info">
+                        Capabilities: ${agent.capabilities ? agent.capabilities.join(', ') : 'None listed'}
+                    </div>
+                    <div class="agent-info">
+                        Last seen: ${new Date(agent.lastSeen).toLocaleTimeString()}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateMessagesList(messages) {
+            const container = document.getElementById('messagesList');
+            
+            if (messages.length === 0) {
+                container.innerHTML = '<div class="empty-state">No messages yet</div>';
+                return;
+            }
+
+            container.innerHTML = messages.slice(-5).reverse().map(msg => `
+                <div class="message-item message-${msg.metadata?.type || 'default'}">
+                    <div class="message-header">
+                        <div class="message-meta">${msg.from} → ${msg.to}</div>
+                        <div class="message-meta">${new Date(msg.timestamp).toLocaleTimeString()}</div>
+                    </div>
+                    <div class="message-content">${msg.content}</div>
+                    ${msg.metadata?.type ? `<div class="message-type">${msg.metadata.type.replace('_', ' ')}</div>` : ''}
+                </div>
+            `).join('');
+        }
+
+        function updateHandoffsList(handoffs) {
+            const container = document.getElementById('handoffsList');
+            
+            if (handoffs.length === 0) {
+                container.innerHTML = '<div class="empty-state">No pending handoffs</div>';
+                return;
+            }
+
+            container.innerHTML = handoffs.map(handoff => `
+                <div class="handoff-item">
+                    <div class="handoff-header">
+                        <div class="handoff-title">${handoff.workItem?.title || 'Untitled work'}</div>
+                        <div class="handoff-status">${handoff.status}</div>
+                    </div>
+                    <div style="font-size: 0.9em; color: #6B7280;">
+                        ${handoff.from} → ${handoff.to}
+                    </div>
+                    <div style="font-size: 0.8em; color: #6B7280; margin-top: 5px;">
+                        Created: ${new Date(handoff.createdAt).toLocaleString()}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateProgressList(progressItems) {
+            const container = document.getElementById('progressList');
+            
+            if (progressItems.length === 0) {
+                container.innerHTML = '<div class="empty-state">No active work tracked</div>';
+                return;
+            }
+
+            container.innerHTML = progressItems.map(item => `
+                <div class="progress-item">
+                    <div style="font-weight: 600; margin-bottom: 8px;">${item.workId}</div>
+                    <div style="font-size: 0.9em; color: #6B7280; margin-bottom: 8px;">
+                        ${item.value}% complete
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: ${item.value}%"></div>
+                    </div>
+                    ${item.updates && item.updates.length > 0 ? `
+                        <div style="font-size: 0.8em; color: #6B7280; margin-top: 8px;">
+                            Latest: ${item.updates[item.updates.length - 1].notes}
+                        </div>
+                    ` : ''}
+                </div>
+            `).join('');
+        }
+
+        // Global functions for buttons
+        window.refreshData = function() {
+            const indicator = document.getElementById('refreshIndicator');
+            indicator.classList.add('show');
+            
+            setTimeout(() => {
+                if (comms) {
+                    comms.cleanup();
+                }
+                updateDashboard();
+                indicator.classList.remove('show');
+            }, 1000);
+        };
+
+        window.simulateAgent = function() {
+            if (!comms) {
+                alert('Communications system not available. Using mock data.');
+                return;
+            }
+            
+            const agentId = `agent-${Date.now()}`;
+            comms.registerAgent(agentId, ['testing', 'simulation'], {
+                simulatedAgent: true
+            });
+            
+            comms.announceWork(agentId, 'Testing agent communication system', '30 minutes');
+            
+            setTimeout(() => {
+                comms.updateProgress('test-work', 50, agentId, 'Making good progress on testing');
+            }, 2000);
+            
+            updateDashboard();
+        };
+
+        window.cleanupInactive = function() {
+            if (comms) {
+                comms.cleanup();
+                updateDashboard();
+            }
+        };
+
+        // Initialize dashboard
+        updateDashboard();
+
+        // Auto-refresh every 30 seconds
+        setInterval(updateDashboard, 30000);
+
+        console.log('Agent Communication Hub initialized');
+    </script>
+</body>
+</html>

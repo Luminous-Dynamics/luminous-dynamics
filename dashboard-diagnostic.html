@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard Diagnostic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .status { 
+            padding: 10px; 
+            margin: 10px 0; 
+            border-radius: 5px;
+        }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .info { background: #d1ecf1; color: #0c5460; }
+        .warning { background: #fff3cd; color: #856404; }
+        code { 
+            background: #f8f9fa; 
+            padding: 2px 5px; 
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sacred Dashboard Diagnostic</h1>
+    
+    <div class="status info">
+        <h3>🔍 Testing Dashboard Access</h3>
+        <p>This page will check if all components are working correctly.</p>
+    </div>
+
+    <div id="results"></div>
+
+    <script>
+        const results = document.getElementById('results');
+        
+        async function runTests() {
+            // Test 1: Check API server
+            try {
+                const apiResponse = await fetch('http://localhost:3001/api/dashboard');
+                const apiData = await apiResponse.json();
+                
+                results.innerHTML += `
+                    <div class="status success">
+                        <h3>✅ API Server</h3>
+                        <p>Sacred API is running on port 3001</p>
+                        <p>Active agents: ${apiData.activeAgents}</p>
+                        <p>Active work items: ${apiData.activeWork.length}</p>
+                    </div>
+                `;
+            } catch (error) {
+                results.innerHTML += `
+                    <div class="status error">
+                        <h3>❌ API Server</h3>
+                        <p>Cannot connect to Sacred API on port 3001</p>
+                        <p>Error: ${error.message}</p>
+                        <p>Start it with: <code>cd agent-comms-sqlite && node sacred-server.js</code></p>
+                    </div>
+                `;
+            }
+            
+            // Test 2: Check dashboard file
+            try {
+                const dashResponse = await fetch('/sacred-dashboard.html');
+                if (dashResponse.ok) {
+                    results.innerHTML += `
+                        <div class="status success">
+                            <h3>✅ Dashboard File</h3>
+                            <p>sacred-dashboard.html is accessible</p>
+                            <p><a href="/sacred-dashboard.html" target="_blank">Open Sacred Dashboard</a></p>
+                        </div>
+                    `;
+                } else {
+                    throw new Error(`HTTP ${dashResponse.status}`);
+                }
+            } catch (error) {
+                results.innerHTML += `
+                    <div class="status error">
+                        <h3>❌ Dashboard File</h3>
+                        <p>Cannot access sacred-dashboard.html</p>
+                        <p>Error: ${error.message}</p>
+                    </div>
+                `;
+            }
+            
+            // Test 3: Check WebSocket
+            try {
+                const ws = new WebSocket('ws://localhost:3001');
+                
+                ws.onopen = () => {
+                    results.innerHTML += `
+                        <div class="status success">
+                            <h3>✅ WebSocket Connection</h3>
+                            <p>Real-time updates are available</p>
+                        </div>
+                    `;
+                    ws.close();
+                };
+                
+                ws.onerror = (error) => {
+                    results.innerHTML += `
+                        <div class="status warning">
+                            <h3>⚠️ WebSocket Connection</h3>
+                            <p>WebSocket not available (dashboard will still work with polling)</p>
+                        </div>
+                    `;
+                };
+            } catch (error) {
+                results.innerHTML += `
+                    <div class="status warning">
+                        <h3>⚠️ WebSocket</h3>
+                        <p>WebSocket test failed: ${error.message}</p>
+                    </div>
+                `;
+            }
+            
+            // Summary
+            setTimeout(() => {
+                results.innerHTML += `
+                    <div class="status info">
+                        <h3>📊 Test Summary</h3>
+                        <p>If you see green checkmarks above, the dashboard should work!</p>
+                        <p><strong>Dashboard URLs:</strong></p>
+                        <ul>
+                            <li><a href="http://localhost:8080/sacred-dashboard.html">Sacred Field Dashboard</a></li>
+                            <li><a href="http://localhost:8080/dashboard-sqlite.html">SQLite Dashboard</a></li>
+                            <li><a href="http://localhost:8080/test-dashboard-states.js">Test Data Generator</a></li>
+                        </ul>
+                    </div>
+                `;
+            }, 1000);
+        }
+        
+        // Run tests on load
+        runTests();
+    </script>
+</body>
+</html>

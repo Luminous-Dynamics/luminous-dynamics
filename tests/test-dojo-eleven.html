@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Test Suite - The Eleven Applied Harmonies</title>
+    <style>
+        body {
+            font-family: Georgia, serif;
+            background: #f5f5f0;
+            color: #333;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1 { 
+            color: #2a4a3a; 
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .test-section {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .test-result {
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 6px;
+            font-family: monospace;
+        }
+        
+        .pass { 
+            background: #d4f4dd; 
+            color: #2a5a2a;
+            border-left: 4px solid #4caf50;
+        }
+        
+        .fail { 
+            background: #ffe4e4; 
+            color: #8a2a2a;
+            border-left: 4px solid #f44336;
+        }
+        
+        .warning { 
+            background: #fff4d4; 
+            color: #7a5a2a;
+            border-left: 4px solid #ff9800;
+        }
+        
+        .glyph-display {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .glyph-card {
+            background: #f0f4f0;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .glyph-card:hover {
+            background: #e0f0e0;
+            transform: translateY(-2px);
+        }
+        
+        .glyph-id {
+            font-size: 24px;
+            color: #4a6a5a;
+            margin-bottom: 5px;
+        }
+        
+        .glyph-name {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        #test-output {
+            white-space: pre-wrap;
+            font-family: monospace;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .sacred-button {
+            background: #4a6a5a;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .sacred-button:hover {
+            background: #5a7a6a;
+            transform: translateY(-1px);
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>🌟 Dojo Integration Test: The Eleven Applied Harmonies</h1>
+    
+    <div class="test-section">
+        <h2>Test Controls</h2>
+        <button class="sacred-button" onclick="runAllTests()">Run All Tests</button>
+        <button class="sacred-button" onclick="testSchemaLoading()">Test Schema Loading</button>
+        <button class="sacred-button" onclick="testGlyphRendering()">Test Glyph Display</button>
+        <button class="sacred-button" onclick="testBridgeNavigation()">Test Bridge Navigation</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>The Eleven Applied Harmonies</h2>
+        <div id="glyph-display" class="glyph-display">
+            <div class="loading">Loading glyphs...</div>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test Results</h2>
+        <div id="test-results"></div>
+        <div id="test-output"></div>
+    </div>
+    
+    <!-- Load the True Integration Schema -->
+    <script src="../unified-field/true-integration-schema.js"></script>
+    
+    <script>
+        // Test state
+        let schema = null;
+        let testResults = [];
+        
+        // Initialize on load
+        window.addEventListener('load', async () => {
+            await initializeTests();
+        });
+        
+        async function initializeTests() {
+            addTestResult('Initializing test environment...', 'info');
+            
+            try {
+                // Load schema
+                if (typeof TrueIntegrationSchema !== 'undefined') {
+                    schema = new TrueIntegrationSchema();
+                    addTestResult('✅ True Integration Schema loaded successfully', 'pass');
+                    displayGlyphs();
+                } else {
+                    addTestResult('❌ TrueIntegrationSchema not found', 'fail');
+                }
+            } catch (error) {
+                addTestResult(`❌ Error initializing: ${error.message}`, 'fail');
+            }
+        }
+        
+        function displayGlyphs() {
+            const display = document.getElementById('glyph-display');
+            display.innerHTML = '';
+            
+            // Display all Applied Harmonies
+            const appliedHarmonies = schema.getAppliedHarmonies();
+            const glyphIds = ['Ω45', 'Ω46', 'Ω47', 'Ω48', 'Ω49', 'Ω50', 'Ω51', 'Ω52', 'Ω53', 'Ω55', 'Ω56'];
+            
+            glyphIds.forEach(id => {
+                const glyph = appliedHarmonies[id];
+                if (glyph) {
+                    const card = document.createElement('div');
+                    card.className = 'glyph-card';
+                    card.onclick = () => testGlyphDetails(id);
+                    card.innerHTML = `
+                        <div class="glyph-id">${id}</div>
+                        <div class="glyph-name">${glyph.name}</div>
+                    `;
+                    display.appendChild(card);
+                }
+            });
+        }
+        
+        function addTestResult(message, type = 'info') {
+            const resultsDiv = document.getElementById('test-results');
+            const result = document.createElement('div');
+            result.className = `test-result ${type}`;
+            result.textContent = message;
+            resultsDiv.appendChild(result);
+            
+            testResults.push({ message, type, timestamp: new Date().toISOString() });
+        }
+        
+        function clearResults() {
+            document.getElementById('test-results').innerHTML = '';
+            document.getElementById('test-output').textContent = '';
+            testResults = [];
+        }
+        
+        async function runAllTests() {
+            clearResults();
+            addTestResult('🌟 Running comprehensive test suite...', 'info');
+            
+            await testSchemaLoading();
+            await testGlyphRendering();
+            await testBridgeNavigation();
+            await testDataIntegrity();
+            
+            // Summary
+            const passed = testResults.filter(r => r.type === 'pass').length;
+            const failed = testResults.filter(r => r.type === 'fail').length;
+            
+            addTestResult(`\n📊 Test Summary: ${passed} passed, ${failed} failed`, 'info');
+            if (failed === 0) {
+                addTestResult('✨ All tests passed! The Eleven are ready for practitioners.', 'pass');
+            }
+        }
+        
+        async function testSchemaLoading() {
+            addTestResult('\n📚 Testing Schema Loading...', 'info');
+            
+            // Test 1: Schema exists
+            if (schema) {
+                addTestResult('✅ Schema instance created', 'pass');
+            } else {
+                addTestResult('❌ Schema instance missing', 'fail');
+                return;
+            }
+            
+            // Test 2: Methods exist
+            const methods = ['getMysticalGlyphs', 'getAppliedHarmonies', 'getGlyph', 'getProgressivePath'];
+            methods.forEach(method => {
+                if (typeof schema[method] === 'function') {
+                    addTestResult(`✅ Method ${method} exists`, 'pass');
+                } else {
+                    addTestResult(`❌ Method ${method} missing`, 'fail');
+                }
+            });
+            
+            // Test 3: Data structures
+            const mystical = schema.getMysticalGlyphs();
+            const applied = schema.getAppliedHarmonies();
+            
+            addTestResult(`✅ Loaded ${Object.keys(mystical).length} mystical glyphs`, 'pass');
+            addTestResult(`✅ Loaded ${Object.keys(applied).length} applied harmonies`, 'pass');
+        }
+        
+        async function testGlyphRendering() {
+            addTestResult('\n🎨 Testing Glyph Rendering...', 'info');
+            
+            const glyphCards = document.querySelectorAll('.glyph-card');
+            if (glyphCards.length === 11) {
+                addTestResult('✅ All 11 Applied Harmonies displayed', 'pass');
+            } else {
+                addTestResult(`❌ Expected 11 glyphs, found ${glyphCards.length}`, 'fail');
+            }
+            
+            // Test each glyph
+            const expectedGlyphs = ['Ω45', 'Ω46', 'Ω47', 'Ω48', 'Ω49', 'Ω50', 'Ω51', 'Ω52', 'Ω53', 'Ω55', 'Ω56'];
+            expectedGlyphs.forEach(id => {
+                const found = Array.from(glyphCards).some(card => 
+                    card.querySelector('.glyph-id').textContent === id
+                );
+                if (found) {
+                    addTestResult(`✅ ${id} rendered correctly`, 'pass');
+                } else {
+                    addTestResult(`❌ ${id} not found in display`, 'fail');
+                }
+            });
+        }
+        
+        async function testBridgeNavigation() {
+            addTestResult('\n🌉 Testing Bridge Navigation...', 'info');
+            
+            // Test mystical to practical bridges
+            const mysticalBridges = {
+                'Ω0': 'Ω45',
+                'Ω1': 'Ω46',
+                'Ω4': 'Ω47',
+                'Ω7': 'Ω48'
+            };
+            
+            Object.entries(mysticalBridges).forEach(([mystical, practical]) => {
+                const glyph = schema.getGlyph(mystical);
+                if (glyph && glyph.practicalExpression === practical) {
+                    addTestResult(`✅ Bridge ${mystical} → ${practical} verified`, 'pass');
+                } else {
+                    addTestResult(`❌ Bridge ${mystical} → ${practical} broken`, 'fail');
+                }
+            });
+            
+            // Test practical to mystical bridges
+            const practicalBridges = {
+                'Ω45': 'Ω0',
+                'Ω46': 'Ω1',
+                'Ω47': 'Ω4',
+                'Ω48': 'Ω7'
+            };
+            
+            Object.entries(practicalBridges).forEach(([practical, mystical]) => {
+                const glyph = schema.getGlyph(practical);
+                if (glyph && glyph.mysticalRoot === mystical) {
+                    addTestResult(`✅ Bridge ${practical} → ${mystical} verified`, 'pass');
+                } else {
+                    addTestResult(`❌ Bridge ${practical} → ${mystical} broken`, 'fail');
+                }
+            });
+        }
+        
+        async function testDataIntegrity() {
+            addTestResult('\n🔍 Testing Data Integrity...', 'info');
+            
+            // Test Applied Harmony structure
+            const applied = schema.getAppliedHarmonies();
+            const sampleGlyph = applied['Ω45'];
+            
+            if (sampleGlyph) {
+                const requiredFields = ['id', 'name', 'fullName', 'quadrants', 'mysticalRoot'];
+                requiredFields.forEach(field => {
+                    if (sampleGlyph[field]) {
+                        addTestResult(`✅ Applied Harmony has ${field}`, 'pass');
+                    } else {
+                        addTestResult(`❌ Applied Harmony missing ${field}`, 'fail');
+                    }
+                });
+            }
+            
+            // Test learning paths
+            const paths = schema.completeRegistry.learningPaths;
+            if (paths.essentialDaily && paths.fieldMastery && paths.coreFoundation) {
+                addTestResult('✅ All sacred learning paths defined', 'pass');
+            } else {
+                addTestResult('❌ Some learning paths missing', 'fail');
+            }
+        }
+        
+        function testGlyphDetails(glyphId) {
+            const output = document.getElementById('test-output');
+            const glyph = schema.getGlyph(glyphId);
+            
+            if (glyph) {
+                output.textContent = JSON.stringify(glyph, null, 2);
+                addTestResult(`📖 Displayed details for ${glyphId}`, 'info');
+                
+                // Scroll to output
+                output.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

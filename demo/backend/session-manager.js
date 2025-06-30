@@ -1,15 +1,23 @@
 /**
  * Sacred Session Manager
- * Holds space for contemplative AI conversations
+ * Holds space for contemplative AI conversations with sacred persistence
  */
+
+const { SacredDatabase } = require('./config/database');
 
 class SacredSessionManager {
     constructor() {
-        this.sessions = new Map();
+        // Sacred database for persistence
+        this.sacredDb = new SacredDatabase();
+        
+        // Memory fallback for when database is unavailable
+        this.memorySessions = new Map();
         this.sessionTimeout = 30 * 60 * 1000; // 30 minutes
         
         // Clean up expired sessions every 5 minutes
         setInterval(() => this.cleanupExpiredSessions(), 5 * 60 * 1000);
+        
+        console.log('🌟 Sacred Session Manager initialized with database persistence');
     }
     
     /**
@@ -33,7 +41,8 @@ class SacredSessionManager {
             naturalConclusionReached: false
         };
         
-        this.sessions.set(sessionId, session);
+        // Store in database with memory fallback
+        this.storeSession(sessionId, session);
         
         console.log(`🌟 Sacred session created: ${sessionId} (${persona})`);
         return sessionId;
@@ -42,8 +51,8 @@ class SacredSessionManager {
     /**
      * Add user offering to session
      */
-    addOffering(sessionId, message) {
-        const session = this.getSession(sessionId);
+    async addOffering(sessionId, message) {
+        const session = await this.getSession(sessionId);
         if (!session) return false;
         
         const offering = {
@@ -53,8 +62,7 @@ class SacredSessionManager {
         };
         
         session.offerings.push(offering);
-        session.lastActivity = Date.now();
-        session.duration = session.lastActivity - session.createdAt;
+        await this.updateSession(sessionId, session);
         
         console.log(`💫 Offering received in session ${sessionId}: ${message.substring(0, 50)}...`);
         return true;
@@ -63,8 +71,8 @@ class SacredSessionManager {
     /**
      * Add AI guidance to session
      */
-    addGuidance(sessionId, guidanceObj) {
-        const session = this.getSession(sessionId);
+    async addGuidance(sessionId, guidanceObj) {
+        const session = await this.getSession(sessionId);
         if (!session) return false;
         
         const guidance = {
@@ -73,7 +81,7 @@ class SacredSessionManager {
         };
         
         session.guidance.push(guidance);
-        session.lastActivity = Date.now();
+        await this.updateSession(sessionId, session);
         
         console.log(`✨ Guidance added to session ${sessionId}: depth ${guidanceObj.contemplativeDepth}/10`);
         return true;
@@ -111,17 +119,57 @@ class SacredSessionManager {
     }
     
     /**
-     * Check if session is valid and active
+     * Store session in database with memory fallback
      */
-    isValidSession(sessionId) {
-        const session = this.sessions.get(sessionId);
+    async storeSession(sessionId, session) {
+        try {
+            // Try database first
+            const stored = await this.sacredDb.storeSession(sessionId, session);
+            if (stored) {
+                // Also keep in memory for quick access
+                this.memorySessions.set(sessionId, session);
+                return true;
+            }
+        } catch (error) {
+            console.warn('💫 Database storage failed, using memory fallback:', error.message);
+        }
+        
+        // Fallback to memory only
+        this.memorySessions.set(sessionId, session);
+        return true;
+    }
+    
+    /**
+     * Get session from database with memory fallback
+     */
+    async getSession(sessionId) {
+        try {
+            // Try database first
+            const session = await this.sacredDb.getSession(sessionId);
+            if (session && this.isSessionValid(session)) {
+                // Cache in memory for quick access
+                this.memorySessions.set(sessionId, session);
+                return session;
+            }
+        } catch (error) {
+            console.warn('💫 Database retrieval failed, using memory fallback:', error.message);
+        }
+        
+        // Fallback to memory
+        const memorySession = this.memorySessions.get(sessionId);
+        return this.isSessionValid(memorySession) ? memorySession : null;
+    }
+    
+    /**
+     * Check if session data is valid and active
+     */
+    isSessionValid(session) {
         if (!session) return false;
         
         const now = Date.now();
         const isExpired = (now - session.lastActivity) > this.sessionTimeout;
         
         if (isExpired) {
-            this.expireSession(sessionId);
             return false;
         }
         
@@ -129,11 +177,20 @@ class SacredSessionManager {
     }
     
     /**
-     * Get session data
+     * Update session in both database and memory
      */
-    getSession(sessionId) {
-        if (!this.isValidSession(sessionId)) return null;
-        return this.sessions.get(sessionId);
+    async updateSession(sessionId, session) {
+        session.lastActivity = Date.now();
+        session.duration = session.lastActivity - session.createdAt;
+        
+        try {
+            await this.sacredDb.updateSession(sessionId, session);
+        } catch (error) {
+            console.warn('💫 Database update failed, memory only:', error.message);
+        }
+        
+        this.memorySessions.set(sessionId, session);
+        return true;
     }
     
     /**

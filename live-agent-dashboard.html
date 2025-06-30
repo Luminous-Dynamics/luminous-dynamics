@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Agent Communication Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #FAFAF8 0%, #F5F3F0 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .title {
+            font-size: 2.2em;
+            color: #A8B5A6;
+            margin-bottom: 10px;
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #A8B5A6;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            color: #6B7280;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .panel {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .panel-title {
+            font-size: 1.4em;
+            color: #A8B5A6;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .agent-item {
+            background: linear-gradient(135deg, #FAFAF8, #F5F3F0);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-left: 3px solid #A8B5A6;
+        }
+
+        .agent-name {
+            font-weight: 600;
+            color: #2C2C2C;
+            margin-bottom: 5px;
+        }
+
+        .agent-status {
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 0.8em;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .status-active { background: #A6C4A6; color: white; }
+        .status-inactive { background: #E8E6E1; color: #6B7280; }
+
+        .message-item {
+            background: linear-gradient(135deg, rgba(168, 181, 166, 0.1), rgba(179, 197, 215, 0.1));
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-left: 3px solid #A8B5A6;
+        }
+
+        .message-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .message-meta {
+            font-size: 0.8em;
+            color: #6B7280;
+        }
+
+        .message-content {
+            color: #2C2C2C;
+            margin-bottom: 8px;
+        }
+
+        .empty-state {
+            text-align: center;
+            color: #6B7280;
+            font-style: italic;
+            padding: 20px;
+        }
+
+        .refresh-btn {
+            background: #A8B5A6;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Georgia', serif;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .refresh-btn:hover {
+            background: #9AA59A;
+        }
+
+        .status-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .status-loading {
+            background: #D4A574;
+            color: white;
+        }
+
+        .status-connected {
+            background: #A6C4A6;
+            color: white;
+        }
+
+        .status-error {
+            background: #C4A5A0;
+            color: white;
+        }
+
+        .last-update {
+            text-align: center;
+            font-size: 0.8em;
+            color: #6B7280;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">🔴 Live Agent Communication Hub</h1>
+            <p style="color: #6B7280; font-size: 1.1em;">Real-Time Claude Code Agent Coordination</p>
+            
+            <div class="stats-bar">
+                <div class="stat">
+                    <div class="stat-value" id="activeAgents">-</div>
+                    <div class="stat-label">Active Agents</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="recentActivity">-</div>
+                    <div class="stat-label">Recent Messages</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="pendingHandoffs">-</div>
+                    <div class="stat-label">Pending Handoffs</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="activeWork">-</div>
+                    <div class="stat-label">Active Work</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-grid">
+            <div class="panel">
+                <h2 class="panel-title">🤖 Active Agents</h2>
+                <div id="agentsList">
+                    <div class="empty-state">Loading agents...</div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h2 class="panel-title">💬 Recent Messages</h2>
+                <div id="messagesList">
+                    <div class="empty-state">Loading messages...</div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h2 class="panel-title">🔄 Pending Handoffs</h2>
+                <div id="handoffsList">
+                    <div class="empty-state">Loading handoffs...</div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h2 class="panel-title">📊 Work Progress</h2>
+                <div id="progressList">
+                    <div class="empty-state">Loading progress...</div>
+                </div>
+            </div>
+        </div>
+
+        <button class="refresh-btn" onclick="fetchData()">🔄 Refresh Data</button>
+        
+        <div class="last-update" id="lastUpdate">
+            Last updated: Never
+        </div>
+    </div>
+
+    <div class="status-indicator status-loading" id="statusIndicator">
+        🔄 Connecting...
+    </div>
+
+    <script>
+        let lastFetchTime = null;
+
+        async function fetchData() {
+            const indicator = document.getElementById('statusIndicator');
+            indicator.className = 'status-indicator status-loading';
+            indicator.textContent = '🔄 Fetching...';
+
+            try {
+                const response = await fetch('http://localhost:3001/api/status');
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+                
+                const data = await response.json();
+                updateDashboard(data);
+                
+                indicator.className = 'status-indicator status-connected';
+                indicator.textContent = '🟢 Live';
+                
+                lastFetchTime = new Date();
+                document.getElementById('lastUpdate').textContent = 
+                    `Last updated: ${lastFetchTime.toLocaleTimeString()}`;
+                    
+            } catch (error) {
+                console.error('Failed to fetch data:', error);
+                indicator.className = 'status-indicator status-error';
+                indicator.textContent = '🔴 Error';
+                
+                // Show error state
+                showErrorState(error.message);
+            }
+        }
+
+        function updateDashboard(data) {
+            // Update stats
+            document.getElementById('activeAgents').textContent = data.activeAgents || 0;
+            document.getElementById('recentActivity').textContent = data.recentActivity || 0;
+            document.getElementById('pendingHandoffs').textContent = data.pendingHandoffs || 0;
+            document.getElementById('activeWork').textContent = data.activeWork || 0;
+
+            // Update agents list
+            updateAgentsList(data.agents || {});
+            
+            // Update messages list
+            updateMessagesList(data.recentMessages || []);
+            
+            // Update handoffs list
+            updateHandoffsList(data.handoffs || []);
+            
+            // Update progress list
+            updateProgressList(data.progressItems || []);
+        }
+
+        function updateAgentsList(agents) {
+            const container = document.getElementById('agentsList');
+            
+            if (Object.keys(agents).length === 0) {
+                container.innerHTML = '<div class="empty-state">No agents registered</div>';
+                return;
+            }
+
+            container.innerHTML = Object.values(agents).map(agent => `
+                <div class="agent-item">
+                    <div class="agent-name">${agent.id}</div>
+                    <div class="agent-status status-${agent.status}">${agent.status}</div>
+                    <div style="font-size: 0.9em; color: #6B7280; margin-top: 5px;">
+                        ${agent.capabilities ? agent.capabilities.join(', ') : 'No capabilities listed'}
+                    </div>
+                    <div style="font-size: 0.8em; color: #6B7280;">
+                        Last seen: ${new Date(agent.lastSeen).toLocaleTimeString()}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateMessagesList(messages) {
+            const container = document.getElementById('messagesList');
+            
+            if (messages.length === 0) {
+                container.innerHTML = '<div class="empty-state">No recent messages</div>';
+                return;
+            }
+
+            container.innerHTML = messages.slice(-5).reverse().map(msg => `
+                <div class="message-item">
+                    <div class="message-header">
+                        <div class="message-meta">${msg.from} → ${msg.to}</div>
+                        <div class="message-meta">${new Date(msg.timestamp).toLocaleTimeString()}</div>
+                    </div>
+                    <div class="message-content">${msg.content}</div>
+                    ${msg.metadata?.type ? `
+                        <div style="font-size: 0.7em; color: #A8B5A6; margin-top: 5px;">
+                            Type: ${msg.metadata.type.replace('_', ' ')}
+                        </div>
+                    ` : ''}
+                </div>
+            `).join('');
+        }
+
+        function updateHandoffsList(handoffs) {
+            const container = document.getElementById('handoffsList');
+            
+            if (handoffs.length === 0) {
+                container.innerHTML = '<div class="empty-state">No pending handoffs</div>';
+                return;
+            }
+
+            container.innerHTML = handoffs.map(handoff => `
+                <div class="message-item">
+                    <div style="font-weight: 600; margin-bottom: 5px;">
+                        ${handoff.workTitle || 'Untitled work'}
+                    </div>
+                    <div style="font-size: 0.9em; color: #6B7280;">
+                        ${handoff.from} → ${handoff.to}
+                    </div>
+                    <div style="font-size: 0.8em; color: #6B7280; margin-top: 5px;">
+                        Created: ${new Date(handoff.createdAt).toLocaleString()}
+                    </div>
+                    ${handoff.context ? `
+                        <div style="font-size: 0.8em; color: #A8B5A6; margin-top: 5px;">
+                            ${handoff.context}
+                        </div>
+                    ` : ''}
+                </div>
+            `).join('');
+        }
+
+        function updateProgressList(progressItems) {
+            const container = document.getElementById('progressList');
+            
+            if (progressItems.length === 0) {
+                container.innerHTML = '<div class="empty-state">No active work tracked</div>';
+                return;
+            }
+
+            container.innerHTML = progressItems.map(item => `
+                <div class="message-item">
+                    <div style="font-weight: 600; margin-bottom: 8px;">${item.workId}</div>
+                    <div style="font-size: 0.9em; color: #6B7280; margin-bottom: 8px;">
+                        ${item.percentage || item.value || 0}% complete
+                    </div>
+                    <div style="width: 100%; height: 8px; background: #E8E6E1; border-radius: 4px; overflow: hidden;">
+                        <div style="height: 100%; background: linear-gradient(90deg, #A8B5A6, #B3C5D7); width: ${item.percentage || item.value || 0}%; transition: width 0.3s ease;"></div>
+                    </div>
+                    ${item.notes ? `
+                        <div style="font-size: 0.8em; color: #6B7280; margin-top: 8px;">
+                            ${item.notes}
+                        </div>
+                    ` : ''}
+                </div>
+            `).join('');
+        }
+
+        function showErrorState(error) {
+            const message = `
+                <div style="text-align: center; padding: 40px; color: #C4A5A0;">
+                    <h3>Connection Error</h3>
+                    <p style="margin: 10px 0;">${error}</p>
+                    <p style="font-size: 0.9em;">Make sure the API server is running:</p>
+                    <code style="background: #F5F3F0; padding: 5px; border-radius: 4px;">node api-agent-data.cjs</code>
+                </div>
+            `;
+            
+            document.getElementById('agentsList').innerHTML = message;
+            document.getElementById('messagesList').innerHTML = '<div class="empty-state">Error loading data</div>';
+            document.getElementById('handoffsList').innerHTML = '<div class="empty-state">Error loading data</div>';
+            document.getElementById('progressList').innerHTML = '<div class="empty-state">Error loading data</div>';
+        }
+
+        // Initial fetch
+        fetchData();
+        
+        // Auto-refresh every 10 seconds
+        setInterval(fetchData, 10000);
+        
+        console.log('🔴 Live Agent Communication Hub initialized');
+        console.log('📡 Fetching data from API server...');
+    </script>
+</body>
+</html>
