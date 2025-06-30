@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacred Field Message Receiver</title>
+</head>
+<body>
+    <script>
+        /**
+         * Sacred Field Cross-Domain Message Receiver
+         * 
+         * This hidden iframe receives and processes secure messages
+         * between the three Sacred Field domains for unified state management.
+         */
+        
+        // Listen for messages from Sacred Passport system
+        window.addEventListener('message', (event) => {
+            // Verify message is from trusted Sacred Field domain
+            const trustedDomains = [
+                'https://evolvingresonantcocreationism.com',
+                'https://luminousdynamics.org',
+                'https://relationalharmonics.org',
+                'http://localhost:8000' // For development
+            ];
+            
+            if (!trustedDomains.some(domain => event.origin.startsWith(domain))) {
+                return;
+            }
+            
+            if (event.data.type === 'sacred_message') {
+                handleSacredMessage(event.data);
+            }
+        });
+        
+        function handleSacredMessage(message) {
+            switch (message.messageType) {
+                case 'passport_sync':
+                    handlePassportSync(message.data);
+                    break;
+                case 'data_purge_request':
+                    handleDataPurge(message.data);
+                    break;
+                case 'field_coherence_sync':
+                    handleCoherenceSync(message.data);
+                    break;
+            }
+        }
+        
+        function handlePassportSync(data) {
+            // Update local field state with cross-domain data
+            if (window.parent.SacredField && data.passportId) {
+                const currentState = window.parent.SacredField.getState();
+                
+                // Only sync if we recognize this passport
+                const passport = window.parent.SacredPassport?.getPassport();
+                if (passport?.id === data.passportId) {
+                    window.parent.SacredField.updateState({
+                        crossDomainSync: data,
+                        lastSync: Date.now()
+                    });
+                    
+                    // Update Resonance Bar if present
+                    if (window.parent.SacredResonanceBar) {
+                        window.parent.SacredResonanceBar.updateFieldCoherence(data.fieldCoherence);
+                    }
+                }
+            }
+        }
+        
+        function handleDataPurge(data) {
+            // Remove all data for the specified passport ID
+            const passport = window.parent.SacredPassport?.getPassport();
+            if (passport?.id === data.passportId) {
+                window.parent.SacredPassport?.deletePassport();
+            }
+        }
+        
+        function handleCoherenceSync(data) {
+            // Sync field coherence across domains
+            if (window.parent.SacredField) {
+                window.parent.SacredField.updateFieldCoherence(
+                    data.coherenceDelta, 
+                    `Cross-domain sync from ${data.sourceDomain}`
+                );
+            }
+        }
+    </script>
+</body>
+</html>

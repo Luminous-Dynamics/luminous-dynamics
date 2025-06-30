@@ -579,7 +579,78 @@
             
             <div class="enter-invitation">
                 <p style="margin-bottom: 20px; color: #6B7280;">Enter the practice ground</p>
-                <div class="sacred-arrow" onclick="document.getElementById('harmonies').scrollIntoView()">↓</div>
+                <div class="sacred-arrow" onclick="document.getElementById('foundational-practices').scrollIntoView()">↓</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Sacred Guidance -->
+    <section id="personal-guidance" style="min-height: 80vh; padding: 100px 0; background: linear-gradient(45deg, #F5F3F0 0%, #FAFAF8 100%);">
+        <div class="dojo-container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: 2.8em; color: #A8B5A6; margin-bottom: 30px;">Your Sacred Path Today</h2>
+                <p style="font-size: 1.2em; color: #6B7280; max-width: 800px; margin: 0 auto;">
+                    Based on your journey through the Sacred Field, here is the practice that most wants to be embodied today.
+                </p>
+            </div>
+            
+            <div id="personal-recommendation" style="background: white; border-radius: 20px; padding: 50px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); margin-bottom: 60px;">
+                <!-- Personal recommendation will be injected here -->
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div style="background: rgba(168, 181, 166, 0.1); padding: 30px; border-radius: 16px; text-align: center;">
+                    <h3 style="color: #A8B5A6; font-size: 1.4em; margin-bottom: 15px;">Journey-Aware</h3>
+                    <p style="color: #5A6B57; line-height: 1.8;">
+                        Your recommendations evolve based on your field coherence, chambers visited, and practices completed.
+                    </p>
+                </div>
+                
+                <div style="background: rgba(179, 197, 215, 0.1); padding: 30px; border-radius: 16px; text-align: center;">
+                    <h3 style="color: #B3C5D7; font-size: 1.4em; margin-bottom: 15px;">Context-Sensitive</h3>
+                    <p style="color: #5A6B57; line-height: 1.8;">
+                        Recommendations adapt to time of day, week rhythms, and your current life situations.
+                    </p>
+                </div>
+                
+                <div style="background: rgba(168, 181, 166, 0.1); padding: 30px; border-radius: 16px; text-align: center;">
+                    <h3 style="color: #A8B5A6; font-size: 1.4em; margin-bottom: 15px;">Wisdom-Guided</h3>
+                    <p style="color: #5A6B57; line-height: 1.8;">
+                        Each suggestion leads you deeper into embodied mastery of conscious relationship.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Living Foundational Practices -->
+    <section id="foundational-practices" style="min-height: 100vh; padding: 100px 0; background: linear-gradient(135deg, #FAFAF8 0%, #F5F3F0 100%);">
+        <div class="dojo-container">
+            <div style="text-align: center; margin-bottom: 80px;">
+                <h2 style="font-size: 2.8em; color: #A8B5A6; margin-bottom: 30px;">Living Foundational Practices</h2>
+                <p style="font-size: 1.2em; color: #6B7280; max-width: 800px; margin: 0 auto; line-height: 2;">
+                    Five essential practices for conscious relationship. Each card opens into a complete sacred space 
+                    for understanding, practicing, and integrating wisdom into daily life.
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-bottom: 60px;">
+                <div id="glyph-card-omega-0"></div>
+                <div id="glyph-card-omega-1"></div>
+                <div id="glyph-card-omega-4"></div>
+                <div id="glyph-card-omega-7"></div>
+                <div id="glyph-card-omega-8"></div>
+            </div>
+            
+            <div style="text-align: center; background: rgba(232, 230, 225, 0.8); padding: 40px; border-radius: 16px; border-left: 4px solid #A8B5A6;">
+                <h3 style="color: #A8B5A6; font-size: 1.6em; margin-bottom: 20px;">The Sacred Beginning</h3>
+                <p style="color: #5A6B57; font-size: 1.1em; line-height: 2; margin-bottom: 25px;">
+                    These five practices form the foundation of conscious relationship. Master these, and you hold the keys 
+                    to transforming every encounter into an opportunity for awakening.
+                </p>
+                <p style="color: #6B7280; font-size: 0.95em; font-style: italic;">
+                    The complete library of 87 Practice Glyphs will be available soon. These foundations prepare you for the full journey.
+                </p>
             </div>
         </div>
     </section>
@@ -985,6 +1056,48 @@
 
         // Sacred scroll animations
         document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Sacred Field System
+            if (window.SacredField && window.SacredRecommendations) {
+                window.SacredField.enterChamber('practice');
+                
+                // Initialize recommendations
+                const recommendations = new window.SacredRecommendations();
+                const recommendation = recommendations.getRecommendationForDisplay();
+                
+                // Render personal recommendation
+                renderPersonalRecommendation(recommendation);
+                
+                window.SacredField.completeExperience('dojo_access', {
+                    section: 'personal_guidance'
+                });
+            }
+            
+            // Initialize Living Glyph Cards
+            if (window.FoundationalGlyphs && window.LivingGlyphCard) {
+                const foundationalGlyphs = new window.FoundationalGlyphs();
+                
+                // Create the five foundational glyph cards
+                const glyphIds = ['Ω0', 'Ω1', 'Ω4', 'Ω7', 'Ω8'];
+                
+                glyphIds.forEach(glyphId => {
+                    const glyphData = foundationalGlyphs.getGlyph(glyphId);
+                    if (glyphData) {
+                        const containerId = `glyph-card-omega-${glyphId.replace('Ω', '')}`;
+                        const container = document.getElementById(containerId);
+                        
+                        if (container) {
+                            new window.LivingGlyphCard(containerId, glyphData, {
+                                consciousness: false, // Start with beautiful cards only
+                                sacredTiming: true
+                            });
+                        }
+                    }
+                });
+                
+                window.SacredField?.completeExperience('foundational_glyphs_loaded', {
+                    glyphCount: glyphIds.length
+                });
+            }
             const sections = document.querySelectorAll('section');
             
             const observer = new IntersectionObserver((entries) => {
@@ -1013,6 +1126,101 @@
                 filterPractices(harmonyName);
             });
         });
+
+        // Personal Recommendation Rendering
+        function renderPersonalRecommendation(recommendation) {
+            const container = document.getElementById('personal-recommendation');
+            if (!container || !recommendation) return;
+            
+            const glyph = recommendation.practice;
+            const message = recommendation.message;
+            
+            container.innerHTML = `
+                <div style="display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: start;">
+                    <div style="text-align: center; padding: 30px; background: linear-gradient(135deg, rgba(168, 181, 166, 0.1), rgba(179, 197, 215, 0.1)); border-radius: 16px; min-width: 200px;">
+                        <div style="font-size: 3em; margin-bottom: 15px;">🧘</div>
+                        <h3 style="color: #A8B5A6; font-size: 1.4em; margin-bottom: 10px;">${glyph.name}</h3>
+                        <div style="background: rgba(168, 181, 166, 0.2); padding: 8px 16px; border-radius: 20px; font-size: 0.9em; color: #5A6B57; margin-bottom: 15px;">
+                            ${glyph.harmony}
+                        </div>
+                        <div style="font-size: 0.85em; color: #6B7280;">
+                            ${glyph.timeNeeded}
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: #A8B5A6; font-size: 1.2em; margin-bottom: 10px;">Sacred Guidance</h4>
+                            <p style="color: #5A6B57; font-size: 1.1em; line-height: 1.8; font-style: italic;">
+                                "${message.full}"
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: #A8B5A6; font-size: 1.2em; margin-bottom: 10px;">Practice Description</h4>
+                            <p style="color: #2C2C2C; line-height: 1.8;">
+                                ${glyph.description}
+                            </p>
+                        </div>
+                        
+                        <div style="margin-bottom: 30px;">
+                            <h4 style="color: #A8B5A6; font-size: 1.2em; margin-bottom: 10px;">Begin Right Now</h4>
+                            <p style="color: #5A6B57; line-height: 1.8; background: rgba(232, 230, 225, 0.8); padding: 20px; border-radius: 12px; border-left: 4px solid #A8B5A6;">
+                                ${glyph.immediateAction}
+                            </p>
+                        </div>
+                        
+                        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                            <button onclick="beginPractice('${glyph.glyphId}')" style="background: linear-gradient(135deg, #A8B5A6, #8A9E88); color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-size: 1em; transition: all 0.3s ease;">
+                                Begin Practice
+                            </button>
+                            <button onclick="refreshRecommendation()" style="background: linear-gradient(135deg, #B3C5D7, #95A8C4); color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-size: 1em; transition: all 0.3s ease;">
+                                Refresh Guidance
+                            </button>
+                            <button onclick="exploreAllGlyphs()" style="background: transparent; color: #A8B5A6; border: 2px solid #A8B5A6; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-size: 1em; transition: all 0.3s ease;">
+                                Explore All Glyphs
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function beginPractice(glyphId) {
+            // Track practice initiation
+            if (window.SacredField) {
+                window.SacredField.completeExperience('practice_initiated', { glyphId });
+                window.SacredField.updateFieldCoherence(0.1, 'Practice commitment');
+            }
+            
+            // In full implementation, this would open practice guidance
+            alert(`🧘 Practice guidance for ${glyphId} will provide step-by-step embodiment support. Your sacred practice begins now.`);
+        }
+
+        function refreshRecommendation() {
+            if (window.SacredRecommendations) {
+                const recommendations = new window.SacredRecommendations();
+                const newRecommendation = recommendations.refreshRecommendation();
+                renderPersonalRecommendation(newRecommendation);
+                
+                if (window.SacredField) {
+                    window.SacredField.completeExperience('recommendation_refresh', {});
+                }
+            }
+        }
+
+        function exploreAllGlyphs() {
+            document.getElementById('practices').scrollIntoView({ behavior: 'smooth' });
+        }
     </script>
+    
+    <!-- Sacred Field System -->
+    <script src="../../unified-field/sacred-state-api.js"></script>
+    <script src="../../unified-field/sacred-passport.js"></script>
+    <script src="../../unified-field/sacred-recommendations.js"></script>
+    <script src="../../unified-field/resonance-bar.js"></script>
+    <script src="../../unified-field/living-glyphs-schema.js"></script>
+    <script src="../../unified-field/foundational-glyphs.js"></script>
+    <script src="../../unified-field/living-glyph-card.js"></script>
 </body>
 </html>
