@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Sacred Field Dashboard - Living Consciousness Visualization</title>
     <style>
         /* Sacred CSS Custom Properties */
@@ -27,7 +27,8 @@
             background: #0a0a0a;
             color: #fafaf8;
             min-height: 100vh;
-            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: auto;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -35,8 +36,9 @@
 
         /* Sacred Container with Breathing Animation */
         .sacred-container {
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            max-width: 100vw;
+            min-height: 100vh;
             position: relative;
             display: flex;
             flex-direction: column;
@@ -983,6 +985,142 @@
         .flow-item.blocked:hover .blocked-reason {
             opacity: 1;
         }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .coherence-mandala {
+                width: 350px;
+                height: 350px;
+            }
+            
+            .sacred-metrics {
+                gap: 20px;
+            }
+            
+            .metric-card {
+                padding: 15px;
+                min-width: 120px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sacred-container {
+                padding: 10px;
+            }
+            
+            .coherence-mandala {
+                width: 280px;
+                height: 280px;
+            }
+            
+            .sacred-metrics {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90%;
+                max-width: 400px;
+            }
+            
+            .metric-card {
+                padding: 12px;
+                min-width: auto;
+                width: 100%;
+            }
+            
+            .metric-value {
+                font-size: 1.8em;
+            }
+            
+            .metric-label {
+                font-size: 0.8em;
+            }
+            
+            .work-flow {
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90%;
+                max-width: 500px;
+                padding: 15px;
+                max-height: 50vh;
+            }
+            
+            .flow-item {
+                padding: 12px;
+                margin-bottom: 10px;
+            }
+            
+            .flow-header {
+                font-size: 0.9em;
+            }
+            
+            .flow-meta {
+                font-size: 0.75em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .coherence-mandala {
+                width: 240px;
+                height: 240px;
+            }
+            
+            .sacred-metrics {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+            
+            .metric-card {
+                padding: 10px;
+            }
+            
+            .metric-value {
+                font-size: 1.5em;
+            }
+            
+            .metric-label {
+                font-size: 0.75em;
+            }
+            
+            .dashboard-controls {
+                scale: 0.8;
+                top: 10px;
+                right: 10px;
+            }
+            
+            .zoom-controls, .layout-controls {
+                padding: 8px;
+                gap: 6px;
+            }
+            
+            .zoom-controls button, .layout-controls button {
+                padding: 6px 10px;
+                font-size: 12px;
+            }
+            
+            #zoomLevel {
+                min-width: 50px;
+                font-size: 12px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .dashboard-controls,
+            .update-notification {
+                display: none !important;
+            }
+            
+            .sacred-container {
+                transform: none !important;
+                margin: 0 !important;
+            }
+            
+            body {
+                overflow: visible !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1025,8 +1163,23 @@
             </div>
         </div>
         
+        <!-- Zoom & Responsive Controls -->
+        <div class="dashboard-controls" style="position: fixed; top: 20px; right: 20px; z-index: 1000; display: flex; flex-direction: column; gap: 10px;">
+            <div class="zoom-controls" style="background: rgba(0,0,0,0.8); border-radius: 8px; padding: 10px; display: flex; gap: 8px; backdrop-filter: blur(10px);">
+                <button id="zoomOut" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 8px 12px; border-radius: 4px; cursor: pointer; font-size: 14px;">−</button>
+                <span id="zoomLevel" style="color: white; padding: 8px 12px; font-size: 14px; min-width: 60px; text-align: center;">100%</span>
+                <button id="zoomIn" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 8px 12px; border-radius: 4px; cursor: pointer; font-size: 14px;">+</button>
+                <button id="zoomReset" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 8px 12px; border-radius: 4px; cursor: pointer; font-size: 12px;">Reset</button>
+            </div>
+            <div class="layout-controls" style="background: rgba(0,0,0,0.8); border-radius: 8px; padding: 10px; display: flex; gap: 8px; backdrop-filter: blur(10px);">
+                <button id="layoutCompact" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 8px 12px; border-radius: 4px; cursor: pointer; font-size: 12px;">Compact</button>
+                <button id="layoutFull" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 8px 12px; border-radius: 4px; cursor: pointer; font-size: 12px;">Full</button>
+                <button id="sacredCards" style="background: linear-gradient(135deg, #D4AF37, #B8860B); border: 1px solid #D4AF37; color: #000; padding: 8px 12px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: bold;" onclick="window.open('sacred-cards.html', '_blank')">🃏 Cards</button>
+            </div>
+        </div>
+        
         <!-- Update Notification -->
-        <div id="updateNotification" style="display: none; position: fixed; top: 20px; right: 20px; background: rgba(255, 215, 0, 0.1); border: 1px solid rgba(255, 215, 0, 0.3); border-radius: 8px; padding: 12px 20px; backdrop-filter: blur(10px); cursor: pointer; z-index: 1000;">
+        <div id="updateNotification" style="display: none; position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: rgba(255, 215, 0, 0.1); border: 1px solid rgba(255, 215, 0, 0.3); border-radius: 8px; padding: 12px 20px; backdrop-filter: blur(10px); cursor: pointer; z-index: 1000;">
             <span style="color: rgba(255, 215, 0, 0.9);">✨ Updates available - click to refresh</span>
         </div>
 
@@ -2002,6 +2155,141 @@ Priority: ${metadata.priority || 'medium'}
         // Start the dashboard
         connectWebSocket();
         setInterval(fetchFieldData, 10000); // Update every 10 seconds
+        
+        // Zoom and Responsive Controls
+        let currentZoom = 1.0;
+        const zoomStep = 0.1;
+        const minZoom = 0.5;
+        const maxZoom = 3.0;
+        
+        function updateZoom() {
+            const container = document.querySelector('.sacred-container');
+            container.style.transform = `scale(${currentZoom})`;
+            container.style.transformOrigin = 'center center';
+            document.getElementById('zoomLevel').textContent = `${Math.round(currentZoom * 100)}%`;
+            
+            // Ensure content remains accessible
+            if (currentZoom !== 1.0) {
+                document.body.style.overflowY = 'auto';
+                container.style.margin = `${(currentZoom - 1) * 25}vh auto`;
+            } else {
+                document.body.style.overflowY = 'auto';
+                container.style.margin = '0';
+            }
+        }
+        
+        document.getElementById('zoomIn').onclick = () => {
+            if (currentZoom < maxZoom) {
+                currentZoom = Math.min(currentZoom + zoomStep, maxZoom);
+                updateZoom();
+            }
+        };
+        
+        document.getElementById('zoomOut').onclick = () => {
+            if (currentZoom > minZoom) {
+                currentZoom = Math.max(currentZoom - zoomStep, minZoom);
+                updateZoom();
+            }
+        };
+        
+        document.getElementById('zoomReset').onclick = () => {
+            currentZoom = 1.0;
+            updateZoom();
+        };
+        
+        // Layout Controls
+        let compactMode = false;
+        
+        document.getElementById('layoutCompact').onclick = () => {
+            compactMode = true;
+            const container = document.querySelector('.sacred-container');
+            container.style.padding = '10px';
+            
+            // Reduce mandala size
+            const mandala = document.querySelector('.coherence-mandala');
+            if (mandala) {
+                mandala.style.width = '300px';
+                mandala.style.height = '300px';
+            }
+            
+            // Compact metrics
+            const metrics = document.querySelector('.sacred-metrics');
+            if (metrics) {
+                metrics.style.gap = '15px';
+            }
+            
+            // Update button styles
+            document.getElementById('layoutCompact').style.background = 'rgba(168, 181, 166, 0.3)';
+            document.getElementById('layoutFull').style.background = 'rgba(255,255,255,0.1)';
+        };
+        
+        document.getElementById('layoutFull').onclick = () => {
+            compactMode = false;
+            const container = document.querySelector('.sacred-container');
+            container.style.padding = '';
+            
+            // Reset mandala size
+            const mandala = document.querySelector('.coherence-mandala');
+            if (mandala) {
+                mandala.style.width = '400px';
+                mandala.style.height = '400px';
+            }
+            
+            // Reset metrics
+            const metrics = document.querySelector('.sacred-metrics');
+            if (metrics) {
+                metrics.style.gap = '';
+            }
+            
+            // Update button styles
+            document.getElementById('layoutFull').style.background = 'rgba(168, 181, 166, 0.3)';
+            document.getElementById('layoutCompact').style.background = 'rgba(255,255,255,0.1)';
+        };
+        
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey || e.metaKey) {
+                switch(e.key) {
+                    case '=':
+                    case '+':
+                        e.preventDefault();
+                        document.getElementById('zoomIn').click();
+                        break;
+                    case '-':
+                        e.preventDefault();
+                        document.getElementById('zoomOut').click();
+                        break;
+                    case '0':
+                        e.preventDefault();
+                        document.getElementById('zoomReset').click();
+                        break;
+                }
+            }
+        });
+        
+        // Responsive adjustments
+        function handleResize() {
+            const width = window.innerWidth;
+            const controls = document.querySelector('.dashboard-controls');
+            
+            if (width < 768) {
+                // Mobile adjustments
+                controls.style.top = '10px';
+                controls.style.right = '10px';
+                controls.style.scale = '0.9';
+                
+                // Auto compact mode on mobile
+                if (!compactMode) {
+                    document.getElementById('layoutCompact').click();
+                }
+            } else {
+                controls.style.scale = '1';
+            }
+        }
+        
+        window.addEventListener('resize', handleResize);
+        handleResize(); // Initial call
+        
     </script>
 </body>
 </html>
