@@ -39,6 +39,9 @@ class WisdomCompanionAI {
         
         // Sacred response templates for offline/fallback mode
         this.sacredResponses = this.initializeSacredResponses();
+        
+        // Initialize True Integration Glyph System
+        this.glyphSystem = this.initializeGlyphSystem();
     }
     
     /**
@@ -75,12 +78,23 @@ class WisdomCompanionAI {
      */
     async generateGuidance({ message, persona, sessionContext, conversationCount }) {
         try {
+            // Analyze message for glyph recommendation
+            const glyphRecommendation = this.recommendGlyph(message);
+            
             // If Claude API is available, use it with RIP prompting
             if (this.apiKey) {
-                return await this.generateClaudeGuidance(message, persona, sessionContext);
+                const guidance = await this.generateClaudeGuidance(message, persona, sessionContext);
+                return {
+                    ...guidance,
+                    glyphRecommendation
+                };
             } else {
-                // Fallback to sophisticated pattern matching
-                return this.generateSacredResponse(message, persona, conversationCount);
+                // Fallback to sophisticated pattern matching with glyph integration
+                const response = this.generateSacredResponse(message, persona, conversationCount);
+                return {
+                    ...response,
+                    glyphRecommendation
+                };
             }
         } catch (error) {
             console.error('Error generating guidance:', error);
@@ -426,6 +440,216 @@ Generate a contemplative response that embodies ${personaConfig.name} wisdom:`;
         }
         
         return response;
+    }
+    
+    /**
+     * Initialize True Integration Glyph System
+     */
+    initializeGlyphSystem() {
+        return {
+            // Essential Daily Practice (5 Core Tools)
+            essentialDaily: {
+                'Ω45': {
+                    name: 'First Presence',
+                    description: 'The foundation of all conscious relationship is arriving fully present before engaging',
+                    purpose: 'Arriving fully present before engaging',
+                    triggers: ['scattered', 'reactive', 'overwhelmed', 'rushing', 'anxious', 'distracted'],
+                    harmony: 'transparency',
+                    timeNeeded: '30 seconds to 2 minutes',
+                    immediateAction: 'Take three conscious breaths, feeling your feet on the ground'
+                },
+                'Ω52': {
+                    name: 'Pause Practice',
+                    description: 'In the space between stimulus and response lies our freedom',
+                    purpose: 'Creating space between stimulus and response',
+                    triggers: ['triggered', 'angry', 'reactive', 'conflict', 'upset', 'frustrated', 'impulsive'],
+                    harmony: 'coherence',
+                    timeNeeded: '3 seconds to 5 minutes',
+                    immediateAction: 'Pause before speaking and take one conscious breath'
+                },
+                'Ω49': {
+                    name: 'Gentle Opening',
+                    description: 'True invitation creates safety without coercion',
+                    purpose: 'Creating safety for connection without forcing it',
+                    triggers: ['distance', 'disconnection', 'invitation', 'new relationship', 'shy', 'closed off'],
+                    harmony: 'resonance',
+                    timeNeeded: '1-3 minutes',
+                    immediateAction: 'Soften your posture and offer genuine availability without agenda'
+                },
+                'Ω50': {
+                    name: 'Building Trust',
+                    description: 'Trust emerges through consistent, patient presence over time',
+                    purpose: 'Becoming a safe place for others vulnerability',
+                    triggers: ['trust', 'reliability', 'safety', 'consistency', 'broken promise', 'doubt'],
+                    harmony: 'coherence',
+                    timeNeeded: 'Daily practice through small actions',
+                    immediateAction: 'Make one small promise and keep it completely'
+                },
+                'Ω51': {
+                    name: 'Loving No',
+                    description: 'Sacred boundaries strengthen rather than harm connection',
+                    purpose: 'Setting boundaries that strengthen rather than harm connection',
+                    triggers: ['boundary', 'overwhelm', 'pressure', 'guilt', 'unable', 'overcommitted', 'saying no'],
+                    harmony: 'agency',
+                    timeNeeded: 'As needed in real-time',
+                    immediateAction: 'Check your body for your true yes/no before responding'
+                }
+            },
+            
+            // Advanced Applied Harmonies
+            advanced: {
+                'Ω46': {
+                    name: 'Conscious Arrival',
+                    description: 'Every interaction is an opportunity to demonstrate consciousness',
+                    purpose: 'Entering spaces with clear intention',
+                    triggers: ['transition', 'meeting', 'threshold', 'entering', 'beginning'],
+                    harmony: 'transparency',
+                    timeNeeded: '1-2 minutes',
+                    immediateAction: 'Pause at the threshold and set a clear intention for your participation'
+                },
+                'Ω47': {
+                    name: 'Sacred Listening',
+                    description: 'True listening creates space for the speaker to discover their own truth',
+                    purpose: 'Listening to the heart beneath the words',
+                    triggers: ['listening', 'understanding', 'conflict', 'communication', 'not heard'],
+                    harmony: 'resonance',
+                    timeNeeded: 'Full presence during conversation',
+                    immediateAction: 'Listen for the feeling and need beneath their words, not just content'
+                },
+                'Ω48': {
+                    name: 'Boundary With Love',
+                    description: 'Sacred boundaries are membranes that allow love to flow while maintaining integrity',
+                    purpose: 'Sacred boundaries that allow love to flow',
+                    triggers: ['boundary', 'protection', 'self-care', 'limits', 'invasion'],
+                    harmony: 'agency',
+                    timeNeeded: 'As needed for boundary moments',
+                    immediateAction: 'Begin with empathy, state your boundary clearly and kindly'
+                }
+            }
+        };
+    }
+    
+    /**
+     * Recommend appropriate Applied Harmony based on message content
+     */
+    recommendGlyph(message) {
+        const lowerMessage = message.toLowerCase();
+        const allGlyphs = {
+            ...this.glyphSystem.essentialDaily,
+            ...this.glyphSystem.advanced
+        };
+        
+        // Score each glyph based on trigger words
+        const scores = {};
+        for (const [glyphId, glyph] of Object.entries(allGlyphs)) {
+            scores[glyphId] = 0;
+            for (const trigger of glyph.triggers) {
+                if (lowerMessage.includes(trigger)) {
+                    scores[glyphId] += 1;
+                }
+            }
+            
+            // Additional contextual scoring
+            if (glyphId === 'Ω45' && /present|here|now|moment/.test(lowerMessage)) scores[glyphId] += 2;
+            if (glyphId === 'Ω52' && /stop|pause|react|calm/.test(lowerMessage)) scores[glyphId] += 2;
+            if (glyphId === 'Ω51' && /no|boundary|limit|overwhelm/.test(lowerMessage)) scores[glyphId] += 2;
+        }
+        
+        // Find the highest scoring glyph
+        const bestMatch = Object.entries(scores).reduce((best, [glyphId, score]) => {
+            return score > best.score ? { glyphId, score } : best;
+        }, { glyphId: null, score: 0 });
+        
+        // Return recommendation if we have a good match, otherwise default to First Presence
+        const recommendedGlyphId = bestMatch.score > 0 ? bestMatch.glyphId : 'Ω45';
+        const recommendedGlyph = allGlyphs[recommendedGlyphId];
+        
+        return {
+            glyphId: recommendedGlyphId,
+            practice: recommendedGlyph,
+            confidence: bestMatch.score > 0 ? 'high' : 'default',
+            message: bestMatch.score > 0 
+                ? this.createGlyphMessage(recommendedGlyph, lowerMessage)
+                : 'Starting with presence is always wise when the path is unclear',
+            practiceSteps: this.getDetailedPracticeSteps(recommendedGlyphId)
+        };
+    }
+    
+    /**
+     * Create personalized glyph message based on user's situation
+     */
+    createGlyphMessage(glyph, userMessage) {
+        const templates = {
+            'Ω45': `I sense you might benefit from ${glyph.name} - taking a moment to arrive fully present before engaging further.`,
+            'Ω52': `This sounds like a moment for ${glyph.name} - creating space between stimulus and response to choose your response wisely.`,
+            'Ω49': `${glyph.name} might serve you here - creating a safe, welcoming field for authentic connection.`,
+            'Ω50': `Consider ${glyph.name} - small, consistent actions that create safety for vulnerability.`,
+            'Ω51': `This feels like a ${glyph.name} moment - honoring your truth while maintaining love.`,
+            'Ω46': `${glyph.name} could support you - entering this space with clear, conscious intention.`,
+            'Ω47': `This calls for ${glyph.name} - listening deeply to what wants to be truly heard.`,
+            'Ω48': `${glyph.name} might be needed - creating boundaries that protect while allowing love to flow.`
+        };
+        
+        return templates[glyph.id] || `The practice of ${glyph.name} might serve you right now.`;
+    }
+    
+    /**
+     * Get detailed practice steps for specific glyphs
+     */
+    getDetailedPracticeSteps(glyphId) {
+        const steps = {
+            'Ω45': [
+                'Pause whatever you are doing completely',
+                'Take three conscious breaths, feeling your feet on the ground',
+                'Notice what is true in your body right now without trying to change it',
+                'Set an intention to meet the next moment with presence',
+                'Proceed with this quality of mindful arrival'
+            ],
+            'Ω52': [
+                'When you feel triggered, pause before speaking or acting',
+                'Take one conscious breath and feel your feet on the ground',
+                'Ask yourself: "What response would serve the highest good here?"',
+                'Wait until you feel calm and centered before proceeding',
+                'Speak or act from conscious choice rather than automatic reaction'
+            ],
+            'Ω49': [
+                'Take a soft, complete exhale and let your body relax',
+                'Open your posture gently (uncross arms, soften shoulders)',
+                'Hold the inner thought: "You are welcome here if you choose"',
+                'Rest in calm availability without pulling or pushing',
+                'Notice any urge to convince or control, and release it'
+            ],
+            'Ω50': [
+                'Practice consistent presence over time rather than grand gestures',
+                'When someone shares vulnerability, receive it without immediately offering advice',
+                'Keep confidences completely—never share others private information',
+                'Show up reliably for small commitments to demonstrate trustworthiness',
+                'When you make mistakes, take responsibility quickly and completely'
+            ],
+            'Ω51': [
+                'Before responding, pause and check in with your body for your true yes/no',
+                'Begin with appreciation: "Thank you for thinking of me"',
+                'State your boundary clearly and kindly: "I\'m not available for that"',
+                'Offer what you ARE available for if appropriate: "What I can do is..."',
+                'Hold your boundary with calm presence, without over-explaining'
+            ]
+        };
+        
+        return steps[glyphId] || ['Begin with presence and let wisdom guide your practice'];
+    }
+    
+    /**
+     * Get integration support for daily practice
+     */
+    getIntegrationSupport(glyphId) {
+        const glyph = this.glyphSystem.essentialDaily[glyphId] || this.glyphSystem.advanced[glyphId];
+        
+        return {
+            dailyReminder: `Practice ${glyph?.name || 'this glyph'} whenever you notice its trigger patterns`,
+            weeklyReflection: 'How has this practice changed your relationships this week?',
+            communitySupport: 'Share your experience with fellow practitioners for mutual encouragement',
+            mysticalDepth: glyph ? `As you master ${glyph.name}, you may be ready to explore its mystical depths` : null
+        };
     }
 }
 

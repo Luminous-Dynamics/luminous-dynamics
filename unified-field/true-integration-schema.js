@@ -361,6 +361,251 @@ class TrueIntegrationSchema {
                     accentColor: "#F4E6E3",
                     animation: "protective_embrace"
                 }
+            },
+
+            "Ω49": {
+                id: "Ω49",
+                name: "Gentle Opening",
+                fullName: "Ω49: Gentle Opening (Applied Harmony)",
+                type: "applied_harmony",
+                
+                // Bridge to mystical root
+                mysticalRoot: "Ω2",
+                mysticalDesignation: "Breath of Invitation / The Gentle Opening",
+                
+                quadrants: {
+                    why: {
+                        accessible: {
+                            coreQuestion: "How can I create safety for connection without forcing it?",
+                            simpleContext: "True safety in relationship comes from presence without agenda. This practice creates a welcoming field that invites authentic sharing without pressure or expectation.",
+                            harmonyConnection: "Gentle Opening embodies Resonance—creating the attuned field where others can feel truly met and heard.",
+                            mysticalBridge: "This practice expresses Ω2: Breath of Invitation - the art of noetic hospitality that makes all genuine connection possible."
+                        }
+                    },
+                    
+                    how: {
+                        accessible: {
+                            basicInstructions: [
+                                "Begin with Ω45 (First Presence) to arrive in your own centeredness",
+                                "Take a complete exhale and soften your body posture (uncross arms, relax shoulders)",
+                                "Set the internal intention: 'I am available, without needing anything from you'",
+                                "Offer simple, non-pressuring language: 'I'm here if you'd like to share'",
+                                "Hold space with patient presence, allowing silence and whatever wants to emerge"
+                            ],
+                            interactiveComponent: {
+                                type: "invitation_assessment",
+                                config: {
+                                    selfReflection: [
+                                        "Rate your tendency to push for information when someone seems upset",
+                                        "Rate how often you have an agenda for how conversations should go"
+                                    ],
+                                    practicePrompts: [
+                                        "Notice where you feel tension wanting something from others",
+                                        "Practice offering presence without attachment to outcome"
+                                    ]
+                                }
+                            },
+                            timeCommitment: "1-3 minutes of conscious invitation-holding",
+                            mysticalGraduation: "As you master gentle opening, explore Ω2: Breath of Invitation - the profound art of noetic hospitality"
+                        }
+                    }
+                },
+                
+                contexts: ["parenting", "friendship", "leadership", "therapy", "conflict_resolution", "team_building"],
+                timeOfDay: ["anytime"],
+                lifePhases: ["all"],
+                emotions: ["tension", "distance", "disconnection", "fear", "hesitation"],
+                
+                visual: {
+                    sigil: "🌸",
+                    primaryColor: "#E8D5C4",
+                    accentColor: "#F9F1E9",
+                    animation: "gentle_opening"
+                }
+            },
+
+            "Ω50": {
+                id: "Ω50",
+                name: "Building Trust",
+                fullName: "Ω50: Building Trust (Applied Harmony)",
+                type: "applied_harmony",
+                
+                // Bridge to mystical root
+                mysticalRoot: "Ω3",
+                mysticalDesignation: "Kairotic Trust Wells / The Place Trust Lands",
+                
+                quadrants: {
+                    why: {
+                        accessible: {
+                            coreQuestion: "How can I become a safe place for another's vulnerability?",
+                            simpleContext: "Trust isn't something you earn through performance—it's something you become through consistent, patient presence. This practice transforms you into a reliable sanctuary where others can safely share their truth.",
+                            harmonyConnection: "Building Trust embodies Coherence—becoming integrated and reliable in a way that creates safety for others.",
+                            mysticalBridge: "This practice leads to Ω3: Kairotic Trust Wells - becoming the sacred place where trust lands in its own time."
+                        }
+                    },
+                    
+                    how: {
+                        accessible: {
+                            basicInstructions: [
+                                "Practice consistent presence over time rather than grand gestures",
+                                "When someone shares something vulnerable, receive it without immediately offering advice",
+                                "Keep confidences completely—never share others' private information",
+                                "Show up reliably for small commitments to demonstrate trustworthiness",
+                                "When you make mistakes, take responsibility quickly and completely"
+                            ],
+                            interactiveComponent: {
+                                type: "trust_reflection",
+                                config: {
+                                    selfAssessment: [
+                                        "Rate how often you keep your word on small daily commitments",
+                                        "Rate your ability to listen without giving advice",
+                                        "Rate how safe others feel sharing personal things with you"
+                                    ],
+                                    practiceCommitments: [
+                                        "Choose one small daily commitment to honor perfectly this week",
+                                        "Practice receiving one vulnerable sharing without offering solutions"
+                                    ]
+                                }
+                            },
+                            timeCommitment: "Daily practice through consistent small actions",
+                            mysticalGraduation: "As trust becomes natural, explore Ω3: Kairotic Trust Wells - the profound patience of sacred readiness"
+                        }
+                    }
+                },
+                
+                contexts: ["friendship", "parenting", "leadership", "team_building", "romantic_relationship", "therapy"],
+                timeOfDay: ["anytime"],
+                lifePhases: ["all"],
+                emotions: ["uncertainty", "fear", "distance", "skepticism", "hesitation"],
+                
+                visual: {
+                    sigil: "🎯",
+                    primaryColor: "#A8B5A6",
+                    accentColor: "#E8E6E1",
+                    animation: "well_filling"
+                }
+            },
+
+            "Ω51": {
+                id: "Ω51",
+                name: "Loving No",
+                fullName: "Ω51: Loving No (Applied Harmony)",
+                type: "applied_harmony",
+                
+                // Bridge to mystical root
+                mysticalRoot: "Ω10",
+                mysticalDesignation: "Sacred Refusal / The Honored No",
+                
+                quadrants: {
+                    why: {
+                        accessible: {
+                            coreQuestion: "How can I honor my truth without harming our connection?",
+                            simpleContext: "A clear, loving 'no' actually strengthens relationships by establishing authentic boundaries. When your 'no' is honest and kind, your 'yes' becomes trustworthy and meaningful.",
+                            harmonyConnection: "Loving No embodies Agency—the harmony of conscious choice that honors both your integrity and the relationship.",
+                            mysticalBridge: "This practice leads to Ω10: Sacred Refusal - the profound alignment with sovereign integrity that protects relational coherence."
+                        }
+                    },
+                    
+                    how: {
+                        accessible: {
+                            basicInstructions: [
+                                "Before responding, pause and check in with your body—what feels like a true yes or no?",
+                                "Begin with appreciation: 'Thank you for thinking of me' or 'I appreciate you asking'",
+                                "State your boundary clearly and kindly: 'I'm not available for that'",
+                                "Offer what you ARE available for if appropriate: 'What I can do is...'",
+                                "Hold your boundary with calm presence, without over-explaining or defending"
+                            ],
+                            interactiveComponent: {
+                                type: "boundary_scenarios",
+                                config: {
+                                    practiceScenarios: [
+                                        "A friend asks you to help them move when you're exhausted from your work week",
+                                        "Your partner wants to discuss finances when you're emotionally overwhelmed",
+                                        "A family member pressures you to attend an event that conflicts with your values"
+                                    ],
+                                    practiceFramework: "Practice crafting loving 'no' responses that honor both your needs and the relationship"
+                                }
+                            },
+                            timeCommitment: "Practice in real-time when boundary moments arise",
+                            mysticalGraduation: "As loving boundaries become natural, explore Ω10: Sacred Refusal - the embodied sovereignty that protects all beings"
+                        }
+                    }
+                },
+                
+                contexts: ["workplace", "family", "friendship", "parenting", "romantic_relationship", "community"],
+                timeOfDay: ["anytime"],
+                lifePhases: ["all"],
+                emotions: ["pressure", "overwhelm", "guilt", "resentment", "depletion"],
+                
+                visual: {
+                    sigil: "⚕️",
+                    primaryColor: "#C4A5A0",
+                    accentColor: "#F4E6E3",
+                    animation: "clear_boundary"
+                }
+            },
+
+            "Ω52": {
+                id: "Ω52",
+                name: "Pause Practice",
+                fullName: "Ω52: Pause Practice (Applied Harmony)",
+                type: "applied_harmony",
+                
+                // Bridge to mystical root
+                mysticalRoot: "Ω15",
+                mysticalDesignation: "Relational Stillness / The Sacred Pause",
+                
+                quadrants: {
+                    why: {
+                        accessible: {
+                            coreQuestion: "Can I create space before I respond?",
+                            simpleContext: "In the space between stimulus and response lies our freedom. One conscious breath transforms reactive patterns into conscious choice, creating room for wisdom to emerge.",
+                            harmonyConnection: "Pause Practice embodies Coherence—creating inner integration that allows wise responses instead of automatic reactions.",
+                            mysticalBridge: "This practice opens the door to Ω15: Sacred Pause - the profound stillness that creates space for co-regulation and deep feeling."
+                        }
+                    },
+                    
+                    how: {
+                        accessible: {
+                            basicInstructions: [
+                                "When you feel triggered or reactive, pause before speaking or acting",
+                                "Take one conscious breath and feel your feet on the ground",
+                                "Ask yourself: 'What response would serve the highest good here?'",
+                                "Wait until you feel calm and centered before proceeding",
+                                "Speak or act from this place of conscious choice rather than automatic reaction"
+                            ],
+                            interactiveComponent: {
+                                type: "pause_timer",
+                                config: {
+                                    practiceTimer: {
+                                        standardPause: "3 breaths (15 seconds)",
+                                        intentionalPause: "1 minute of conscious stillness",
+                                        healingPause: "5 minutes of shared presence"
+                                    },
+                                    triggerScenarios: [
+                                        "Someone criticizes your work in front of others",
+                                        "Your child has a meltdown in public",
+                                        "You receive an angry email from a colleague"
+                                    ]
+                                }
+                            },
+                            timeCommitment: "3 seconds to 5 minutes depending on situation intensity",
+                            mysticalGraduation: "As pausing becomes natural, explore Ω15: Sacred Pause - the relational stillness that creates space for shared healing"
+                        }
+                    }
+                },
+                
+                contexts: ["conflict", "crisis", "parenting", "workplace", "stress", "overwhelm"],
+                timeOfDay: ["anytime"],
+                lifePhases: ["all"],
+                emotions: ["anger", "anxiety", "overwhelm", "frustration", "reactivity"],
+                
+                visual: {
+                    sigil: "⏸️",
+                    primaryColor: "#B3C5D7",
+                    accentColor: "#E6F0FF",
+                    animation: "sacred_pause"
+                }
             }
         };
     }

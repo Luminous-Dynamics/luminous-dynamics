@@ -17,8 +17,13 @@
     "generate-glyph-cards": "node tools/sacred-image-generator.cjs glyph-cards",
     "generate-badges": "node tools/sacred-image-generator.cjs badges",
     "verify-images": "node tools/sacred-image-generator.cjs verify",
-    "sacred-validate": "npm run validate-content && npm run verify-images",
-    "sacred-build": "npm run fix-content && npm run generate-images",
+    "generate-sigils": "node tools/sacred-sigil-generator.cjs all",
+    "generate-applied-sigils": "node tools/sacred-sigil-generator.cjs applied-harmonies",
+    "generate-harmony-sigils": "node tools/sacred-sigil-generator.cjs pure-harmonies",
+    "verify-sigils": "node tools/sacred-sigil-generator.cjs verify",
+    "sigil-meanings": "node tools/sacred-sigil-generator.cjs meanings",
+    "sacred-validate": "npm run validate-content && npm run verify-images && npm run verify-sigils",
+    "sacred-build": "npm run fix-content && npm run generate-images && npm run generate-sigils",
     "start": "python -m http.server 8000"
   },
   "keywords": [
