@@ -8,7 +8,18 @@
 
 const fs = require('fs').promises;
 const path = require('path');
-const { createCanvas, loadImage } = require('canvas');
+
+// Graceful canvas loading - will be undefined if not available
+let createCanvas, loadImage;
+try {
+    const canvas = require('canvas');
+    createCanvas = canvas.createCanvas;
+    loadImage = canvas.loadImage;
+} catch (error) {
+    console.warn('⚠️  Canvas module not available - image generation will create mock files');
+    createCanvas = null;
+    loadImage = null;
+}
 
 class SacredImageGenerator {
     constructor() {
@@ -89,6 +100,10 @@ class SacredImageGenerator {
     // === GLYPH CARD GENERATION ===
     
     async generateGlyphCard(glyphData) {
+        if (!createCanvas) {
+            return this.createMockCanvas(glyphData.id, 'glyph-card');
+        }
+        
         const { width, height } = this.imageConfig.sizes.glyphCard;
         const canvas = createCanvas(width, height);
         const ctx = canvas.getContext('2d');
@@ -162,6 +177,10 @@ class SacredImageGenerator {
     // === HARMONY BADGES ===
     
     async generateHarmonyBadge(harmony) {
+        if (!createCanvas) {
+            return this.createMockCanvas(harmony, 'harmony-badge');
+        }
+        
         const { width, height } = this.imageConfig.sizes.harmonyBadge;
         const canvas = createCanvas(width, height);
         const ctx = canvas.getContext('2d');
@@ -207,6 +226,10 @@ class SacredImageGenerator {
     // === PRACTICE ICONS ===
     
     async generatePracticeIcon(practiceType, harmony = 'sacred') {
+        if (!createCanvas) {
+            return this.createMockCanvas(practiceType, 'practice-icon');
+        }
+        
         const { width, height } = this.imageConfig.sizes.practiceIcon;
         const canvas = createCanvas(width, height);
         const ctx = canvas.getContext('2d');
@@ -246,6 +269,10 @@ class SacredImageGenerator {
     // === SOCIAL SHARE IMAGES ===
     
     async generateSocialShareImage(title, subtitle = '', harmony = 'sacred') {
+        if (!createCanvas) {
+            return this.createMockCanvas('social-share', 'social-share');
+        }
+        
         const { width, height } = this.imageConfig.sizes.socialShare;
         const canvas = createCanvas(width, height);
         const ctx = canvas.getContext('2d');
@@ -516,6 +543,15 @@ class SacredImageGenerator {
             console.error('Error loading glyph data:', error);
             return this.getMockGlyphData();
         }
+    }
+
+    createMockCanvas(id, type) {
+        // Return a mock canvas object for when canvas module isn't available
+        return {
+            toBuffer: () => Buffer.from(`Mock ${type} image for ${id}`, 'utf8'),
+            width: this.imageConfig.sizes[type === 'glyph-card' ? 'glyphCard' : 'harmonyBadge'].width,
+            height: this.imageConfig.sizes[type === 'glyph-card' ? 'glyphCard' : 'harmonyBadge'].height
+        };
     }
 
     getMockGlyphData() {

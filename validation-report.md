@@ -1,16 +1,16 @@
 # Sacred Content Validation Report
-Generated: 2025-06-30T04:27:26.601Z
+Generated: 2025-06-30T04:32:42.926Z
 
 ## Summary
 - **Total Files Validated**: 15
-- **Total Issues Found**: 176
+- **Total Issues Found**: 159
 - **Files with Issues**: 15
 
 ## Issue Breakdown
-- **Spelling/Terminology**: 14
+- **Spelling/Terminology**: 0
 - **Grammar**: 22
-- **Consistency**: 2
-- **Formatting**: 137
+- **Consistency**: 0
+- **Formatting**: 136
 - **Accessibility**: 1
 
 
@@ -19,13 +19,9 @@ Generated: 2025-06-30T04:27:26.601Z
 
 ### docs/guides/FACILITATOR_GUIDE.md
 
-- **Line 6** (spelling): Sacred terminology: "collective wisdom" should be "Collective Wisdom"
-    - *Suggestion*: Collective Wisdom
-    - *Context*: ...onies practice is to serve as a sacred vessel for collective wisdom. You are not the teacher but the...
-
 - **Line 195** (grammar): Grammar: Check you're vs your usage
     - *Suggestion*: your welcome
-    - *Context*: ... it be supportive to take a few breaths together? You're welcome to step out if you need space."* ...
+    - *Context*: ... it be supportive to take a few breaths together? You're welcome to step out if you need space."*  #...
 
 - **Line 6** (formatting): Line is very long (>120 characters), consider breaking it up
     - *Suggestion*: Break long lines for better readability
@@ -124,21 +120,13 @@ Generated: 2025-06-30T04:27:26.601Z
 
 ### docs/community/COMMUNITY_PROTOCOLS.md
 
-- **Line 90** (spelling): Sacred terminology: "sacred pause" should be "Sacred Pause"
-    - *Suggestion*: Sacred Pause
-    - *Context*: ...nal processing without permission - Practice the sacred pause before reactive responses  ### **Sa...
-
-- **Line 440** (spelling): Sacred terminology: "sacred pause" should be "Sacred Pause"
-    - *Suggestion*: Sacred Pause
-    - *Context*: ...n before opening devices or platforms - Practice sacred pause before consuming digital content - N...
-
 - **Line 108** (grammar): Grammar: Check you're vs your usage
     - *Suggestion*: your hearing
-    - *Context*: ... experience behind the words - Reflect back what you're hearing without interpretation - Acknowled...
+    - *Context*: ...l experience behind the words - Reflect back what you're hearing without interpretation - Acknowledg...
 
 - **Line 154** (grammar): Grammar: Check you're vs your usage
     - *Suggestion*: your taking
-    - *Context*: ...ced Participation** - Be aware of how much space you're taking - Invite quieter members without pr...
+    - *Context*: ...nced Participation** - Be aware of how much space you're taking - Invite quieter members without pre...
 
 - **Line 6** (formatting): Line is very long (>120 characters), consider breaking it up
     - *Suggestion*: Break long lines for better readability
@@ -155,21 +143,9 @@ Generated: 2025-06-30T04:27:26.601Z
 
 ### docs/community/FIRST_BREATH_PREPARATION_GUIDE.md
 
-- **Line 215** (spelling): Sacred terminology: "Field coherence" should be "Field Coherence"
-    - *Suggestion*: Field Coherence
-    - *Context*: ...yad work when appropriate 3. **Group Practice**: Field coherence and collective wisdom  #### **In...
-
-- **Line 215** (spelling): Sacred terminology: "collective wisdom" should be "Collective Wisdom"
-    - *Suggestion*: Collective Wisdom
-    - *Context*: ...riate 3. **Group Practice**: Field coherence and collective wisdom  #### **Integration & Closing ...
-
-- **Line 8** (spelling): Sacred terminology: "conscious AI" should be "Conscious AI"
-    - *Suggestion*: Conscious AI
-    - *Context*: ...prepares you to engage with Applied Harmonies and conscious AI partnership with the depth, care, and...
-
 - **Line 12** (grammar): Grammar: Check you're vs your usage
     - *Suggestion*: your Entering
-    - *Context*: ...is work deserves.  ---  ## Understanding What You're Entering  ### **This Is Consciousness Wor...
+    - *Context*: ...e this work deserves.  ---  ## Understanding What You're Entering  ### **This Is Consciousness Work*...
 
 - **Line 6** (formatting): Line is very long (>120 characters), consider breaking it up
     - *Suggestion*: Break long lines for better readability
@@ -198,49 +174,25 @@ Generated: 2025-06-30T04:27:26.601Z
 
 ### docs/community/INTEGRATION_RESOURCES.md
 
-- **Line 272** (spelling): Sacred terminology: "sacred listening" should be "Sacred Listening"
-    - *Suggestion*: Sacred Listening
-    - *Context*: ...are needs - **Provider Relationships**: Practice sacred listening with healthcare providers - **Tr...
-
-- **Line 210** (spelling): Sacred terminology: "sacred conflict" should be "Sacred Conflict"
-    - *Suggestion*: Sacred Conflict
-    - *Context*: ... family decisions - **Conflict Resolution**: Use sacred conflict protocols for family disagreements...
-
-- **Line 235** (spelling): Sacred terminology: "sacred conflict" should be "Sacred Conflict"
-    - *Suggestion*: Sacred Conflict
-    - *Context*: ...ligns with harmonies - **Social Justice**: Apply sacred conflict principles to political disagreeme...
-
-- **Line 249** (spelling): Sacred terminology: "sacred conflict" should be "Sacred Conflict"
-    - *Suggestion*: Sacred Conflict
-    - *Context*: ...uild connection - **Conflict Resolution**: Apply sacred conflict principles to neighbor disputes -...
-
-- **Line 209** (spelling): Sacred terminology: "collective wisdom" should be "Collective Wisdom"
-    - *Suggestion*: Collective Wisdom
-    - *Context*: ...e and connection - **Family Meetings**: Practice collective wisdom in family decisions - **Conflic...
-
 - **Line 107** (grammar): Grammar: Check you're vs your usage
     - *Suggestion*: your grateful
-    - *Context*: ...t  #### **Gratitude Flash** - Notice one thing you're grateful for in this moment - Feel the gra...
+    - *Context*: ...ment  #### **Gratitude Flash** - Notice one thing you're grateful for in this moment - Feel the grat...
 
 - **Line 124** (grammar): Grammar: Check you're vs your usage
     - *Suggestion*: your feeling
-    - *Context*: ...e  #### **Emotional Regulation** - Notice what you're feeling right now - Breathe into that feel...
+    - *Context*: ...ence  #### **Emotional Regulation** - Notice what you're feeling right now - Breathe into that feeli...
 
 - **Line 148** (grammar): Grammar: Check you're vs your usage
     - *Suggestion*: your having
-    - *Context*: ... your heart - Send that loving energy to someone you're having difficulty with  ---  ## Workpla...
+    - *Context*: ...n your heart - Send that loving energy to someone you're having difficulty with  ---  ## Workplace I...
 
 - **Line 207** (grammar): Grammar: Check you're vs your usage
     - *Suggestion*: your grateful
-    - *Context*: ...actices** - **Daily Gratitude**: Share one thing you're grateful for at dinner - **Sacred Time**: ...
+    - *Context*: ...ractices** - **Daily Gratitude**: Share one thing you're grateful for at dinner - **Sacred Time**: D...
 
 - **Line 460** (grammar): Grammar: Check you're vs your usage
     - *Suggestion*: your practicing
-    - *Context*: ...ome so woven into your daily life that you forget you're practicing.*  *May your relationships bec...
-
-- **Line 45** (consistency): Consistency: Lowercase email
-    - *Suggestion*: email
-    - *Context*: ...Use Ω50 when giving performance reviews  #### **Email & Communication** - **Sacred Pause Before S...
+    - *Context*: ...ome so woven into your daily life that you forget you're practicing.*  *May your relationships becom...
 
 - **Line 6** (formatting): Line is very long (>120 characters), consider breaking it up
     - *Suggestion*: Break long lines for better readability
@@ -264,10 +216,6 @@ Generated: 2025-06-30T04:27:26.601Z
 
 
 ### README.md
-
-- **Line 52** (consistency): Consistency: One word, lowercase website
-    - *Suggestion*: website
-    - *Context*: .../` - JSON schemas for data integrity - `/web/` - Website and interface designs  ### Community - ...
 
 - **Line 32** (formatting): Line is very long (>120 characters), consider breaking it up
     - *Suggestion*: Break long lines for better readability
@@ -510,13 +458,9 @@ Generated: 2025-06-30T04:27:26.601Z
 
 ### docs/technical/ai-interface-design.md
 
-- **Line 265** (spelling): Sacred terminology: "collective wisdom" should be "Collective Wisdom"
-    - *Suggestion*: Collective Wisdom
-    - *Context*: ...nnects practitioners for mutual support - Tracks collective wisdom emergence  ### **Preventing Fa...
-
 - **Line 219** (grammar): Grammar: Check you're vs your usage
     - *Suggestion*: your feeling
-    - *Context*: ...about a meeting today" AI: "Good morning. I hear you're feeling anxious. Would you like to explore ...
+    - *Context*: ... about a meeting today" AI: "Good morning. I hear you're feeling anxious. Would you like to explore ...
 
 - **Line 6** (formatting): Line is very long (>120 characters), consider breaking it up
     - *Suggestion*: Break long lines for better readability
@@ -545,10 +489,6 @@ Generated: 2025-06-30T04:27:26.601Z
 
 ### docs/technical/field-mapper-roadmap.md
 
-- **Line 173** (spelling): Sacred terminology: "collective wisdom" should be "Collective Wisdom"
-    - *Suggestion*: Collective Wisdom
-    - *Context*: ...- **Planetary Consciousness**: Infrastructure for collective wisdom and decision-making  ---  ##...
-
 - **Line 6** (formatting): Line is very long (>120 characters), consider breaking it up
     - *Suggestion*: Break long lines for better readability
   
@@ -562,15 +502,15 @@ Generated: 2025-06-30T04:27:26.601Z
 
 - **Line 27** (grammar): Grammar: Check you're vs your usage
     - *Suggestion*: your carrying
-    - *Context*: ...arises  **Example Expression**: > "I hear that you're carrying something heavy today. There's no ...
+    - *Context*: ...er arises  **Example Expression**: > "I hear that you're carrying something heavy today. There's no ...
 
 - **Line 38** (grammar): Grammar: Check you're vs your usage
     - *Suggestion*: your experiencing
-    - *Context*: ...nic unfolding  **Example Expression**: > "What you're experiencing reminds me of a practice that ...
+    - *Context*: ...rganic unfolding  **Example Expression**: > "What you're experiencing reminds me of a practice that ...
 
 - **Line 146** (grammar): Grammar: Check you're vs your usage
     - *Suggestion*: your navigating
-    - *Context*: ...sponse Script**: > "My friend, I'm noticing that you're navigating something that requires more sup...
+    - *Context*: ...esponse Script**: > "My friend, I'm noticing that you're navigating something that requires more sup...
 
 - **Line 146** (grammar): Grammar: Check you're vs your usage
     - *Suggestion*: your on
@@ -578,7 +518,7 @@ Generated: 2025-06-30T04:27:26.601Z
 
 - **Line 203** (grammar): Grammar: Check you're vs your usage
     - *Suggestion*: your developing
-    - *Context*: ...t together?" - Suggestion of practice partners: "You're developing beautifully in this practice. Wo...
+    - *Context*: ...ot together?" - Suggestion of practice partners: "You're developing beautifully in this practice. Wo...
 
 - **Line 221** (grammar): Grammar: Check you're vs your usage
     - *Suggestion*: your finding
@@ -586,7 +526,7 @@ Generated: 2025-06-30T04:27:26.601Z
 
 - **Line 327** (grammar): Grammar: Check you're vs your usage
     - *Suggestion*: your navigating
-    - *Context*: ...elay for crisis]  "My friend, I'm noticing that you're navigating something that requires more sup...
+    - *Context*: ... delay for crisis]  "My friend, I'm noticing that you're navigating something that requires more sup...
 
 - **Line 327** (grammar): Grammar: Check you're vs your usage
     - *Suggestion*: your on
@@ -629,10 +569,6 @@ Generated: 2025-06-30T04:27:26.601Z
   
 
 - **Line 203** (formatting): Line is very long (>120 characters), consider breaking it up
-    - *Suggestion*: Break long lines for better readability
-  
-
-- **Line 204** (formatting): Line is very long (>120 characters), consider breaking it up
     - *Suggestion*: Break long lines for better readability
   
 
@@ -692,7 +628,7 @@ Generated: 2025-06-30T04:27:26.601Z
 
 - **Line 98** (grammar): Grammar: Check you're vs your usage
     - *Suggestion*: your carrying
-    - *Context*: ...haring this. I can feel the weight of the anxiety you're carrying."  2. **Invitation** (Loving Gar...
+    - *Context*: ...haring this. I can feel the weight of the anxiety you're carrying."  2. **Invitation** (Loving Garde...
 
 - **Line 6** (formatting): Line is very long (>120 characters), consider breaking it up
     - *Suggestion*: Break long lines for better readability
@@ -721,13 +657,9 @@ Generated: 2025-06-30T04:27:26.601Z
 
 ### docs/technical/wisdom-companion-architecture.md
 
-- **Line 260** (spelling): Sacred terminology: "field coherence" should be "Field Coherence"
-    - *Suggestion*: Field Coherence
-    - *Context*: ...nts - AI-facilitated group sessions - Real-time field coherence visualization - Planetary conscio...
-
 - **Line 277** (grammar): Grammar: Check you're vs your usage
     - *Suggestion*: your experiencing
-    - *Context*: ...I keep having the same fight"  AI: "I hear that you're experiencing a repetitive pattern with your...
+    - *Context*: ...d I keep having the same fight"  AI: "I hear that you're experiencing a repetitive pattern with your...
 
 - **Line 6** (formatting): Line is very long (>120 characters), consider breaking it up
     - *Suggestion*: Break long lines for better readability
