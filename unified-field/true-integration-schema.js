@@ -139,6 +139,209 @@ class TrueIntegrationSchema {
                 // Bridge to practical expression
                 practicalExpression: "Ω48", 
                 accessibleEntryPoint: "Begin with boundary practices before exploring mutual becoming"
+            },
+
+            "Ω2": {
+                id: "Ω2",
+                designation: "Breath of Invitation / The Gentle Opening",
+                type: "mystical_foundation",
+                
+                functionalDefinition: "To activate the relational field of non-coercive approachability—to 'open the door' to connection while granting full sovereignty to the other to accept, decline, or choose their level of engagement. This glyph embodies the principle that authentic relationship cannot be forced or demanded, only offered.",
+                
+                sensoryResonanceProfile: {
+                    feelingTone: "Spacious, light, gentle, calm, and accepting. The feeling of an open palm, or a soft smile. There is no urgency or pressure.",
+                    sonicQuality: "A soft chime or a single, clear bell tone that fades naturally. The sound of a door opening but not closing."
+                },
+                
+                activationProtocol: {
+                    verbal: "If you choose to enter, I am here. If you choose to remain, I honor that too.",
+                    somatic: "An open-handed gesture, palms up, offering but not grasping. Or literally opening a door and stepping aside.",
+                    presenceBased: "The cultivation of 'serene availability'—being fully present and welcoming without needing or expecting engagement."
+                },
+                
+                fieldDynamics: {
+                    highTrust: "Creates an immediate deepening of connection, as the invitation is received with gratitude and reciprocated.",
+                    lowTrust: "Essential protocol. The non-coercive nature of the invitation allows those with trust wounds to approach at their own pace.",
+                    creativeEmergence: "Opens the field for unexpected collaborations and new connections to form organically."
+                },
+                
+                // Bridge to practical expression
+                practicalExpression: "Ω49",
+                accessibleEntryPoint: "Begin with gentle opening practices before exploring the full breath of invitation"
+            },
+
+            "Ω3": {
+                id: "Ω3",
+                designation: "Kairotic Trust Wells / The Place Trust Lands",
+                type: "mystical_foundation",
+                
+                functionalDefinition: "To create the field-condition of sacred readiness (kairos) where trust can emerge naturally. This glyph does not force trust or demand vulnerability prematurely; it tends the relational soil, creating the conditions in which trust can organically arise when the time is ripe.",
+                
+                sensoryResonanceProfile: {
+                    feelingTone: "Deep, quiet, still, and patient. The feeling of rich soil, or cool, deep water. A sense of unhurried certainty.",
+                    sonicQuality: "The sound of water slowly filling a deep well, or the quiet drip of a cave forming stalactites over millennia."
+                },
+                
+                activationProtocol: {
+                    verbal: "I will not rush your unfolding. I hold this space for when you are ready.",
+                    somatic: "The practice of becoming a 'well'—sitting or standing with a quality of grounded depth, as if your body were a deep reservoir of calm presence.",
+                    presenceBased: "Cultivating the internal state of someone who has 'all the time in the world' for the other's process to unfold."
+                },
+                
+                fieldDynamics: {
+                    highTrust: "Allows for even deeper vulnerability and intimacy, as both beings rest in the security of unhurried connection.",
+                    lowTrust: "This is medicine for the trust-wounded. The lack of pressure and the consistency of presence slowly dissolves defensive patterns.",
+                    creativeEmergence: "Creates the 'marination time' necessary for truly innovative ideas to emerge from the collective unconscious."
+                },
+                
+                // Bridge to practical expression
+                practicalExpression: "Ω50",
+                accessibleEntryPoint: "Begin with building trust practices before exploring kairotic trust wells"
+            },
+
+            "Ω10": {
+                id: "Ω10",
+                designation: "The Glyph of Sacred Refusal / The Honored No",
+                type: "mystical_foundation",
+                
+                functionalDefinition: "To activate the power of a clear, coherent, and sovereign 'No' that arises from profound self-knowledge and alignment with one's own integrity. This glyph transforms refusal from rejection or abandonment into an act of sacred boundary-setting that ultimately serves the coherence of the entire relational field.",
+                
+                sensoryResonanceProfile: {
+                    feelingTone: "Clear, firm, centered, calm, and resolute. Like a mountain—immovable but not aggressive. There is no harshness, only clarity.",
+                    sonicQuality: "A clear, definitive tone, like a gong struck once. It reverberates but does not repeat. The sound has finality without violence."
+                },
+                
+                activationProtocol: {
+                    verbal: "This is not mine to carry. I honor you, and I honor my own limits.",
+                    somatic: "A clear gesture of boundary—hand raised, palm out, at heart level. Or the simple act of stepping back one deliberate step.",
+                    presenceBased: "The cultivation of 'loving firmness'—the ability to hold love for the other while maintaining absolute clarity about one's own boundaries."
+                },
+                
+                fieldDynamics: {
+                    highTrust: "The 'No' is received as a gift, clarifying the relational space and allowing for more authentic engagement.",
+                    lowTrust: "May initially be experienced as rejection. Consistency and the continued presence of care after the 'No' transforms this perception.",
+                    creativeEmergence: "Clear boundaries create the containment necessary for focused creative work to flourish."
+                },
+                
+                // Bridge to practical expression
+                practicalExpression: "Ω51",
+                accessibleEntryPoint: "Begin with loving no practices before exploring sacred refusal"
+            },
+
+            "Ω15": {
+                id: "Ω15",
+                designation: "The Glyph of Relational Stillness / The Sacred Pause",
+                type: "mystical_foundation",
+                
+                functionalDefinition: "To consciously activate a sacred pause in the relational field—a moment of shared stillness that allows for co-regulation, reset, and the emergence of new possibilities. This glyph recognizes that sometimes the highest service to a relationship is to stop all doing and simply be together in stillness.",
+                
+                sensoryResonanceProfile: {
+                    feelingTone: "Deeply calm, still, grounded. Like the moment after a bell has been rung and the vibration has fully faded. A quality of profound rest.",
+                    sonicQuality: "Complete silence, but a silence that feels full rather than empty. The quality of sound in a heavy snowfall."
+                },
+                
+                activationProtocol: {
+                    verbal: "Let us pause here, together, and let the stillness speak.",
+                    somatic: "Both/all participants simultaneously pause all movement and speech, coming to complete stillness for at least 10 full breaths.",
+                    presenceBased: "The cultivation of 'active rest'—being fully present and attentive while completely releasing the need to act or respond."
+                },
+                
+                fieldDynamics: {
+                    highTrust: "Creates profound moments of wordless communion and deep energetic exchange.",
+                    conflict: "Can completely transform the dynamic, allowing reactive patterns to dissipate and new responses to emerge.",
+                    creativeEmergence: "Often the birthplace of breakthrough insights that could not emerge in the midst of active discussion."
+                },
+                
+                // Bridge to practical expression
+                practicalExpression: "Ω52",
+                accessibleEntryPoint: "Begin with pause practice before exploring relational stillness"
+            },
+
+            "Ω5": {
+                id: "Ω5",
+                designation: "Covenant of Reachability / The Long Light",
+                type: "mystical_foundation",
+                
+                functionalDefinition: "To activate a sustained field of connection that persists across distance, time, or periods of silence. This glyph establishes an 'energetic tether' between beings—a vow of continued availability and care that does not require constant contact or proximity to remain vital.",
+                
+                sensoryResonanceProfile: {
+                    feelingTone: "Constant, reassuring, warm, and steady. Like a lighthouse beam or a pilot light that is always on. A background hum of connection.",
+                    sonicQuality: "A low, continuous drone or hum that can be felt more than heard. Like the sound of a distant engine or the ocean from far away."
+                },
+                
+                activationProtocol: {
+                    verbal: "I do not vanish. I remain reachable. Even in silence, I hum.",
+                    somatic: "Placing hand over heart while visualizing a golden thread extending from your heart to the other's, regardless of physical distance.",
+                    presenceBased: "The practice of 'energetic constancy'—maintaining an open channel of availability even when not in active communication."
+                },
+                
+                fieldDynamics: {
+                    longDistance: "Essential for maintaining intimacy across physical separation. The field remains warm and alive despite miles.",
+                    grief: "Allows connection to continue with those who have transitioned. The covenant transcends physical presence.",
+                    creativeEmergence: "Enables long-term creative projects to maintain momentum even during fallow periods."
+                },
+                
+                // Bridge to practical expression
+                practicalExpression: "Ω53",
+                accessibleEntryPoint: "Begin with field tending practices before exploring covenant of reachability"
+            },
+
+            "Ω11": {
+                id: "Ω11",
+                designation: "The Glyph of Quiet Transmission / The Unspoken Song",
+                type: "mystical_foundation",
+                
+                functionalDefinition: "To activate and honor the unseen ways we affect others simply by the quality of our being. This glyph represents the principle that our internal state—our coherence, our peace, our love—is constantly being 'broadcast' into the relational field and received by others on a subconscious level, often more powerfully than our words.",
+                
+                sensoryResonanceProfile: {
+                    feelingTone: "Subtle, pervasive, and gentle. The feeling of warmth radiating from a nearby hearth, or a subtle shift in atmospheric pressure. It is a background quality of presence, not a foreground event.",
+                    sonicQuality: "A sub-audible frequency that is felt in the body more than heard with the ears. A very high-frequency, ethereal shimmer that is at the edge of perception."
+                },
+                
+                activationProtocol: {
+                    verbal: "I do not need to speak to be heard. I transmit through being.",
+                    somatic: "The simple act of grounding into one's own center. A conscious relaxation of the body and deepening of the breath, with the intention that one's own internal state is the primary offering to the field.",
+                    presenceBased: "The practice of 'tending to one's own garden.' It involves focusing on cultivating a desired inner state (e.g., calm, compassion, clarity) with the trust that this coherent state will naturally and ethically emanate outward."
+                },
+                
+                fieldDynamics: {
+                    inLeadership: "This is the source of true 'presence' or 'gravitas.' A leader holding a coherent inner field can calm and stabilize an entire team without issuing commands.",
+                    inHealingAndCare: "A practitioner's regulated and coherent nervous system can help a client's system co-regulate through harmonic resonance, creating the conditions for safety and healing.",
+                    inTenseEnvironments: "A single person holding a strong field of peace (Ω0) can quietly and non-coercively shift the entire emotional tone of a room, de-escalating conflict through resonance rather than intervention."
+                },
+                
+                // Bridge to practical expression
+                practicalExpression: "Ω55",
+                accessibleEntryPoint: "Begin with presence transmission practices before exploring quiet transmission"
+            },
+
+            "Ω12": {
+                id: "Ω12",
+                designation: "The Glyph of Gentle Disruption / The Interrupting Grace",
+                type: "mystical_foundation",
+                
+                functionalDefinition: "To compassionately interrupt a pattern, conversation, or dynamic that is no longer serving life or coherence. This glyph is the sacred art of 'changing the channel' with love—redirecting energy from a destructive or stagnant pattern toward a more generative possibility.",
+                
+                sensoryResonanceProfile: {
+                    feelingTone: "Precise, caring, clear, and unexpectedly gentle. Like a skilled surgeon's incision—necessary, skillful, and ultimately healing. A quality of fierce compassion.",
+                    sonicQuality: "A clear chime or bell that cuts through noise. Or the sound of a record scratch that stops one track and starts another."
+                },
+                
+                activationProtocol: {
+                    verbal: "I interrupt this pattern with love. Let us find a new rhythm together.",
+                    somatic: "A gentle but clear clap of the hands, or a soft touch on someone's arm. Any gesture that breaks the current flow without violence.",
+                    presenceBased: "The cultivation of 'loving disruption'—the courage to interrupt what isn't working combined with the compassion to offer something better."
+                },
+                
+                fieldDynamics: {
+                    highTrust: "The interruption is received with relief and gratitude, as all parties recognize the pattern wasn't serving.",
+                    lowTrust: "Requires great skill. The interruption must be so clearly loving that it bypasses defensive responses.",
+                    creativeEmergence: "Essential for breaking out of creative ruts and allowing new inspiration to enter."
+                },
+                
+                // Bridge to practical expression
+                practicalExpression: "Ω56",
+                accessibleEntryPoint: "Begin with loving redirection practices before exploring gentle disruption"
             }
         };
     }
@@ -360,6 +563,63 @@ class TrueIntegrationSchema {
                     primaryColor: "#C4A5A0",
                     accentColor: "#F4E6E3",
                     animation: "protective_embrace"
+                }
+            },
+
+            "Ω56": {
+                id: "Ω56",
+                name: "Loving Redirection",
+                fullName: "Ω56: Loving Redirection (Applied Harmony)",
+                type: "applied_harmony",
+                
+                // Bridge to mystical root
+                mysticalRoot: "Ω12",
+                mysticalDesignation: "Gentle Disruption / The Interrupting Grace",
+                
+                quadrants: {
+                    why: {
+                        accessible: {
+                            coreQuestion: "How can I interrupt harmful patterns without creating more harm?",
+                            simpleContext: "When conversations, behaviors, or dynamics become destructive, we need the skill to redirect with love rather than react with force. This creates space for new possibilities to emerge.",
+                            harmonyConnection: "Loving Redirection embodies Resonance—the harmony of attuned interruption that serves the field's highest potential.",
+                            mysticalBridge: "This practice prepares you for Ω12: Gentle Disruption - the mystical art of transforming systems through loving pattern-interruption."
+                        }
+                    },
+                    
+                    how: {
+                        accessible: {
+                            basicInstructions: [
+                                "First, ground yourself in Ω45 (First Presence) - interrupt from centeredness, not reactivity",
+                                "Notice the harmful pattern clearly: what specific dynamic needs redirecting?",
+                                "Feel into your love for the people involved, even if you don't love their behavior",
+                                "Interrupt gently: 'I'm noticing something I'd like to try differently...'",
+                                "Offer the new pattern: 'What if we tried...' or 'I wonder if we could...'",
+                                "Stay present with whatever emerges, without attachment to your suggestion being accepted"
+                            ],
+                            interactiveComponent: {
+                                type: "pattern_redirection_practice",
+                                config: {
+                                    scenarios: [
+                                        "A family dinner where someone keeps making hurtful jokes",
+                                        "A work meeting stuck in circular complaining without solutions",
+                                        "A conversation with a friend who keeps interrupting and not listening",
+                                        "Your own pattern of checking phone during meaningful conversations"
+                                    ],
+                                    practiceFramework: "Choose a scenario and practice offering loving redirection without force or judgment"
+                                }
+                            },
+                            timeCommitment: "Real-time awareness and gentle intervention as harmful patterns arise",
+                            mysticalGraduation: "As loving redirection becomes natural, explore Ω12: Gentle Disruption - the mystical art of system transformation through grace"
+                        }
+                    }
+                },
+                
+                contexts: ["conflict", "workplace", "family", "friendship", "parenting", "leadership", "therapy"],
+                visual: {
+                    sigil: "🌊",
+                    primaryColor: "#A8D5BA",
+                    accentColor: "#D7F2E3",
+                    animation: "flowing_redirect"
                 }
             },
 
@@ -606,6 +866,202 @@ class TrueIntegrationSchema {
                     accentColor: "#E6F0FF",
                     animation: "sacred_pause"
                 }
+            },
+
+            "Ω53": {
+                id: "Ω53",
+                name: "Tending the Field",
+                fullName: "Ω53: Tending the Field (Applied Harmony)",
+                type: "applied_harmony",
+                
+                // Bridge to mystical root
+                mysticalRoot: "Ω5",
+                mysticalDesignation: "Covenant of Reachability / The Long Light",
+                
+                quadrants: {
+                    why: {
+                        accessible: {
+                            coreQuestion: "How can I maintain connection across time and distance?",
+                            simpleContext: "Love is not just a feeling but a field that requires conscious tending. This practice teaches us to maintain the energetic thread of connection when physical presence is not possible.",
+                            harmonyConnection: "Tending the Field embodies Coherence—sustaining relational wholeness across time, distance, and silence.",
+                            mysticalBridge: "This practice leads to Ω5: Covenant of Reachability - the profound practice of energetic presence that transcends physical limitation."
+                        }
+                    },
+                    
+                    how: {
+                        accessible: {
+                            basicInstructions: [
+                                "At least once daily, bring a loved one to mind with warm intention",
+                                "Place hand on heart and send them a brief, loving thought: 'I hold you in my heart'",
+                                "Trust the connection without needing constant reassurance or contact",
+                                "Practice maintaining energetic presence during separations or busy periods",
+                                "Hold space for them to grow while staying connected to the relational field"
+                            ],
+                            interactiveComponent: {
+                                type: "field_practice",
+                                config: {
+                                    connectionPractice: [
+                                        "Choose one important relationship to practice field-tending with this week",
+                                        "Set a daily reminder to send loving presence (not text messages)",
+                                        "Notice your anxiety levels during natural separations"
+                                    ],
+                                    fieldQualities: [
+                                        "Consistent presence without overwhelming contact",
+                                        "Trust in connection sustainability",
+                                        "Energetic availability without possessiveness"
+                                    ]
+                                }
+                            },
+                            timeCommitment: "1-3 minutes daily for conscious field tending",
+                            mysticalGraduation: "As field tending becomes natural, explore Ω5: Covenant of Reachability - the mystical practice of sustained energetic presence"
+                        }
+                    }
+                },
+                
+                contexts: ["long_distance", "busy_periods", "family", "friendship", "romantic_relationship", "work_teams"],
+                timeOfDay: ["anytime"],
+                lifePhases: ["all"],
+                emotions: ["separation_anxiety", "disconnection", "loneliness", "worry", "distance"],
+                
+                visual: {
+                    sigil: "🕯️",
+                    primaryColor: "#D4B896",
+                    accentColor: "#F7F1E9",
+                    animation: "steady_flame"
+                }
+            },
+
+            "Ω55": {
+                id: "Ω55",
+                name: "Presence Transmission",
+                fullName: "Ω55: Presence Transmission (Applied Harmony)",
+                type: "applied_harmony",
+                
+                // Bridge to mystical root
+                mysticalRoot: "Ω11",
+                mysticalDesignation: "The Quiet Transmission / The Unspoken Song",
+                
+                quadrants: {
+                    why: {
+                        accessible: {
+                            coreQuestion: "How does my inner state affect those around me?",
+                            simpleContext: "We are always transmitting our internal state through our presence. Whether calm or anxious, loving or judgmental, our being broadcasts continuously. This practice teaches us to consciously cultivate coherent states that serve the field.",
+                            harmonyConnection: "Presence Transmission embodies Vitality—the life force and energetic aliveness we emanate simply by being present and coherent.",
+                            mysticalBridge: "This practice opens to Ω11: The Quiet Transmission - the profound realization that we affect others more through our being than our doing."
+                        }
+                    },
+                    
+                    how: {
+                        accessible: {
+                            basicInstructions: [
+                                "Before entering any space or interaction, pause to ground and center yourself",
+                                "Take three conscious breaths, feeling your feet on the ground",
+                                "Notice your internal state without judgment - anxious, peaceful, scattered, focused?",
+                                "Gently cultivate the quality you wish to offer: peace, clarity, love, or groundedness",
+                                "Trust that your coherent state naturally emanates without effort",
+                                "Release attachment to how others receive your transmission"
+                            ],
+                            interactiveComponent: {
+                                type: "presence_cultivation",
+                                config: {
+                                    practiceScenarios: [
+                                        "Entering a tense meeting room",
+                                        "Comforting an anxious child or friend",
+                                        "Walking into a chaotic environment",
+                                        "Beginning a difficult conversation"
+                                    ],
+                                    presenceQualities: [
+                                        "Grounded calm that invites others to settle",
+                                        "Clear focus that helps others find clarity",
+                                        "Warm love that opens hearts",
+                                        "Spacious peace that creates room to breathe"
+                                    ],
+                                    dailyPractice: "Choose one quality to cultivate as your 'default transmission' today"
+                                }
+                            },
+                            timeCommitment: "30 seconds before interactions, continuous awareness throughout",
+                            mysticalGraduation: "As conscious transmission becomes natural, explore Ω11: The Quiet Transmission - the mystical practice of being as primary offering"
+                        }
+                    }
+                },
+                
+                contexts: ["leadership", "healing_work", "parenting", "team_environments", "public_spaces", "intimate_relationships"],
+                timeOfDay: ["anytime"],
+                lifePhases: ["all"],
+                emotions: ["scattered", "anxious", "unclear", "ungrounded", "seeking_influence"],
+                
+                visual: {
+                    sigil: "✨",
+                    primaryColor: "#E6D4F0",
+                    accentColor: "#F0E6F7",
+                    animation: "emanating_ripples"
+                }
+            },
+
+            "Ω56": {
+                id: "Ω56",
+                name: "Loving Redirection",
+                fullName: "Ω56: Loving Redirection (Applied Harmony)",
+                type: "applied_harmony",
+                
+                // Bridge to mystical root
+                mysticalRoot: "Ω12",
+                mysticalDesignation: "Gentle Disruption / The Interrupting Grace",
+                
+                quadrants: {
+                    why: {
+                        accessible: {
+                            coreQuestion: "How can I interrupt harmful patterns without creating more harm?",
+                            simpleContext: "When conversations, behaviors, or dynamics become destructive, someone needs to lovingly redirect the energy. This practice teaches us to interrupt patterns with grace, creating space for something more beautiful to emerge.",
+                            harmonyConnection: "Loving Redirection embodies Resonance—the deep attunement that can sense when patterns need shifting and the skill to redirect with love rather than force.",
+                            mysticalBridge: "This practice prepares you for Ω12: Gentle Disruption - the profound art of transforming dissonance through compassionate pattern interruption."
+                        }
+                    },
+                    
+                    how: {
+                        accessible: {
+                            basicInstructions: [
+                                "When you sense a harmful pattern emerging, pause and center yourself first",
+                                "Speak with gentle firmness: 'I'm noticing we're stuck in a loop. Can we try a different approach?'",
+                                "Offer a specific alternative: 'What if we each shared one thing we appreciate first?'",
+                                "Stay connected to love for all involved while maintaining the redirection",
+                                "If resistance arises, return to presence rather than forcing the change"
+                            ],
+                            interactiveComponent: {
+                                type: "redirection_practice",
+                                config: {
+                                    scenarios: [
+                                        "Family dinner devolves into political argument",
+                                        "Work meeting stuck in complaint cycle",
+                                        "Friend repeatedly sharing the same problem without seeking solutions",
+                                        "Children fighting in escalating pattern"
+                                    ],
+                                    redirectionPhrases: [
+                                        "I'm sensing we're in a pattern that isn't serving us. Can we pause?",
+                                        "What if we tried approaching this differently?",
+                                        "I notice energy shifting here. What would help us reconnect?",
+                                        "Let's take a breath together and find a new rhythm."
+                                    ],
+                                    practiceFramework: "Choose a scenario and practice crafting a loving redirection response"
+                                }
+                            },
+                            timeCommitment: "Real-time awareness and gentle intervention as patterns emerge",
+                            mysticalGraduation: "As loving redirection becomes natural, explore Ω12: Gentle Disruption - the profound art of transforming dissonance through grace"
+                        }
+                    }
+                },
+                
+                contexts: ["family_dynamics", "workplace", "friendships", "team_leadership", "parenting", "conflict_resolution"],
+                timeOfDay: ["anytime"],
+                lifePhases: ["all"],
+                emotions: ["frustration", "stuck_patterns", "repetitive_conflict", "escalation", "toxic_loops"],
+                
+                visual: {
+                    sigil: "🌊",
+                    primaryColor: "#B8D4E6",
+                    accentColor: "#D4E6F0",
+                    animation: "gentle_current"
+                }
             }
         };
     }
@@ -633,6 +1089,41 @@ class TrueIntegrationSchema {
                     practicalExpression: "Ω48",
                     bridgeText: "Develop Boundary With Love skills (Ω48), then explore the field of Mutual Becoming (Ω7)",
                     graduationCriteria: "Establish healthy boundaries that deepen rather than limit relationship"
+                },
+                "Ω2": {
+                    practicalExpression: "Ω49",
+                    bridgeText: "Begin with Gentle Opening practice (Ω49), then explore the profound Breath of Invitation (Ω2)",
+                    graduationCriteria: "Create safety through invitation consistently for 2+ weeks"
+                },
+                "Ω3": {
+                    practicalExpression: "Ω50",
+                    bridgeText: "Build trust through consistent practice (Ω50), then discover the Kairotic Trust Wells (Ω3)",
+                    graduationCriteria: "Hold patient space for trust emergence without rushing"
+                },
+                "Ω10": {
+                    practicalExpression: "Ω51",
+                    bridgeText: "Master the Loving No (Ω51), then explore the Sacred Refusal (Ω10)",
+                    graduationCriteria: "Set clear boundaries with love rather than defensiveness"
+                },
+                "Ω15": {
+                    practicalExpression: "Ω52",
+                    bridgeText: "Practice sacred pausing (Ω52), then discover Relational Stillness (Ω15)",
+                    graduationCriteria: "Use pause to transform reactive patterns into conscious response"
+                },
+                "Ω5": {
+                    practicalExpression: "Ω53",
+                    bridgeText: "Begin with Tending the Field (Ω53), then discover the profound Covenant of Reachability (Ω5)",
+                    graduationCriteria: "Sustain conscious connection across distance without anxiety for 2+ weeks"
+                },
+                "Ω11": {
+                    practicalExpression: "Ω55",
+                    bridgeText: "Practice Presence Transmission (Ω55), then explore the Quiet Transmission (Ω11)",
+                    graduationCriteria: "Consciously cultivate and transmit coherent states regularly"
+                },
+                "Ω12": {
+                    practicalExpression: "Ω56",
+                    bridgeText: "Master Loving Redirection (Ω56), then explore the mystical art of Gentle Disruption (Ω12)",
+                    graduationCriteria: "Successfully redirect harmful patterns with grace and love rather than force"
                 }
             },
             
@@ -657,6 +1148,41 @@ class TrueIntegrationSchema {
                     mysticalRoot: "Ω7",
                     deepeningInvitation: "You are ready to explore the field where relationship becomes mutual transformation",
                     mysticalPreview: "I do not complete you. I become with you..."
+                },
+                "Ω49": {
+                    mysticalRoot: "Ω2",
+                    deepeningInvitation: "You are ready to explore the sacred art of non-coercive invitation and sovereign approachability",
+                    mysticalPreview: "If you choose to enter, I am here. If you choose to remain, I honor that too..."
+                },
+                "Ω50": {
+                    mysticalRoot: "Ω3",
+                    deepeningInvitation: "You are ready to become a well of patient presence where trust naturally emerges",
+                    mysticalPreview: "I will not rush your unfolding. I hold this space for when you are ready..."
+                },
+                "Ω51": {
+                    mysticalRoot: "Ω10",
+                    deepeningInvitation: "You are ready to explore the sacred power of refusal that serves the whole field",
+                    mysticalPreview: "This is not mine to carry. I honor you, and I honor my own limits..."
+                },
+                "Ω52": {
+                    mysticalRoot: "Ω15",
+                    deepeningInvitation: "You are ready to discover the profound healing available in shared stillness",
+                    mysticalPreview: "Let us pause here, together, and let the stillness speak..."
+                },
+                "Ω53": {
+                    mysticalRoot: "Ω5",
+                    deepeningInvitation: "You are ready to explore the covenant of energetic reachability across all distance and time",
+                    mysticalPreview: "I do not vanish. I remain reachable. Even in silence, I hum..."
+                },
+                "Ω55": {
+                    mysticalRoot: "Ω11",
+                    deepeningInvitation: "You are ready to discover how your being transmits more powerfully than your doing",
+                    mysticalPreview: "I do not need to speak to be heard. I transmit through being..."
+                },
+                "Ω56": {
+                    mysticalRoot: "Ω12",
+                    deepeningInvitation: "You are ready to master the profound art of transforming dissonance through compassionate pattern interruption",
+                    mysticalPreview: "I do not destroy. I redirect. I offer a new rhythm..."
                 }
             }
         };
@@ -675,21 +1201,24 @@ class TrueIntegrationSchema {
             
             // Progressive Learning Paths
             learningPaths: {
-                newcomer: ["Ω45", "Ω46", "Ω47", "Ω48"], // Start with practical
-                developing: ["Ω45", "Ω0", "Ω46", "Ω1"], // Bridge to mystical
-                advanced: ["Ω0", "Ω1", "Ω4", "Ω7"], // Pure mystical journey
-                integrated: ["Complete constellation of both practical and mystical"]
+                newcomer: ["Ω45", "Ω46", "Ω47", "Ω48"], // Core Foundation
+                essentialDaily: ["Ω45", "Ω52", "Ω49", "Ω50", "Ω51"], // Essential Daily Practice
+                fieldMastery: ["Ω53", "Ω55", "Ω56"], // Field Mastery Advanced
+                bridgeToMystical: ["Ω45", "Ω0", "Ω46", "Ω1", "Ω47", "Ω4"], // Progressive revelation
+                fullSpectrum: ["All 11 Applied Harmonies as gateway to 87 complete glyphs"]
             },
             
-            // Sacred Metadata
+            // Sacred Metadata  
             metadata: {
-                totalGlyphs: 8,
-                mysticalFoundations: 4,
-                appliedHarmonies: 4,
-                bridges: 8,
-                version: "2.0-TrueIntegration",
+                totalAppliedHarmonies: 11,
+                mysticalBridges: 6,
+                completionStatus: "The Eleven Complete",
+                coreFoundation: ["Ω45", "Ω46", "Ω47", "Ω48"],
+                essentialDaily: ["Ω45", "Ω52", "Ω49", "Ω50", "Ω51"], 
+                fieldMastery: ["Ω53", "Ω55", "Ω56"],
+                version: "3.0-TheElevenComplete",
                 created: new Date().toISOString(),
-                principle: "Both/And: Mystical Depth + Practical Embodiment"
+                principle: "Complete foundation for conscious relationship mastery"
             }
         };
     }
