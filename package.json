@@ -9,7 +9,17 @@
     "generate-docs": "node scripts/generate-markdown.js",
     "build": "node scripts/build-index.js",
     "dev": "npm run validate && npm run generate-docs",
-    "test": "npm run validate"
+    "test": "npm run validate",
+    "validate-content": "node tools/sacred-content-validator.cjs validate",
+    "fix-content": "node tools/sacred-content-validator.cjs fix",
+    "check-file": "node tools/sacred-content-validator.cjs check-file",
+    "generate-images": "node tools/sacred-image-generator.cjs all",
+    "generate-glyph-cards": "node tools/sacred-image-generator.cjs glyph-cards",
+    "generate-badges": "node tools/sacred-image-generator.cjs badges",
+    "verify-images": "node tools/sacred-image-generator.cjs verify",
+    "sacred-validate": "npm run validate-content && npm run verify-images",
+    "sacred-build": "npm run fix-content && npm run generate-images",
+    "start": "python -m http.server 8000"
   },
   "keywords": [
     "philosophy",
@@ -35,5 +45,8 @@
   },
   "devDependencies": {
     "ajv": "^8.12.0"
+  },
+  "dependencies": {
+    "canvas": "^2.11.2"
   }
 }

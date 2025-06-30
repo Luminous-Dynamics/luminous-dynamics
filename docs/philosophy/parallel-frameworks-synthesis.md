@@ -140,7 +140,7 @@ After this comparative analysis, ERC's distinctive gifts become clear:
 Rather than choosing between frameworks, we propose **evolutionary synthesis** where each system contributes its gifts:
 
 - **Wilber's AQAL**: Developmental precision and shadow work
-- **Kegan's Psychology**: Practical transformation mechanisms  
+- **Kegan's Psychology**: Practical transformation mechanisms
 - **Eisenstein's Economics**: Gift-based social alternatives
 - **Raworth's Metrics**: Measurable sustainability indicators
 - **Whitehead's Philosophy**: Rigorous metaphysical foundations

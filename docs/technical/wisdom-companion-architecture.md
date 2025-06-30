@@ -72,13 +72,13 @@ session_flow:
     - presence_invitation: "Let's take a breath together before we begin..."
     - intention_setting: "What's alive for you in this moment?"
     - context_awareness: Check user's practice history and current state
-    
+
   dialogue:
     - deep_listening: Parse not just words but emotional subtext
     - wisdom_retrieval: Find relevant glyphs, principles, practices
     - adaptive_response: Match depth and style to user's need
     - embodiment_prompts: Regular returns to somatic awareness
-    
+
   integration:
     - practice_suggestion: Specific glyph or exercise for the moment
     - reflection_invitation: "What arose for you in our conversation?"
@@ -101,22 +101,22 @@ class PracticeSession:
         self.glyph = glyph
         self.user_state = user_context
         self.adaptation_engine = SomaticAwareness()
-        
+
     def guide_practice(self):
         # Opening grounding
         yield "Let's begin by finding a comfortable position..."
-        
+
         # Adaptive pacing based on user feedback
         while in_practice:
             instruction = self.get_next_instruction()
             user_response = yield instruction
-            
+
             # Adjust based on somatic feedback
             if user_response.indicates_tension():
                 yield self.offer_modification()
             elif user_response.indicates_depth():
                 yield self.deepen_practice()
-                
+
         # Integration support
         yield "Take a moment to notice what's different now..."
 ```
@@ -137,14 +137,14 @@ learning_paths:
     - current_challenges: [relationship, work, spiritual, emotional]
     - available_time: [5min_daily, 30min_weekly, weekend_intensive]
     - prior_experience: [meditation, therapy, philosophy, none]
-    
+
   path_generation:
     initiate:
       week_1: "Ω0 - Discovering presence in daily moments"
       week_2: "Ω2 - Creating welcoming space in interactions"
       week_3: "Ω1 - Establishing conscious connection"
       week_4: "Integration and celebration"
-      
+
     practitioner:
       - advanced_glyphs: Based on specific life challenges
       - meta_glyph_exploration: When foundations are stable
@@ -173,7 +173,7 @@ class SafetyMonitor:
             - trauma_activation
             - spiritual_emergency
             - relationship_violence
-            
+
         if indicators.suggest_professional_support():
             return self.compassionate_referral()
         elif indicators.suggest_rest():
@@ -257,7 +257,7 @@ class SafetyMonitor:
 **Advanced Modalities**:
 - VR/AR practice environments
 - AI-facilitated group sessions
-- Real-time field coherence visualization
+- Real-time Field Coherence visualization
 - Planetary consciousness experiments
 
 ---
@@ -266,7 +266,7 @@ class SafetyMonitor:
 
 ### **First-Time User Journey**
 ```
-AI: "Welcome. I'm here as a companion for your exploration of conscious relationship. Before we begin, let's take three breaths together to arrive fully. 
+AI: "Welcome. I'm here as a companion for your exploration of conscious relationship. Before we begin, let's take three breaths together to arrive fully.
 
 [Breathing guidance with visual cue]
 
@@ -274,7 +274,7 @@ What brings you to explore the ERC today?"
 
 User: "My partner and I keep having the same fight"
 
-AI: "I hear that you're experiencing a repetitive pattern with your partner. That can feel frustrating and draining. 
+AI: "I hear that you're experiencing a repetitive pattern with your partner. That can feel frustrating and draining.
 
 Would you like to:
 1. Explore what might be beneath this pattern
@@ -342,7 +342,7 @@ Would you like me to create detailed session plans for any of these elements?"
 
 ### **Individual Transformation Metrics**
 - **Presence Increase**: Time spent in conscious awareness daily
-- **Relationship Quality**: Self-reported connection improvements  
+- **Relationship Quality**: Self-reported connection improvements
 - **Emotional Regulation**: Ability to pause before reactive responses
 - **Practice Consistency**: Regular engagement without dependency
 

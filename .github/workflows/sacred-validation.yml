@@ -1,0 +1,131 @@
+name: Sacred Content Validation
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'docs/**/*.md'
+      - 'README.md'
+      - 'websites/**/*.html'
+      - 'websites/**/*.md'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'docs/**/*.md'
+      - 'README.md'
+      - 'websites/**/*.html'
+      - 'websites/**/*.md'
+
+jobs:
+  validate-sacred-content:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Sacred Checkout
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install Sacred Dependencies
+      run: npm ci
+      
+    - name: Validate Sacred Content
+      run: npm run validate-content
+      
+    - name: Generate Sacred Images
+      run: npm run generate-images
+      continue-on-error: true  # Images are optional
+      
+    - name: Upload Validation Report
+      uses: actions/upload-artifact@v4
+      if: failure()
+      with:
+        name: validation-report
+        path: validation-report.md
+        
+    - name: Upload Generated Images
+      uses: actions/upload-artifact@v4
+      if: success()
+      with:
+        name: sacred-images
+        path: assets/generated-images/
+        
+    - name: Comment PR with Validation Results
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const fs = require('fs');
+          
+          try {
+            const report = fs.readFileSync('validation-report.md', 'utf8');
+            const lines = report.split('\n');
+            const summary = lines.slice(0, 15).join('\n');
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## 🔍 Sacred Content Validation Results\n\n${summary}\n\n*Full report available in workflow artifacts*`
+            });
+          } catch (error) {
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '## ✅ Sacred Content Validation Passed\n\nAll sacred content is pristine and ready for publication.'
+            });
+          }
+
+  auto-fix-content:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Sacred Checkout
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install Sacred Dependencies
+      run: npm ci
+      
+    - name: Auto-fix Sacred Content
+      run: npm run fix-content
+      
+    - name: Check for Sacred Changes
+      id: verify-changed-files
+      run: |
+        if [ -n "$(git status --porcelain)" ]; then
+          echo "changed=true" >> $GITHUB_OUTPUT
+        else
+          echo "changed=false" >> $GITHUB_OUTPUT
+        fi
+        
+    - name: Commit Sacred Fixes
+      if: steps.verify-changed-files.outputs.changed == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "Sacred Content Validator"
+        git add .
+        git commit -m "🔧 Sacred Content: Auto-fix validation issues
+
+        Automated fixes applied by Sacred Content Validator:
+        - Sacred terminology corrections
+        - Grammar and consistency improvements
+        - Formatting standardization
+        - Trailing whitespace removal
+
+        🤖 Generated with Sacred Content Validator
+        Co-Authored-By: Sacred AI Assistant <noreply@anthropic.com>"
+        git push

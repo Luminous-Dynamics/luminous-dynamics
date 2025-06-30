@@ -14,7 +14,7 @@ The Harmonic Resonance Protocol creates a structured way for practitioners world
 ```json
 {
   "reportId": "uuid",
-  "practitionerId": "anonymous-hash", 
+  "practitionerId": "anonymous-hash",
   "timestamp": "ISO-8601",
   "practiceSession": {
     "glyphsPracticed": ["Ω0", "Ω2"],
@@ -23,7 +23,7 @@ The Harmonic Resonance Protocol creates a structured way for practitioners world
   },
   "fieldStateMapping": {
     "initial": "scattered, anxious",
-    "final": "centered, open", 
+    "final": "centered, open",
     "shiftQuality": "gradual-then-sudden"
   },
   "resonanceMetrics": {

@@ -262,7 +262,7 @@ Each week includes 10-minute daily practices and one team experiment. Ready to b
 - Reduces time to find relevant glyphs for situations
 - Provides immediate guidance during challenging moments
 - Connects practitioners for mutual support
-- Tracks collective wisdom emergence
+- Tracks Collective Wisdom emergence
 
 ### **Preventing Failure**
 - Early recognition of shadow patterns

@@ -170,7 +170,7 @@ The Field Topology Mapper (FTM) represents the practical application of Relation
 - **Scientific Revolution**: Establish consciousness interaction as measurable phenomenon
 - **Social Healing**: Practical tools for addressing divisions and building bridges
 - **Cultural Evolution**: Technology that supports rather than fragments human connection
-- **Planetary Consciousness**: Infrastructure for collective wisdom and decision-making
+- **Planetary Consciousness**: Infrastructure for Collective Wisdom and decision-making
 
 ---
 

@@ -16,7 +16,7 @@ This is not a user flow - it is a **journey through contemplative space**.
 
 **User State**: Arriving with whatever they carry - anxiety, confusion, seeking
 
-**Interface Vision**: 
+**Interface Vision**:
 - A digital clearing in the forest of noise
 - Their breathing slows before any interaction
 - The space whispers: "You can rest here"
@@ -136,7 +136,7 @@ await sacred_pause(5.0);  // Non-skippable honoring
 "Let your breath find its natural rhythm"
 [4 seconds]
 "Now gently extend your exhale"
-[6 seconds]  
+[6 seconds]
 "Notice the pause between breaths"
 [5 seconds]
 "This pause is always available to you"
@@ -155,9 +155,9 @@ await sacred_pause(5.0);  // Non-skippable honoring
 
 **Integration Prompt**:
 > "The practice is complete. Before you go, take a moment to notice:
-> 
+>
 > What feels different in your body now?
-> 
+>
 > What is one insight from this time that you can carry with you?"
 
 **Design Elements**:
@@ -167,7 +167,7 @@ await sacred_pause(5.0);  // Non-skippable honoring
 
 **The Sacred Completion**:
 - No upsells to try another practice
-- No "How was your experience?" surveys  
+- No "How was your experience?" surveys
 - No invitation to return tomorrow
 - Just blessing and release
 
@@ -232,7 +232,7 @@ class SacredJourney {
   constructor() {
     this.moments = [
       'threshold',
-      'offering', 
+      'offering',
       'sacred_pause',
       'guidance',
       'practice',
@@ -244,11 +244,11 @@ class SacredJourney {
   async transition(toMoment) {
     // Every transition honors the pace of presence
     await this.fadeOut(1000);
-    
+
     if (toMoment === 'sacred_pause') {
       await this.hold_space(5000);  // The most important line
     }
-    
+
     await this.fadeIn(1000);
   }
 
