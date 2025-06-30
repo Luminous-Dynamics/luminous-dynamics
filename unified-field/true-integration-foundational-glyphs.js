@@ -13,12 +13,14 @@ class TrueIntegrationFoundationalGlyphs {
     constructor() {
         this.glyphs = this.initializeTrueIntegrationGlyphs();
         this.metadata = {
-            version: "2.0-TrueIntegration",
+            version: "2.1-ExpandedHarmonies",
             principle: "Both/And: Mystical Depth + Practical Embodiment",
             totalGlyphs: Object.keys(this.glyphs).length,
-            appliedHarmonies: ["Ω45", "Ω46", "Ω47", "Ω48"],
+            appliedHarmonies: ["Ω45", "Ω46", "Ω47", "Ω48", "Ω49", "Ω50", "Ω51", "Ω52"],
             mysticalFoundations: ["Ω0", "Ω1", "Ω4", "Ω7"],
-            bridgeGlyphs: ["Ω8"]
+            mysticalExpansion: ["Ω2", "Ω3", "Ω10", "Ω15"],
+            bridgeGlyphs: ["Ω8"],
+            essentialDaily: ["Ω45", "Ω52", "Ω49", "Ω50", "Ω51"]
         };
     }
 
@@ -474,6 +476,320 @@ class TrueIntegrationFoundationalGlyphs {
                     accentColor: "#E6F0FF",
                     animation: "crystalline_alignment"
                 }
+            },
+
+            // NEXT WAVE OF APPLIED HARMONIES - Essential Daily Practices
+
+            "Ω49": {
+                id: "Ω49",
+                name: "Gentle Opening",
+                fullName: "Ω49: Gentle Opening (Applied Harmony)",
+                type: "applied_harmony",
+                mysticalRoot: "Ω2",
+                mysticalDesignation: "Breath of Invitation / The Gentle Opening",
+                harmony: "transparency",
+                secondaryHarmonies: ["resonance", "mutuality"],
+                difficulty: "beginner",
+                masteryLevel: 2,
+                
+                quadrants: {
+                    why: {
+                        philosophicalRoot: "True invitation creates safety without coercion. This practice teaches us to open space for connection while honoring the other's complete freedom to enter or not.",
+                        
+                        coreQuestion: "Can I create welcome without attachment to outcome?",
+                        
+                        harmonyConnection: "Gentle Opening embodies Transparency through non-coercive availability. It creates the spaciousness where authentic connection becomes possible.",
+                        
+                        mysticalBridge: "This practice is an expression of Ω2: Breath of Invitation - creating a field of non-coercive approachability.",
+                        
+                        mysticalGraduation: "As you master creating safety without attachment, explore Ω2: The subtle call that draws another into relation without demand",
+                        
+                        shadowTransformed: "Neediness, coercion, false openness, agenda-driven invitation"
+                    },
+                    
+                    how: {
+                        practiceInstructions: [
+                            "Take a soft, complete exhale and let your body relax",
+                            "Open your posture gently (uncross arms, soften shoulders)",
+                            "Hold the inner thought: 'You are welcome here if you choose'",
+                            "Rest in calm availability without pulling or pushing",
+                            "Notice any urge to convince or control, and release it"
+                        ],
+                        
+                        interactiveComponent: {
+                            type: "openness_practice",
+                            config: {
+                                bodyScans: [
+                                    "Notice where you hold tension when inviting",
+                                    "Feel the difference between genuine and forced openness"
+                                ],
+                                innerStates: ["spacious", "available", "unattached", "serene"]
+                            }
+                        },
+                        
+                        mysticalGraduation: "When your invitation naturally creates safety, explore the mystical art of 'noetic hospitality'"
+                    },
+                    
+                    resonance: {
+                        relatedGlyphs: ["Ω45", "Ω46", "Ω50"],
+                        mysticalProgression: "Ω2",
+                        prerequisiteGlyphs: ["Ω45"],
+                        constellationPosition: "gateway"
+                    },
+                    
+                    we: {
+                        practitionerFieldNotes: [
+                            "I learned the difference between 'please come' and 'you're welcome if you choose'—everything changed.",
+                            "My children started approaching me more when I stopped pulling them toward me.",
+                            "This practice helped me understand that real invitation requires real freedom."
+                        ]
+                    }
+                },
+                
+                contexts: ["new relationships", "group gatherings", "conflict resolution", "parenting", "leadership"],
+                visual: {
+                    sigil: "🌸",
+                    primaryColor: "#F0E6E8",
+                    accentColor: "#E8D4D8",
+                    animation: "gentle_bloom"
+                }
+            },
+
+            "Ω50": {
+                id: "Ω50",
+                name: "Building Trust",
+                fullName: "Ω50: Building Trust (Applied Harmony)",
+                type: "applied_harmony",
+                mysticalRoot: "Ω3",
+                mysticalDesignation: "Trust Emergence / Kairotic Trust Wells",
+                harmony: "coherence",
+                secondaryHarmonies: ["transparency", "resonance"],
+                difficulty: "beginner",
+                masteryLevel: 3,
+                
+                quadrants: {
+                    why: {
+                        philosophicalRoot: "Trust cannot be demanded or rushed—it emerges in its own sacred timing. This practice teaches us to create the conditions where trust naturally arises.",
+                        
+                        coreQuestion: "Can I be trustworthy without demanding trust in return?",
+                        
+                        harmonyConnection: "Building Trust serves Coherence by creating consistent alignment between words and actions, allowing trust to emerge naturally over time.",
+                        
+                        mysticalBridge: "This practice is an expression of Ω3: Kairotic Trust Wells - the sacred timing of trust emergence.",
+                        
+                        mysticalGraduation: "As trust becomes your natural emanation, explore Ω3: The kairotic emergence of trust in divine timing",
+                        
+                        shadowTransformed: "Trust manipulation, rushing intimacy, trust hoarding, conditional trust"
+                    },
+                    
+                    how: {
+                        practiceInstructions: [
+                            "Begin by trusting yourself—feel your own reliability",
+                            "Make one small promise to another and keep it completely",
+                            "When you make mistakes, acknowledge them immediately",
+                            "Show up consistently, even in small ways",
+                            "Release any timeline for when trust 'should' develop"
+                        ],
+                        
+                        interactiveComponent: {
+                            type: "trust_building",
+                            config: {
+                                microPractices: [
+                                    "Keep one small promise today",
+                                    "Acknowledge one mistake with grace",
+                                    "Show up when you said you would"
+                                ],
+                                trustMarkers: ["consistency", "transparency", "reliability", "presence"]
+                            }
+                        },
+                        
+                        mysticalGraduation: "When trust flows naturally from your being, explore the mystical wells of kairotic timing"
+                    },
+                    
+                    resonance: {
+                        relatedGlyphs: ["Ω49", "Ω45", "Ω46"],
+                        mysticalProgression: "Ω3",
+                        prerequisiteGlyphs: ["Ω45", "Ω49"],
+                        constellationPosition: "foundation"
+                    },
+                    
+                    we: {
+                        practitionerFieldNotes: [
+                            "I stopped trying to prove I was trustworthy and just became trustworthy. Everything shifted.",
+                            "Small promises kept consistently rebuilt my marriage after betrayal.",
+                            "Trust isn't a thing you have but a field you tend—this practice taught me how."
+                        ]
+                    }
+                },
+                
+                contexts: ["relationship repair", "team building", "parenting", "new connections", "professional relationships"],
+                visual: {
+                    sigil: "🌱",
+                    primaryColor: "#D4E8D4",
+                    accentColor: "#B8D4B8",
+                    animation: "gentle_growth"
+                }
+            },
+
+            "Ω51": {
+                id: "Ω51",
+                name: "Loving No",
+                fullName: "Ω51: Loving No (Applied Harmony)",
+                type: "applied_harmony",
+                mysticalRoot: "Ω10",
+                mysticalDesignation: "The Glyph of Sacred Refusal / The Honored No",
+                harmony: "agency",
+                secondaryHarmonies: ["coherence", "transparency"],
+                difficulty: "intermediate",
+                masteryLevel: 4,
+                
+                quadrants: {
+                    why: {
+                        philosophicalRoot: "A clear 'no' is an act of love—love for yourself, love for the truth, and ultimately love for the relationship. Sacred refusal creates clarity, not separation.",
+                        
+                        coreQuestion: "Can my 'no' come from love rather than fear or anger?",
+                        
+                        harmonyConnection: "Loving No embodies Agency through sovereign choice while maintaining connection. It shows that boundaries can deepen rather than damage relationships.",
+                        
+                        mysticalBridge: "This practice is an expression of Ω10: Sacred Refusal - the power of a clear, coherent, and sovereign 'No.'",
+                        
+                        mysticalGraduation: "When your 'no' consistently serves love, explore Ω10: The profound alignment with one's own integrity",
+                        
+                        shadowTransformed: "People-pleasing, harsh rejection, guilty boundaries, aggressive refusal"
+                    },
+                    
+                    how: {
+                        practiceInstructions: [
+                            "Connect with your center—place hand on heart or belly",
+                            "Feel the 'no' in your body before speaking it",
+                            "Begin with appreciation: 'I value our connection, and...'",
+                            "State your boundary simply: 'I'm not available for that'",
+                            "Offer what you CAN give: 'What I can offer is...'",
+                            "Stay present with their response without defending"
+                        ],
+                        
+                        interactiveComponent: {
+                            type: "boundary_practice",
+                            config: {
+                                scenarios: [
+                                    "Saying no to overtime when exhausted",
+                                    "Declining a social event you don't want to attend",
+                                    "Refusing to engage in gossip"
+                                ],
+                                languageTemplates: [
+                                    "I appreciate the invitation, and I need to decline",
+                                    "That doesn't work for me, but thank you for thinking of me",
+                                    "I'm not available for that conversation"
+                                ]
+                            }
+                        },
+                        
+                        mysticalGraduation: "When your refusal creates clarity and respect, explore the mystical art of sovereign alignment"
+                    },
+                    
+                    resonance: {
+                        relatedGlyphs: ["Ω48", "Ω50", "Ω45"],
+                        mysticalProgression: "Ω10",
+                        prerequisiteGlyphs: ["Ω45", "Ω50"],
+                        constellationPosition: "guardian"
+                    },
+                    
+                    we: {
+                        practitionerFieldNotes: [
+                            "My 'no' became so loving that people thanked me for it. I never expected that.",
+                            "Learning to refuse from love rather than fear transformed all my relationships.",
+                            "My clear 'no' made my 'yes' trustworthy for the first time in my life."
+                        ]
+                    }
+                },
+                
+                contexts: ["workplace", "family dynamics", "friendships", "romantic relationships", "community involvement"],
+                visual: {
+                    sigil: "🌿",
+                    primaryColor: "#C4D8C4",
+                    accentColor: "#A8C4A8",
+                    animation: "rooted_strength"
+                }
+            },
+
+            "Ω52": {
+                id: "Ω52",
+                name: "Pause Practice", 
+                fullName: "Ω52: Pause Practice (Applied Harmony)",
+                type: "applied_harmony",
+                mysticalRoot: "Ω15",
+                mysticalDesignation: "Sacred Pause",
+                harmony: "coherence",
+                secondaryHarmonies: ["agency", "resonance"],
+                difficulty: "beginner",
+                masteryLevel: 2,
+                
+                quadrants: {
+                    why: {
+                        philosophicalRoot: "In the space between stimulus and response lies our freedom. The sacred pause transforms reactive patterns into conscious choice, creating room for wisdom to emerge.",
+                        
+                        coreQuestion: "Can I create space before I respond?",
+                        
+                        harmonyConnection: "Pause Practice serves Coherence by interrupting unconscious patterns and creating space for aligned response. It transforms reactivity into responsibility.",
+                        
+                        mysticalBridge: "This practice is an expression of Ω15: Sacred Pause - the space where choice lives.",
+                        
+                        mysticalGraduation: "When pausing becomes your natural response to intensity, explore Ω15: The sacred space of infinite possibility",
+                        
+                        shadowTransformed: "Reactivity, impulsiveness, unconscious patterns, fight-or-flight responses"
+                    },
+                    
+                    how: {
+                        practiceInstructions: [
+                            "When triggered or activated, STOP completely",
+                            "Take one conscious breath—feel it fully",
+                            "Notice what's happening in your body without judgment",
+                            "Ask: 'What response would serve love here?'",
+                            "Only then, choose your response consciously"
+                        ],
+                        
+                        interactiveComponent: {
+                            type: "pause_training",
+                            config: {
+                                triggers: [
+                                    "Someone says something that upsets you",
+                                    "You receive challenging feedback",
+                                    "A child pushes your buttons"
+                                ],
+                                pauseLength: {
+                                    beginner: "One breath",
+                                    intermediate: "Three breaths", 
+                                    advanced: "As long as needed"
+                                }
+                            }
+                        },
+                        
+                        mysticalGraduation: "When the pause becomes a sacred gateway, explore the infinite creative potential within the gap"
+                    },
+                    
+                    resonance: {
+                        relatedGlyphs: ["Ω45", "Ω51", "Ω47"],
+                        mysticalProgression: "Ω15",
+                        prerequisiteGlyphs: ["Ω45"],
+                        constellationPosition: "transformer"
+                    },
+                    
+                    we: {
+                        practitionerFieldNotes: [
+                            "One breath saved my marriage. I paused instead of attacking, and everything changed.",
+                            "The pause practice broke my family's generational pattern of explosive anger.",
+                            "I thought pausing would make me weak. Instead, it made me unshakeable."
+                        ]
+                    }
+                },
+                
+                contexts: ["conflict", "parenting", "workplace stress", "traffic", "social media", "difficult conversations"],
+                visual: {
+                    sigil: "⏸️",
+                    primaryColor: "#E6E8F0",
+                    accentColor: "#D4D8E8",
+                    animation: "breathing_space"
+                }
             }
         };
     }
@@ -482,16 +798,22 @@ class TrueIntegrationFoundationalGlyphs {
     getLearningPaths() {
         return {
             // Start with Applied Harmonies for immediate practical value
-            newcomer: ["Ω45", "Ω46", "Ω47", "Ω48"],
+            newcomer: ["Ω45", "Ω52", "Ω49", "Ω50", "Ω46", "Ω47", "Ω51", "Ω48"],
+            
+            // Essential daily practice set
+            essential: ["Ω45", "Ω52", "Ω49", "Ω50", "Ω51"],
             
             // Bridge to mystical depths as practices mature
-            developing: ["Ω45", "Ω0", "Ω46", "Ω1"],
+            developing: ["Ω45", "Ω0", "Ω49", "Ω2", "Ω50", "Ω3", "Ω52", "Ω15"],
             
             // Pure mystical journey for advanced practitioners
-            advanced: ["Ω0", "Ω1", "Ω4", "Ω7"],
+            advanced: ["Ω0", "Ω1", "Ω2", "Ω3", "Ω4", "Ω7", "Ω10", "Ω15"],
             
             // Complete integration of both layers
-            integrated: ["Ω45", "Ω0", "Ω46", "Ω1", "Ω47", "Ω4", "Ω48", "Ω7", "Ω8"]
+            integrated: [
+                "Ω45", "Ω0", "Ω46", "Ω1", "Ω47", "Ω4", "Ω48", "Ω7",
+                "Ω49", "Ω2", "Ω50", "Ω3", "Ω51", "Ω10", "Ω52", "Ω15", "Ω8"
+            ]
         };
     }
 
