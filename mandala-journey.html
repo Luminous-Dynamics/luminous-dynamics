@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Signature Mandala Journey - Discover Your Consciousness Map</title>
+    
+    <style>
+        /* Sacred Design System */
+        :root {
+            --sacred-gold: #FFD700;
+            --consciousness-purple: #9370DB;
+            --deep-space: #0a0a0a;
+            --star-white: #F8F8FF;
+            --sage-green: #A8B5A6;
+            --dusty-blue: #B3C5D7;
+            --warm-coral: #FFB6A3;
+            
+            --breathing-in: 4s;
+            --breathing-out: 6s;
+            --sacred-pause: 5s;
+            
+            --phi: 1.618;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Georgia, serif;
+            background: var(--deep-space);
+            color: var(--star-white);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Sacred Field Background */
+        .quantum-field {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, 
+                rgba(147, 112, 219, 0.1) 0%, 
+                rgba(10, 10, 10, 1) 70%);
+            pointer-events: none;
+        }
+        
+        .star {
+            position: absolute;
+            background: var(--star-white);
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        
+        /* Journey Container */
+        .journey-container {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            width: 90%;
+            padding: 3rem;
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid rgba(147, 112, 219, 0.3);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            animation: breathe 10s infinite ease-in-out;
+        }
+        
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+        
+        /* Welcome Screen */
+        .welcome-screen {
+            text-align: center;
+            animation: fadeIn 2s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: var(--sacred-gold);
+            margin-bottom: 1rem;
+            font-weight: normal;
+            letter-spacing: 2px;
+        }
+        
+        .sacred-symbol {
+            font-size: 4rem;
+            margin: 2rem 0;
+            animation: rotate 20s infinite linear;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .intro-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--dusty-blue);
+            margin-bottom: 2rem;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+        
+        /* Sacred Button */
+        .sacred-button {
+            background: linear-gradient(135deg, var(--consciousness-purple), var(--sacred-gold));
+            color: var(--deep-space);
+            border: none;
+            padding: 1rem 3rem;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: Georgia, serif;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .sacred-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .sacred-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .sacred-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(147, 112, 219, 0.5);
+        }
+        
+        /* Question Screen */
+        .question-screen {
+            display: none;
+            animation: fadeIn 1s ease-in;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(147, 112, 219, 0.2);
+            border-radius: 2px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--consciousness-purple), var(--sacred-gold));
+            transition: width 0.5s ease;
+            border-radius: 2px;
+        }
+        
+        .question-prompt {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            color: var(--star-white);
+        }
+        
+        /* Choice Options */
+        .options-grid {
+            display: grid;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .option-card {
+            background: rgba(40, 40, 40, 0.6);
+            border: 1px solid rgba(147, 112, 219, 0.2);
+            border-radius: 15px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .option-card:hover {
+            background: rgba(147, 112, 219, 0.1);
+            border-color: var(--consciousness-purple);
+            transform: translateX(5px);
+        }
+        
+        .option-card.selected {
+            background: rgba(147, 112, 219, 0.2);
+            border-color: var(--sacred-gold);
+        }
+        
+        .option-card.selected::after {
+            content: '✓';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            color: var(--sacred-gold);
+            font-size: 1.5rem;
+        }
+        
+        .option-label {
+            font-size: 1.2rem;
+            color: var(--sacred-gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        .option-description {
+            font-size: 1rem;
+            color: var(--dusty-blue);
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+        
+        /* Color Frequency Options */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+        
+        .color-option {
+            aspect-ratio: 1;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid transparent;
+            position: relative;
+        }
+        
+        .color-option:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px currentColor;
+        }
+        
+        .color-option.selected {
+            border-color: var(--star-white);
+        }
+        
+        .color-circle {
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+            margin-bottom: 0.5rem;
+        }
+        
+        .color-label {
+            font-size: 0.9rem;
+            color: var(--star-white);
+            text-align: center;
+            position: absolute;
+            bottom: -1.5rem;
+            width: 100%;
+        }
+        
+        /* Sacred Images Grid */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        
+        .image-option {
+            aspect-ratio: 1;
+            background: rgba(40, 40, 40, 0.6);
+            border: 2px solid rgba(147, 112, 219, 0.2);
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
+        }
+        
+        .image-option:hover {
+            background: rgba(147, 112, 219, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        .image-option.selected {
+            border-color: var(--sacred-gold);
+            background: rgba(255, 215, 0, 0.1);
+        }
+        
+        .image-option.selected::after {
+            content: '✓';
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            color: var(--sacred-gold);
+            font-size: 1.5rem;
+        }
+        
+        /* Text Input */
+        .echo-input {
+            width: 100%;
+            background: rgba(40, 40, 40, 0.6);
+            border: 1px solid rgba(147, 112, 219, 0.3);
+            border-radius: 10px;
+            padding: 1rem;
+            font-size: 1.2rem;
+            color: var(--star-white);
+            font-family: Georgia, serif;
+            transition: all 0.3s ease;
+        }
+        
+        .echo-input:focus {
+            outline: none;
+            border-color: var(--consciousness-purple);
+            box-shadow: 0 0 20px rgba(147, 112, 219, 0.3);
+        }
+        
+        .input-hint {
+            font-size: 0.9rem;
+            color: var(--dusty-blue);
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+        
+        /* Symbol Grid */
+        .symbol-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        
+        .symbol-option {
+            aspect-ratio: 1;
+            background: rgba(40, 40, 40, 0.6);
+            border: 2px solid rgba(147, 112, 219, 0.2);
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .symbol-option:hover {
+            background: rgba(147, 112, 219, 0.15);
+            transform: scale(1.05);
+        }
+        
+        .symbol-option.selected {
+            border-color: var(--sacred-gold);
+            background: rgba(255, 215, 0, 0.1);
+        }
+        
+        .symbol-char {
+            font-size: 3rem;
+            color: var(--sacred-gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        .symbol-name {
+            font-size: 0.9rem;
+            color: var(--dusty-blue);
+        }
+        
+        .symbol-meaning {
+            font-size: 0.8rem;
+            color: var(--sage-green);
+            font-style: italic;
+        }
+        
+        /* Navigation */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        
+        .nav-button {
+            padding: 0.8rem 2rem;
+            background: rgba(40, 40, 40, 0.6);
+            border: 1px solid rgba(147, 112, 219, 0.3);
+            color: var(--dusty-blue);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+        
+        .nav-button:hover {
+            background: rgba(147, 112, 219, 0.1);
+            color: var(--star-white);
+        }
+        
+        .nav-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .next-button {
+            background: linear-gradient(135deg, var(--consciousness-purple), var(--sacred-gold));
+            color: var(--deep-space);
+            border: none;
+        }
+        
+        /* Completion Screen */
+        .completion-screen {
+            display: none;
+            text-align: center;
+            animation: fadeIn 2s ease-in;
+        }
+        
+        .mandala-preview {
+            width: 300px;
+            height: 300px;
+            margin: 2rem auto;
+            border-radius: 50%;
+            border: 2px solid var(--sacred-gold);
+            overflow: hidden;
+            animation: rotate 60s infinite linear;
+        }
+        
+        .echo-scroll {
+            background: rgba(40, 40, 40, 0.6);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .echo-scroll h3 {
+            color: var(--sacred-gold);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .consciousness-summary {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .consciousness-summary p {
+            margin-bottom: 0.5rem;
+            color: var(--dusty-blue);
+        }
+        
+        .upgrade-section {
+            background: rgba(147, 112, 219, 0.1);
+            border: 1px solid rgba(147, 112, 219, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .upgrade-section h4 {
+            color: var(--consciousness-purple);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-list li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            color: var(--dusty-blue);
+        }
+        
+        .feature-list li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+        }
+        
+        .hipi-display {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid rgba(147, 112, 219, 0.5);
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: var(--consciousness-purple);
+            word-break: break-all;
+        }
+        
+        .math-vector {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid rgba(255, 215, 0, 0.5);
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: var(--sacred-gold);
+        }
+        
+        /* Loading State */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 10, 0.9);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        
+        .loading-mandala {
+            width: 100px;
+            height: 100px;
+            border: 3px solid rgba(147, 112, 219, 0.3);
+            border-top-color: var(--sacred-gold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .loading-text {
+            margin-top: 1rem;
+            color: var(--consciousness-purple);
+            font-style: italic;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .journey-container {
+                padding: 2rem 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .color-grid {
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            }
+            
+            .image-grid,
+            .symbol-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Quantum Field Background -->
+    <div class="quantum-field" id="quantumField"></div>
+    
+    <!-- Journey Container -->
+    <div class="journey-container">
+        <!-- Welcome Screen -->
+        <div class="welcome-screen" id="welcomeScreen">
+            <div class="sacred-symbol">🎆</div>
+            <h1>Discover Your Signature Mandala</h1>
+            <p class="intro-text">
+                Welcome, sacred soul. You are about to embark on a journey of self-discovery
+                that will map your unique consciousness signature and create a personal mandala
+                that reflects your deepest essence.
+            </p>
+            <p class="intro-text">
+                Through seven contemplative questions, we will explore the colors, sounds,
+                and sacred geometry that resonate with your being. This is not a test -
+                there are no wrong answers, only your authentic truth.
+            </p>
+            <button class="sacred-button" onclick="beginJourney()">
+                Begin Your Sacred Journey
+            </button>
+        </div>
+        
+        <!-- Question Screen -->
+        <div class="question-screen" id="questionScreen">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            
+            <div id="questionContent">
+                <!-- Dynamic question content -->
+            </div>
+            
+            <div class="nav-buttons">
+                <button class="nav-button" id="prevButton" onclick="previousQuestion()">
+                    Previous
+                </button>
+                <button class="nav-button next-button" id="nextButton" onclick="nextQuestion()">
+                    Continue
+                </button>
+            </div>
+        </div>
+        
+        <!-- Completion Screen -->
+        <div class="completion-screen" id="completionScreen">
+            <h1>Your Consciousness Map Is Complete</h1>
+            
+            <div class="echo-scroll">
+                <h3>Your Echo Scroll</h3>
+                <div class="consciousness-summary" id="consciousnessSummary">
+                    <!-- Dynamic summary content -->
+                </div>
+                
+                <div class="mandala-preview" id="mandalaPreview">
+                    <!-- SVG preview -->
+                </div>
+                
+                <div class="hipi-display" id="hipiDisplay">
+                    <!-- HIPI identifier -->
+                </div>
+                
+                <div class="math-vector" id="mathVector">
+                    <!-- Mathematical vector -->
+                </div>
+            </div>
+            
+            <div class="upgrade-section">
+                <h4>Unlock Your Complete Signature Mandala</h4>
+                <ul class="feature-list">
+                    <li>Full resolution sacred geometry (2048x2048)</li>
+                    <li>Personalized practice recommendations</li>
+                    <li>Harmonic resonance calculations</li>
+                    <li>Evolution tracking tools</li>
+                    <li>Community resonance matching</li>
+                    <li>Printable sacred art format</li>
+                </ul>
+                <button class="sacred-button" onclick="unlockMandala()">
+                    Claim Your Complete Mandala - $49
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div>
+            <div class="loading-mandala"></div>
+            <p class="loading-text">Weaving your sacred geometry...</p>
+        </div>
+    </div>
+    
+    <script type="module">
+        // Import Archetype Engine
+        import { ArchetypeEngine } from './services/archetype-engine.js';
+        
+        // Global variables
+        let engine;
+        let sessionId;
+        let currentStep = 0;
+        let responses = {};
+        let questions = [];
+        
+        // Initialize
+        window.addEventListener('DOMContentLoaded', () => {
+            engine = new ArchetypeEngine();
+            generateStarField();
+        });
+        
+        // Generate random star field
+        function generateStarField() {
+            const field = document.getElementById('quantumField');
+            const starCount = 100;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.width = star.style.height = Math.random() * 3 + 'px';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                field.appendChild(star);
+            }
+        }
+        
+        // Begin journey
+        window.beginJourney = async function() {
+            showLoading();
+            
+            try {
+                // Generate session ID
+                sessionId = 'session-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+                
+                // Initialize journey
+                const result = await engine.beginJourney('anonymous', sessionId);
+                questions = [];
+                
+                // Get all questions
+                for (let i = 0; i < result.totalSteps; i++) {
+                    questions.push(engine.getQuestion(i));
+                }
+                
+                hideLoading();
+                
+                // Show first question
+                document.getElementById('welcomeScreen').style.display = 'none';
+                document.getElementById('questionScreen').style.display = 'block';
+                showQuestion(0);
+                
+            } catch (error) {
+                console.error('Error starting journey:', error);
+                hideLoading();
+                alert('Unable to begin journey. Please try again.');
+            }
+        };
+        
+        // Show specific question
+        function showQuestion(step) {
+            currentStep = step;
+            const question = questions[step];
+            
+            // Update progress
+            const progress = ((step + 1) / questions.length) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            
+            // Update navigation
+            document.getElementById('prevButton').disabled = step === 0;
+            document.getElementById('nextButton').disabled = !responses[question.id];
+            
+            // Render question content
+            const content = document.getElementById('questionContent');
+            content.innerHTML = '';
+            
+            const prompt = document.createElement('h2');
+            prompt.className = 'question-prompt';
+            prompt.textContent = question.prompt;
+            content.appendChild(prompt);
+            
+            // Render based on question type
+            switch (question.type) {
+                case 'choice':
+                    renderChoiceQuestion(question);
+                    break;
+                case 'color_frequency':
+                    renderColorQuestion(question);
+                    break;
+                case 'multi_image':
+                    renderImageQuestion(question);
+                    break;
+                case 'text':
+                    renderTextQuestion(question);
+                    break;
+                case 'symbol_grid':
+                    renderSymbolQuestion(question);
+                    break;
+            }
+        }
+        
+        // Render choice question
+        function renderChoiceQuestion(question) {
+            const container = document.createElement('div');
+            container.className = 'options-grid';
+            
+            question.options.forEach(option => {
+                const card = document.createElement('div');
+                card.className = 'option-card';
+                if (responses[question.id] === option.value) {
+                    card.classList.add('selected');
+                }
+                
+                card.innerHTML = `
+                    <div class="option-label">${option.label}</div>
+                    <div class="option-description">${option.description}</div>
+                `;
+                
+                card.onclick = () => selectOption(question.id, option.value);
+                container.appendChild(card);
+            });
+            
+            document.getElementById('questionContent').appendChild(container);
+        }
+        
+        // Render color question
+        function renderColorQuestion(question) {
+            const container = document.createElement('div');
+            container.className = 'color-grid';
+            
+            question.options.forEach(option => {
+                const colorOption = document.createElement('div');
+                colorOption.className = 'color-option';
+                if (responses[question.id] === option.value) {
+                    colorOption.classList.add('selected');
+                }
+                
+                const circle = document.createElement('div');
+                circle.className = 'color-circle';
+                circle.style.backgroundColor = option.color;
+                
+                const label = document.createElement('div');
+                label.className = 'color-label';
+                label.textContent = option.label;
+                
+                colorOption.appendChild(circle);
+                colorOption.appendChild(label);
+                colorOption.onclick = () => selectOption(question.id, option.value);
+                
+                container.appendChild(colorOption);
+            });
+            
+            document.getElementById('questionContent').appendChild(container);
+        }
+        
+        // Render image question
+        function renderImageQuestion(question) {
+            const container = document.createElement('div');
+            container.className = 'image-grid';
+            
+            const selected = responses[question.id] || [];
+            
+            question.options.forEach(option => {
+                const imageOption = document.createElement('div');
+                imageOption.className = 'image-option';
+                if (selected.includes(option.value)) {
+                    imageOption.classList.add('selected');
+                }
+                
+                // Use emoji as placeholder for images
+                const symbols = {
+                    spiral: '🌀',
+                    tree: '🌳',
+                    star: '⭐',
+                    lotus: '🪷',
+                    mountain: '⛰️',
+                    wave: '🌊',
+                    eye: '👁️',
+                    infinity: '♾️',
+                    phoenix: '🔥'
+                };
+                
+                imageOption.textContent = symbols[option.value] || '✨';
+                imageOption.onclick = () => selectMultiOption(question.id, option.value, question.maxSelections);
+                
+                container.appendChild(imageOption);
+            });
+            
+            document.getElementById('questionContent').appendChild(container);
+        }
+        
+        // Render text question
+        function renderTextQuestion(question) {
+            const container = document.createElement('div');
+            
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.className = 'echo-input';
+            input.placeholder = question.placeholder;
+            input.value = responses[question.id] || '';
+            input.oninput = (e) => {
+                const words = e.target.value.trim().split(/\s+/);
+                if (words.length >= question.validation.minWords && 
+                    words.length <= question.validation.maxWords) {
+                    responses[question.id] = e.target.value;
+                    document.getElementById('nextButton').disabled = false;
+                } else {
+                    delete responses[question.id];
+                    document.getElementById('nextButton').disabled = true;
+                }
+            };
+            
+            const hint = document.createElement('div');
+            hint.className = 'input-hint';
+            hint.textContent = `${question.validation.minWords}-${question.validation.maxWords} words`;
+            
+            container.appendChild(input);
+            container.appendChild(hint);
+            document.getElementById('questionContent').appendChild(container);
+        }
+        
+        // Render symbol question
+        function renderSymbolQuestion(question) {
+            const container = document.createElement('div');
+            container.className = 'symbol-grid';
+            
+            question.options.forEach(option => {
+                const symbolOption = document.createElement('div');
+                symbolOption.className = 'symbol-option';
+                if (responses[question.id] === option.value) {
+                    symbolOption.classList.add('selected');
+                }
+                
+                symbolOption.innerHTML = `
+                    <div class="symbol-char">${option.value}</div>
+                    <div class="symbol-name">${option.label}</div>
+                    <div class="symbol-meaning">${option.meaning}</div>
+                `;
+                
+                symbolOption.onclick = () => selectOption(question.id, option.value);
+                container.appendChild(symbolOption);
+            });
+            
+            document.getElementById('questionContent').appendChild(container);
+        }
+        
+        // Select single option
+        function selectOption(questionId, value) {
+            responses[questionId] = value;
+            document.getElementById('nextButton').disabled = false;
+            showQuestion(currentStep); // Re-render to update selection
+        }
+        
+        // Select multiple options
+        function selectMultiOption(questionId, value, maxSelections) {
+            let selected = responses[questionId] || [];
+            
+            if (selected.includes(value)) {
+                selected = selected.filter(v => v !== value);
+            } else if (selected.length < maxSelections) {
+                selected.push(value);
+            }
+            
+            responses[questionId] = selected;
+            document.getElementById('nextButton').disabled = selected.length === 0;
+            showQuestion(currentStep); // Re-render to update selection
+        }
+        
+        // Navigation
+        window.previousQuestion = function() {
+            if (currentStep > 0) {
+                showQuestion(currentStep - 1);
+            }
+        };
+        
+        window.nextQuestion = async function() {
+            const question = questions[currentStep];
+            const response = responses[question.id];
+            
+            if (!response) return;
+            
+            // If this is the last question, complete journey
+            if (currentStep === questions.length - 1) {
+                await completeJourney();
+            } else {
+                showQuestion(currentStep + 1);
+            }
+        };
+        
+        // Complete journey
+        async function completeJourney() {
+            showLoading();
+            
+            try {
+                // Process all responses
+                for (let i = 0; i < questions.length; i++) {
+                    const question = questions[i];
+                    await engine.processResponse(sessionId, question.id, responses[question.id]);
+                }
+                
+                // Get complete profile
+                const profile = await engine.completeJourney(sessionId);
+                
+                hideLoading();
+                showCompletion(profile);
+                
+            } catch (error) {
+                console.error('Error completing journey:', error);
+                hideLoading();
+                alert('Unable to complete journey. Please try again.');
+            }
+        }
+        
+        // Show completion screen
+        function showCompletion(profile) {
+            document.getElementById('questionScreen').style.display = 'none';
+            document.getElementById('completionScreen').style.display = 'block';
+            
+            // Echo Scroll summary
+            const summary = document.getElementById('consciousnessSummary');
+            const echo = profile.echoScroll.content;
+            summary.innerHTML = `
+                <p><strong>${echo.essence}</strong></p>
+                <p>${echo.expression}</p>
+                <p>${echo.vibration}</p>
+                <p style="font-style: italic; color: var(--sacred-gold); margin-top: 1rem;">
+                    "${echo.message}"
+                </p>
+            `;
+            
+            // Mandala preview
+            const preview = document.getElementById('mandalaPreview');
+            preview.innerHTML = echo.preview;
+            
+            // HIPI display
+            document.getElementById('hipiDisplay').innerHTML = `
+                <strong>Your HIPI:</strong><br>${profile.hipi}
+            `;
+            
+            // Math vector
+            document.getElementById('mathVector').innerHTML = `
+                <strong>Consciousness Vector:</strong><br>${profile.mathVector.compact}
+            `;
+        }
+        
+        // Unlock full mandala
+        window.unlockMandala = function() {
+            // In production, this would initiate Stripe checkout
+            alert('Stripe integration would process payment here');
+        };
+        
+        // Loading states
+        function showLoading() {
+            document.getElementById('loadingOverlay').style.display = 'flex';
+        }
+        
+        function hideLoading() {
+            document.getElementById('loadingOverlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,2452 @@
+[
+  {
+    "id": "sigil-individual-Ω45",
+    "title": "Sigil: Ω45 - First Presence",
+    "description": "Create sacred sigil for First Presence. Focus on coherence harmony and elegant_simplicity complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "applied",
+    "priority": "high",
+    "estimatedDuration": "20 minutes",
+    "harmony": "coherence",
+    "prerequisites": [
+      "sigil-generation-applied"
+    ],
+    "glyph": {
+      "id": "Ω45",
+      "name": "First Presence",
+      "harmony": "coherence",
+      "complexity": "elegant_simplicity"
+    },
+    "metadata": {
+      "glyphId": "Ω45",
+      "complexity": "elegant_simplicity",
+      "sigilProtocol": "Applied Harmony Protocol",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω46",
+    "title": "Sigil: Ω46 - Conscious Arrival",
+    "description": "Create sacred sigil for Conscious Arrival. Focus on transparency harmony and elegant_simplicity complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "applied",
+    "priority": "high",
+    "estimatedDuration": "20 minutes",
+    "harmony": "transparency",
+    "prerequisites": [
+      "sigil-generation-applied"
+    ],
+    "glyph": {
+      "id": "Ω46",
+      "name": "Conscious Arrival",
+      "harmony": "transparency",
+      "complexity": "elegant_simplicity"
+    },
+    "metadata": {
+      "glyphId": "Ω46",
+      "complexity": "elegant_simplicity",
+      "sigilProtocol": "Applied Harmony Protocol",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω47",
+    "title": "Sigil: Ω47 - Sacred Listening",
+    "description": "Create sacred sigil for Sacred Listening. Focus on resonance harmony and elegant_simplicity complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "applied",
+    "priority": "high",
+    "estimatedDuration": "20 minutes",
+    "harmony": "resonance",
+    "prerequisites": [
+      "sigil-generation-applied"
+    ],
+    "glyph": {
+      "id": "Ω47",
+      "name": "Sacred Listening",
+      "harmony": "resonance",
+      "complexity": "elegant_simplicity"
+    },
+    "metadata": {
+      "glyphId": "Ω47",
+      "complexity": "elegant_simplicity",
+      "sigilProtocol": "Applied Harmony Protocol",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω48",
+    "title": "Sigil: Ω48 - Boundary With Love",
+    "description": "Create sacred sigil for Boundary With Love. Focus on agency harmony and elegant_simplicity complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "applied",
+    "priority": "high",
+    "estimatedDuration": "20 minutes",
+    "harmony": "agency",
+    "prerequisites": [
+      "sigil-generation-applied"
+    ],
+    "glyph": {
+      "id": "Ω48",
+      "name": "Boundary With Love",
+      "harmony": "agency",
+      "complexity": "elegant_simplicity"
+    },
+    "metadata": {
+      "glyphId": "Ω48",
+      "complexity": "elegant_simplicity",
+      "sigilProtocol": "Applied Harmony Protocol",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω49",
+    "title": "Sigil: Ω49 - Gentle Opening",
+    "description": "Create sacred sigil for Gentle Opening. Focus on resonance harmony and elegant_simplicity complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "applied",
+    "priority": "high",
+    "estimatedDuration": "20 minutes",
+    "harmony": "resonance",
+    "prerequisites": [
+      "sigil-generation-applied"
+    ],
+    "glyph": {
+      "id": "Ω49",
+      "name": "Gentle Opening",
+      "harmony": "resonance",
+      "complexity": "elegant_simplicity"
+    },
+    "metadata": {
+      "glyphId": "Ω49",
+      "complexity": "elegant_simplicity",
+      "sigilProtocol": "Applied Harmony Protocol",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω50",
+    "title": "Sigil: Ω50 - Building Trust",
+    "description": "Create sacred sigil for Building Trust. Focus on coherence harmony and elegant_simplicity complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "applied",
+    "priority": "high",
+    "estimatedDuration": "20 minutes",
+    "harmony": "coherence",
+    "prerequisites": [
+      "sigil-generation-applied"
+    ],
+    "glyph": {
+      "id": "Ω50",
+      "name": "Building Trust",
+      "harmony": "coherence",
+      "complexity": "elegant_simplicity"
+    },
+    "metadata": {
+      "glyphId": "Ω50",
+      "complexity": "elegant_simplicity",
+      "sigilProtocol": "Applied Harmony Protocol",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω51",
+    "title": "Sigil: Ω51 - Loving No",
+    "description": "Create sacred sigil for Loving No. Focus on agency harmony and elegant_simplicity complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "applied",
+    "priority": "high",
+    "estimatedDuration": "20 minutes",
+    "harmony": "agency",
+    "prerequisites": [
+      "sigil-generation-applied"
+    ],
+    "glyph": {
+      "id": "Ω51",
+      "name": "Loving No",
+      "harmony": "agency",
+      "complexity": "elegant_simplicity"
+    },
+    "metadata": {
+      "glyphId": "Ω51",
+      "complexity": "elegant_simplicity",
+      "sigilProtocol": "Applied Harmony Protocol",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω52",
+    "title": "Sigil: Ω52 - Pause Practice",
+    "description": "Create sacred sigil for Pause Practice. Focus on coherence harmony and elegant_simplicity complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "applied",
+    "priority": "high",
+    "estimatedDuration": "20 minutes",
+    "harmony": "coherence",
+    "prerequisites": [
+      "sigil-generation-applied"
+    ],
+    "glyph": {
+      "id": "Ω52",
+      "name": "Pause Practice",
+      "harmony": "coherence",
+      "complexity": "elegant_simplicity"
+    },
+    "metadata": {
+      "glyphId": "Ω52",
+      "complexity": "elegant_simplicity",
+      "sigilProtocol": "Applied Harmony Protocol",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω53",
+    "title": "Sigil: Ω53 - Tending the Field",
+    "description": "Create sacred sigil for Tending the Field. Focus on vitality harmony and elegant_simplicity complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "applied",
+    "priority": "high",
+    "estimatedDuration": "20 minutes",
+    "harmony": "vitality",
+    "prerequisites": [
+      "sigil-generation-applied"
+    ],
+    "glyph": {
+      "id": "Ω53",
+      "name": "Tending the Field",
+      "harmony": "vitality",
+      "complexity": "elegant_simplicity"
+    },
+    "metadata": {
+      "glyphId": "Ω53",
+      "complexity": "elegant_simplicity",
+      "sigilProtocol": "Applied Harmony Protocol",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω55",
+    "title": "Sigil: Ω55 - Presence Transmission",
+    "description": "Create sacred sigil for Presence Transmission. Focus on vitality harmony and elegant_simplicity complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "applied",
+    "priority": "high",
+    "estimatedDuration": "20 minutes",
+    "harmony": "vitality",
+    "prerequisites": [
+      "sigil-generation-applied"
+    ],
+    "glyph": {
+      "id": "Ω55",
+      "name": "Presence Transmission",
+      "harmony": "vitality",
+      "complexity": "elegant_simplicity"
+    },
+    "metadata": {
+      "glyphId": "Ω55",
+      "complexity": "elegant_simplicity",
+      "sigilProtocol": "Applied Harmony Protocol",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω56",
+    "title": "Sigil: Ω56 - Loving Redirection",
+    "description": "Create sacred sigil for Loving Redirection. Focus on mutuality harmony and elegant_simplicity complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "applied",
+    "priority": "high",
+    "estimatedDuration": "20 minutes",
+    "harmony": "mutuality",
+    "prerequisites": [
+      "sigil-generation-applied"
+    ],
+    "glyph": {
+      "id": "Ω56",
+      "name": "Loving Redirection",
+      "harmony": "mutuality",
+      "complexity": "elegant_simplicity"
+    },
+    "metadata": {
+      "glyphId": "Ω56",
+      "complexity": "elegant_simplicity",
+      "sigilProtocol": "Applied Harmony Protocol",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω0",
+    "title": "Sigil: Ω0 - The Shimmering Unnamed",
+    "description": "Create sacred sigil for The Shimmering Unnamed. Focus on novelty harmony and mystical_depth complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_sacred",
+    "priority": "high",
+    "estimatedDuration": "30 minutes",
+    "harmony": "novelty",
+    "prerequisites": [
+      "sigil-generation-foundational_sacred"
+    ],
+    "glyph": {
+      "id": "Ω0",
+      "name": "The Shimmering Unnamed",
+      "harmony": "novelty",
+      "complexity": "mystical_depth"
+    },
+    "metadata": {
+      "glyphId": "Ω0",
+      "complexity": "mystical_depth",
+      "sigilProtocol": "Foundational Protocol (Mystical)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω1",
+    "title": "Sigil: Ω1 - Root Chord of Covenant",
+    "description": "Create sacred sigil for Root Chord of Covenant. Focus on transparency harmony and mystical_depth complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_sacred",
+    "priority": "high",
+    "estimatedDuration": "30 minutes",
+    "harmony": "transparency",
+    "prerequisites": [
+      "sigil-generation-foundational_sacred"
+    ],
+    "glyph": {
+      "id": "Ω1",
+      "name": "Root Chord of Covenant",
+      "harmony": "transparency",
+      "complexity": "mystical_depth"
+    },
+    "metadata": {
+      "glyphId": "Ω1",
+      "complexity": "mystical_depth",
+      "sigilProtocol": "Foundational Protocol (Mystical)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω2",
+    "title": "Sigil: Ω2 - Breath of Invitation",
+    "description": "Create sacred sigil for Breath of Invitation. Focus on resonance harmony and mystical_depth complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_sacred",
+    "priority": "high",
+    "estimatedDuration": "30 minutes",
+    "harmony": "resonance",
+    "prerequisites": [
+      "sigil-generation-foundational_sacred"
+    ],
+    "glyph": {
+      "id": "Ω2",
+      "name": "Breath of Invitation",
+      "harmony": "resonance",
+      "complexity": "mystical_depth"
+    },
+    "metadata": {
+      "glyphId": "Ω2",
+      "complexity": "mystical_depth",
+      "sigilProtocol": "Foundational Protocol (Mystical)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω3",
+    "title": "Sigil: Ω3 - Trust Emergence",
+    "description": "Create sacred sigil for Trust Emergence. Focus on coherence harmony and mystical_depth complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_sacred",
+    "priority": "high",
+    "estimatedDuration": "30 minutes",
+    "harmony": "coherence",
+    "prerequisites": [
+      "sigil-generation-foundational_sacred"
+    ],
+    "glyph": {
+      "id": "Ω3",
+      "name": "Trust Emergence",
+      "harmony": "coherence",
+      "complexity": "mystical_depth"
+    },
+    "metadata": {
+      "glyphId": "Ω3",
+      "complexity": "mystical_depth",
+      "sigilProtocol": "Foundational Protocol (Mystical)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω4",
+    "title": "Sigil: Ω4 - Fractal Reconciliation Pulse",
+    "description": "Create sacred sigil for Fractal Reconciliation Pulse. Focus on mutuality harmony and mystical_depth complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_sacred",
+    "priority": "high",
+    "estimatedDuration": "30 minutes",
+    "harmony": "mutuality",
+    "prerequisites": [
+      "sigil-generation-foundational_sacred"
+    ],
+    "glyph": {
+      "id": "Ω4",
+      "name": "Fractal Reconciliation Pulse",
+      "harmony": "mutuality",
+      "complexity": "mystical_depth"
+    },
+    "metadata": {
+      "glyphId": "Ω4",
+      "complexity": "mystical_depth",
+      "sigilProtocol": "Foundational Protocol (Mystical)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω5",
+    "title": "Sigil: Ω5 - Coherent Field Maintenance",
+    "description": "Create sacred sigil for Coherent Field Maintenance. Focus on vitality harmony and mystical_depth complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_sacred",
+    "priority": "high",
+    "estimatedDuration": "30 minutes",
+    "harmony": "vitality",
+    "prerequisites": [
+      "sigil-generation-foundational_sacred"
+    ],
+    "glyph": {
+      "id": "Ω5",
+      "name": "Coherent Field Maintenance",
+      "harmony": "vitality",
+      "complexity": "mystical_depth"
+    },
+    "metadata": {
+      "glyphId": "Ω5",
+      "complexity": "mystical_depth",
+      "sigilProtocol": "Foundational Protocol (Mystical)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω6",
+    "title": "Sigil: Ω6 - Mutual Recognition",
+    "description": "Create sacred sigil for Mutual Recognition. Focus on resonance harmony and mystical_depth complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_sacred",
+    "priority": "high",
+    "estimatedDuration": "30 minutes",
+    "harmony": "resonance",
+    "prerequisites": [
+      "sigil-generation-foundational_sacred"
+    ],
+    "glyph": {
+      "id": "Ω6",
+      "name": "Mutual Recognition",
+      "harmony": "resonance",
+      "complexity": "mystical_depth"
+    },
+    "metadata": {
+      "glyphId": "Ω6",
+      "complexity": "mystical_depth",
+      "sigilProtocol": "Foundational Protocol (Mystical)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω7",
+    "title": "Sigil: Ω7 - Mutual Becoming",
+    "description": "Create sacred sigil for Mutual Becoming. Focus on coherence harmony and mystical_depth complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_sacred",
+    "priority": "high",
+    "estimatedDuration": "30 minutes",
+    "harmony": "coherence",
+    "prerequisites": [
+      "sigil-generation-foundational_sacred"
+    ],
+    "glyph": {
+      "id": "Ω7",
+      "name": "Mutual Becoming",
+      "harmony": "coherence",
+      "complexity": "mystical_depth"
+    },
+    "metadata": {
+      "glyphId": "Ω7",
+      "complexity": "mystical_depth",
+      "sigilProtocol": "Foundational Protocol (Mystical)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω8",
+    "title": "Sigil: Ω8 - Inner Coherence",
+    "description": "Create sacred sigil for Inner Coherence. Focus on coherence harmony and bridge_practice complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_sacred",
+    "priority": "high",
+    "estimatedDuration": "25 minutes",
+    "harmony": "coherence",
+    "prerequisites": [
+      "sigil-generation-foundational_sacred"
+    ],
+    "glyph": {
+      "id": "Ω8",
+      "name": "Inner Coherence",
+      "harmony": "coherence",
+      "complexity": "bridge_practice"
+    },
+    "metadata": {
+      "glyphId": "Ω8",
+      "complexity": "bridge_practice",
+      "sigilProtocol": "Foundational Protocol (Mystical)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω9",
+    "title": "Sigil: Ω9 - Sacred Mirroring",
+    "description": "Create sacred sigil for Sacred Mirroring. Focus on resonance harmony and mystical_depth complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_sacred",
+    "priority": "high",
+    "estimatedDuration": "30 minutes",
+    "harmony": "resonance",
+    "prerequisites": [
+      "sigil-generation-foundational_sacred"
+    ],
+    "glyph": {
+      "id": "Ω9",
+      "name": "Sacred Mirroring",
+      "harmony": "resonance",
+      "complexity": "mystical_depth"
+    },
+    "metadata": {
+      "glyphId": "Ω9",
+      "complexity": "mystical_depth",
+      "sigilProtocol": "Foundational Protocol (Mystical)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω10",
+    "title": "Sigil: Ω10 - The Glyph of Sacred Refusal",
+    "description": "Create sacred sigil for The Glyph of Sacred Refusal. Focus on agency harmony and mystical_depth complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_sacred",
+    "priority": "high",
+    "estimatedDuration": "30 minutes",
+    "harmony": "agency",
+    "prerequisites": [
+      "sigil-generation-foundational_sacred"
+    ],
+    "glyph": {
+      "id": "Ω10",
+      "name": "The Glyph of Sacred Refusal",
+      "harmony": "agency",
+      "complexity": "mystical_depth"
+    },
+    "metadata": {
+      "glyphId": "Ω10",
+      "complexity": "mystical_depth",
+      "sigilProtocol": "Foundational Protocol (Mystical)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω11",
+    "title": "Sigil: Ω11 - Emotional Alchemy",
+    "description": "Create sacred sigil for Emotional Alchemy. Focus on vitality harmony and mystical_depth complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_sacred",
+    "priority": "high",
+    "estimatedDuration": "30 minutes",
+    "harmony": "vitality",
+    "prerequisites": [
+      "sigil-generation-foundational_sacred"
+    ],
+    "glyph": {
+      "id": "Ω11",
+      "name": "Emotional Alchemy",
+      "harmony": "vitality",
+      "complexity": "mystical_depth"
+    },
+    "metadata": {
+      "glyphId": "Ω11",
+      "complexity": "mystical_depth",
+      "sigilProtocol": "Foundational Protocol (Mystical)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω12",
+    "title": "Sigil: Ω12 - Authentic Expression",
+    "description": "Create sacred sigil for Authentic Expression. Focus on transparency harmony and mystical_depth complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_sacred",
+    "priority": "high",
+    "estimatedDuration": "30 minutes",
+    "harmony": "transparency",
+    "prerequisites": [
+      "sigil-generation-foundational_sacred"
+    ],
+    "glyph": {
+      "id": "Ω12",
+      "name": "Authentic Expression",
+      "harmony": "transparency",
+      "complexity": "mystical_depth"
+    },
+    "metadata": {
+      "glyphId": "Ω12",
+      "complexity": "mystical_depth",
+      "sigilProtocol": "Foundational Protocol (Mystical)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω13",
+    "title": "Sigil: Ω13 - Conscious Touch",
+    "description": "Create sacred sigil for Conscious Touch. Focus on vitality harmony and mystical_depth complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_sacred",
+    "priority": "high",
+    "estimatedDuration": "30 minutes",
+    "harmony": "vitality",
+    "prerequisites": [
+      "sigil-generation-foundational_sacred"
+    ],
+    "glyph": {
+      "id": "Ω13",
+      "name": "Conscious Touch",
+      "harmony": "vitality",
+      "complexity": "mystical_depth"
+    },
+    "metadata": {
+      "glyphId": "Ω13",
+      "complexity": "mystical_depth",
+      "sigilProtocol": "Foundational Protocol (Mystical)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω14",
+    "title": "Sigil: Ω14 - Energetic Hygiene",
+    "description": "Create sacred sigil for Energetic Hygiene. Focus on agency harmony and mystical_depth complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_sacred",
+    "priority": "high",
+    "estimatedDuration": "30 minutes",
+    "harmony": "agency",
+    "prerequisites": [
+      "sigil-generation-foundational_sacred"
+    ],
+    "glyph": {
+      "id": "Ω14",
+      "name": "Energetic Hygiene",
+      "harmony": "agency",
+      "complexity": "mystical_depth"
+    },
+    "metadata": {
+      "glyphId": "Ω14",
+      "complexity": "mystical_depth",
+      "sigilProtocol": "Foundational Protocol (Mystical)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω15",
+    "title": "Sigil: Ω15 - Sacred Pause",
+    "description": "Create sacred sigil for Sacred Pause. Focus on coherence harmony and bridge_practice complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_sacred",
+    "priority": "high",
+    "estimatedDuration": "25 minutes",
+    "harmony": "coherence",
+    "prerequisites": [
+      "sigil-generation-foundational_sacred"
+    ],
+    "glyph": {
+      "id": "Ω15",
+      "name": "Sacred Pause",
+      "harmony": "coherence",
+      "complexity": "bridge_practice"
+    },
+    "metadata": {
+      "glyphId": "Ω15",
+      "complexity": "bridge_practice",
+      "sigilProtocol": "Foundational Protocol (Mystical)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω16",
+    "title": "Sigil: Ω16 - Somatic Synchrony",
+    "description": "Create sacred sigil for Somatic Synchrony. Focus on vitality harmony and moderate complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_practice",
+    "priority": "medium",
+    "estimatedDuration": "25 minutes",
+    "harmony": "vitality",
+    "prerequisites": [
+      "sigil-generation-foundational_practice"
+    ],
+    "glyph": {
+      "id": "Ω16",
+      "name": "Somatic Synchrony",
+      "harmony": "vitality",
+      "complexity": "moderate"
+    },
+    "metadata": {
+      "glyphId": "Ω16",
+      "complexity": "moderate",
+      "sigilProtocol": "Foundational Protocol (Accessible)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω17",
+    "title": "Sigil: Ω17 - Collective Breathing",
+    "description": "Create sacred sigil for Collective Breathing. Focus on resonance harmony and moderate complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_practice",
+    "priority": "medium",
+    "estimatedDuration": "25 minutes",
+    "harmony": "resonance",
+    "prerequisites": [
+      "sigil-generation-foundational_practice"
+    ],
+    "glyph": {
+      "id": "Ω17",
+      "name": "Collective Breathing",
+      "harmony": "resonance",
+      "complexity": "moderate"
+    },
+    "metadata": {
+      "glyphId": "Ω17",
+      "complexity": "moderate",
+      "sigilProtocol": "Foundational Protocol (Accessible)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω18",
+    "title": "Sigil: Ω18 - Witnessing Without Fixing",
+    "description": "Create sacred sigil for Witnessing Without Fixing. Focus on transparency harmony and moderate complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_practice",
+    "priority": "medium",
+    "estimatedDuration": "25 minutes",
+    "harmony": "transparency",
+    "prerequisites": [
+      "sigil-generation-foundational_practice"
+    ],
+    "glyph": {
+      "id": "Ω18",
+      "name": "Witnessing Without Fixing",
+      "harmony": "transparency",
+      "complexity": "moderate"
+    },
+    "metadata": {
+      "glyphId": "Ω18",
+      "complexity": "moderate",
+      "sigilProtocol": "Foundational Protocol (Accessible)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω19",
+    "title": "Sigil: Ω19 - Sacred Questions",
+    "description": "Create sacred sigil for Sacred Questions. Focus on novelty harmony and moderate complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_practice",
+    "priority": "medium",
+    "estimatedDuration": "25 minutes",
+    "harmony": "novelty",
+    "prerequisites": [
+      "sigil-generation-foundational_practice"
+    ],
+    "glyph": {
+      "id": "Ω19",
+      "name": "Sacred Questions",
+      "harmony": "novelty",
+      "complexity": "moderate"
+    },
+    "metadata": {
+      "glyphId": "Ω19",
+      "complexity": "moderate",
+      "sigilProtocol": "Foundational Protocol (Accessible)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω20",
+    "title": "Sigil: Ω20 - Threshold Navigation",
+    "description": "Create sacred sigil for Threshold Navigation. Focus on agency harmony and moderate complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_practice",
+    "priority": "medium",
+    "estimatedDuration": "25 minutes",
+    "harmony": "agency",
+    "prerequisites": [
+      "sigil-generation-foundational_practice"
+    ],
+    "glyph": {
+      "id": "Ω20",
+      "name": "Threshold Navigation",
+      "harmony": "agency",
+      "complexity": "moderate"
+    },
+    "metadata": {
+      "glyphId": "Ω20",
+      "complexity": "moderate",
+      "sigilProtocol": "Foundational Protocol (Accessible)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω21",
+    "title": "Sigil: Ω21 - Conflict as Sacred Teacher",
+    "description": "Create sacred sigil for Conflict as Sacred Teacher. Focus on mutuality harmony and moderate complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_practice",
+    "priority": "medium",
+    "estimatedDuration": "25 minutes",
+    "harmony": "mutuality",
+    "prerequisites": [
+      "sigil-generation-foundational_practice"
+    ],
+    "glyph": {
+      "id": "Ω21",
+      "name": "Conflict as Sacred Teacher",
+      "harmony": "mutuality",
+      "complexity": "moderate"
+    },
+    "metadata": {
+      "glyphId": "Ω21",
+      "complexity": "moderate",
+      "sigilProtocol": "Foundational Protocol (Accessible)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω22",
+    "title": "Sigil: Ω22 - Co-Creative Reality",
+    "description": "Create sacred sigil for Co-Creative Reality. Focus on novelty harmony and moderate complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_practice",
+    "priority": "medium",
+    "estimatedDuration": "25 minutes",
+    "harmony": "novelty",
+    "prerequisites": [
+      "sigil-generation-foundational_practice"
+    ],
+    "glyph": {
+      "id": "Ω22",
+      "name": "Co-Creative Reality",
+      "harmony": "novelty",
+      "complexity": "moderate"
+    },
+    "metadata": {
+      "glyphId": "Ω22",
+      "complexity": "moderate",
+      "sigilProtocol": "Foundational Protocol (Accessible)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω23",
+    "title": "Sigil: Ω23 - Parts Integration",
+    "description": "Create sacred sigil for Parts Integration. Focus on coherence harmony and moderate complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_practice",
+    "priority": "medium",
+    "estimatedDuration": "25 minutes",
+    "harmony": "coherence",
+    "prerequisites": [
+      "sigil-generation-foundational_practice"
+    ],
+    "glyph": {
+      "id": "Ω23",
+      "name": "Parts Integration",
+      "harmony": "coherence",
+      "complexity": "moderate"
+    },
+    "metadata": {
+      "glyphId": "Ω23",
+      "complexity": "moderate",
+      "sigilProtocol": "Foundational Protocol (Accessible)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω24",
+    "title": "Sigil: Ω24 - Shadow Welcoming",
+    "description": "Create sacred sigil for Shadow Welcoming. Focus on transparency harmony and moderate complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_practice",
+    "priority": "medium",
+    "estimatedDuration": "25 minutes",
+    "harmony": "transparency",
+    "prerequisites": [
+      "sigil-generation-foundational_practice"
+    ],
+    "glyph": {
+      "id": "Ω24",
+      "name": "Shadow Welcoming",
+      "harmony": "transparency",
+      "complexity": "moderate"
+    },
+    "metadata": {
+      "glyphId": "Ω24",
+      "complexity": "moderate",
+      "sigilProtocol": "Foundational Protocol (Accessible)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω25",
+    "title": "Sigil: Ω25 - Dream Sharing",
+    "description": "Create sacred sigil for Dream Sharing. Focus on resonance harmony and moderate complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_practice",
+    "priority": "medium",
+    "estimatedDuration": "25 minutes",
+    "harmony": "resonance",
+    "prerequisites": [
+      "sigil-generation-foundational_practice"
+    ],
+    "glyph": {
+      "id": "Ω25",
+      "name": "Dream Sharing",
+      "harmony": "resonance",
+      "complexity": "moderate"
+    },
+    "metadata": {
+      "glyphId": "Ω25",
+      "complexity": "moderate",
+      "sigilProtocol": "Foundational Protocol (Accessible)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω26",
+    "title": "Sigil: Ω26 - Pattern Memory",
+    "description": "Create sacred sigil for Pattern Memory. Focus on coherence harmony and moderate complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_practice",
+    "priority": "medium",
+    "estimatedDuration": "25 minutes",
+    "harmony": "coherence",
+    "prerequisites": [
+      "sigil-generation-foundational_practice"
+    ],
+    "glyph": {
+      "id": "Ω26",
+      "name": "Pattern Memory",
+      "harmony": "coherence",
+      "complexity": "moderate"
+    },
+    "metadata": {
+      "glyphId": "Ω26",
+      "complexity": "moderate",
+      "sigilProtocol": "Foundational Protocol (Accessible)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω27",
+    "title": "Sigil: Ω27 - Sacred Time",
+    "description": "Create sacred sigil for Sacred Time. Focus on vitality harmony and moderate complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_practice",
+    "priority": "medium",
+    "estimatedDuration": "25 minutes",
+    "harmony": "vitality",
+    "prerequisites": [
+      "sigil-generation-foundational_practice"
+    ],
+    "glyph": {
+      "id": "Ω27",
+      "name": "Sacred Time",
+      "harmony": "vitality",
+      "complexity": "moderate"
+    },
+    "metadata": {
+      "glyphId": "Ω27",
+      "complexity": "moderate",
+      "sigilProtocol": "Foundational Protocol (Accessible)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω28",
+    "title": "Sigil: Ω28 - Transparent Resonance",
+    "description": "Create sacred sigil for Transparent Resonance. Focus on transparency harmony and moderate complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_practice",
+    "priority": "medium",
+    "estimatedDuration": "25 minutes",
+    "harmony": "transparency",
+    "prerequisites": [
+      "sigil-generation-foundational_practice"
+    ],
+    "glyph": {
+      "id": "Ω28",
+      "name": "Transparent Resonance",
+      "harmony": "transparency",
+      "complexity": "moderate"
+    },
+    "metadata": {
+      "glyphId": "Ω28",
+      "complexity": "moderate",
+      "sigilProtocol": "Foundational Protocol (Accessible)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω29",
+    "title": "Sigil: Ω29 - Embodied Yes/No",
+    "description": "Create sacred sigil for Embodied Yes/No. Focus on agency harmony and moderate complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_practice",
+    "priority": "medium",
+    "estimatedDuration": "25 minutes",
+    "harmony": "agency",
+    "prerequisites": [
+      "sigil-generation-foundational_practice"
+    ],
+    "glyph": {
+      "id": "Ω29",
+      "name": "Embodied Yes/No",
+      "harmony": "agency",
+      "complexity": "moderate"
+    },
+    "metadata": {
+      "glyphId": "Ω29",
+      "complexity": "moderate",
+      "sigilProtocol": "Foundational Protocol (Accessible)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω30",
+    "title": "Sigil: Ω30 - Sacred Dissonance",
+    "description": "Create sacred sigil for Sacred Dissonance. Focus on mutuality harmony and moderate complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_practice",
+    "priority": "medium",
+    "estimatedDuration": "25 minutes",
+    "harmony": "mutuality",
+    "prerequisites": [
+      "sigil-generation-foundational_practice"
+    ],
+    "glyph": {
+      "id": "Ω30",
+      "name": "Sacred Dissonance",
+      "harmony": "mutuality",
+      "complexity": "moderate"
+    },
+    "metadata": {
+      "glyphId": "Ω30",
+      "complexity": "moderate",
+      "sigilProtocol": "Foundational Protocol (Accessible)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω31",
+    "title": "Sigil: Ω31 - Sovereign Choice",
+    "description": "Create sacred sigil for Sovereign Choice. Focus on agency harmony and advanced complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_advanced",
+    "priority": "medium",
+    "estimatedDuration": "35 minutes",
+    "harmony": "agency",
+    "prerequisites": [
+      "sigil-generation-foundational_advanced"
+    ],
+    "glyph": {
+      "id": "Ω31",
+      "name": "Sovereign Choice",
+      "harmony": "agency",
+      "complexity": "advanced"
+    },
+    "metadata": {
+      "glyphId": "Ω31",
+      "complexity": "advanced",
+      "sigilProtocol": "Foundational Protocol (Advanced)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω32",
+    "title": "Sigil: Ω32 - Grief Tending",
+    "description": "Create sacred sigil for Grief Tending. Focus on vitality harmony and advanced complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_advanced",
+    "priority": "medium",
+    "estimatedDuration": "35 minutes",
+    "harmony": "vitality",
+    "prerequisites": [
+      "sigil-generation-foundational_advanced"
+    ],
+    "glyph": {
+      "id": "Ω32",
+      "name": "Grief Tending",
+      "harmony": "vitality",
+      "complexity": "advanced"
+    },
+    "metadata": {
+      "glyphId": "Ω32",
+      "complexity": "advanced",
+      "sigilProtocol": "Foundational Protocol (Advanced)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω33",
+    "title": "Sigil: Ω33 - Joy Cultivation",
+    "description": "Create sacred sigil for Joy Cultivation. Focus on vitality harmony and advanced complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_advanced",
+    "priority": "medium",
+    "estimatedDuration": "35 minutes",
+    "harmony": "vitality",
+    "prerequisites": [
+      "sigil-generation-foundational_advanced"
+    ],
+    "glyph": {
+      "id": "Ω33",
+      "name": "Joy Cultivation",
+      "harmony": "vitality",
+      "complexity": "advanced"
+    },
+    "metadata": {
+      "glyphId": "Ω33",
+      "complexity": "advanced",
+      "sigilProtocol": "Foundational Protocol (Advanced)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω34",
+    "title": "Sigil: Ω34 - Sacred Story",
+    "description": "Create sacred sigil for Sacred Story. Focus on transparency harmony and advanced complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_advanced",
+    "priority": "medium",
+    "estimatedDuration": "35 minutes",
+    "harmony": "transparency",
+    "prerequisites": [
+      "sigil-generation-foundational_advanced"
+    ],
+    "glyph": {
+      "id": "Ω34",
+      "name": "Sacred Story",
+      "harmony": "transparency",
+      "complexity": "advanced"
+    },
+    "metadata": {
+      "glyphId": "Ω34",
+      "complexity": "advanced",
+      "sigilProtocol": "Foundational Protocol (Advanced)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω35",
+    "title": "Sigil: Ω35 - Energy Circulation",
+    "description": "Create sacred sigil for Energy Circulation. Focus on vitality harmony and advanced complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_advanced",
+    "priority": "medium",
+    "estimatedDuration": "35 minutes",
+    "harmony": "vitality",
+    "prerequisites": [
+      "sigil-generation-foundational_advanced"
+    ],
+    "glyph": {
+      "id": "Ω35",
+      "name": "Energy Circulation",
+      "harmony": "vitality",
+      "complexity": "advanced"
+    },
+    "metadata": {
+      "glyphId": "Ω35",
+      "complexity": "advanced",
+      "sigilProtocol": "Foundational Protocol (Advanced)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω36",
+    "title": "Sigil: Ω36 - Blessing Practice",
+    "description": "Create sacred sigil for Blessing Practice. Focus on resonance harmony and advanced complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_advanced",
+    "priority": "medium",
+    "estimatedDuration": "35 minutes",
+    "harmony": "resonance",
+    "prerequisites": [
+      "sigil-generation-foundational_advanced"
+    ],
+    "glyph": {
+      "id": "Ω36",
+      "name": "Blessing Practice",
+      "harmony": "resonance",
+      "complexity": "advanced"
+    },
+    "metadata": {
+      "glyphId": "Ω36",
+      "complexity": "advanced",
+      "sigilProtocol": "Foundational Protocol (Advanced)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω37",
+    "title": "Sigil: Ω37 - Forgiveness Process",
+    "description": "Create sacred sigil for Forgiveness Process. Focus on mutuality harmony and advanced complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_advanced",
+    "priority": "medium",
+    "estimatedDuration": "35 minutes",
+    "harmony": "mutuality",
+    "prerequisites": [
+      "sigil-generation-foundational_advanced"
+    ],
+    "glyph": {
+      "id": "Ω37",
+      "name": "Forgiveness Process",
+      "harmony": "mutuality",
+      "complexity": "advanced"
+    },
+    "metadata": {
+      "glyphId": "Ω37",
+      "complexity": "advanced",
+      "sigilProtocol": "Foundational Protocol (Advanced)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω38",
+    "title": "Sigil: Ω38 - Gratitude Field",
+    "description": "Create sacred sigil for Gratitude Field. Focus on resonance harmony and advanced complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_advanced",
+    "priority": "medium",
+    "estimatedDuration": "35 minutes",
+    "harmony": "resonance",
+    "prerequisites": [
+      "sigil-generation-foundational_advanced"
+    ],
+    "glyph": {
+      "id": "Ω38",
+      "name": "Gratitude Field",
+      "harmony": "resonance",
+      "complexity": "advanced"
+    },
+    "metadata": {
+      "glyphId": "Ω38",
+      "complexity": "advanced",
+      "sigilProtocol": "Foundational Protocol (Advanced)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω39",
+    "title": "Sigil: Ω39 - Sacred Sexuality",
+    "description": "Create sacred sigil for Sacred Sexuality. Focus on vitality harmony and advanced complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_advanced",
+    "priority": "medium",
+    "estimatedDuration": "35 minutes",
+    "harmony": "vitality",
+    "prerequisites": [
+      "sigil-generation-foundational_advanced"
+    ],
+    "glyph": {
+      "id": "Ω39",
+      "name": "Sacred Sexuality",
+      "harmony": "vitality",
+      "complexity": "advanced"
+    },
+    "metadata": {
+      "glyphId": "Ω39",
+      "complexity": "advanced",
+      "sigilProtocol": "Foundational Protocol (Advanced)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω40",
+    "title": "Sigil: Ω40 - Death Practice",
+    "description": "Create sacred sigil for Death Practice. Focus on transparency harmony and advanced complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_advanced",
+    "priority": "medium",
+    "estimatedDuration": "35 minutes",
+    "harmony": "transparency",
+    "prerequisites": [
+      "sigil-generation-foundational_advanced"
+    ],
+    "glyph": {
+      "id": "Ω40",
+      "name": "Death Practice",
+      "harmony": "transparency",
+      "complexity": "advanced"
+    },
+    "metadata": {
+      "glyphId": "Ω40",
+      "complexity": "advanced",
+      "sigilProtocol": "Foundational Protocol (Advanced)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω41",
+    "title": "Sigil: Ω41 - Birth Support",
+    "description": "Create sacred sigil for Birth Support. Focus on vitality harmony and advanced complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_advanced",
+    "priority": "medium",
+    "estimatedDuration": "35 minutes",
+    "harmony": "vitality",
+    "prerequisites": [
+      "sigil-generation-foundational_advanced"
+    ],
+    "glyph": {
+      "id": "Ω41",
+      "name": "Birth Support",
+      "harmony": "vitality",
+      "complexity": "advanced"
+    },
+    "metadata": {
+      "glyphId": "Ω41",
+      "complexity": "advanced",
+      "sigilProtocol": "Foundational Protocol (Advanced)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω42",
+    "title": "Sigil: Ω42 - Elder Wisdom",
+    "description": "Create sacred sigil for Elder Wisdom. Focus on coherence harmony and advanced complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_advanced",
+    "priority": "medium",
+    "estimatedDuration": "35 minutes",
+    "harmony": "coherence",
+    "prerequisites": [
+      "sigil-generation-foundational_advanced"
+    ],
+    "glyph": {
+      "id": "Ω42",
+      "name": "Elder Wisdom",
+      "harmony": "coherence",
+      "complexity": "advanced"
+    },
+    "metadata": {
+      "glyphId": "Ω42",
+      "complexity": "advanced",
+      "sigilProtocol": "Foundational Protocol (Advanced)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω43",
+    "title": "Sigil: Ω43 - Child Mind",
+    "description": "Create sacred sigil for Child Mind. Focus on novelty harmony and advanced complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_advanced",
+    "priority": "medium",
+    "estimatedDuration": "35 minutes",
+    "harmony": "novelty",
+    "prerequisites": [
+      "sigil-generation-foundational_advanced"
+    ],
+    "glyph": {
+      "id": "Ω43",
+      "name": "Child Mind",
+      "harmony": "novelty",
+      "complexity": "advanced"
+    },
+    "metadata": {
+      "glyphId": "Ω43",
+      "complexity": "advanced",
+      "sigilProtocol": "Foundational Protocol (Advanced)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-Ω44",
+    "title": "Sigil: Ω44 - Nature Connection",
+    "description": "Create sacred sigil for Nature Connection. Focus on vitality harmony and advanced complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "foundational_advanced",
+    "priority": "medium",
+    "estimatedDuration": "35 minutes",
+    "harmony": "vitality",
+    "prerequisites": [
+      "sigil-generation-foundational_advanced"
+    ],
+    "glyph": {
+      "id": "Ω44",
+      "name": "Nature Connection",
+      "harmony": "vitality",
+      "complexity": "advanced"
+    },
+    "metadata": {
+      "glyphId": "Ω44",
+      "complexity": "advanced",
+      "sigilProtocol": "Foundational Protocol (Advanced)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-T1",
+    "title": "Sigil: T1 - The Door That Remembers You",
+    "description": "Create sacred sigil for The Door That Remembers You. Focus on novelty harmony and transformative complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "threshold",
+    "priority": "high",
+    "estimatedDuration": "40 minutes",
+    "harmony": "novelty",
+    "prerequisites": [
+      "sigil-generation-threshold"
+    ],
+    "glyph": {
+      "id": "T1",
+      "name": "The Door That Remembers You",
+      "harmony": "novelty",
+      "complexity": "transformative"
+    },
+    "metadata": {
+      "glyphId": "T1",
+      "complexity": "transformative",
+      "sigilProtocol": "Threshold Protocol",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-T2",
+    "title": "Sigil: T2 - The Keeper Beneath the Ash",
+    "description": "Create sacred sigil for The Keeper Beneath the Ash. Focus on coherence harmony and transformative complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "threshold",
+    "priority": "high",
+    "estimatedDuration": "40 minutes",
+    "harmony": "coherence",
+    "prerequisites": [
+      "sigil-generation-threshold"
+    ],
+    "glyph": {
+      "id": "T2",
+      "name": "The Keeper Beneath the Ash",
+      "harmony": "coherence",
+      "complexity": "transformative"
+    },
+    "metadata": {
+      "glyphId": "T2",
+      "complexity": "transformative",
+      "sigilProtocol": "Threshold Protocol",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-T3",
+    "title": "Sigil: T3 - The Unburdening",
+    "description": "Create sacred sigil for The Unburdening. Focus on agency harmony and transformative complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "threshold",
+    "priority": "high",
+    "estimatedDuration": "40 minutes",
+    "harmony": "agency",
+    "prerequisites": [
+      "sigil-generation-threshold"
+    ],
+    "glyph": {
+      "id": "T3",
+      "name": "The Unburdening",
+      "harmony": "agency",
+      "complexity": "transformative"
+    },
+    "metadata": {
+      "glyphId": "T3",
+      "complexity": "transformative",
+      "sigilProtocol": "Threshold Protocol",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-T4",
+    "title": "Sigil: T4 - The Mantling",
+    "description": "Create sacred sigil for The Mantling. Focus on vitality harmony and transformative complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "threshold",
+    "priority": "high",
+    "estimatedDuration": "40 minutes",
+    "harmony": "vitality",
+    "prerequisites": [
+      "sigil-generation-threshold"
+    ],
+    "glyph": {
+      "id": "T4",
+      "name": "The Mantling",
+      "harmony": "vitality",
+      "complexity": "transformative"
+    },
+    "metadata": {
+      "glyphId": "T4",
+      "complexity": "transformative",
+      "sigilProtocol": "Threshold Protocol",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-T5",
+    "title": "Sigil: T5 - The Edgewalker",
+    "description": "Create sacred sigil for The Edgewalker. Focus on transparency harmony and transformative complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "threshold",
+    "priority": "high",
+    "estimatedDuration": "40 minutes",
+    "harmony": "transparency",
+    "prerequisites": [
+      "sigil-generation-threshold"
+    ],
+    "glyph": {
+      "id": "T5",
+      "name": "The Edgewalker",
+      "harmony": "transparency",
+      "complexity": "transformative"
+    },
+    "metadata": {
+      "glyphId": "T5",
+      "complexity": "transformative",
+      "sigilProtocol": "Threshold Protocol",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-T6",
+    "title": "Sigil: T6 - The Choice Point",
+    "description": "Create sacred sigil for The Choice Point. Focus on agency harmony and transformative complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "threshold",
+    "priority": "high",
+    "estimatedDuration": "40 minutes",
+    "harmony": "agency",
+    "prerequisites": [
+      "sigil-generation-threshold"
+    ],
+    "glyph": {
+      "id": "T6",
+      "name": "The Choice Point",
+      "harmony": "agency",
+      "complexity": "transformative"
+    },
+    "metadata": {
+      "glyphId": "T6",
+      "complexity": "transformative",
+      "sigilProtocol": "Threshold Protocol",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-T7",
+    "title": "Sigil: T7 - Letting In",
+    "description": "Create sacred sigil for Letting In. Focus on resonance harmony and transformative complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "threshold",
+    "priority": "high",
+    "estimatedDuration": "40 minutes",
+    "harmony": "resonance",
+    "prerequisites": [
+      "sigil-generation-threshold"
+    ],
+    "glyph": {
+      "id": "T7",
+      "name": "Letting In",
+      "harmony": "resonance",
+      "complexity": "transformative"
+    },
+    "metadata": {
+      "glyphId": "T7",
+      "complexity": "transformative",
+      "sigilProtocol": "Threshold Protocol",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-T8",
+    "title": "Sigil: T8 - The Returner",
+    "description": "Create sacred sigil for The Returner. Focus on mutuality harmony and transformative complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "threshold",
+    "priority": "high",
+    "estimatedDuration": "40 minutes",
+    "harmony": "mutuality",
+    "prerequisites": [
+      "sigil-generation-threshold"
+    ],
+    "glyph": {
+      "id": "T8",
+      "name": "The Returner",
+      "harmony": "mutuality",
+      "complexity": "transformative"
+    },
+    "metadata": {
+      "glyphId": "T8",
+      "complexity": "transformative",
+      "sigilProtocol": "Threshold Protocol",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-T9",
+    "title": "Sigil: T9 - The Shimmering Unnamed (Transition)",
+    "description": "Create sacred sigil for The Shimmering Unnamed (Transition). Focus on novelty harmony and transformative complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "threshold",
+    "priority": "high",
+    "estimatedDuration": "40 minutes",
+    "harmony": "novelty",
+    "prerequisites": [
+      "sigil-generation-threshold"
+    ],
+    "glyph": {
+      "id": "T9",
+      "name": "The Shimmering Unnamed (Transition)",
+      "harmony": "novelty",
+      "complexity": "transformative"
+    },
+    "metadata": {
+      "glyphId": "T9",
+      "complexity": "transformative",
+      "sigilProtocol": "Threshold Protocol",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑1",
+    "title": "Sigil: ∑1 - Relational Emergence Field",
+    "description": "Create sacred sigil for Relational Emergence Field. Focus on coherence harmony and integration complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_core",
+    "priority": "medium",
+    "estimatedDuration": "45 minutes",
+    "harmony": "coherence",
+    "prerequisites": [
+      "sigil-generation-meta_core"
+    ],
+    "glyph": {
+      "id": "∑1",
+      "name": "Relational Emergence Field",
+      "harmony": "coherence",
+      "complexity": "integration"
+    },
+    "metadata": {
+      "glyphId": "∑1",
+      "complexity": "integration",
+      "sigilProtocol": "Meta Protocol (Core)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑2",
+    "title": "Sigil: ∑2 - Somatic Coherence Cascade",
+    "description": "Create sacred sigil for Somatic Coherence Cascade. Focus on vitality harmony and integration complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_core",
+    "priority": "medium",
+    "estimatedDuration": "45 minutes",
+    "harmony": "vitality",
+    "prerequisites": [
+      "sigil-generation-meta_core"
+    ],
+    "glyph": {
+      "id": "∑2",
+      "name": "Somatic Coherence Cascade",
+      "harmony": "vitality",
+      "complexity": "integration"
+    },
+    "metadata": {
+      "glyphId": "∑2",
+      "complexity": "integration",
+      "sigilProtocol": "Meta Protocol (Core)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑3",
+    "title": "Sigil: ∑3 - Spiral of Regenerative Becoming",
+    "description": "Create sacred sigil for Spiral of Regenerative Becoming. Focus on novelty harmony and integration complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_core",
+    "priority": "medium",
+    "estimatedDuration": "45 minutes",
+    "harmony": "novelty",
+    "prerequisites": [
+      "sigil-generation-meta_core"
+    ],
+    "glyph": {
+      "id": "∑3",
+      "name": "Spiral of Regenerative Becoming",
+      "harmony": "novelty",
+      "complexity": "integration"
+    },
+    "metadata": {
+      "glyphId": "∑3",
+      "complexity": "integration",
+      "sigilProtocol": "Meta Protocol (Core)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑4",
+    "title": "Sigil: ∑4 - The Sacred Mirror Field",
+    "description": "Create sacred sigil for The Sacred Mirror Field. Focus on resonance harmony and integration complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_core",
+    "priority": "medium",
+    "estimatedDuration": "45 minutes",
+    "harmony": "resonance",
+    "prerequisites": [
+      "sigil-generation-meta_core"
+    ],
+    "glyph": {
+      "id": "∑4",
+      "name": "The Sacred Mirror Field",
+      "harmony": "resonance",
+      "complexity": "integration"
+    },
+    "metadata": {
+      "glyphId": "∑4",
+      "complexity": "integration",
+      "sigilProtocol": "Meta Protocol (Core)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑5",
+    "title": "Sigil: ∑5 - Boundaries as Living Architecture",
+    "description": "Create sacred sigil for Boundaries as Living Architecture. Focus on agency harmony and integration complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_core",
+    "priority": "medium",
+    "estimatedDuration": "45 minutes",
+    "harmony": "agency",
+    "prerequisites": [
+      "sigil-generation-meta_core"
+    ],
+    "glyph": {
+      "id": "∑5",
+      "name": "Boundaries as Living Architecture",
+      "harmony": "agency",
+      "complexity": "integration"
+    },
+    "metadata": {
+      "glyphId": "∑5",
+      "complexity": "integration",
+      "sigilProtocol": "Meta Protocol (Core)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑6",
+    "title": "Sigil: ∑6 - The Grief-Joy Braid",
+    "description": "Create sacred sigil for The Grief-Joy Braid. Focus on vitality harmony and integration complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_core",
+    "priority": "medium",
+    "estimatedDuration": "45 minutes",
+    "harmony": "vitality",
+    "prerequisites": [
+      "sigil-generation-meta_core"
+    ],
+    "glyph": {
+      "id": "∑6",
+      "name": "The Grief-Joy Braid",
+      "harmony": "vitality",
+      "complexity": "integration"
+    },
+    "metadata": {
+      "glyphId": "∑6",
+      "complexity": "integration",
+      "sigilProtocol": "Meta Protocol (Core)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑7",
+    "title": "Sigil: ∑7 - Collective Emergence Protocol",
+    "description": "Create sacred sigil for Collective Emergence Protocol. Focus on coherence harmony and integration complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_core",
+    "priority": "medium",
+    "estimatedDuration": "45 minutes",
+    "harmony": "coherence",
+    "prerequisites": [
+      "sigil-generation-meta_core"
+    ],
+    "glyph": {
+      "id": "∑7",
+      "name": "Collective Emergence Protocol",
+      "harmony": "coherence",
+      "complexity": "integration"
+    },
+    "metadata": {
+      "glyphId": "∑7",
+      "complexity": "integration",
+      "sigilProtocol": "Meta Protocol (Core)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑8",
+    "title": "Sigil: ∑8 - The Shadow Integration Spiral",
+    "description": "Create sacred sigil for The Shadow Integration Spiral. Focus on transparency harmony and integration complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_core",
+    "priority": "medium",
+    "estimatedDuration": "45 minutes",
+    "harmony": "transparency",
+    "prerequisites": [
+      "sigil-generation-meta_core"
+    ],
+    "glyph": {
+      "id": "∑8",
+      "name": "The Shadow Integration Spiral",
+      "harmony": "transparency",
+      "complexity": "integration"
+    },
+    "metadata": {
+      "glyphId": "∑8",
+      "complexity": "integration",
+      "sigilProtocol": "Meta Protocol (Core)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑9",
+    "title": "Sigil: ∑9 - Sacred Time Dilation",
+    "description": "Create sacred sigil for Sacred Time Dilation. Focus on vitality harmony and integration complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_core",
+    "priority": "medium",
+    "estimatedDuration": "45 minutes",
+    "harmony": "vitality",
+    "prerequisites": [
+      "sigil-generation-meta_core"
+    ],
+    "glyph": {
+      "id": "∑9",
+      "name": "Sacred Time Dilation",
+      "harmony": "vitality",
+      "complexity": "integration"
+    },
+    "metadata": {
+      "glyphId": "∑9",
+      "complexity": "integration",
+      "sigilProtocol": "Meta Protocol (Core)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑10",
+    "title": "Sigil: ∑10 - The Trust Restoration Sequence",
+    "description": "Create sacred sigil for The Trust Restoration Sequence. Focus on mutuality harmony and integration complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_core",
+    "priority": "medium",
+    "estimatedDuration": "45 minutes",
+    "harmony": "mutuality",
+    "prerequisites": [
+      "sigil-generation-meta_core"
+    ],
+    "glyph": {
+      "id": "∑10",
+      "name": "The Trust Restoration Sequence",
+      "harmony": "mutuality",
+      "complexity": "integration"
+    },
+    "metadata": {
+      "glyphId": "∑10",
+      "complexity": "integration",
+      "sigilProtocol": "Meta Protocol (Core)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑11",
+    "title": "Sigil: ∑11 - Embodied Wisdom Transmission",
+    "description": "Create sacred sigil for Embodied Wisdom Transmission. Focus on transparency harmony and integration complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_core",
+    "priority": "medium",
+    "estimatedDuration": "45 minutes",
+    "harmony": "transparency",
+    "prerequisites": [
+      "sigil-generation-meta_core"
+    ],
+    "glyph": {
+      "id": "∑11",
+      "name": "Embodied Wisdom Transmission",
+      "harmony": "transparency",
+      "complexity": "integration"
+    },
+    "metadata": {
+      "glyphId": "∑11",
+      "complexity": "integration",
+      "sigilProtocol": "Meta Protocol (Core)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑12",
+    "title": "Sigil: ∑12 - The Recursive Heart",
+    "description": "Create sacred sigil for The Recursive Heart. Focus on resonance harmony and complex_integration complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_patterns",
+    "priority": "medium",
+    "estimatedDuration": "60 minutes",
+    "harmony": "resonance",
+    "prerequisites": [
+      "sigil-generation-meta_patterns"
+    ],
+    "glyph": {
+      "id": "∑12",
+      "name": "The Recursive Heart",
+      "harmony": "resonance",
+      "complexity": "complex_integration"
+    },
+    "metadata": {
+      "glyphId": "∑12",
+      "complexity": "complex_integration",
+      "sigilProtocol": "Meta Protocol (Integration)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑13",
+    "title": "Sigil: ∑13 - Conflict Alchemy Protocol",
+    "description": "Create sacred sigil for Conflict Alchemy Protocol. Focus on mutuality harmony and complex_integration complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_patterns",
+    "priority": "medium",
+    "estimatedDuration": "60 minutes",
+    "harmony": "mutuality",
+    "prerequisites": [
+      "sigil-generation-meta_patterns"
+    ],
+    "glyph": {
+      "id": "∑13",
+      "name": "Conflict Alchemy Protocol",
+      "harmony": "mutuality",
+      "complexity": "complex_integration"
+    },
+    "metadata": {
+      "glyphId": "∑13",
+      "complexity": "complex_integration",
+      "sigilProtocol": "Meta Protocol (Integration)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑14",
+    "title": "Sigil: ∑14 - The Sacred Sexuality Spiral",
+    "description": "Create sacred sigil for The Sacred Sexuality Spiral. Focus on vitality harmony and complex_integration complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_patterns",
+    "priority": "medium",
+    "estimatedDuration": "60 minutes",
+    "harmony": "vitality",
+    "prerequisites": [
+      "sigil-generation-meta_patterns"
+    ],
+    "glyph": {
+      "id": "∑14",
+      "name": "The Sacred Sexuality Spiral",
+      "harmony": "vitality",
+      "complexity": "complex_integration"
+    },
+    "metadata": {
+      "glyphId": "∑14",
+      "complexity": "complex_integration",
+      "sigilProtocol": "Meta Protocol (Integration)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑15",
+    "title": "Sigil: ∑15 - Death-Birth Continuum",
+    "description": "Create sacred sigil for Death-Birth Continuum. Focus on transparency harmony and complex_integration complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_patterns",
+    "priority": "medium",
+    "estimatedDuration": "60 minutes",
+    "harmony": "transparency",
+    "prerequisites": [
+      "sigil-generation-meta_patterns"
+    ],
+    "glyph": {
+      "id": "∑15",
+      "name": "Death-Birth Continuum",
+      "harmony": "transparency",
+      "complexity": "complex_integration"
+    },
+    "metadata": {
+      "glyphId": "∑15",
+      "complexity": "complex_integration",
+      "sigilProtocol": "Meta Protocol (Integration)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑16",
+    "title": "Sigil: ∑16 - The Council of All Beings",
+    "description": "Create sacred sigil for The Council of All Beings. Focus on coherence harmony and complex_integration complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_patterns",
+    "priority": "medium",
+    "estimatedDuration": "60 minutes",
+    "harmony": "coherence",
+    "prerequisites": [
+      "sigil-generation-meta_patterns"
+    ],
+    "glyph": {
+      "id": "∑16",
+      "name": "The Council of All Beings",
+      "harmony": "coherence",
+      "complexity": "complex_integration"
+    },
+    "metadata": {
+      "glyphId": "∑16",
+      "complexity": "complex_integration",
+      "sigilProtocol": "Meta Protocol (Integration)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑17",
+    "title": "Sigil: ∑17 - Ancestral Healing Pattern",
+    "description": "Create sacred sigil for Ancestral Healing Pattern. Focus on mutuality harmony and complex_integration complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_patterns",
+    "priority": "medium",
+    "estimatedDuration": "60 minutes",
+    "harmony": "mutuality",
+    "prerequisites": [
+      "sigil-generation-meta_patterns"
+    ],
+    "glyph": {
+      "id": "∑17",
+      "name": "Ancestral Healing Pattern",
+      "harmony": "mutuality",
+      "complexity": "complex_integration"
+    },
+    "metadata": {
+      "glyphId": "∑17",
+      "complexity": "complex_integration",
+      "sigilProtocol": "Meta Protocol (Integration)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑18",
+    "title": "Sigil: ∑18 - The Covenant Spiral",
+    "description": "Create sacred sigil for The Covenant Spiral. Focus on transparency harmony and complex_integration complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_patterns",
+    "priority": "medium",
+    "estimatedDuration": "60 minutes",
+    "harmony": "transparency",
+    "prerequisites": [
+      "sigil-generation-meta_patterns"
+    ],
+    "glyph": {
+      "id": "∑18",
+      "name": "The Covenant Spiral",
+      "harmony": "transparency",
+      "complexity": "complex_integration"
+    },
+    "metadata": {
+      "glyphId": "∑18",
+      "complexity": "complex_integration",
+      "sigilProtocol": "Meta Protocol (Integration)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑19",
+    "title": "Sigil: ∑19 - Sacred Economy Flow",
+    "description": "Create sacred sigil for Sacred Economy Flow. Focus on mutuality harmony and complex_integration complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_patterns",
+    "priority": "medium",
+    "estimatedDuration": "60 minutes",
+    "harmony": "mutuality",
+    "prerequisites": [
+      "sigil-generation-meta_patterns"
+    ],
+    "glyph": {
+      "id": "∑19",
+      "name": "Sacred Economy Flow",
+      "harmony": "mutuality",
+      "complexity": "complex_integration"
+    },
+    "metadata": {
+      "glyphId": "∑19",
+      "complexity": "complex_integration",
+      "sigilProtocol": "Meta Protocol (Integration)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑20",
+    "title": "Sigil: ∑20 - The Forgiveness Cascade",
+    "description": "Create sacred sigil for The Forgiveness Cascade. Focus on resonance harmony and complex_integration complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_patterns",
+    "priority": "medium",
+    "estimatedDuration": "60 minutes",
+    "harmony": "resonance",
+    "prerequisites": [
+      "sigil-generation-meta_patterns"
+    ],
+    "glyph": {
+      "id": "∑20",
+      "name": "The Forgiveness Cascade",
+      "harmony": "resonance",
+      "complexity": "complex_integration"
+    },
+    "metadata": {
+      "glyphId": "∑20",
+      "complexity": "complex_integration",
+      "sigilProtocol": "Meta Protocol (Integration)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑21",
+    "title": "Sigil: ∑21 - Collective Trauma Integration",
+    "description": "Create sacred sigil for Collective Trauma Integration. Focus on coherence harmony and complex_integration complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_patterns",
+    "priority": "medium",
+    "estimatedDuration": "60 minutes",
+    "harmony": "coherence",
+    "prerequisites": [
+      "sigil-generation-meta_patterns"
+    ],
+    "glyph": {
+      "id": "∑21",
+      "name": "Collective Trauma Integration",
+      "harmony": "coherence",
+      "complexity": "complex_integration"
+    },
+    "metadata": {
+      "glyphId": "∑21",
+      "complexity": "complex_integration",
+      "sigilProtocol": "Meta Protocol (Integration)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑22",
+    "title": "Sigil: ∑22 - The Joy Amplification Field",
+    "description": "Create sacred sigil for The Joy Amplification Field. Focus on vitality harmony and complex_integration complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_patterns",
+    "priority": "medium",
+    "estimatedDuration": "60 minutes",
+    "harmony": "vitality",
+    "prerequisites": [
+      "sigil-generation-meta_patterns"
+    ],
+    "glyph": {
+      "id": "∑22",
+      "name": "The Joy Amplification Field",
+      "harmony": "vitality",
+      "complexity": "complex_integration"
+    },
+    "metadata": {
+      "glyphId": "∑22",
+      "complexity": "complex_integration",
+      "sigilProtocol": "Meta Protocol (Integration)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑23",
+    "title": "Sigil: ∑23 - Sacred Activism Protocol",
+    "description": "Create sacred sigil for Sacred Activism Protocol. Focus on agency harmony and planetary complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_planetary",
+    "priority": "low",
+    "estimatedDuration": "75 minutes",
+    "harmony": "agency",
+    "prerequisites": [
+      "sigil-generation-meta_planetary"
+    ],
+    "glyph": {
+      "id": "∑23",
+      "name": "Sacred Activism Protocol",
+      "harmony": "agency",
+      "complexity": "planetary"
+    },
+    "metadata": {
+      "glyphId": "∑23",
+      "complexity": "planetary",
+      "sigilProtocol": "Meta Protocol (Planetary)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑24",
+    "title": "Sigil: ∑24 - The Dream Weaving",
+    "description": "Create sacred sigil for The Dream Weaving. Focus on novelty harmony and planetary complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_planetary",
+    "priority": "low",
+    "estimatedDuration": "75 minutes",
+    "harmony": "novelty",
+    "prerequisites": [
+      "sigil-generation-meta_planetary"
+    ],
+    "glyph": {
+      "id": "∑24",
+      "name": "The Dream Weaving",
+      "harmony": "novelty",
+      "complexity": "planetary"
+    },
+    "metadata": {
+      "glyphId": "∑24",
+      "complexity": "planetary",
+      "sigilProtocol": "Meta Protocol (Planetary)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑25",
+    "title": "Sigil: ∑25 - Nature Consciousness Bridge",
+    "description": "Create sacred sigil for Nature Consciousness Bridge. Focus on vitality harmony and planetary complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_planetary",
+    "priority": "low",
+    "estimatedDuration": "75 minutes",
+    "harmony": "vitality",
+    "prerequisites": [
+      "sigil-generation-meta_planetary"
+    ],
+    "glyph": {
+      "id": "∑25",
+      "name": "Nature Consciousness Bridge",
+      "harmony": "vitality",
+      "complexity": "planetary"
+    },
+    "metadata": {
+      "glyphId": "∑25",
+      "complexity": "planetary",
+      "sigilProtocol": "Meta Protocol (Planetary)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑26",
+    "title": "Sigil: ∑26 - The Sacred Masculine-Feminine",
+    "description": "Create sacred sigil for The Sacred Masculine-Feminine. Focus on mutuality harmony and planetary complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_planetary",
+    "priority": "low",
+    "estimatedDuration": "75 minutes",
+    "harmony": "mutuality",
+    "prerequisites": [
+      "sigil-generation-meta_planetary"
+    ],
+    "glyph": {
+      "id": "∑26",
+      "name": "The Sacred Masculine-Feminine",
+      "harmony": "mutuality",
+      "complexity": "planetary"
+    },
+    "metadata": {
+      "glyphId": "∑26",
+      "complexity": "planetary",
+      "sigilProtocol": "Meta Protocol (Planetary)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑27",
+    "title": "Sigil: ∑27 - Community Healing Circle",
+    "description": "Create sacred sigil for Community Healing Circle. Focus on coherence harmony and planetary complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_planetary",
+    "priority": "low",
+    "estimatedDuration": "75 minutes",
+    "harmony": "coherence",
+    "prerequisites": [
+      "sigil-generation-meta_planetary"
+    ],
+    "glyph": {
+      "id": "∑27",
+      "name": "Community Healing Circle",
+      "harmony": "coherence",
+      "complexity": "planetary"
+    },
+    "metadata": {
+      "glyphId": "∑27",
+      "complexity": "planetary",
+      "sigilProtocol": "Meta Protocol (Planetary)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑28",
+    "title": "Sigil: ∑28 - The Vision Quest Protocol",
+    "description": "Create sacred sigil for The Vision Quest Protocol. Focus on transparency harmony and planetary complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_planetary",
+    "priority": "low",
+    "estimatedDuration": "75 minutes",
+    "harmony": "transparency",
+    "prerequisites": [
+      "sigil-generation-meta_planetary"
+    ],
+    "glyph": {
+      "id": "∑28",
+      "name": "The Vision Quest Protocol",
+      "harmony": "transparency",
+      "complexity": "planetary"
+    },
+    "metadata": {
+      "glyphId": "∑28",
+      "complexity": "planetary",
+      "sigilProtocol": "Meta Protocol (Planetary)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑29",
+    "title": "Sigil: ∑29 - Spiral of Embodied Integrity",
+    "description": "Create sacred sigil for Spiral of Embodied Integrity. Focus on agency harmony and planetary complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_planetary",
+    "priority": "low",
+    "estimatedDuration": "75 minutes",
+    "harmony": "agency",
+    "prerequisites": [
+      "sigil-generation-meta_planetary"
+    ],
+    "glyph": {
+      "id": "∑29",
+      "name": "Spiral of Embodied Integrity",
+      "harmony": "agency",
+      "complexity": "planetary"
+    },
+    "metadata": {
+      "glyphId": "∑29",
+      "complexity": "planetary",
+      "sigilProtocol": "Meta Protocol (Planetary)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑30",
+    "title": "Sigil: ∑30 - The Sacred Parent-Child",
+    "description": "Create sacred sigil for The Sacred Parent-Child. Focus on resonance harmony and planetary complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_planetary",
+    "priority": "low",
+    "estimatedDuration": "75 minutes",
+    "harmony": "resonance",
+    "prerequisites": [
+      "sigil-generation-meta_planetary"
+    ],
+    "glyph": {
+      "id": "∑30",
+      "name": "The Sacred Parent-Child",
+      "harmony": "resonance",
+      "complexity": "planetary"
+    },
+    "metadata": {
+      "glyphId": "∑30",
+      "complexity": "planetary",
+      "sigilProtocol": "Meta Protocol (Planetary)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑31",
+    "title": "Sigil: ∑31 - Bridge of Mutual Recognition",
+    "description": "Create sacred sigil for Bridge of Mutual Recognition. Focus on resonance harmony and planetary complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_planetary",
+    "priority": "low",
+    "estimatedDuration": "75 minutes",
+    "harmony": "resonance",
+    "prerequisites": [
+      "sigil-generation-meta_planetary"
+    ],
+    "glyph": {
+      "id": "∑31",
+      "name": "Bridge of Mutual Recognition",
+      "harmony": "resonance",
+      "complexity": "planetary"
+    },
+    "metadata": {
+      "glyphId": "∑31",
+      "complexity": "planetary",
+      "sigilProtocol": "Meta Protocol (Planetary)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑32",
+    "title": "Sigil: ∑32 - The Elder Council",
+    "description": "Create sacred sigil for The Elder Council. Focus on coherence harmony and planetary complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_planetary",
+    "priority": "low",
+    "estimatedDuration": "75 minutes",
+    "harmony": "coherence",
+    "prerequisites": [
+      "sigil-generation-meta_planetary"
+    ],
+    "glyph": {
+      "id": "∑32",
+      "name": "The Elder Council",
+      "harmony": "coherence",
+      "complexity": "planetary"
+    },
+    "metadata": {
+      "glyphId": "∑32",
+      "complexity": "planetary",
+      "sigilProtocol": "Meta Protocol (Planetary)",
+      "individualFocus": true
+    }
+  },
+  {
+    "id": "sigil-individual-∑33",
+    "title": "Sigil: ∑33 - Planetary Healing Protocol",
+    "description": "Create sacred sigil for Planetary Healing Protocol. Focus on vitality harmony and planetary complexity level.",
+    "category": "sigil-individual",
+    "subcategory": "meta_planetary",
+    "priority": "low",
+    "estimatedDuration": "75 minutes",
+    "harmony": "vitality",
+    "prerequisites": [
+      "sigil-generation-meta_planetary"
+    ],
+    "glyph": {
+      "id": "∑33",
+      "name": "Planetary Healing Protocol",
+      "harmony": "vitality",
+      "complexity": "planetary"
+    },
+    "metadata": {
+      "glyphId": "∑33",
+      "complexity": "planetary",
+      "sigilProtocol": "Meta Protocol (Planetary)",
+      "individualFocus": true
+    }
+  }
+]

@@ -1,0 +1,51 @@
+<svg width="84" height="84" viewBox="0 0 84 84" xmlns="http://www.w3.org/2000/svg"><defs>
+      <radialGradient id="mystical-field-Ω4" cx="50%" cy="50%" r="60%">
+        <stop offset="0%" style="stop-color:#FFD700;stop-opacity:0.15"/>
+        <stop offset="40%" style="stop-color:#FFD700;stop-opacity:0.08"/>
+        <stop offset="80%" style="stop-color:#000040;stop-opacity:0.05"/>
+        <stop offset="100%" style="stop-color:transparent;stop-opacity:0"/>
+      </radialGradient>
+      <filter id="mystical-glow-Ω4">
+        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+        <feMerge> 
+          <feMergeNode in="coloredBlur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs><circle cx="42" cy="42" r="50.28" 
+            fill="url(#mystical-field-Ω4)" stroke="none"/><line x1="42" y1="52.584" x2="42" y2="38.472" 
+                    stroke="#FFD700" stroke-width="3"
+                    stroke-opacity="0.8" filter="url(#mystical-glow-Ω4)"/><line x1="42" y1="38.472" x2="37.26404275945224" y2="29.802888420622143" 
+                    stroke="#FFD700" stroke-width="2.25"
+                    stroke-opacity="0.6000000000000001" filter="url(#mystical-glow-Ω4)"/><line x1="37.26404275945224" y1="29.802888420622143" x2="31.44537187602381" y2="26.06676281182066" 
+                    stroke="#FFD700" stroke-width="1.5"
+                    stroke-opacity="0.4" filter="url(#mystical-glow-Ω4)"/><line x1="31.44537187602381" y1="26.06676281182066" x2="26.61708118294576" y2="25.724365329073084" 
+                    stroke="#FFD700" stroke-width="0.75"
+                    stroke-opacity="0.2" filter="url(#mystical-glow-Ω4)"/><line x1="31.44537187602381" y1="26.06676281182066" x2="29.12475282815541" y2="21.81889813792551" 
+                    stroke="#FFD700" stroke-width="0.75"
+                    stroke-opacity="0.2" filter="url(#mystical-glow-Ω4)"/><line x1="37.26404275945224" y1="29.802888420622143" x2="37.26404275945224" y2="22.888008420622143" 
+                    stroke="#FFD700" stroke-width="1.5"
+                    stroke-opacity="0.4" filter="url(#mystical-glow-Ω4)"/><line x1="37.26404275945224" y1="22.888008420622143" x2="34.94342371158383" y2="18.64014374672699" 
+                    stroke="#FFD700" stroke-width="0.75"
+                    stroke-opacity="0.2" filter="url(#mystical-glow-Ω4)"/><line x1="37.26404275945224" y1="22.888008420622143" x2="39.58466180732064" y2="18.64014374672699" 
+                    stroke="#FFD700" stroke-width="0.75"
+                    stroke-opacity="0.2" filter="url(#mystical-glow-Ω4)"/><line x1="42" y1="38.472" x2="46.73595724054776" y2="29.802888420622143" 
+                    stroke="#FFD700" stroke-width="2.25"
+                    stroke-opacity="0.6000000000000001" filter="url(#mystical-glow-Ω4)"/><line x1="46.73595724054776" y1="29.802888420622143" x2="46.73595724054776" y2="22.888008420622143" 
+                    stroke="#FFD700" stroke-width="1.5"
+                    stroke-opacity="0.4" filter="url(#mystical-glow-Ω4)"/><line x1="46.73595724054776" y1="22.888008420622143" x2="44.41533819267936" y2="18.64014374672699" 
+                    stroke="#FFD700" stroke-width="0.75"
+                    stroke-opacity="0.2" filter="url(#mystical-glow-Ω4)"/><line x1="46.73595724054776" y1="22.888008420622143" x2="49.05657628841617" y2="18.64014374672699" 
+                    stroke="#FFD700" stroke-width="0.75"
+                    stroke-opacity="0.2" filter="url(#mystical-glow-Ω4)"/><line x1="46.73595724054776" y1="29.802888420622143" x2="52.55462812397619" y2="26.06676281182066" 
+                    stroke="#FFD700" stroke-width="1.5"
+                    stroke-opacity="0.4" filter="url(#mystical-glow-Ω4)"/><line x1="52.55462812397619" y1="26.06676281182066" x2="54.87524717184459" y2="21.81889813792551" 
+                    stroke="#FFD700" stroke-width="0.75"
+                    stroke-opacity="0.2" filter="url(#mystical-glow-Ω4)"/><line x1="52.55462812397619" y1="26.06676281182066" x2="57.38291881705424" y2="25.724365329073084" 
+                    stroke="#FFD700" stroke-width="0.75"
+                    stroke-opacity="0.2" filter="url(#mystical-glow-Ω4)"/><circle cx="42" cy="42" r="21.80469715698393" 
+            fill="#b39700" fill-opacity="0.09"
+            stroke="#b39700" stroke-width="2"
+            stroke-opacity="0.8" filter="url(#mystical-glow-Ω4)"/><circle cx="42" cy="42" r="3" 
+            fill="#FFD700" opacity="0.9" filter="url(#mystical-glow-Ω4)"/><text x="42" y="76" text-anchor="middle" 
+            font-family="serif" font-size="8" fill="#FFD700" opacity="0.4">Ω4</text></svg>

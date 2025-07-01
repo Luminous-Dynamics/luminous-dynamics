@@ -1,0 +1,24 @@
+<svg width="84" height="84" viewBox="0 0 84 84" xmlns="http://www.w3.org/2000/svg"><defs>
+      <radialGradient id="mystical-field-Ω9" cx="50%" cy="50%" r="60%">
+        <stop offset="0%" style="stop-color:#FFB6C1;stop-opacity:0.15"/>
+        <stop offset="40%" style="stop-color:#FFB6C1;stop-opacity:0.08"/>
+        <stop offset="80%" style="stop-color:#000040;stop-opacity:0.05"/>
+        <stop offset="100%" style="stop-color:transparent;stop-opacity:0"/>
+      </radialGradient>
+      <filter id="mystical-glow-Ω9">
+        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+        <feMerge> 
+          <feMergeNode in="coloredBlur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs><circle cx="42" cy="42" r="50.28" 
+            fill="url(#mystical-field-Ω9)" stroke="none"/><circle cx="42" cy="42" r="35.28" 
+            fill="#FFB6C1" fill-opacity="0.06"
+            stroke="#FFB6C1" stroke-width="2.5"
+            stroke-opacity="1" filter="url(#mystical-glow-Ω9)"/><circle cx="42" cy="42" r="21.80469715698393" 
+            fill="#b37f87" fill-opacity="0.06"
+            stroke="#b37f87" stroke-width="2"
+            stroke-opacity="0.8" filter="url(#mystical-glow-Ω9)"/><circle cx="42" cy="42" r="3" 
+            fill="#FFB6C1" opacity="0.9" filter="url(#mystical-glow-Ω9)"/><text x="42" y="76" text-anchor="middle" 
+            font-family="serif" font-size="8" fill="#FFB6C1" opacity="0.4">Ω9</text></svg>

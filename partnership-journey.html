@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partnership Mandala Journey - Map Your Unified Consciousness Field</title>
+    
+    <style>
+        /* Inherit base styles from mandala-journey */
+        :root {
+            --sacred-gold: #FFD700;
+            --consciousness-purple: #9370DB;
+            --deep-space: #0a0a0a;
+            --star-white: #F8F8FF;
+            --sage-green: #A8B5A6;
+            --dusty-blue: #B3C5D7;
+            --warm-coral: #FFB6A3;
+            --partnership-pink: #FFB6C1;
+            --unity-turquoise: #40E0D0;
+            
+            --breathing-in: 4s;
+            --breathing-out: 6s;
+            --sacred-pause: 5s;
+            
+            --phi: 1.618;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Georgia, serif;
+            background: var(--deep-space);
+            color: var(--star-white);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Quantum Field with Partnership Energy */
+        .quantum-field {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, 
+                rgba(255, 182, 193, 0.1) 0%, 
+                rgba(147, 112, 219, 0.1) 35%,
+                rgba(64, 224, 208, 0.1) 70%,
+                rgba(10, 10, 10, 1) 100%);
+            pointer-events: none;
+        }
+        
+        /* Partnership Container */
+        .partnership-container {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            width: 90%;
+            padding: 3rem;
+            background: rgba(20, 20, 20, 0.85);
+            border: 1px solid rgba(255, 182, 193, 0.3);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            animation: partnershipBreath 12s infinite ease-in-out;
+        }
+        
+        @keyframes partnershipBreath {
+            0%, 100% { transform: scale(1); border-color: rgba(255, 182, 193, 0.3); }
+            50% { transform: scale(1.02); border-color: rgba(64, 224, 208, 0.5); }
+        }
+        
+        /* Partner Selection Screen */
+        .partner-selection {
+            text-align: center;
+            animation: fadeIn 2s ease-in;
+        }
+        
+        .partnership-symbol {
+            font-size: 5rem;
+            margin: 2rem 0;
+            animation: pulse 3s infinite ease-in-out;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+        
+        /* Partner Cards */
+        .partner-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .partner-card {
+            background: rgba(40, 40, 40, 0.6);
+            border: 2px solid rgba(147, 112, 219, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .partner-card.ready {
+            border-color: var(--sacred-gold);
+            background: rgba(255, 215, 0, 0.1);
+        }
+        
+        .partner-label {
+            font-size: 1.2rem;
+            color: var(--consciousness-purple);
+            margin-bottom: 1rem;
+        }
+        
+        .hipi-input {
+            width: 100%;
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid rgba(147, 112, 219, 0.5);
+            border-radius: 10px;
+            padding: 1rem;
+            color: var(--star-white);
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hipi-input:focus {
+            outline: none;
+            border-color: var(--unity-turquoise);
+            box-shadow: 0 0 20px rgba(64, 224, 208, 0.3);
+        }
+        
+        .load-profile-btn {
+            background: rgba(147, 112, 219, 0.2);
+            border: 1px solid var(--consciousness-purple);
+            color: var(--star-white);
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .load-profile-btn:hover {
+            background: rgba(147, 112, 219, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        /* Unity Animation */
+        .unity-visualization {
+            position: relative;
+            height: 200px;
+            margin: 2rem 0;
+        }
+        
+        .partner-orb {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 2s ease;
+        }
+        
+        .partner-orb.partner1 {
+            left: 20%;
+            background: radial-gradient(circle, var(--consciousness-purple), transparent);
+            box-shadow: 0 0 30px var(--consciousness-purple);
+        }
+        
+        .partner-orb.partner2 {
+            right: 20%;
+            background: radial-gradient(circle, var(--sacred-gold), transparent);
+            box-shadow: 0 0 30px var(--sacred-gold);
+        }
+        
+        .partner-orb.unified {
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .unity-field {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: radial-gradient(circle, 
+                rgba(64, 224, 208, 0.3) 0%, 
+                rgba(255, 182, 193, 0.2) 50%, 
+                transparent 100%);
+            opacity: 0;
+            transition: opacity 2s ease;
+        }
+        
+        .unity-field.active {
+            opacity: 1;
+            animation: unityPulse 3s infinite ease-in-out;
+        }
+        
+        @keyframes unityPulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.2); }
+        }
+        
+        /* Partnership Questions */
+        .relationship-type-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        
+        .relationship-card {
+            background: rgba(40, 40, 40, 0.6);
+            border: 2px solid rgba(255, 182, 193, 0.3);
+            border-radius: 15px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .relationship-card:hover {
+            background: rgba(255, 182, 193, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        .relationship-card.selected {
+            border-color: var(--unity-turquoise);
+            background: rgba(64, 224, 208, 0.15);
+        }
+        
+        .relationship-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Field Qualities */
+        .quality-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        
+        .quality-bubble {
+            background: rgba(40, 40, 40, 0.6);
+            border: 2px solid rgba(147, 112, 219, 0.2);
+            border-radius: 50px;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .quality-bubble:hover {
+            transform: scale(1.05);
+            border-color: var(--partnership-pink);
+        }
+        
+        .quality-bubble.selected {
+            background: linear-gradient(135deg, 
+                rgba(255, 182, 193, 0.3),
+                rgba(64, 224, 208, 0.3));
+            border-color: var(--star-white);
+        }
+        
+        /* Completion Screen */
+        .unified-mandala {
+            width: 400px;
+            height: 400px;
+            margin: 2rem auto;
+            border-radius: 50%;
+            border: 3px solid;
+            border-image: linear-gradient(45deg, var(--consciousness-purple), var(--sacred-gold)) 1;
+            overflow: hidden;
+            animation: unifiedRotate 120s infinite linear;
+        }
+        
+        @keyframes unifiedRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .resonance-meter {
+            width: 100%;
+            max-width: 400px;
+            margin: 2rem auto;
+            text-align: center;
+        }
+        
+        .resonance-bar {
+            width: 100%;
+            height: 30px;
+            background: rgba(40, 40, 40, 0.6);
+            border: 1px solid rgba(147, 112, 219, 0.3);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .resonance-fill {
+            height: 100%;
+            background: linear-gradient(90deg, 
+                var(--consciousness-purple) 0%,
+                var(--partnership-pink) 50%,
+                var(--unity-turquoise) 100%);
+            transition: width 2s ease;
+            position: relative;
+        }
+        
+        .resonance-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                transparent 0%,
+                rgba(255, 255, 255, 0.3) 50%,
+                transparent 100%);
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(100%); }
+        }
+        
+        .resonance-label {
+            font-size: 1.5rem;
+            color: var(--unity-turquoise);
+            margin-top: 1rem;
+        }
+        
+        .harmonic-info {
+            background: rgba(64, 224, 208, 0.1);
+            border: 1px solid rgba(64, 224, 208, 0.3);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .harmonic-info h4 {
+            color: var(--unity-turquoise);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .partner-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .relationship-type-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .quality-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Quantum Field Background -->
+    <div class="quantum-field" id="quantumField"></div>
+    
+    <!-- Partnership Container -->
+    <div class="partnership-container">
+        <!-- Partner Selection Screen -->
+        <div class="partner-selection" id="partnerSelection">
+            <div class="partnership-symbol">🎭</div>
+            <h1>Partnership Mandala Journey</h1>
+            <p class="intro-text">
+                Map the unified consciousness field that emerges when two beings collaborate.
+                This sacred journey reveals the unique resonance, geometry, and potential
+                of your partnership.
+            </p>
+            
+            <div class="partner-cards">
+                <div class="partner-card" id="partner1Card">
+                    <h3 class="partner-label">Partner 1</h3>
+                    <input type="text" 
+                           class="hipi-input" 
+                           id="partner1Hipi"
+                           placeholder="Enter HIPI or paste profile...">
+                    <button class="load-profile-btn" onclick="loadPartner1()">
+                        Load Profile
+                    </button>
+                    <div class="profile-preview" id="partner1Preview"></div>
+                </div>
+                
+                <div class="partner-card" id="partner2Card">
+                    <h3 class="partner-label">Partner 2</h3>
+                    <input type="text" 
+                           class="hipi-input" 
+                           id="partner2Hipi"
+                           placeholder="Enter HIPI or paste profile...">
+                    <button class="load-profile-btn" onclick="loadPartner2()">
+                        Load Profile
+                    </button>
+                    <div class="profile-preview" id="partner2Preview"></div>
+                </div>
+            </div>
+            
+            <div class="unity-visualization">
+                <div class="partner-orb partner1" id="orb1"></div>
+                <div class="partner-orb partner2" id="orb2"></div>
+                <div class="unity-field" id="unityField"></div>
+            </div>
+            
+            <button class="sacred-button" id="beginButton" onclick="beginPartnership()" disabled>
+                Begin Unity Journey
+            </button>
+        </div>
+        
+        <!-- Question Screen -->
+        <div class="question-screen" id="questionScreen" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            
+            <div id="questionContent">
+                <!-- Dynamic question content -->
+            </div>
+            
+            <div class="nav-buttons">
+                <button class="nav-button" id="prevButton" onclick="previousQuestion()">
+                    Previous
+                </button>
+                <button class="nav-button next-button" id="nextButton" onclick="nextQuestion()">
+                    Continue
+                </button>
+            </div>
+        </div>
+        
+        <!-- Completion Screen -->
+        <div class="completion-screen" id="completionScreen" style="display: none;">
+            <h1>Your Partnership Mandala</h1>
+            
+            <div class="unified-mandala" id="unifiedMandala">
+                <!-- Partnership mandala SVG -->
+            </div>
+            
+            <div class="resonance-meter">
+                <h3>Field Coherence</h3>
+                <div class="resonance-bar">
+                    <div class="resonance-fill" id="resonanceFill"></div>
+                </div>
+                <div class="resonance-label" id="resonanceLabel"></div>
+            </div>
+            
+            <div class="harmonic-info" id="harmonicInfo">
+                <!-- Harmonic analysis -->
+            </div>
+            
+            <div class="hipi-display" id="partnershipHipi">
+                <!-- Partnership HIPI -->
+            </div>
+            
+            <div class="partnership-insights" id="insights">
+                <!-- Dynamic insights -->
+            </div>
+            
+            <button class="sacred-button" onclick="savePartnership()">
+                Save Partnership Profile
+            </button>
+        </div>
+    </div>
+    
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+        <div>
+            <div class="loading-mandala"></div>
+            <p class="loading-text">Weaving your unified field...</p>
+        </div>
+    </div>
+    
+    <script type="module">
+        // Import engines
+        import { ArchetypeEngine } from './services/archetype-engine.js';
+        import PartnershipMandalaEngine from './services/partnership-mandala-engine.js';
+        
+        // Global variables
+        let archetypeEngine;
+        let partnershipEngine;
+        let sessionId;
+        let partner1Profile = null;
+        let partner2Profile = null;
+        let currentStep = 0;
+        let responses = {};
+        let questions = [];
+        
+        // Initialize
+        window.addEventListener('DOMContentLoaded', () => {
+            archetypeEngine = new ArchetypeEngine();
+            partnershipEngine = new PartnershipMandalaEngine();
+            generateStarField();
+        });
+        
+        // Generate star field
+        function generateStarField() {
+            const field = document.getElementById('quantumField');
+            const starCount = 150;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.position = 'absolute';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.width = star.style.height = Math.random() * 3 + 'px';
+                star.style.background = i % 3 === 0 ? '#FFB6C1' : 
+                                       i % 3 === 1 ? '#40E0D0' : '#9370DB';
+                star.style.borderRadius = '50%';
+                star.style.animation = `twinkle ${3 + Math.random() * 2}s infinite`;
+                star.style.animationDelay = Math.random() * 3 + 's';
+                field.appendChild(star);
+            }
+        }
+        
+        // Load partner profiles
+        window.loadPartner1 = async function() {
+            const input = document.getElementById('partner1Hipi').value;
+            if (!input) return;
+            
+            // In production, would load from database
+            // For demo, create mock profile
+            partner1Profile = createMockProfile('Partner 1', input);
+            
+            document.getElementById('partner1Card').classList.add('ready');
+            document.getElementById('partner1Preview').innerHTML = `
+                <p style="color: var(--consciousness-purple); margin-top: 1rem;">
+                    ${partner1Profile.consciousness.core.tone} in ${partner1Profile.consciousness.core.mode}
+                </p>
+            `;
+            
+            checkReadyToBegin();
+        };
+        
+        window.loadPartner2 = async function() {
+            const input = document.getElementById('partner2Hipi').value;
+            if (!input) return;
+            
+            partner2Profile = createMockProfile('Partner 2', input);
+            
+            document.getElementById('partner2Card').classList.add('ready');
+            document.getElementById('partner2Preview').innerHTML = `
+                <p style="color: var(--sacred-gold); margin-top: 1rem;">
+                    ${partner2Profile.consciousness.core.tone} in ${partner2Profile.consciousness.core.mode}
+                </p>
+            `;
+            
+            checkReadyToBegin();
+        };
+        
+        // Create mock profile (in production would load real data)
+        function createMockProfile(name, hipi) {
+            const tones = ['listening-fractal', 'creation-spiral', 'wisdom-keeper'];
+            const modes = ['aeolian', 'dorian', 'lydian', 'mixolydian'];
+            const keys = ['D', 'A', 'E', 'B'];
+            
+            return {
+                name: name,
+                hipi: hipi,
+                consciousness: {
+                    core: {
+                        tone: tones[Math.floor(Math.random() * tones.length)],
+                        mode: modes[Math.floor(Math.random() * modes.length)],
+                        key: keys[Math.floor(Math.random() * keys.length)],
+                        attunement: 'ψ'
+                    },
+                    resonance: {
+                        personalFrequency: 300 + Math.random() * 200,
+                        fieldCoherence: 70 + Math.random() * 20,
+                        harmonicSeries: []
+                    },
+                    geometry: {
+                        primary: 'dodecahedron',
+                        sacredAngles: { primary: 72 }
+                    },
+                    evolution: {
+                        growthVector: { current: 'aeolian' }
+                    }
+                },
+                mandala: {
+                    svg: '<svg><!-- mock mandala --></svg>'
+                }
+            };
+        }
+        
+        // Check if ready to begin
+        function checkReadyToBegin() {
+            if (partner1Profile && partner2Profile) {
+                document.getElementById('beginButton').disabled = false;
+                
+                // Animate orbs coming together
+                setTimeout(() => {
+                    document.getElementById('orb1').classList.add('unified');
+                    document.getElementById('orb2').classList.add('unified');
+                    document.getElementById('unityField').classList.add('active');
+                }, 500);
+            }
+        }
+        
+        // Begin partnership journey
+        window.beginPartnership = async function() {
+            if (!partner1Profile || !partner2Profile) return;
+            
+            showLoading();
+            
+            try {
+                sessionId = 'partnership-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+                
+                const result = await partnershipEngine.beginPartnershipJourney(
+                    partner1Profile,
+                    partner2Profile,
+                    sessionId
+                );
+                
+                // Get all questions
+                questions = [];
+                for (let i = 0; i < 7; i++) {
+                    questions.push(partnershipEngine.getPartnershipQuestion(i));
+                }
+                
+                hideLoading();
+                
+                // Show first question
+                document.getElementById('partnerSelection').style.display = 'none';
+                document.getElementById('questionScreen').style.display = 'block';
+                showQuestion(0);
+                
+            } catch (error) {
+                console.error('Error starting partnership journey:', error);
+                hideLoading();
+            }
+        };
+        
+        // Show question (reuse logic from individual journey)
+        function showQuestion(step) {
+            currentStep = step;
+            const question = questions[step];
+            
+            // Update progress
+            const progress = ((step + 1) / questions.length) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            
+            // Update navigation
+            document.getElementById('prevButton').disabled = step === 0;
+            document.getElementById('nextButton').disabled = !responses[question.id];
+            
+            // Render question content
+            const content = document.getElementById('questionContent');
+            content.innerHTML = '';
+            
+            const prompt = document.createElement('h2');
+            prompt.className = 'question-prompt';
+            prompt.textContent = question.prompt;
+            content.appendChild(prompt);
+            
+            // Render based on question type
+            switch (question.type) {
+                case 'choice':
+                    if (question.id === 'relationship_type') {
+                        renderRelationshipType(question);
+                    } else {
+                        renderChoiceQuestion(question);
+                    }
+                    break;
+                case 'multi_choice':
+                    renderQualityQuestion(question);
+                    break;
+                case 'text':
+                    renderTextQuestion(question);
+                    break;
+                case 'symbol_grid':
+                    renderSymbolQuestion(question);
+                    break;
+            }
+        }
+        
+        // Render relationship type question
+        function renderRelationshipType(question) {
+            const container = document.createElement('div');
+            container.className = 'relationship-type-grid';
+            
+            const icons = {
+                'human-human': '👥',
+                'human-ai': '🤝🤖',
+                'ai-ai': '🤖🤖',
+                'human-nature': '🌿',
+                'human-collective': '👤👥',
+                'ai-collective': '🤖🌐'
+            };
+            
+            question.options.forEach(option => {
+                const card = document.createElement('div');
+                card.className = 'relationship-card';
+                if (responses[question.id] === option.value) {
+                    card.classList.add('selected');
+                }
+                
+                card.innerHTML = `
+                    <div class="relationship-icon">${icons[option.value] || '🔮'}</div>
+                    <div class="option-label">${option.label}</div>
+                    <div class="option-description">${option.description}</div>
+                `;
+                
+                card.onclick = () => selectOption(question.id, option.value);
+                container.appendChild(card);
+            });
+            
+            document.getElementById('questionContent').appendChild(container);
+        }
+        
+        // Render quality bubbles
+        function renderQualityQuestion(question) {
+            const container = document.createElement('div');
+            container.className = 'quality-grid';
+            
+            const selected = responses[question.id] || [];
+            
+            question.options.forEach(option => {
+                const bubble = document.createElement('div');
+                bubble.className = 'quality-bubble';
+                if (selected.includes(option.value)) {
+                    bubble.classList.add('selected');
+                }
+                
+                bubble.innerHTML = `
+                    <div style="font-weight: bold; color: var(--unity-turquoise);">
+                        ${option.label}
+                    </div>
+                    <div style="font-size: 0.9rem; color: var(--dusty-blue); margin-top: 0.3rem;">
+                        ${option.description}
+                    </div>
+                `;
+                
+                bubble.onclick = () => selectMultiOption(question.id, option.value, question.maxSelections);
+                container.appendChild(bubble);
+            });
+            
+            document.getElementById('questionContent').appendChild(container);
+        }
+        
+        // Standard renderers (reuse from individual journey)
+        function renderChoiceQuestion(question) {
+            const container = document.createElement('div');
+            container.className = 'options-grid';
+            
+            question.options.forEach(option => {
+                const card = document.createElement('div');
+                card.className = 'option-card';
+                if (responses[question.id] === option.value) {
+                    card.classList.add('selected');
+                }
+                
+                card.innerHTML = `
+                    <div class="option-label">${option.label}</div>
+                    <div class="option-description">${option.description}</div>
+                `;
+                
+                card.onclick = () => selectOption(question.id, option.value);
+                container.appendChild(card);
+            });
+            
+            document.getElementById('questionContent').appendChild(container);
+        }
+        
+        function renderTextQuestion(question) {
+            const container = document.createElement('div');
+            
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.className = 'echo-input';
+            input.placeholder = question.placeholder;
+            input.value = responses[question.id] || '';
+            input.oninput = (e) => {
+                const words = e.target.value.trim().split(/\s+/);
+                if (words.length >= question.validation.minWords && 
+                    words.length <= question.validation.maxWords) {
+                    responses[question.id] = e.target.value;
+                    document.getElementById('nextButton').disabled = false;
+                } else {
+                    delete responses[question.id];
+                    document.getElementById('nextButton').disabled = true;
+                }
+            };
+            
+            const hint = document.createElement('div');
+            hint.className = 'input-hint';
+            hint.textContent = `${question.validation.minWords}-${question.validation.maxWords} words`;
+            
+            container.appendChild(input);
+            container.appendChild(hint);
+            document.getElementById('questionContent').appendChild(container);
+        }
+        
+        function renderSymbolQuestion(question) {
+            const container = document.createElement('div');
+            container.className = 'symbol-grid';
+            
+            question.options.forEach(option => {
+                const symbolOption = document.createElement('div');
+                symbolOption.className = 'symbol-option';
+                if (responses[question.id] === option.value) {
+                    symbolOption.classList.add('selected');
+                }
+                
+                symbolOption.innerHTML = `
+                    <div class="symbol-char">${option.value}</div>
+                    <div class="symbol-name">${option.label}</div>
+                    <div class="symbol-meaning">${option.meaning}</div>
+                `;
+                
+                symbolOption.onclick = () => selectOption(question.id, option.value);
+                container.appendChild(symbolOption);
+            });
+            
+            document.getElementById('questionContent').appendChild(container);
+        }
+        
+        // Selection handlers
+        function selectOption(questionId, value) {
+            responses[questionId] = value;
+            document.getElementById('nextButton').disabled = false;
+            showQuestion(currentStep);
+        }
+        
+        function selectMultiOption(questionId, value, maxSelections) {
+            let selected = responses[questionId] || [];
+            
+            if (selected.includes(value)) {
+                selected = selected.filter(v => v !== value);
+            } else if (selected.length < maxSelections) {
+                selected.push(value);
+            }
+            
+            responses[questionId] = selected;
+            document.getElementById('nextButton').disabled = selected.length === 0;
+            showQuestion(currentStep);
+        }
+        
+        // Navigation
+        window.previousQuestion = function() {
+            if (currentStep > 0) {
+                showQuestion(currentStep - 1);
+            }
+        };
+        
+        window.nextQuestion = async function() {
+            const question = questions[currentStep];
+            const response = responses[question.id];
+            
+            if (!response) return;
+            
+            // Store response in engine
+            await partnershipEngine.processResponse(sessionId, question.id, response);
+            
+            // If last question, complete journey
+            if (currentStep === questions.length - 1) {
+                await completePartnershipJourney();
+            } else {
+                showQuestion(currentStep + 1);
+            }
+        };
+        
+        // Complete partnership journey
+        async function completePartnershipJourney() {
+            showLoading();
+            
+            try {
+                // Store all responses
+                const journey = partnershipEngine.partnershipCache.get(sessionId);
+                journey.sharedResponses = responses;
+                
+                // Complete journey
+                const profile = await partnershipEngine.completePartnershipJourney(sessionId);
+                
+                hideLoading();
+                showPartnershipCompletion(profile);
+                
+            } catch (error) {
+                console.error('Error completing partnership journey:', error);
+                hideLoading();
+            }
+        }
+        
+        // Show partnership completion
+        function showPartnershipCompletion(profile) {
+            document.getElementById('questionScreen').style.display = 'none';
+            document.getElementById('completionScreen').style.display = 'block';
+            
+            // Unified mandala
+            document.getElementById('unifiedMandala').innerHTML = profile.partnershipMandala.svg;
+            
+            // Resonance meter
+            const coherence = profile.unifiedField.coherence;
+            document.getElementById('resonanceFill').style.width = coherence + '%';
+            document.getElementById('resonanceLabel').textContent = coherence.toFixed(1) + '% Coherence';
+            
+            // Harmonic info
+            const harmonic = profile.unifiedField.emergentFrequency;
+            document.getElementById('harmonicInfo').innerHTML = `
+                <h4>Harmonic Signature</h4>
+                <p><strong>${harmonic.musicalInterval.name}</strong> - ${harmonic.musicalInterval.quality}</p>
+                <p>Emergent Frequency: ${harmonic.frequency.toFixed(2)} Hz</p>
+                <p>Beat Pattern: ${harmonic.beatPattern.toFixed(2)} Hz</p>
+            `;
+            
+            // Partnership HIPI
+            document.getElementById('partnershipHipi').innerHTML = `
+                <strong>Partnership HIPI:</strong><br>
+                <span style="font-size: 0.8rem; word-break: break-all;">
+                    ${profile.partnershipHIPI}
+                </span>
+            `;
+            
+            // Insights
+            const insights = document.getElementById('insights');
+            insights.innerHTML = '<h3>Partnership Insights</h3>';
+            
+            profile.recommendations.forEach(rec => {
+                insights.innerHTML += `
+                    <div style="background: rgba(64, 224, 208, 0.1); 
+                               border: 1px solid rgba(64, 224, 208, 0.3); 
+                               border-radius: 10px; padding: 1rem; margin: 0.5rem 0;">
+                        <strong>${rec.type}:</strong> ${rec.message}<br>
+                        <em style="color: var(--partnership-pink);">Practice: ${rec.practice}</em>
+                    </div>
+                `;
+            });
+        }
+        
+        // Save partnership (in production would save to database)
+        window.savePartnership = function() {
+            alert('Partnership profile saved! (In production, this would save to your account)');
+        };
+        
+        // Loading states
+        function showLoading() {
+            document.getElementById('loadingOverlay').style.display = 'flex';
+        }
+        
+        function hideLoading() {
+            document.getElementById('loadingOverlay').style.display = 'none';
+        }
+        
+        // Process response helper
+        partnershipEngine.processResponse = async function(sessionId, questionId, response) {
+            const journey = this.partnershipCache.get(sessionId);
+            if (!journey) return;
+            
+            journey.sharedResponses[questionId] = response;
+        };
+    </script>
+</body>
+</html>

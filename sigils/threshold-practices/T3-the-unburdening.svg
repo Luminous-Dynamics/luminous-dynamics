@@ -1,0 +1,51 @@
+<svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><defs>
+      <radialGradient id="threshold-field-T3" cx="50%" cy="50%" r="70%">
+        <stop offset="0%" style="stop-color:#FF6347;stop-opacity:0.2"/>
+        <stop offset="50%" style="stop-color:#FF6347;stop-opacity:0.1"/>
+        <stop offset="80%" style="stop-color:#000040;stop-opacity:0.05"/>
+        <stop offset="100%" style="stop-color:transparent;stop-opacity:0"/>
+      </radialGradient>
+      <filter id="transformation-glow-T3">
+        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+        <feMerge> 
+          <feMergeNode in="coloredBlur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="motion-blur-T3">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1,0"/>
+      </filter>
+    </defs><circle cx="48" cy="48" r="63.2" 
+            fill="url(#threshold-field-T3)" stroke="none"/><circle cx="48" cy="48" r="20.736000000000004" 
+               fill="none" stroke="#4d1e15" stroke-width="1.5"
+               stroke-opacity="0.3" filter="url(#motion-blur-T3)"/><circle cx="48" cy="48" r="36.288" 
+               fill="none" stroke="#4d1e15" stroke-width="1.2000000000000002"
+               stroke-opacity="0.21" filter="url(#motion-blur-T3)"/><circle cx="48" cy="48" r="51.84" 
+               fill="none" stroke="#4d1e15" stroke-width="0.8999999999999999"
+               stroke-opacity="0.12" filter="url(#motion-blur-T3)"/><circle cx="48" cy="48" r="8.64" 
+             fill="#FF6347" fill-opacity="0.6"
+             stroke="#FF6347" stroke-width="3"
+             stroke-opacity="1" filter="url(#transformation-glow-T3)"/><path d="M 60.96 48 Q 76.08 39.36 91.2 48"
+               fill="none" stroke="#FF6347" stroke-width="2.4000000000000004"
+               stroke-opacity="1" 
+               stroke-linecap="round" filter="url(#transformation-glow-T3)"/><path d="M 54.480000000000004 59.22368923304633 Q 69.52245948869756 67.99799333826702 69.60000000000001 85.41229744348774"
+               fill="none" stroke="#FF6347" stroke-width="2.4000000000000004"
+               stroke-opacity="0.9" 
+               stroke-linecap="round" filter="url(#transformation-glow-T3)"/><path d="M 41.52 59.22368923304633 Q 41.44245948869756 76.63799333826702 26.40000000000001 85.41229744348774"
+               fill="none" stroke="#FF6347" stroke-width="2.4000000000000004"
+               stroke-opacity="0.8" 
+               stroke-linecap="round" filter="url(#transformation-glow-T3)"/><path d="M 35.04 48 Q 19.919999999999998 56.64 4.799999999999997 48.00000000000001"
+               fill="none" stroke="#FF6347" stroke-width="2.4000000000000004"
+               stroke-opacity="0.7" 
+               stroke-linecap="round" filter="url(#transformation-glow-T3)"/><path d="M 41.519999999999996 36.77631076695368 Q 26.477540511302436 28.00200666173297 26.39999999999998 10.587702556512255"
+               fill="none" stroke="#FF6347" stroke-width="2.4000000000000004"
+               stroke-opacity="0.6" 
+               stroke-linecap="round" filter="url(#transformation-glow-T3)"/><path d="M 54.480000000000004 36.77631076695367 Q 54.557540511302456 19.36200666173296 69.60000000000001 10.587702556512248"
+               fill="none" stroke="#FF6347" stroke-width="2.4000000000000004"
+               stroke-opacity="0.5" 
+               stroke-linecap="round" filter="url(#transformation-glow-T3)"/><line x1="31.980222496909764" y1="48" x2="64.01977750309024" y2="48"
+             stroke="#cc4f39" stroke-width="1.6800000000000002" stroke-opacity="0.4" /><line x1="48" y1="31.980222496909764" x2="48" y2="64.01977750309024"
+             stroke="#cc4f39" stroke-width="1.6800000000000002" stroke-opacity="0.4" /><circle cx="48" cy="48" r="4" 
+            fill="#FF6347" opacity="1.0" filter="url(#transformation-glow-T3)"/><text x="48" y="90" text-anchor="middle" 
+            font-family="serif" font-size="10" font-weight="bold" 
+            fill="#FF6347" opacity="0.6">T3</text></svg>

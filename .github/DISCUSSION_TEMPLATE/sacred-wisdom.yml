@@ -1,0 +1,62 @@
+title: "[Sacred Wisdom] "
+labels: ["sacred-wisdom", "community"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🌟 Share Your Sacred Wisdom
+        
+        This space is for sharing insights, experiences, and wisdom from your practice with the Codex of Relational Harmonics.
+        
+  - type: textarea
+    id: wisdom
+    attributes:
+      label: Sacred Wisdom to Share
+      description: What wisdom, insight, or experience would you like to share with the community?
+      placeholder: |
+        Share your experience with a specific glyph, a breakthrough in practice, 
+        or wisdom gained from working with the sacred patterns...
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: category
+    attributes:
+      label: Wisdom Category
+      description: What type of wisdom are you sharing?
+      options:
+        - Glyph Experience
+        - Practice Insight
+        - Relationship Breakthrough
+        - Integration Story
+        - Sacred Question
+        - Field Report
+        - Community Offering
+    validations:
+      required: true
+      
+  - type: checkboxes
+    id: glyphs
+    attributes:
+      label: Related Glyphs (if applicable)
+      description: Check any glyphs that relate to your wisdom
+      options:
+        - label: "Ω45: First Presence"
+        - label: "Ω46: Conscious Arrival" 
+        - label: "Ω47: Sacred Listening"
+        - label: "Ω48: Boundary With Love"
+        - label: "Ω49: Gentle Opening"
+        - label: "Ω50: Building Trust"
+        - label: "Ω51: Loving No"
+        - label: "Ω52: Pause Practice"
+        - label: "Ω53: Tending the Field"
+        - label: "Ω55: Presence Transmission"
+        - label: "Ω56: Loving Redirection"
+        - label: "Other glyphs (specify in wisdom)"
+        
+  - type: textarea
+    id: invitation
+    attributes:
+      label: Invitation to Others
+      description: What question or invitation do you have for the community?
+      placeholder: How has this glyph appeared in your relationships? What are you discovering about...?

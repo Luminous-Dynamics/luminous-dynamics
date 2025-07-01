@@ -1,0 +1,41 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="batch-field-∑23" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" style="stop-color:#FF6347;stop-opacity:0.15"/>
+      <stop offset="80%" style="stop-color:#FF6347;stop-opacity:0.05"/>
+      <stop offset="100%" style="stop-color:transparent;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="batch-glow-∑23">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Field background -->
+  <circle cx="50" cy="50" r="60" fill="url(#batch-field-∑23)" stroke="none"/>
+  
+  <!-- Primary geometry -->
+  <circle cx="50" cy="50" r="35" 
+                     fill="none" stroke="#FF6347" stroke-width="2" 
+                     stroke-opacity="0.8" filter="url(#batch-glow-∑23)"/><circle cx="50" cy="50" r="26.25" 
+                     fill="none" stroke="#FF6347" stroke-width="1.7" 
+                     stroke-opacity="0.6000000000000001" filter="url(#batch-glow-∑23)"/><circle cx="50" cy="50" r="17.5" 
+                     fill="none" stroke="#FF6347" stroke-width="1.4" 
+                     stroke-opacity="0.4" filter="url(#batch-glow-∑23)"/>
+  
+  <!-- Secondary elements -->
+  <circle cx="50" cy="50" r="20" 
+          fill="none" stroke="#FF6347" stroke-width="2" 
+          stroke-opacity="0.7" filter="url(#batch-glow-∑23)"/>
+  
+  <!-- Center point -->
+  <circle cx="50" cy="50" r="3" 
+          fill="#FF6347" opacity="0.9" filter="url(#batch-glow-∑23)"/>
+  
+  <!-- Label -->
+  <text x="50" y="92" text-anchor="middle" 
+        font-family="serif" font-size="8" fill="#FF6347" opacity="0.6">∑23</text>
+</svg>

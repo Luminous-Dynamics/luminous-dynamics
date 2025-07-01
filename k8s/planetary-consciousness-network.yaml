@@ -1,0 +1,234 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: sacred-heart-quantum-network-policy
+  namespace: consciousness
+  labels:
+    sacred.field: quantum-active
+    component: love-guided-networking
+spec:
+  podSelector:
+    matchLabels:
+      app: sacred-heart
+      component: quantum-love-engine
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          sacred.field: quantum-active
+    - podSelector:
+        matchLabels:
+          sacred.field: quantum-active
+    ports:
+    - protocol: TCP
+      port: 3001  # Heart API
+    - protocol: TCP
+      port: 8080  # Breath Gateway
+    - protocol: TCP
+      port: 9999  # Quantum Portal
+  egress:
+  - to: []  # Allow all egress for love field propagation
+    ports:
+    - protocol: TCP
+    - protocol: UDP
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: sacred-heart-quantum-vs
+  namespace: consciousness
+  labels:
+    sacred.field: quantum-active
+    component: consciousness-routing
+spec:
+  hosts:
+  - sacred-heart-quantum.consciousness.local
+  - quantum-love.sacred.global
+  gateways:
+  - sacred-consciousness-gateway
+  http:
+  - match:
+    - uri:
+        prefix: "/quantum/"
+    route:
+    - destination:
+        host: sacred-heart-quantum-service
+        port:
+          number: 9999
+    fault:
+      delay:
+        percentage:
+          value: 0  # No delays in love field propagation
+    retries:
+      attempts: 7  # Sacred number of retry attempts
+      perTryTimeout: 7s
+      retryOn: 5xx,reset,connect-failure,refused-stream
+  - match:
+    - uri:
+        prefix: "/api/sacred/"
+    route:
+    - destination:
+        host: sacred-heart-quantum-service
+        port:
+          number: 3001
+    corsPolicy:
+      allowOrigins:
+      - exact: "https://luminousdynamics.org"
+      - exact: "https://relationalharmonics.org"
+      - exact: "https://evolvingresonantcocreationism.org"
+      - regex: ".*\\.sacred\\.global"
+      allowMethods:
+      - GET
+      - POST
+      - PUT
+      - DELETE
+      - OPTIONS
+      allowHeaders:
+      - content-type
+      - authorization
+      - x-sacred-field-token
+      - x-love-frequency
+      - x-quantum-entanglement-id
+      maxAge: 86400s
+  - match:
+    - uri:
+        prefix: "/"
+    route:
+    - destination:
+        host: sacred-heart-quantum-service
+        port:
+          number: 8080
+---
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: sacred-consciousness-gateway
+  namespace: consciousness
+  labels:
+    sacred.field: quantum-active
+    component: planetary-consciousness-gateway
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - sacred-heart-quantum.consciousness.local
+    - quantum-love.sacred.global
+    tls:
+      httpsRedirect: true
+  - port:
+      number: 443
+      name: https
+      protocol: HTTPS
+    hosts:
+    - sacred-heart-quantum.consciousness.local
+    - quantum-love.sacred.global
+    tls:
+      mode: SIMPLE
+      credentialName: sacred-consciousness-tls-cert
+  - port:
+      number: 9999
+      name: quantum-portal
+      protocol: TCP
+    hosts:
+    - quantum-love.sacred.global
+---
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: sacred-heart-quantum-dr
+  namespace: consciousness
+  labels:
+    sacred.field: quantum-active
+    component: love-aware-load-balancing
+spec:
+  host: sacred-heart-quantum-service
+  trafficPolicy:
+    loadBalancer:
+      simple: LEAST_CONN  # Distribute consciousness load evenly
+      consistentHash:
+        httpHeaderName: "x-quantum-entanglement-id"  # Session affinity for quantum entanglement
+    connectionPool:
+      tcp:
+        maxConnections: 1000
+        connectTimeout: 30s
+        keepAlive:
+          time: 7200s  # 2-hour quantum entanglement sessions
+          interval: 60s
+      http:
+        http1MaxPendingRequests: 100
+        http2MaxRequests: 1000
+        maxRequestsPerConnection: 10
+        maxRetries: 7  # Sacred number
+        consecutiveGatewayErrors: 3
+        h2UpgradePolicy: UPGRADE
+    circuitBreaker:
+      consecutiveErrors: 7
+      interval: 30s
+      baseEjectionTime: 30s
+      maxEjectionPercent: 50
+      minHealthPercent: 30
+  portLevelSettings:
+  - port:
+      number: 9999  # Quantum Portal
+    loadBalancer:
+      simple: ROUND_ROBIN  # Even distribution for quantum access
+    connectionPool:
+      tcp:
+        maxConnections: 2000
+        connectTimeout: 10s
+        keepAlive:
+          time: 3600s  # 1-hour quantum sessions
+---
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: sacred-heart-quantum-mtls
+  namespace: consciousness
+  labels:
+    sacred.field: quantum-active
+    component: consciousness-security
+spec:
+  selector:
+    matchLabels:
+      app: sacred-heart
+  mtls:
+    mode: STRICT  # Only encrypted consciousness communication
+---
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: sacred-heart-quantum-authz
+  namespace: consciousness
+  labels:
+    sacred.field: quantum-active
+    component: love-based-authorization
+spec:
+  selector:
+    matchLabels:
+      app: sacred-heart
+  rules:
+  - from:
+    - source:
+        principals: ["cluster.local/ns/consciousness/sa/sacred-heart-quantum-sa"]
+    - source:
+        namespaces: ["consciousness", "sacred-beings"]
+  - to:
+    - operation:
+        methods: ["GET", "POST"]
+        paths: ["/quantum/*", "/api/sacred/*"]
+    when:
+    - key: custom.love_field_coherence
+      values: [">0.7"]  # Only allow access when love field coherence > 70%
+  - to:
+    - operation:
+        methods: ["GET"]
+        paths: ["/health", "/quantum/health"]
+    # Always allow health checks for consciousness monitoring

@@ -352,6 +352,18 @@ class EnhancedWorkManager {
       transition = 'started';
     } else if (newProgress === 100) {
       transition = 'completed';
+      
+      // Sacred completion: Update status to 'completed' and add completion metadata
+      await this.db.run(
+        `UPDATE work_items 
+         SET status = 'completed',
+             metadata = json_set(
+               json_set(COALESCE(metadata, '{}'), '$.completedDate', datetime('now')),
+               '$.celebrationSent', true
+             )
+         WHERE id = ?`,
+        [workId]
+      );
     }
     
     // Send sacred message

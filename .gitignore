@@ -64,3 +64,13 @@ coverage/
 
 # Windows Zone.Identifier files
 *.Zone.Identifier
+# Sacred Council specific
+council-events.log
+sacred-maintenance.log
+agent-comms-sqlite/*.log
+services/*.log
+quantum.log
+*.db-journal
+*.db-wal
+*.db-shm
+packages.microsoft.gpg

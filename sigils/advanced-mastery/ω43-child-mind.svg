@@ -1,0 +1,37 @@
+<svg width="88" height="88" viewBox="0 0 88 88" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="batch-field-Ω43" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" style="stop-color:#9370DB;stop-opacity:0.15"/>
+      <stop offset="80%" style="stop-color:#9370DB;stop-opacity:0.05"/>
+      <stop offset="100%" style="stop-color:transparent;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="batch-glow-Ω43">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Field background -->
+  <circle cx="44" cy="44" r="52.8" fill="url(#batch-field-Ω43)" stroke="none"/>
+  
+  <!-- Primary geometry -->
+  <circle cx="44" cy="44" r="30.799999999999997" 
+                fill="none" stroke="#9370DB" stroke-width="2" 
+                stroke-opacity="0.8" filter="url(#batch-glow-Ω43)"/>
+  
+  <!-- Secondary elements -->
+  <circle cx="44" cy="44" r="17.6" 
+          fill="none" stroke="#9370DB" stroke-width="2" 
+          stroke-opacity="0.7" filter="url(#batch-glow-Ω43)"/>
+  
+  <!-- Center point -->
+  <circle cx="44" cy="44" r="3" 
+          fill="#9370DB" opacity="0.9" filter="url(#batch-glow-Ω43)"/>
+  
+  <!-- Label -->
+  <text x="44" y="80" text-anchor="middle" 
+        font-family="serif" font-size="8" fill="#9370DB" opacity="0.6">Ω43</text>
+</svg>

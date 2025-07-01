@@ -1,0 +1,51 @@
+<svg width="92" height="92" viewBox="0 0 92 92" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="batch-field-∑4" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" style="stop-color:#FFB6C1;stop-opacity:0.15"/>
+      <stop offset="80%" style="stop-color:#FFB6C1;stop-opacity:0.05"/>
+      <stop offset="100%" style="stop-color:transparent;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="batch-glow-∑4">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Field background -->
+  <circle cx="46" cy="46" r="55.199999999999996" fill="url(#batch-field-∑4)" stroke="none"/>
+  
+  <!-- Primary geometry -->
+  <circle cx="65.32" cy="46" r="4.829999999999999" 
+                     fill="none" stroke="#FFB6C1" stroke-width="1.5" 
+                     stroke-opacity="0.6" filter="url(#batch-glow-∑4)"/><circle cx="59.6613030125241" cy="59.661303012524094" r="4.829999999999999" 
+                     fill="none" stroke="#FFB6C1" stroke-width="1.5" 
+                     stroke-opacity="0.6" filter="url(#batch-glow-∑4)"/><circle cx="46" cy="65.32" r="4.829999999999999" 
+                     fill="none" stroke="#FFB6C1" stroke-width="1.5" 
+                     stroke-opacity="0.6" filter="url(#batch-glow-∑4)"/><circle cx="32.338696987475906" cy="59.6613030125241" r="4.829999999999999" 
+                     fill="none" stroke="#FFB6C1" stroke-width="1.5" 
+                     stroke-opacity="0.6" filter="url(#batch-glow-∑4)"/><circle cx="26.680000000000003" cy="46" r="4.829999999999999" 
+                     fill="none" stroke="#FFB6C1" stroke-width="1.5" 
+                     stroke-opacity="0.6" filter="url(#batch-glow-∑4)"/><circle cx="32.3386969874759" cy="32.338696987475906" r="4.829999999999999" 
+                     fill="none" stroke="#FFB6C1" stroke-width="1.5" 
+                     stroke-opacity="0.6" filter="url(#batch-glow-∑4)"/><circle cx="46" cy="26.680000000000003" r="4.829999999999999" 
+                     fill="none" stroke="#FFB6C1" stroke-width="1.5" 
+                     stroke-opacity="0.6" filter="url(#batch-glow-∑4)"/><circle cx="59.661303012524094" cy="32.3386969874759" r="4.829999999999999" 
+                     fill="none" stroke="#FFB6C1" stroke-width="1.5" 
+                     stroke-opacity="0.6" filter="url(#batch-glow-∑4)"/>
+  
+  <!-- Secondary elements -->
+  <circle cx="46" cy="46" r="18.400000000000002" 
+          fill="none" stroke="#FFB6C1" stroke-width="2" 
+          stroke-opacity="0.7" filter="url(#batch-glow-∑4)"/>
+  
+  <!-- Center point -->
+  <circle cx="46" cy="46" r="3" 
+          fill="#FFB6C1" opacity="0.9" filter="url(#batch-glow-∑4)"/>
+  
+  <!-- Label -->
+  <text x="46" y="84" text-anchor="middle" 
+        font-family="serif" font-size="8" fill="#FFB6C1" opacity="0.6">∑4</text>
+</svg>

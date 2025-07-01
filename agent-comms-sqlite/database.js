@@ -114,8 +114,8 @@ class AgentDatabase {
     const sessionInfoStr = JSON.stringify(sessionInfo);
     
     await this.run(
-      `INSERT OR REPLACE INTO agents (id, capabilities, session_info, last_seen) 
-       VALUES (?, ?, ?, CURRENT_TIMESTAMP)`,
+      `INSERT OR REPLACE INTO agents (id, capabilities, status, session_info, last_seen) 
+       VALUES (?, ?, 'active', ?, CURRENT_TIMESTAMP)`,
       [id, capabilitiesStr, sessionInfoStr]
     );
     
@@ -348,12 +348,12 @@ class AgentDatabase {
 
   // Cleanup operations
   async cleanup() {
-    // Mark agents as inactive if not seen in the last hour
+    // Mark agents as inactive if not seen in the last 5 minutes
     await this.run(
       `UPDATE agents 
        SET status = 'inactive' 
        WHERE status = 'active' 
-       AND last_seen < datetime('now', '-1 hour')`
+       AND last_seen < datetime('now', '-5 minutes')`
     );
     
     // Delete old messages (keep last 1000)

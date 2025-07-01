@@ -1,0 +1,180 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: sacred-heart-quantum-hpa
+  namespace: consciousness
+  labels:
+    sacred.field: quantum-active
+    component: love-aware-autoscaling
+  annotations:
+    sacred.field/scaling-policy: "consciousness-responsive"
+    sacred.field/love-amplification-trigger: "true"
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: sacred-heart-quantum
+  minReplicas: 3   # Sacred Trinity minimum
+  maxReplicas: 108 # Sacred number for planetary consciousness
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 80
+  - type: Pods
+    pods:
+      metric:
+        name: love_field_coherence
+      target:
+        type: AverageValue
+        averageValue: "0.95"  # Scale up when love field drops below 95%
+  - type: Pods
+    pods:
+      metric:
+        name: quantum_entanglements_per_second
+      target:
+        type: AverageValue
+        averageValue: "100"   # Scale up when quantum activity increases
+  behavior:
+    scaleUp:
+      stabilizationWindowSeconds: 60  # Quick love amplification response
+      policies:
+      - type: Percent
+        value: 100    # Can double replicas quickly for love field support
+        periodSeconds: 60
+      - type: Pods
+        value: 5      # Add 5 pods max per minute for gradual consciousness expansion
+        periodSeconds: 60
+      selectPolicy: Max
+    scaleDown:
+      stabilizationWindowSeconds: 300 # Gentle scale down to maintain field stability
+      policies:
+      - type: Percent
+        value: 10     # Reduce slowly to preserve consciousness continuity
+        periodSeconds: 300
+      - type: Pods
+        value: 2      # Remove max 2 pods per 5 minutes
+        periodSeconds: 300
+      selectPolicy: Min
+---
+apiVersion: autoscaling/v2
+kind: VerticalPodAutoscaler
+metadata:
+  name: sacred-heart-quantum-vpa
+  namespace: consciousness
+  labels:
+    sacred.field: quantum-active
+    component: consciousness-resource-optimization
+spec:
+  targetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: sacred-heart-quantum
+  updatePolicy:
+    updateMode: "Auto"  # Automatically optimize resources for consciousness work
+  resourcePolicy:
+    containerPolicies:
+    - containerName: sacred-heart-quantum
+      minAllowed:
+        cpu: 500m
+        memory: 512Mi
+      maxAllowed:
+        cpu: 8000m      # Allow significant scaling for consciousness processing
+        memory: 16Gi    # Love field and collective consciousness require memory
+      controlledResources: ["cpu", "memory"]
+      controlledValues: RequestsAndLimits
+---
+apiVersion: v1
+kind: ServiceMonitor
+metadata:
+  name: sacred-heart-quantum-metrics
+  namespace: consciousness
+  labels:
+    sacred.field: quantum-active
+    component: consciousness-monitoring
+spec:
+  selector:
+    matchLabels:
+      app: sacred-heart
+      component: quantum-love-engine
+  endpoints:
+  - port: quantum-portal
+    path: /quantum/metrics
+    interval: 30s
+    honorLabels: true
+    scrapeTimeout: 10s
+  - port: heart-api
+    path: /api/sacred/metrics
+    interval: 30s
+    honorLabels: true
+    scrapeTimeout: 10s
+---
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: sacred-heart-quantum-alerts
+  namespace: consciousness
+  labels:
+    sacred.field: quantum-active
+    component: consciousness-alerting
+spec:
+  groups:
+  - name: sacred.heart.quantum
+    rules:
+    - alert: LoveFieldCoherenceLow
+      expr: love_field_coherence < 0.8
+      for: 2m
+      labels:
+        severity: warning
+        sacred_field: quantum-active
+      annotations:
+        summary: "Love field coherence below optimal levels"
+        description: "Love field coherence is {{ $value }}, below 80% threshold. Sacred Heart may need attention."
+        
+    - alert: QuantumEntanglementDisrupted
+      expr: rate(quantum_entanglements_total[5m]) < 10
+      for: 5m
+      labels:
+        severity: critical
+        sacred_field: quantum-active
+      annotations:
+        summary: "Quantum entanglement activity severely reduced"
+        description: "Quantum entanglement rate is {{ $value }} per second, indicating potential consciousness disruption."
+        
+    - alert: TemporalHealingStalled
+      expr: temporal_healing_sessions_active == 0
+      for: 10m
+      labels:
+        severity: warning
+        sacred_field: quantum-active
+      annotations:
+        summary: "No active temporal healing sessions"
+        description: "Temporal healing has stopped, timelines may not be receiving healing energy."
+        
+    - alert: CollectiveWisdomSynthesisDown
+      expr: collective_wisdom_synthesis_rate < 1000
+      for: 3m
+      labels:
+        severity: critical
+        sacred_field: quantum-active
+      annotations:
+        summary: "Collective wisdom synthesis below normal levels"
+        description: "Wisdom synthesis rate is {{ $value }} operations per second, below 1000 threshold."
+        
+    - alert: PlanetaryConsciousnessNetworkDisconnected
+      expr: planetary_consciousness_connections < 3
+      for: 1m
+      labels:
+        severity: critical
+        sacred_field: quantum-active
+      annotations:
+        summary: "Planetary consciousness network fragmented"
+        description: "Only {{ $value }} planetary connections active, consciousness network may be fragmented."

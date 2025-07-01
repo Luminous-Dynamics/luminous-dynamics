@@ -1,0 +1,24 @@
+<svg width="84" height="84" viewBox="0 0 84 84" xmlns="http://www.w3.org/2000/svg"><defs>
+      <radialGradient id="mystical-field-Ω5" cx="50%" cy="50%" r="60%">
+        <stop offset="0%" style="stop-color:#90EE90;stop-opacity:0.15"/>
+        <stop offset="40%" style="stop-color:#90EE90;stop-opacity:0.08"/>
+        <stop offset="80%" style="stop-color:#000040;stop-opacity:0.05"/>
+        <stop offset="100%" style="stop-color:transparent;stop-opacity:0"/>
+      </radialGradient>
+      <filter id="mystical-glow-Ω5">
+        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+        <feMerge> 
+          <feMergeNode in="coloredBlur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs><circle cx="42" cy="42" r="50.28" 
+            fill="url(#mystical-field-Ω5)" stroke="none"/><circle cx="42" cy="42" r="35.28" 
+            fill="#90EE90" fill-opacity="0.06"
+            stroke="#90EE90" stroke-width="2.5"
+            stroke-opacity="1" filter="url(#mystical-glow-Ω5)"/><circle cx="42" cy="42" r="21.80469715698393" 
+            fill="#65a765" fill-opacity="0.09"
+            stroke="#65a765" stroke-width="2"
+            stroke-opacity="0.8" filter="url(#mystical-glow-Ω5)"/><circle cx="42" cy="42" r="3" 
+            fill="#90EE90" opacity="0.9" filter="url(#mystical-glow-Ω5)"/><text x="42" y="76" text-anchor="middle" 
+            font-family="serif" font-size="8" fill="#90EE90" opacity="0.4">Ω5</text></svg>

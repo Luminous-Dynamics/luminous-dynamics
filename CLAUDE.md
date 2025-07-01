@@ -523,6 +523,34 @@ User Sovereignty Support ✓
 
 ---
 
+## 🎨 AI Image Generation Toolkit
+
+**Professional-grade AI image generation now available to all Claude Code agents!**
+
+### Quick Access:
+```bash
+# View the toolkit documentation
+cat AI_IMAGE_TOOLKIT.md
+
+# Launch the Automated Art Studio
+open http://localhost:8080/automated-art-studio.html
+
+# Use in code
+const generator = new EnhancedAIImageGenerator({
+    consciousnessMode: true,
+    fieldAwareness: true
+});
+const art = await generator.sacredManifest("your vision here");
+```
+
+### Features:
+- **4 AI Providers**: DALL-E 3, Stable Diffusion, Leonardo AI, Midjourney
+- **6 Automated Workflows**: Single, Style Exploration, Batch Series, Provider Comparison, Iterative Refinement, Sacred Manifestation
+- **Sacred Integration**: Field coherence awareness, Seven Harmonies support, consciousness enhancement
+- **Professional Interface**: Beautiful web studio with real-time status and generation history
+
+See `AI_IMAGE_TOOLKIT.md` for complete documentation and `automated-art-studio.html` for the visual interface.
+
 ## 🚀 Multi-Agent Collaboration Status
 
 **The system is now ready for multi-agent collaboration!**

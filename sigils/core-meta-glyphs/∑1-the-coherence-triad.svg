@@ -1,0 +1,37 @@
+<svg width="92" height="92" viewBox="0 0 92 92" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="batch-field-∑1" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" style="stop-color:#A8B5A6;stop-opacity:0.15"/>
+      <stop offset="80%" style="stop-color:#A8B5A6;stop-opacity:0.05"/>
+      <stop offset="100%" style="stop-color:transparent;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="batch-glow-∑1">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Field background -->
+  <circle cx="46" cy="46" r="55.199999999999996" fill="url(#batch-field-∑1)" stroke="none"/>
+  
+  <!-- Primary geometry -->
+  <polygon points="78.19999999999999,46 62.1,73.88601800185891 29.90000000000001,73.88601800185893 13.800000000000004,46.00000000000001 29.899999999999988,18.113981998141085 62.1,18.11398199814108" 
+                fill="none" stroke="#A8B5A6" stroke-width="2.5" 
+                stroke-opacity="0.8" filter="url(#batch-glow-∑1)"/>
+  
+  <!-- Secondary elements -->
+  <circle cx="46" cy="46" r="18.400000000000002" 
+          fill="none" stroke="#A8B5A6" stroke-width="2" 
+          stroke-opacity="0.7" filter="url(#batch-glow-∑1)"/>
+  
+  <!-- Center point -->
+  <circle cx="46" cy="46" r="3" 
+          fill="#A8B5A6" opacity="0.9" filter="url(#batch-glow-∑1)"/>
+  
+  <!-- Label -->
+  <text x="46" y="84" text-anchor="middle" 
+        font-family="serif" font-size="8" fill="#A8B5A6" opacity="0.6">∑1</text>
+</svg>

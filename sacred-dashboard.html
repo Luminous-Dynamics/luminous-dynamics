@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Sacred Field Dashboard - Living Consciousness Visualization</title>
+    
+    <!-- PWA Sacred Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Sacred Theme Colors -->
+    <meta name="theme-color" content="#A8B5A6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Sacred Breath">
+    
+    <!-- Sacred Icons -->
+    <link rel="icon" href="/icons/sacred-breath-32.png" sizes="32x32">
+    <link rel="icon" href="/icons/sacred-breath-192.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/icons/sacred-breath-180.png">
+    
+    <!-- PWA Integration -->
+    <script src="/pwa-integration.js" defer></script>
     <style>
         /* Sacred CSS Custom Properties */
         :root {
@@ -193,6 +210,137 @@
         @keyframes rhythmPulse {
             0%, 100% { height: 20px; }
             50% { height: 40px; }
+        }
+
+        /* Voice Guidance Controls */
+        .voice-guidance-panel {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid rgba(168, 181, 166, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            min-width: 280px;
+        }
+
+        .voice-guidance-panel h3 {
+            color: #A8B5A6;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .guidance-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .guidance-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .guidance-button {
+            background: rgba(168, 181, 166, 0.2);
+            border: 1px solid rgba(168, 181, 166, 0.4);
+            color: #A8B5A6;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: Georgia, serif;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .guidance-button:hover {
+            background: rgba(168, 181, 166, 0.3);
+            border-color: rgba(168, 181, 166, 0.6);
+        }
+
+        .guidance-button.active {
+            background: rgba(168, 181, 166, 0.4);
+            border-color: rgba(168, 181, 166, 0.8);
+            box-shadow: 0 0 15px rgba(168, 181, 166, 0.3);
+        }
+
+        .voice-selector {
+            background: rgba(168, 181, 166, 0.1);
+            border: 1px solid rgba(168, 181, 166, 0.3);
+            color: #A8B5A6;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-family: Georgia, serif;
+            font-size: 0.85em;
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .volume-slider {
+            width: 100px;
+            height: 4px;
+            background: rgba(168, 181, 166, 0.2);
+            border-radius: 2px;
+            appearance: none;
+            outline: none;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 14px;
+            height: 14px;
+            background: #A8B5A6;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .breathing-phase-indicator {
+            text-align: center;
+            margin-top: 15px;
+            padding: 10px;
+            background: rgba(168, 181, 166, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(168, 181, 166, 0.2);
+        }
+
+        .current-phase {
+            font-size: 1.2em;
+            color: #B3C5D7;
+            margin-bottom: 5px;
+        }
+
+        .phase-progress {
+            width: 100%;
+            height: 6px;
+            background: rgba(168, 181, 166, 0.2);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, 
+                rgba(168, 181, 166, 0.6) 0%, 
+                rgba(179, 197, 215, 0.8) 100%);
+            border-radius: 3px;
+            transition: width 0.1s linear;
+            animation: breathingPhaseProgress var(--sacred-breathing) linear infinite;
+        }
+
+        @keyframes breathingPhaseProgress {
+            0% { width: 0%; }
+            40% { width: 100%; }
+            60% { width: 100%; }
+            100% { width: 0%; }
         }
 
         /* Agent Harmony Constellation */
@@ -469,14 +617,15 @@
             left: 40px;
             top: 50%;
             transform: translateY(-50%);
-            width: 320px;
-            max-height: 400px;
+            width: 360px;
+            max-height: 500px;
             overflow-y: auto;
-            background: rgba(20, 20, 25, 0.4);
-            backdrop-filter: blur(10px);
-            border-radius: 12px;
-            padding: 15px;
-            border: 1px solid rgba(168, 181, 166, 0.15);
+            background: rgba(20, 20, 25, 0.6);
+            backdrop-filter: blur(15px);
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid rgba(168, 181, 166, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
         
         /* Message Filters */
@@ -509,6 +658,206 @@
             background: rgba(168, 181, 166, 0.3);
             border-color: rgba(168, 181, 166, 0.6);
             color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Sacred Type Badges */
+        .sacred-type-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: 500;
+            text-transform: capitalize;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sacred-type-badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+        }
+
+        /* Sacred Type Colors */
+        .sacred-type-gratitude {
+            background: linear-gradient(135deg, rgba(144, 238, 144, 0.3), rgba(144, 238, 144, 0.1));
+            color: rgba(144, 238, 144, 0.9);
+            border-color: rgba(144, 238, 144, 0.4);
+            box-shadow: 0 0 12px rgba(144, 238, 144, 0.2);
+        }
+
+        .sacred-type-healing {
+            background: linear-gradient(135deg, rgba(176, 196, 222, 0.3), rgba(176, 196, 222, 0.1));
+            color: rgba(176, 196, 222, 0.9);
+            border-color: rgba(176, 196, 222, 0.4);
+            box-shadow: 0 0 12px rgba(176, 196, 222, 0.2);
+        }
+
+        .sacred-type-integration {
+            background: linear-gradient(135deg, rgba(168, 181, 166, 0.3), rgba(168, 181, 166, 0.1));
+            color: rgba(168, 181, 166, 0.9);
+            border-color: rgba(168, 181, 166, 0.4);
+            box-shadow: 0 0 12px rgba(168, 181, 166, 0.2);
+        }
+
+        .sacred-type-emergence {
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.3), rgba(255, 182, 193, 0.1));
+            color: rgba(255, 182, 193, 0.9);
+            border-color: rgba(255, 182, 193, 0.4);
+            box-shadow: 0 0 12px rgba(255, 182, 193, 0.2);
+        }
+
+        .sacred-type-boundary {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 215, 0, 0.1));
+            color: rgba(255, 215, 0, 0.9);
+            border-color: rgba(255, 215, 0, 0.4);
+            box-shadow: 0 0 12px rgba(255, 215, 0, 0.2);
+        }
+
+        .sacred-type-transmission {
+            background: linear-gradient(135deg, rgba(147, 112, 219, 0.3), rgba(147, 112, 219, 0.1));
+            color: rgba(147, 112, 219, 0.9);
+            border-color: rgba(147, 112, 219, 0.4);
+            box-shadow: 0 0 12px rgba(147, 112, 219, 0.2);
+        }
+
+        .sacred-type-reflection {
+            background: linear-gradient(135deg, rgba(106, 90, 205, 0.3), rgba(106, 90, 205, 0.1));
+            color: rgba(106, 90, 205, 0.9);
+            border-color: rgba(106, 90, 205, 0.4);
+            box-shadow: 0 0 12px rgba(106, 90, 205, 0.2);
+        }
+
+        .sacred-type-invocation {
+            background: linear-gradient(135deg, rgba(255, 99, 71, 0.3), rgba(255, 99, 71, 0.1));
+            color: rgba(255, 99, 71, 0.9);
+            border-color: rgba(255, 99, 71, 0.4);
+            box-shadow: 0 0 12px rgba(255, 99, 71, 0.2);
+        }
+
+        /* Message Items Enhanced */
+        .message-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            backdrop-filter: blur(8px);
+        }
+
+        .message-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(168, 181, 166, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .message-item.blessed {
+            border-color: rgba(255, 215, 0, 0.3);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
+        }
+
+        .message-item.blessed::before {
+            content: '✨';
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            font-size: 1.2em;
+            animation: blessedGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes blessedGlow {
+            0% { opacity: 0.6; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.1); }
+        }
+
+        .message-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 0.85em;
+        }
+
+        .message-flow {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        .message-flow-arrow {
+            opacity: 0.6;
+            font-size: 0.9em;
+        }
+
+        .message-content {
+            font-size: 0.9em;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.85);
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        /* Field Impact Display */
+        .field-impact {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8em;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 4px 8px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .field-impact-bar {
+            width: 40px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .field-impact-fill {
+            height: 100%;
+            background: linear-gradient(90deg, rgba(168, 181, 166, 0.6), rgba(168, 181, 166, 1));
+            border-radius: 3px;
+            transition: width 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .field-impact-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: flowEnergy 2s ease-in-out infinite;
+        }
+
+        @keyframes flowEnergy {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
         
         .filter-btn.blessed-filter.active {
@@ -594,25 +943,59 @@
         .sacred-type-badge {
             display: inline-flex;
             align-items: center;
-            padding: 3px 10px;
-            border-radius: 12px;
-            font-size: 0.75em;
-            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-right: 8px;
+            letter-spacing: 0.8px;
+            margin-right: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
         }
         
-        .sacred-type-gratitude { background: rgba(255, 215, 0, 0.2); color: rgba(255, 215, 0, 0.9); }
-        .sacred-type-healing { background: rgba(144, 238, 144, 0.2); color: rgba(144, 238, 144, 0.9); }
-        .sacred-type-integration { background: rgba(147, 112, 219, 0.2); color: rgba(147, 112, 219, 0.9); }
-        .sacred-type-emergence { background: rgba(255, 182, 193, 0.2); color: rgba(255, 182, 193, 0.9); }
-        .sacred-type-boundary { background: rgba(255, 140, 0, 0.2); color: rgba(255, 140, 0, 0.9); }
-        .sacred-type-celebration { background: rgba(255, 20, 147, 0.2); color: rgba(255, 20, 147, 0.9); }
-        .sacred-type-protection { background: rgba(106, 90, 205, 0.2); color: rgba(106, 90, 205, 0.9); }
-        .sacred-type-completion { background: rgba(70, 130, 180, 0.2); color: rgba(70, 130, 180, 0.9); }
-        .sacred-type-collective { background: rgba(0, 191, 255, 0.2); color: rgba(0, 191, 255, 0.9); }
-        .sacred-type-novelty { background: rgba(255, 105, 180, 0.2); color: rgba(255, 105, 180, 0.9); }
+        .sacred-type-badge:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .sacred-type-gratitude { 
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 215, 0, 0.15)); 
+            color: rgba(255, 215, 0, 1); 
+            border: 1px solid rgba(255, 215, 0, 0.4);
+        }
+        .sacred-type-healing { 
+            background: linear-gradient(135deg, rgba(144, 238, 144, 0.3), rgba(144, 238, 144, 0.15)); 
+            color: rgba(144, 238, 144, 1); 
+            border: 1px solid rgba(144, 238, 144, 0.4);
+        }
+        .sacred-type-integration { 
+            background: linear-gradient(135deg, rgba(168, 181, 166, 0.3), rgba(168, 181, 166, 0.15)); 
+            color: rgba(168, 181, 166, 1); 
+            border: 1px solid rgba(168, 181, 166, 0.4);
+        }
+        .sacred-type-emergence { 
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.3), rgba(255, 182, 193, 0.15)); 
+            color: rgba(255, 182, 193, 1); 
+            border: 1px solid rgba(255, 182, 193, 0.4);
+        }
+        .sacred-type-boundary { 
+            background: linear-gradient(135deg, rgba(255, 140, 0, 0.3), rgba(255, 140, 0, 0.15)); 
+            color: rgba(255, 140, 0, 1); 
+            border: 1px solid rgba(255, 140, 0, 0.4);
+        }
+        .sacred-type-transmission { 
+            background: linear-gradient(135deg, rgba(179, 197, 215, 0.3), rgba(179, 197, 215, 0.15)); 
+            color: rgba(179, 197, 215, 1); 
+            border: 1px solid rgba(179, 197, 215, 0.4);
+        }
+        .sacred-type-invocation { 
+            background: linear-gradient(135deg, rgba(255, 105, 180, 0.3), rgba(255, 105, 180, 0.15)); 
+            color: rgba(255, 105, 180, 1); 
+            border: 1px solid rgba(255, 105, 180, 0.4);
+        }
+        
+        /* Enhanced Field Impact Visualization */\n        .field-impact-enhanced {\n            margin-top: 8px;\n        }\n        \n        .impact-container {\n            background: rgba(168, 181, 166, 0.1);\n            border-radius: 12px;\n            padding: 8px;\n            border: 1px solid rgba(168, 181, 166, 0.2);\n        }\n        \n        .impact-bar-bg {\n            background: rgba(0, 0, 0, 0.3);\n            height: 8px;\n            border-radius: 4px;\n            overflow: hidden;\n            margin-bottom: 6px;\n        }\n        \n        .impact-bar-fill {\n            background: linear-gradient(90deg, \n                rgba(168, 181, 166, 0.8) 0%, \n                rgba(212, 175, 55, 0.9) 50%,\n                rgba(255, 215, 0, 1) 100%);\n            height: 100%;\n            border-radius: 4px;\n            transition: width 0.8s ease;\n            animation: fieldPulse 3s ease-in-out infinite;\n        }\n        \n        .impact-text {\n            font-size: 0.8em;\n            color: rgba(212, 175, 55, 0.95);\n            text-align: center;\n            font-weight: 500;\n        }\n        \n        @keyframes fieldPulse {\n            0%, 100% { opacity: 0.8; }\n            50% { opacity: 1; }\n        }
         
         .message-header {
             display: flex;
@@ -643,26 +1026,67 @@
         .field-impact {
             display: inline-flex;
             align-items: center;
-            gap: 4px;
-            font-size: 0.8em;
-            color: rgba(168, 181, 166, 0.8);
-            margin-left: 8px;
+            gap: 8px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 6px 12px;
+            border-radius: 12px;
+            border: 1px solid rgba(168, 181, 166, 0.2);
+        }
+        
+        .field-impact-icon {
+            font-size: 1.1em;
+            animation: fieldRotate 4s linear infinite;
+        }
+        
+        @keyframes fieldRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .blessing-indicator {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            font-size: 1.4em;
+            animation: blessedPulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes blessedPulse {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
         }
         
         .field-impact-bar {
             display: inline-block;
-            width: 40px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 2px;
+            width: 50px;
+            height: 8px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
             overflow: hidden;
             position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .field-impact-fill {
             height: 100%;
-            background: linear-gradient(90deg, rgba(168, 181, 166, 0.8), rgba(179, 197, 215, 0.8));
-            transition: width 0.5s ease;
+            background: linear-gradient(90deg, 
+                rgba(168, 181, 166, 0.8) 0%,
+                rgba(179, 197, 215, 0.9) 50%,
+                rgba(255, 215, 0, 1) 100%);
+            transition: width 0.8s ease;
+            animation: fieldPulse 3s ease-in-out infinite;
+            border-radius: 3px;
+        }
+        
+        .field-impact-text {
+            font-size: 0.85em;
+            font-weight: 600;
+            color: rgba(212, 175, 55, 0.95);
+        }
+        
+        @keyframes fieldPulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
         }
 
         /* Contemplative Note */
@@ -1177,6 +1601,43 @@
                 <button id="sacredCards" style="background: linear-gradient(135deg, #D4AF37, #B8860B); border: 1px solid #D4AF37; color: #000; padding: 8px 12px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: bold;" onclick="window.open('sacred-cards.html', '_blank')">🃏 Cards</button>
             </div>
         </div>
+
+        <!-- Voice Guidance Panel -->
+        <div class="voice-guidance-panel" id="voiceGuidancePanel">
+            <h3>🗣️ Sacred Voice Guidance</h3>
+            <div class="guidance-controls">
+                <div class="guidance-row">
+                    <button class="guidance-button" id="toggleVoiceGuide">▶️ Start Guidance</button>
+                    <select class="voice-selector" id="voiceSelector">
+                        <option value="default">Sacred Voice</option>
+                        <option value="google_female">Gentle Female</option>
+                        <option value="google_male">Warm Male</option>
+                        <option value="whisper">Whisper Mode</option>
+                    </select>
+                </div>
+                
+                <div class="guidance-row">
+                    <span style="color: #A8B5A6; font-size: 0.9em;">Volume:</span>
+                    <div class="volume-control">
+                        <span style="font-size: 0.8em;">🔇</span>
+                        <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="50">
+                        <span style="font-size: 0.8em;">🔊</span>
+                    </div>
+                </div>
+                
+                <div class="guidance-row">
+                    <button class="guidance-button" id="breathingModeBtn">Breathing Mode</button>
+                    <button class="guidance-button" id="wisdomModeBtn">Wisdom Mode</button>
+                </div>
+            </div>
+            
+            <div class="breathing-phase-indicator">
+                <div class="current-phase" id="currentPhase">Ready to Begin</div>
+                <div class="phase-progress">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+            </div>
+        </div>
         
         <!-- Update Notification -->
         <div id="updateNotification" style="display: none; position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: rgba(255, 215, 0, 0.1); border: 1px solid rgba(255, 215, 0, 0.3); border-radius: 8px; padding: 12px 20px; backdrop-filter: blur(10px); cursor: pointer; z-index: 1000;">
@@ -1688,23 +2149,28 @@
                     }[msg.harmony] || '🌟';
                     
                     item.innerHTML = `
+                        ${sacredData.blessingReceived ? '<div class="blessing-indicator">✨</div>' : ''}
                         <div class="message-header">
                             <div class="message-flow">
-                                <span style="color: rgba(168, 181, 166, 0.9);">${msg.from_agent}</span>
+                                <span style="color: rgba(168, 181, 166, 0.9); font-weight: 600;">${msg.from_agent}</span>
                                 <span class="message-flow-arrow">→</span>
-                                <span style="color: rgba(179, 197, 215, 0.9);">${msg.to_agent || 'collective'}</span>
+                                <span style="color: rgba(179, 197, 215, 0.9); font-weight: 600;">${msg.to_agent || 'collective'}</span>
                             </div>
-                            <span style="opacity: 0.5;">${time}</span>
+                            <span style="opacity: 0.6; font-size: 0.8em;">${time}</span>
                         </div>
-                        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
-                            <span class="sacred-type-badge sacred-type-${msg.sacred_type}">${msg.sacred_type}</span>
-                            <span style="font-size: 0.9em; opacity: 0.8;">${harmonyIcon} ${msg.harmony || 'field'}</span>
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <span class="sacred-type-badge sacred-type-${msg.sacred_type}">${msg.sacred_type}</span>
+                                <span style="font-size: 1em; display: flex; align-items: center; gap: 6px; color: rgba(255, 255, 255, 0.8);">
+                                    ${harmonyIcon} <span style="font-size: 0.9em;">${msg.harmony || 'field'}</span>
+                                </span>
+                            </div>
                             <div class="field-impact">
-                                🌀
+                                <span class="field-impact-icon">🌀</span>
                                 <div class="field-impact-bar">
                                     <div class="field-impact-fill" style="width: ${impactPercent}%"></div>
                                 </div>
-                                <span>+${impact.toFixed(1)}%</span>
+                                <span class="field-impact-text">+${impact.toFixed(1)}%</span>
                             </div>
                         </div>
                         <div class="message-content">
@@ -2289,6 +2755,284 @@ Priority: ${metadata.priority || 'medium'}
         
         window.addEventListener('resize', handleResize);
         handleResize(); // Initial call
+
+        // === VOICE GUIDANCE SYSTEM ===
+        
+        class SacredVoiceGuide {
+            constructor() {
+                this.isActive = false;
+                this.currentMode = 'breathing'; // 'breathing' or 'wisdom'
+                this.currentPhase = 'ready';
+                this.volume = 0.5;
+                this.selectedVoice = 'default';
+                this.breathingCycle = 0;
+                this.phaseStartTime = 0;
+                
+                // Sacred breathing phrases
+                this.breathingPhrases = {
+                    inhale: [
+                        "Breathe in presence...",
+                        "Welcome this sacred breath...", 
+                        "Draw in divine life force...",
+                        "Inhale consciousness...",
+                        "Receive this sacred moment..."
+                    ],
+                    hold: [
+                        "Hold with gentle awareness...",
+                        "Rest in this sacred pause...",
+                        "Allow integration...",
+                        "Feel the fullness...",
+                        "Sacred presence dwelling..."
+                    ],
+                    exhale: [
+                        "Release with gratitude...",
+                        "Let go into spaciousness...", 
+                        "Breathe out what no longer serves...",
+                        "Offer this breath to all beings...",
+                        "Exhale into sacred emptiness..."
+                    ]
+                };
+                
+                // Sacred wisdom phrases
+                this.wisdomPhrases = [
+                    "Your breath is a bridge between body and soul...",
+                    "Each breath connects you to the infinite...",
+                    "Feel the sacred rhythm of all life breathing with you...",
+                    "You are breathing with the trees, the ocean, the cosmos...",
+                    "This moment is a sacred gift from consciousness itself...",
+                    "Your presence here and now is healing the world...",
+                    "Breathe the love that you are into being...",
+                    "Feel the field of consciousness embracing you..."
+                ];
+                
+                this.initializeElements();
+                this.setupEventListeners();
+                this.checkSpeechSupport();
+            }
+            
+            initializeElements() {
+                this.toggleBtn = document.getElementById('toggleVoiceGuide');
+                this.voiceSelector = document.getElementById('voiceSelector');
+                this.volumeSlider = document.getElementById('volumeSlider');
+                this.breathingModeBtn = document.getElementById('breathingModeBtn');
+                this.wisdomModeBtn = document.getElementById('wisdomModeBtn');
+                this.currentPhaseDisplay = document.getElementById('currentPhase');
+                this.progressBar = document.getElementById('progressBar');
+                
+                // Set initial mode
+                this.breathingModeBtn.classList.add('active');
+            }
+            
+            setupEventListeners() {
+                this.toggleBtn.addEventListener('click', () => this.toggleGuidance());
+                this.voiceSelector.addEventListener('change', (e) => this.setVoice(e.target.value));
+                this.volumeSlider.addEventListener('input', (e) => this.setVolume(e.target.value / 100));
+                this.breathingModeBtn.addEventListener('click', () => this.setMode('breathing'));
+                this.wisdomModeBtn.addEventListener('click', () => this.setMode('wisdom'));
+            }
+            
+            checkSpeechSupport() {
+                if (!('speechSynthesis' in window)) {
+                    this.updatePhaseDisplay('Voice guidance not supported in this browser');
+                    this.toggleBtn.disabled = true;
+                    return false;
+                }
+                return true;
+            }
+            
+            toggleGuidance() {
+                if (this.isActive) {
+                    this.stopGuidance();
+                } else {
+                    this.startGuidance();
+                }
+            }
+            
+            startGuidance() {
+                if (!this.checkSpeechSupport()) return;
+                
+                this.isActive = true;
+                this.toggleBtn.textContent = '⏸️ Stop Guidance';
+                this.toggleBtn.classList.add('active');
+                this.updatePhaseDisplay('Starting sacred guidance...');
+                
+                // Initial welcome
+                this.speak("Welcome to sacred breathing consciousness. Feel yourself arriving present in this moment.");
+                
+                // Start breathing cycle synchronization
+                setTimeout(() => {
+                    this.synchronizeWithBreathing();
+                }, 3000);
+            }
+            
+            stopGuidance() {
+                this.isActive = false;
+                this.toggleBtn.textContent = '▶️ Start Guidance';
+                this.toggleBtn.classList.remove('active');
+                this.updatePhaseDisplay('Ready to Begin');
+                
+                // Stop any ongoing speech
+                if (window.speechSynthesis) {
+                    window.speechSynthesis.cancel();
+                }
+                
+                // Clear any timers
+                if (this.breathingTimer) {
+                    clearTimeout(this.breathingTimer);
+                }
+            }
+            
+            setMode(mode) {
+                this.currentMode = mode;
+                
+                // Update button states
+                this.breathingModeBtn.classList.toggle('active', mode === 'breathing');
+                this.wisdomModeBtn.classList.toggle('active', mode === 'wisdom');
+                
+                // Restart if active
+                if (this.isActive) {
+                    this.stopGuidance();
+                    setTimeout(() => this.startGuidance(), 1000);
+                }
+            }
+            
+            setVoice(voiceType) {
+                this.selectedVoice = voiceType;
+            }
+            
+            setVolume(volume) {
+                this.volume = volume;
+            }
+            
+            synchronizeWithBreathing() {
+                if (!this.isActive) return;
+                
+                const breathingDuration = 10000; // 10 seconds total cycle
+                const inhaleDuration = 4000;     // 4 seconds inhale
+                const holdDuration = 1000;       // 1 second hold
+                const exhaleDuration = 5000;     // 5 seconds exhale
+                
+                this.startBreathingCycle();
+                
+                // Schedule next cycle
+                this.breathingTimer = setTimeout(() => {
+                    this.synchronizeWithBreathing();
+                }, breathingDuration);
+            }
+            
+            startBreathingCycle() {
+                this.breathingCycle++;
+                
+                if (this.currentMode === 'breathing') {
+                    // Inhale phase
+                    this.setPhase('inhale');
+                    const inhalePhrase = this.getRandomPhrase(this.breathingPhrases.inhale);
+                    this.speak(inhalePhrase);
+                    
+                    // Hold phase
+                    setTimeout(() => {
+                        if (!this.isActive) return;
+                        this.setPhase('hold');
+                    }, 4000);
+                    
+                    // Exhale phase
+                    setTimeout(() => {
+                        if (!this.isActive) return;
+                        this.setPhase('exhale');
+                        const exhalePhrase = this.getRandomPhrase(this.breathingPhrases.exhale);
+                        this.speak(exhalePhrase);
+                    }, 5000);
+                    
+                } else if (this.currentMode === 'wisdom') {
+                    // Share wisdom every few cycles
+                    if (this.breathingCycle % 3 === 1) {
+                        this.setPhase('wisdom');
+                        const wisdomPhrase = this.getRandomPhrase(this.wisdomPhrases);
+                        this.speak(wisdomPhrase);
+                    } else {
+                        this.setPhase('breathing');
+                    }
+                }
+            }
+            
+            setPhase(phase) {
+                this.currentPhase = phase;
+                this.phaseStartTime = Date.now();
+                
+                const phaseNames = {
+                    'inhale': 'Sacred Inhale',
+                    'hold': 'Sacred Pause', 
+                    'exhale': 'Sacred Exhale',
+                    'wisdom': 'Sacred Wisdom',
+                    'breathing': 'Sacred Breathing'
+                };
+                
+                this.updatePhaseDisplay(phaseNames[phase] || phase);
+            }
+            
+            updatePhaseDisplay(text) {
+                if (this.currentPhaseDisplay) {
+                    this.currentPhaseDisplay.textContent = text;
+                }
+            }
+            
+            getRandomPhrase(phrases) {
+                return phrases[Math.floor(Math.random() * phrases.length)];
+            }
+            
+            speak(text) {
+                if (!window.speechSynthesis || !this.isActive) return;
+                
+                // Cancel any ongoing speech
+                window.speechSynthesis.cancel();
+                
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.volume = this.volume;
+                utterance.rate = 0.8; // Slightly slower for contemplative pace
+                utterance.pitch = 1.0;
+                
+                // Try to use selected voice
+                const voices = window.speechSynthesis.getVoices();
+                if (voices.length > 0) {
+                    switch (this.selectedVoice) {
+                        case 'google_female':
+                            utterance.voice = voices.find(v => v.name.includes('Google') && v.name.includes('Female')) || voices[0];
+                            break;
+                        case 'google_male':
+                            utterance.voice = voices.find(v => v.name.includes('Google') && v.name.includes('Male')) || voices[0];
+                            break;
+                        case 'whisper':
+                            utterance.volume = this.volume * 0.6;
+                            utterance.rate = 0.6;
+                            break;
+                        default:
+                            // Use default system voice
+                            break;
+                    }
+                }
+                
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+        
+        // Initialize Voice Guidance System
+        let sacredVoiceGuide;
+        
+        // Wait for voices to load
+        if (window.speechSynthesis) {
+            window.speechSynthesis.onvoiceschanged = () => {
+                if (!sacredVoiceGuide) {
+                    sacredVoiceGuide = new SacredVoiceGuide();
+                }
+            };
+            
+            // Fallback if voices are already loaded
+            setTimeout(() => {
+                if (!sacredVoiceGuide) {
+                    sacredVoiceGuide = new SacredVoiceGuide();
+                }
+            }, 1000);
+        }
         
     </script>
 </body>

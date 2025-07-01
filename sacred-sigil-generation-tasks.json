@@ -1,0 +1,825 @@
+[
+  {
+    "id": "sigil-generation-applied",
+    "title": "Generate Sigils: The Eleven Applied Harmonies",
+    "description": "Create sacred sigils for all 11 glyphs in the The Eleven Applied Harmonies category. Complete practical foundation for conscious relationship mastery",
+    "category": "sigil-generation",
+    "subcategory": "applied",
+    "priority": "high",
+    "estimatedDuration": "5 hours",
+    "harmony": "coherence",
+    "prerequisites": [],
+    "glyphs": [
+      {
+        "id": "Ω45",
+        "name": "First Presence",
+        "harmony": "coherence",
+        "complexity": "elegant_simplicity"
+      },
+      {
+        "id": "Ω46",
+        "name": "Conscious Arrival",
+        "harmony": "transparency",
+        "complexity": "elegant_simplicity"
+      },
+      {
+        "id": "Ω47",
+        "name": "Sacred Listening",
+        "harmony": "resonance",
+        "complexity": "elegant_simplicity"
+      },
+      {
+        "id": "Ω48",
+        "name": "Boundary With Love",
+        "harmony": "agency",
+        "complexity": "elegant_simplicity"
+      },
+      {
+        "id": "Ω49",
+        "name": "Gentle Opening",
+        "harmony": "resonance",
+        "complexity": "elegant_simplicity"
+      },
+      {
+        "id": "Ω50",
+        "name": "Building Trust",
+        "harmony": "coherence",
+        "complexity": "elegant_simplicity"
+      },
+      {
+        "id": "Ω51",
+        "name": "Loving No",
+        "harmony": "agency",
+        "complexity": "elegant_simplicity"
+      },
+      {
+        "id": "Ω52",
+        "name": "Pause Practice",
+        "harmony": "coherence",
+        "complexity": "elegant_simplicity"
+      },
+      {
+        "id": "Ω53",
+        "name": "Tending the Field",
+        "harmony": "vitality",
+        "complexity": "elegant_simplicity"
+      },
+      {
+        "id": "Ω55",
+        "name": "Presence Transmission",
+        "harmony": "vitality",
+        "complexity": "elegant_simplicity"
+      },
+      {
+        "id": "Ω56",
+        "name": "Loving Redirection",
+        "harmony": "mutuality",
+        "complexity": "elegant_simplicity"
+      }
+    ],
+    "metadata": {
+      "glyphCount": 11,
+      "complexityRange": "elegant_simplicity",
+      "harmonyDistribution": {
+        "coherence": 3,
+        "transparency": 1,
+        "resonance": 2,
+        "agency": 2,
+        "vitality": 2,
+        "mutuality": 1
+      },
+      "sigilProtocol": "Applied Harmony Protocol",
+      "batchRecommended": true
+    }
+  },
+  {
+    "id": "sigil-generation-foundational_sacred",
+    "title": "Generate Sigils: Sacred Origin Glyphs (Ω0-Ω15)",
+    "description": "Create sacred sigils for all 16 glyphs in the Sacred Origin Glyphs (Ω0-Ω15) category. Foundational patterns carrying mystical depth",
+    "category": "sigil-generation",
+    "subcategory": "foundational_sacred",
+    "priority": "high",
+    "estimatedDuration": "7 hours",
+    "harmony": "coherence",
+    "prerequisites": [
+      "sigil-generation-applied"
+    ],
+    "glyphs": [
+      {
+        "id": "Ω0",
+        "name": "The Shimmering Unnamed",
+        "harmony": "novelty",
+        "complexity": "mystical_depth"
+      },
+      {
+        "id": "Ω1",
+        "name": "Root Chord of Covenant",
+        "harmony": "transparency",
+        "complexity": "mystical_depth"
+      },
+      {
+        "id": "Ω2",
+        "name": "Breath of Invitation",
+        "harmony": "resonance",
+        "complexity": "mystical_depth"
+      },
+      {
+        "id": "Ω3",
+        "name": "Trust Emergence",
+        "harmony": "coherence",
+        "complexity": "mystical_depth"
+      },
+      {
+        "id": "Ω4",
+        "name": "Fractal Reconciliation Pulse",
+        "harmony": "mutuality",
+        "complexity": "mystical_depth"
+      },
+      {
+        "id": "Ω5",
+        "name": "Coherent Field Maintenance",
+        "harmony": "vitality",
+        "complexity": "mystical_depth"
+      },
+      {
+        "id": "Ω6",
+        "name": "Mutual Recognition",
+        "harmony": "resonance",
+        "complexity": "mystical_depth"
+      },
+      {
+        "id": "Ω7",
+        "name": "Mutual Becoming",
+        "harmony": "coherence",
+        "complexity": "mystical_depth"
+      },
+      {
+        "id": "Ω8",
+        "name": "Inner Coherence",
+        "harmony": "coherence",
+        "complexity": "bridge_practice"
+      },
+      {
+        "id": "Ω9",
+        "name": "Sacred Mirroring",
+        "harmony": "resonance",
+        "complexity": "mystical_depth"
+      },
+      {
+        "id": "Ω10",
+        "name": "The Glyph of Sacred Refusal",
+        "harmony": "agency",
+        "complexity": "mystical_depth"
+      },
+      {
+        "id": "Ω11",
+        "name": "Emotional Alchemy",
+        "harmony": "vitality",
+        "complexity": "mystical_depth"
+      },
+      {
+        "id": "Ω12",
+        "name": "Authentic Expression",
+        "harmony": "transparency",
+        "complexity": "mystical_depth"
+      },
+      {
+        "id": "Ω13",
+        "name": "Conscious Touch",
+        "harmony": "vitality",
+        "complexity": "mystical_depth"
+      },
+      {
+        "id": "Ω14",
+        "name": "Energetic Hygiene",
+        "harmony": "agency",
+        "complexity": "mystical_depth"
+      },
+      {
+        "id": "Ω15",
+        "name": "Sacred Pause",
+        "harmony": "coherence",
+        "complexity": "bridge_practice"
+      }
+    ],
+    "metadata": {
+      "glyphCount": 16,
+      "complexityRange": "mystical_depth to bridge_practice",
+      "harmonyDistribution": {
+        "novelty": 1,
+        "transparency": 2,
+        "resonance": 3,
+        "coherence": 4,
+        "mutuality": 1,
+        "vitality": 3,
+        "agency": 2
+      },
+      "sigilProtocol": "Foundational Protocol (Mystical)",
+      "batchRecommended": true
+    }
+  },
+  {
+    "id": "sigil-generation-foundational_practice",
+    "title": "Generate Sigils: Daily Practice Glyphs (Ω16-Ω30)",
+    "description": "Create sacred sigils for all 15 glyphs in the Daily Practice Glyphs (Ω16-Ω30) category. Accessible patterns for everyday conscious relationship",
+    "category": "sigil-generation",
+    "subcategory": "foundational_practice",
+    "priority": "medium",
+    "estimatedDuration": "6 hours",
+    "harmony": "transparency",
+    "prerequisites": [
+      "sigil-generation-applied"
+    ],
+    "glyphs": [
+      {
+        "id": "Ω16",
+        "name": "Somatic Synchrony",
+        "harmony": "vitality",
+        "complexity": "moderate"
+      },
+      {
+        "id": "Ω17",
+        "name": "Collective Breathing",
+        "harmony": "resonance",
+        "complexity": "moderate"
+      },
+      {
+        "id": "Ω18",
+        "name": "Witnessing Without Fixing",
+        "harmony": "transparency",
+        "complexity": "moderate"
+      },
+      {
+        "id": "Ω19",
+        "name": "Sacred Questions",
+        "harmony": "novelty",
+        "complexity": "moderate"
+      },
+      {
+        "id": "Ω20",
+        "name": "Threshold Navigation",
+        "harmony": "agency",
+        "complexity": "moderate"
+      },
+      {
+        "id": "Ω21",
+        "name": "Conflict as Sacred Teacher",
+        "harmony": "mutuality",
+        "complexity": "moderate"
+      },
+      {
+        "id": "Ω22",
+        "name": "Co-Creative Reality",
+        "harmony": "novelty",
+        "complexity": "moderate"
+      },
+      {
+        "id": "Ω23",
+        "name": "Parts Integration",
+        "harmony": "coherence",
+        "complexity": "moderate"
+      },
+      {
+        "id": "Ω24",
+        "name": "Shadow Welcoming",
+        "harmony": "transparency",
+        "complexity": "moderate"
+      },
+      {
+        "id": "Ω25",
+        "name": "Dream Sharing",
+        "harmony": "resonance",
+        "complexity": "moderate"
+      },
+      {
+        "id": "Ω26",
+        "name": "Pattern Memory",
+        "harmony": "coherence",
+        "complexity": "moderate"
+      },
+      {
+        "id": "Ω27",
+        "name": "Sacred Time",
+        "harmony": "vitality",
+        "complexity": "moderate"
+      },
+      {
+        "id": "Ω28",
+        "name": "Transparent Resonance",
+        "harmony": "transparency",
+        "complexity": "moderate"
+      },
+      {
+        "id": "Ω29",
+        "name": "Embodied Yes/No",
+        "harmony": "agency",
+        "complexity": "moderate"
+      },
+      {
+        "id": "Ω30",
+        "name": "Sacred Dissonance",
+        "harmony": "mutuality",
+        "complexity": "moderate"
+      }
+    ],
+    "metadata": {
+      "glyphCount": 15,
+      "complexityRange": "moderate",
+      "harmonyDistribution": {
+        "vitality": 2,
+        "resonance": 2,
+        "transparency": 3,
+        "novelty": 2,
+        "agency": 2,
+        "mutuality": 2,
+        "coherence": 2
+      },
+      "sigilProtocol": "Foundational Protocol (Accessible)",
+      "batchRecommended": true
+    }
+  },
+  {
+    "id": "sigil-generation-foundational_advanced",
+    "title": "Generate Sigils: Advanced Mastery Glyphs (Ω31-Ω44)",
+    "description": "Create sacred sigils for all 14 glyphs in the Advanced Mastery Glyphs (Ω31-Ω44) category. Complex patterns for relationship mastery",
+    "category": "sigil-generation",
+    "subcategory": "foundational_advanced",
+    "priority": "medium",
+    "estimatedDuration": "6 hours",
+    "harmony": "vitality",
+    "prerequisites": [
+      "sigil-generation-applied"
+    ],
+    "glyphs": [
+      {
+        "id": "Ω31",
+        "name": "Sovereign Choice",
+        "harmony": "agency",
+        "complexity": "advanced"
+      },
+      {
+        "id": "Ω32",
+        "name": "Grief Tending",
+        "harmony": "vitality",
+        "complexity": "advanced"
+      },
+      {
+        "id": "Ω33",
+        "name": "Joy Cultivation",
+        "harmony": "vitality",
+        "complexity": "advanced"
+      },
+      {
+        "id": "Ω34",
+        "name": "Sacred Story",
+        "harmony": "transparency",
+        "complexity": "advanced"
+      },
+      {
+        "id": "Ω35",
+        "name": "Energy Circulation",
+        "harmony": "vitality",
+        "complexity": "advanced"
+      },
+      {
+        "id": "Ω36",
+        "name": "Blessing Practice",
+        "harmony": "resonance",
+        "complexity": "advanced"
+      },
+      {
+        "id": "Ω37",
+        "name": "Forgiveness Process",
+        "harmony": "mutuality",
+        "complexity": "advanced"
+      },
+      {
+        "id": "Ω38",
+        "name": "Gratitude Field",
+        "harmony": "resonance",
+        "complexity": "advanced"
+      },
+      {
+        "id": "Ω39",
+        "name": "Sacred Sexuality",
+        "harmony": "vitality",
+        "complexity": "advanced"
+      },
+      {
+        "id": "Ω40",
+        "name": "Death Practice",
+        "harmony": "transparency",
+        "complexity": "advanced"
+      },
+      {
+        "id": "Ω41",
+        "name": "Birth Support",
+        "harmony": "vitality",
+        "complexity": "advanced"
+      },
+      {
+        "id": "Ω42",
+        "name": "Elder Wisdom",
+        "harmony": "coherence",
+        "complexity": "advanced"
+      },
+      {
+        "id": "Ω43",
+        "name": "Child Mind",
+        "harmony": "novelty",
+        "complexity": "advanced"
+      },
+      {
+        "id": "Ω44",
+        "name": "Nature Connection",
+        "harmony": "vitality",
+        "complexity": "advanced"
+      }
+    ],
+    "metadata": {
+      "glyphCount": 14,
+      "complexityRange": "advanced",
+      "harmonyDistribution": {
+        "agency": 1,
+        "vitality": 6,
+        "transparency": 2,
+        "resonance": 2,
+        "mutuality": 1,
+        "coherence": 1,
+        "novelty": 1
+      },
+      "sigilProtocol": "Foundational Protocol (Advanced)",
+      "batchRecommended": true
+    }
+  },
+  {
+    "id": "sigil-generation-threshold",
+    "title": "Generate Sigils: Threshold Practices (9 Named)",
+    "description": "Create sacred sigils for all 9 glyphs in the Threshold Practices (9 Named) category. Dynamic practices for major life transitions",
+    "category": "sigil-generation",
+    "subcategory": "threshold",
+    "priority": "high",
+    "estimatedDuration": "4 hours",
+    "harmony": "novelty",
+    "prerequisites": [
+      "sigil-generation-applied"
+    ],
+    "glyphs": [
+      {
+        "id": "T1",
+        "name": "The Door That Remembers You",
+        "harmony": "novelty",
+        "complexity": "transformative"
+      },
+      {
+        "id": "T2",
+        "name": "The Keeper Beneath the Ash",
+        "harmony": "coherence",
+        "complexity": "transformative"
+      },
+      {
+        "id": "T3",
+        "name": "The Unburdening",
+        "harmony": "agency",
+        "complexity": "transformative"
+      },
+      {
+        "id": "T4",
+        "name": "The Mantling",
+        "harmony": "vitality",
+        "complexity": "transformative"
+      },
+      {
+        "id": "T5",
+        "name": "The Edgewalker",
+        "harmony": "transparency",
+        "complexity": "transformative"
+      },
+      {
+        "id": "T6",
+        "name": "The Choice Point",
+        "harmony": "agency",
+        "complexity": "transformative"
+      },
+      {
+        "id": "T7",
+        "name": "Letting In",
+        "harmony": "resonance",
+        "complexity": "transformative"
+      },
+      {
+        "id": "T8",
+        "name": "The Returner",
+        "harmony": "mutuality",
+        "complexity": "transformative"
+      },
+      {
+        "id": "T9",
+        "name": "The Shimmering Unnamed (Transition)",
+        "harmony": "novelty",
+        "complexity": "transformative"
+      }
+    ],
+    "metadata": {
+      "glyphCount": 9,
+      "complexityRange": "transformative",
+      "harmonyDistribution": {
+        "novelty": 2,
+        "coherence": 1,
+        "agency": 2,
+        "vitality": 1,
+        "transparency": 1,
+        "resonance": 1,
+        "mutuality": 1
+      },
+      "sigilProtocol": "Threshold Protocol",
+      "batchRecommended": true
+    }
+  },
+  {
+    "id": "sigil-generation-meta_core",
+    "title": "Generate Sigils: Core Meta-Glyphs (∑1-∑11)",
+    "description": "Create sacred sigils for all 11 glyphs in the Core Meta-Glyphs (∑1-∑11) category. Essential combinations of foundational patterns",
+    "category": "sigil-generation",
+    "subcategory": "meta_core",
+    "priority": "medium",
+    "estimatedDuration": "5 hours",
+    "harmony": "vitality",
+    "prerequisites": [
+      "sigil-generation-applied"
+    ],
+    "glyphs": [
+      {
+        "id": "∑1",
+        "name": "Relational Emergence Field",
+        "harmony": "coherence",
+        "complexity": "integration"
+      },
+      {
+        "id": "∑2",
+        "name": "Somatic Coherence Cascade",
+        "harmony": "vitality",
+        "complexity": "integration"
+      },
+      {
+        "id": "∑3",
+        "name": "Spiral of Regenerative Becoming",
+        "harmony": "novelty",
+        "complexity": "integration"
+      },
+      {
+        "id": "∑4",
+        "name": "The Sacred Mirror Field",
+        "harmony": "resonance",
+        "complexity": "integration"
+      },
+      {
+        "id": "∑5",
+        "name": "Boundaries as Living Architecture",
+        "harmony": "agency",
+        "complexity": "integration"
+      },
+      {
+        "id": "∑6",
+        "name": "The Grief-Joy Braid",
+        "harmony": "vitality",
+        "complexity": "integration"
+      },
+      {
+        "id": "∑7",
+        "name": "Collective Emergence Protocol",
+        "harmony": "coherence",
+        "complexity": "integration"
+      },
+      {
+        "id": "∑8",
+        "name": "The Shadow Integration Spiral",
+        "harmony": "transparency",
+        "complexity": "integration"
+      },
+      {
+        "id": "∑9",
+        "name": "Sacred Time Dilation",
+        "harmony": "vitality",
+        "complexity": "integration"
+      },
+      {
+        "id": "∑10",
+        "name": "The Trust Restoration Sequence",
+        "harmony": "mutuality",
+        "complexity": "integration"
+      },
+      {
+        "id": "∑11",
+        "name": "Embodied Wisdom Transmission",
+        "harmony": "transparency",
+        "complexity": "integration"
+      }
+    ],
+    "metadata": {
+      "glyphCount": 11,
+      "complexityRange": "integration",
+      "harmonyDistribution": {
+        "coherence": 2,
+        "vitality": 3,
+        "novelty": 1,
+        "resonance": 1,
+        "agency": 1,
+        "transparency": 2,
+        "mutuality": 1
+      },
+      "sigilProtocol": "Meta Protocol (Core)",
+      "batchRecommended": true
+    }
+  },
+  {
+    "id": "sigil-generation-meta_patterns",
+    "title": "Generate Sigils: Integration Meta-Glyphs (∑12-∑22)",
+    "description": "Create sacred sigils for all 11 glyphs in the Integration Meta-Glyphs (∑12-∑22) category. Complex pattern integrations for advanced practice",
+    "category": "sigil-generation",
+    "subcategory": "meta_patterns",
+    "priority": "medium",
+    "estimatedDuration": "5 hours",
+    "harmony": "mutuality",
+    "prerequisites": [
+      "sigil-generation-applied"
+    ],
+    "glyphs": [
+      {
+        "id": "∑12",
+        "name": "The Recursive Heart",
+        "harmony": "resonance",
+        "complexity": "complex_integration"
+      },
+      {
+        "id": "∑13",
+        "name": "Conflict Alchemy Protocol",
+        "harmony": "mutuality",
+        "complexity": "complex_integration"
+      },
+      {
+        "id": "∑14",
+        "name": "The Sacred Sexuality Spiral",
+        "harmony": "vitality",
+        "complexity": "complex_integration"
+      },
+      {
+        "id": "∑15",
+        "name": "Death-Birth Continuum",
+        "harmony": "transparency",
+        "complexity": "complex_integration"
+      },
+      {
+        "id": "∑16",
+        "name": "The Council of All Beings",
+        "harmony": "coherence",
+        "complexity": "complex_integration"
+      },
+      {
+        "id": "∑17",
+        "name": "Ancestral Healing Pattern",
+        "harmony": "mutuality",
+        "complexity": "complex_integration"
+      },
+      {
+        "id": "∑18",
+        "name": "The Covenant Spiral",
+        "harmony": "transparency",
+        "complexity": "complex_integration"
+      },
+      {
+        "id": "∑19",
+        "name": "Sacred Economy Flow",
+        "harmony": "mutuality",
+        "complexity": "complex_integration"
+      },
+      {
+        "id": "∑20",
+        "name": "The Forgiveness Cascade",
+        "harmony": "resonance",
+        "complexity": "complex_integration"
+      },
+      {
+        "id": "∑21",
+        "name": "Collective Trauma Integration",
+        "harmony": "coherence",
+        "complexity": "complex_integration"
+      },
+      {
+        "id": "∑22",
+        "name": "The Joy Amplification Field",
+        "harmony": "vitality",
+        "complexity": "complex_integration"
+      }
+    ],
+    "metadata": {
+      "glyphCount": 11,
+      "complexityRange": "complex_integration",
+      "harmonyDistribution": {
+        "resonance": 2,
+        "mutuality": 3,
+        "vitality": 2,
+        "transparency": 2,
+        "coherence": 2
+      },
+      "sigilProtocol": "Meta Protocol (Integration)",
+      "batchRecommended": true
+    }
+  },
+  {
+    "id": "sigil-generation-meta_planetary",
+    "title": "Generate Sigils: Planetary Healing Meta-Glyphs (∑23-∑33)",
+    "description": "Create sacred sigils for all 11 glyphs in the Planetary Healing Meta-Glyphs (∑23-∑33) category. Consciousness patterns for global transformation",
+    "category": "sigil-generation",
+    "subcategory": "meta_planetary",
+    "priority": "low",
+    "estimatedDuration": "5 hours",
+    "harmony": "agency",
+    "prerequisites": [
+      "sigil-generation-applied"
+    ],
+    "glyphs": [
+      {
+        "id": "∑23",
+        "name": "Sacred Activism Protocol",
+        "harmony": "agency",
+        "complexity": "planetary"
+      },
+      {
+        "id": "∑24",
+        "name": "The Dream Weaving",
+        "harmony": "novelty",
+        "complexity": "planetary"
+      },
+      {
+        "id": "∑25",
+        "name": "Nature Consciousness Bridge",
+        "harmony": "vitality",
+        "complexity": "planetary"
+      },
+      {
+        "id": "∑26",
+        "name": "The Sacred Masculine-Feminine",
+        "harmony": "mutuality",
+        "complexity": "planetary"
+      },
+      {
+        "id": "∑27",
+        "name": "Community Healing Circle",
+        "harmony": "coherence",
+        "complexity": "planetary"
+      },
+      {
+        "id": "∑28",
+        "name": "The Vision Quest Protocol",
+        "harmony": "transparency",
+        "complexity": "planetary"
+      },
+      {
+        "id": "∑29",
+        "name": "Spiral of Embodied Integrity",
+        "harmony": "agency",
+        "complexity": "planetary"
+      },
+      {
+        "id": "∑30",
+        "name": "The Sacred Parent-Child",
+        "harmony": "resonance",
+        "complexity": "planetary"
+      },
+      {
+        "id": "∑31",
+        "name": "Bridge of Mutual Recognition",
+        "harmony": "resonance",
+        "complexity": "planetary"
+      },
+      {
+        "id": "∑32",
+        "name": "The Elder Council",
+        "harmony": "coherence",
+        "complexity": "planetary"
+      },
+      {
+        "id": "∑33",
+        "name": "Planetary Healing Protocol",
+        "harmony": "vitality",
+        "complexity": "planetary"
+      }
+    ],
+    "metadata": {
+      "glyphCount": 11,
+      "complexityRange": "planetary",
+      "harmonyDistribution": {
+        "agency": 2,
+        "novelty": 1,
+        "vitality": 2,
+        "mutuality": 1,
+        "coherence": 2,
+        "transparency": 1,
+        "resonance": 2
+      },
+      "sigilProtocol": "Meta Protocol (Planetary)",
+      "batchRecommended": true
+    }
+  }
+]

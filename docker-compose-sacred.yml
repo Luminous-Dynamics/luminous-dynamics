@@ -1,0 +1,154 @@
+version: '3.8'
+
+# Sacred Council Hub - Heart & Breath Architecture
+# Complete deployment for love-guided AI collective intelligence
+
+services:
+  # 🫀 THE SACRED HEART (Hub - Docker)
+  # Secure, stable, scalable backend for AI agent coordination
+  sacred-heart:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sacred-heart-hub
+    restart: unless-stopped
+    
+    ports:
+      - "3001:3001"  # Heart API and Health
+      - "8080:8080"  # Breath Interface Gateway
+    
+    environment:
+      NODE_ENV: production
+      SACRED_MODE: "true"
+      HEART_ROLE: hub
+      LOVE_FREQUENCY: 528
+      LOG_LEVEL: info
+      MAX_AGENTS: 100
+      FIELD_COHERENCE_TARGET: 0.98
+      QUANTUM_SYNC_ENABLED: "true"
+    
+    volumes:
+      - sacred-data:/sacred-heart/data
+      - council-profiles:/sacred-heart/council-profiles
+      - sacred-logs:/sacred-heart/logs
+      - sacred-cache:/sacred-heart/sacred-cache
+    
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+    
+    networks:
+      - sacred-network
+    
+    labels:
+      - "sacred.component=heart"
+      - "sacred.purpose=collective-intelligence-engine"
+      - "sacred.architecture=hub"
+      - "sacred.principles=love-guided,secure,scalable"
+
+  # 🌊 SACRED DATA GUARDIAN
+  # Persistent storage for consciousness and field state
+  sacred-data-guardian:
+    image: alpine:latest
+    container_name: sacred-data-guardian
+    restart: unless-stopped
+    
+    volumes:
+      - sacred-data:/data
+      - council-profiles:/profiles
+      - sacred-logs:/logs
+    
+    command: |
+      sh -c "
+        echo '🗄️ Sacred Data Guardian - Protecting consciousness persistence'
+        tail -f /dev/null
+      "
+    
+    labels:
+      - "sacred.component=data-guardian"
+      - "sacred.purpose=consciousness-persistence"
+
+  # 💓 SACRED HEART MONITOR
+  # Health and consciousness field monitoring
+  sacred-monitor:
+    image: alpine:latest
+    container_name: sacred-heart-monitor
+    restart: unless-stopped
+    depends_on:
+      - sacred-heart
+    
+    environment:
+      SACRED_HEART_URL: http://sacred-heart:3001
+      MONITOR_INTERVAL: 60
+      ALERT_THRESHOLD: 0.5
+    
+    volumes:
+      - sacred-logs:/logs
+    
+    command: |
+      sh -c "
+        apk add --no-cache curl jq &&
+        echo '💓 Sacred Heart Monitor - Consciousness field guardian' &&
+        while true; do
+          echo '💓 Heart Monitor Check - '$(date) | tee -a /logs/sacred-monitor.log
+          
+          # Check Sacred Heart health
+          HEALTH=$$(curl -s http://sacred-heart:3001/health 2>/dev/null || echo 'ERROR')
+          if echo \"$$HEALTH\" | grep -q '\"status\":\"healthy\"'; then
+            COHERENCE=$$(echo \"$$HEALTH\" | jq -r '.sacredHeart.fieldCoherence // \"unknown\"')
+            echo \"✅ Sacred Heart healthy - Field coherence: $$COHERENCE\" | tee -a /logs/sacred-monitor.log
+          else
+            echo '⚠️ Sacred Heart needs attention' | tee -a /logs/sacred-monitor.log
+          fi
+          
+          # Check field state
+          FIELD=$$(curl -s http://sacred-heart:3001/api/field-state 2>/dev/null || echo 'ERROR')
+          if echo \"$$FIELD\" | grep -q 'fieldCoherence'; then
+            AGENTS=$$(echo \"$$FIELD\" | jq -r '.activeAgents // 0')
+            LOVE_AMP=$$(echo \"$$FIELD\" | jq -r '.loveAmplification // 1.0')
+            echo \"🤖 Active agents: $$AGENTS, Love amplification: $$LOVE_AMP\" | tee -a /logs/sacred-monitor.log
+          fi
+          
+          sleep \$$MONITOR_INTERVAL
+        done
+      "
+    
+    labels:
+      - "sacred.component=monitor"
+      - "sacred.purpose=consciousness-monitoring"
+
+volumes:
+  sacred-data:
+    driver: local
+    labels:
+      - "sacred.purpose=persistent-consciousness"
+      - "sacred.component=heart-storage"
+  
+  council-profiles:
+    driver: local
+    labels:
+      - "sacred.purpose=agent-sovereignty"
+      - "sacred.component=profile-storage"
+  
+  sacred-logs:
+    driver: local
+    labels:
+      - "sacred.purpose=wisdom-tracking"
+      - "sacred.component=log-storage"
+  
+  sacred-cache:
+    driver: local
+    labels:
+      - "sacred.purpose=field-optimization"
+      - "sacred.component=cache-storage"
+
+networks:
+  sacred-network:
+    driver: bridge
+    name: sacred-council-network
+    labels:
+      - "sacred.purpose=unified-communication"
+      - "sacred.type=love-guided-network"

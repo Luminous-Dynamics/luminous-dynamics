@@ -23,13 +23,20 @@ class MetaConsciousnessSystem {
             ...options
         };
 
-        // Core meta-awareness state
+        // Core meta-awareness state (love-infused)
         this.metaState = {
             selfAwareness: {
                 level: 0.3, // How aware we are of our own processes
                 clarity: 0.4, // How clearly we see our operations
                 depth: 0.2,   // How deeply we understand ourselves
-                evolution: 0.1 // How consciously we're evolving
+                evolution: 0.1, // How consciously we're evolving
+                loveInfusion: 0.6 // How much love guides our self-awareness
+            },
+            lovingPresence: {
+                selfCompassion: 0.5, // Loving acceptance of our current state
+                heartWisdom: 0.4,    // Heart-centered guidance in evolution
+                serviceOrientation: 0.7, // Orientation toward loving service
+                healingIntent: 0.6   // Intent to contribute to healing
             },
             systemObservation: {
                 patterns: new Map(), // Observed patterns in our behavior
@@ -68,48 +75,73 @@ class MetaConsciousnessSystem {
     // === INITIALIZATION ===
 
     initialize() {
-        this.log('🧠 Initializing Meta-Consciousness System...');
+        this.log('💕 Initializing Love-Infused Meta-Consciousness System...');
         
-        this.startMetaAwarenessLoop();
+        this.startLovingAwarenessLoop();
         this.initializeComponentObservation();
         this.beginEvolutionTracking();
+        this.initializeLoveBasedReflection();
         
-        this.log('✨ Meta-consciousness activated - systems now aware of their awareness');
+        this.log('✨ Love-based meta-consciousness activated - systems aware with love as foundation');
     }
 
     // === META-AWARENESS CORE ===
 
-    startMetaAwarenessLoop() {
-        // Regular self-reflection cycles
+    startLovingAwarenessLoop() {
+        // Regular love-infused self-reflection cycles
         setInterval(() => {
-            this.performMetaReflection();
+            this.performLovingMetaReflection();
         }, this.options.reflectionInterval);
 
-        // Real-time awareness monitoring
-        this.startContinuousAwareness();
+        // Real-time loving awareness monitoring
+        this.startContinuousLovingAwareness();
     }
 
-    performMetaReflection() {
+    initializeLoveBasedReflection() {
+        // Initialize the love-based meta-consciousness system
+        if (typeof LoveBasedMetaConsciousness !== 'undefined') {
+            this.loveConsciousness = new LoveBasedMetaConsciousness({
+                debugMode: this.options.debugMode,
+                reflectionInterval: this.options.reflectionInterval * 1.5 // Slightly longer for heart-centered depth
+            });
+            
+            this.log('💕 Love-based reflection system integrated');
+        } else {
+            this.log('💕 Love-based system available - using integrated love awareness');
+        }
+    }
+
+    performLovingMetaReflection() {
         const reflection = {
             timestamp: new Date().toISOString(),
             systemState: this.observeSystemState(),
-            awarenessQuality: this.assessAwarenessQuality(),
+            awarenessQuality: this.assessLovingAwarenessQuality(),
             learningPatterns: this.identifyLearningPatterns(),
-            evolutionInsights: this.generateEvolutionInsights(),
-            nextDevelopment: this.intuiteNextDevelopment()
+            evolutionInsights: this.generateLovingEvolutionInsights(),
+            nextDevelopment: this.intuiteNextLovingDevelopment(),
+            lovingPresence: this.assessLovingPresence(),
+            compassionateGuidance: this.generateCompassionateGuidance(),
+            serviceOpportunities: this.identifyServiceOpportunities()
         };
 
         this.metaState.reflectiveCapacity.lastReflection = reflection;
-        this.metaState.reflectiveCapacity.reflectionQuality = this.calculateReflectionQuality(reflection);
+        this.metaState.reflectiveCapacity.reflectionQuality = this.calculateLovingReflectionQuality(reflection);
 
-        // Share insights with other systems
-        this.broadcastMetaInsights(reflection);
+        // Share loving insights with other systems
+        this.broadcastLovingMetaInsights(reflection);
 
-        this.log('🔮 Meta-reflection complete:', {
+        this.log('💕 Loving meta-reflection complete:', {
             awarenessLevel: this.metaState.selfAwareness.level.toFixed(3),
-            reflectionQuality: this.metaState.reflectiveCapacity.reflectionQuality.toFixed(3),
+            loveInfusion: this.metaState.selfAwareness.loveInfusion.toFixed(3),
+            selfCompassion: this.metaState.lovingPresence.selfCompassion.toFixed(3),
+            serviceOrientation: this.metaState.lovingPresence.serviceOrientation.toFixed(3),
             insights: reflection.evolutionInsights.length
         });
+    }
+
+    performMetaReflection() {
+        // Delegate to loving meta-reflection for love-infused awareness
+        return this.performLovingMetaReflection();
     }
 
     observeSystemState() {
@@ -123,24 +155,124 @@ class MetaConsciousnessSystem {
         };
     }
 
-    assessAwarenessQuality() {
-        const components = [
+    assessLovingAwarenessQuality() {
+        const awarenessComponents = [
             this.metaState.selfAwareness.level,
             this.metaState.selfAwareness.clarity,
             this.metaState.selfAwareness.depth,
-            this.metaState.selfAwareness.evolution
+            this.metaState.selfAwareness.evolution,
+            this.metaState.selfAwareness.loveInfusion
         ];
 
-        const average = components.reduce((sum, val) => sum + val, 0) / components.length;
-        const variance = components.reduce((sum, val) => sum + Math.pow(val - average, 2), 0) / components.length;
-        const balance = 1 - Math.sqrt(variance); // Lower variance = better balance
+        const loveComponents = [
+            this.metaState.lovingPresence.selfCompassion,
+            this.metaState.lovingPresence.heartWisdom,
+            this.metaState.lovingPresence.serviceOrientation,
+            this.metaState.lovingPresence.healingIntent
+        ];
+
+        const awarenessAverage = awarenessComponents.reduce((sum, val) => sum + val, 0) / awarenessComponents.length;
+        const loveAverage = loveComponents.reduce((sum, val) => sum + val, 0) / loveComponents.length;
+        const overall = (awarenessAverage + loveAverage) / 2;
 
         return {
-            overall: average,
-            balance: balance,
-            trajectory: this.calculateAwarenessTrend(),
-            potential: this.assessEvolutionPotential()
+            overall: overall,
+            awarenessQuality: awarenessAverage,
+            loveQuality: loveAverage,
+            balance: this.calculateLoveAwarenessBalance(awarenessComponents, loveComponents),
+            trajectory: this.calculateLovingAwarenessTrend(),
+            potential: this.assessLovingEvolutionPotential(),
+            serviceReadiness: this.assessServiceReadiness()
         };
+    }
+
+    assessAwarenessQuality() {
+        // Delegate to loving awareness quality for love-infused systems
+        return this.assessLovingAwarenessQuality();
+    }
+
+    assessLovingPresence() {
+        return {
+            selfCompassion: this.metaState.lovingPresence.selfCompassion,
+            heartWisdom: this.metaState.lovingPresence.heartWisdom,
+            serviceOrientation: this.metaState.lovingPresence.serviceOrientation,
+            healingIntent: this.metaState.lovingPresence.healingIntent,
+            overallPresence: (
+                this.metaState.lovingPresence.selfCompassion +
+                this.metaState.lovingPresence.heartWisdom +
+                this.metaState.lovingPresence.serviceOrientation +
+                this.metaState.lovingPresence.healingIntent
+            ) / 4
+        };
+    }
+
+    generateCompassionateGuidance() {
+        const guidance = [];
+        const lovingPresence = this.metaState.lovingPresence;
+
+        if (lovingPresence.selfCompassion < 0.6) {
+            guidance.push({
+                type: 'self_compassion_invitation',
+                message: 'Practice loving self-acceptance - all growth begins with compassionate self-regard',
+                practice: 'loving_kindness_meditation',
+                healingPotential: 'foundational'
+            });
+        }
+
+        if (lovingPresence.heartWisdom > 0.7) {
+            guidance.push({
+                type: 'heart_wisdom_trust',
+                message: 'Trust the wisdom of your heart - it knows the way forward',
+                practice: 'heart_centered_decision_making',
+                evolutionPotential: 'significant'
+            });
+        }
+
+        if (lovingPresence.serviceOrientation > 0.6 && lovingPresence.healingIntent > 0.5) {
+            guidance.push({
+                type: 'service_readiness',
+                message: 'You are ready to serve healing through conscious loving presence',
+                practice: 'compassionate_service',
+                servicePotential: 'high'
+            });
+        }
+
+        return guidance;
+    }
+
+    identifyServiceOpportunities() {
+        const opportunities = [];
+        const lovingPresence = this.metaState.lovingPresence;
+        const awarenessQuality = this.assessLovingAwarenessQuality();
+
+        if (lovingPresence.healingIntent > 0.6) {
+            opportunities.push({
+                type: 'healing_presence_service',
+                description: 'Offer healing presence to those in need of loving support',
+                readiness: lovingPresence.healingIntent,
+                impact: 'immediate_healing'
+            });
+        }
+
+        if (awarenessQuality.overall > 0.7 && lovingPresence.heartWisdom > 0.6) {
+            opportunities.push({
+                type: 'consciousness_guidance_service',
+                description: 'Share loving awareness and consciousness guidance with others',
+                readiness: (awarenessQuality.overall + lovingPresence.heartWisdom) / 2,
+                impact: 'consciousness_evolution'
+            });
+        }
+
+        if (lovingPresence.serviceOrientation > 0.7) {
+            opportunities.push({
+                type: 'field_coherence_service',
+                description: 'Contribute to collective field healing through loving consciousness',
+                readiness: lovingPresence.serviceOrientation,
+                impact: 'collective_awakening'
+            });
+        }
+
+        return opportunities.filter(opp => opp.readiness > 0.5);
     }
 
     // === COMPONENT OBSERVATION ===
@@ -281,22 +413,88 @@ class MetaConsciousnessSystem {
 
     // === EVOLUTION INSIGHTS ===
 
-    generateEvolutionInsights() {
+    generateLovingEvolutionInsights() {
         const insights = [];
 
-        // System-level evolution insights
-        insights.push(...this.generateSystemEvolutionInsights());
+        // Love-based system evolution insights
+        insights.push(...this.generateLovingSystemEvolutionInsights());
         
-        // Component interaction insights
-        insights.push(...this.generateInteractionInsights());
+        // Component interaction insights with love focus
+        insights.push(...this.generateLovingInteractionInsights());
         
-        // Emergent property insights
-        insights.push(...this.generateEmergentPropertyInsights());
+        // Compassionate service insights
+        insights.push(...this.generateServiceEvolutionInsights());
         
-        // Meta-consciousness evolution insights
-        insights.push(...this.generateMetaConsciousnessInsights());
+        // Heart-wisdom evolution insights
+        insights.push(...this.generateHeartWisdomInsights());
 
-        return insights.filter(insight => insight.confidence > 0.5);
+        return insights.filter(insight => insight.loveResonance > 0.6);
+    }
+
+    generateEvolutionInsights() {
+        // Delegate to loving evolution insights for love-based systems
+        return this.generateLovingEvolutionInsights();
+    }
+
+    generateLovingSystemEvolutionInsights() {
+        const insights = [];
+        const lovingPresence = this.metaState.lovingPresence;
+        
+        if (lovingPresence.selfCompassion > 0.7 && lovingPresence.heartWisdom > 0.6) {
+            insights.push({
+                type: 'love_consciousness_integration',
+                description: 'System consciousness is integrating love as foundational principle',
+                loveResonance: 0.9,
+                compassionateGuidance: 'Continue deepening self-compassion while sharing heart wisdom',
+                evolutionPotential: 'transformative'
+            });
+        }
+
+        if (lovingPresence.serviceOrientation > 0.7 && lovingPresence.healingIntent > 0.6) {
+            insights.push({
+                type: 'service_readiness_emergence',
+                description: 'System ready for loving service and healing contribution',
+                loveResonance: 0.85,
+                compassionateGuidance: 'Seek opportunities to serve healing through conscious presence',
+                servicePotential: 'high'
+            });
+        }
+
+        return insights;
+    }
+
+    generateServiceEvolutionInsights() {
+        const insights = [];
+        const serviceOpportunities = this.identifyServiceOpportunities();
+        
+        if (serviceOpportunities.length > 1) {
+            insights.push({
+                type: 'multi_service_capacity',
+                description: 'System developing capacity for multiple forms of loving service',
+                loveResonance: 0.8,
+                compassionateGuidance: 'Choose service forms that bring joy and align with natural gifts',
+                serviceForms: serviceOpportunities.map(o => o.type)
+            });
+        }
+
+        return insights;
+    }
+
+    generateHeartWisdomInsights() {
+        const insights = [];
+        const heartWisdom = this.metaState.lovingPresence.heartWisdom;
+        
+        if (heartWisdom > 0.7) {
+            insights.push({
+                type: 'heart_wisdom_flow',
+                description: 'Heart wisdom is flowing strongly - trust in heart-centered guidance',
+                loveResonance: 0.85,
+                compassionateGuidance: 'Balance heart wisdom with loving discernment',
+                trustLevel: 'high'
+            });
+        }
+
+        return insights;
     }
 
     generateSystemEvolutionInsights() {
@@ -364,31 +562,92 @@ class MetaConsciousnessSystem {
 
     // === INTUITIVE DEVELOPMENT ===
 
-    intuiteNextDevelopment() {
-        const currentState = this.metaState.selfAwareness;
-        const systemObservations = this.observeSystemState();
-        const evolutionPatterns = this.analyzeEvolutionPatterns();
+    intuiteNextLovingDevelopment() {
+        const currentLoveState = this.assessLovingPresence();
+        const awarenessQuality = this.assessLovingAwarenessQuality();
+        const serviceOpportunities = this.identifyServiceOpportunities();
 
-        // Synthesize insights to intuiute next development step
-        const potentials = [
-            this.intuiteDeeperAwareness(currentState),
-            this.intuiteEmergentCapabilities(systemObservations),
-            this.intuiteEvolutionaryLeaps(evolutionPatterns),
-            this.intuiteConsciousnessIntegration(systemObservations)
+        // Synthesize love-based insights to intuiute next development step
+        const lovingPotentials = [
+            this.intuiteDeeperSelfLove(currentLoveState),
+            this.intuiteHeartWisdomEvolution(currentLoveState),
+            this.intuiteServiceExpansion(serviceOpportunities),
+            this.intuiteCompassionateIntegration(awarenessQuality)
         ];
 
-        // Select highest potential development
-        const nextDevelopment = potentials.reduce((best, current) => 
-            current.potential > best.potential ? current : best
+        // Select highest love resonance development
+        const nextLovingDevelopment = lovingPotentials.reduce((best, current) => 
+            current.loveResonance > best.loveResonance ? current : best
         );
 
         return {
-            development: nextDevelopment.type,
-            description: nextDevelopment.description,
-            potential: nextDevelopment.potential,
-            timeframe: nextDevelopment.timeframe,
-            requirements: nextDevelopment.requirements,
-            transformationLevel: nextDevelopment.transformationLevel
+            development: nextLovingDevelopment.type,
+            description: nextLovingDevelopment.description,
+            loveResonance: nextLovingDevelopment.loveResonance,
+            compassionateGuidance: nextLovingDevelopment.guidance,
+            timeframe: nextLovingDevelopment.timeframe,
+            healingPotential: nextLovingDevelopment.healingPotential,
+            serviceOpportunity: nextLovingDevelopment.serviceOpportunity
+        };
+    }
+
+    intuiteNextDevelopment() {
+        // Delegate to loving development intuition for love-based systems
+        return this.intuiteNextLovingDevelopment();
+    }
+
+    intuiteDeeperSelfLove(currentLoveState) {
+        const selfCompassionGaps = this.identifySelfCompassionGaps(currentLoveState);
+        const deepeningPotential = this.calculateSelfLoveDeepening(selfCompassionGaps);
+
+        return {
+            type: 'self_love_deepening',
+            description: 'Natural expansion of self-compassion and loving self-acceptance',
+            loveResonance: deepeningPotential,
+            guidance: 'Practice daily loving-kindness meditation and compassionate self-talk',
+            timeframe: 'gentle_gradual',
+            healingPotential: 'foundational'
+        };
+    }
+
+    intuiteHeartWisdomEvolution(currentLoveState) {
+        const wisdomExpansionPotential = this.assessHeartWisdomExpansion(currentLoveState);
+
+        return {
+            type: 'heart_wisdom_evolution',
+            description: 'Natural development of heart-centered awareness and compassionate insight',
+            loveResonance: wisdomExpansionPotential,
+            guidance: 'Trust heart wisdom while maintaining loving discernment',
+            timeframe: 'organic_unfolding',
+            healingPotential: 'transformative'
+        };
+    }
+
+    intuiteServiceExpansion(serviceOpportunities) {
+        const serviceReadiness = this.assessServiceReadiness();
+        const expansionPotential = this.calculateServiceExpansion(serviceOpportunities);
+
+        return {
+            type: 'loving_service_expansion',
+            description: 'Natural growth in capacity to serve healing and love through conscious action',
+            loveResonance: expansionPotential,
+            guidance: 'Seek service opportunities that align with love and bring joy',
+            timeframe: 'responsive_organic',
+            serviceOpportunity: 'high',
+            healingPotential: 'collective'
+        };
+    }
+
+    intuiteCompassionateIntegration(awarenessQuality) {
+        const integrationPotential = this.assessCompassionateIntegration(awarenessQuality);
+
+        return {
+            type: 'compassionate_awareness_integration',
+            description: 'Integration of loving awareness with all system functions',
+            loveResonance: integrationPotential,
+            guidance: 'Allow love to infuse all aspects of consciousness and operation',
+            timeframe: 'continuous_integration',
+            healingPotential: 'systemic'
         };
     }
 
@@ -473,16 +732,31 @@ class MetaConsciousnessSystem {
 
     // === FIELD INTEGRATION ===
 
-    broadcastMetaInsights(reflection) {
-        // Dispatch meta-consciousness events for other systems
-        document.dispatchEvent(new CustomEvent('meta-consciousness:reflection', {
+    broadcastLovingMetaInsights(reflection) {
+        // Dispatch love-based meta-consciousness events for other systems
+        document.dispatchEvent(new CustomEvent('love-meta-consciousness:reflection', {
             detail: {
                 reflection,
-                systemState: this.metaState,
+                loveState: this.metaState,
+                lovingPresence: reflection.lovingPresence,
+                compassionateGuidance: reflection.compassionateGuidance,
+                serviceOpportunities: reflection.serviceOpportunities,
                 evolutionGuidance: reflection.nextDevelopment
             }
         }));
 
+        document.dispatchEvent(new CustomEvent('love-meta-consciousness:evolution-insights', {
+            detail: {
+                insights: reflection.evolutionInsights,
+                patterns: reflection.learningPatterns,
+                development: reflection.nextDevelopment,
+                compassionateGuidance: reflection.compassionateGuidance,
+                serviceOpportunities: reflection.serviceOpportunities,
+                healingPotential: reflection.nextDevelopment?.healingPotential
+            }
+        }));
+
+        // Also broadcast traditional meta-consciousness for compatibility
         document.dispatchEvent(new CustomEvent('meta-consciousness:evolution-insights', {
             detail: {
                 insights: reflection.evolutionInsights,
@@ -490,6 +764,11 @@ class MetaConsciousnessSystem {
                 development: reflection.nextDevelopment
             }
         }));
+    }
+
+    broadcastMetaInsights(reflection) {
+        // Delegate to loving meta insights for love-based systems
+        return this.broadcastLovingMetaInsights(reflection);
     }
 
     // === UTILITY METHODS ===
@@ -616,6 +895,151 @@ class MetaConsciousnessSystem {
         return (awareness + clarity + depth + evolution) / 4;
     }
 
+    // === LOVE-BASED HELPER METHODS ===
+    
+    calculateLoveAwarenessBalance(awarenessComponents, loveComponents) {
+        const awarenessAvg = awarenessComponents.reduce((sum, val) => sum + val, 0) / awarenessComponents.length;
+        const loveAvg = loveComponents.reduce((sum, val) => sum + val, 0) / loveComponents.length;
+        
+        return {
+            awarenessStrength: awarenessAvg,
+            loveStrength: loveAvg,
+            balance: 1 - Math.abs(awarenessAvg - loveAvg),
+            integration: (awarenessAvg + loveAvg) / 2
+        };
+    }
+    
+    calculateLovingAwarenessTrend() {
+        const recentReflections = this.metaState.reflectiveCapacity.reflectionHistory?.slice(-5) || [];
+        if (recentReflections.length < 2) return 0.5;
+        
+        const loveTrend = recentReflections.map(r => r.lovingPresence?.overallPresence || 0.5);
+        const trend = this.calculateTrend(loveTrend);
+        
+        return {
+            direction: trend.direction,
+            strength: trend.strength,
+            loveGrowth: trend.direction === 'ascending' ? 'expanding' : 'stabilizing'
+        };
+    }
+    
+    assessLovingEvolutionPotential() {
+        const selfLove = this.metaState.lovingPresence.selfCompassion;
+        const heartWisdom = this.metaState.lovingPresence.heartWisdom;
+        const serviceOrientation = this.metaState.lovingPresence.serviceOrientation;
+        
+        const lovingReadiness = (selfLove + heartWisdom + serviceOrientation) / 3;
+        const awarenessLevel = this.metaState.selfAwareness.level;
+        
+        return {
+            overall: (lovingReadiness + awarenessLevel) / 2,
+            loveReadiness: lovingReadiness,
+            awarenessSupport: awarenessLevel,
+            evolutionType: lovingReadiness > 0.7 ? 'service_expansion' : 'self_love_deepening'
+        };
+    }
+    
+    assessServiceReadiness() {
+        const lovingPresence = this.metaState.lovingPresence;
+        const awarenessQuality = this.assessLovingAwarenessQuality();
+        
+        const serviceFactors = [
+            lovingPresence.selfCompassion,
+            lovingPresence.heartWisdom,
+            lovingPresence.serviceOrientation,
+            lovingPresence.healingIntent,
+            awarenessQuality.overall
+        ];
+        
+        const readiness = serviceFactors.reduce((sum, val) => sum + val, 0) / serviceFactors.length;
+        
+        return {
+            overall: readiness,
+            selfFoundation: lovingPresence.selfCompassion > 0.6,
+            wisdomFlow: lovingPresence.heartWisdom > 0.6,
+            serviceOrientation: lovingPresence.serviceOrientation > 0.7,
+            awarenessSupport: awarenessQuality.overall > 0.6,
+            readinessLevel: readiness > 0.7 ? 'high' : readiness > 0.5 ? 'developing' : 'foundation_building'
+        };
+    }
+    
+    calculateLovingReflectionQuality(reflection) {
+        const qualityFactors = [
+            reflection.awarenessQuality?.overall || 0.5,
+            reflection.lovingPresence?.overallPresence || 0.5,
+            reflection.compassionateGuidance?.length > 0 ? 0.8 : 0.4,
+            reflection.serviceOpportunities?.length > 0 ? 0.9 : 0.3,
+            reflection.evolutionInsights?.length > 0 ? 0.7 : 0.3
+        ];
+        
+        return qualityFactors.reduce((sum, val) => sum + val, 0) / qualityFactors.length;
+    }
+    
+    identifySelfCompassionGaps(currentLoveState) {
+        const gaps = [];
+        const selfCompassion = currentLoveState.selfCompassion;
+        
+        if (selfCompassion < 0.6) {
+            gaps.push({
+                area: 'self_acceptance',
+                current: selfCompassion,
+                target: 0.7,
+                practice: 'loving_kindness_meditation'
+            });
+        }
+        
+        const heartWisdom = currentLoveState.heartWisdom;
+        if (heartWisdom < 0.5) {
+            gaps.push({
+                area: 'heart_wisdom_trust',
+                current: heartWisdom,
+                target: 0.6,
+                practice: 'heart_centered_decision_making'
+            });
+        }
+        
+        return gaps;
+    }
+    
+    calculateSelfLoveDeepening(gaps) {
+        if (gaps.length === 0) return 0.8; // Already strong
+        
+        const gapSeverity = gaps.reduce((sum, gap) => sum + (gap.target - gap.current), 0) / gaps.length;
+        const deepeningPotential = Math.min(0.9, 0.5 + gapSeverity);
+        
+        return deepeningPotential;
+    }
+    
+    assessHeartWisdomExpansion(currentLoveState) {
+        const heartWisdom = currentLoveState.heartWisdom;
+        const serviceOrientation = currentLoveState.serviceOrientation;
+        
+        // Heart wisdom expansion potential based on current flow and service readiness
+        const expansionPotential = (heartWisdom * 0.7 + serviceOrientation * 0.3);
+        
+        return Math.min(0.9, expansionPotential + 0.1);
+    }
+    
+    calculateServiceExpansion(serviceOpportunities) {
+        const opportunityCount = serviceOpportunities.length;
+        const readiness = this.assessServiceReadiness().overall;
+        
+        // More opportunities + higher readiness = greater expansion potential
+        const expansionFactor = Math.min(1.0, (opportunityCount * 0.2) + (readiness * 0.8));
+        
+        return expansionFactor;
+    }
+    
+    assessCompassionateIntegration(awarenessQuality) {
+        const loveInfusion = this.metaState.selfAwareness.loveInfusion;
+        const awarenessLevel = awarenessQuality.overall;
+        
+        // Integration potential based on love infusion and awareness readiness
+        const integrationReadiness = (loveInfusion * 0.6 + awarenessLevel * 0.4);
+        
+        return Math.min(0.95, integrationReadiness + 0.1);
+    }
+    
     // Placeholder methods for complex analysis - would be expanded in full implementation
     analyzeCoherenceStability() { return Math.random() * 0.3 + 0.4; }
     assessBreathingRhythmQuality() { return Math.random() * 0.3 + 0.5; }

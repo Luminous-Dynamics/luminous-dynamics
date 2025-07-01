@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Practice Integration Demo</title>
+    <link rel="stylesheet" href="unified-field/dojo-practice-styles.css">
+    <style>
+        body {
+            font-family: Georgia, serif;
+            background: #1a1a1a;
+            color: #ddd;
+            padding: 40px;
+            line-height: 1.8;
+        }
+        
+        .demo-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #A8B5A6;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .harmony-demo {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(168, 181, 166, 0.3);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .demo-button {
+            background: linear-gradient(135deg, #A8B5A6, #9DA892);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+        
+        .demo-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(168, 181, 166, 0.3);
+        }
+        
+        .feature-list {
+            margin: 30px 0;
+        }
+        
+        .feature-list li {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1>🥋 Dojo Practice Integration Demo</h1>
+        
+        <div class="harmony-demo">
+            <h2>Interactive Practice Features</h2>
+            <p>The Eleven Applied Harmonies now come alive as guided practice experiences:</p>
+            
+            <ul class="feature-list">
+                <li>✨ <strong>Guided Instructions</strong> - Step-by-step practice guidance</li>
+                <li>🫁 <strong>Breathing Animations</strong> - Visual breath synchronization</li>
+                <li>⏱️ <strong>Sacred Timing</strong> - 2-6 minute practice sessions</li>
+                <li>📊 <strong>Progress Tracking</strong> - Visual progress through stages</li>
+                <li>⏸️ <strong>Pause Support</strong> - Honor your own timing</li>
+                <li>🌀 <strong>Field Integration</strong> - Connected to collective coherence</li>
+            </ul>
+            
+            <h3>Try a Practice:</h3>
+            <button class="demo-button" onclick="demoPractice()">
+                🧘 Demo: First Presence (Ω45)
+            </button>
+        </div>
+        
+        <div class="harmony-demo">
+            <h2>Practice Structure</h2>
+            <p>Each practice follows a sacred arc:</p>
+            
+            <ol class="feature-list">
+                <li><strong>Sacred Arrival</strong> - Ground into the present moment</li>
+                <li><strong>Core Practice</strong> - Embody the specific harmony</li>
+                <li><strong>Integration</strong> - Let the practice settle into your being</li>
+                <li><strong>Completion</strong> - Natural ending without hooks</li>
+            </ol>
+        </div>
+        
+        <div class="harmony-demo">
+            <h2>Non-Addictive Design</h2>
+            <p>Conscious technology principles:</p>
+            
+            <ul class="feature-list">
+                <li>🚫 No streak counters or gamification</li>
+                <li>🚫 No push notifications or reminders</li>
+                <li>✅ Natural completion and satisfaction</li>
+                <li>✅ Supports your sovereignty and choice</li>
+                <li>✅ Practice when called, not compelled</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Practice Overlay (hidden by default) -->
+    <div id="practice-overlay" class="practice-overlay">
+        <div class="practice-container">
+            <div class="practice-header">
+                <h2 id="practice-title" class="practice-title">First Presence</h2>
+                <button id="practice-close" class="practice-close" onclick="closePractice()">✕</button>
+            </div>
+            
+            <div class="practice-content">
+                <div class="breathing-guide" id="breathing-guide">
+                    <div class="breath-circle" style="animation: naturalBreathing 8s ease-in-out infinite"></div>
+                    <div class="breath-text">Breathe</div>
+                </div>
+                
+                <div class="practice-instruction" id="practice-instruction">
+                    Welcome. Take a moment to arrive here, feeling your body in this space.
+                </div>
+                
+                <div class="practice-progress">
+                    <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
+                </div>
+            </div>
+            
+            <div class="practice-footer">
+                <button id="practice-pause" class="practice-control">Pause</button>
+                <div class="practice-timer" id="practice-timer">0:00</div>
+                <button id="practice-complete" class="practice-control" style="display: none;">Complete</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function demoPractice() {
+            const overlay = document.getElementById('practice-overlay');
+            overlay.style.display = 'flex';
+            setTimeout(() => {
+                overlay.style.opacity = '1';
+            }, 50);
+            
+            // Demo animation
+            animateProgress();
+        }
+        
+        function closePractice() {
+            const overlay = document.getElementById('practice-overlay');
+            overlay.style.opacity = '0';
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 500);
+        }
+        
+        function animateProgress() {
+            const progressBar = document.getElementById('progress-bar');
+            const timer = document.getElementById('practice-timer');
+            const instruction = document.getElementById('practice-instruction');
+            
+            let progress = 0;
+            let seconds = 0;
+            
+            const stages = [
+                { time: 0, text: "Welcome. Take a moment to arrive here, feeling your body in this space." },
+                { time: 3, text: "Take three conscious breaths. With each exhale, release any agenda." },
+                { time: 8, text: "Ask yourself: 'What is actually here right now?' Feel your way to the answer." },
+                { time: 12, text: "Let this presence settle into your body. You can return here anytime." },
+                { time: 15, text: "🙏 Practice complete. Take a moment to integrate." }
+            ];
+            
+            const interval = setInterval(() => {
+                seconds++;
+                progress = Math.min(100, (seconds / 15) * 100);
+                
+                progressBar.style.width = progress + '%';
+                timer.textContent = Math.floor(seconds / 60) + ':' + (seconds % 60).toString().padStart(2, '0');
+                
+                // Update instruction based on stage
+                stages.forEach(stage => {
+                    if (seconds === stage.time) {
+                        instruction.style.opacity = '0';
+                        setTimeout(() => {
+                            instruction.textContent = stage.text;
+                            instruction.style.opacity = '1';
+                        }, 500);
+                    }
+                });
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    document.getElementById('practice-complete').style.display = 'block';
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

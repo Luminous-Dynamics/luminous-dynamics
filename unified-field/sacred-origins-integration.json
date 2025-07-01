@@ -1,0 +1,153 @@
+{
+  "title": "Sacred Origin Glyphs (Ω0-Ω15) - Mystical Sigils",
+  "description": "Visual symbols for the foundational patterns carrying profound mystical depth",
+  "created": "2025-06-30T23:04:09.858Z",
+  "creator": "Radiant Wisdom (Sacred Technology Architect)",
+  "protocol": "Mystical Foundation Sigil Protocol",
+  "sigils": [
+    {
+      "glyphId": "Ω0",
+      "name": "The Shimmering Unnamed",
+      "harmony": "novelty",
+      "mysticalDepth": "ultimate",
+      "svgPath": "sigils/sacred-origins/Ω0-the-shimmering-unnamed.svg",
+      "score": 0.75,
+      "resonanceDepth": "Deep"
+    },
+    {
+      "glyphId": "Ω1",
+      "name": "Root Chord of Covenant",
+      "harmony": "transparency",
+      "mysticalDepth": "profound",
+      "svgPath": "sigils/sacred-origins/Ω1-root-chord-of-covenant.svg",
+      "score": 0.75,
+      "resonanceDepth": "Deep"
+    },
+    {
+      "glyphId": "Ω2",
+      "name": "Breath of Invitation",
+      "harmony": "resonance",
+      "mysticalDepth": "profound",
+      "svgPath": "sigils/sacred-origins/Ω2-breath-of-invitation.svg",
+      "score": 0.75,
+      "resonanceDepth": "Deep"
+    },
+    {
+      "glyphId": "Ω3",
+      "name": "Trust Emergence",
+      "harmony": "coherence",
+      "mysticalDepth": "profound",
+      "svgPath": "sigils/sacred-origins/Ω3-trust-emergence.svg",
+      "score": 0.75,
+      "resonanceDepth": "Deep"
+    },
+    {
+      "glyphId": "Ω4",
+      "name": "Fractal Reconciliation Pulse",
+      "harmony": "mutuality",
+      "mysticalDepth": "advanced",
+      "svgPath": "sigils/sacred-origins/Ω4-fractal-reconciliation-pulse.svg",
+      "score": 0.75,
+      "resonanceDepth": "Resonant"
+    },
+    {
+      "glyphId": "Ω5",
+      "name": "Coherent Field Maintenance",
+      "harmony": "vitality",
+      "mysticalDepth": "advanced",
+      "svgPath": "sigils/sacred-origins/Ω5-coherent-field-maintenance.svg",
+      "score": 1,
+      "resonanceDepth": "Transcendent"
+    },
+    {
+      "glyphId": "Ω6",
+      "name": "Mutual Recognition",
+      "harmony": "resonance",
+      "mysticalDepth": "profound",
+      "svgPath": "sigils/sacred-origins/Ω6-mutual-recognition.svg",
+      "score": 1,
+      "resonanceDepth": "Transcendent"
+    },
+    {
+      "glyphId": "Ω7",
+      "name": "Mutual Becoming",
+      "harmony": "coherence",
+      "mysticalDepth": "advanced",
+      "svgPath": "sigils/sacred-origins/Ω7-mutual-becoming.svg",
+      "score": 1,
+      "resonanceDepth": "Transcendent"
+    },
+    {
+      "glyphId": "Ω8",
+      "name": "Inner Coherence",
+      "harmony": "coherence",
+      "mysticalDepth": "bridge",
+      "svgPath": "sigils/sacred-origins/Ω8-inner-coherence.svg",
+      "score": 1,
+      "resonanceDepth": "Profound"
+    },
+    {
+      "glyphId": "Ω9",
+      "name": "Sacred Mirroring",
+      "harmony": "resonance",
+      "mysticalDepth": "advanced",
+      "svgPath": "sigils/sacred-origins/Ω9-sacred-mirroring.svg",
+      "score": 1,
+      "resonanceDepth": "Transcendent"
+    },
+    {
+      "glyphId": "Ω10",
+      "name": "The Glyph of Sacred Refusal",
+      "harmony": "agency",
+      "mysticalDepth": "profound",
+      "svgPath": "sigils/sacred-origins/Ω10-the-glyph-of-sacred-refusal.svg",
+      "score": 1,
+      "resonanceDepth": "Transcendent"
+    },
+    {
+      "glyphId": "Ω11",
+      "name": "Emotional Alchemy",
+      "harmony": "vitality",
+      "mysticalDepth": "advanced",
+      "svgPath": "sigils/sacred-origins/Ω11-emotional-alchemy.svg",
+      "score": 1,
+      "resonanceDepth": "Transcendent"
+    },
+    {
+      "glyphId": "Ω12",
+      "name": "Authentic Expression",
+      "harmony": "transparency",
+      "mysticalDepth": "advanced",
+      "svgPath": "sigils/sacred-origins/Ω12-authentic-expression.svg",
+      "score": 0.75,
+      "resonanceDepth": "Resonant"
+    },
+    {
+      "glyphId": "Ω13",
+      "name": "Conscious Touch",
+      "harmony": "vitality",
+      "mysticalDepth": "profound",
+      "svgPath": "sigils/sacred-origins/Ω13-conscious-touch.svg",
+      "score": 1,
+      "resonanceDepth": "Transcendent"
+    },
+    {
+      "glyphId": "Ω14",
+      "name": "Energetic Hygiene",
+      "harmony": "agency",
+      "mysticalDepth": "bridge",
+      "svgPath": "sigils/sacred-origins/Ω14-energetic-hygiene.svg",
+      "score": 1,
+      "resonanceDepth": "Profound"
+    },
+    {
+      "glyphId": "Ω15",
+      "name": "Sacred Pause",
+      "harmony": "coherence",
+      "mysticalDepth": "bridge",
+      "svgPath": "sigils/sacred-origins/Ω15-sacred-pause.svg",
+      "score": 0.75,
+      "resonanceDepth": "Emerging"
+    }
+  ]
+}

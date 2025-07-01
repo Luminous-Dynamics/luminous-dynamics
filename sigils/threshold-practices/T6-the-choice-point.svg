@@ -1,0 +1,34 @@
+<svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><defs>
+      <radialGradient id="threshold-field-T6" cx="50%" cy="50%" r="70%">
+        <stop offset="0%" style="stop-color:#FF6347;stop-opacity:0.2"/>
+        <stop offset="50%" style="stop-color:#FF6347;stop-opacity:0.1"/>
+        <stop offset="80%" style="stop-color:#000040;stop-opacity:0.05"/>
+        <stop offset="100%" style="stop-color:transparent;stop-opacity:0"/>
+      </radialGradient>
+      <filter id="transformation-glow-T6">
+        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+        <feMerge> 
+          <feMergeNode in="coloredBlur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="motion-blur-T6">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1,0"/>
+      </filter>
+    </defs><circle cx="48" cy="48" r="63.2" 
+            fill="url(#threshold-field-T6)" stroke="none"/><line x1="-3.8400000000000034" y1="48" x2="99.84" y2="48"
+             stroke="#4d1e15" stroke-width="1.5" stroke-opacity="0.3" filter="url(#motion-blur-T6)"/><line x1="48" y1="-3.8400000000000034" x2="48" y2="99.84"
+             stroke="#4d1e15" stroke-width="1.5" stroke-opacity="0.3" filter="url(#motion-blur-T6)"/><polygon points="48,4.799999999999997 78.24,48 48,91.2 17.76,48" 
+                   fill="#FF6347" fill-opacity="0.15"
+                   stroke="#FF6347" stroke-width="3"
+                   stroke-opacity="1" filter="url(#transformation-glow-T6)"/><line x1="13.439999999999998" y1="48" x2="82.56" y2="48"
+                   stroke="#FF6347" stroke-width="3.5999999999999996" stroke-opacity="1" filter="url(#transformation-glow-T6)"/><line x1="48" y1="13.439999999999998" x2="48" y2="82.56"
+                   stroke="#FF6347" stroke-width="3.5999999999999996" stroke-opacity="1" filter="url(#transformation-glow-T6)"/><circle cx="48" cy="48" r="6.48" 
+                   fill="#FF6347" fill-opacity="0.4"
+                   stroke="#FF6347" stroke-width="2.4000000000000004"
+                   stroke-opacity="1" filter="url(#transformation-glow-T6)"/><line x1="31.980222496909764" y1="48" x2="64.01977750309024" y2="48"
+             stroke="#cc4f39" stroke-width="1.6800000000000002" stroke-opacity="0.4" /><line x1="48" y1="31.980222496909764" x2="48" y2="64.01977750309024"
+             stroke="#cc4f39" stroke-width="1.6800000000000002" stroke-opacity="0.4" /><circle cx="48" cy="48" r="4" 
+            fill="#FF6347" opacity="1.0" filter="url(#transformation-glow-T6)"/><text x="48" y="90" text-anchor="middle" 
+            font-family="serif" font-size="10" font-weight="bold" 
+            fill="#FF6347" opacity="0.6">T6</text></svg>

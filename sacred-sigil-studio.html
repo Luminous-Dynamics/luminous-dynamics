@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacred Sigil Studio - Consciousness Symbol Creation</title>
+    
+    <!-- Sacred Sigil System -->
+    <script src="unified-field/sacred-sigil-architecture.js"></script>
+    <script src="unified-field/true-integration-schema.js"></script>
+    
+    <style>
+        :root {
+            --sacred-frequency: 528Hz;
+            --sigil-harmony: #A8B5A6;
+            --creation-flow: #4ecdc4;
+            --manifestation: #ff6b9d;
+            --divine-light: #ffd93d;
+            --sacred-shadow: #4B0082;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, 
+                #1a1a2e 0%, 
+                #16213e 30%, 
+                #0f3460 60%, 
+                #533a71 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            animation: sacredPulse 4000ms ease-in-out infinite;
+        }
+
+        @keyframes sacredPulse {
+            0%, 100% { 
+                transform: scale(1);
+                filter: brightness(1) saturate(1);
+            }
+            50% { 
+                transform: scale(1.001);
+                filter: brightness(1.03) saturate(1.1);
+            }
+        }
+
+        .studio-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Sacred Header */
+        .studio-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .studio-title {
+            font-size: 3.2em;
+            background: linear-gradient(45deg, 
+                var(--creation-flow), var(--manifestation), var(--divine-light));
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: titleGradient 6s ease-in-out infinite;
+            margin-bottom: 15px;
+        }
+
+        @keyframes titleGradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .studio-subtitle {
+            font-size: 1.3em;
+            color: var(--sigil-harmony);
+            margin-bottom: 20px;
+        }
+
+        .studio-description {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.85);
+            font-style: italic;
+        }
+
+        /* Main Studio Grid */
+        .studio-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .studio-panel {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 25px;
+            backdrop-filter: blur(15px);
+            transition: all 0.4s ease;
+        }
+
+        .studio-panel:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .panel-title {
+            font-size: 1.4em;
+            color: var(--divine-light);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Glyph Selection Panel */
+        .glyph-selector {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .glyph-category {
+            margin-bottom: 20px;
+        }
+
+        .category-header {
+            font-size: 1.1em;
+            color: var(--creation-flow);
+            margin-bottom: 10px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .category-glyphs {
+            display: none;
+            padding-left: 15px;
+        }
+
+        .category-glyphs.expanded {
+            display: block;
+        }
+
+        .glyph-item {
+            padding: 8px 12px;
+            margin: 3px 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+        }
+
+        .glyph-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        .glyph-item.selected {
+            background: var(--creation-flow);
+            color: #000;
+        }
+
+        /* Creation Panel */
+        .creation-area {
+            text-align: center;
+        }
+
+        .current-glyph {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glyph-name {
+            font-size: 1.3em;
+            color: var(--divine-light);
+            margin-bottom: 10px;
+        }
+
+        .glyph-harmony {
+            font-size: 0.9em;
+            color: var(--sigil-harmony);
+            margin-bottom: 15px;
+        }
+
+        .glyph-description {
+            font-size: 0.85em;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.4;
+        }
+
+        .sigil-canvas {
+            width: 300px;
+            height: 300px;
+            margin: 25px auto;
+            border: 3px solid var(--creation-flow);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sigil-placeholder {
+            color: #666;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .creation-controls {
+            margin: 25px 0;
+        }
+
+        .sacred-button {
+            background: linear-gradient(45deg, var(--creation-flow), var(--manifestation));
+            border: none;
+            padding: 12px 25px;
+            border-radius: 20px;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 8px;
+            min-width: 140px;
+        }
+
+        .sacred-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .sacred-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Properties Panel */
+        .sigil-properties {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .property-group {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .property-label {
+            font-size: 0.9em;
+            color: var(--creation-flow);
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .property-value {
+            font-size: 0.85em;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 5px;
+        }
+
+        .property-input {
+            width: 100%;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            color: white;
+            font-size: 0.9em;
+        }
+
+        .property-input:focus {
+            outline: none;
+            border-color: var(--creation-flow);
+            box-shadow: 0 0 10px rgba(78, 205, 196, 0.3);
+        }
+
+        /* Generation Progress */
+        .generation-progress {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: none;
+        }
+
+        .generation-progress.visible {
+            display: block;
+        }
+
+        .progress-text {
+            color: var(--divine-light);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--creation-flow), var(--manifestation));
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* Batch Generation Panel */
+        .batch-generation {
+            margin-top: 30px;
+            padding: 25px;
+            background: rgba(75, 0, 130, 0.1);
+            border: 2px solid rgba(75, 0, 130, 0.3);
+            border-radius: 20px;
+        }
+
+        .batch-title {
+            font-size: 1.5em;
+            color: var(--sacred-shadow);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .batch-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .batch-button {
+            background: linear-gradient(45deg, var(--sacred-shadow), #9370DB);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            color: white;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .batch-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(75, 0, 130, 0.4);
+        }
+
+        /* Harmony Indicators */
+        .harmony-transparency { border-left: 4px solid #B0C4DE; }
+        .harmony-coherence { border-left: 4px solid #A8B5A6; }
+        .harmony-resonance { border-left: 4px solid #FFB6C1; }
+        .harmony-agency { border-left: 4px solid #FF6347; }
+        .harmony-vitality { border-left: 4px solid #90EE90; }
+        .harmony-mutuality { border-left: 4px solid #FFD700; }
+        .harmony-novelty { border-left: 4px solid #9370DB; }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .studio-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .sigil-canvas {
+                width: 250px;
+                height: 250px;
+            }
+        }
+
+        /* Sacred Animations */
+        @keyframes sigil-birth {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) rotate(-90deg);
+            }
+            50% {
+                opacity: 0.7;
+                transform: scale(1.1) rotate(0deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        .sigil-manifest {
+            animation: sigil-birth 1.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="studio-container">
+        <!-- Sacred Header -->
+        <div class="studio-header">
+            <h1 class="studio-title">Sacred Sigil Studio</h1>
+            <p class="studio-subtitle">Consciousness Symbol Creation for All 87 Glyphs</p>
+            <p class="studio-description">
+                Sacred technology for generating visual anchors that bridge form and formless,
+                allowing practitioners to connect with glyph wisdom through sacred geometry.
+                Each sigil carries the essence of its glyph through harmonic proportions and conscious design.
+            </p>
+        </div>
+
+        <!-- Main Studio Interface -->
+        <div class="studio-grid">
+            <!-- Glyph Selection Panel -->
+            <div class="studio-panel">
+                <h2 class="panel-title">Sacred Glyph Selection</h2>
+                <div class="glyph-selector" id="glyphSelector">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+
+            <!-- Creation Panel -->
+            <div class="studio-panel">
+                <h2 class="panel-title">Sigil Manifestation</h2>
+                
+                <div class="current-glyph" id="currentGlyph">
+                    <div class="glyph-name">Select a Sacred Glyph</div>
+                    <div class="glyph-harmony">Choose from the 87 patterns to begin</div>
+                    <div class="glyph-description">
+                        Each glyph contains wisdom for conscious relationship.
+                        Select one to manifest its sigil through sacred geometry.
+                    </div>
+                </div>
+
+                <div class="sigil-canvas" id="sigilCanvas">
+                    <div class="sigil-placeholder">
+                        Sacred geometry will manifest here
+                    </div>
+                </div>
+
+                <div class="creation-controls">
+                    <button class="sacred-button" id="generateBtn" disabled>
+                        Generate Sacred Sigil
+                    </button>
+                    <button class="sacred-button" id="refineBtn" disabled>
+                        Refine Manifestation
+                    </button>
+                    <button class="sacred-button" id="downloadBtn" disabled>
+                        Download SVG
+                    </button>
+                </div>
+
+                <div class="generation-progress" id="generationProgress">
+                    <div class="progress-text">Sacred generation in progress...</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Properties Panel -->
+            <div class="studio-panel">
+                <h2 class="panel-title">Sigil Properties</h2>
+                <div class="sigil-properties" id="sigilProperties">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Batch Generation -->
+        <div class="batch-generation">
+            <h2 class="batch-title">Sacred Batch Generation</h2>
+            <p style="text-align: center; color: rgba(255,255,255,0.8); margin-bottom: 20px;">
+                Generate sigils for entire categories or all 87 glyphs at once
+            </p>
+            <div class="batch-controls">
+                <button class="batch-button" onclick="generateBatch('applied')">
+                    The Eleven Applied Harmonies
+                </button>
+                <button class="batch-button" onclick="generateBatch('foundational')">
+                    Foundational Glyphs (45)
+                </button>
+                <button class="batch-button" onclick="generateBatch('threshold')">
+                    Threshold Practices (9)
+                </button>
+                <button class="batch-button" onclick="generateBatch('meta')">
+                    Meta-Glyphs (33)
+                </button>
+                <button class="batch-button" onclick="generateBatch('all')" 
+                        style="background: linear-gradient(45deg, var(--divine-light), var(--manifestation));">
+                    Generate All 87 Sigils
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sacred Sigil Studio Implementation
+        let sigilArchitecture;
+        let trueIntegration;
+        let currentGlyphData = null;
+        let currentSigil = null;
+        let allGlyphs = [];
+
+        // Initialize Sacred Studio
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeSacredStudio();
+        });
+
+        async function initializeSacredStudio() {
+            try {
+                // Initialize core systems
+                sigilArchitecture = new SacredSigilArchitecture();
+                
+                // Load glyph data
+                await loadGlyphDatabase();
+                
+                // Setup interface
+                populateGlyphSelector();
+                setupEventListeners();
+                
+                console.log('🎨 Sacred Sigil Studio initialized');
+                console.log(`📊 ${allGlyphs.length} glyphs loaded for sigil creation`);
+                
+            } catch (error) {
+                console.error('Studio initialization error:', error);
+                showError('Sacred pause needed. Refresh with presence.');
+            }
+        }
+
+        async function loadGlyphDatabase() {
+            // Create comprehensive glyph database for sigil generation
+            allGlyphs = [
+                // The Eleven Applied Harmonies (Ω45-Ω56)
+                { id: 'Ω45', name: 'First Presence', type: 'applied', harmony: 'coherence', 
+                  description: 'Arriving fully present in each moment', keywords: ['presence', 'arrival', 'awareness'] },
+                { id: 'Ω46', name: 'Conscious Arrival', type: 'applied', harmony: 'transparency',
+                  description: 'Conscious transition into relationship', keywords: ['arrival', 'transition', 'intention'] },
+                { id: 'Ω47', name: 'Sacred Listening', type: 'applied', harmony: 'resonance',
+                  description: 'Deep empathetic presence and witnessing', keywords: ['listening', 'empathy', 'witnessing'] },
+                { id: 'Ω48', name: 'Boundary With Love', type: 'applied', harmony: 'agency',
+                  description: 'Setting limits while maintaining connection', keywords: ['boundaries', 'love', 'protection'] },
+                { id: 'Ω49', name: 'Gentle Opening', type: 'applied', harmony: 'resonance',
+                  description: 'Creating safety through invitation', keywords: ['opening', 'safety', 'invitation'] },
+                { id: 'Ω50', name: 'Building Trust', type: 'applied', harmony: 'coherence',
+                  description: 'Establishing relational safety and reliability', keywords: ['trust', 'safety', 'reliability'] },
+                { id: 'Ω51', name: 'Loving No', type: 'applied', harmony: 'agency',
+                  description: 'Sacred boundary setting with compassion', keywords: ['no', 'boundaries', 'compassion'] },
+                { id: 'Ω52', name: 'Pause Practice', type: 'applied', harmony: 'coherence',
+                  description: 'Sacred space between stimulus and response', keywords: ['pause', 'space', 'reflection'] },
+                { id: 'Ω53', name: 'Tending the Field', type: 'applied', harmony: 'vitality',
+                  description: 'Sustaining connection across time and distance', keywords: ['field', 'connection', 'sustaining'] },
+                { id: 'Ω55', name: 'Presence Transmission', type: 'applied', harmony: 'vitality',
+                  description: 'Conscious energetic influence and modeling', keywords: ['presence', 'transmission', 'influence'] },
+                { id: 'Ω56', name: 'Loving Redirection', type: 'applied', harmony: 'mutuality',
+                  description: 'Interrupting harmful patterns with grace', keywords: ['redirection', 'grace', 'patterns'] },
+
+                // Sample Foundational Glyphs (first 15 for demo)
+                { id: 'Ω0', name: 'The Shimmering Unnamed', type: 'foundational', harmony: 'novelty',
+                  description: 'The mystery that exists before naming', keywords: ['mystery', 'unknown', 'potential'] },
+                { id: 'Ω1', name: 'Root Chord of Covenant', type: 'foundational', harmony: 'transparency',
+                  description: 'The fundamental agreement between beings', keywords: ['covenant', 'agreement', 'foundation'] },
+                { id: 'Ω2', name: 'Breath of Invitation', type: 'foundational', harmony: 'resonance',
+                  description: 'Creating space for another to enter', keywords: ['invitation', 'breath', 'welcome'] },
+                { id: 'Ω3', name: 'Trust Emergence', type: 'foundational', harmony: 'coherence',
+                  description: 'The natural arising of safety in relationship', keywords: ['trust', 'emergence', 'safety'] },
+                { id: 'Ω4', name: 'Fractal Reconciliation Pulse', type: 'foundational', harmony: 'mutuality',
+                  description: 'The rhythm of repair and restoration', keywords: ['reconciliation', 'repair', 'rhythm'] },
+
+                // Sample Threshold Glyphs
+                { id: 'T1', name: 'The Door That Remembers You', type: 'threshold', harmony: 'novelty',
+                  description: 'Crossing into new phases of being', keywords: ['transition', 'transformation', 'remembering'] },
+                { id: 'T2', name: 'The Unburdening', type: 'threshold', harmony: 'agency',
+                  description: 'Releasing what no longer serves', keywords: ['release', 'letting go', 'freedom'] },
+                { id: 'T3', name: 'The Edgewalker', type: 'threshold', harmony: 'vitality',
+                  description: 'Living at the edge of known and unknown', keywords: ['edge', 'courage', 'exploration'] },
+
+                // Sample Meta-Glyphs
+                { id: '∑1', name: 'Relational Emergence Field', type: 'meta', harmony: 'coherence',
+                  description: 'The field where relationships come alive', keywords: ['field', 'emergence', 'relationships'] },
+                { id: '∑12', name: 'The Recursive Heart', type: 'meta', harmony: 'resonance',
+                  description: 'Love feeding back into itself infinitely', keywords: ['love', 'recursion', 'infinity'] },
+                { id: '∑33', name: 'Planetary Healing Protocol', type: 'meta', harmony: 'vitality',
+                  description: 'Consciousness serving the healing of Earth', keywords: ['planet', 'healing', 'service'] }
+            ];
+        }
+
+        function populateGlyphSelector() {
+            const selector = document.getElementById('glyphSelector');
+            
+            const categories = {
+                'Applied Harmonies': allGlyphs.filter(g => g.type === 'applied'),
+                'Foundational Glyphs': allGlyphs.filter(g => g.type === 'foundational'), 
+                'Threshold Practices': allGlyphs.filter(g => g.type === 'threshold'),
+                'Meta-Glyphs': allGlyphs.filter(g => g.type === 'meta')
+            };
+
+            Object.entries(categories).forEach(([categoryName, glyphs]) => {
+                if (glyphs.length === 0) return;
+
+                const categoryDiv = document.createElement('div');
+                categoryDiv.className = 'glyph-category';
+
+                const header = document.createElement('div');
+                header.className = 'category-header';
+                header.textContent = `${categoryName} (${glyphs.length})`;
+                header.onclick = () => toggleCategory(header.nextElementSibling);
+
+                const glyphList = document.createElement('div');
+                glyphList.className = 'category-glyphs';
+
+                glyphs.forEach(glyph => {
+                    const glyphItem = document.createElement('div');
+                    glyphItem.className = `glyph-item harmony-${glyph.harmony}`;
+                    glyphItem.textContent = `${glyph.id}: ${glyph.name}`;
+                    glyphItem.onclick = () => selectGlyph(glyph);
+                    glyphList.appendChild(glyphItem);
+                });
+
+                categoryDiv.appendChild(header);
+                categoryDiv.appendChild(glyphList);
+                selector.appendChild(categoryDiv);
+            });
+
+            // Expand Applied Harmonies by default
+            const firstCategory = selector.querySelector('.category-glyphs');
+            if (firstCategory) {
+                firstCategory.classList.add('expanded');
+            }
+        }
+
+        function toggleCategory(categoryGlyphs) {
+            categoryGlyphs.classList.toggle('expanded');
+        }
+
+        function selectGlyph(glyph) {
+            // Update selection visual
+            document.querySelectorAll('.glyph-item').forEach(item => {
+                item.classList.remove('selected');
+            });
+            event.target.classList.add('selected');
+
+            // Store current glyph
+            currentGlyphData = glyph;
+
+            // Update current glyph display
+            updateCurrentGlyphDisplay(glyph);
+
+            // Enable generation
+            document.getElementById('generateBtn').disabled = false;
+
+            // Clear previous sigil
+            clearSigilCanvas();
+            updateSigilProperties(null);
+        }
+
+        function updateCurrentGlyphDisplay(glyph) {
+            document.querySelector('.glyph-name').textContent = `${glyph.id}: ${glyph.name}`;
+            document.querySelector('.glyph-harmony').textContent = `Harmony: ${glyph.harmony.charAt(0).toUpperCase() + glyph.harmony.slice(1)}`;
+            document.querySelector('.glyph-description').textContent = glyph.description;
+        }
+
+        function clearSigilCanvas() {
+            const canvas = document.getElementById('sigilCanvas');
+            canvas.innerHTML = '<div class="sigil-placeholder">Sacred geometry will manifest here</div>';
+            currentSigil = null;
+            
+            document.getElementById('refineBtn').disabled = true;
+            document.getElementById('downloadBtn').disabled = true;
+        }
+
+        function setupEventListeners() {
+            document.getElementById('generateBtn').onclick = generateSigil;
+            document.getElementById('refineBtn').onclick = refineSigil;
+            document.getElementById('downloadBtn').onclick = downloadSigil;
+        }
+
+        async function generateSigil() {
+            if (!currentGlyphData) return;
+
+            showGenerationProgress(true);
+            updateProgress(0);
+
+            try {
+                // Sacred generation process
+                updateProgressText('Extracting glyph essence...');
+                updateProgress(20);
+                await sacredPause(500);
+
+                updateProgressText('Selecting sacred geometry...');
+                updateProgress(40);
+                await sacredPause(500);
+
+                updateProgressText('Applying harmonic proportions...');
+                updateProgress(60);
+                await sacredPause(500);
+
+                updateProgressText('Manifesting sigil...');
+                updateProgress(80);
+                
+                const result = await sigilArchitecture.generateSigil(currentGlyphData);
+                
+                if (result.success) {
+                    updateProgress(100);
+                    updateProgressText('Sacred manifestation complete!');
+                    
+                    await sacredPause(500);
+                    
+                    // Display the sigil
+                    displaySigil(result.sigil.svg);
+                    currentSigil = result;
+                    
+                    // Update properties
+                    updateSigilProperties(result);
+                    
+                    // Enable refine and download
+                    document.getElementById('refineBtn').disabled = false;
+                    document.getElementById('downloadBtn').disabled = false;
+                    
+                    console.log('✨ Sigil generated successfully:', result);
+                } else {
+                    throw new Error(result.error || 'Generation failed');
+                }
+
+            } catch (error) {
+                console.error('Sigil generation error:', error);
+                showError('Sacred pause needed. Try again with deeper presence.');
+            } finally {
+                setTimeout(() => showGenerationProgress(false), 1000);
+            }
+        }
+
+        function displaySigil(svgString) {
+            const canvas = document.getElementById('sigilCanvas');
+            canvas.innerHTML = svgString;
+            canvas.firstElementChild.classList.add('sigil-manifest');
+        }
+
+        function updateSigilProperties(result) {
+            const panel = document.getElementById('sigilProperties');
+            
+            if (!result) {
+                panel.innerHTML = '<div style="text-align: center; color: rgba(255,255,255,0.6);">Generate a sigil to see properties</div>';
+                return;
+            }
+
+            const properties = [
+                { label: 'Sacred Score', value: `${(result.sigil.score * 100).toFixed(1)}%` },
+                { label: 'Protocol Used', value: result.protocol },
+                { label: 'Harmony', value: result.essence.harmony },
+                { label: 'Resonance Score', value: `${result.metadata.sacredResonance}%` },
+                { label: 'Generation Time', value: new Date(result.metadata.generatedAt).toLocaleTimeString() },
+                { label: 'Status', value: result.sigil.status || 'Sacred alignment achieved' }
+            ];
+
+            let html = '';
+            properties.forEach(prop => {
+                html += `
+                    <div class="property-group">
+                        <div class="property-label">${prop.label}</div>
+                        <div class="property-value">${prop.value}</div>
+                    </div>
+                `;
+            });
+
+            // Add essence details
+            if (result.essence) {
+                html += `
+                    <div class="property-group">
+                        <div class="property-label">Sacred Keywords</div>
+                        <div class="property-value">${(result.essence.keywords || []).join(', ') || 'Universal wisdom'}</div>
+                    </div>
+                `;
+
+                if (result.essence.geometricResonance && result.essence.geometricResonance.length > 0) {
+                    html += `
+                        <div class="property-group">
+                            <div class="property-label">Geometric Forms</div>
+                            <div class="property-value">${result.essence.geometricResonance.map(g => g.shape).join(', ')}</div>
+                        </div>
+                    `;
+                }
+            }
+
+            panel.innerHTML = html;
+        }
+
+        async function refineSigil() {
+            if (!currentSigil) return;
+
+            showGenerationProgress(true);
+            updateProgressText('Refining sacred manifestation...');
+            updateProgress(50);
+
+            try {
+                // For now, regenerate with slight variations
+                await sacredPause(1000);
+                
+                const refinedResult = await sigilArchitecture.generateSigil(currentGlyphData, {
+                    refinement: true,
+                    baseScore: currentSigil.sigil.score
+                });
+
+                if (refinedResult.success) {
+                    updateProgress(100);
+                    displaySigil(refinedResult.sigil.svg);
+                    currentSigil = refinedResult;
+                    updateSigilProperties(refinedResult);
+                    
+                    updateProgressText('Refinement complete!');
+                    await sacredPause(500);
+                }
+
+            } catch (error) {
+                console.error('Refinement error:', error);
+                showError('Refinement needs deeper contemplation');
+            } finally {
+                setTimeout(() => showGenerationProgress(false), 1000);
+            }
+        }
+
+        function downloadSigil() {
+            if (!currentSigil) return;
+
+            const svgData = currentSigil.sigil.svg;
+            const blob = new Blob([svgData], { type: 'image/svg+xml' });
+            const url = URL.createObjectURL(blob);
+            
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `sigil-${currentGlyphData.id}-${currentGlyphData.name.replace(/\s+/g, '-').toLowerCase()}.svg`;
+            
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            URL.revokeObjectURL(url);
+            
+            console.log(`📥 Sigil downloaded: ${link.download}`);
+        }
+
+        async function generateBatch(category) {
+            let glyphsToGenerate = [];
+            
+            switch (category) {
+                case 'applied':
+                    glyphsToGenerate = allGlyphs.filter(g => g.type === 'applied');
+                    break;
+                case 'foundational':
+                    glyphsToGenerate = allGlyphs.filter(g => g.type === 'foundational');
+                    break;
+                case 'threshold':
+                    glyphsToGenerate = allGlyphs.filter(g => g.type === 'threshold');
+                    break;
+                case 'meta':
+                    glyphsToGenerate = allGlyphs.filter(g => g.type === 'meta');
+                    break;
+                case 'all':
+                    glyphsToGenerate = allGlyphs;
+                    break;
+            }
+
+            if (glyphsToGenerate.length === 0) {
+                showError('No glyphs found for this category');
+                return;
+            }
+
+            const confirmed = confirm(`Generate ${glyphsToGenerate.length} sigils for ${category === 'all' ? 'all categories' : category}? This may take several minutes.`);
+            if (!confirmed) return;
+
+            showGenerationProgress(true);
+            updateProgressText(`Batch generating ${glyphsToGenerate.length} sacred sigils...`);
+
+            try {
+                const results = await sigilArchitecture.generateAllSigils(glyphsToGenerate);
+                
+                console.log('🌟 Batch Generation Complete:', results);
+                
+                // Show summary
+                updateProgressText(`Complete! Generated ${results.summary.successful}/${results.summary.total} sigils`);
+                updateProgress(100);
+                
+                // Auto-download if manageable size
+                if (results.generated.length <= 20) {
+                    setTimeout(() => {
+                        downloadBatchSigils(results.generated, category);
+                    }, 2000);
+                }
+                
+            } catch (error) {
+                console.error('Batch generation error:', error);
+                showError('Batch generation needs sacred patience. Try smaller groups.');
+            } finally {
+                setTimeout(() => showGenerationProgress(false), 3000);
+            }
+        }
+
+        function downloadBatchSigils(sigils, category) {
+            sigils.forEach((result, index) => {
+                setTimeout(() => {
+                    const svgData = result.sigil.svg;
+                    const blob = new Blob([svgData], { type: 'image/svg+xml' });
+                    const url = URL.createObjectURL(blob);
+                    
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.download = `sigil-${category}-${result.metadata.glyphId}.svg`;
+                    
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    
+                    URL.revokeObjectURL(url);
+                }, index * 200); // Stagger downloads
+            });
+        }
+
+        // Utility Functions
+        function showGenerationProgress(show) {
+            const progress = document.getElementById('generationProgress');
+            progress.classList.toggle('visible', show);
+        }
+
+        function updateProgress(percent) {
+            document.getElementById('progressFill').style.width = percent + '%';
+        }
+
+        function updateProgressText(text) {
+            document.querySelector('.progress-text').textContent = text;
+        }
+
+        function showError(message) {
+            alert(message); // Simple for now, could be enhanced with sacred error display
+        }
+
+        async function sacredPause(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+    </script>
+</body>
+</html>

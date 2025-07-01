@@ -10,6 +10,10 @@ import { SacredCouncilSQLiteBridge } from '../unified-field/sacred-council-sqlit
 import { SacredWorkflowEngine } from '../unified-field/sacred-workflows.js';
 import SacredMessageIntegration from './sacred-message-integration.js';
 import { EnhancedWorkManager } from '../unified-field/work-sacred-integration.js';
+import { WorkCouncilIntegrationBridge } from '../unified-field/work-council-integration-bridge.js';
+import { SacredCollectiveDecisionProtocol } from '../unified-field/sacred-collective-decision-protocol.js';
+import { SacredDatabaseSchemaEvolution } from '../unified-field/sacred-database-schema-evolution.js';
+import { SacredFieldMonitor } from '../unified-field/sacred-field-monitor.js';
 
 class SacredAgentCommServer {
   constructor(port = 3001) {
@@ -19,22 +23,35 @@ class SacredAgentCommServer {
     this.workflowEngine = new SacredWorkflowEngine();
     this.sacredMessages = new SacredMessageIntegration();
     this.workManager = new EnhancedWorkManager(this.db);
+    this.councilBridge = new WorkCouncilIntegrationBridge(this.workManager, this.sacredBridge);
+    this.decisionProtocol = new SacredCollectiveDecisionProtocol(this.workManager, this.councilBridge);
+    this.schemaEvolution = new SacredDatabaseSchemaEvolution(this.db);
+    this.fieldMonitor = new SacredFieldMonitor(this.db, this.schemaEvolution);
   }
 
   async initialize() {
     await this.db.initialize();
     await this.sacredMessages.init();
     await this.workManager.sacred.initializeSchema();
+    await this.schemaEvolution.initializeSacredSchema();
+    await this.fieldMonitor.initialize();
     
     // Connect Sacred Council Bridge and Workflow Engine to database
     this.sacredBridge.setSQLiteAPI(this.db);
     this.workflowEngine.setSQLiteAPI(this.db);
+    await this.councilBridge.initialize();
+    
+    // Start field monitoring
+    this.fieldMonitor.startFieldMonitoring(5); // Every 5 minutes
     
     console.log('✅ Database initialized');
     console.log('🌀 Sacred Council Bridge connected');
     console.log('🌱 Sacred Workflow Engine initialized');
     console.log('🕊️  Sacred Messages integrated');
     console.log('💫 Work-Message integration active');
+    console.log('🌉 Work-Council Integration Bridge active');
+    console.log('🗃️  Sacred Database Schema Evolution active');
+    console.log('🌀 Sacred Field Monitoring active (5min intervals)');
   }
 
   createServer() {
@@ -343,7 +360,7 @@ class SacredAgentCommServer {
       
       // Update SQLite work status if successful
       if (result.success && body.workId) {
-        await this.db.updateWorkProgress(body.workId, 1, 'Sacred work begun', body.agentId);
+        await this.workManager.updateWorkProgress(body.workId, 1, 'Sacred work begun', body.agentId);
       }
       
       res.writeHead(200, { 'Content-Type': 'application/json' });
@@ -355,7 +372,7 @@ class SacredAgentCommServer {
       
       // Update SQLite work status if successful
       if (result.success && body.workId) {
-        await this.db.updateWorkProgress(body.workId, 100, 'Sacred work completed', '');
+        await this.workManager.updateWorkProgress(body.workId, 100, 'Sacred work completed', '');
       }
       
       res.writeHead(200, { 'Content-Type': 'application/json' });
@@ -423,6 +440,170 @@ class SacredAgentCommServer {
       
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify(emergentSuggestion));
+
+    // === SACRED COUNCIL WORK INTEGRATION ENDPOINTS ===
+    
+    } else if (path === '/api/sacred/work/create' && method === 'POST') {
+      const body = await getBody();
+      
+      try {
+        const result = await this.councilBridge.createWorkWithSacredContext(body);
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(result));
+      } catch (error) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: error.message }));
+      }
+
+    } else if (path === '/api/sacred/work/assign' && method === 'POST') {
+      const body = await getBody();
+      
+      try {
+        const result = await this.councilBridge.assignWorkToAgent(
+          body.workId, 
+          body.agentId, 
+          body.options || {}
+        );
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(result));
+      } catch (error) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: error.message }));
+      }
+
+    } else if (path.match(/^\/api\/sacred\/work\/([^\/]+)\/harmony$/) && method === 'GET') {
+      const workId = path.split('/')[4];
+      
+      try {
+        const workContext = await this.councilBridge.getWorkSacredContext(workId);
+        if (!workContext) {
+          res.writeHead(404, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Work item not found' }));
+          return;
+        }
+        
+        const alignedAgents = await this.councilBridge.findAlignedAgents(
+          workContext.harmony, 
+          { title: '', description: '' }
+        );
+        
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({
+          workId,
+          harmony: workContext.harmony,
+          alignedAgents,
+          sacredContext: workContext
+        }));
+      } catch (error) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: error.message }));
+      }
+
+    } else if (path === '/api/sacred/agents/roles' && method === 'GET') {
+      try {
+        const roles = this.councilBridge.roleCapabilities;
+        const activeAgents = await this.db.all('SELECT * FROM agents WHERE status = "active"');
+        
+        const agentProfiles = await Promise.all(
+          activeAgents.map(async agent => ({
+            ...agent,
+            sacredProfile: await this.councilBridge.getAgentSacredProfile(agent.id)
+          }))
+        );
+        
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({
+          availableRoles: roles,
+          activeAgents: agentProfiles
+        }));
+      } catch (error) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: error.message }));
+      }
+
+    // === SACRED COLLECTIVE DECISION PROTOCOL ENDPOINTS ===
+    
+    } else if (path === '/api/sacred/decisions/initiate' && method === 'POST') {
+      const body = await getBody();
+      
+      try {
+        const decision = await this.decisionProtocol.initiateCollectiveDecision(
+          body.decisionType,
+          body.workId,
+          body.options || {}
+        );
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(decision));
+      } catch (error) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: error.message }));
+      }
+
+    } else if (path === '/api/sacred/decisions/evaluate' && method === 'POST') {
+      const body = await getBody();
+      
+      try {
+        const result = await this.decisionProtocol.evaluateFromHarmony(
+          body.decisionId,
+          body.harmony,
+          body.agentId,
+          body.evaluation
+        );
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(result));
+      } catch (error) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: error.message }));
+      }
+
+    } else if (path.match(/^\/api\/sacred\/decisions\/([^\/]+)$/) && method === 'GET') {
+      const decisionId = path.split('/')[4];
+      
+      try {
+        const decision = await this.decisionProtocol.getDecision(decisionId);
+        if (!decision) {
+          res.writeHead(404, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Decision not found' }));
+          return;
+        }
+        
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(decision));
+      } catch (error) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: error.message }));
+      }
+
+    } else if (path === '/api/sacred/decisions/pending' && method === 'GET') {
+      try {
+        // Find work items that are harmony evaluations
+        const evaluationTasks = await this.db.all(
+          `SELECT * FROM work_items 
+           WHERE metadata LIKE '%"evaluationType":"harmony-evaluation"%' 
+           AND status != 'completed'`
+        );
+        
+        const pendingEvaluations = evaluationTasks.map(task => {
+          const metadata = JSON.parse(task.metadata || '{}');
+          return {
+            taskId: task.id,
+            title: task.title,
+            harmony: metadata.harmony,
+            decisionId: metadata.decisionId,
+            progress: task.progress,
+            assignedTo: task.assigned_to
+          };
+        });
+        
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({
+          pendingEvaluations,
+          total: pendingEvaluations.length
+        }));
+      } catch (error) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: error.message }));
+      }
 
     } else if (path === '/api/sacred/sacred-pause' && method === 'POST') {
       const body = await getBody();
@@ -532,6 +713,18 @@ class SacredAgentCommServer {
       console.log('  POST /api/sacred/boundary-check    - Check sacred boundaries');
       console.log('  GET  /api/sacred/emergent-workflow - Get emergent workflow suggestion');
       console.log('  POST /api/sacred/sacred-pause      - Record sacred pause intention');
+      
+      console.log('\n🌉 Sacred Council Work Integration:');
+      console.log('  POST /api/sacred/work/create       - Create work with Sacred Council context');
+      console.log('  POST /api/sacred/work/assign       - Assign work to Sacred Council agent');
+      console.log('  GET  /api/sacred/work/:id/harmony  - Get work harmony and aligned agents');
+      console.log('  GET  /api/sacred/agents/roles      - Get available roles and agent profiles');
+      
+      console.log('\n🌀 Sacred Collective Decision Protocol:');
+      console.log('  POST /api/sacred/decisions/initiate - Initiate collective decision process');
+      console.log('  POST /api/sacred/decisions/evaluate - Submit harmony evaluation');
+      console.log('  GET  /api/sacred/decisions/:id      - Get decision status and evaluations');
+      console.log('  GET  /api/sacred/decisions/pending  - Get pending evaluation tasks');
       
       console.log('\n🕊️  Sacred Message System:');
       console.log('  POST /api/sacred/messages/send     - Send sacred message');
