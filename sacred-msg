@@ -1,3 +1,0 @@
-#!/bin/bash
-cd /home/tstoltz/evolving-resonant-cocreation
-exec node agent-comms-sqlite/sacred-message-cli.js "$@"

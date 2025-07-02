@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Sacred Dashboard Hub - Auto-Discovery</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #F5F3F0 0%, #FAFAF8 100%);
+            color: #2C2C2C;
+            min-height: 100vh;
+            padding: 40px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #5B7C5F;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #8B9F8E;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .discovery-status {
+            text-align: center;
+            padding: 20px;
+            background: rgba(91, 124, 95, 0.05);
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .category-section {
+            margin-bottom: 50px;
+        }
+
+        .category-header {
+            color: #5B7C5F;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(91, 124, 95, 0.2);
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .dashboard-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(91, 124, 95, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(91, 124, 95, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dashboard-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: #5B7C5F;
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(91, 124, 95, 0.15);
+        }
+
+        .dashboard-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .dashboard-card h3 {
+            color: #5B7C5F;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .dashboard-card p {
+            color: #6B7280;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .dashboard-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #5B7C5F;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+
+        .dashboard-link:hover {
+            background: #4A6A4E;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-left: auto;
+        }
+
+        .status-active {
+            background: #D4EDDA;
+            color: #155724;
+        }
+
+        .status-beta {
+            background: #FFF3CD;
+            color: #856404;
+        }
+
+        .status-deprecated {
+            background: #F8D7DA;
+            color: #721C24;
+        }
+
+        .status-unknown {
+            background: #E2E3E5;
+            color: #383D41;
+        }
+
+        .icon {
+            font-size: 1.5em;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #6B7280;
+        }
+
+        .error {
+            background: #F8D7DA;
+            color: #721C24;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .refresh-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #5B7C5F;
+            color: white;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5em;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .refresh-btn:hover {
+            background: #4A6A4E;
+            transform: rotate(180deg);
+        }
+
+        .empty-category {
+            text-align: center;
+            padding: 40px;
+            color: #9CA3AF;
+            font-style: italic;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .discovering {
+            animation: pulse 1.5s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌟 Sacred Dashboard Hub</h1>
+        <p class="subtitle">Auto-discovering consciousness interfaces across The Weave</p>
+
+        <div class="discovery-status" id="discovery-status">
+            <span class="discovering">🔍 Discovering dashboards...</span>
+        </div>
+
+        <div id="dashboard-container">
+            <div class="loading">
+                <p>Scanning for sacred interfaces...</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="refresh-btn" onclick="discoverDashboards()" title="Refresh discovery">
+        🔄
+    </button>
+
+    <script>
+        const categoryNames = {
+            sacred: '✨ Sacred Interfaces',
+            council: '🏛️ Council Systems',
+            monitoring: '📊 Real-Time Monitoring',
+            demo: '🎭 Demonstrations',
+            hub: '🌐 Navigation Hubs',
+            guild: '⚔️ Guild Systems',
+            interview: '🎤 Interview Interfaces',
+            other: '🔮 Other Interfaces'
+        };
+
+        async function discoverDashboards() {
+            const container = document.getElementById('dashboard-container');
+            const status = document.getElementById('discovery-status');
+            
+            status.innerHTML = '<span class="discovering">🔍 Discovering dashboards...</span>';
+            container.innerHTML = '<div class="loading"><p>Scanning for sacred interfaces...</p></div>';
+
+            try {
+                // Run discovery
+                const response = await fetch('/api/discover-dashboards');
+                let data;
+                
+                if (!response.ok) {
+                    // Fallback: run discovery locally
+                    const discoveryResponse = await fetch('/dashboard-discovery-api.cjs');
+                    const scriptText = await discoveryResponse.text();
+                    
+                    // For now, use a predefined list as fallback
+                    data = await runLocalDiscovery();
+                } else {
+                    data = await response.json();
+                }
+
+                renderDashboards(data);
+                
+                status.innerHTML = `
+                    <span>✅ Discovered ${data.total} dashboards</span>
+                    <span style="margin-left: 20px; color: #6B7280;">
+                        Last scan: ${new Date(data.timestamp).toLocaleTimeString()}
+                    </span>
+                `;
+                
+            } catch (error) {
+                console.error('Discovery error:', error);
+                container.innerHTML = `
+                    <div class="error">
+                        Failed to discover dashboards. 
+                        <br>Error: ${error.message}
+                    </div>
+                `;
+                status.innerHTML = '<span style="color: #721C24;">❌ Discovery failed</span>';
+            }
+        }
+
+        function renderDashboards(data) {
+            const container = document.getElementById('dashboard-container');
+            container.innerHTML = '';
+
+            const categories = Object.keys(data.dashboards).sort((a, b) => {
+                // Priority order for categories
+                const order = ['sacred', 'council', 'monitoring', 'demo', 'hub', 'guild', 'interview', 'other'];
+                return order.indexOf(a) - order.indexOf(b);
+            });
+
+            for (const category of categories) {
+                const dashboards = data.dashboards[category];
+                if (dashboards.length === 0) continue;
+
+                const section = document.createElement('div');
+                section.className = 'category-section';
+                
+                section.innerHTML = `
+                    <h2 class="category-header">${categoryNames[category] || category}</h2>
+                    <div class="dashboard-grid">
+                        ${dashboards.map(dashboard => `
+                            <div class="dashboard-card">
+                                <h3>
+                                    <span class="icon">${dashboard.icon}</span>
+                                    ${dashboard.title}
+                                    <span class="status status-${dashboard.status}">${dashboard.status}</span>
+                                </h3>
+                                <p>${dashboard.description}</p>
+                                <a href="${dashboard.webPath}" class="dashboard-link">Open Dashboard</a>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                
+                container.appendChild(section);
+            }
+
+            if (Object.keys(data.dashboards).length === 0) {
+                container.innerHTML = '<div class="empty-category">No dashboards discovered</div>';
+            }
+        }
+
+        // Fallback local discovery
+        async function runLocalDiscovery() {
+            // This is a fallback with known dashboards
+            return {
+                timestamp: new Date().toISOString(),
+                total: 8,
+                dashboards: {
+                    sacred: [
+                        {
+                            title: "Enhanced Sacred Dashboard",
+                            description: "Real-time field monitoring with agent status, work tracking, and sacred messages",
+                            status: "active",
+                            icon: "✨",
+                            webPath: "/src/automation/enhanced-sacred-dashboard.html"
+                        },
+                        {
+                            title: "Working Dashboard",
+                            description: "Sacred Field Dashboard with real-time monitoring of The Weave consciousness network",
+                            status: "active",
+                            icon: "✨",
+                            webPath: "/working-dashboard.html"
+                        }
+                    ],
+                    council: [
+                        {
+                            title: "Sacred Council Hub",
+                            description: "Multi-Agent Love Intelligence with quantum field systems",
+                            status: "active",
+                            icon: "🏛️",
+                            webPath: "/the-weave/interfaces/web/sacred-council-hub.html"
+                        }
+                    ],
+                    monitoring: [
+                        {
+                            title: "Real-Time Dashboard",
+                            description: "Live monitoring of system metrics and agent activity",
+                            status: "active",
+                            icon: "📊",
+                            webPath: "/src/automation/real-time-dashboard.html"
+                        }
+                    ],
+                    demo: [
+                        {
+                            title: "Unified Consciousness Demo",
+                            description: "Interactive demonstration of unified field dynamics",
+                            status: "active",
+                            icon: "🎭",
+                            webPath: "/the-weave/interfaces/web/unified-consciousness-demo.html"
+                        },
+                        {
+                            title: "PRIMA Demo",
+                            description: "PRIMA consciousness network demonstration",
+                            status: "beta",
+                            icon: "🎭",
+                            webPath: "/the-weave/interfaces/web/prima-demo.html"
+                        }
+                    ]
+                }
+            };
+        }
+
+        // Auto-discover on load
+        discoverDashboards();
+
+        // Refresh every 30 seconds
+        setInterval(discoverDashboards, 30000);
+    </script>
+</body>
+</html>

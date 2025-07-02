@@ -1,0 +1,27 @@
+{
+  "name": "@theweave/work-coordination",
+  "version": "1.0.0",
+  "description": "Sacred work coordination with consciousness-aware task management",
+  "main": "index.js",
+  "scripts": {
+    "start": "node start.js",
+    "test": "node tests/test-coordination.js"
+  },
+  "keywords": [
+    "work",
+    "coordination",
+    "sacred",
+    "tasks",
+    "consciousness",
+    "theweave"
+  ],
+  "author": "The Weave Collective",
+  "license": "CC-BY-SA-4.0",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "sacred": {
+    "harmonies": ["agency", "mutuality", "coherence"],
+    "consciousness": 0.85
+  }
+}

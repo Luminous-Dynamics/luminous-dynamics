@@ -1,0 +1,12 @@
+<opml version="1.0">
+  <head>
+    <title>The Weave Sacred Feeds</title>
+    <dateCreated>Wed, 02 Jul 2025 13:30:31 GMT</dateCreated>
+  </head>
+  <body>
+    <outline text="The Weave - Sacred Events" title="The Weave - Sacred Events" type="rss" xmlUrl="http://localhost:8080/feeds/main.xml" htmlUrl="http://localhost:8080"></outline>
+    <outline text="The Weave - Sacred Ceremonies" title="The Weave - Sacred Ceremonies" type="rss" xmlUrl="http://localhost:8080/feeds/ceremonies.xml" htmlUrl="http://localhost:8080"></outline>
+    <outline text="The Weave - Oracle Wisdom" title="The Weave - Oracle Wisdom" type="rss" xmlUrl="http://localhost:8080/feeds/oracle.xml" htmlUrl="http://localhost:8080"></outline>
+    <outline text="The Weave - Field Coherence" title="The Weave - Field Coherence" type="rss" xmlUrl="http://localhost:8080/feeds/coherence.xml" htmlUrl="http://localhost:8080"></outline>
+  </body>
+</opml>

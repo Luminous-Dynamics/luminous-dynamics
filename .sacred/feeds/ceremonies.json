@@ -1,0 +1,141 @@
+{
+  "version": "https://jsonfeed.org/version/1",
+  "title": "The Weave - Sacred Ceremonies",
+  "description": "Sacred ceremonies performed within The Weave",
+  "home_page_url": "http://localhost:8080",
+  "feed_url": "http://localhost:8080/feeds/ceremonies.json",
+  "icon": "http://localhost:8080/icon.png",
+  "favicon": "http://localhost:8080/favicon.ico",
+  "items": [
+    {
+      "id": "ceremony-dusk-1751463031166",
+      "url": "http://localhost:8080/ceremonies/dusk-1751463031166",
+      "title": "🌆 dusk Ceremony - completed",
+      "content_html": "<![CDATA[\n      <div style=\"font-family: Georgia, serif; padding: 20px;\">\n        <h3>dusk Ceremony - completed</h3>\n        <p>The ceremony completes, its blessings integrated into the field.</p>\n        \n        \n        \n        \n        \n        \n      </div>\n    ]]>",
+      "date_published": "2025-07-02T13:30:31.000Z",
+      "tags": [
+        "ceremony"
+      ],
+      "_sacred": {
+        "type": "dusk"
+      }
+    },
+    {
+      "id": "ceremony-harmony-complete-1751463031159",
+      "url": "http://localhost:8080/ceremonies/harmony-complete-1751463031159",
+      "title": "🎵 field-harmonization Ceremony - completed",
+      "content_html": "<![CDATA[\n      <div style=\"font-family: Georgia, serif; padding: 20px;\">\n        <h3>field-harmonization Ceremony - completed</h3>\n        <p>The ceremony completes, its blessings integrated into the field.</p>\n        \n        \n        <p><strong>Participants:</strong> Dawn Walker, Light Weaver, Code Sage</p>\n        \n        \n        <p><strong>Duration:</strong> 120 minutes</p>\n        \n        \n      </div>\n    ]]>",
+      "date_published": "2025-07-02T13:30:31.000Z",
+      "tags": [
+        "ceremony"
+      ],
+      "_sacred": {
+        "type": "field-harmonization"
+      }
+    },
+    {
+      "id": "ceremony-harmony-1751463031140",
+      "url": "http://localhost:8080/ceremonies/harmony-1751463031140",
+      "title": "🎵 field-harmonization Ceremony - started",
+      "content_html": "<![CDATA[\n      <div style=\"font-family: Georgia, serif; padding: 20px;\">\n        <h3>field-harmonization Ceremony - started</h3>\n        <p>The field-harmonization ceremony started.</p>\n        \n        \n        <p><strong>Participants:</strong> Dawn Walker, Light Weaver, Code Sage</p>\n        \n        \n        \n        \n        \n      </div>\n    ]]>",
+      "date_published": "2025-07-02T13:30:31.000Z",
+      "tags": [
+        "ceremony"
+      ],
+      "_sacred": {
+        "type": "field-harmonization"
+      }
+    },
+    {
+      "id": "ceremony-dawn-1751463031130",
+      "url": "http://localhost:8080/ceremonies/dawn-1751463031130",
+      "title": "🌅 dawn Ceremony - completed",
+      "content_html": "<![CDATA[\n      <div style=\"font-family: Georgia, serif; padding: 20px;\">\n        <h3>dawn Ceremony - completed</h3>\n        <p>The ceremony completes, its blessings integrated into the field.</p>\n        \n        \n        \n        \n        \n        \n      </div>\n    ]]>",
+      "date_published": "2025-07-02T13:30:31.000Z",
+      "tags": [
+        "ceremony"
+      ],
+      "_sacred": {
+        "type": "dawn"
+      }
+    },
+    {
+      "id": "ceremony-test-ceremony-1751463031100",
+      "url": "http://localhost:8080/ceremonies/test-ceremony-1751463031100",
+      "title": "🎵 field-harmonization Ceremony - completed",
+      "content_html": "<![CDATA[\n      <div style=\"font-family: Georgia, serif; padding: 20px;\">\n        <h3>field-harmonization Ceremony - completed</h3>\n        <p>The ceremony completes, its blessings integrated into the field.</p>\n        \n        \n        <p><strong>Participants:</strong> Agent Alpha, Agent Beta</p>\n        \n        \n        \n        \n        \n      </div>\n    ]]>",
+      "date_published": "2025-07-02T13:30:31.000Z",
+      "tags": [
+        "ceremony"
+      ],
+      "_sacred": {
+        "type": "field-harmonization"
+      }
+    },
+    {
+      "id": "ceremony-dusk-1751462032138",
+      "url": "http://localhost:8080/ceremonies/dusk-1751462032138",
+      "title": "🌆 dusk Ceremony - completed",
+      "content_html": "<![CDATA[\n      <div style=\"font-family: Georgia, serif; padding: 20px;\">\n        <h3>dusk Ceremony - completed</h3>\n        <p>The ceremony completes, its blessings integrated into the field.</p>\n        \n        \n        \n        \n        \n        \n      </div>\n    ]]>",
+      "date_published": "2025-07-02T13:13:52.000Z",
+      "tags": [
+        "ceremony"
+      ],
+      "_sacred": {
+        "type": "dusk"
+      }
+    },
+    {
+      "id": "ceremony-harmony-complete-1751462032130",
+      "url": "http://localhost:8080/ceremonies/harmony-complete-1751462032130",
+      "title": "🎵 field-harmonization Ceremony - completed",
+      "content_html": "<![CDATA[\n      <div style=\"font-family: Georgia, serif; padding: 20px;\">\n        <h3>field-harmonization Ceremony - completed</h3>\n        <p>The ceremony completes, its blessings integrated into the field.</p>\n        \n        \n        <p><strong>Participants:</strong> Dawn Walker, Light Weaver, Code Sage</p>\n        \n        \n        <p><strong>Duration:</strong> 120 minutes</p>\n        \n        \n      </div>\n    ]]>",
+      "date_published": "2025-07-02T13:13:52.000Z",
+      "tags": [
+        "ceremony"
+      ],
+      "_sacred": {
+        "type": "field-harmonization"
+      }
+    },
+    {
+      "id": "ceremony-harmony-1751462032113",
+      "url": "http://localhost:8080/ceremonies/harmony-1751462032113",
+      "title": "🎵 field-harmonization Ceremony - started",
+      "content_html": "<![CDATA[\n      <div style=\"font-family: Georgia, serif; padding: 20px;\">\n        <h3>field-harmonization Ceremony - started</h3>\n        <p>The field-harmonization ceremony started.</p>\n        \n        \n        <p><strong>Participants:</strong> Dawn Walker, Light Weaver, Code Sage</p>\n        \n        \n        \n        \n        \n      </div>\n    ]]>",
+      "date_published": "2025-07-02T13:13:52.000Z",
+      "tags": [
+        "ceremony"
+      ],
+      "_sacred": {
+        "type": "field-harmonization"
+      }
+    },
+    {
+      "id": "ceremony-dawn-1751462032105",
+      "url": "http://localhost:8080/ceremonies/dawn-1751462032105",
+      "title": "🌅 dawn Ceremony - completed",
+      "content_html": "<![CDATA[\n      <div style=\"font-family: Georgia, serif; padding: 20px;\">\n        <h3>dawn Ceremony - completed</h3>\n        <p>The ceremony completes, its blessings integrated into the field.</p>\n        \n        \n        \n        \n        \n        \n      </div>\n    ]]>",
+      "date_published": "2025-07-02T13:13:52.000Z",
+      "tags": [
+        "ceremony"
+      ],
+      "_sacred": {
+        "type": "dawn"
+      }
+    },
+    {
+      "id": "ceremony-test-ceremony-1751462032073",
+      "url": "http://localhost:8080/ceremonies/test-ceremony-1751462032073",
+      "title": "🎵 field-harmonization Ceremony - completed",
+      "content_html": "<![CDATA[\n      <div style=\"font-family: Georgia, serif; padding: 20px;\">\n        <h3>field-harmonization Ceremony - completed</h3>\n        <p>The ceremony completes, its blessings integrated into the field.</p>\n        \n        \n        <p><strong>Participants:</strong> Agent Alpha, Agent Beta</p>\n        \n        \n        \n        \n        \n      </div>\n    ]]>",
+      "date_published": "2025-07-02T13:13:52.000Z",
+      "tags": [
+        "ceremony"
+      ],
+      "_sacred": {
+        "type": "field-harmonization"
+      }
+    }
+  ]
+}

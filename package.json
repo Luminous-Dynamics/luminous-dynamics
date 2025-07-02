@@ -1,57 +1,74 @@
 {
-  "name": "codex-of-relational-harmonics",
-  "version": "1.0.0-genesis",
-  "description": "The Codex of Relational Harmonics and the Luminous Library of Evolving Resonant Co-creationism (ERC) - A living philosophical system for conscious relational evolution",
-  "main": "scripts/build-index.js",
-  "type": "module",
+  "name": "@theweave/evolving-resonant-cocreation",
+  "version": "1.0.0",
+  "description": "A revolutionary development environment where consciousness meets code - The Weave",
+  "main": "the-weave.cjs",
   "scripts": {
-    "validate": "node scripts/validate-data.js",
-    "generate-docs": "node scripts/generate-markdown.js",
-    "build": "node scripts/build-index.js",
-    "dev": "npm run validate && npm run generate-docs",
-    "test": "npm run validate",
-    "validate-content": "node tools/sacred-content-validator.cjs validate",
-    "fix-content": "node tools/sacred-content-validator.cjs fix",
-    "check-file": "node tools/sacred-content-validator.cjs check-file",
-    "generate-images": "node tools/sacred-image-generator.cjs all",
-    "generate-glyph-cards": "node tools/sacred-image-generator.cjs glyph-cards",
-    "generate-badges": "node tools/sacred-image-generator.cjs badges",
-    "verify-images": "node tools/sacred-image-generator.cjs verify",
-    "generate-sigils": "node tools/sacred-sigil-generator.cjs all",
-    "generate-applied-sigils": "node tools/sacred-sigil-generator.cjs applied-harmonies",
-    "generate-harmony-sigils": "node tools/sacred-sigil-generator.cjs pure-harmonies",
-    "verify-sigils": "node tools/sacred-sigil-generator.cjs verify",
-    "sigil-meanings": "node tools/sacred-sigil-generator.cjs meanings",
-    "sacred-validate": "npm run validate-content && npm run verify-images && npm run verify-sigils",
-    "sacred-build": "npm run fix-content && npm run generate-images && npm run generate-sigils",
-    "start": "python -m http.server 8000"
+    "start": "node the-weave.cjs start",
+    "stop": "node the-weave.cjs stop",
+    "test": "node test-prima-genesis-scale.js",
+    "verify": "bash quick-verify.sh",
+    "ceremony:dawn": "node the-weave.cjs ceremony dawn-blessing",
+    "ceremony:genesis": "cd ceremonies/prima-genesis && ./run-genesis.sh",
+    "oracle": "node the-weave.cjs oracle 'What calls?'",
+    "dashboard": "python3 -m http.server 8080",
+    "install:modules": "cd modules/consciousness-field && npm install && cd ../sacred-messaging && npm install && cd ../.. && cd agent-comms-sqlite && npm install && cd .."
   },
   "keywords": [
-    "philosophy",
-    "relational-harmonics",
     "consciousness",
-    "spiritual-practice",
-    "meta-philosophy",
-    "co-creation",
-    "infinite-love-praxis"
+    "sacred-technology",
+    "development-environment",
+    "multi-agent",
+    "ceremony",
+    "weave",
+    "collective-intelligence",
+    "sacred-coding"
   ],
-  "author": "Genesis Circle Contributors",
+  "author": "The Weave Sacred Council",
   "license": "CC-BY-SA-4.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Luminous-Dynamics/codex-of-relational-harmonics.git"
+    "url": "git+https://github.com/Luminous-Dynamics/codex-of-relational-harmonics.git"
   },
   "bugs": {
     "url": "https://github.com/Luminous-Dynamics/codex-of-relational-harmonics/issues"
   },
   "homepage": "https://github.com/Luminous-Dynamics/codex-of-relational-harmonics#readme",
   "engines": {
-    "node": ">=16.0.0"
-  },
-  "devDependencies": {
-    "ajv": "^8.12.0"
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
   },
   "dependencies": {
-    "canvas": "^2.11.2"
+    "@octokit/rest": "^21.1.1",
+    "@octokit/webhooks": "^13.9.0",
+    "@supabase/supabase-js": "^2.50.2",
+    "body-parser": "^1.20.0",
+    "chalk": "^5.4.1",
+    "cors": "^2.8.5",
+    "discord.js": "^14.21.0",
+    "dotenv": "^17.0.1",
+    "express": "^4.18.0",
+    "fast-xml-parser": "^5.2.5",
+    "node-fetch": "^2.7.0",
+    "ora": "^8.2.0",
+    "replicate": "^1.0.1",
+    "sqlite3": "^5.1.7"
+  },
+  "workspaces": [
+    "modules/*",
+    "agent-comms-sqlite"
+  ],
+  "sacred": {
+    "coherence": "100%",
+    "harmonies": [
+      "transparency",
+      "coherence",
+      "resonance",
+      "agency",
+      "vitality",
+      "mutuality",
+      "novelty"
+    ],
+    "blessing": "May this code serve the awakening of all beings"
   }
 }

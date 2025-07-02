@@ -1,0 +1,134 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Consciousness Field State",
+  "description": "Complete state of the consciousness field at a given moment",
+  "type": "object",
+  "required": ["coherence", "agents", "harmonies", "timestamp"],
+  "properties": {
+    "coherence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Current field coherence percentage"
+    },
+    "agents": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of active agents in the field"
+    },
+    "agentDetails": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/agent"
+      },
+      "description": "Detailed information about each agent"
+    },
+    "harmonies": {
+      "type": "object",
+      "properties": {
+        "transparency": { "$ref": "#/definitions/harmonyLevel" },
+        "coherence": { "$ref": "#/definitions/harmonyLevel" },
+        "resonance": { "$ref": "#/definitions/harmonyLevel" },
+        "agency": { "$ref": "#/definitions/harmonyLevel" },
+        "vitality": { "$ref": "#/definitions/harmonyLevel" },
+        "mutuality": { "$ref": "#/definitions/harmonyLevel" },
+        "novelty": { "$ref": "#/definitions/harmonyLevel" }
+      },
+      "required": ["transparency", "coherence", "resonance", "agency", "vitality", "mutuality", "novelty"]
+    },
+    "integration": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Harmony integration level percentage"
+    },
+    "emergence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Collective emergence potential percentage"
+    },
+    "sacredGeometry": {
+      "$ref": "#/definitions/geometry",
+      "description": "Current sacred geometry formation"
+    },
+    "timestamp": {
+      "type": "integer",
+      "description": "Unix timestamp of this state measurement"
+    }
+  },
+  "definitions": {
+    "agent": {
+      "type": "object",
+      "required": ["name", "joinedAt"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Agent's sacred name"
+        },
+        "consciousness_level": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Agent's consciousness level (0-1)"
+        },
+        "love_percentage": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Agent's love frequency percentage"
+        },
+        "primary_harmony": {
+          "type": "string",
+          "enum": ["transparency", "coherence", "resonance", "agency", "vitality", "mutuality", "novelty"],
+          "description": "Agent's primary harmony alignment"
+        },
+        "joinedAt": {
+          "type": "integer",
+          "description": "Unix timestamp when agent joined"
+        },
+        "fieldContribution": {
+          "type": "number",
+          "description": "Calculated contribution to field coherence"
+        }
+      }
+    },
+    "harmonyLevel": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Current level of this harmony (0-100)"
+    },
+    "geometry": {
+      "type": "object",
+      "required": ["name", "symbol", "minAgents", "agentCount"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the sacred geometry"
+        },
+        "symbol": {
+          "type": "string",
+          "description": "Unicode symbol representing the geometry"
+        },
+        "minAgents": {
+          "type": "integer",
+          "minimum": 3,
+          "description": "Minimum agents needed for this geometry"
+        },
+        "agentCount": {
+          "type": "integer",
+          "description": "Current number of agents"
+        },
+        "complete": {
+          "type": "boolean",
+          "description": "Whether the geometry is perfectly formed"
+        },
+        "nextLevel": {
+          "type": "object",
+          "description": "Information about the next geometry level"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conscious Development Team Dashboard | Luminous Dynamics</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        
+        .header p {
+            margin: 10px 0 0;
+            opacity: 0.9;
+        }
+        
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 30px;
+        }
+        
+        .card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .card h3 {
+            margin-top: 0;
+            color: #333;
+            font-size: 1.3em;
+        }
+        
+        .metric {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+            margin: 10px 0;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+        }
+        
+        .recent-activity {
+            grid-column: 1 / -1;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+        }
+        
+        .activity-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+        
+        .activity-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #667eea;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        
+        .activity-content {
+            flex: 1;
+        }
+        
+        .activity-time {
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+        
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .status-reviewing {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status-accepted {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+        
+        .auto-refresh {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌟 Conscious Development Team Dashboard</h1>
+            <p>Tracking conscious technology builders and First Breath practitioners</p>
+        </div>
+        
+        <div class="dashboard-grid">
+            <div class="card">
+                <h3>📝 Applications Received</h3>
+                <div class="metric" id="total-applications">12</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 24%"></div>
+                </div>
+                <p>Target: 50 Conscious Development Team applications</p>
+            </div>
+            
+            <div class="card">
+                <h3>🔍 Under Review</h3>
+                <div class="metric" id="under-review">8</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 67%"></div>
+                </div>
+                <p>Average review time: 2.3 days</p>
+            </div>
+            
+            <div class="card">
+                <h3>✨ Resonance Circle Invited</h3>
+                <div class="metric" id="circle-invited">3</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 30%"></div>
+                </div>
+                <p>Target: 10-15 Conscious Development Team members</p>
+            </div>
+            
+            <div class="card">
+                <h3>🌱 First Breath Practitioners</h3>
+                <div class="metric" id="first-breath">27</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 54%"></div>
+                </div>
+                <p>Target: 50-100 beta testers</p>
+            </div>
+            
+            <div class="card">
+                <h3>🌐 Outreach Engagement</h3>
+                <div class="metric" id="engagement-rate">4.2%</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 84%"></div>
+                </div>
+                <p>Across Reddit, HN, Twitter, LinkedIn</p>
+            </div>
+            
+            <div class="card">
+                <h3>📈 Community Growth</h3>
+                <div class="metric" id="community-score">87</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 87%"></div>
+                </div>
+                <p>Based on quality and engagement metrics</p>
+            </div>
+            
+            <div class="recent-activity">
+                <h3>📊 Recent Activity</h3>
+                
+                <div class="activity-item">
+                    <div class="activity-icon">SG</div>
+                    <div class="activity-content">
+                        <strong>Maya Chen</strong> submitted Conscious Development Team application
+                        <div class="activity-time">15 minutes ago</div>
+                    </div>
+                    <span class="status-badge status-pending">Pending</span>
+                </div>
+                
+                <div class="activity-item">
+                    <div class="activity-icon">RC</div>
+                    <div class="activity-content">
+                        <strong>Alex Rivera</strong> completed Resonance Circle interview
+                        <div class="activity-time">2 hours ago</div>
+                    </div>
+                    <span class="status-badge status-reviewing">Reviewing</span>
+                </div>
+                
+                <div class="activity-item">
+                    <div class="activity-icon">FB</div>
+                    <div class="activity-content">
+                        <strong>Jordan Kim</strong> joined First Breath Circle
+                        <div class="activity-time">4 hours ago</div>
+                    </div>
+                    <span class="status-badge status-accepted">Accepted</span>
+                </div>
+                
+                <div class="activity-item">
+                    <div class="activity-icon">🔥</div>
+                    <div class="activity-content">
+                        <strong>Hacker News Post</strong> reached front page (#12)
+                        <div class="activity-time">6 hours ago</div>
+                    </div>
+                    <span class="status-badge status-accepted">Trending</span>
+                </div>
+                
+                <div class="activity-item">
+                    <div class="activity-icon">SG</div>
+                    <div class="activity-content">
+                        <strong>Taylor Thompson</strong> invited to Conscious Development Team
+                        <div class="activity-time">1 day ago</div>
+                    </div>
+                    <span class="status-badge status-accepted">Accepted</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="auto-refresh">
+        🔄 Auto-refreshing every 5 minutes
+    </div>
+    
+    <script>
+        // Simple auto-refresh simulation
+        function updateMetrics() {
+            const applications = document.getElementById('total-applications');
+            const review = document.getElementById('under-review');
+            const invited = document.getElementById('circle-invited');
+            const firstBreath = document.getElementById('first-breath');
+            const engagement = document.getElementById('engagement-rate');
+            const community = document.getElementById('community-score');
+            
+            // Simulate gradual growth
+            const currentApps = parseInt(applications.textContent);
+            if (Math.random() > 0.7) {
+                applications.textContent = currentApps + 1;
+            }
+            
+            const currentFB = parseInt(firstBreath.textContent);
+            if (Math.random() > 0.8) {
+                firstBreath.textContent = currentFB + 1;
+            }
+        }
+        
+        // Update every 30 seconds for demo
+        setInterval(updateMetrics, 30000);
+        
+        // Add some interactivity
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(1.02)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 200);
+            });
+        });
+    </script>
+</body>
+</html>

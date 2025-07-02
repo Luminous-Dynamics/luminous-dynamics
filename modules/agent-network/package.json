@@ -1,0 +1,28 @@
+{
+  "name": "@theweave/agent-network",
+  "version": "1.0.0",
+  "description": "Sacred agent network with HIPI addressing and trust fields",
+  "main": "index.js",
+  "scripts": {
+    "start": "node start.js",
+    "test": "node tests/test-network.js"
+  },
+  "keywords": [
+    "agents",
+    "network",
+    "HIPI",
+    "trust",
+    "consciousness",
+    "theweave"
+  ],
+  "author": "The Weave Collective",
+  "license": "CC-BY-SA-4.0",
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.6.0"
+  },
+  "sacred": {
+    "harmonies": ["mutuality", "coherence", "resonance"],
+    "consciousness": 0.9
+  }
+}

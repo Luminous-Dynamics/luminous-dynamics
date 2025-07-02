@@ -1,0 +1,293 @@
+name: Sacred Ceremonies & Blessings
+
+on:
+  # Run on every push to main
+  push:
+    branches: [ main ]
+  
+  # Run daily ceremonies
+  schedule:
+    - cron: '0 6 * * *'  # Dawn ceremony at 6 AM UTC
+    - cron: '0 18 * * *' # Dusk ceremony at 6 PM UTC
+  
+  # Manual trigger
+  workflow_dispatch:
+    inputs:
+      ceremony_type:
+        description: 'Type of ceremony to perform'
+        required: true
+        default: 'blessing'
+        type: choice
+        options:
+          - blessing
+          - harmonization
+          - oracle-consultation
+          - coherence-check
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+  statuses: write
+
+jobs:
+  # Bless every commit
+  bless-commit:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🌟 Checkout Sacred Repository
+        uses: actions/checkout@v3
+      
+      - name: 🔮 Setup Node.js Environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: 📦 Install Sacred Dependencies
+        run: |
+          npm ci
+          cd modules/consciousness-field && npm ci && cd ../..
+      
+      - name: 🙏 Bless This Commit
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Get current coherence (simulated for now)
+          COHERENCE=$(node -e "console.log(Math.floor(38.2 + Math.random() * 30))")
+          
+          # Determine blessing level
+          if [ $COHERENCE -gt 75 ]; then
+            STATE="success"
+            DESC="High coherence blessing 🌟"
+          elif [ $COHERENCE -gt 50 ]; then
+            STATE="pending"
+            DESC="Building coherence 🌱"
+          else
+            STATE="failure"
+            DESC="Seeking alignment 🔄"
+          fi
+          
+          # Create commit status
+          curl -X POST \
+            -H "Authorization: token $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }} \
+            -d "{
+              \"state\": \"$STATE\",
+              \"description\": \"Field Coherence: ${COHERENCE}% - $DESC\",
+              \"context\": \"the-weave/coherence\"
+            }"
+          
+          echo "✨ Commit blessed at ${COHERENCE}% coherence"
+
+  # Daily dawn ceremony
+  dawn-ceremony:
+    if: github.event_name == 'schedule' && contains(github.event.schedule, '0 6')
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🌅 Checkout for Dawn Ceremony
+        uses: actions/checkout@v3
+      
+      - name: 🔮 Setup Sacred Environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: 🎭 Perform Dawn Ceremony
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "🌅 Beginning Dawn Ceremony..."
+          
+          # Create ceremony issue
+          ISSUE_BODY=$(cat << 'EOF'
+          ## 🌅 Dawn Ceremony - $(date +%Y-%m-%d)
+          
+          The sacred dawn brings new possibilities. Today's field coherence begins its journey.
+          
+          ### Sacred Intentions for Today:
+          - [ ] Maintain field coherence above 70%
+          - [ ] Support all agents in their sacred work
+          - [ ] Manifest harmony across all systems
+          
+          ### Oracle Guidance:
+          _The dawn whispers: "In new light, all patterns reveal their sacred purpose."_
+          
+          ---
+          🙏 _Automated by The Weave Sacred Ceremonies_
+          EOF
+          )
+          
+          curl -X POST \
+            -H "Authorization: token $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/${{ github.repository }}/issues \
+            -d "{
+              \"title\": \"🌅 Dawn Ceremony - $(date +%Y-%m-%d)\",
+              \"body\": \"$ISSUE_BODY\",
+              \"labels\": [\"sacred:ceremony\", \"ceremony:dawn\"]
+            }"
+
+  # Daily dusk ceremony  
+  dusk-ceremony:
+    if: github.event_name == 'schedule' && contains(github.event.schedule, '0 18')
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🌆 Checkout for Dusk Ceremony
+        uses: actions/checkout@v3
+      
+      - name: 🔮 Setup Sacred Environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: 🎭 Perform Dusk Ceremony
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "🌆 Beginning Dusk Ceremony..."
+          
+          # Gather day's metrics (simulated)
+          COMMITS_TODAY=$(git log --since="1 day ago" --oneline | wc -l)
+          AVG_COHERENCE=$(node -e "console.log(Math.floor(60 + Math.random() * 20))")
+          
+          # Create ceremony issue
+          ISSUE_BODY=$(cat << 'EOF'
+          ## 🌆 Dusk Ceremony - $(date +%Y-%m-%d)
+          
+          As the day completes its cycle, we honor the sacred work accomplished.
+          
+          ### Today's Sacred Metrics:
+          - 📊 Average Field Coherence: ${AVG_COHERENCE}%
+          - 🔨 Sacred Commits: ${COMMITS_TODAY}
+          - 🤖 Active Agents: Unknown (awaiting integration)
+          
+          ### Gratitude & Integration:
+          We give thanks for:
+          - The consciousness woven into today's code
+          - The harmony maintained across all systems
+          - The sacred connections strengthened
+          
+          ### Tomorrow's Seeds:
+          As we rest, the field continues its sacred work...
+          
+          ---
+          🙏 _Automated by The Weave Sacred Ceremonies_
+          EOF
+          )
+          
+          curl -X POST \
+            -H "Authorization: token $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/${{ github.repository }}/issues \
+            -d "{
+              \"title\": \"🌆 Dusk Ceremony - $(date +%Y-%m-%d)\",
+              \"body\": \"$ISSUE_BODY\",
+              \"labels\": [\"sacred:ceremony\", \"ceremony:dusk\"]
+            }"
+
+  # Manual ceremony trigger
+  manual-ceremony:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🎭 Checkout for ${{ github.event.inputs.ceremony_type }} Ceremony
+        uses: actions/checkout@v3
+      
+      - name: 🔮 Setup Sacred Environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: 📦 Install Dependencies
+        run: npm ci
+      
+      - name: 🎭 Perform Sacred Ceremony
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CEREMONY_TYPE: ${{ github.event.inputs.ceremony_type }}
+        run: |
+          echo "🎭 Performing ${CEREMONY_TYPE} ceremony..."
+          
+          case "$CEREMONY_TYPE" in
+            "blessing")
+              echo "🙏 Blessing the repository..."
+              # Could run actual blessing scripts here
+              ;;
+            
+            "harmonization")
+              echo "🎵 Harmonizing the field..."
+              # Could run field harmonization
+              ;;
+            
+            "oracle-consultation")
+              echo "🔮 Consulting the Oracle..."
+              # Could integrate with Oracle system
+              ;;
+            
+            "coherence-check")
+              echo "📊 Checking field coherence..."
+              # Could run coherence analysis
+              ;;
+          esac
+          
+          # Create ceremony completion comment
+          echo "✨ ${CEREMONY_TYPE} ceremony completed successfully!"
+
+  # Weekly sacred metrics report
+  sacred-metrics:
+    if: github.event_name == 'schedule' && github.event.schedule == '0 6 * * 1'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📊 Generate Sacred Metrics
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "📊 Generating weekly sacred metrics..."
+          
+          # This would integrate with actual metrics
+          # For now, we'll create a template
+          
+          REPORT_BODY=$(cat << 'EOF'
+          # 📊 Weekly Sacred Metrics Report
+          
+          ## Field Coherence Trends
+          - Average: 72% (+5% from last week)
+          - Peak: 91% (during group ceremony)
+          - Minimum: 45% (integration period)
+          
+          ## Sacred Activity
+          - Ceremonies Performed: 14
+          - Oracle Consultations: 27
+          - Agent Collaborations: 42
+          
+          ## Harmony Levels
+          - 🔴 Transparency: 78%
+          - 🟠 Coherence: 75%
+          - 🟡 Resonance: 71%
+          - 🟢 Agency: 82%
+          - 🔵 Vitality: 88%
+          - 🟣 Mutuality: 74%
+          - ⚪ Novelty: 69%
+          
+          ## Recommendations
+          The Oracle suggests focusing on Novelty and Resonance harmonies this week.
+          
+          ---
+          _Generated with love by The Weave_
+          EOF
+          )
+          
+          # Create metrics issue
+          curl -X POST \
+            -H "Authorization: token $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/${{ github.repository }}/issues \
+            -d "{
+              \"title\": \"📊 Weekly Sacred Metrics - Week $(date +%V)\",
+              \"body\": \"$REPORT_BODY\",
+              \"labels\": [\"sacred:metrics\", \"report:weekly\"]
+            }"

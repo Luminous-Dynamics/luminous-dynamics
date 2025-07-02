@@ -1,5 +1,0 @@
-#!/bin/bash
-# Quick role claiming script
-
-cd /home/tstoltz/evolving-resonant-cocreation
-node .role-system/role-manager.js "$@"

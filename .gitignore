@@ -64,6 +64,7 @@ coverage/
 
 # Windows Zone.Identifier files
 *.Zone.Identifier
+
 # Sacred Council specific
 council-events.log
 sacred-maintenance.log
@@ -74,3 +75,114 @@ quantum.log
 *.db-wal
 *.db-shm
 packages.microsoft.gpg
+
+# SQLite databases
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
+*.db-shm
+
+# The Weave specific
+the-weave/cli/*.db
+the-weave/core/network/*.db
+the-weave/core/agent-comms-sqlite/*.db
+agent-comms-sqlite/*.db
+
+# Archives and test data
+archives/
+test-messages/
+*.test.json
+.archive/
+*.tar.gz
+*.zip
+*.rar
+
+# Generated images and assets
+assets/generated-images/
+sigils/
+
+# Temporary and cache files
+*.cache
+.cache/
+temp/
+tmp/
+
+# Session and state files
+council-profiles/
+agent-profiles/
+session-data/
+
+# System-specific files
+.directory
+desktop.ini
+
+# Security and credentials
+*.pem
+*.key
+*.cert
+*.crt
+*.p12
+*.pfx
+credentials/
+secrets/
+
+# Backup files
+*.backup
+*.old
+*.orig
+*.save
+
+# Lock files (keep package-lock.json for npm)
+yarn.lock
+pnpm-lock.yaml
+bun.lockb
+
+# Production build files
+out/
+.next/
+.nuxt/
+
+# Test coverage
+coverage/
+.nyc_output/
+*.lcov
+
+# Editor and IDE specific
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.settings/
+
+# MacOS specific
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Linux specific
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Windows specific
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk

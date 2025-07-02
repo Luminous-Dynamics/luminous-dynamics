@@ -1,0 +1,125 @@
+# Sacred Council Local Development
+# All modules working together in harmony
+version: '3.8'
+
+services:
+  consciousness-field:
+    build: 
+      context: ./modules/consciousness-field
+      dockerfile: Dockerfile.simple
+    ports:
+      - "3333:3333"
+    environment:
+      - NODE_ENV=development
+      - INITIAL_COHERENCE=75
+    volumes:
+      - ./.sacred-data/consciousness:/data
+    networks:
+      - sacred-net
+    labels:
+      consciousness: "true"
+      sacred: "field"
+
+  agent-network:
+    build:
+      context: ./modules/agent-network
+      dockerfile: Dockerfile.simple
+    ports:
+      - "3334:3334"
+    environment:
+      - NODE_ENV=development
+      - FIELD_API=http://consciousness-field:3333
+    depends_on:
+      - consciousness-field
+    volumes:
+      - ./.sacred-data/agents:/data
+    networks:
+      - sacred-net
+    labels:
+      consciousness: "true"
+      sacred: "network"
+
+  sacred-messaging:
+    build:
+      context: ./modules/sacred-messaging
+      dockerfile: Dockerfile.simple
+    ports:
+      - "3335:3335"
+    environment:
+      - NODE_ENV=development
+      - FIELD_API=http://consciousness-field:3333
+    depends_on:
+      - consciousness-field
+    volumes:
+      - ./.sacred-data/messages:/data
+    networks:
+      - sacred-net
+    labels:
+      consciousness: "true"
+      sacred: "messaging"
+
+  work-coordination:
+    build:
+      context: ./modules/work-coordination
+      dockerfile: Dockerfile.simple
+    ports:
+      - "3336:3336"
+    environment:
+      - NODE_ENV=development
+      - FIELD_API=http://consciousness-field:3333
+      - AGENT_API=http://agent-network:3334
+    depends_on:
+      - consciousness-field
+      - agent-network
+    volumes:
+      - ./.sacred-data/work:/data
+    networks:
+      - sacred-net
+    labels:
+      consciousness: "true"
+      sacred: "work"
+
+  # Sacred Gateway (simple nginx proxy)
+  gateway:
+    image: nginx:alpine
+    ports:
+      - "3337:80"
+    volumes:
+      - ./nginx-simple.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - consciousness-field
+      - agent-network
+      - sacred-messaging
+      - work-coordination
+    networks:
+      - sacred-net
+    labels:
+      consciousness: "true"
+      sacred: "gateway"
+
+  # Web interface - Sacred Council Hub
+  web:
+    image: python:3-slim
+    volumes:
+      - ./web:/app:ro
+    working_dir: /app
+    command: python -m http.server 8338
+    ports:
+      - "8338:8338"
+    networks:
+      - sacred-net
+    labels:
+      consciousness: "true"
+      sacred: "web"
+
+networks:
+  sacred-net:
+    driver: bridge
+    labels:
+      consciousness: "true"
+      
+volumes:
+  consciousness-data:
+  agent-data:
+  message-data:
+  work-data:
