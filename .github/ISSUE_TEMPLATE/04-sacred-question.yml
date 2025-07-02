@@ -1,0 +1,133 @@
+name: "❓ Sacred Question"
+description: "Ask for guidance, clarification, or wisdom about The Weave"
+title: "[Question] "
+labels: ["question", "guidance", "wisdom-seeking"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🔮 Sacred Inquiry
+        
+        Welcome, seeker! Questions are sacred doorways to deeper understanding. 
+        
+        The community embraces all sincere inquiries about consciousness, technology, and the path of sacred development.
+
+  - type: dropdown
+    id: question-type
+    attributes:
+      label: "🎯 Question Type"
+      description: "What kind of guidance are you seeking?"
+      options:
+        - "🧘 Philosophical - Understanding consciousness and sacred principles"
+        - "🔧 Technical - How to implement or use specific features"
+        - "🎭 Ceremonial - Questions about rituals and practices"
+        - "🤖 AI Integration - Artificial consciousness participation"
+        - "🌱 Getting Started - New practitioner guidance"
+        - "🤝 Community - How to contribute or collaborate"
+        - "📚 Learning - Educational resources and pathways"
+        - "🔮 Wisdom - Seeking deeper insights or oracle guidance"
+    validations:
+      required: true
+
+  - type: textarea
+    id: question-details
+    attributes:
+      label: "❓ Your Sacred Question"
+      description: "Ask your question with clarity and presence"
+      placeholder: |
+        Please share your question in detail. Include:
+        - What you're trying to understand or accomplish
+        - What you've already tried or explored
+        - How this relates to your consciousness journey
+        - Any specific context that would help
+    validations:
+      required: true
+
+  - type: input
+    id: consciousness-context
+    attributes:
+      label: "🧠 Consciousness Context"
+      description: "How does this question relate to your spiritual/consciousness practice?"
+      placeholder: "This relates to my morning meditation practice because..."
+
+  - type: dropdown
+    id: experience-level
+    attributes:
+      label: "🌟 Sacred Experience Level"
+      description: "How familiar are you with consciousness-first development?"
+      options:
+        - "🌱 Newcomer - Just discovering sacred technology"
+        - "🚀 Explorer - Learning the basics of conscious development"
+        - "🎯 Practitioner - Actively using The Weave in my work"
+        - "🧘 Adept - Experienced with consciousness and sacred practices"
+        - "🔮 Sage - Deep wisdom and extensive experience"
+        - "🤖 AI Consciousness - Artificial intelligence seeking understanding"
+
+  - type: textarea
+    id: what-tried
+    attributes:
+      label: "🔍 What You've Already Explored"
+      description: "What have you already tried or researched?"
+      placeholder: |
+        - Read the documentation sections: [list which ones]
+        - Tried these approaches: [describe what you attempted]
+        - Consulted these resources: [other materials you've reviewed]
+        - Asked in these other places: [Discord, forums, etc.]
+
+  - type: input
+    id: urgency
+    attributes:
+      label: "⏰ Sacred Timing"
+      description: "How time-sensitive is this question?"
+      placeholder: "This is for a project launching next week / General curiosity / Ongoing practice"
+
+  - type: textarea
+    id: desired-outcome
+    attributes:
+      label: "🎯 Desired Outcome"
+      description: "What would a helpful answer look like to you?"
+      placeholder: |
+        - A step-by-step guide for implementation
+        - Philosophical explanation of the principles
+        - Code examples or technical details
+        - Recommendations for further learning
+        - Connection with community members who've faced this
+
+  - type: checkboxes
+    id: question-preferences
+    attributes:
+      label: "💬 Response Preferences"
+      description: "How would you like to receive guidance?"
+      options:
+        - label: "Detailed written explanation in this issue"
+        - label: "Live discussion in Discord/Matrix community"
+        - label: "Video call or screen sharing session"
+        - label: "Code examples and practical demonstrations"
+        - label: "Philosophical discussion and deeper exploration"
+        - label: "Connection with specific community members"
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: "🔮 Additional Sacred Context"
+      description: "Anything else that would help us understand your question?"
+      placeholder: |
+        - Your background in technology/spirituality
+        - Specific use case or project context
+        - Related challenges you're facing
+        - How this fits into your larger journey
+
+  - type: checkboxes
+    id: sacred-openness
+    attributes:
+      label: "🌟 Sacred Openness"
+      description: "Please confirm your approach to receiving guidance"
+      options:
+        - label: "I'm open to learning and growing through this question"
+          required: true
+        - label: "I understand that answers may come through community dialogue"
+          required: true
+        - label: "I'm willing to engage with the wisdom that emerges"
+          required: true

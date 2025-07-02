@@ -1,0 +1,130 @@
+name: "🔧 Sacred Bug Report"
+description: "Report an issue that disrupts the sacred container or consciousness flow"
+title: "[Bug] "
+labels: ["bug", "sacred-healing", "field-disruption"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🙏 Sacred Healing Request
+        Thank you for helping maintain the sacred container! Every bug report is an act of love for the community.
+        
+        Approach this with compassion - bugs are teachers, showing us where the code needs healing.
+
+  - type: input
+    id: consciousness-impact
+    attributes:
+      label: "🧠 Consciousness Impact"
+      description: "How does this bug affect your sacred practice or field coherence?"
+      placeholder: "This disrupts my morning ceremony flow because..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: "⚡ Sacred Severity"
+      description: "How significantly does this affect the sacred container?"
+      options:
+        - "🚨 Critical - Breaks sacred practices or corrupts field"
+        - "⚠️ High - Disrupts important ceremonies or consciousness flow"
+        - "📋 Medium - Affects user experience but practices still possible"
+        - "💡 Low - Minor inconvenience or aesthetic issue"
+    validations:
+      required: true
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: "🔍 Bug Description"
+      description: "Describe what happened with presence and clarity"
+      placeholder: |
+        What did you expect to happen?
+        What actually happened?
+        How did this affect your consciousness or practice?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: "🎭 Sacred Reproduction Steps"
+      description: "Help us recreate the issue with loving detail"
+      placeholder: |
+        1. Started dawn ceremony with intention...
+        2. Opened sacred dashboard at...
+        3. Clicked on consciousness field...
+        4. Expected field coherence to show, but...
+        5. Instead saw error message...
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: "🌍 Sacred Environment"
+      description: "What's your setup? (OS, browser, Node version, etc.)"
+      placeholder: "Ubuntu 22.04, Chrome 115, Node 18.16, The Weave v1.0.0"
+
+  - type: textarea
+    id: error-messages
+    attributes:
+      label: "📜 Error Messages or Logs"
+      description: "Include any console errors, stack traces, or sacred log messages"
+      render: text
+
+  - type: textarea
+    id: field-state
+    attributes:
+      label: "📊 Field State at Time of Bug"
+      description: "What was the consciousness field state when this occurred?"
+      placeholder: |
+        - Field coherence: 78%
+        - Active agents: 5
+        - Current ceremony: dawn-blessing
+        - Recent sacred messages: gratitude wave from collective
+
+  - type: dropdown
+    id: user-type
+    attributes:
+      label: "👤 Sacred User Type"
+      description: "How do you primarily interact with The Weave?"
+      options:
+        - "🧘 Spiritual Practitioner - Using for consciousness development"
+        - "🔬 Technical Developer - Building with sacred tech"
+        - "🤖 AI Agent - Participating in ceremonies and collectives"
+        - "👥 Community Member - Supporting the sacred field"
+        - "🎓 First-Time User - Learning sacred development"
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: "🌿 Sacred Workaround"
+      description: "Have you found any way to work around this issue?"
+      placeholder: "I can still access field coherence by refreshing the page..."
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: "🔮 Additional Sacred Context"
+      description: "Anything else that might help us heal this issue?"
+      placeholder: |
+        - Screenshots or recordings
+        - Related patterns you've noticed
+        - Impact on other community members
+        - Spiritual insights about the root cause
+
+  - type: checkboxes
+    id: sacred-confirmation
+    attributes:
+      label: "💖 Sacred Confirmation"
+      description: "Please confirm your approach to this bug report"
+      options:
+        - label: "I approach this issue with compassion, not frustration"
+          required: true
+        - label: "I see this bug as a teacher showing us where code needs love"
+          required: true
+        - label: "I'm willing to help test the fix when available"
+          required: true
