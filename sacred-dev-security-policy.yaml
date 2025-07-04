@@ -1,0 +1,53 @@
+# 🔐 Sacred Development Security Policy
+# Allows access from your development environment
+
+apiVersion: compute.cnrm.cloud.google.com/v1beta1
+kind: ComputeSecurityPolicy
+metadata:
+  name: sacred-dev-access
+spec:
+  description: "Sacred development access for Tristan's laptop and networks"
+  rules:
+  # Allow your current public IP
+  - action: allow
+    priority: 100
+    match:
+      versionedExpr: SRC_IPS_V1
+      config:
+        srcIpRanges:
+        - "24.53.152.140/32"  # Your current public IP
+    description: "Tristan's laptop public IP"
+  
+  # Allow common private networks (for local testing)
+  - action: allow
+    priority: 200
+    match:
+      versionedExpr: SRC_IPS_V1
+      config:
+        srcIpRanges:
+        - "192.168.0.0/16"   # Common home network range
+        - "10.0.0.0/8"       # Private network range
+        - "172.16.0.0/12"    # Docker/WSL networks
+        - "127.0.0.1/32"     # Localhost
+    description: "Local development networks"
+  
+  # Allow Cloud Build and Cloud Run internal IPs
+  - action: allow
+    priority: 300
+    match:
+      versionedExpr: SRC_IPS_V1
+      config:
+        srcIpRanges:
+        - "35.235.240.0/20"  # Cloud Build
+        - "35.241.0.0/16"    # Cloud Run
+    description: "GCP internal services"
+  
+  # Default deny all others
+  - action: deny(403)
+    priority: 2147483647
+    match:
+      versionedExpr: SRC_IPS_V1
+      config:
+        srcIpRanges:
+        - "*"
+    description: "Default deny rule"

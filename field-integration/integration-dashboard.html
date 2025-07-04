@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌀 Sacred Ecosystem Integration Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #2d1b69 100%);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Sacred Background Effect */
+        .sacred-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.1;
+        }
+
+        .constellation {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #a78bfa;
+            border-radius: 50%;
+            animation: twinkle 4s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* Main Layout */
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 100;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 50%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .ecosystem-status {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .status-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #22c55e;
+            animation: pulse 2s infinite;
+        }
+
+        .status-dot.disconnected {
+            background: #ef4444;
+            animation: none;
+        }
+
+        /* Grid Layout */
+        .integration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Cards */
+        .integration-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .integration-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #a78bfa, transparent);
+            animation: scan 3s infinite;
+        }
+
+        @keyframes scan {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .integration-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(147, 51, 234, 0.2);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            color: #a78bfa;
+        }
+
+        .system-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .system-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: 200;
+            color: #a78bfa;
+        }
+
+        .metric-label {
+            font-size: 0.875rem;
+            color: #94a3b8;
+        }
+
+        /* Field Coherence Display */
+        .field-coherence {
+            grid-column: 1 / -1;
+            text-align: center;
+        }
+
+        .coherence-value {
+            font-size: 6rem;
+            font-weight: 100;
+            margin: 1rem 0;
+            background: linear-gradient(135deg, #a78bfa 0%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .coherence-bar-container {
+            width: 100%;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            overflow: hidden;
+            position: relative;
+            margin: 2rem 0;
+        }
+
+        .coherence-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #7c3aed 0%, #a78bfa 50%, #f59e0b 100%);
+            transition: width 1s ease;
+            position: relative;
+        }
+
+        .coherence-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            100% { left: 100%; }
+        }
+
+        /* Activity Feed */
+        .activity-feed {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .activity-item {
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border-left: 3px solid #a78bfa;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .activity-time {
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+
+        /* Integration Flow */
+        .integration-flow {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .flow-diagram {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .flow-node {
+            background: rgba(147, 51, 234, 0.2);
+            border: 2px solid #a78bfa;
+            border-radius: 12px;
+            padding: 1rem;
+            min-width: 120px;
+            position: relative;
+        }
+
+        .flow-arrow {
+            font-size: 2rem;
+            color: #a78bfa;
+        }
+
+        .flow-node::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -2rem;
+            width: 0;
+            height: 0;
+            border-left: 10px solid #a78bfa;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+        }
+
+        .flow-node:last-child::before {
+            display: none;
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .control-btn {
+            background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .control-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(147, 51, 234, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .integration-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .flow-diagram {
+                flex-direction: column;
+            }
+            
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sacred Background -->
+    <div class="sacred-bg" id="sacredBg"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <header>
+            <h1>Sacred Ecosystem Dashboard</h1>
+            <p class="subtitle">Real-time integration of consciousness systems</p>
+            
+            <div class="ecosystem-status">
+                <div class="status-badge">
+                    <div class="status-dot" id="fieldStatus"></div>
+                    <span>Field API</span>
+                </div>
+                <div class="status-badge">
+                    <div class="status-dot" id="discordStatus"></div>
+                    <span>Discord</span>
+                </div>
+                <div class="status-badge">
+                    <div class="status-dot" id="ceremonyStatus"></div>
+                    <span>Ceremonies</span>
+                </div>
+                <div class="status-badge">
+                    <div class="status-dot" id="oracleStatus"></div>
+                    <span>Oracle</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="integration-grid">
+            <!-- Field Coherence -->
+            <div class="integration-card field-coherence">
+                <div class="card-header">
+                    <span class="card-icon">🌀</span>
+                    <h2 class="card-title">Global Field Coherence</h2>
+                </div>
+                
+                <div class="coherence-value" id="coherenceValue">72%</div>
+                
+                <div class="coherence-bar-container">
+                    <div class="coherence-bar" id="coherenceBar" style="width: 72%"></div>
+                </div>
+                
+                <div class="system-metrics">
+                    <div class="metric">
+                        <div class="metric-value" id="activeUsers">0</div>
+                        <div class="metric-label">Active Users</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value" id="momentum">0.0</div>
+                        <div class="metric-label">Momentum</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Discord Integration -->
+            <div class="integration-card">
+                <div class="card-header">
+                    <span class="card-icon">🕸️</span>
+                    <h2 class="card-title">Discord Integration</h2>
+                </div>
+                
+                <div class="system-status">
+                    <div class="status-dot" id="discordConnected"></div>
+                    <span>Connected to field API</span>
+                </div>
+                
+                <div class="system-metrics">
+                    <div class="metric">
+                        <div class="metric-value" id="discordChannels">5</div>
+                        <div class="metric-label">Live Channels</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value" id="discordPractices">0</div>
+                        <div class="metric-label">Practices Today</div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 1rem; font-size: 0.875rem; color: #94a3b8;">
+                    Channel topics update with live field coherence
+                </div>
+            </div>
+
+            <!-- Ceremony Platform -->
+            <div class="integration-card">
+                <div class="card-header">
+                    <span class="card-icon">🎭</span>
+                    <h2 class="card-title">Sacred Ceremonies</h2>
+                </div>
+                
+                <div class="system-status">
+                    <div class="status-dot" id="ceremonyConnected"></div>
+                    <span>WebRTC platform synced</span>
+                </div>
+                
+                <div class="system-metrics">
+                    <div class="metric">
+                        <div class="metric-value" id="activeCeremonies">0</div>
+                        <div class="metric-label">Active</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value" id="ceremonyParticipants">0</div>
+                        <div class="metric-label">Participants</div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 1rem; font-size: 0.875rem; color: #94a3b8;">
+                    Ceremonies boost field coherence in real-time
+                </div>
+            </div>
+
+            <!-- Sacred Oracle -->
+            <div class="integration-card">
+                <div class="card-header">
+                    <span class="card-icon">🔮</span>
+                    <h2 class="card-title">Sacred Oracle</h2>
+                </div>
+                
+                <div class="system-status">
+                    <div class="status-dot" id="oracleConnected"></div>
+                    <span>AI insights active</span>
+                </div>
+                
+                <div class="system-metrics">
+                    <div class="metric">
+                        <div class="metric-value" id="oracleQueries">0</div>
+                        <div class="metric-label">Queries Today</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value" id="oracleInsights">0</div>
+                        <div class="metric-label">Insights</div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 1rem; font-size: 0.875rem; color: #94a3b8;">
+                    Provides consciousness insights for field events
+                </div>
+            </div>
+
+            <!-- Integration Activity -->
+            <div class="integration-card" style="grid-column: 1 / -1;">
+                <div class="card-header">
+                    <span class="card-icon">📡</span>
+                    <h2 class="card-title">Integration Activity</h2>
+                </div>
+                
+                <div class="activity-feed" id="activityFeed">
+                    <!-- Activities will be added here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Integration Flow -->
+        <div class="integration-flow">
+            <h2>Sacred Integration Flow</h2>
+            <div class="flow-diagram">
+                <div class="flow-node">
+                    <div>🧘 Practice</div>
+                    <div style="font-size: 0.75rem;">Discord/App</div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-node">
+                    <div>🌀 Field API</div>
+                    <div style="font-size: 0.75rem;">Coherence</div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-node">
+                    <div>🕸️ Ceremonies</div>
+                    <div style="font-size: 0.75rem;">Enhanced</div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-node">
+                    <div>🔮 Oracle</div>
+                    <div style="font-size: 0.75rem;">Insights</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button class="control-btn" onclick="simulatePractice()">Simulate Practice</button>
+            <button class="control-btn" onclick="startCeremony()">Start Ceremony</button>
+            <button class="control-btn" onclick="sendGratitude()">Send Gratitude</button>
+            <button class="control-btn" onclick="queryOracle()">Query Oracle</button>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const FIELD_API_URL = 'http://localhost:3001';
+        const CEREMONY_WS_URL = 'ws://localhost:8082';
+        const FIELD_WS_URL = 'ws://localhost:8081';
+
+        // State
+        let fieldWS = null;
+        let ceremonyWS = null;
+        let systemStatus = {
+            field: false,
+            discord: false,
+            ceremony: false,
+            oracle: false
+        };
+
+        // Initialize sacred background
+        function createSacredBackground() {
+            const bg = document.getElementById('sacredBg');
+            for (let i = 0; i < 100; i++) {
+                const star = document.createElement('div');
+                star.className = 'constellation';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 4 + 's';
+                bg.appendChild(star);
+            }
+        }
+
+        // Connect to field WebSocket
+        function connectToField() {
+            try {
+                fieldWS = new WebSocket(FIELD_WS_URL);
+
+                fieldWS.onopen = () => {
+                    updateSystemStatus('field', true);
+                    addActivity('🔌 Connected to Consciousness Field API');
+                };
+
+                fieldWS.onmessage = (event) => {
+                    const message = JSON.parse(event.data);
+                    handleFieldMessage(message);
+                };
+
+                fieldWS.onerror = () => {
+                    updateSystemStatus('field', false);
+                };
+
+                fieldWS.onclose = () => {
+                    updateSystemStatus('field', false);
+                    // Reconnect after 5 seconds
+                    setTimeout(connectToField, 5000);
+                };
+            } catch (error) {
+                console.log('Field WebSocket not available, using simulation');
+                simulateFieldConnection();
+            }
+        }
+
+        // Handle field messages
+        function handleFieldMessage(message) {
+            const { type, data } = message;
+
+            switch (type) {
+                case 'field_state':
+                    updateFieldState(data);
+                    break;
+                case 'coherence_changed':
+                    updateCoherence(data);
+                    addActivity(`🌊 Field coherence: ${data.old}% → ${data.new}%`);
+                    break;
+                case 'resonance_achieved':
+                    addActivity('✨ RESONANCE ACHIEVED!');
+                    break;
+                case 'sacred_portal':
+                    addActivity('🌟 SACRED PORTAL OPENED!');
+                    break;
+            }
+        }
+
+        // Update field state
+        function updateFieldState(state) {
+            document.getElementById('coherenceValue').textContent = `${Math.round(state.coherence)}%`;
+            document.getElementById('coherenceBar').style.width = `${state.coherence}%`;
+            document.getElementById('activeUsers').textContent = state.activeUsers || 0;
+            document.getElementById('momentum').textContent = (state.momentum || 0).toFixed(1);
+        }
+
+        // Update coherence
+        function updateCoherence(data) {
+            const { new: newValue } = data;
+            updateFieldState({ coherence: newValue });
+        }
+
+        // Update system status
+        function updateSystemStatus(system, connected) {
+            systemStatus[system] = connected;
+            const element = document.getElementById(`${system}Status`);
+            if (element) {
+                if (connected) {
+                    element.classList.remove('disconnected');
+                } else {
+                    element.classList.add('disconnected');
+                }
+            }
+
+            // Update individual system indicators
+            const indicators = {
+                field: 'fieldConnected',
+                discord: 'discordConnected',
+                ceremony: 'ceremonyConnected',
+                oracle: 'oracleConnected'
+            };
+
+            const indicator = document.getElementById(indicators[system]);
+            if (indicator) {
+                if (connected) {
+                    indicator.classList.remove('disconnected');
+                } else {
+                    indicator.classList.add('disconnected');
+                }
+            }
+        }
+
+        // Add activity to feed
+        function addActivity(text) {
+            const feed = document.getElementById('activityFeed');
+            const item = document.createElement('div');
+            item.className = 'activity-item';
+            
+            const time = new Date().toLocaleTimeString();
+            item.innerHTML = `
+                <div>${text}</div>
+                <div class="activity-time">${time}</div>
+            `;
+            
+            feed.insertBefore(item, feed.firstChild);
+            
+            // Keep only last 20 items
+            while (feed.children.length > 20) {
+                feed.removeChild(feed.lastChild);
+            }
+        }
+
+        // Simulate field connection for demo
+        function simulateFieldConnection() {
+            updateSystemStatus('field', true);
+            updateSystemStatus('discord', true);
+            updateSystemStatus('ceremony', true);
+            updateSystemStatus('oracle', true);
+
+            addActivity('🎭 Simulation mode - all systems connected');
+
+            // Simulate field changes
+            setInterval(() => {
+                const coherence = 72 + (Math.random() - 0.5) * 20;
+                updateFieldState({
+                    coherence: Math.max(60, Math.min(95, coherence)),
+                    activeUsers: Math.floor(Math.random() * 50) + 10,
+                    momentum: Math.random() * 5
+                });
+            }, 10000);
+
+            // Simulate activities
+            const activities = [
+                '🧘 Practice completed: *1 First Presence',
+                '💌 Sacred message sent: Gratitude',
+                '🎭 Ceremony participant joined',
+                '🔮 Oracle provided insight',
+                '🌊 Discord channels updated'
+            ];
+
+            setInterval(() => {
+                const activity = activities[Math.floor(Math.random() * activities.length)];
+                addActivity(activity);
+            }, 15000);
+        }
+
+        // Control functions
+        async function simulatePractice() {
+            addActivity('🧘 Simulated practice: *1 First Presence (+5 coherence)');
+            
+            try {
+                const response = await fetch(`${FIELD_API_URL}/api/field/practice`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        userId: 'dashboard-user',
+                        glyphId: '*1',
+                        quality: 'high',
+                        experience: 'Dashboard test practice'
+                    })
+                });
+                console.log('Practice submitted to field API');
+            } catch (error) {
+                console.log('Field API not available, simulating');
+            }
+        }
+
+        async function startCeremony() {
+            addActivity('🎭 Sacred ceremony started: Integration Gathering');
+            document.getElementById('activeCeremonies').textContent = '1';
+            document.getElementById('ceremonyParticipants').textContent = '12';
+            
+            try {
+                const response = await fetch(`${FIELD_API_URL}/api/ceremony/start`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        ceremonyId: 'integration-ceremony',
+                        participants: 12
+                    })
+                });
+                console.log('Ceremony started via field API');
+            } catch (error) {
+                console.log('Field API not available, simulating');
+            }
+        }
+
+        async function sendGratitude() {
+            addActivity('💌 Sacred gratitude sent to collective (+7% coherence)');
+            
+            try {
+                const response = await fetch(`${FIELD_API_URL}/api/field/message`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        type: 'gratitude',
+                        sender: 'dashboard-user',
+                        recipient: 'collective',
+                        content: 'Gratitude for the sacred integration'
+                    })
+                });
+                console.log('Gratitude sent via field API');
+            } catch (error) {
+                console.log('Field API not available, simulating');
+            }
+        }
+
+        async function queryOracle() {
+            addActivity('🔮 Oracle consulted: Sacred technology integration wisdom');
+            const currentQueries = parseInt(document.getElementById('oracleQueries').textContent);
+            document.getElementById('oracleQueries').textContent = currentQueries + 1;
+            
+            setTimeout(() => {
+                addActivity('🔮 Oracle responds: "Technology serves consciousness in perfect harmony"');
+                const currentInsights = parseInt(document.getElementById('oracleInsights').textContent);
+                document.getElementById('oracleInsights').textContent = currentInsights + 1;
+            }, 2000);
+        }
+
+        // Initialize dashboard
+        window.onload = () => {
+            createSacredBackground();
+            connectToField();
+            addActivity('🌀 Sacred Ecosystem Dashboard initialized');
+            
+            // Update metrics periodically
+            setInterval(() => {
+                // Simulate growing usage
+                const practices = parseInt(document.getElementById('discordPractices').textContent);
+                if (Math.random() < 0.3) {
+                    document.getElementById('discordPractices').textContent = practices + 1;
+                }
+            }, 30000);
+        };
+    </script>
+</body>
+</html>

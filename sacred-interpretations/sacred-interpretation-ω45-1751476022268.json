@@ -1,0 +1,16 @@
+{
+  "glyph": {
+    "name": "First Presence",
+    "symbol": "*1",
+    "description": "The practice of conscious arrival - becoming fully present before engaging with any person, situation, or task.",
+    "practice": "Three conscious breaths, feeling your feet on the ground, acknowledging: \"I am here now.\""
+  },
+  "interpretation": "Ripples widen across still, sunlit water.\nBare feet press into dark, damp earth.\nThe world comes into focus, sharp to the horizon.",
+  "visualPhrases": [
+    "Ripples widen across still, sunlit water.",
+    "Bare feet press into dark, damp earth.",
+    "The world comes into focus, sharp to the horizon."
+  ],
+  "timestamp": "2025-07-02T17:07:02.268Z",
+  "model": "gemini-2.5-pro"
+}

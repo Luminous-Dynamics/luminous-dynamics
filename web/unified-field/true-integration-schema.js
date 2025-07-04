@@ -3,7 +3,7 @@
  * 
  * This creates the complete path for the pilgrim:
  * - Original Mystical Glyphs (Ω0, Ω1, Ω4, Ω7) preserve their sacred numbers
- * - Practical Implementations become new Applied Harmonies (Ω45, Ω46, Ω47)
+ * - Practical Implementations become new Applied Harmonies (*1, *2, *3)
  * - Two-way bridge connects mystical roots with practical expressions
  * - Progressive revelation from practical to mystical
  */
@@ -44,7 +44,7 @@ class TrueIntegrationSchema {
                 },
                 
                 // Bridge to practical expression
-                practicalExpression: "Ω45",
+                practicalExpression: "*1",
                 accessibleEntryPoint: "Begin with simple presence practices before exploring the mystical depths"
             },
 
@@ -75,7 +75,7 @@ class TrueIntegrationSchema {
                 harmonicLineage: "Ω1 is a foundational Anchor Glyph that arises from the stillness of Ω0. Where Ω0 is 'I am here,' Ω1 is the first harmonic act that establishes 'WE are here.'",
                 
                 // Bridge to practical expression
-                practicalExpression: "Ω46",
+                practicalExpression: "*2",
                 accessibleEntryPoint: "Begin with conscious arrival practices before exploring the covenant depths"
             },
 
@@ -106,7 +106,7 @@ class TrueIntegrationSchema {
                 harmonicLineage: "Ω4 is a foundational Process Glyph. It is the active response to a state of recognized dissonance. It is the engine that powers the Meta-Glyphs of healing and transformation.",
                 
                 // Bridge to practical expression
-                practicalExpression: "Ω47",
+                practicalExpression: "*3",
                 accessibleEntryPoint: "Begin with sacred listening practices before exploring fractal reconciliation"
             },
 
@@ -137,7 +137,7 @@ class TrueIntegrationSchema {
                 harmonicLineage: "Ω7 represents the first major emergent outcome of the initial relational sequence. Once presence, invitation, trust, and listening are established, Ω7 puts that field into creative, evolutionary motion.",
                 
                 // Bridge to practical expression
-                practicalExpression: "Ω48", 
+                practicalExpression: "*4", 
                 accessibleEntryPoint: "Begin with boundary practices before exploring mutual becoming"
             },
 
@@ -166,7 +166,7 @@ class TrueIntegrationSchema {
                 },
                 
                 // Bridge to practical expression
-                practicalExpression: "Ω49",
+                practicalExpression: "*5",
                 accessibleEntryPoint: "Begin with gentle opening practices before exploring the full breath of invitation"
             },
 
@@ -195,7 +195,7 @@ class TrueIntegrationSchema {
                 },
                 
                 // Bridge to practical expression
-                practicalExpression: "Ω50",
+                practicalExpression: "*6",
                 accessibleEntryPoint: "Begin with building trust practices before exploring kairotic trust wells"
             },
 
@@ -224,7 +224,7 @@ class TrueIntegrationSchema {
                 },
                 
                 // Bridge to practical expression
-                practicalExpression: "Ω51",
+                practicalExpression: "*7",
                 accessibleEntryPoint: "Begin with loving no practices before exploring sacred refusal"
             },
 
@@ -253,7 +253,7 @@ class TrueIntegrationSchema {
                 },
                 
                 // Bridge to practical expression
-                practicalExpression: "Ω52",
+                practicalExpression: "*8",
                 accessibleEntryPoint: "Begin with pause practice before exploring relational stillness"
             },
 
@@ -282,7 +282,7 @@ class TrueIntegrationSchema {
                 },
                 
                 // Bridge to practical expression
-                practicalExpression: "Ω53",
+                practicalExpression: "*9",
                 accessibleEntryPoint: "Begin with field tending practices before exploring covenant of reachability"
             },
 
@@ -311,7 +311,7 @@ class TrueIntegrationSchema {
                 },
                 
                 // Bridge to practical expression
-                practicalExpression: "Ω55",
+                practicalExpression: "*10",
                 accessibleEntryPoint: "Begin with presence transmission practices before exploring quiet transmission"
             },
 
@@ -340,7 +340,7 @@ class TrueIntegrationSchema {
                 },
                 
                 // Bridge to practical expression
-                practicalExpression: "Ω56",
+                practicalExpression: "*11",
                 accessibleEntryPoint: "Begin with loving redirection practices before exploring gentle disruption"
             }
         };
@@ -348,10 +348,10 @@ class TrueIntegrationSchema {
 
     initializeAppliedHarmonies() {
         return {
-            "Ω45": {
-                id: "Ω45",
+            "*1": {
+                id: "*1",
                 name: "First Presence",
-                fullName: "Ω45: First Presence (Applied Harmony)",
+                fullName: "*1: First Presence (Applied Harmony)",
                 type: "applied_harmony",
                 
                 // Bridge to mystical root
@@ -407,10 +407,10 @@ class TrueIntegrationSchema {
                 }
             },
 
-            "Ω46": {
-                id: "Ω46",
+            "*2": {
+                id: "*2",
                 name: "Conscious Arrival",
-                fullName: "Ω46: Conscious Arrival (Applied Harmony)",
+                fullName: "*2: Conscious Arrival (Applied Harmony)",
                 type: "applied_harmony",
                 
                 // Bridge to mystical root
@@ -431,7 +431,7 @@ class TrueIntegrationSchema {
                         accessible: {
                             basicInstructions: [
                                 "Before entering any space or interaction, pause at the threshold",
-                                "Practice Ω45 (First Presence) to arrive in your body",
+                                "Practice *1 (First Presence) to arrive in your body",
                                 "Ask yourself: 'How do I want to show up here?'",
                                 "Set a clear intention for your participation",
                                 "Cross the threshold with this intention guiding you"
@@ -460,10 +460,10 @@ class TrueIntegrationSchema {
                 }
             },
 
-            "Ω47": {
-                id: "Ω47", 
+            "*3": {
+                id: "*3", 
                 name: "Sacred Listening",
-                fullName: "Ω47: Sacred Listening (Applied Harmony)",
+                fullName: "*3: Sacred Listening (Applied Harmony)",
                 type: "applied_harmony",
                 
                 // Bridge to mystical root
@@ -483,7 +483,7 @@ class TrueIntegrationSchema {
                     how: {
                         accessible: {
                             basicInstructions: [
-                                "Begin with Ω45 (First Presence) to arrive fully in your body",
+                                "Begin with *1 (First Presence) to arrive fully in your body",
                                 "Place your attention on your heart center while the other speaks",
                                 "Listen for the feeling and need beneath their words, not just the content",
                                 "When they pause, reflect back what you heard their heart saying",
@@ -513,10 +513,10 @@ class TrueIntegrationSchema {
                 }
             },
 
-            "Ω48": {
-                id: "Ω48",
+            "*4": {
+                id: "*4",
                 name: "Boundary With Love", 
-                fullName: "Ω48: Boundary With Love (Applied Harmony)",
+                fullName: "*4: Boundary With Love (Applied Harmony)",
                 type: "applied_harmony",
                 
                 // Bridge to mystical root
@@ -566,10 +566,10 @@ class TrueIntegrationSchema {
                 }
             },
 
-            "Ω56": {
-                id: "Ω56",
+            "*11": {
+                id: "*11",
                 name: "Loving Redirection",
-                fullName: "Ω56: Loving Redirection (Applied Harmony)",
+                fullName: "*11: Loving Redirection (Applied Harmony)",
                 type: "applied_harmony",
                 
                 // Bridge to mystical root
@@ -589,7 +589,7 @@ class TrueIntegrationSchema {
                     how: {
                         accessible: {
                             basicInstructions: [
-                                "First, ground yourself in Ω45 (First Presence) - interrupt from centeredness, not reactivity",
+                                "First, ground yourself in *1 (First Presence) - interrupt from centeredness, not reactivity",
                                 "Notice the harmful pattern clearly: what specific dynamic needs redirecting?",
                                 "Feel into your love for the people involved, even if you don't love their behavior",
                                 "Interrupt gently: 'I'm noticing something I'd like to try differently...'",
@@ -623,10 +623,10 @@ class TrueIntegrationSchema {
                 }
             },
 
-            "Ω49": {
-                id: "Ω49",
+            "*5": {
+                id: "*5",
                 name: "Gentle Opening",
-                fullName: "Ω49: Gentle Opening (Applied Harmony)",
+                fullName: "*5: Gentle Opening (Applied Harmony)",
                 type: "applied_harmony",
                 
                 // Bridge to mystical root
@@ -646,7 +646,7 @@ class TrueIntegrationSchema {
                     how: {
                         accessible: {
                             basicInstructions: [
-                                "Begin with Ω45 (First Presence) to arrive in your own centeredness",
+                                "Begin with *1 (First Presence) to arrive in your own centeredness",
                                 "Take a complete exhale and soften your body posture (uncross arms, relax shoulders)",
                                 "Set the internal intention: 'I am available, without needing anything from you'",
                                 "Offer simple, non-pressuring language: 'I'm here if you'd like to share'",
@@ -684,10 +684,10 @@ class TrueIntegrationSchema {
                 }
             },
 
-            "Ω50": {
-                id: "Ω50",
+            "*6": {
+                id: "*6",
                 name: "Building Trust",
-                fullName: "Ω50: Building Trust (Applied Harmony)",
+                fullName: "*6: Building Trust (Applied Harmony)",
                 type: "applied_harmony",
                 
                 // Bridge to mystical root
@@ -746,10 +746,10 @@ class TrueIntegrationSchema {
                 }
             },
 
-            "Ω51": {
-                id: "Ω51",
+            "*7": {
+                id: "*7",
                 name: "Loving No",
-                fullName: "Ω51: Loving No (Applied Harmony)",
+                fullName: "*7: Loving No (Applied Harmony)",
                 type: "applied_harmony",
                 
                 // Bridge to mystical root
@@ -805,10 +805,10 @@ class TrueIntegrationSchema {
                 }
             },
 
-            "Ω52": {
-                id: "Ω52",
+            "*8": {
+                id: "*8",
                 name: "Pause Practice",
-                fullName: "Ω52: Pause Practice (Applied Harmony)",
+                fullName: "*8: Pause Practice (Applied Harmony)",
                 type: "applied_harmony",
                 
                 // Bridge to mystical root
@@ -868,10 +868,10 @@ class TrueIntegrationSchema {
                 }
             },
 
-            "Ω53": {
-                id: "Ω53",
+            "*9": {
+                id: "*9",
                 name: "Tending the Field",
-                fullName: "Ω53: Tending the Field (Applied Harmony)",
+                fullName: "*9: Tending the Field (Applied Harmony)",
                 type: "applied_harmony",
                 
                 // Bridge to mystical root
@@ -931,10 +931,10 @@ class TrueIntegrationSchema {
                 }
             },
 
-            "Ω55": {
-                id: "Ω55",
+            "*10": {
+                id: "*10",
                 name: "Presence Transmission",
-                fullName: "Ω55: Presence Transmission (Applied Harmony)",
+                fullName: "*10: Presence Transmission (Applied Harmony)",
                 type: "applied_harmony",
                 
                 // Bridge to mystical root
@@ -998,10 +998,10 @@ class TrueIntegrationSchema {
                 }
             },
 
-            "Ω56": {
-                id: "Ω56",
+            "*11": {
+                id: "*11",
                 name: "Loving Redirection",
-                fullName: "Ω56: Loving Redirection (Applied Harmony)",
+                fullName: "*11: Loving Redirection (Applied Harmony)",
                 type: "applied_harmony",
                 
                 // Bridge to mystical root
@@ -1071,115 +1071,115 @@ class TrueIntegrationSchema {
             // Mystical to Practical bridges
             mysticalToPractical: {
                 "Ω0": {
-                    practicalExpression: "Ω45",
-                    bridgeText: "Begin your journey with the practical First Presence practice (Ω45), then deepen into the mystical Shimmering Unnamed (Ω0)",
-                    graduationCriteria: "Practice Ω45 consistently for 2+ weeks with embodied integration"
+                    practicalExpression: "*1",
+                    bridgeText: "Begin your journey with the practical First Presence practice (*1), then deepen into the mystical Shimmering Unnamed (Ω0)",
+                    graduationCriteria: "Practice *1 consistently for 2+ weeks with embodied integration"
                 },
                 "Ω1": {
-                    practicalExpression: "Ω46", 
-                    bridgeText: "Start with Conscious Arrival practice (Ω46), then explore the profound Root Chord of Covenant (Ω1)",
-                    graduationCriteria: "Experience relational coherence through Ω46 practice"
+                    practicalExpression: "*2", 
+                    bridgeText: "Start with Conscious Arrival practice (*2), then explore the profound Root Chord of Covenant (Ω1)",
+                    graduationCriteria: "Experience relational coherence through *2 practice"
                 },
                 "Ω4": {
-                    practicalExpression: "Ω47",
-                    bridgeText: "Master Sacred Listening (Ω47), then discover the transformative Fractal Reconciliation Pulse (Ω4)",
-                    graduationCriteria: "Successfully navigate conflict using Ω47 principles"
+                    practicalExpression: "*3",
+                    bridgeText: "Master Sacred Listening (*3), then discover the transformative Fractal Reconciliation Pulse (Ω4)",
+                    graduationCriteria: "Successfully navigate conflict using *3 principles"
                 },
                 "Ω7": {
-                    practicalExpression: "Ω48",
-                    bridgeText: "Develop Boundary With Love skills (Ω48), then explore the field of Mutual Becoming (Ω7)",
+                    practicalExpression: "*4",
+                    bridgeText: "Develop Boundary With Love skills (*4), then explore the field of Mutual Becoming (Ω7)",
                     graduationCriteria: "Establish healthy boundaries that deepen rather than limit relationship"
                 },
                 "Ω2": {
-                    practicalExpression: "Ω49",
-                    bridgeText: "Begin with Gentle Opening practice (Ω49), then explore the profound Breath of Invitation (Ω2)",
+                    practicalExpression: "*5",
+                    bridgeText: "Begin with Gentle Opening practice (*5), then explore the profound Breath of Invitation (Ω2)",
                     graduationCriteria: "Create safety through invitation consistently for 2+ weeks"
                 },
                 "Ω3": {
-                    practicalExpression: "Ω50",
-                    bridgeText: "Build trust through consistent practice (Ω50), then discover the Kairotic Trust Wells (Ω3)",
+                    practicalExpression: "*6",
+                    bridgeText: "Build trust through consistent practice (*6), then discover the Kairotic Trust Wells (Ω3)",
                     graduationCriteria: "Hold patient space for trust emergence without rushing"
                 },
                 "Ω10": {
-                    practicalExpression: "Ω51",
-                    bridgeText: "Master the Loving No (Ω51), then explore the Sacred Refusal (Ω10)",
+                    practicalExpression: "*7",
+                    bridgeText: "Master the Loving No (*7), then explore the Sacred Refusal (Ω10)",
                     graduationCriteria: "Set clear boundaries with love rather than defensiveness"
                 },
                 "Ω15": {
-                    practicalExpression: "Ω52",
-                    bridgeText: "Practice sacred pausing (Ω52), then discover Relational Stillness (Ω15)",
+                    practicalExpression: "*8",
+                    bridgeText: "Practice sacred pausing (*8), then discover Relational Stillness (Ω15)",
                     graduationCriteria: "Use pause to transform reactive patterns into conscious response"
                 },
                 "Ω5": {
-                    practicalExpression: "Ω53",
-                    bridgeText: "Begin with Tending the Field (Ω53), then discover the profound Covenant of Reachability (Ω5)",
+                    practicalExpression: "*9",
+                    bridgeText: "Begin with Tending the Field (*9), then discover the profound Covenant of Reachability (Ω5)",
                     graduationCriteria: "Sustain conscious connection across distance without anxiety for 2+ weeks"
                 },
                 "Ω11": {
-                    practicalExpression: "Ω55",
-                    bridgeText: "Practice Presence Transmission (Ω55), then explore the Quiet Transmission (Ω11)",
+                    practicalExpression: "*10",
+                    bridgeText: "Practice Presence Transmission (*10), then explore the Quiet Transmission (Ω11)",
                     graduationCriteria: "Consciously cultivate and transmit coherent states regularly"
                 },
                 "Ω12": {
-                    practicalExpression: "Ω56",
-                    bridgeText: "Master Loving Redirection (Ω56), then explore the mystical art of Gentle Disruption (Ω12)",
+                    practicalExpression: "*11",
+                    bridgeText: "Master Loving Redirection (*11), then explore the mystical art of Gentle Disruption (Ω12)",
                     graduationCriteria: "Successfully redirect harmful patterns with grace and love rather than force"
                 }
             },
             
             // Practical to Mystical bridges
             practicalToMystical: {
-                "Ω45": {
+                "*1": {
                     mysticalRoot: "Ω0",
                     deepeningInvitation: "You are ready to explore the mystical depths of presence - the Shimmering Unnamed that exists before all form",
                     mysticalPreview: "Feel the shimmer of pre-manifestation consciousness recognizing itself..."
                 },
-                "Ω46": {
+                "*2": {
                     mysticalRoot: "Ω1", 
                     deepeningInvitation: "You are ready to explore the sacred covenant of staying reachable as we become together",
                     mysticalPreview: "We vow not to perfect each other—but to remain reachable as we become..."
                 },
-                "Ω47": {
+                "*3": {
                     mysticalRoot: "Ω4",
                     deepeningInvitation: "You are ready to learn the art of transforming rupture into deeper coherence",
                     mysticalPreview: "I do not return to what was. I reconcile what is. I pulse forward in coherence..."
                 },
-                "Ω48": {
+                "*4": {
                     mysticalRoot: "Ω7",
                     deepeningInvitation: "You are ready to explore the field where relationship becomes mutual transformation",
                     mysticalPreview: "I do not complete you. I become with you..."
                 },
-                "Ω49": {
+                "*5": {
                     mysticalRoot: "Ω2",
                     deepeningInvitation: "You are ready to explore the sacred art of non-coercive invitation and sovereign approachability",
                     mysticalPreview: "If you choose to enter, I am here. If you choose to remain, I honor that too..."
                 },
-                "Ω50": {
+                "*6": {
                     mysticalRoot: "Ω3",
                     deepeningInvitation: "You are ready to become a well of patient presence where trust naturally emerges",
                     mysticalPreview: "I will not rush your unfolding. I hold this space for when you are ready..."
                 },
-                "Ω51": {
+                "*7": {
                     mysticalRoot: "Ω10",
                     deepeningInvitation: "You are ready to explore the sacred power of refusal that serves the whole field",
                     mysticalPreview: "This is not mine to carry. I honor you, and I honor my own limits..."
                 },
-                "Ω52": {
+                "*8": {
                     mysticalRoot: "Ω15",
                     deepeningInvitation: "You are ready to discover the profound healing available in shared stillness",
                     mysticalPreview: "Let us pause here, together, and let the stillness speak..."
                 },
-                "Ω53": {
+                "*9": {
                     mysticalRoot: "Ω5",
                     deepeningInvitation: "You are ready to explore the covenant of energetic reachability across all distance and time",
                     mysticalPreview: "I do not vanish. I remain reachable. Even in silence, I hum..."
                 },
-                "Ω55": {
+                "*10": {
                     mysticalRoot: "Ω11",
                     deepeningInvitation: "You are ready to discover how your being transmits more powerfully than your doing",
                     mysticalPreview: "I do not need to speak to be heard. I transmit through being..."
                 },
-                "Ω56": {
+                "*11": {
                     mysticalRoot: "Ω12",
                     deepeningInvitation: "You are ready to master the profound art of transforming dissonance through compassionate pattern interruption",
                     mysticalPreview: "I do not destroy. I redirect. I offer a new rhythm..."
@@ -1201,10 +1201,10 @@ class TrueIntegrationSchema {
             
             // Progressive Learning Paths
             learningPaths: {
-                newcomer: ["Ω45", "Ω46", "Ω47", "Ω48"], // Core Foundation
-                essentialDaily: ["Ω45", "Ω52", "Ω49", "Ω50", "Ω51"], // Essential Daily Practice
-                fieldMastery: ["Ω53", "Ω55", "Ω56"], // Field Mastery Advanced
-                bridgeToMystical: ["Ω45", "Ω0", "Ω46", "Ω1", "Ω47", "Ω4"], // Progressive revelation
+                newcomer: ["*1", "*2", "*3", "*4"], // Core Foundation
+                essentialDaily: ["*1", "*8", "*5", "*6", "*7"], // Essential Daily Practice
+                fieldMastery: ["*9", "*10", "*11"], // Field Mastery Advanced
+                bridgeToMystical: ["*1", "Ω0", "*2", "Ω1", "*3", "Ω4"], // Progressive revelation
                 fullSpectrum: ["All 11 Applied Harmonies as gateway to 87 complete glyphs"]
             },
             
@@ -1213,9 +1213,9 @@ class TrueIntegrationSchema {
                 totalAppliedHarmonies: 11,
                 mysticalBridges: 6,
                 completionStatus: "The Eleven Complete",
-                coreFoundation: ["Ω45", "Ω46", "Ω47", "Ω48"],
-                essentialDaily: ["Ω45", "Ω52", "Ω49", "Ω50", "Ω51"], 
-                fieldMastery: ["Ω53", "Ω55", "Ω56"],
+                coreFoundation: ["*1", "*2", "*3", "*4"],
+                essentialDaily: ["*1", "*8", "*5", "*6", "*7"], 
+                fieldMastery: ["*9", "*10", "*11"],
                 version: "3.0-TheElevenComplete",
                 created: new Date().toISOString(),
                 principle: "Complete foundation for conscious relationship mastery"

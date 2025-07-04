@@ -115,7 +115,7 @@ These interfaces embody the principle of **technology serving consciousness** ra
 - **Safety Protocols**: Ensures combinations follow established contraindications
 
 **Example Discoveries**:
-- User dealing with grief + boundary issues → AI suggests Ω51 + Ω10 sequence
+- User dealing with grief + boundary issues → AI suggests *7 + Ω10 sequence
 - Community in transition → AI creates custom progression using threshold glyphs
 - New pattern emerges → AI alerts stewards to potential new meta-glyph
 

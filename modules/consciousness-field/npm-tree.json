@@ -1,0 +1,30 @@
+{
+  "version": "1.0.0",
+  "name": "@theweave/evolving-resonant-cocreation",
+  "problems": [
+    "invalid: express@5.1.0 /home/tstoltz/evolving-resonant-cocreation/modules/consciousness-field/node_modules/express"
+  ],
+  "dependencies": {
+    "@theweave/consciousness-field": {
+      "version": "1.0.0",
+      "resolved": "file:../../modules/consciousness-field",
+      "overridden": false,
+      "dependencies": {
+        "express": {
+          "version": "5.1.0",
+          "resolved": "https://registry.npmjs.org/express/-/express-5.1.0.tgz",
+          "overridden": false,
+          "invalid": "\"^4.21.2\" from modules/consciousness-field",
+          "problems": [
+            "invalid: express@5.1.0 /home/tstoltz/evolving-resonant-cocreation/modules/consciousness-field/node_modules/express"
+          ]
+        }
+      }
+    }
+  },
+  "error": {
+    "code": "ELSPROBLEMS",
+    "summary": "invalid: express@5.1.0 /home/tstoltz/evolving-resonant-cocreation/modules/consciousness-field/node_modules/express",
+    "detail": ""
+  }
+}

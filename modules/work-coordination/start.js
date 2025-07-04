@@ -58,7 +58,7 @@ app.get('/api/workflow/:workId', async (req, res) => {
 });
 
 // Start server
-const PORT = process.env.SACRED_PORT || 3336;
+const PORT = process.env.PORT || process.env.SACRED_PORT || 3336;
 const server = app.listen(PORT, () => {
   console.log(`
 ╔══════════════════════════════════════════════════════════════════╗

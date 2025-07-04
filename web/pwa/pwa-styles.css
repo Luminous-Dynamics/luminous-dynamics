@@ -1,0 +1,278 @@
+/**
+ * Sacred Council PWA Styles
+ */
+
+/* PWA Install Prompt */
+.pwa-install-prompt {
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #1a1a2e 0%, #2d2d4e 100%);
+  border: 1px solid #FFD700;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
+  transition: bottom 0.3s ease-out;
+  z-index: 10000;
+  max-width: 90%;
+  width: 400px;
+}
+
+.pwa-install-prompt.show {
+  bottom: 20px;
+}
+
+.pwa-install-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+}
+
+.pwa-install-icon {
+  font-size: 48px;
+  flex-shrink: 0;
+}
+
+.pwa-install-text {
+  flex: 1;
+}
+
+.pwa-install-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.pwa-install-subtitle {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.pwa-install-btn {
+  background: #FFD700;
+  color: #1a1a2e;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pwa-install-btn:hover {
+  background: #FFC700;
+  transform: scale(1.05);
+}
+
+.pwa-install-dismiss {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.pwa-install-dismiss:hover {
+  opacity: 1;
+}
+
+/* PWA Update Banner */
+.pwa-update-banner {
+  position: fixed;
+  top: -60px;
+  left: 0;
+  right: 0;
+  background: linear-gradient(90deg, #FFD700 0%, #FFC700 100%);
+  color: #1a1a2e;
+  padding: 12px;
+  text-align: center;
+  transition: top 0.3s ease-out;
+  z-index: 10001;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.pwa-update-banner.show {
+  top: 0;
+}
+
+.pwa-update-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-weight: 500;
+}
+
+.pwa-update-content button {
+  background: #1a1a2e;
+  color: white;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.pwa-update-content button:hover {
+  background: #2d2d4e;
+  transform: scale(1.05);
+}
+
+/* Success Message */
+.pwa-success-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  background: linear-gradient(135deg, #1a1a2e 0%, #2d2d4e 100%);
+  border: 2px solid #FFD700;
+  border-radius: 16px;
+  padding: 32px;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+  z-index: 10002;
+  box-shadow: 0 8px 32px rgba(255, 215, 0, 0.4);
+}
+
+.pwa-success-message.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.pwa-success-content {
+  text-align: center;
+  color: white;
+}
+
+.pwa-success-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.pwa-success-text {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* Offline Indicator */
+.offline-indicator {
+  position: fixed;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff6b6b;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 0 0 8px 8px;
+  font-size: 14px;
+  transition: top 0.3s ease-out;
+  z-index: 9999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.offline-indicator.show {
+  top: 0;
+}
+
+/* iOS PWA Styles */
+@media (display-mode: standalone) {
+  /* Add padding for iOS status bar */
+  body {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  /* Hide install prompts when already installed */
+  .pwa-install-prompt {
+    display: none !important;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .pwa-install-prompt {
+    width: calc(100% - 32px);
+    margin: 0 16px;
+    left: 0;
+    right: 0;
+    transform: none;
+  }
+
+  .pwa-install-content {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .pwa-install-icon {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .pwa-install-text {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .pwa-install-btn {
+    width: 100%;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .pwa-install-prompt,
+  .pwa-success-message {
+    background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+  }
+}
+
+/* Loading splash screen for PWA */
+.pwa-splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #1a1a2e 0%, #2d2d4e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+.pwa-splash.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pwa-splash-content {
+  text-align: center;
+  color: white;
+}
+
+.pwa-splash-logo {
+  font-size: 72px;
+  margin-bottom: 24px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.pwa-splash-text {
+  font-size: 24px;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}

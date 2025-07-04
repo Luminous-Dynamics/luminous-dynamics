@@ -1,0 +1,13 @@
+name = "sacred-edge"
+main = "sacred-edge.js"
+compatibility_date = "2024-01-01"
+
+# Free tier limits
+# 100,000 requests/day
+# 10ms CPU time per request
+
+[env.production]
+vars = { ENVIRONMENT = "production" }
+
+# Routes (optional - can use workers.dev subdomain for free)
+# route = { pattern = "edge.sacred-council.com/*", zone_name = "sacred-council.com" }

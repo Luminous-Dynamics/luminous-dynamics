@@ -46,7 +46,7 @@ app.get('/api/recommend', async (req, res) => {
 });
 
 // Start server
-const PORT = process.env.SACRED_PORT || 3335;
+const PORT = process.env.PORT || process.env.SACRED_PORT || 3335;
 const server = app.listen(PORT, () => {
   console.log(`
 ╔══════════════════════════════════════════════════════════════════╗

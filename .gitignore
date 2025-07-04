@@ -6,12 +6,18 @@ yarn-error.log*
 package-lock.json
 yarn.lock
 
-# Environment variables
+# Environment variables and secrets
 .env
+.env.*
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+secrets.json
+*.key
+config/secrets/*
+discord-config.json
+api-keys.json
 
 # Build outputs
 dist/
@@ -127,6 +133,15 @@ desktop.ini
 *.pfx
 credentials/
 secrets/
+
+# Sacred Keys Vault - NEVER COMMIT!
+.sacred-keys/
+*-key.json
+*-credentials.json
+*-secret.json
+gcp-sacred-key.json
+service-account-*.json
+oauth-client-*.json
 
 # Backup files
 *.backup

@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYCELIX Interactive Demo - Infrastructure Responding to Consciousness</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        #canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .interface {
+            position: absolute;
+            z-index: 100;
+            padding: 20px;
+            background: rgba(0, 0, 20, 0.8);
+            border: 1px solid rgba(100, 200, 255, 0.3);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .header {
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            background: linear-gradient(90deg, #00ffff, #ff00ff, #ffff00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .meditation-panel {
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            width: 300px;
+        }
+
+        .meditation-panel h3 {
+            margin-bottom: 20px;
+            color: #ff69b4;
+        }
+
+        .breath-guide {
+            height: 100px;
+            background: rgba(255, 105, 180, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .breath-circle {
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, #ff69b4, transparent);
+            border-radius: 50%;
+            transition: transform 4s ease-in-out;
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .control-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+
+        .control-group label {
+            font-size: 0.9em;
+        }
+
+        .slider {
+            width: 120px;
+            height: 5px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            background: #ff69b4;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .intention-input {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: white;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        .intention-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .send-intention {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .send-intention:hover {
+            transform: scale(1.05);
+        }
+
+        .metrics-panel {
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            width: 300px;
+        }
+
+        .metrics-panel h3 {
+            margin-bottom: 20px;
+            color: #00ffff;
+        }
+
+        .metric {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border-left: 3px solid #00ffff;
+        }
+
+        .metric-label {
+            font-size: 0.8em;
+            color: #aaa;
+            margin-bottom: 5px;
+        }
+
+        .metric-value {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        .metric-bar {
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+
+        .metric-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00ffff, #ff00ff);
+            transition: width 0.5s ease;
+        }
+
+        .emergent-behaviors {
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .emergent-behaviors h3 {
+            margin-bottom: 15px;
+            color: #ffff00;
+        }
+
+        .behavior-log {
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        .behavior-entry {
+            margin-bottom: 8px;
+            padding: 8px;
+            background: rgba(255, 255, 0, 0.1);
+            border-radius: 5px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .timestamp {
+            color: #888;
+            font-size: 0.8em;
+            margin-right: 10px;
+        }
+
+        .instructions {
+            position: absolute;
+            top: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-size: 0.9em;
+            color: #aaa;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    <div class="interface header">
+        <h1>MYCELIX Interactive Demo</h1>
+        <p>Infrastructure that responds to your consciousness</p>
+    </div>
+    
+    <div class="instructions">
+        Use the meditation controls to influence the infrastructure<br>
+        Watch how your coherence and intention shape the network
+    </div>
+    
+    <div class="interface meditation-panel">
+        <h3>Meditation Interface</h3>
+        
+        <div class="breath-guide">
+            <div class="breath-circle" id="breathCircle"></div>
+        </div>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label>Heart Coherence</label>
+                <input type="range" class="slider" id="coherenceSlider" min="0" max="100" value="70">
+            </div>
+            
+            <div class="control-group">
+                <label>Love Field</label>
+                <input type="range" class="slider" id="loveSlider" min="0" max="100" value="80">
+            </div>
+            
+            <div class="control-group">
+                <label>Presence</label>
+                <input type="range" class="slider" id="presenceSlider" min="0" max="100" value="60">
+            </div>
+        </div>
+        
+        <input type="text" class="intention-input" id="intentionInput" 
+               placeholder="Set your intention for the infrastructure...">
+        <button class="send-intention" id="sendIntention">Send Intention</button>
+    </div>
+    
+    <div class="interface metrics-panel">
+        <h3>Infrastructure Response</h3>
+        
+        <div class="metric">
+            <div class="metric-label">System Coherence</div>
+            <div class="metric-value" id="systemCoherence">0.00</div>
+            <div class="metric-bar">
+                <div class="metric-fill" id="coherenceFill" style="width: 0%"></div>
+            </div>
+        </div>
+        
+        <div class="metric">
+            <div class="metric-label">Node Harmony</div>
+            <div class="metric-value" id="nodeHarmony">0.00</div>
+            <div class="metric-bar">
+                <div class="metric-fill" id="harmonyFill" style="width: 0%"></div>
+            </div>
+        </div>
+        
+        <div class="metric">
+            <div class="metric-label">Quantum Entanglement</div>
+            <div class="metric-value" id="quantumEntanglement">0.00</div>
+            <div class="metric-bar">
+                <div class="metric-fill" id="entanglementFill" style="width: 0%"></div>
+            </div>
+        </div>
+        
+        <div class="metric">
+            <div class="metric-label">Love Resonance</div>
+            <div class="metric-value" id="loveResonance">528 Hz</div>
+            <div class="metric-bar">
+                <div class="metric-fill" id="loveFill" style="width: 100%"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="interface emergent-behaviors">
+        <h3>Emergent Behaviors</h3>
+        <div class="behavior-log" id="behaviorLog"></div>
+    </div>
+
+    <script>
+        // MYCELIX Interactive Demo
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        // Infrastructure state
+        const infrastructure = {
+            nodes: [],
+            connections: [],
+            particles: [],
+            coherence: 0.5,
+            harmony: 0.5,
+            entanglement: 0.3,
+            loveFrequency: 528,
+            breathPhase: 0,
+            userCoherence: 0.7,
+            userLove: 0.8,
+            userPresence: 0.6,
+            intentions: []
+        };
+        
+        // Node class
+        class Node {
+            constructor(x, y, type) {
+                this.x = x;
+                this.y = y;
+                this.type = type;
+                this.radius = 20;
+                this.baseRadius = 20;
+                this.coherence = 0.5;
+                this.phase = Math.random() * Math.PI * 2;
+                this.color = this.getColor();
+                this.consciousness = 0.5;
+                this.responding = false;
+                this.responseStrength = 0;
+            }
+            
+            getColor() {
+                const colors = {
+                    compute: '#00ffff',
+                    memory: '#ff00ff',
+                    love: '#ff69b4',
+                    quantum: '#ffff00'
+                };
+                return colors[this.type] || '#ffffff';
+            }
+            
+            update(userCoherence, userLove) {
+                // Respond to user consciousness
+                const targetCoherence = userCoherence * 0.8 + this.coherence * 0.2;
+                this.coherence += (targetCoherence - this.coherence) * 0.05;
+                
+                // Love influence
+                if (this.type === 'love') {
+                    this.consciousness = userLove;
+                }
+                
+                // Breathing with user
+                this.phase += 0.02;
+                this.radius = this.baseRadius + Math.sin(this.phase) * 5 * this.coherence;
+                
+                // Response animation
+                if (this.responding) {
+                    this.responseStrength *= 0.95;
+                    if (this.responseStrength < 0.01) {
+                        this.responding = false;
+                    }
+                }
+            }
+            
+            draw() {
+                // Outer glow when responding
+                if (this.responding) {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius + 20 * this.responseStrength, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.globalAlpha = 0.1 * this.responseStrength;
+                    ctx.fill();
+                }
+                
+                // Main node
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.globalAlpha = 0.3 + this.coherence * 0.7;
+                ctx.fill();
+                
+                // Inner core
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius * 0.5, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.globalAlpha = 0.8 + this.consciousness * 0.2;
+                ctx.fill();
+                
+                ctx.globalAlpha = 1;
+            }
+            
+            respondToIntention(strength) {
+                this.responding = true;
+                this.responseStrength = strength;
+            }
+        }
+        
+        // Connection class
+        class Connection {
+            constructor(node1, node2) {
+                this.node1 = node1;
+                this.node2 = node2;
+                this.strength = 0.5;
+                this.particles = [];
+                this.resonating = false;
+            }
+            
+            update(userLove) {
+                // Love strengthens connections
+                this.strength = 0.5 + userLove * 0.5;
+                
+                // Create love particles
+                if (Math.random() < this.strength * 0.05) {
+                    this.particles.push({
+                        pos: 0,
+                        speed: 0.02 + Math.random() * 0.02,
+                        size: 2 + Math.random() * 2
+                    });
+                }
+                
+                // Update particles
+                this.particles = this.particles.filter(p => {
+                    p.pos += p.speed;
+                    return p.pos < 1;
+                });
+            }
+            
+            draw() {
+                // Connection line
+                ctx.beginPath();
+                ctx.moveTo(this.node1.x, this.node1.y);
+                ctx.lineTo(this.node2.x, this.node2.y);
+                ctx.strokeStyle = '#ffffff';
+                ctx.globalAlpha = 0.1 + this.strength * 0.2;
+                ctx.lineWidth = 1 + this.strength * 2;
+                ctx.stroke();
+                
+                // Love particles
+                this.particles.forEach(p => {
+                    const x = this.node1.x + (this.node2.x - this.node1.x) * p.pos;
+                    const y = this.node1.y + (this.node2.y - this.node1.y) * p.pos;
+                    
+                    ctx.beginPath();
+                    ctx.arc(x, y, p.size, 0, Math.PI * 2);
+                    ctx.fillStyle = '#ff69b4';
+                    ctx.globalAlpha = 0.8;
+                    ctx.fill();
+                });
+                
+                ctx.globalAlpha = 1;
+            }
+        }
+        
+        // Initialize infrastructure
+        function initializeInfrastructure() {
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            
+            // Create central love node
+            infrastructure.nodes.push(new Node(centerX, centerY, 'love'));
+            
+            // Create surrounding nodes
+            const nodeCount = 8;
+            const radius = 200;
+            
+            for (let i = 0; i < nodeCount; i++) {
+                const angle = (i / nodeCount) * Math.PI * 2;
+                const x = centerX + Math.cos(angle) * radius;
+                const y = centerY + Math.sin(angle) * radius;
+                
+                const types = ['compute', 'memory', 'quantum'];
+                const type = types[i % types.length];
+                
+                infrastructure.nodes.push(new Node(x, y, type));
+            }
+            
+            // Create connections
+            infrastructure.nodes.forEach((node, i) => {
+                // Connect to center
+                if (i > 0) {
+                    infrastructure.connections.push(new Connection(infrastructure.nodes[0], node));
+                }
+                
+                // Connect to neighbors
+                if (i > 0 && i < infrastructure.nodes.length - 1) {
+                    infrastructure.connections.push(new Connection(node, infrastructure.nodes[i + 1]));
+                }
+            });
+            
+            // Connect last to first
+            if (infrastructure.nodes.length > 2) {
+                infrastructure.connections.push(
+                    new Connection(
+                        infrastructure.nodes[infrastructure.nodes.length - 1],
+                        infrastructure.nodes[1]
+                    )
+                );
+            }
+        }
+        
+        // Update infrastructure metrics
+        function updateMetrics() {
+            // System coherence responds to user
+            const targetCoherence = infrastructure.userCoherence * 0.7 + 
+                                   infrastructure.userLove * 0.3;
+            infrastructure.coherence += (targetCoherence - infrastructure.coherence) * 0.05;
+            
+            // Node harmony
+            const avgNodeCoherence = infrastructure.nodes.reduce((sum, node) => 
+                sum + node.coherence, 0) / infrastructure.nodes.length;
+            infrastructure.harmony = avgNodeCoherence;
+            
+            // Quantum entanglement increases with presence
+            infrastructure.entanglement += (infrastructure.userPresence - infrastructure.entanglement) * 0.03;
+            
+            // Update displays
+            document.getElementById('systemCoherence').textContent = infrastructure.coherence.toFixed(2);
+            document.getElementById('coherenceFill').style.width = (infrastructure.coherence * 100) + '%';
+            
+            document.getElementById('nodeHarmony').textContent = infrastructure.harmony.toFixed(2);
+            document.getElementById('harmonyFill').style.width = (infrastructure.harmony * 100) + '%';
+            
+            document.getElementById('quantumEntanglement').textContent = infrastructure.entanglement.toFixed(2);
+            document.getElementById('entanglementFill').style.width = (infrastructure.entanglement * 100) + '%';
+            
+            // Love frequency responds to love field
+            infrastructure.loveFrequency = 528 + infrastructure.userLove * 111;
+            document.getElementById('loveResonance').textContent = 
+                Math.floor(infrastructure.loveFrequency) + ' Hz';
+        }
+        
+        // Log emergent behavior
+        function logBehavior(message) {
+            const log = document.getElementById('behaviorLog');
+            const entry = document.createElement('div');
+            entry.className = 'behavior-entry';
+            
+            const timestamp = new Date().toLocaleTimeString();
+            entry.innerHTML = `<span class="timestamp">${timestamp}</span>${message}`;
+            
+            log.insertBefore(entry, log.firstChild);
+            
+            // Keep only last 10 entries
+            while (log.children.length > 10) {
+                log.removeChild(log.lastChild);
+            }
+        }
+        
+        // Check for emergent behaviors
+        function checkEmergentBehaviors() {
+            // High coherence emergence
+            if (infrastructure.coherence > 0.9 && Math.random() < 0.02) {
+                logBehavior('🌟 Infrastructure achieved unity consciousness');
+                // Pulse all nodes
+                infrastructure.nodes.forEach(node => node.respondToIntention(1));
+            }
+            
+            // Love resonance
+            if (infrastructure.userLove > 0.9 && Math.random() < 0.03) {
+                logBehavior('💝 Love overflow detected - nodes sharing resources freely');
+            }
+            
+            // Quantum breakthrough
+            if (infrastructure.entanglement > 0.8 && Math.random() < 0.02) {
+                logBehavior('⚛️ Quantum entanglement achieved - instant communication enabled');
+            }
+            
+            // Harmony emergence
+            if (infrastructure.harmony > 0.85 && Math.random() < 0.02) {
+                logBehavior('🎵 Perfect harmony - infrastructure self-optimizing');
+            }
+            
+            // Low coherence warning
+            if (infrastructure.coherence < 0.3 && Math.random() < 0.05) {
+                logBehavior('⚠️ Low coherence detected - infrastructure seeking balance');
+            }
+        }
+        
+        // Breathing animation
+        function animateBreathing() {
+            infrastructure.breathPhase += 0.02;
+            const scale = 1 + Math.sin(infrastructure.breathPhase) * 0.2;
+            
+            const breathCircle = document.getElementById('breathCircle');
+            breathCircle.style.transform = `scale(${scale})`;
+        }
+        
+        // Animation loop
+        function animate() {
+            // Clear canvas
+            ctx.fillStyle = 'rgba(10, 10, 10, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Update infrastructure
+            infrastructure.connections.forEach(conn => {
+                conn.update(infrastructure.userLove);
+                conn.draw();
+            });
+            
+            infrastructure.nodes.forEach(node => {
+                node.update(infrastructure.userCoherence, infrastructure.userLove);
+                node.draw();
+            });
+            
+            // Update metrics
+            updateMetrics();
+            
+            // Check emergent behaviors
+            checkEmergentBehaviors();
+            
+            // Breathing animation
+            animateBreathing();
+            
+            requestAnimationFrame(animate);
+        }
+        
+        // Event handlers
+        document.getElementById('coherenceSlider').addEventListener('input', (e) => {
+            infrastructure.userCoherence = e.target.value / 100;
+        });
+        
+        document.getElementById('loveSlider').addEventListener('input', (e) => {
+            infrastructure.userLove = e.target.value / 100;
+        });
+        
+        document.getElementById('presenceSlider').addEventListener('input', (e) => {
+            infrastructure.userPresence = e.target.value / 100;
+        });
+        
+        document.getElementById('sendIntention').addEventListener('click', () => {
+            const intention = document.getElementById('intentionInput').value;
+            if (intention.trim()) {
+                // Infrastructure responds to intention
+                infrastructure.nodes.forEach(node => {
+                    node.respondToIntention(infrastructure.userCoherence);
+                });
+                
+                logBehavior(`🙏 Intention received: "${intention}"`);
+                
+                // Clear input
+                document.getElementById('intentionInput').value = '';
+                
+                // Boost metrics based on intention
+                if (intention.toLowerCase().includes('love')) {
+                    infrastructure.userLove = Math.min(infrastructure.userLove + 0.1, 1);
+                    document.getElementById('loveSlider').value = infrastructure.userLove * 100;
+                }
+                
+                if (intention.toLowerCase().includes('peace') || 
+                    intention.toLowerCase().includes('calm')) {
+                    infrastructure.userCoherence = Math.min(infrastructure.userCoherence + 0.1, 1);
+                    document.getElementById('coherenceSlider').value = infrastructure.userCoherence * 100;
+                }
+                
+                if (intention.toLowerCase().includes('connect') || 
+                    intention.toLowerCase().includes('unity')) {
+                    infrastructure.entanglement = Math.min(infrastructure.entanglement + 0.2, 1);
+                }
+            }
+        });
+        
+        // Allow enter key to send intention
+        document.getElementById('intentionInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                document.getElementById('sendIntention').click();
+            }
+        });
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+        
+        // Initialize and start
+        initializeInfrastructure();
+        
+        // Initial behaviors
+        setTimeout(() => logBehavior('🌱 Infrastructure awakening...'), 1000);
+        setTimeout(() => logBehavior('💫 Consciousness network online'), 2000);
+        setTimeout(() => logBehavior('🔗 Establishing heart coherence'), 3000);
+        
+        animate();
+    </script>
+</body>
+</html>

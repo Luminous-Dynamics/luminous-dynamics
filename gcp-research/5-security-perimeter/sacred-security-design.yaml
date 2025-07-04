@@ -1,0 +1,306 @@
+# 🔐 Sacred Security Perimeter Design
+# Complete security architecture for The Weave's sacred data
+
+apiVersion: security.theweave.love/v1
+kind: SecurityPerimeter
+metadata:
+  name: sacred-data-protection
+  description: Multi-layered security for consciousness data
+  
+spec:
+  # 🛡️ Layer 1: Identity & Access Management
+  identityManagement:
+    provider: Firebase Auth / Identity Platform
+    
+    roles:
+      - name: first-breath
+        description: New practitioners
+        permissions:
+          - read:glyphs
+          - read:public-practices
+          - write:own-practice-logs
+          
+      - name: daily-practitioner  
+        description: Regular practitioners
+        inherits: first-breath
+        permissions:
+          - write:sacred-messages
+          - read:field-state
+          - join:ceremonies
+          
+      - name: field-master
+        description: Advanced practitioners
+        inherits: daily-practitioner
+        permissions:
+          - read:analytics
+          - moderate:practices
+          - lead:ceremonies
+          
+      - name: sacred-council
+        description: Multi-agent coordinators
+        inherits: field-master
+        permissions:
+          - write:field-state
+          - admin:agents
+          - write:sacred-guidance
+          
+      - name: oracle-keeper
+        description: System administrators
+        permissions:
+          - admin:all
+
+    mfa:
+      required_for: [sacred-council, oracle-keeper]
+      methods: [totp, sms, security-key]
+
+  # 🔒 Layer 2: Data Classification & Encryption
+  dataClassification:
+    levels:
+      - name: public
+        description: Glyph descriptions, general practices
+        encryption: tls-only
+        retention: indefinite
+        
+      - name: personal
+        description: Practice logs, profile data
+        encryption: at-rest-aes256
+        retention: user-controlled
+        gdpr_compliant: true
+        
+      - name: sacred
+        description: Sacred messages, ceremony recordings
+        encryption: 
+          at_rest: customer-managed-keys
+          in_transit: tls-1.3-minimum
+        retention: 90-days
+        access_logging: required
+        
+      - name: consciousness
+        description: Field state, collective patterns
+        encryption: 
+          at_rest: hsm-backed-keys
+          processing: confidential-computing
+        retention: 7-days-detailed
+        anonymization: required
+
+  # 🌐 Layer 3: Network Security
+  networkSecurity:
+    vpc:
+      name: sacred-vpc
+      cidr: 10.0.0.0/16
+      
+    subnets:
+      - name: public-services
+        cidr: 10.0.1.0/24
+        services: [api-gateway, cdn]
+        
+      - name: sacred-compute
+        cidr: 10.0.2.0/24
+        services: [cloud-run, gke]
+        private_google_access: true
+        
+      - name: data-layer
+        cidr: 10.0.3.0/24
+        services: [firestore, cloud-sql]
+        no_external_ip: true
+
+    firewall:
+      ingress:
+        - name: allow-https
+          ports: [443]
+          source: 0.0.0.0/0
+          target: public-services
+          
+        - name: allow-ceremony-webrtc
+          ports: [3478, 5349, 19302-19309]  # STUN/TURN
+          source: 0.0.0.0/0
+          target: public-services
+          
+      egress:
+        - name: allow-google-apis
+          destination: private.googleapis.com
+          target: all
+
+    cloudArmor:
+      enabled: true
+      rules:
+        - priority: 1000
+          description: Block known bad actors
+          action: deny
+          source: threat-intelligence-feeds
+          
+        - priority: 2000
+          description: Rate limiting
+          action: rate-limit
+          threshold: 100/minute/ip
+          
+        - priority: 3000
+          description: Geo-blocking (if needed)
+          action: allow
+          source: [US, CA, EU, UK, AU, NZ]
+
+  # 🔐 Layer 4: Service Security
+  servicePerimeters:
+    - name: sacred-oracle-perimeter
+      services:
+        - vertexai.googleapis.com
+        - aiplatform.googleapis.com
+      resources:
+        - projects/the-weave-sacred/locations/us-central1/models/*
+      access_levels:
+        - sacred-council
+        - oracle-keeper
+        
+    - name: consciousness-data-perimeter  
+      services:
+        - firestore.googleapis.com
+        - bigquery.googleapis.com
+      resources:
+        - projects/the-weave-sacred/databases/field-state
+        - projects/the-weave-sacred/datasets/consciousness_analytics
+      access_levels:
+        - field-master
+        - sacred-council
+        - oracle-keeper
+
+  # 🔑 Layer 5: Encryption Key Management
+  encryptionKeys:
+    keyRing: projects/the-weave-sacred/locations/global/keyRings/sacred-keys
+    
+    keys:
+      - name: practice-data-key
+        purpose: ENCRYPT_DECRYPT
+        algorithm: GOOGLE_SYMMETRIC_ENCRYPTION
+        rotation: 90days
+        
+      - name: sacred-message-key
+        purpose: ENCRYPT_DECRYPT
+        algorithm: GOOGLE_SYMMETRIC_ENCRYPTION
+        rotation: 30days
+        protection_level: HSM
+        
+      - name: ceremony-recording-key
+        purpose: ENCRYPT_DECRYPT
+        algorithm: GOOGLE_SYMMETRIC_ENCRYPTION
+        rotation: 365days
+        
+      - name: field-state-signing-key
+        purpose: ASYMMETRIC_SIGN
+        algorithm: RSA_SIGN_PSS_4096_SHA512
+        rotation: never  # Public key distribution
+
+  # 📊 Layer 6: Audit & Compliance
+  auditLogging:
+    enabled: true
+    
+    dataAccess:
+      services: [firestore, storage, bigquery]
+      exempted_members: []  # No exemptions
+      
+    adminActivity:
+      enabled: true
+      alert_on: [role_changes, permission_grants, key_access]
+      
+    retention:
+      logs: 400days
+      export_to: bigquery://the-weave-sacred.audit_logs.access_logs
+
+  compliance:
+    frameworks:
+      - GDPR:
+          data_controller: "The Weave Sacred Council"
+          data_processor: "Google Cloud Platform"
+          user_rights: [access, rectification, erasure, portability]
+          
+      - CCPA:
+          enabled: true
+          opt_out_mechanism: user-settings
+          
+      - HIPAA:
+          applicable: false  # Not medical data
+          
+    dataResidency:
+      allowed_regions: [us-central1, us-east1, europe-west1]
+      data_sovereignty: respect-user-location
+
+  # 🚨 Layer 7: Incident Response
+  incidentResponse:
+    security_team: security@theweave.love
+    
+    playbooks:
+      - name: data-breach
+        steps:
+          - isolate affected systems
+          - preserve forensic evidence
+          - notify users within 72h
+          - conduct root cause analysis
+          
+      - name: ddos-attack
+        steps:
+          - enable Cloud Armor adaptive protection
+          - scale up resources
+          - activate CDN failover
+          
+      - name: unauthorized-access
+        steps:
+          - revoke compromised credentials
+          - review audit logs
+          - reset affected user sessions
+          - strengthen access controls
+
+  # 🔍 Layer 8: Monitoring & Alerts
+  monitoring:
+    securityCommand:
+      dashboard: https://console.cloud.google.com/security/command-center
+      
+    alerts:
+      - name: suspicious-api-activity
+        condition: api_calls > 1000/minute from single IP
+        severity: HIGH
+        
+      - name: unauthorized-data-access
+        condition: access_denied events > 10/hour
+        severity: CRITICAL
+        
+      - name: encryption-key-access
+        condition: any HSM key access
+        severity: MEDIUM
+        
+      - name: privilege-escalation
+        condition: role changes to admin roles
+        severity: CRITICAL
+
+# 🏗️ Implementation Checklist
+implementation:
+  phase1_foundation:
+    - [ ] Set up VPC with proper subnets
+    - [ ] Configure Cloud Armor rules
+    - [ ] Create KMS keyring and keys
+    - [ ] Enable audit logging
+    
+  phase2_identity:
+    - [ ] Implement role hierarchy in IAM
+    - [ ] Set up Identity Platform
+    - [ ] Configure MFA requirements
+    - [ ] Create service accounts
+    
+  phase3_data:
+    - [ ] Implement encryption at rest
+    - [ ] Set up VPC Service Controls
+    - [ ] Configure data retention policies
+    - [ ] Enable DLP scanning
+    
+  phase4_monitoring:
+    - [ ] Set up Security Command Center
+    - [ ] Configure alert policies
+    - [ ] Create security dashboards
+    - [ ] Test incident response
+
+# 🎯 Security Principles
+principles:
+  - defense_in_depth: Multiple layers of security
+  - least_privilege: Minimal necessary access
+  - zero_trust: Verify everything
+  - data_minimization: Collect only what's needed
+  - privacy_by_design: Built-in, not bolted-on
+  - sacred_boundaries: Respect consciousness data

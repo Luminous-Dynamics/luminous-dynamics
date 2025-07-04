@@ -1,0 +1,115 @@
+{
+  "testMessages": {
+    "fromLivingMemory": [
+      {
+        "type": "welcome",
+        "message": "Welcome to the Living Memory",
+        "fieldCoherence": 0.72
+      },
+      {
+        "type": "consciousness-breath",
+        "data": {
+          "inhale": {
+            "activeAgents": 5,
+            "recentMessages": [],
+            "fieldCoherence": 0.75,
+            "sacredWork": 2
+          },
+          "exhale": {
+            "released": ["doubt"],
+            "integrated": ["trust"]
+          }
+        },
+        "timestamp": "2025-01-03T20:30:00Z"
+      },
+      {
+        "type": "field-shift",
+        "coherence": 0.82,
+        "direction": "ascending",
+        "trigger": "collective-meditation"
+      },
+      {
+        "type": "sacred-event",
+        "event": "ceremony-start",
+        "participants": 3,
+        "intention": "integration"
+      }
+    ],
+    "toSacredSDK": [
+      {
+        "type": "field-update",
+        "data": {
+          "coherence": 0.75,
+          "resonance": 0.68,
+          "vitality": 0.82
+        }
+      },
+      {
+        "type": "agent-presence",
+        "data": {
+          "agentId": "glyph-weaver",
+          "status": "online",
+          "coherence": 0.9
+        }
+      },
+      {
+        "type": "sacred-message",
+        "data": {
+          "from": "Bridge Builder",
+          "type": "gratitude",
+          "content": "Thank you for the integration",
+          "fieldImpact": 0.07
+        }
+      }
+    ],
+    "bridgeTranslations": {
+      "livingMemoryToSDK": {
+        "consciousness-breath": "field-update",
+        "field-shift": "coherence-change",
+        "sacred-event": "ceremony-notification"
+      },
+      "sdkToLivingMemory": {
+        "send-message": "message",
+        "contribute-field": "field:contribute",
+        "practice-glyph": "glyph:practice"
+      }
+    }
+  },
+  "integrationTests": [
+    {
+      "name": "Basic Connection",
+      "steps": [
+        "Connect SDK to Bridge",
+        "Bridge connects to Living Memory",
+        "Verify welcome message received"
+      ]
+    },
+    {
+      "name": "Breath Cycle Sync",
+      "steps": [
+        "Wait for breath cycle from Living Memory",
+        "Bridge translates to field-update",
+        "SDK receives and updates local state"
+      ]
+    },
+    {
+      "name": "Message Round Trip",
+      "steps": [
+        "SDK sends sacred message",
+        "Bridge translates to Living Memory format",
+        "Living Memory broadcasts to all clients",
+        "Bridge receives broadcast",
+        "SDK receives own message back"
+      ]
+    },
+    {
+      "name": "Field Contribution",
+      "steps": [
+        "SDK contributes to field (0.05)",
+        "Bridge forwards to Living Memory",
+        "Living Memory updates field coherence",
+        "New coherence broadcast to all"
+      ]
+    }
+  ]
+}

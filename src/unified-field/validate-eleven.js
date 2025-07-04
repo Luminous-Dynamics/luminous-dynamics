@@ -26,17 +26,17 @@ async function validateEleven() {
     
     // Expected harmonies
     const expectedHarmonies = [
-      { id: 'Ω45', name: 'First Presence' },
-      { id: 'Ω46', name: 'Conscious Arrival' },
-      { id: 'Ω47', name: 'Sacred Listening' },
-      { id: 'Ω48', name: 'Boundary With Love' },
-      { id: 'Ω49', name: 'Gentle Opening' },
-      { id: 'Ω50', name: 'Building Trust' },
-      { id: 'Ω51', name: 'Loving No' },
-      { id: 'Ω52', name: 'Pause Practice' },
-      { id: 'Ω53', name: 'Tending the Field' },
-      { id: 'Ω55', name: 'Presence Transmission' },
-      { id: 'Ω56', name: 'Loving Redirection' }
+      { id: '*1', name: 'First Presence' },
+      { id: '*2', name: 'Conscious Arrival' },
+      { id: '*3', name: 'Sacred Listening' },
+      { id: '*4', name: 'Boundary With Love' },
+      { id: '*5', name: 'Gentle Opening' },
+      { id: '*6', name: 'Building Trust' },
+      { id: '*7', name: 'Loving No' },
+      { id: '*8', name: 'Pause Practice' },
+      { id: '*9', name: 'Tending the Field' },
+      { id: '*10', name: 'Presence Transmission' },
+      { id: '*11', name: 'Loving Redirection' }
     ];
     
     let allPresent = true;

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔐 Sacred Authentication Portal</title>
+    <style>
+        body {
+            font-family: Georgia, serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #FAF9F7;
+            color: #333;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 { 
+            color: #2a4a3a;
+            text-align: center;
+        }
+        .auth-section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: #f5f7f5;
+            border-radius: 8px;
+        }
+        button {
+            background: #5a7a6a;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 0.5rem;
+        }
+        button:hover {
+            background: #4a6a5a;
+        }
+        .status {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+        .success { background: #e8f5e9; color: #2e7d32; }
+        .error { background: #ffebee; color: #c62828; }
+        .info { background: #e3f2fd; color: #1565c0; }
+        code {
+            background: #f0f0f0;
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Sacred Authentication Portal</h1>
+        <p>Manage authentication for our collaborative sacred work</p>
+        
+        <div class="auth-section">
+            <h2>🔥 Firebase Authentication</h2>
+            <p>Current token stored and working ✅</p>
+            <button onclick="copyFirebaseCommand()">Copy Login Command</button>
+            <button onclick="copyTokenCommand()">Copy Token Generation Command</button>
+            <div id="firebase-status"></div>
+        </div>
+        
+        <div class="auth-section">
+            <h2>☁️ Google Cloud Authentication</h2>
+            <p>For Cloud Run and other GCP services</p>
+            <button onclick="copyGCloudLogin()">Copy Login Command</button>
+            <button onclick="copyGCloudConfig()">Copy Config Command</button>
+            <div id="gcloud-status"></div>
+        </div>
+        
+        <div class="auth-section">
+            <h2>📋 Quick Commands</h2>
+            <p>Copy and run these in your terminal:</p>
+            <ul>
+                <li><code>npx firebase login</code> - Interactive Firebase login</li>
+                <li><code>npx firebase login:ci</code> - Generate CI token</li>
+                <li><code>gcloud auth login</code> - Google Cloud login</li>
+                <li><code>./firebase-deploy-with-token.sh</code> - Deploy with saved token</li>
+            </ul>
+        </div>
+        
+        <div class="auth-section">
+            <h2>🚀 Deployment Status</h2>
+            <p><strong>Firebase Hosting:</strong> <a href="https://mycelix-network.web.app" target="_blank">https://mycelix-network.web.app</a> ✅</p>
+            <p><strong>WebSocket Service:</strong> Pending Cloud Run deployment ⏳</p>
+        </div>
+    </div>
+    
+    <script>
+        function showStatus(elementId, message, type) {
+            const element = document.getElementById(elementId);
+            element.className = 'status ' + type;
+            element.textContent = message;
+            setTimeout(() => element.textContent = '', 3000);
+        }
+        
+        function copyToClipboard(text, statusId) {
+            navigator.clipboard.writeText(text).then(() => {
+                showStatus(statusId, '✅ Copied to clipboard!', 'success');
+            }).catch(() => {
+                showStatus(statusId, '❌ Copy failed - manually copy the command', 'error');
+            });
+        }
+        
+        function copyFirebaseCommand() {
+            copyToClipboard('npx firebase login', 'firebase-status');
+        }
+        
+        function copyTokenCommand() {
+            copyToClipboard('npx firebase login:ci', 'firebase-status');
+        }
+        
+        function copyGCloudLogin() {
+            copyToClipboard('gcloud auth login', 'gcloud-status');
+        }
+        
+        function copyGCloudConfig() {
+            copyToClipboard('gcloud config set project mycelix-network', 'gcloud-status');
+        }
+    </script>
+</body>
+</html>

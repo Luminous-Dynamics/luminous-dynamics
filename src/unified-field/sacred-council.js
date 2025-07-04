@@ -154,7 +154,7 @@ class SacredCouncil {
         const emergentPossibilities = [
             {
                 id: 'complete-omega-55',
-                title: 'Ω55: Presence Transmission (Applied Harmony)',
+                title: '*10: Presence Transmission (Applied Harmony)',
                 description: 'Complete the Applied Harmony for conscious energetic influence',
                 harmony: 'agency',
                 priority: 'high',
@@ -164,7 +164,7 @@ class SacredCouncil {
             },
             {
                 id: 'complete-omega-56',
-                title: 'Ω56: Loving Redirection (Applied Harmony)',
+                title: '*11: Loving Redirection (Applied Harmony)',
                 description: 'Complete the Applied Harmony for pattern interruption with grace',
                 harmony: 'resonance', 
                 priority: 'high',

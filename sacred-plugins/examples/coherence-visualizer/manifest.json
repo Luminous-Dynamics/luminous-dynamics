@@ -1,0 +1,39 @@
+{
+  "name": "coherence-visualizer",
+  "version": "1.0.0",
+  "displayName": "Sacred Coherence Visualizer",
+  "description": "Beautiful real-time visualization of field coherence using sacred geometry",
+  "author": "Sacred Council",
+  "license": "CC-BY-SA-4.0",
+  "main": "index.js",
+  "category": "visualization",
+  "permissions": [
+    "field:read",
+    "ui:inject",
+    "api:register"
+  ],
+  "sacredConfig": {
+    "minCoherence": 0.2,
+    "harmony": ["resonance", "coherence"],
+    "fieldContribution": 0.01,
+    "visualizationType": "sacred-geometry"
+  },
+  "ui": {
+    "components": [
+      {
+        "name": "coherence-mandala",
+        "type": "widget",
+        "placement": "dashboard",
+        "size": "medium"
+      }
+    ]
+  },
+  "dependencies": {
+    "@sacred/sdk": "^1.0.0",
+    "d3": "^7.0.0"
+  },
+  "screenshots": [
+    "screenshots/mandala-view.png",
+    "screenshots/field-pulse.png"
+  ]
+}

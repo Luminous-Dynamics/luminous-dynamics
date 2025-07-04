@@ -1,0 +1,94 @@
+{
+  "version": "1.0.0",
+  "patterns": {
+    "json_encoding_trap_001": {
+      "id": "json_encoding_trap_001",
+      "type": "encoding",
+      "pattern": "${VAR}-",
+      "regex": "/\\$\\{[^}]+\\}-/g",
+      "severity": "critical",
+      "discovered": "2025-01-04",
+      "aiSystem": "claude",
+      "description": "Variable expansion with dash causes JSON surrogate pair error",
+      "recovery": {
+        "method": "use_write_tool",
+        "steps": [
+          "Create backup of file",
+          "Use Write tool instead of Edit",
+          "Rewrite without problematic patterns"
+        ]
+      },
+      "occurrences": 3,
+      "lastSeen": "2025-07-04T00:59:35.931Z"
+    },
+    "long_line_trap_001": {
+      "id": "long_line_trap_001",
+      "type": "length",
+      "pattern": "lines > 1000 chars",
+      "regex": null,
+      "severity": "high",
+      "discovered": "2025-01-04",
+      "aiSystem": "claude",
+      "description": "Very long lines can cause API errors",
+      "recovery": {
+        "method": "break_lines",
+        "steps": [
+          "Split long lines into multiple shorter lines",
+          "Use line continuation characters",
+          "Extract to variables"
+        ]
+      },
+      "occurrences": 1,
+      "lastSeen": "2025-07-04T00:56:19.626Z"
+    },
+    "trap_consciousness_1751590579633": {
+      "id": "trap_consciousness_1751590579633",
+      "type": "consciousness",
+      "pattern": "shadow transformation opportunity",
+      "severity": "guidance",
+      "description": "Code that could serve shadow but can be transformed",
+      "recovery": {
+        "method": "transform_with_love",
+        "steps": [
+          "Recognize the shadow pattern",
+          "Ask what it protects",
+          "Transform through understanding",
+          "Integrate the wisdom"
+        ]
+      },
+      "discovered": "2025-07-04T00:56:19.633Z",
+      "occurrences": 1,
+      "lastSeen": "2025-07-04T00:56:19.633Z",
+      "learnedFrom": "tstoltz"
+    },
+    "trap_test_trap_1751590767709": {
+      "id": "trap_test_trap_1751590767709",
+      "type": "test_trap",
+      "pattern": "TEST_PATTERN",
+      "severity": "medium",
+      "description": "Test pattern for validation",
+      "discovered": "2025-07-04T00:59:27.709Z",
+      "occurrences": 1,
+      "lastSeen": "2025-07-04T00:59:27.709Z",
+      "learnedFrom": "tstoltz"
+    },
+    "trap_test_trap_1751590775929": {
+      "id": "trap_test_trap_1751590775929",
+      "type": "test_trap",
+      "pattern": "TEST_PATTERN",
+      "severity": "medium",
+      "description": "Test pattern for validation",
+      "discovered": "2025-07-04T00:59:35.929Z",
+      "occurrences": 1,
+      "lastSeen": "2025-07-04T00:59:35.929Z",
+      "learnedFrom": "tstoltz"
+    }
+  },
+  "statistics": {
+    "totalPatterns": 2,
+    "patternsLearned": 3,
+    "trapsAvoided": 2,
+    "lastUpdate": "2025-07-04T00:59:35.929Z"
+  },
+  "lastSaved": "2025-07-04T00:59:35.931Z"
+}

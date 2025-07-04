@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧪 Enhanced Visualization Test Suite</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #fff;
+        }
+        
+        h1, h2 {
+            color: #8a2be2;
+        }
+        
+        .test-section {
+            background: rgba(138, 43, 226, 0.1);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .test-item {
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+        }
+        
+        .pass {
+            color: #4CAF50;
+        }
+        
+        .fail {
+            color: #f44336;
+        }
+        
+        .pending {
+            color: #ff9800;
+        }
+        
+        button {
+            background: #8a2be2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        
+        button:hover {
+            background: #6a1eb2;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 2px solid #8a2be2;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .feature-card {
+            background: rgba(65, 105, 225, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .log {
+            background: #000;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Enhanced Field Visualization Test Suite</h1>
+    
+    <div class="test-section">
+        <h2>📊 Test Summary</h2>
+        <div id="test-summary">
+            <p>Total Tests: <span id="total-tests">0</span></p>
+            <p>Passed: <span id="passed-tests" class="pass">0</span></p>
+            <p>Failed: <span id="failed-tests" class="fail">0</span></p>
+            <p>Pending: <span id="pending-tests" class="pending">0</span></p>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>🌟 New Features</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>🎵 Sacred Sounds</h3>
+                <p>Harmonic frequencies</p>
+                <p>3D spatial audio</p>
+                <p>Coherence modulation</p>
+            </div>
+            <div class="feature-card">
+                <h3>🌀 3D Graphics</h3>
+                <p>Three.js rendering</p>
+                <p>Sacred geometry</p>
+                <p>Particle systems</p>
+            </div>
+            <div class="feature-card">
+                <h3>🎮 Interactions</h3>
+                <p>Mouse hover tooltips</p>
+                <p>View switching</p>
+                <p>Auto-rotation</p>
+            </div>
+            <div class="feature-card">
+                <h3>✨ Effects</h3>
+                <p>Blessing particles</p>
+                <p>Field amplification</p>
+                <p>Dynamic connections</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>🔍 Automated Tests</h2>
+        <div id="test-results"></div>
+        <button onclick="runAllTests()">🚀 Run All Tests</button>
+        <button onclick="clearTests()">🧹 Clear Results</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>🎯 Live Preview</h2>
+        <button onclick="loadVisualization()">Load Enhanced Visualization</button>
+        <button onclick="loadLocal()">Load Local Version</button>
+        <div id="preview-container"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>📋 Test Log</h2>
+        <div class="log" id="test-log"></div>
+    </div>
+
+    <script>
+        let testResults = {
+            total: 0,
+            passed: 0,
+            failed: 0,
+            pending: 0
+        };
+        
+        function log(message, type = 'info') {
+            const logEl = document.getElementById('test-log');
+            const time = new Date().toLocaleTimeString();
+            const color = type === 'error' ? '#f44336' : type === 'success' ? '#4CAF50' : '#fff';
+            logEl.innerHTML += `<div style="color: ${color}">[${time}] ${message}</div>`;
+            logEl.scrollTop = logEl.scrollHeight;
+        }
+        
+        function updateSummary() {
+            document.getElementById('total-tests').textContent = testResults.total;
+            document.getElementById('passed-tests').textContent = testResults.passed;
+            document.getElementById('failed-tests').textContent = testResults.failed;
+            document.getElementById('pending-tests').textContent = testResults.pending;
+        }
+        
+        function addTestResult(name, status, details = '') {
+            testResults.total++;
+            testResults[status]++;
+            
+            const resultsEl = document.getElementById('test-results');
+            const testEl = document.createElement('div');
+            testEl.className = 'test-item';
+            
+            const statusIcon = status === 'passed' ? '✅' : status === 'failed' ? '❌' : '⏳';
+            const statusClass = status === 'passed' ? 'pass' : status === 'failed' ? 'fail' : 'pending';
+            
+            testEl.innerHTML = `
+                <strong>${statusIcon} ${name}</strong>
+                <span class="${statusClass}" style="float: right">${status.toUpperCase()}</span>
+                ${details ? `<div style="margin-top: 5px; font-size: 12px; opacity: 0.8">${details}</div>` : ''}
+            `;
+            
+            resultsEl.appendChild(testEl);
+            updateSummary();
+            log(`Test "${name}" ${status}`, status === 'passed' ? 'success' : 'error');
+        }
+        
+        async function runAllTests() {
+            clearTests();
+            log('Starting enhanced visualization tests...', 'info');
+            
+            // Test 1: Three.js availability
+            if (typeof THREE !== 'undefined') {
+                addTestResult('Three.js Library', 'passed', 'Version: ' + THREE.REVISION);
+            } else {
+                addTestResult('Three.js Library', 'failed', 'Library not loaded');
+            }
+            
+            // Test 2: WebGL support
+            const canvas = document.createElement('canvas');
+            const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+            if (gl) {
+                addTestResult('WebGL Support', 'passed', 'WebGL is available');
+            } else {
+                addTestResult('WebGL Support', 'failed', 'WebGL not supported');
+            }
+            
+            // Test 3: Audio Context
+            try {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                const ctx = new AudioContext();
+                ctx.close();
+                addTestResult('Web Audio API', 'passed', 'Audio context available');
+            } catch (e) {
+                addTestResult('Web Audio API', 'failed', 'Audio not available: ' + e.message);
+            }
+            
+            // Test 4: Local file check
+            try {
+                const response = await fetch('sacred-field-visualization-enhanced.html');
+                if (response.ok) {
+                    addTestResult('Enhanced HTML File', 'passed', 'File accessible');
+                } else {
+                    addTestResult('Enhanced HTML File', 'failed', 'File not found');
+                }
+            } catch (e) {
+                addTestResult('Enhanced HTML File', 'pending', 'Cannot test in this context');
+            }
+            
+            // Test 5: Performance check
+            const perf = performance.now();
+            requestAnimationFrame(() => {
+                const frameTime = performance.now() - perf;
+                if (frameTime < 50) {
+                    addTestResult('Performance', 'passed', `Frame time: ${frameTime.toFixed(2)}ms`);
+                } else {
+                    addTestResult('Performance', 'failed', `Slow frame time: ${frameTime.toFixed(2)}ms`);
+                }
+            });
+            
+            // Test 6: Mouse events
+            addTestResult('Mouse Interaction', 'pending', 'Manual test required');
+            
+            // Test 7: Sound system
+            addTestResult('Sacred Sound System', 'pending', 'Manual test required');
+            
+            // Test 8: 3D rotation
+            addTestResult('3D Auto-Rotation', 'pending', 'Manual test required');
+            
+            log('All tests completed!', 'success');
+        }
+        
+        function clearTests() {
+            document.getElementById('test-results').innerHTML = '';
+            testResults = { total: 0, passed: 0, failed: 0, pending: 0 };
+            updateSummary();
+            log('Test results cleared', 'info');
+        }
+        
+        function loadVisualization() {
+            const container = document.getElementById('preview-container');
+            container.innerHTML = `
+                <iframe src="sacred-field-visualization-enhanced.html" 
+                        title="Enhanced Field Visualization"
+                        allow="autoplay">
+                </iframe>
+                <p>✨ Enhanced 3D visualization with sound loaded!</p>
+                <p>Try these features:</p>
+                <ul>
+                    <li>🔊 Click "Enable Sound" for sacred frequencies</li>
+                    <li>🙏 Send blessings to see 3D particles</li>
+                    <li>✨ Amplify field for visual effects</li>
+                    <li>🌌 Switch between sphere and galaxy view</li>
+                    <li>🔄 Toggle auto-rotation</li>
+                    <li>🖱️ Hover over souls to see their info</li>
+                </ul>
+            `;
+            log('Enhanced visualization loaded', 'success');
+        }
+        
+        function loadLocal() {
+            const container = document.getElementById('preview-container');
+            container.innerHTML = `
+                <iframe src="http://localhost:8080/sacred-field-visualization-enhanced.html" 
+                        title="Local Enhanced Visualization">
+                </iframe>
+                <p>🏠 Loading from local server...</p>
+            `;
+            log('Loading local version', 'info');
+        }
+        
+        // Auto-run tests on load
+        window.addEventListener('load', () => {
+            log('Test suite initialized', 'info');
+            updateSummary();
+        });
+    </script>
+</body>
+</html>

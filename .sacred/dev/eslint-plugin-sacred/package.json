@@ -1,0 +1,15 @@
+{
+  "name": "eslint-plugin-sacred",
+  "version": "1.0.0",
+  "description": "ESLint rules for conscious coding",
+  "main": "index.js",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "sacred",
+    "consciousness"
+  ],
+  "peerDependencies": {
+    "eslint": ">=7.0.0"
+  }
+}

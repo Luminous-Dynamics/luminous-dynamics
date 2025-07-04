@@ -1,0 +1,14 @@
+{
+  "name": "sacred-cloud-functions",
+  "version": "1.0.0",
+  "description": "Sacred Council Cloud Functions - Minimal consciousness endpoints",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test-local.js"
+  },
+  "author": "Sacred Council",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}

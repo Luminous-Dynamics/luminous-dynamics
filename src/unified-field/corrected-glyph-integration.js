@@ -261,7 +261,7 @@ class CorrectedGlyphIntegration {
     findAvailableGlyphId() {
         // Find next available Ω ID that doesn't conflict with existing canonical glyphs
         // This would need to check against the full glyph catalog
-        return "Ω45"; // Placeholder - would need proper ID assignment logic
+        return "*1"; // Placeholder - would need proper ID assignment logic
     }
 
     // Methods to create practical layers would continue...

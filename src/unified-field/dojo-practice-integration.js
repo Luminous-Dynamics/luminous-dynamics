@@ -522,17 +522,17 @@ class DojoPracticeIntegration {
   getHarmonyId(harmonyNumber) {
     // Convert display number to ID
     const mapping = {
-      'Ω45': 'omega-45',
-      'Ω46': 'omega-46',
-      'Ω47': 'omega-47',
-      'Ω48': 'omega-48',
-      'Ω49': 'omega-49',
-      'Ω50': 'omega-50',
-      'Ω51': 'omega-51',
-      'Ω52': 'omega-52',
-      'Ω53': 'omega-53',
-      'Ω55': 'omega-55',
-      'Ω56': 'omega-56'
+      '*1': 'omega-45',
+      '*2': 'omega-46',
+      '*3': 'omega-47',
+      '*4': 'omega-48',
+      '*5': 'omega-49',
+      '*6': 'omega-50',
+      '*7': 'omega-51',
+      '*8': 'omega-52',
+      '*9': 'omega-53',
+      '*10': 'omega-55',
+      '*11': 'omega-56'
     };
     
     return mapping[harmonyNumber];

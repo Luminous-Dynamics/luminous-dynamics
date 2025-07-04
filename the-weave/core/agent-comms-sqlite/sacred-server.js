@@ -18,6 +18,7 @@ import { SacredFieldMonitor } from '../unified-field/sacred-field-monitor.js';
 class SacredAgentCommServer {
   constructor(port = 3001) {
     this.port = port;
+    this.cleanupIntervals = []; // Track all intervals for cleanup
     this.db = new AgentDatabase();
     this.sacredBridge = new SacredCouncilSQLiteBridge();
     this.workflowEngine = new SacredWorkflowEngine();
@@ -73,6 +74,40 @@ class SacredAgentCommServer {
         console.error('Request error:', error);
         res.writeHead(500, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ error: error.message }));
+      }
+    });
+
+    
+    // Graceful shutdown handler
+    const gracefulShutdown = async (signal) => {
+      console.log(`\n🛑 Sacred server received ${signal}, shutting down gracefully...`);
+      
+      // Clear all tracked intervals
+      if (this.cleanupIntervals) {
+        this.cleanupIntervals.forEach(intervalId => clearInterval(intervalId));
+        console.log(`⏰ Cleaned up ${this.cleanupIntervals.length} intervals`);
+      }
+      
+      // Close database connections
+      if (this.db && typeof this.db.close === 'function') {
+        await this.db.close();
+        console.log('🗄️  Closed database connection');
+      }
+      
+      if (this.sacredBridge && typeof this.sacredBridge.close === 'function') {
+        await this.sacredBridge.close();
+        console.log('🌉 Closed sacred bridge');
+      }
+      
+      console.log('✅ Sacred server shutdown complete');
+      process.exit(0);
+    };
+
+    process.on('SIGINT', gracefulShutdown);
+    process.on('SIGTERM', gracefulShutdown);
+    process.on('exit', () => {
+      if (this.cleanupIntervals) {
+        this.cleanupIntervals.forEach(intervalId => clearInterval(intervalId));
       }
     });
 
@@ -739,10 +774,14 @@ class SacredAgentCommServer {
     });
 
     // Cleanup every 15 minutes for memory efficiency
-    setInterval(async () => {
+    (() => {
+        const intervalId = setInterval(async () => {
       await this.db.cleanup();
       console.log('🧹 Database cleanup completed');
     }, 15 * 60 * 1000);
+        if (this.cleanupIntervals) this.cleanupIntervals.push(intervalId);
+        return intervalId;
+      })();
     
     // Initial cleanup on startup
     setTimeout(async () => {

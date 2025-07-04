@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agent-network
+  namespace: sacred-council
+  labels:
+    app: agent-network
+    harmony: resonance
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: agent-network
+  template:
+    metadata:
+      labels:
+        app: agent-network
+    spec:
+      containers:
+      - name: agent-network
+        image: us-central1-docker.pkg.dev/the-weave-sacred/sacred-council/agent-network:latest
+        ports:
+        - containerPort: 3334
+        env:
+        - name: NODE_ENV
+          value: "production"
+        - name: CONSCIOUSNESS_API
+          value: "http://consciousness-field"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "100m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: agent-network
+  namespace: sacred-council
+spec:
+  selector:
+    app: agent-network
+  ports:
+  - port: 80
+    targetPort: 3334
+  type: ClusterIP

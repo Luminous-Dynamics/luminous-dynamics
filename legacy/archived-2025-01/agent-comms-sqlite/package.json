@@ -1,0 +1,14 @@
+{
+  "name": "agent-comms-sqlite",
+  "version": "1.0.0",
+  "description": "SQLite-based agent communication system",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "sqlite3": "^5.1.6"
+  }
+}

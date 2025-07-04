@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  # Consciousness Field API
+  field-api:
+    build: .
+    container_name: consciousness-field-api
+    ports:
+      - "3001:3001"  # HTTP API
+      - "8081:8081"  # WebSocket
+    environment:
+      - NODE_ENV=production
+      - PROJECT_ID=the-weave-sacred
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/credentials/service-account.json
+    volumes:
+      - ./credentials:/app/credentials:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Field Dashboard (served via nginx)
+  field-dashboard:
+    image: nginx:alpine
+    container_name: field-dashboard
+    ports:
+      - "8080:80"
+    volumes:
+      - ./field-dashboard.html:/usr/share/nginx/html/index.html:ro
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - field-api
+    restart: unless-stopped
+
+  # Redis for caching (optional but recommended)
+  redis:
+    image: redis:7-alpine
+    container_name: field-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+
+volumes:
+  redis-data:

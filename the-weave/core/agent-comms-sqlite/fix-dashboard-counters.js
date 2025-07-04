@@ -152,7 +152,7 @@ class DashboardFixer {
     console.log(`   Active Agents: ${summary.activeAgents} (excluding test bots)`);
     console.log(`   Total Registered: ${summary.totalAgents}`);
     console.log(`   Recent Messages: ${summary.recentActivity}`);
-    console.log(`   Active Work Items: ${summary.activeWork}`);
+    console.log(`   Active Work Items: ${summary.activeWork.length}`);
     console.log(`   Pending Handoffs: ${summary.pendingHandoffs}`);
     
     console.log('\n👥 Agent Breakdown:');

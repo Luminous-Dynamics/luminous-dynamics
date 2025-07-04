@@ -21,7 +21,7 @@ class InteractiveSacredPractice {
   }
 
   initializePractices() {
-    // Ω45 - First Presence
+    // *1 - First Presence
     this.practices.set('omega-45', {
       id: 'omega-45',
       name: 'First Presence',
@@ -60,7 +60,7 @@ class InteractiveSacredPractice {
       practiceType: 'foundational'
     });
 
-    // Ω46 - Conscious Arrival
+    // *2 - Conscious Arrival
     this.practices.set('omega-46', {
       id: 'omega-46',
       name: 'Conscious Arrival',
@@ -92,7 +92,7 @@ class InteractiveSacredPractice {
       practiceType: 'transitional'
     });
 
-    // Ω47 - Sacred Listening
+    // *3 - Sacred Listening
     this.practices.set('omega-47', {
       id: 'omega-47',
       name: 'Sacred Listening',
@@ -130,7 +130,7 @@ class InteractiveSacredPractice {
       practiceType: 'relational'
     });
 
-    // Ω52 - Pause Practice
+    // *8 - Pause Practice
     this.practices.set('omega-52', {
       id: 'omega-52',
       name: 'Pause Practice',

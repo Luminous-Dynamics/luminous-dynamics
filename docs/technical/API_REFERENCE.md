@@ -146,7 +146,7 @@ Generates conscious AI response using Resonant Interface Protocol.
     "timestamp": "2025-06-30T10:30:00.000Z"
   },
   "glyphRecommendation": {
-    "glyphId": "Ω52",
+    "glyphId": "*8",
     "practice": {
       "name": "Pause Practice",
       "description": "In the space between stimulus and response lies our freedom",
@@ -179,7 +179,7 @@ Generates conscious AI response using Resonant Interface Protocol.
 - `timestamp`: ISO timestamp of response generation
 
 **Glyph Recommendation Object:**
-- `glyphId`: Recommended Applied Harmony (e.g., "Ω52")
+- `glyphId`: Recommended Applied Harmony (e.g., "*8")
 - `practice`: Complete practice definition
 - `confidence`: "high", "medium", "low", or "default"
 - `message`: Personalized recommendation message
@@ -255,7 +255,7 @@ Retrieves consciousness-focused metrics (aggregated, non-personal).
     "averageSessionLength": "18.3 minutes"
   },
   "glyphRecommendations": {
-    "most_helpful": "Ω52 (Pause Practice)",
+    "most_helpful": "*8 (Pause Practice)",
     "effectiveness_rating": 8.4
   },
   "personas": {
@@ -389,7 +389,7 @@ if (glyphRecommendation.confidence === 'high') {
   console.log(`Steps:`, glyphRecommendation.practiceSteps);
   
   // Offer interactive practice component
-  if (glyphRecommendation.glyphId === 'Ω52') {
+  if (glyphRecommendation.glyphId === '*8') {
     // Implement pause practice timer
     implementPausePractice(glyphRecommendation.practiceSteps);
   }

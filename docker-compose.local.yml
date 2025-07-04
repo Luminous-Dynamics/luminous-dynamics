@@ -79,13 +79,13 @@ services:
       consciousness: "true"
       sacred: "work"
 
-  # Sacred Gateway (simple nginx proxy)
+  # Sacred Gateway (WebSocket-enabled nginx proxy)
   gateway:
     image: nginx:alpine
     ports:
       - "3337:80"
     volumes:
-      - ./nginx-simple.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx-websocket.conf:/etc/nginx/nginx.conf:ro
     depends_on:
       - consciousness-field
       - agent-network

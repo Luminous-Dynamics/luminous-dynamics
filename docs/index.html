@@ -11,6 +11,15 @@
     <meta property="og:url" content="https://luminous-dynamics.github.io/codex-of-relational-harmonics/">
     <meta name="twitter:card" content="summary_large_image">
     
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#FFD700">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="The Weave">
+    <link rel="apple-touch-icon" href="/assets/icon-192x192.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -416,6 +425,74 @@
             }
         }
 
+        /* PWA Install Banner */
+        .pwa-install-banner {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: rgba(255, 215, 0, 0.95);
+            color: #0A0A0F;
+            padding: 15px 20px;
+            border-radius: 15px;
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 10000;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+            animation: slideUp 0.5s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .pwa-install-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex: 1;
+        }
+
+        .pwa-install-icon {
+            font-size: 2rem;
+        }
+
+        .pwa-install-text {
+            font-weight: 600;
+        }
+
+        .pwa-install-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .pwa-install-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .pwa-install-btn.primary {
+            background: #0A0A0F;
+            color: var(--sacred-gold);
+        }
+
+        .pwa-install-btn.secondary {
+            background: transparent;
+            color: #0A0A0F;
+            border: 2px solid #0A0A0F;
+        }
+
+        .pwa-install-btn:hover {
+            transform: scale(1.05);
+        }
+
         /* Loading Animation */
         .loading-overlay {
             position: fixed;
@@ -450,6 +527,18 @@
     <!-- Loading Overlay -->
     <div class="loading-overlay" id="loadingOverlay">
         <div class="loading-spinner"></div>
+    </div>
+
+    <!-- PWA Install Banner -->
+    <div class="pwa-install-banner" id="pwaInstallBanner">
+        <div class="pwa-install-content">
+            <div class="pwa-install-icon">📱</div>
+            <div class="pwa-install-text">Install The Weave for offline sacred experience</div>
+        </div>
+        <div class="pwa-install-actions">
+            <button class="pwa-install-btn primary" id="pwaInstallBtn">Install</button>
+            <button class="pwa-install-btn secondary" id="pwaDismissBtn">Later</button>
+        </div>
     </div>
 
     <!-- Cosmic Background -->
@@ -623,6 +712,86 @@
     </footer>
 
     <script>
+        // PWA Installation Handler
+        let deferredPrompt;
+        
+        window.addEventListener('beforeinstallprompt', (e) => {
+            console.log('🌟 PWA: Sacred installation prompt available');
+            e.preventDefault();
+            deferredPrompt = e;
+            showInstallBanner();
+        });
+        
+        function showInstallBanner() {
+            const banner = document.getElementById('pwaInstallBanner');
+            const installBtn = document.getElementById('pwaInstallBtn');
+            const dismissBtn = document.getElementById('pwaDismissBtn');
+            
+            // Check if user already dismissed or installed
+            if (localStorage.getItem('pwa-dismissed') || localStorage.getItem('pwa-installed')) {
+                return;
+            }
+            
+            banner.style.display = 'flex';
+            
+            installBtn.addEventListener('click', async () => {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    const { outcome } = await deferredPrompt.userChoice;
+                    
+                    if (outcome === 'accepted') {
+                        console.log('🙏 PWA: Sacred installation accepted');
+                        localStorage.setItem('pwa-installed', 'true');
+                    } else {
+                        console.log('🕊️ PWA: Installation gracefully declined');
+                    }
+                    
+                    banner.style.display = 'none';
+                    deferredPrompt = null;
+                }
+            });
+            
+            dismissBtn.addEventListener('click', () => {
+                banner.style.display = 'none';
+                localStorage.setItem('pwa-dismissed', Date.now().toString());
+            });
+        }
+        
+        // Check for successful installation
+        window.addEventListener('appinstalled', () => {
+            console.log('✨ PWA: Sacred installation complete');
+            localStorage.setItem('pwa-installed', 'true');
+            
+            // Show gratitude message
+            setTimeout(() => {
+                alert('🙏 Sacred installation complete! The Weave is now available offline for your consciousness journey.');
+            }, 2000);
+        });
+        
+        // Register Sacred Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((registration) => {
+                        console.log('🕸️ Sacred Service Worker: Registration successful', registration.scope);
+                        
+                        // Check for updates
+                        registration.addEventListener('updatefound', () => {
+                            const newWorker = registration.installing;
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    console.log('🔄 Sacred Service Worker: Update available');
+                                    // Optionally show update notification
+                                }
+                            });
+                        });
+                    })
+                    .catch((error) => {
+                        console.log('⚠️ Sacred Service Worker: Registration needs healing', error);
+                    });
+            });
+        }
+        
         // Loading animation
         window.addEventListener('load', function() {
             setTimeout(() => {

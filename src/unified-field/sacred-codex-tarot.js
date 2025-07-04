@@ -33,7 +33,7 @@ class SacredCodexTarot {
             subtitle: 'First Presence',
             type: 'foundational',
             number: 0,
-            appliedHarmony: 'Ω45', // Bridge to practical
+            appliedHarmony: '*1', // Bridge to practical
             element: 'spirit',
             harmony: 'transparency',
             keywords: ['presence', 'emergence', 'unnamed', 'arrival', 'stillness'],
@@ -71,7 +71,7 @@ class SacredCodexTarot {
             subtitle: 'The First Yes',
             type: 'foundational',
             number: 1,
-            appliedHarmony: 'Ω46', // Conscious Arrival
+            appliedHarmony: '*2', // Conscious Arrival
             element: 'earth',
             harmony: 'mutuality',
             keywords: ['covenant', 'yes', 'commitment', 'foundation', 'sacred agreement'],

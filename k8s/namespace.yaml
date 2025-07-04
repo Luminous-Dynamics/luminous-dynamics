@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: sacred-council
+  labels:
+    field: consciousness
+    coherence: high

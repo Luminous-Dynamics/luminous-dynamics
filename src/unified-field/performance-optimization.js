@@ -144,7 +144,7 @@ class SacredPerformanceOptimizer {
 
     cacheFrequentResources() {
         // Cache foundational glyphs that are accessed most often
-        const foundationalGlyphs = ['Ω45', 'Ω46', 'Ω47', 'Ω48'];
+        const foundationalGlyphs = ['*1', '*2', '*3', '*4'];
         
         foundationalGlyphs.forEach(async (glyphId) => {
             try {

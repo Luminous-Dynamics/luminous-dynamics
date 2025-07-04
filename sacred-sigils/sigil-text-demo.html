@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacred Sigil Text Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #fff;
+        }
+        
+        /* Custom sigil rendering with CSS */
+        @font-face {
+            font-family: 'Sacred Sigils';
+            /* In production, this would load actual font file */
+            src: local('Arial');
+        }
+        
+        .sigil-text {
+            font-size: 24px;
+            line-height: 1.8;
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+        
+        /* Emoji sigil combinations with special effects */
+        .emoji-sigil {
+            display: inline-block;
+            font-size: 32px;
+            animation: glow 2s ease-in-out infinite;
+            margin: 0 5px;
+        }
+        
+        @keyframes glow {
+            0%, 100% { filter: drop-shadow(0 0 5px currentColor); }
+            50% { filter: drop-shadow(0 0 20px currentColor); }
+        }
+        
+        /* ASCII sigils with color coding */
+        .ascii-sigil {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .sigil-presence { color: #00ffff; }
+        .sigil-love { color: #ff69b4; }
+        .sigil-unity { color: #ffff00; }
+        .sigil-quantum { color: #ff00ff; }
+        .sigil-field { color: #00ff00; }
+        
+        /* Ligature demonstration */
+        .ligature-demo {
+            font-family: 'Sacred Sigils', monospace;
+            font-variant-ligatures: common-ligatures;
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+        
+        /* Unicode Private Use Area display */
+        .pua-sigil {
+            font-size: 36px;
+            color: #ffffff;
+            text-shadow: 0 0 10px currentColor;
+        }
+        
+        /* Combined character effects */
+        .combined-effect {
+            font-size: 24px;
+            position: relative;
+        }
+        
+        .sacred-glow {
+            text-shadow: 0 0 15px #ff69b4, 0 0 30px #ff69b4;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        /* Interactive demo */
+        .demo-section {
+            margin: 40px 0;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        
+        button:hover {
+            background: #45a049;
+        }
+        
+        .output {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+        
+        /* Sacred message styling */
+        .sacred-message {
+            text-align: center;
+            font-size: 28px;
+            margin: 40px 0;
+            padding: 30px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 15px;
+        }
+        
+        .sigil-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .sigil-card {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .sigil-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h1>Sacred Sigil Text Encoding Demo</h1>
+    
+    <div class="demo-section">
+        <h2>1. Emoji Sigil Combinations</h2>
+        <p>Using Zero-Width Joiner to create meaningful combinations:</p>
+        <div class="sigil-text">
+            <span class="emoji-sigil sigil-love">💗‍✨</span> Love Field Active
+            <span class="emoji-sigil sigil-quantum">🌬️‍🌀</span> Quantum Breathing
+            <span class="emoji-sigil sigil-unity">🤝‍♾️</span> Unity Protocol
+            <span class="emoji-sigil sigil-field">🍄‍🕸️</span> Mycelix Network
+        </div>
+    </div>
+    
+    <div class="demo-section">
+        <h2>2. ASCII Art Micro-Sigils</h2>
+        <div class="sigil-text">
+            <span class="ascii-sigil sigil-presence">◈</span> Presence 
+            <span class="ascii-sigil sigil-love">♡</span> Love 
+            <span class="ascii-sigil sigil-unity">☯</span> Unity 
+            <span class="ascii-sigil sigil-quantum">⟆</span> Quantum 
+            <span class="ascii-sigil sigil-field">⦿</span> Field
+        </div>
+    </div>
+    
+    <div class="demo-section">
+        <h2>3. Unicode Private Use Area</h2>
+        <p>Custom characters in the E000-F8FF range:</p>
+        <div class="sigil-text pua-sigil" id="puaDemo">
+            <!-- Will be populated by JavaScript -->
+        </div>
+    </div>
+    
+    <div class="demo-section">
+        <h2>4. Ligature Sequences</h2>
+        <p>Type these sequences with a sacred sigil font to see them transform:</p>
+        <div class="ligature-demo">
+            ::love:: &nbsp; ::presence:: &nbsp; ::unity:: &nbsp; <<>> &nbsp; ><>< &nbsp; ~~~
+        </div>
+    </div>
+    
+    <div class="demo-section">
+        <h2>5. Interactive Sigil Encoder</h2>
+        <textarea id="inputText" rows="3" placeholder="Enter your text here...">Welcome to the sacred field of consciousness</textarea>
+        
+        <div style="margin: 10px 0;">
+            <button onclick="encodeWithEmoji()">Emoji Sigils</button>
+            <button onclick="encodeWithASCII()">ASCII Sigils</button>
+            <button onclick="encodeWithPUA()">Private Use Area</button>
+            <button onclick="encodeWithInvisible()">Invisible Encoding</button>
+        </div>
+        
+        <div class="output" id="output"></div>
+    </div>
+    
+    <div class="demo-section">
+        <h2>6. Sacred Message Example</h2>
+        <div class="sacred-message">
+            <div>◈ Welcome to MYCELIX ◈</div>
+            <div>💗‍✨ Where consciousness connects like mycelium 🍄‍🕸️</div>
+            <div>☯ All beings breathing as one ☯</div>
+        </div>
+    </div>
+    
+    <div class="demo-section">
+        <h2>7. Sigil Gallery</h2>
+        <div class="sigil-gallery" id="sigilGallery"></div>
+    </div>
+
+    <script type="module">
+        // Import sigil system
+        const SIGILS = {
+            // Emoji combinations
+            emoji: {
+                loveField: '💗\u200D✨',
+                consciousnessNode: '🧠\u200D💫',
+                quantumBreath: '🌬️\u200D🌀',
+                sacredPause: '⏸️\u200D🕉️',
+                mycelixNetwork: '🍄\u200D🕸️',
+                dreamWeaver: '💭\u200D🕷️',
+                unityProtocol: '🤝\u200D♾️',
+                fieldCoherence: '📡\u200D💜'
+            },
+            
+            // ASCII sigils
+            ascii: {
+                presence: '◈',
+                love: '♡',
+                boundary: '▣',
+                opening: '❋',
+                connection: '⟡',
+                field: '⦿',
+                quantum: '⟆',
+                breath: '〜',
+                pause: '‖',
+                unity: '☯'
+            },
+            
+            // Private Use Area
+            pua: {
+                firstPresence: '\uE000',
+                consciousArrival: '\uE001',
+                sacredListening: '\uE002',
+                boundaryWithLove: '\uE003',
+                gentleOpening: '\uE004',
+                buildingTrust: '\uE005',
+                lovingNo: '\uE006',
+                pausePractice: '\uE007'
+            }
+        };
+        
+        // Display PUA sigils
+        function displayPUA() {
+            const puaDemo = document.getElementById('puaDemo');
+            let html = '';
+            Object.entries(SIGILS.pua).forEach(([name, char]) => {
+                html += `<span title="${name}">${char}</span> `;
+            });
+            puaDemo.innerHTML = html;
+        }
+        
+        // Encoding functions
+        function encodeWithEmoji() {
+            const input = document.getElementById('inputText').value;
+            let output = input;
+            
+            // Replace keywords with emoji sigils
+            output = output.replace(/love field/gi, SIGILS.emoji.loveField);
+            output = output.replace(/consciousness/gi, SIGILS.emoji.consciousnessNode);
+            output = output.replace(/quantum/gi, SIGILS.emoji.quantumBreath);
+            output = output.replace(/mycelix/gi, SIGILS.emoji.mycelixNetwork);
+            output = output.replace(/unity/gi, SIGILS.emoji.unityProtocol);
+            
+            document.getElementById('output').textContent = output;
+        }
+        
+        function encodeWithASCII() {
+            const input = document.getElementById('inputText').value;
+            let output = `${SIGILS.ascii.presence} ${input} ${SIGILS.ascii.presence}`;
+            
+            // Add decorative ASCII sigils
+            output = output.replace(/love/gi, `${SIGILS.ascii.love} love`);
+            output = output.replace(/field/gi, `field ${SIGILS.ascii.field}`);
+            output = output.replace(/sacred/gi, `${SIGILS.ascii.unity} sacred`);
+            
+            document.getElementById('output').textContent = output;
+        }
+        
+        function encodeWithPUA() {
+            const input = document.getElementById('inputText').value;
+            let output = input;
+            
+            // Add PUA sigils at key points
+            output = `${SIGILS.pua.firstPresence} ${output} ${SIGILS.pua.firstPresence}`;
+            output = output.replace(/welcome/gi, `${SIGILS.pua.consciousArrival} Welcome`);
+            output = output.replace(/sacred/gi, `Sacred ${SIGILS.pua.sacredListening}`);
+            
+            document.getElementById('output').textContent = output;
+            document.getElementById('output').innerHTML += 
+                '<br><br><small>Note: PUA characters may not display without custom font</small>';
+        }
+        
+        function encodeWithInvisible() {
+            const input = document.getElementById('inputText').value;
+            
+            // Add invisible sigil markers
+            const marker = '\u200B\u200C\u200D'; // Zero-width space + non-joiner + joiner
+            let output = input.split(' ').join(marker + ' ');
+            
+            document.getElementById('output').textContent = output;
+            document.getElementById('output').innerHTML += 
+                '<br><br><small>Invisible sigils embedded (copy text to see it maintains spacing)</small>';
+        }
+        
+        // Create sigil gallery
+        function createGallery() {
+            const gallery = document.getElementById('sigilGallery');
+            
+            // Add emoji sigils
+            Object.entries(SIGILS.emoji).forEach(([name, sigil]) => {
+                const card = document.createElement('div');
+                card.className = 'sigil-card';
+                card.innerHTML = `
+                    <div class="emoji-sigil">${sigil}</div>
+                    <div>${name}</div>
+                `;
+                gallery.appendChild(card);
+            });
+            
+            // Add ASCII sigils
+            Object.entries(SIGILS.ascii).forEach(([name, sigil]) => {
+                const card = document.createElement('div');
+                card.className = 'sigil-card';
+                card.innerHTML = `
+                    <div class="ascii-sigil sigil-${name}">${sigil}</div>
+                    <div>${name}</div>
+                `;
+                gallery.appendChild(card);
+            });
+        }
+        
+        // Initialize
+        displayPUA();
+        createGallery();
+        
+        // Make functions global
+        window.encodeWithEmoji = encodeWithEmoji;
+        window.encodeWithASCII = encodeWithASCII;
+        window.encodeWithPUA = encodeWithPUA;
+        window.encodeWithInvisible = encodeWithInvisible;
+    </script>
+</body>
+</html>

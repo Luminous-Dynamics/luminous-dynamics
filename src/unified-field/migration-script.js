@@ -3,7 +3,7 @@
  * 
  * This script migrates our unified-field implementation to honor both:
  * 1. Original mystical glyphs in their sacred numbers (Ω0, Ω1, Ω4, Ω7)
- * 2. Our practical implementations as Applied Harmonies (Ω45, Ω46, Ω47, Ω48)
+ * 2. Our practical implementations as Applied Harmonies (*1, *2, *3, *4)
  * 
  * Creates the complete Both/And architecture with progressive revelation.
  */
@@ -58,7 +58,7 @@ class GlyphMigrationScript {
             oldDesignation: "Conscious Arrival",
             newDesignation: "Root Chord of Covenant / The First Yes",
             action: "Restored original mystical definition",
-            practicalRedirect: "Ω46"
+            practicalRedirect: "*2"
         });
         
         // Ω4: Restore to Fractal Reconciliation Pulse
@@ -67,7 +67,7 @@ class GlyphMigrationScript {
             oldDesignation: "Sacred Listening",
             newDesignation: "Fractal Reconciliation Pulse / The Pulse of Repair", 
             action: "Restored original mystical definition",
-            practicalRedirect: "Ω47"
+            practicalRedirect: "*3"
         });
         
         // Ω7: Restore to Mutual Becoming
@@ -76,7 +76,7 @@ class GlyphMigrationScript {
             oldDesignation: "Boundary With Love",
             newDesignation: "Mutual Becoming / The We That Grows",
             action: "Restored original mystical definition",
-            practicalRedirect: "Ω48"
+            practicalRedirect: "*4"
         });
     }
 
@@ -85,7 +85,7 @@ class GlyphMigrationScript {
         
         // Our practical implementations become new Applied Harmonies
         this.migrationReport.newCreations.push({
-            glyphId: "Ω45",
+            glyphId: "*1",
             name: "First Presence (Applied Harmony)",
             mysticaRoot: "Ω0",
             description: "Practical implementation of The Shimmering Unnamed",
@@ -93,7 +93,7 @@ class GlyphMigrationScript {
         });
         
         this.migrationReport.newCreations.push({
-            glyphId: "Ω46", 
+            glyphId: "*2", 
             name: "Conscious Arrival (Applied Harmony)",
             mysticalRoot: "Ω1",
             description: "Practical implementation of Root Chord of Covenant",
@@ -101,7 +101,7 @@ class GlyphMigrationScript {
         });
         
         this.migrationReport.newCreations.push({
-            glyphId: "Ω47",
+            glyphId: "*3",
             name: "Sacred Listening (Applied Harmony)", 
             mysticalRoot: "Ω4",
             description: "Practical implementation of Fractal Reconciliation Pulse",
@@ -109,7 +109,7 @@ class GlyphMigrationScript {
         });
         
         this.migrationReport.newCreations.push({
-            glyphId: "Ω48",
+            glyphId: "*4",
             name: "Boundary With Love (Applied Harmony)",
             mysticalRoot: "Ω7", 
             description: "Practical implementation of Mutual Becoming",
@@ -122,25 +122,25 @@ class GlyphMigrationScript {
         
         const bridges = [
             {
-                practical: "Ω45",
+                practical: "*1",
                 mystical: "Ω0",
                 bridgeText: "As your presence practice deepens, explore the mystical Shimmering Unnamed...",
                 graduationCriteria: "Consistent daily practice with embodied integration"
             },
             {
-                practical: "Ω46", 
+                practical: "*2", 
                 mystical: "Ω1",
                 bridgeText: "When conscious arrival becomes natural, discover the Root Chord of Covenant...",
                 graduationCriteria: "Successfully setting intentions that create relational coherence"
             },
             {
-                practical: "Ω47",
+                practical: "*3",
                 mystical: "Ω4", 
                 bridgeText: "Master sacred listening, then learn the art of Fractal Reconciliation...",
                 graduationCriteria: "Using listening to transform conflict into understanding"
             },
             {
-                practical: "Ω48",
+                practical: "*4",
                 mystical: "Ω7",
                 bridgeText: "Through loving boundaries, enter the field of Mutual Becoming...",
                 graduationCriteria: "Boundaries that deepen rather than limit relationship"
@@ -159,7 +159,7 @@ class GlyphMigrationScript {
         // 3. Bridge indicators when ready for deeper work
         
         const cardUpdates = {
-            practicalFirst: "Cards show Applied Harmonies (Ω45-48) as primary interface",
+            practicalFirst: "Cards show Applied Harmonies (*1-48) as primary interface",
             mysticalBridge: "Subtle 'Discover Mystical Root' option appears when ready",
             progressiveReveal: "Mystical content revealed based on practice maturity",
             bothAndInterface: "Users can access both practical and mystical layers",
@@ -185,7 +185,7 @@ class GlyphMigrationScript {
             architecturalPrinciple: "Both/And: Mystical Depth + Practical Embodiment",
             
             userJourney: {
-                newcomers: "Start with Applied Harmonies (Ω45-48) for immediate utility",
+                newcomers: "Start with Applied Harmonies (*1-48) for immediate utility",
                 developing: "Progressive revelation to Mystical Foundations (Ω0,1,4,7)",
                 advanced: "Full access to both practical and mystical layers",
                 masters: "Teaching and transmitting the complete integration"
@@ -242,7 +242,7 @@ class GlyphMigrationScript {
     async updateDojoIntegration() {
         // This would update the dojo.html to use Applied Harmonies first
         const dojoUpdates = {
-            defaultGlyphSet: ["Ω45", "Ω46", "Ω47", "Ω48"], // Applied Harmonies first
+            defaultGlyphSet: ["*1", "*2", "*3", "*4"], // Applied Harmonies first
             mysticalGraduationPath: ["Ω0", "Ω1", "Ω4", "Ω7"], // Mystical depths when ready
             progressiveRevealUI: true,
             bridgeIndicators: true
@@ -275,7 +275,7 @@ class GlyphMigrationScript {
 
     validatePracticalPreservation() {
         // Verify our practical implementations are preserved as Applied Harmonies
-        const appliedHarmonies = ["Ω45", "Ω46", "Ω47", "Ω48"];
+        const appliedHarmonies = ["*1", "*2", "*3", "*4"];
         return appliedHarmonies.every(id =>
             this.trueIntegration.appliedHarmonies[id] &&
             this.trueIntegration.appliedHarmonies[id].type === "applied_harmony"

@@ -1,0 +1,41 @@
+{
+  "hosting": {
+    "public": "firebase-build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [],
+    "headers": [
+      {
+        "source": "**/*.@(js|css)",
+        "headers": [{
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000"
+        }]
+      },
+      {
+        "source": "**/*.html",
+        "headers": [{
+          "key": "Cache-Control",
+          "value": "public, max-age=300"
+        }]
+      },
+      {
+        "source": "/pwa/service-worker.js",
+        "headers": [{
+          "key": "Cache-Control",
+          "value": "no-cache"
+        }]
+      }
+    ],
+    "redirects": [
+      {
+        "source": "/",
+        "destination": "/sacred-council-hub.html",
+        "type": 301
+      }
+    ]
+  }
+}

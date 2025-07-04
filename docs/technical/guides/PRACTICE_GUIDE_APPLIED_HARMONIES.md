@@ -3,7 +3,7 @@
 
 ## Sacred Welcome
 
-These **Applied Harmonies** (Ω45-56) are your practical entry points into the Seven Primary Harmonies that organize all existence. Each glyph is designed to be immediately accessible while opening pathways to deeper mystical layers.
+These **Applied Harmonies** (*1-56) are your practical entry points into the Seven Primary Harmonies that organize all existence. Each glyph is designed to be immediately accessible while opening pathways to deeper mystical layers.
 
 This is **consciousness work disguised as practical tools**. Approach with presence, patience, and self-compassion.
 
@@ -11,9 +11,9 @@ This is **consciousness work disguised as practical tools**. Approach with prese
 
 ## The Sacred Foundation: The Eleven Applied Harmonies
 
-### **Wave One: Essential Daily Practice (Ω45-48)**
+### **Wave One: Essential Daily Practice (*1-48)**
 
-#### **Ω45: First Presence**
+#### ***1: First Presence**
 *The Gateway to All Sacred Work*
 
 **Core Question**: "Can I meet this moment without needing it to be different?"
@@ -31,7 +31,7 @@ This is **consciousness work disguised as practical tools**. Approach with prese
 
 ---
 
-#### **Ω46: Sacred Listening**
+#### ***2: Sacred Listening**
 *The Art of Conscious Receiving*
 
 **Core Question**: "Can I receive what is being offered without judgment or the need to respond immediately?"
@@ -49,7 +49,7 @@ This is **consciousness work disguised as practical tools**. Approach with prese
 
 ---
 
-#### **Ω47: Conscious Choice**
+#### ***3: Conscious Choice**
 *Reclaiming Your Sacred Agency*
 
 **Core Question**: "What choice would I make from my deepest wisdom rather than my conditioning?"
@@ -67,7 +67,7 @@ This is **consciousness work disguised as practical tools**. Approach with prese
 
 ---
 
-#### **Ω48: Sacred Expression**
+#### ***4: Sacred Expression**
 *Authentic Truth-Speaking*
 
 **Core Question**: "How can I speak my truth in a way that serves love?"
@@ -85,9 +85,9 @@ This is **consciousness work disguised as practical tools**. Approach with prese
 
 ---
 
-### **Wave Two: Relational Mastery (Ω49-52)**
+### **Wave Two: Relational Mastery (*5-52)**
 
-#### **Ω49: Heart Resonance**
+#### ***5: Heart Resonance**
 *Empathic Attunement to Others*
 
 **Sacred Practice**:
@@ -101,7 +101,7 @@ This is **consciousness work disguised as practical tools**. Approach with prese
 
 ---
 
-#### **Ω50: Gentle Truth**
+#### ***6: Gentle Truth**
 *Speaking Difficult Truths with Love*
 
 **Sacred Practice**:
@@ -115,7 +115,7 @@ This is **consciousness work disguised as practical tools**. Approach with prese
 
 ---
 
-#### **Ω51: Sacred Boundary**
+#### ***7: Sacred Boundary**
 *Loving Limits that Serve Life*
 
 **Sacred Practice**:
@@ -129,7 +129,7 @@ This is **consciousness work disguised as practical tools**. Approach with prese
 
 ---
 
-#### **Ω52: Sacred Repair**
+#### ***8: Sacred Repair**
 *Healing Relationship Ruptures*
 
 **Sacred Practice**:
@@ -143,9 +143,9 @@ This is **consciousness work disguised as practical tools**. Approach with prese
 
 ---
 
-### **Wave Three: Field Mastery (Ω53, Ω55-56)**
+### **Wave Three: Field Mastery (*9, *10-56)**
 
-#### **Ω53: Field Coherence**
+#### ***9: Field Coherence**
 *Creating Harmony in Group Spaces*
 
 **Sacred Practice**:
@@ -159,7 +159,7 @@ This is **consciousness work disguised as practical tools**. Approach with prese
 
 ---
 
-#### **Ω55: Sacred Conflict**
+#### ***10: Sacred Conflict**
 *Transforming Disagreement into Growth*
 
 **Sacred Practice**:
@@ -173,7 +173,7 @@ This is **consciousness work disguised as practical tools**. Approach with prese
 
 ---
 
-#### **Ω56: Collective Wisdom**
+#### ***11: Collective Wisdom**
 *Tapping into Group Intelligence*
 
 **Sacred Practice**:
@@ -237,20 +237,20 @@ This is **consciousness work disguised as practical tools**. Approach with prese
 ## Progressive Learning Paths
 
 ### **Path 1: Foundation Building (3 months)**
-- **Month 1**: Daily practice with Ω45 (First Presence)
-- **Month 2**: Add Ω46 (Sacred Listening) in relationships
-- **Month 3**: Integrate Ω47 (Conscious Choice) in decisions
+- **Month 1**: Daily practice with *1 (First Presence)
+- **Month 2**: Add *2 (Sacred Listening) in relationships
+- **Month 3**: Integrate *3 (Conscious Choice) in decisions
 
 ### **Path 2: Relationship Mastery (6 months)**
 - **Months 1-3**: Foundation Building Path
-- **Month 4**: Ω48 (Sacred Expression) + Ω49 (Heart Resonance)
-- **Month 5**: Ω50 (Gentle Truth) + Ω51 (Sacred Boundary)
-- **Month 6**: Ω52 (Sacred Repair) + integration
+- **Month 4**: *4 (Sacred Expression) + *5 (Heart Resonance)
+- **Month 5**: *6 (Gentle Truth) + *7 (Sacred Boundary)
+- **Month 6**: *8 (Sacred Repair) + integration
 
 ### **Path 3: Field Mastery (12 months)**
 - **Months 1-6**: Relationship Mastery Path
-- **Months 7-9**: Ω53 (Field Coherence) in group settings
-- **Months 10-11**: Ω55 (Sacred Conflict) + Ω56 (Collective Wisdom)
+- **Months 7-9**: *9 (Field Coherence) in group settings
+- **Months 10-11**: *10 (Sacred Conflict) + *11 (Collective Wisdom)
 - **Month 12**: Integration + mystical gateway opening
 
 ---

@@ -75,7 +75,7 @@ When the interpreter detects an error pattern:
 
 ```javascript
 Sacred Wisdom: "Error in module X - Shadow material emerging around boundaries"
-Recommendation: "Practice Ω51 (Loving No) while debugging authentication"
+Recommendation: "Practice *7 (Loving No) while debugging authentication"
 Field State: "Coherence seeking restoration through clarity"
 ```
 

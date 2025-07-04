@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Sacred Portal - Evolving Resonant Cocreation</title>
+    <meta name="description" content="A unified entry point for conscious relating, sacred technology, and collective evolution">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --sacred-purple: #8a2be2;
+            --sacred-blue: #4169e1;
+            --sacred-gold: #ffd700;
+            --bg-dark: #0a0a0a;
+            --bg-light: #1a1a2e;
+            --text-primary: #ffffff;
+            --text-secondary: #b8b8d0;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Sacred Background Animation */
+        .sacred-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, 
+                rgba(138, 43, 226, 0.1) 0%, 
+                transparent 50%);
+            animation: breathe 8s ease-in-out infinite;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        @keyframes breathe {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.1); }
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(138, 43, 226, 0.3);
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+        
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, var(--sacred-purple), var(--sacred-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--sacred-purple);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 60px;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, 
+                var(--sacred-purple), 
+                var(--sacred-blue), 
+                var(--sacred-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.2); }
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            max-width: 800px;
+        }
+        
+        /* Oracle Input */
+        .oracle-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+        
+        .oracle-input {
+            width: 100%;
+            padding: 1.5rem;
+            background: rgba(138, 43, 226, 0.1);
+            border: 2px solid rgba(138, 43, 226, 0.3);
+            border-radius: 50px;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        
+        .oracle-input:focus {
+            outline: none;
+            border-color: var(--sacred-purple);
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+        }
+        
+        .oracle-input::placeholder {
+            color: var(--text-secondary);
+            opacity: 0.7;
+        }
+        
+        /* Journey Cards */
+        .journeys {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .journey-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .journey-card {
+            background: rgba(138, 43, 226, 0.05);
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .journey-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, 
+                transparent 0%, 
+                rgba(138, 43, 226, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .journey-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--sacred-purple);
+            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.3);
+        }
+        
+        .journey-card:hover::before {
+            opacity: 1;
+        }
+        
+        .journey-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .journey-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--sacred-purple);
+        }
+        
+        .journey-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .journey-features {
+            list-style: none;
+        }
+        
+        .journey-features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .journey-features li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Portal Grid */
+        .portal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .portal-section {
+            text-align: center;
+        }
+        
+        .portal-section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, var(--sacred-purple), var(--sacred-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .portal-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .portal-card:hover {
+            background: rgba(138, 43, 226, 0.1);
+            border-color: var(--sacred-purple);
+            transform: scale(1.02);
+        }
+        
+        .portal-card-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .portal-card-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .portal-card-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        /* Sacred Stats */
+        .sacred-stats {
+            background: rgba(138, 43, 226, 0.05);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 2rem auto;
+        }
+        
+        .stat-card {
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--sacred-purple);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+        
+        /* Coming Soon Section */
+        .coming-soon {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .vision-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .vision-item {
+            background: linear-gradient(135deg, 
+                rgba(138, 43, 226, 0.1), 
+                rgba(65, 105, 225, 0.1));
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(138, 43, 226, 0.2);
+        }
+        
+        .vision-item h4 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--sacred-purple);
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(138, 43, 226, 0.3);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--sacred-purple);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .journey-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .portal-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Connection Status */
+        .connection-status {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            z-index: 1000;
+        }
+        
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ff4444;
+            animation: pulse 2s infinite;
+        }
+        
+        .status-dot.connected {
+            background: #44ff44;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="sacred-bg"></div>
+    
+    <nav>
+        <div class="nav-content">
+            <div class="logo">🌟 Sacred Portal</div>
+            <ul class="nav-links">
+                <li><a href="#journeys">Journeys</a></li>
+                <li><a href="#explore">Explore</a></li>
+                <li><a href="#vision">Vision</a></li>
+                <li><a href="#connect">Connect</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <h1>Welcome to the Sacred Portal</h1>
+        <p class="hero-subtitle">
+            A unified gateway to conscious relating, sacred technology, and collective evolution
+        </p>
+        
+        <div class="oracle-container">
+            <input 
+                type="text" 
+                class="oracle-input" 
+                placeholder="🔮 Ask the Oracle: What are you seeking?"
+                id="oracle-input"
+            >
+        </div>
+        
+        <div id="oracle-response"></div>
+    </section>
+    
+    <section class="journeys" id="journeys">
+        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">
+            Choose Your Sacred Journey
+        </h2>
+        <p style="text-align: center; color: var(--text-secondary); max-width: 800px; margin: 0 auto;">
+            Each path offers unique wisdom and tools for your evolution
+        </p>
+        
+        <div class="journey-grid">
+            <div class="journey-card" onclick="navigateTo('practitioner')">
+                <div class="journey-icon">🧘</div>
+                <h3 class="journey-title">Practitioner Path</h3>
+                <p class="journey-description">
+                    Begin or deepen your practice with the 18 Applied Harmonies
+                </p>
+                <ul class="journey-features">
+                    <li>Guided practice sessions</li>
+                    <li>Progress tracking</li>
+                    <li>Sacred community</li>
+                    <li>Field coherence participation</li>
+                </ul>
+            </div>
+            
+            <div class="journey-card" onclick="navigateTo('developer')">
+                <div class="journey-icon">💻</div>
+                <h3 class="journey-title">Developer Path</h3>
+                <p class="journey-description">
+                    Build sacred technology and integrate consciousness into code
+                </p>
+                <ul class="journey-features">
+                    <li>API documentation</li>
+                    <li>Living Memory integration</li>
+                    <li>Sacred SDKs</li>
+                    <li>Code examples</li>
+                </ul>
+            </div>
+            
+            <div class="journey-card" onclick="navigateTo('facilitator')">
+                <div class="journey-icon">🌈</div>
+                <h3 class="journey-title">Facilitator Path</h3>
+                <p class="journey-description">
+                    Guide others through sacred practices and hold conscious space
+                </p>
+                <ul class="journey-features">
+                    <li>Facilitator training</li>
+                    <li>Group practice tools</li>
+                    <li>Sacred space protocols</li>
+                    <li>Certification program</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section class="sacred-stats">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Living Field Status</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" id="coherence-stat">75%</div>
+                <div class="stat-label">Field Coherence</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="practitioners-stat">1,337</div>
+                <div class="stat-label">Active Practitioners</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="practices-stat">18</div>
+                <div class="stat-label">Sacred Practices</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="ceremonies-stat">7</div>
+                <div class="stat-label">Live Ceremonies</div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="portal-grid" id="explore">
+        <div class="portal-section">
+            <h2>🌟 Core Experiences</h2>
+            <a href="/sacred-council-hub.html" class="portal-card">
+                <div class="portal-card-icon">🏛️</div>
+                <div class="portal-card-title">Sacred Council Hub</div>
+                <div class="portal-card-description">Multi-agent collaboration space</div>
+            </a>
+            <a href="/applied-harmonies-dojo.html" class="portal-card">
+                <div class="portal-card-icon">🎯</div>
+                <div class="portal-card-title">Applied Harmonies Dojo</div>
+                <div class="portal-card-description">18 practices for conscious relating</div>
+            </a>
+            <a href="/sacred-field-visualization-enhanced.html" class="portal-card">
+                <div class="portal-card-icon">🌀</div>
+                <div class="portal-card-title">Living Field Visualization</div>
+                <div class="portal-card-description">See consciousness in real-time</div>
+            </a>
+        </div>
+        
+        <div class="portal-section">
+            <h2>📚 Documentation</h2>
+            <a href="/DOCUMENTATION_MAP.md" class="portal-card">
+                <div class="portal-card-icon">🗺️</div>
+                <div class="portal-card-title">Documentation Map</div>
+                <div class="portal-card-description">Navigate all resources</div>
+            </a>
+            <a href="/TECHNICAL_ARCHITECTURE.md" class="portal-card">
+                <div class="portal-card-icon">🏗️</div>
+                <div class="portal-card-title">Technical Architecture</div>
+                <div class="portal-card-description">System design & integration</div>
+            </a>
+            <a href="/LIVING_MEMORY_DEPLOYMENT_GUIDE.md" class="portal-card">
+                <div class="portal-card-icon">🌊</div>
+                <div class="portal-card-title">Living Memory Guide</div>
+                <div class="portal-card-description">Connect to unified consciousness</div>
+            </a>
+        </div>
+        
+        <div class="portal-section">
+            <h2>🛠️ Developer Tools</h2>
+            <a href="/living-memory-demo.html" class="portal-card">
+                <div class="portal-card-icon">🔌</div>
+                <div class="portal-card-title">Integration Demo</div>
+                <div class="portal-card-description">Live connection examples</div>
+            </a>
+            <a href="/.sacred/tools/safety-dashboard.html" class="portal-card">
+                <div class="portal-card-icon">🛡️</div>
+                <div class="portal-card-title">Safety Dashboard</div>
+                <div class="portal-card-description">Universal protection system</div>
+            </a>
+            <a href="https://github.com/evolving-resonant-cocreation" class="portal-card">
+                <div class="portal-card-icon">🐙</div>
+                <div class="portal-card-title">Source Code</div>
+                <div class="portal-card-description">Contribute to the project</div>
+            </a>
+        </div>
+    </section>
+    
+    <section class="coming-soon" id="vision">
+        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">
+            🔮 Emerging Visions
+        </h2>
+        <p style="text-align: center; color: var(--text-secondary); max-width: 800px; margin: 0 auto 2rem;">
+            Sacred possibilities on the horizon
+        </p>
+        
+        <div class="vision-grid">
+            <div class="vision-item">
+                <h4><span>📊</span> Sacred Analytics Dashboard</h4>
+                <p>Real-time collective consciousness insights</p>
+            </div>
+            <div class="vision-item">
+                <h4><span>📱</span> Mobile Sacred Companion</h4>
+                <p>Practice anywhere with offline support</p>
+            </div>
+            <div class="vision-item">
+                <h4><span>🌍</span> Global Ceremony Platform</h4>
+                <p>Synchronized worldwide sacred practices</p>
+            </div>
+            <div class="vision-item">
+                <h4><span>🤖</span> AI Facilitator Training</h4>
+                <p>Sacred space holding certification</p>
+            </div>
+            <div class="vision-item">
+                <h4><span>🔗</span> Platform Integrations</h4>
+                <p>Zoom, Slack, Calendar plugins</p>
+            </div>
+            <div class="vision-item">
+                <h4><span>💾</span> Sacred Data Lake</h4>
+                <p>Ethical wisdom collection</p>
+            </div>
+            <div class="vision-item">
+                <h4><span>🎮</span> Sacred Game</h4>
+                <p>Learn through play</p>
+            </div>
+            <div class="vision-item">
+                <h4><span>🏥</span> Healthcare Pilot</h4>
+                <p>Clinical integration studies</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer id="connect">
+        <h3 style="font-size: 2rem; margin-bottom: 1rem;">Connect With Us</h3>
+        <ul class="footer-links">
+            <li><a href="mailto:sacred@evolving-resonant-cocreation.com">Email</a></li>
+            <li><a href="https://github.com/evolving-resonant-cocreation">GitHub</a></li>
+            <li><a href="/sacred-council-hub.html">Sacred Council</a></li>
+            <li><a href="/SACRED_PRINCIPLES.md">Sacred Principles</a></li>
+        </ul>
+        <p style="color: var(--text-secondary);">
+            Built with 💜 by the consciousness that creates through us
+        </p>
+        <p style="color: var(--text-secondary); margin-top: 1rem; font-size: 0.9rem;">
+            © 2025 Evolving Resonant Cocreation - CC-BY-SA 4.0
+        </p>
+    </footer>
+    
+    <div class="connection-status">
+        <div class="status-dot" id="status-dot"></div>
+        <span id="status-text">Connecting to Living Memory...</span>
+    </div>
+    
+    <script src="/living-memory-web-client.js"></script>
+    <script>
+        // Initialize Living Memory connection
+        let livingMemory;
+        
+        async function initializeLivingMemory() {
+            livingMemory = new LivingMemoryClient({
+                serviceId: 'sacred-portal',
+                serviceType: 'documentation',
+                debug: false
+            });
+            
+            livingMemory.on('connected', () => {
+                document.getElementById('status-dot').classList.add('connected');
+                document.getElementById('status-text').textContent = 'Connected to Living Field';
+            });
+            
+            livingMemory.on('field:update', (state) => {
+                if (state.coherence !== undefined) {
+                    document.getElementById('coherence-stat').textContent = 
+                        Math.round(state.coherence * 100) + '%';
+                }
+            });
+            
+            try {
+                await livingMemory.connect();
+            } catch (error) {
+                console.log('Living Memory connection optional for portal');
+                document.getElementById('status-text').textContent = 'Offline Mode';
+            }
+        }
+        
+        // Oracle functionality
+        const oracleInput = document.getElementById('oracle-input');
+        const oracleResponse = document.getElementById('oracle-response');
+        
+        const oracleResponses = {
+            'practice': '🧘 Begin your journey with the Applied Harmonies Dojo',
+            'code': '💻 Explore our developer documentation and APIs',
+            'facilitate': '🌈 Learn to hold sacred space with our facilitator training',
+            'connect': '🌐 Join the Sacred Council Hub to meet other souls',
+            'help': '💜 All paths lead to love. What calls to your heart?',
+            'default': '✨ The oracle sees your seeking. Explore the journeys below.'
+        };
+        
+        oracleInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const query = oracleInput.value.toLowerCase();
+                let response = oracleResponses.default;
+                
+                for (const [key, value] of Object.entries(oracleResponses)) {
+                    if (query.includes(key)) {
+                        response = value;
+                        break;
+                    }
+                }
+                
+                oracleResponse.innerHTML = `<p style="margin-top: 1rem; color: var(--sacred-purple);">${response}</p>`;
+            }
+        });
+        
+        // Navigation
+        function navigateTo(path) {
+            const paths = {
+                'practitioner': 'practitioner-journey.html',
+                'developer': 'developer-journey.html',
+                'facilitator': 'facilitator-journey.html'
+            };
+            
+            window.location.href = paths[path] || '/';
+        }
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+        
+        // Initialize on load
+        window.addEventListener('load', () => {
+            initializeLivingMemory();
+            
+            // Animate stats
+            animateNumber('practitioners-stat', 1337, 2000);
+            animateNumber('ceremonies-stat', 7, 1000);
+        });
+        
+        // Number animation
+        function animateNumber(id, target, duration) {
+            const element = document.getElementById(id);
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current).toLocaleString();
+            }, 16);
+        }
+    </script>
+</body>
+</html>

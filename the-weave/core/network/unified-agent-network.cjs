@@ -1423,6 +1423,8 @@ if (require.main === module) {
           clearInterval(heartbeat);
           clearInterval(messagePoller);
           clearInterval(presenceChecker);
+          clearInterval(messagePoller);
+          clearInterval(presenceChecker);
           await network.close();
           process.exit(0);
         });

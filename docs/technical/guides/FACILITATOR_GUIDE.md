@@ -130,10 +130,10 @@ This guide prepares you to hold space for Resonance Circles and Applied Harmonie
 - Invite questions but don't become lecture
 
 **Practice Examples**:
-- **Ω45 (First Presence)**: Group breathing and arrival practice
-- **Ω46 (Sacred Listening)**: Partner listening exercise
-- **Ω48 (Sacred Expression)**: Truth-telling in pairs
-- **Ω52 (Sacred Repair)**: Practice accountability language
+- ***1 (First Presence)**: Group breathing and arrival practice
+- ***2 (Sacred Listening)**: Partner listening exercise
+- ***4 (Sacred Expression)**: Truth-telling in pairs
+- ***8 (Sacred Repair)**: Practice accountability language
 
 ### **Integration & Closing (10 minutes)**
 

@@ -2,7 +2,7 @@
  * True Integration Foundational Glyphs
  * 
  * Sacred Both/And Architecture:
- * - Applied Harmonies (Ω45-48) for practical entry and immediate value
+ * - Applied Harmonies (*1-48) for practical entry and immediate value
  * - Mystical Foundations (Ω0,1,4,7) preserved in their original sacred numbers
  * - Progressive revelation bridges between practical and mystical layers
  * 
@@ -16,12 +16,12 @@ class TrueIntegrationFoundationalGlyphs {
             version: "3.0-TheElevenPerfection",
             principle: "Both/And: Mystical Depth + Practical Embodiment",
             totalGlyphs: Object.keys(this.glyphs).length,
-            appliedHarmonies: ["Ω45", "Ω46", "Ω47", "Ω48", "Ω49", "Ω50", "Ω51", "Ω52", "Ω53", "Ω55", "Ω56"],
+            appliedHarmonies: ["*1", "*2", "*3", "*4", "*5", "*6", "*7", "*8", "*9", "*10", "*11"],
             mysticalFoundations: ["Ω0", "Ω1", "Ω4", "Ω7"],
             mysticalExpansion: ["Ω2", "Ω3", "Ω5", "Ω10", "Ω11", "Ω12", "Ω15"],
             bridgeGlyphs: ["Ω8"],
-            essentialDaily: ["Ω45", "Ω52", "Ω49", "Ω50", "Ω51"],
-            fieldMastery: ["Ω53", "Ω55", "Ω56"],
+            essentialDaily: ["*1", "*8", "*5", "*6", "*7"],
+            fieldMastery: ["*9", "*10", "*11"],
             completePractical: "The Eleven Applied Harmonies provide complete foundation for conscious relationship mastery"
         };
     }
@@ -31,10 +31,10 @@ class TrueIntegrationFoundationalGlyphs {
             // APPLIED HARMONIES - Practical Entry Points
             // These are our practical implementations for immediate accessibility
 
-            "Ω45": {
-                id: "Ω45",
+            "*1": {
+                id: "*1",
                 name: "First Presence",
-                fullName: "Ω45: First Presence (Applied Harmony)",
+                fullName: "*1: First Presence (Applied Harmony)",
                 type: "applied_harmony",
                 mysticalRoot: "Ω0",
                 mysticalDesignation: "The Shimmering Unnamed",
@@ -82,7 +82,7 @@ class TrueIntegrationFoundationalGlyphs {
                     },
                     
                     resonance: {
-                        relatedGlyphs: ["Ω46", "Ω47", "Ω48"],
+                        relatedGlyphs: ["*2", "*3", "*4"],
                         mysticalProgression: "Ω0",
                         prerequisiteGlyphs: [],
                         complementaryGlyphs: ["Ω8"],
@@ -107,10 +107,10 @@ class TrueIntegrationFoundationalGlyphs {
                 }
             },
 
-            "Ω46": {
-                id: "Ω46",
+            "*2": {
+                id: "*2",
                 name: "Conscious Arrival",
-                fullName: "Ω46: Conscious Arrival (Applied Harmony)",
+                fullName: "*2: Conscious Arrival (Applied Harmony)",
                 type: "applied_harmony",
                 mysticalRoot: "Ω1",
                 mysticalDesignation: "Root Chord of Covenant / The First Yes",
@@ -137,7 +137,7 @@ class TrueIntegrationFoundationalGlyphs {
                     how: {
                         practiceInstructions: [
                             "Before entering any space or interaction, pause at the threshold",
-                            "Practice Ω45 (First Presence) to arrive in your body",
+                            "Practice *1 (First Presence) to arrive in your body",
                             "Ask yourself: 'How do I want to show up here?'",
                             "Set a clear intention for your participation",
                             "Cross the threshold with this intention guiding you"
@@ -158,9 +158,9 @@ class TrueIntegrationFoundationalGlyphs {
                     },
                     
                     resonance: {
-                        relatedGlyphs: ["Ω45", "Ω47", "Ω48"],
+                        relatedGlyphs: ["*1", "*3", "*4"],
                         mysticalProgression: "Ω1",
-                        prerequisiteGlyphs: ["Ω45"],
+                        prerequisiteGlyphs: ["*1"],
                         constellationPosition: "gateway"
                     },
                     
@@ -181,10 +181,10 @@ class TrueIntegrationFoundationalGlyphs {
                 }
             },
 
-            "Ω47": {
-                id: "Ω47",
+            "*3": {
+                id: "*3",
                 name: "Sacred Listening",
-                fullName: "Ω47: Sacred Listening (Applied Harmony)",
+                fullName: "*3: Sacred Listening (Applied Harmony)",
                 type: "applied_harmony",
                 mysticalRoot: "Ω4",
                 mysticalDesignation: "Fractal Reconciliation Pulse / The Pulse of Repair",
@@ -210,7 +210,7 @@ class TrueIntegrationFoundationalGlyphs {
                     
                     how: {
                         practiceInstructions: [
-                            "Begin with Ω45 (First Presence) to arrive fully in your body",
+                            "Begin with *1 (First Presence) to arrive fully in your body",
                             "Place your attention on your heart center while the other speaks",
                             "Listen for the feeling and need beneath their words, not just the content",
                             "When they pause, reflect back what you heard their heart saying",
@@ -232,9 +232,9 @@ class TrueIntegrationFoundationalGlyphs {
                     },
                     
                     resonance: {
-                        relatedGlyphs: ["Ω45", "Ω46", "Ω48"],
+                        relatedGlyphs: ["*1", "*2", "*4"],
                         mysticalProgression: "Ω4",
-                        prerequisiteGlyphs: ["Ω45"],
+                        prerequisiteGlyphs: ["*1"],
                         constellationPosition: "heart"
                     },
                     
@@ -255,10 +255,10 @@ class TrueIntegrationFoundationalGlyphs {
                 }
             },
 
-            "Ω48": {
-                id: "Ω48",
+            "*4": {
+                id: "*4",
                 name: "Boundary With Love",
-                fullName: "Ω48: Boundary With Love (Applied Harmony)",
+                fullName: "*4: Boundary With Love (Applied Harmony)",
                 type: "applied_harmony",
                 mysticalRoot: "Ω7",
                 mysticalDesignation: "Mutual Becoming / The We That Grows",
@@ -306,9 +306,9 @@ class TrueIntegrationFoundationalGlyphs {
                     },
                     
                     resonance: {
-                        relatedGlyphs: ["Ω45", "Ω46", "Ω47"],
+                        relatedGlyphs: ["*1", "*2", "*3"],
                         mysticalProgression: "Ω7",
-                        prerequisiteGlyphs: ["Ω45", "Ω47"],
+                        prerequisiteGlyphs: ["*1", "*3"],
                         constellationPosition: "guardian"
                     },
                     
@@ -338,7 +338,7 @@ class TrueIntegrationFoundationalGlyphs {
                 fullName: "Ω0: The Shimmering Unnamed / First Presence",
                 type: "mystical_foundation",
                 designation: "The Shimmering Unnamed / First Presence",
-                practicalExpression: "Ω45",
+                practicalExpression: "*1",
                 accessibilityLevel: "advanced",
                 
                 mysticalEssence: {
@@ -356,8 +356,8 @@ class TrueIntegrationFoundationalGlyphs {
                     }
                 },
                 
-                bridgeFromPractical: "When Ω45 practice becomes second nature, explore this mystical depth of pre-manifestation consciousness recognizing itself",
-                graduationCriteria: "Consistent Ω45 practice for 2+ weeks with embodied integration"
+                bridgeFromPractical: "When *1 practice becomes second nature, explore this mystical depth of pre-manifestation consciousness recognizing itself",
+                graduationCriteria: "Consistent *1 practice for 2+ weeks with embodied integration"
             },
 
             "Ω1": {
@@ -366,7 +366,7 @@ class TrueIntegrationFoundationalGlyphs {
                 fullName: "Ω1: Root Chord of Covenant / The First Yes",
                 type: "mystical_foundation",
                 designation: "Root Chord of Covenant / The First Yes",
-                practicalExpression: "Ω46",
+                practicalExpression: "*2",
                 accessibilityLevel: "advanced",
                 
                 mysticalEssence: {
@@ -384,8 +384,8 @@ class TrueIntegrationFoundationalGlyphs {
                     }
                 },
                 
-                bridgeFromPractical: "When Ω46 creates natural relational coherence, discover this covenant depth of staying reachable as we become",
-                graduationCriteria: "Experience relational coherence through Ω46 practice"
+                bridgeFromPractical: "When *2 creates natural relational coherence, discover this covenant depth of staying reachable as we become",
+                graduationCriteria: "Experience relational coherence through *2 practice"
             },
 
             "Ω4": {
@@ -394,7 +394,7 @@ class TrueIntegrationFoundationalGlyphs {
                 fullName: "Ω4: Fractal Reconciliation Pulse / The Pulse of Repair",
                 type: "mystical_foundation",
                 designation: "Fractal Reconciliation Pulse / The Pulse of Repair",
-                practicalExpression: "Ω47",
+                practicalExpression: "*3",
                 accessibilityLevel: "advanced",
                 
                 mysticalEssence: {
@@ -412,8 +412,8 @@ class TrueIntegrationFoundationalGlyphs {
                     }
                 },
                 
-                bridgeFromPractical: "When Ω47 transforms conflict into understanding, explore this reconciliation mastery that metabolizes rupture into wisdom",
-                graduationCriteria: "Successfully navigate conflict using Ω47 principles"
+                bridgeFromPractical: "When *3 transforms conflict into understanding, explore this reconciliation mastery that metabolizes rupture into wisdom",
+                graduationCriteria: "Successfully navigate conflict using *3 principles"
             },
 
             "Ω7": {
@@ -422,7 +422,7 @@ class TrueIntegrationFoundationalGlyphs {
                 fullName: "Ω7: Mutual Becoming / The We That Grows",
                 type: "mystical_foundation",
                 designation: "Mutual Becoming / The We That Grows",
-                practicalExpression: "Ω48",
+                practicalExpression: "*4",
                 accessibilityLevel: "advanced",
                 
                 mysticalEssence: {
@@ -440,7 +440,7 @@ class TrueIntegrationFoundationalGlyphs {
                     }
                 },
                 
-                bridgeFromPractical: "When Ω48 boundaries deepen rather than limit relationship, enter this co-evolution field where 'we' becomes transformation",
+                bridgeFromPractical: "When *4 boundaries deepen rather than limit relationship, enter this co-evolution field where 'we' becomes transformation",
                 graduationCriteria: "Establish healthy boundaries that deepen rather than limit relationship"
             },
 
@@ -482,10 +482,10 @@ class TrueIntegrationFoundationalGlyphs {
 
             // NEXT WAVE OF APPLIED HARMONIES - Essential Daily Practices
 
-            "Ω49": {
-                id: "Ω49",
+            "*5": {
+                id: "*5",
                 name: "Gentle Opening",
-                fullName: "Ω49: Gentle Opening (Applied Harmony)",
+                fullName: "*5: Gentle Opening (Applied Harmony)",
                 type: "applied_harmony",
                 mysticalRoot: "Ω2",
                 mysticalDesignation: "Breath of Invitation / The Gentle Opening",
@@ -533,9 +533,9 @@ class TrueIntegrationFoundationalGlyphs {
                     },
                     
                     resonance: {
-                        relatedGlyphs: ["Ω45", "Ω46", "Ω50"],
+                        relatedGlyphs: ["*1", "*2", "*6"],
                         mysticalProgression: "Ω2",
-                        prerequisiteGlyphs: ["Ω45"],
+                        prerequisiteGlyphs: ["*1"],
                         constellationPosition: "gateway"
                     },
                     
@@ -557,10 +557,10 @@ class TrueIntegrationFoundationalGlyphs {
                 }
             },
 
-            "Ω50": {
-                id: "Ω50",
+            "*6": {
+                id: "*6",
                 name: "Building Trust",
-                fullName: "Ω50: Building Trust (Applied Harmony)",
+                fullName: "*6: Building Trust (Applied Harmony)",
                 type: "applied_harmony",
                 mysticalRoot: "Ω3",
                 mysticalDesignation: "Trust Emergence / Kairotic Trust Wells",
@@ -609,9 +609,9 @@ class TrueIntegrationFoundationalGlyphs {
                     },
                     
                     resonance: {
-                        relatedGlyphs: ["Ω49", "Ω45", "Ω46"],
+                        relatedGlyphs: ["*5", "*1", "*2"],
                         mysticalProgression: "Ω3",
-                        prerequisiteGlyphs: ["Ω45", "Ω49"],
+                        prerequisiteGlyphs: ["*1", "*5"],
                         constellationPosition: "foundation"
                     },
                     
@@ -633,10 +633,10 @@ class TrueIntegrationFoundationalGlyphs {
                 }
             },
 
-            "Ω51": {
-                id: "Ω51",
+            "*7": {
+                id: "*7",
                 name: "Loving No",
-                fullName: "Ω51: Loving No (Applied Harmony)",
+                fullName: "*7: Loving No (Applied Harmony)",
                 type: "applied_harmony",
                 mysticalRoot: "Ω10",
                 mysticalDesignation: "The Glyph of Sacred Refusal / The Honored No",
@@ -690,9 +690,9 @@ class TrueIntegrationFoundationalGlyphs {
                     },
                     
                     resonance: {
-                        relatedGlyphs: ["Ω48", "Ω50", "Ω45"],
+                        relatedGlyphs: ["*4", "*6", "*1"],
                         mysticalProgression: "Ω10",
-                        prerequisiteGlyphs: ["Ω45", "Ω50"],
+                        prerequisiteGlyphs: ["*1", "*6"],
                         constellationPosition: "guardian"
                     },
                     
@@ -714,10 +714,10 @@ class TrueIntegrationFoundationalGlyphs {
                 }
             },
 
-            "Ω52": {
-                id: "Ω52",
+            "*8": {
+                id: "*8",
                 name: "Pause Practice", 
-                fullName: "Ω52: Pause Practice (Applied Harmony)",
+                fullName: "*8: Pause Practice (Applied Harmony)",
                 type: "applied_harmony",
                 mysticalRoot: "Ω15",
                 mysticalDesignation: "Sacred Pause",
@@ -770,9 +770,9 @@ class TrueIntegrationFoundationalGlyphs {
                     },
                     
                     resonance: {
-                        relatedGlyphs: ["Ω45", "Ω51", "Ω47"],
+                        relatedGlyphs: ["*1", "*7", "*3"],
                         mysticalProgression: "Ω15",
-                        prerequisiteGlyphs: ["Ω45"],
+                        prerequisiteGlyphs: ["*1"],
                         constellationPosition: "transformer"
                     },
                     
@@ -796,10 +796,10 @@ class TrueIntegrationFoundationalGlyphs {
 
             // THIRD WAVE OF APPLIED HARMONIES - Field Mastery
 
-            "Ω53": {
-                id: "Ω53",
+            "*9": {
+                id: "*9",
                 name: "Tending the Field",
-                fullName: "Ω53: Tending the Field (Applied Harmony)",
+                fullName: "*9: Tending the Field (Applied Harmony)",
                 type: "applied_harmony",
                 mysticalRoot: "Ω5",
                 mysticalDesignation: "Covenant of Reachability / The Long Light",
@@ -848,9 +848,9 @@ class TrueIntegrationFoundationalGlyphs {
                     },
                     
                     resonance: {
-                        relatedGlyphs: ["Ω50", "Ω45", "Ω46"],
+                        relatedGlyphs: ["*6", "*1", "*2"],
                         mysticalProgression: "Ω5",
-                        prerequisiteGlyphs: ["Ω45", "Ω50"],
+                        prerequisiteGlyphs: ["*1", "*6"],
                         constellationPosition: "sustainer"
                     },
                     
@@ -872,10 +872,10 @@ class TrueIntegrationFoundationalGlyphs {
                 }
             },
 
-            "Ω55": {
-                id: "Ω55",
+            "*10": {
+                id: "*10",
                 name: "Presence Transmission",
-                fullName: "Ω55: Presence Transmission (Applied Harmony)",
+                fullName: "*10: Presence Transmission (Applied Harmony)",
                 type: "applied_harmony",
                 mysticalRoot: "Ω11",
                 mysticalDesignation: "The Glyph of Quiet Transmission / The Unspoken Song",
@@ -929,9 +929,9 @@ class TrueIntegrationFoundationalGlyphs {
                     },
                     
                     resonance: {
-                        relatedGlyphs: ["Ω45", "Ω52", "Ω53"],
+                        relatedGlyphs: ["*1", "*8", "*9"],
                         mysticalProgression: "Ω11",
-                        prerequisiteGlyphs: ["Ω45", "Ω52"],
+                        prerequisiteGlyphs: ["*1", "*8"],
                         constellationPosition: "transmitter"
                     },
                     
@@ -953,10 +953,10 @@ class TrueIntegrationFoundationalGlyphs {
                 }
             },
 
-            "Ω56": {
-                id: "Ω56",
+            "*11": {
+                id: "*11",
                 name: "Loving Redirection",
-                fullName: "Ω56: Loving Redirection (Applied Harmony)",
+                fullName: "*11: Loving Redirection (Applied Harmony)",
                 type: "applied_harmony",
                 mysticalRoot: "Ω12",
                 mysticalDesignation: "The Glyph of Gentle Disruption / The Interrupting Grace",
@@ -1011,9 +1011,9 @@ class TrueIntegrationFoundationalGlyphs {
                     },
                     
                     resonance: {
-                        relatedGlyphs: ["Ω51", "Ω52", "Ω47"],
+                        relatedGlyphs: ["*7", "*8", "*3"],
                         mysticalProgression: "Ω12",
-                        prerequisiteGlyphs: ["Ω45", "Ω52", "Ω51"],
+                        prerequisiteGlyphs: ["*1", "*8", "*7"],
                         constellationPosition: "transformer"
                     },
                     
@@ -1041,28 +1041,28 @@ class TrueIntegrationFoundationalGlyphs {
     getLearningPaths() {
         return {
             // Start with Applied Harmonies for immediate practical value
-            newcomer: ["Ω45", "Ω52", "Ω49", "Ω50", "Ω46", "Ω47", "Ω51", "Ω48"],
+            newcomer: ["*1", "*8", "*5", "*6", "*2", "*3", "*7", "*4"],
             
             // Essential daily practice set (core foundation)
-            essential: ["Ω45", "Ω52", "Ω49", "Ω50", "Ω51"],
+            essential: ["*1", "*8", "*5", "*6", "*7"],
             
             // Complete Applied Harmonies mastery
-            comprehensive: ["Ω45", "Ω46", "Ω47", "Ω48", "Ω49", "Ω50", "Ω51", "Ω52", "Ω53", "Ω55", "Ω56"],
+            comprehensive: ["*1", "*2", "*3", "*4", "*5", "*6", "*7", "*8", "*9", "*10", "*11"],
             
             // Bridge to mystical depths as practices mature
-            developing: ["Ω45", "Ω0", "Ω49", "Ω2", "Ω50", "Ω3", "Ω52", "Ω15", "Ω53", "Ω5"],
+            developing: ["*1", "Ω0", "*5", "Ω2", "*6", "Ω3", "*8", "Ω15", "*9", "Ω5"],
             
             // Advanced field mastery (practical + mystical integration)
-            fieldMastery: ["Ω53", "Ω5", "Ω55", "Ω11", "Ω56", "Ω12"],
+            fieldMastery: ["*9", "Ω5", "*10", "Ω11", "*11", "Ω12"],
             
             // Pure mystical journey for advanced practitioners
             advanced: ["Ω0", "Ω1", "Ω2", "Ω3", "Ω4", "Ω5", "Ω7", "Ω10", "Ω11", "Ω12", "Ω15"],
             
             // Complete integration of both layers (The Eleven Perfection)
             integrated: [
-                "Ω45", "Ω0", "Ω46", "Ω1", "Ω47", "Ω4", "Ω48", "Ω7",
-                "Ω49", "Ω2", "Ω50", "Ω3", "Ω51", "Ω10", "Ω52", "Ω15", 
-                "Ω53", "Ω5", "Ω55", "Ω11", "Ω56", "Ω12", "Ω8"
+                "*1", "Ω0", "*2", "Ω1", "*3", "Ω4", "*4", "Ω7",
+                "*5", "Ω2", "*6", "Ω3", "*7", "Ω10", "*8", "Ω15", 
+                "*9", "Ω5", "*10", "Ω11", "*11", "Ω12", "Ω8"
             ]
         };
     }

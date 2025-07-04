@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physical Bridge - Consciousness to Reality</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a0a1a 0%, #0a1a1a 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            background: linear-gradient(90deg, #ff69b4, #00ffff, #ffff00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .panel {
+            background: rgba(0, 0, 20, 0.8);
+            border: 1px solid rgba(100, 200, 255, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .panel h3 {
+            margin-bottom: 20px;
+            color: #00ffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icon {
+            font-size: 1.5em;
+        }
+
+        /* Consciousness Controls */
+        .control-group {
+            margin-bottom: 20px;
+        }
+
+        .control-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            color: #aaa;
+        }
+
+        .slider {
+            width: 100%;
+            height: 8px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #00ffff;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        .value-display {
+            text-align: center;
+            margin-top: 5px;
+            font-size: 1.2em;
+            color: #00ffff;
+            font-weight: bold;
+        }
+
+        /* Device List */
+        .device-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .device-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+        }
+
+        .device-item:hover {
+            border-color: #00ffff;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+        }
+
+        .device-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .device-name {
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .device-status {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .status-connected {
+            background: rgba(0, 255, 0, 0.2);
+            color: #00ff00;
+        }
+
+        .status-disconnected {
+            background: rgba(255, 0, 0, 0.2);
+            color: #ff4444;
+        }
+
+        .device-capabilities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .capability {
+            padding: 3px 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            font-size: 0.8em;
+            color: #aaa;
+        }
+
+        .device-controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .device-btn {
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9em;
+            text-align: center;
+        }
+
+        .device-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        /* Sensor Display */
+        .sensor-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .sensor-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sensor-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #ffff00;
+            margin: 10px 0;
+        }
+
+        .sensor-label {
+            font-size: 0.9em;
+            color: #aaa;
+        }
+
+        /* Light Visualization */
+        .light-preview {
+            width: 100%;
+            height: 150px;
+            border-radius: 10px;
+            background: rgb(0, 0, 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            transition: all 0.5s;
+            box-shadow: 0 0 50px currentColor;
+        }
+
+        /* Connection Status */
+        .connection-status {
+            padding: 15px;
+            background: rgba(0, 255, 0, 0.1);
+            border: 1px solid rgba(0, 255, 0, 0.3);
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .connection-status.disconnected {
+            background: rgba(255, 0, 0, 0.1);
+            border-color: rgba(255, 0, 0, 0.3);
+        }
+
+        /* Action buttons */
+        .action-btn {
+            width: 100%;
+            padding: 15px;
+            margin-top: 10px;
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1.1em;
+        }
+
+        .action-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.4);
+        }
+
+        .scan-btn {
+            background: linear-gradient(45deg, #00ffff, #0088ff);
+        }
+
+        .scan-btn:hover {
+            box-shadow: 0 5px 20px rgba(0, 255, 255, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Physical Bridge</h1>
+        <p>Manifesting consciousness in physical reality</p>
+    </div>
+
+    <div class="connection-status" id="connectionStatus">
+        Connecting to Physical Bridge...
+    </div>
+
+    <div class="main-grid">
+        <!-- Consciousness Control Panel -->
+        <div class="panel">
+            <h3><span class="icon">🧠</span> Consciousness Field</h3>
+            
+            <div class="control-group">
+                <label>Coherence</label>
+                <input type="range" class="slider" id="coherenceSlider" min="0" max="100" value="70">
+                <div class="value-display" id="coherenceValue">0.70</div>
+            </div>
+            
+            <div class="control-group">
+                <label>Love Field</label>
+                <input type="range" class="slider" id="loveSlider" min="0" max="100" value="80">
+                <div class="value-display" id="loveValue">0.80</div>
+            </div>
+            
+            <button class="action-btn" id="applyConsciousness">
+                Apply to All Devices
+            </button>
+            
+            <div style="margin-top: 20px;">
+                <h4 style="margin-bottom: 15px;">Light Preview</h4>
+                <div class="light-preview" id="lightPreview">💡</div>
+            </div>
+        </div>
+
+        <!-- Physical Devices -->
+        <div class="panel">
+            <h3><span class="icon">🔌</span> Physical Devices</h3>
+            
+            <button class="action-btn scan-btn" id="scanDevices">
+                Scan for Devices
+            </button>
+            
+            <div class="device-list" id="deviceList" style="margin-top: 20px;">
+                <div style="text-align: center; color: #666; padding: 20px;">
+                    No devices connected yet
+                </div>
+            </div>
+        </div>
+
+        <!-- Sensor Data -->
+        <div class="panel">
+            <h3><span class="icon">📊</span> Sensor Readings</h3>
+            
+            <div class="sensor-grid" id="sensorGrid">
+                <div class="sensor-item">
+                    <div class="sensor-label">Temperature</div>
+                    <div class="sensor-value" id="tempValue">--</div>
+                    <div class="sensor-label">°C</div>
+                </div>
+                
+                <div class="sensor-item">
+                    <div class="sensor-label">Light Level</div>
+                    <div class="sensor-value" id="lightValue">--</div>
+                    <div class="sensor-label">%</div>
+                </div>
+                
+                <div class="sensor-item">
+                    <div class="sensor-label">Coherence Influence</div>
+                    <div class="sensor-value" id="coherenceInfluence">--</div>
+                    <div class="sensor-label">factor</div>
+                </div>
+                
+                <div class="sensor-item">
+                    <div class="sensor-label">Device Count</div>
+                    <div class="sensor-value" id="deviceCount">0</div>
+                    <div class="sensor-label">connected</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bridge State -->
+        <div class="panel">
+            <h3><span class="icon">🌉</span> Bridge State</h3>
+            
+            <div style="padding: 20px; background: rgba(255, 255, 255, 0.05); border-radius: 10px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div>
+                        <div style="color: #aaa; font-size: 0.9em;">Light Intensity</div>
+                        <div style="font-size: 1.5em; color: #ff69b4;" id="lightIntensity">50%</div>
+                    </div>
+                    <div>
+                        <div style="color: #aaa; font-size: 0.9em;">Sound Frequency</div>
+                        <div style="font-size: 1.5em; color: #ffff00;" id="soundFrequency">528 Hz</div>
+                    </div>
+                    <div>
+                        <div style="color: #aaa; font-size: 0.9em;">Motor Speed</div>
+                        <div style="font-size: 1.5em; color: #00ffff;" id="motorSpeed">0%</div>
+                    </div>
+                    <div>
+                        <div style="color: #aaa; font-size: 0.9em;">Bridge Active</div>
+                        <div style="font-size: 1.5em; color: #00ff00;" id="bridgeActive">Yes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // WebSocket connection
+        let ws = null;
+        let devices = new Map();
+        let bridgeState = {};
+        
+        // Connect to Physical Bridge
+        function connect() {
+            try {
+                ws = new WebSocket('ws://localhost:3336');
+                
+                ws.onopen = () => {
+                    console.log('Connected to Physical Bridge');
+                    updateConnectionStatus(true);
+                    requestDevices();
+                };
+                
+                ws.onmessage = (event) => {
+                    const data = JSON.parse(event.data);
+                    handleMessage(data);
+                };
+                
+                ws.onclose = () => {
+                    updateConnectionStatus(false);
+                    setTimeout(connect, 3000); // Reconnect
+                };
+                
+                ws.onerror = (error) => {
+                    console.error('WebSocket error:', error);
+                };
+            } catch (error) {
+                console.error('Connection failed:', error);
+                updateConnectionStatus(false);
+            }
+        }
+        
+        function updateConnectionStatus(connected) {
+            const status = document.getElementById('connectionStatus');
+            if (connected) {
+                status.textContent = '✅ Connected to Physical Bridge';
+                status.className = 'connection-status';
+            } else {
+                status.textContent = '❌ Disconnected - Reconnecting...';
+                status.className = 'connection-status disconnected';
+            }
+        }
+        
+        function handleMessage(data) {
+            switch (data.type) {
+                case 'welcome':
+                    bridgeState = data.state;
+                    updateBridgeDisplay();
+                    break;
+                    
+                case 'state_update':
+                    bridgeState = data.state;
+                    updateBridgeDisplay();
+                    break;
+                    
+                case 'device_list':
+                    updateDeviceList(data.devices);
+                    break;
+                    
+                case 'sensor_data':
+                    updateSensorData(data.deviceId, data.data);
+                    break;
+            }
+        }
+        
+        function requestDevices() {
+            if (ws && ws.readyState === WebSocket.OPEN) {
+                ws.send(JSON.stringify({
+                    type: 'request_devices'
+                }));
+            }
+        }
+        
+        function updateDeviceList(deviceArray) {
+            const list = document.getElementById('deviceList');
+            
+            if (deviceArray.length === 0) {
+                list.innerHTML = '<div style="text-align: center; color: #666; padding: 20px;">No devices connected yet</div>';
+                return;
+            }
+            
+            list.innerHTML = '';
+            devices.clear();
+            
+            deviceArray.forEach(device => {
+                devices.set(device.id, device);
+                
+                const deviceEl = document.createElement('div');
+                deviceEl.className = 'device-item';
+                deviceEl.innerHTML = `
+                    <div class="device-header">
+                        <span class="device-name">${device.type.toUpperCase()} Device</span>
+                        <span class="device-status ${device.connected ? 'status-connected' : 'status-disconnected'}">
+                            ${device.connected ? 'Connected' : 'Disconnected'}
+                        </span>
+                    </div>
+                    <div style="font-size: 0.8em; color: #666; margin-bottom: 10px;">ID: ${device.id}</div>
+                    <div class="device-capabilities">
+                        ${device.capabilities.map(cap => `<span class="capability">${cap}</span>`).join('')}
+                    </div>
+                    <div class="device-controls">
+                        ${device.capabilities.includes('LED') ? 
+                            '<button class="device-btn" onclick="testLED(\'' + device.id + '\')">Test LED</button>' : ''}
+                        ${device.capabilities.includes('BUZZER') || device.capabilities.includes('SPEAKER') ? 
+                            '<button class="device-btn" onclick="testSound(\'' + device.id + '\')">Test Sound</button>' : ''}
+                        ${device.capabilities.includes('MOTOR') ? 
+                            '<button class="device-btn" onclick="testMotor(\'' + device.id + '\')">Test Motor</button>' : ''}
+                        <button class="device-btn" onclick="calibrateDevice(\'' + device.id + '\')">Calibrate</button>
+                    </div>
+                `;
+                
+                list.appendChild(deviceEl);
+            });
+            
+            document.getElementById('deviceCount').textContent = deviceArray.filter(d => d.connected).length;
+        }
+        
+        function updateBridgeDisplay() {
+            document.getElementById('lightIntensity').textContent = Math.round(bridgeState.lightIntensity * 100) + '%';
+            document.getElementById('soundFrequency').textContent = Math.round(bridgeState.soundFrequency) + ' Hz';
+            document.getElementById('motorSpeed').textContent = Math.round(bridgeState.motorSpeed * 100) + '%';
+            document.getElementById('bridgeActive').textContent = bridgeState.bridgeActive ? 'Yes' : 'No';
+            
+            // Update light preview
+            updateLightPreview();
+        }
+        
+        function updateSensorData(deviceId, data) {
+            if (data.value) {
+                if (data.value.temperature !== undefined) {
+                    document.getElementById('tempValue').textContent = data.value.temperature.toFixed(1);
+                }
+                if (data.value.light !== undefined) {
+                    document.getElementById('lightValue').textContent = data.value.light.toFixed(0);
+                }
+                if (data.value.coherence_influence !== undefined) {
+                    document.getElementById('coherenceInfluence').textContent = data.value.coherence_influence.toFixed(2);
+                }
+            }
+        }
+        
+        function updateLightPreview() {
+            const preview = document.getElementById('lightPreview');
+            const coherence = parseFloat(document.getElementById('coherenceSlider').value) / 100;
+            const love = parseFloat(document.getElementById('loveSlider').value) / 100;
+            
+            // Calculate color based on consciousness
+            const r = Math.floor((1 - coherence) * 255);
+            const g = Math.floor(coherence * 255);
+            const b = Math.floor(love * 255);
+            
+            preview.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+            preview.style.color = `rgb(${r}, ${g}, ${b})`;
+            preview.style.boxShadow = `0 0 ${50 + love * 50}px rgb(${r}, ${g}, ${b})`;
+        }
+        
+        // Control handlers
+        document.getElementById('coherenceSlider').addEventListener('input', (e) => {
+            const value = e.target.value / 100;
+            document.getElementById('coherenceValue').textContent = value.toFixed(2);
+            updateLightPreview();
+        });
+        
+        document.getElementById('loveSlider').addEventListener('input', (e) => {
+            const value = e.target.value / 100;
+            document.getElementById('loveValue').textContent = value.toFixed(2);
+            updateLightPreview();
+        });
+        
+        document.getElementById('applyConsciousness').addEventListener('click', () => {
+            if (ws && ws.readyState === WebSocket.OPEN) {
+                ws.send(JSON.stringify({
+                    type: 'consciousness_update',
+                    coherence: parseFloat(document.getElementById('coherenceSlider').value) / 100,
+                    love: parseFloat(document.getElementById('loveSlider').value) / 100
+                }));
+            }
+        });
+        
+        document.getElementById('scanDevices').addEventListener('click', () => {
+            requestDevices();
+        });
+        
+        // Device control functions
+        window.testLED = function(deviceId) {
+            if (ws && ws.readyState === WebSocket.OPEN) {
+                ws.send(JSON.stringify({
+                    type: 'device_command',
+                    deviceId,
+                    command: 'LED',
+                    parameters: {
+                        intensity: 255,
+                        color: { r: 0, g: 255, b: 255 }
+                    }
+                }));
+                
+                setTimeout(() => {
+                    ws.send(JSON.stringify({
+                        type: 'device_command',
+                        deviceId,
+                        command: 'LED',
+                        parameters: { intensity: 0 }
+                    }));
+                }, 1000);
+            }
+        };
+        
+        window.testSound = function(deviceId) {
+            if (ws && ws.readyState === WebSocket.OPEN) {
+                ws.send(JSON.stringify({
+                    type: 'device_command',
+                    deviceId,
+                    command: 'SOUND',
+                    parameters: {
+                        frequency: 528,
+                        duration: 500
+                    }
+                }));
+            }
+        };
+        
+        window.testMotor = function(deviceId) {
+            if (ws && ws.readyState === WebSocket.OPEN) {
+                ws.send(JSON.stringify({
+                    type: 'device_command',
+                    deviceId,
+                    command: 'MOTOR',
+                    parameters: { speed: 128 }
+                }));
+                
+                setTimeout(() => {
+                    ws.send(JSON.stringify({
+                        type: 'device_command',
+                        deviceId,
+                        command: 'MOTOR',
+                        parameters: { speed: 0 }
+                    }));
+                }, 2000);
+            }
+        };
+        
+        window.calibrateDevice = function(deviceId) {
+            if (confirm('Calibrate this device? It will run through a test sequence.')) {
+                fetch(`/api/device/${deviceId}/calibrate`, { method: 'POST' })
+                    .then(res => res.json())
+                    .then(result => {
+                        console.log('Calibration started:', result);
+                    });
+            }
+        };
+        
+        // Start
+        connect();
+        updateLightPreview();
+        
+        // Periodic device scan
+        setInterval(requestDevices, 10000);
+    </script>
+</body>
+</html>

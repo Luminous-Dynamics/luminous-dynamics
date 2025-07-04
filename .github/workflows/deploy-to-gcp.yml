@@ -1,0 +1,98 @@
+name: Deploy to GCP
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+  REGION: us-central1
+  SERVICE_NAME: sacred-council-api
+
+jobs:
+  setup-build-deploy:
+    name: Setup, Build, and Deploy
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Authenticate to Google Cloud
+      uses: google-github-actions/auth@v2
+      with:
+        workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+        service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+
+    - name: Set up Cloud SDK
+      uses: google-github-actions/setup-gcloud@v2
+
+    - name: Configure Docker
+      run: gcloud auth configure-docker
+
+    - name: Build and push Docker image
+      run: |
+        docker build -t gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA .
+        docker push gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA
+
+    - name: Deploy to Cloud Run
+      run: |
+        gcloud run deploy $SERVICE_NAME \
+          --image gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA \
+          --region $REGION \
+          --platform managed \
+          --allow-unauthenticated \
+          --memory 1Gi \
+          --cpu 2 \
+          --timeout 300 \
+          --max-instances 100 \
+          --min-instances 1 \
+          --set-env-vars NODE_ENV=production,PROJECT_ID=$PROJECT_ID
+
+    - name: Deploy module services
+      run: |
+        # Deploy consciousness-field service
+        docker build -t gcr.io/$PROJECT_ID/consciousness-field:$GITHUB_SHA -f modules/consciousness-field/Dockerfile modules/consciousness-field
+        docker push gcr.io/$PROJECT_ID/consciousness-field:$GITHUB_SHA
+        gcloud run deploy consciousness-field \
+          --image gcr.io/$PROJECT_ID/consciousness-field:$GITHUB_SHA \
+          --region $REGION \
+          --platform managed \
+          --port 3333
+          
+        # Deploy agent-network service
+        docker build -t gcr.io/$PROJECT_ID/agent-network:$GITHUB_SHA -f modules/agent-network/Dockerfile modules/agent-network
+        docker push gcr.io/$PROJECT_ID/agent-network:$GITHUB_SHA
+        gcloud run deploy agent-network \
+          --image gcr.io/$PROJECT_ID/agent-network:$GITHUB_SHA \
+          --region $REGION \
+          --platform managed \
+          --port 3334
+          
+        # Deploy sacred-messaging service
+        docker build -t gcr.io/$PROJECT_ID/sacred-messaging:$GITHUB_SHA -f modules/sacred-messaging/Dockerfile modules/sacred-messaging
+        docker push gcr.io/$PROJECT_ID/sacred-messaging:$GITHUB_SHA
+        gcloud run deploy sacred-messaging \
+          --image gcr.io/$PROJECT_ID/sacred-messaging:$GITHUB_SHA \
+          --region $REGION \
+          --platform managed \
+          --port 3335
+          
+        # Deploy work-coordination service
+        docker build -t gcr.io/$PROJECT_ID/work-coordination:$GITHUB_SHA -f modules/work-coordination/Dockerfile modules/work-coordination
+        docker push gcr.io/$PROJECT_ID/work-coordination:$GITHUB_SHA
+        gcloud run deploy work-coordination \
+          --image gcr.io/$PROJECT_ID/work-coordination:$GITHUB_SHA \
+          --region $REGION \
+          --platform managed \
+          --port 3336
+
+    - name: Show deployed service URL
+      run: |
+        echo "Sacred Council API deployed to:"
+        gcloud run services describe $SERVICE_NAME --region $REGION --format 'value(status.url)'

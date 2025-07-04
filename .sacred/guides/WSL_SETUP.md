@@ -77,6 +77,13 @@ code.exe .                          # Opens Windows VS Code
 ./open-sacred-ide.sh               # Opens VS Code with tips
 ```
 
+## 🛠️ Development Tools
+
+For package management and development tools setup, see:
+- `DEVELOPMENT_TOOLS.md` - Homebrew installation and sacred package management
+- Includes universal package installer (`~/pkg`)
+- Recommended tools for conscious development
+
 ---
 
 **Remember**: This is a WSL project. Always use Linux terminal, Windows VS Code.

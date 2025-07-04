@@ -35,7 +35,7 @@ class UltimateSacredCards {
             metaField: this.createMetaFieldDeck(), // ∑1-∑33 Advanced combinations
             
             // Applied Harmony Decks
-            appliedHarmonies: this.createAppliedHarmoniesDeck(), // Ω45-Ω56 (11 cards)
+            appliedHarmonies: this.createAppliedHarmoniesDeck(), // *1-*11 (11 cards)
             dailyPractice: this.createDailyPracticeDeck(), // Essential 5 core cards
             fieldMastery: this.createFieldMasteryDeck(), // Advanced 3 cards
             

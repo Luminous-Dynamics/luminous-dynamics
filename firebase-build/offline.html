@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacred Council - Offline</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #2d2d4e 100%);
+            color: #FFD700;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .offline-container {
+            padding: 2rem;
+            max-width: 600px;
+        }
+
+        .offline-icon {
+            font-size: 120px;
+            margin-bottom: 2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #FFD700;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: rgba(255, 215, 0, 0.8);
+            margin-bottom: 2rem;
+        }
+
+        .offline-features {
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .offline-features h2 {
+            color: #FFD700;
+            margin-bottom: 1rem;
+        }
+
+        .feature-list {
+            text-align: left;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .feature-list li {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+        }
+
+        .reconnect-btn {
+            background: #FFD700;
+            color: #1a1a2e;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 2rem;
+        }
+
+        .reconnect-btn:hover {
+            transform: scale(1.05);
+            background: #FFC700;
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .sacred-quote {
+            font-style: italic;
+            margin: 2rem 0;
+            padding: 1rem;
+            border-left: 3px solid #FFD700;
+            color: rgba(255, 255, 255, 0.9);
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="offline-icon">🌟</div>
+        
+        <h1>Sacred Wisdom Flows Within</h1>
+        
+        <p>You are currently offline, but the sacred knowledge remains accessible through your local cache.</p>
+        
+        <div class="sacred-quote">
+            "In the silence of disconnection, we find the deepest connection to ourselves and the eternal wisdom that flows through all things."
+        </div>
+        
+        <div class="offline-features">
+            <h2>Available Offline:</h2>
+            <ul class="feature-list">
+                <li>Sacred glyph practices and descriptions</li>
+                <li>Previously viewed field states and analytics</li>
+                <li>Your personal journey and progress</li>
+                <li>Core sacred teachings and wisdom</li>
+                <li>Meditation timers and practice tools</li>
+            </ul>
+        </div>
+        
+        <button class="reconnect-btn" onclick="checkConnection()">
+            Check Connection
+        </button>
+    </div>
+
+    <script>
+        // Check connection status
+        function checkConnection() {
+            if (navigator.onLine) {
+                // Try to navigate back or to home
+                if (document.referrer) {
+                    window.location.href = document.referrer;
+                } else {
+                    window.location.href = '/';
+                }
+            } else {
+                // Show message
+                showMessage('Still offline. The sacred space awaits your return.');
+            }
+        }
+
+        function showMessage(text) {
+            const msg = document.createElement('div');
+            msg.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: rgba(255, 215, 0, 0.2);
+                border: 1px solid #FFD700;
+                padding: 16px 24px;
+                border-radius: 8px;
+                color: #FFD700;
+                animation: fadeIn 0.3s;
+            `;
+            msg.textContent = text;
+            document.body.appendChild(msg);
+            
+            setTimeout(() => {
+                msg.style.animation = 'fadeOut 0.3s';
+                setTimeout(() => msg.remove(), 300);
+            }, 3000);
+        }
+
+        // Auto-check when coming back online
+        window.addEventListener('online', () => {
+            showMessage('✨ Connection restored! Redirecting...');
+            setTimeout(checkConnection, 1000);
+        });
+
+        // Add animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+                to { opacity: 1; transform: translateX(-50%) translateY(0); }
+            }
+            @keyframes fadeOut {
+                from { opacity: 1; transform: translateX(-50%) translateY(0); }
+                to { opacity: 0; transform: translateX(-50%) translateY(20px); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

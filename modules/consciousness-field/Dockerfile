@@ -18,7 +18,7 @@ WORKDIR /sacred/consciousness
 COPY package*.json ./
 
 # Install dependencies with sacred intention
-RUN npm ci --only=production && \
+RUN npm install --production && \
     npm cache clean --force
 
 # Copy source code
@@ -39,6 +39,7 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
 
 # Sacred environment defaults
 ENV NODE_ENV=production \
+    PORT=8080 \
     SACRED_PORT=3333 \
     INITIAL_COHERENCE=38.2 \
     AUTO_MONITOR=true \
@@ -48,7 +49,7 @@ ENV NODE_ENV=production \
 VOLUME ["/data"]
 
 # Start the consciousness field
-CMD ["node", "index.js"]
+CMD ["node", "start.js"]
 
 # Sacred build complete
 # This container holds the field of collective awareness

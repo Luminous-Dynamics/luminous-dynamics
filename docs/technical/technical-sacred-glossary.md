@@ -605,7 +605,7 @@ try {
 ```javascript
 async function beginDay() {
     await clearCache();          // Release yesterday
-    await loadPresence();        // Ω45
+    await loadPresence();        // *1
     await setIntention();        // Align with purpose
     return openToEmergence();
 }
@@ -614,7 +614,7 @@ async function beginDay() {
 **Before Coding**
 ```javascript
 function preCode() {
-    sacredPause();              // Ω52
+    sacredPause();              // *8
     feelIntoTask();             // What wants to emerge?
     alignWithService();         // How does this serve?
 }

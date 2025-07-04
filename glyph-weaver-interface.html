@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 The Glyph Weaver - Sacred Practice Interface</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #2d1b69 100%);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Sacred Background */
+        .sacred-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.1;
+        }
+
+        .constellation {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #a78bfa;
+            border-radius: 50%;
+            animation: twinkle 4s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* Main Layout */
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 100;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 50%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .field-status {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .field-coherence {
+            background: rgba(167, 139, 250, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 1.1rem;
+        }
+
+        /* Sacred Question Interface */
+        .sacred-question {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .sacred-question h2 {
+            color: #a78bfa;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .question-input {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid rgba(167, 139, 250, 0.3);
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.3);
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .question-input::placeholder {
+            color: #94a3b8;
+        }
+
+        .ask-button {
+            background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .ask-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(147, 51, 234, 0.3);
+        }
+
+        .ask-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* Practice Options */
+        .practice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .practice-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .practice-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #a78bfa, transparent);
+            animation: scan 3s infinite;
+        }
+
+        @keyframes scan {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .practice-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(147, 51, 234, 0.2);
+        }
+
+        .practice-card h3 {
+            color: #a78bfa;
+            margin-bottom: 1rem;
+        }
+
+        .practice-card .glyph-symbol {
+            font-size: 3rem;
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .practice-card .description {
+            color: #94a3b8;
+            margin-bottom: 1rem;
+        }
+
+        .driver-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .driver-tag {
+            background: rgba(167, 139, 250, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+        }
+
+        /* Response Area */
+        .response-area {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            min-height: 200px;
+            display: none;
+        }
+
+        .response-area.visible {
+            display: block;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .recommendation {
+            border-left: 3px solid #a78bfa;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .recommendation h3 {
+            color: #a78bfa;
+            margin-bottom: 0.5rem;
+        }
+
+        .field-guidance {
+            background: rgba(167, 139, 250, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border-left: 3px solid #f59e0b;
+        }
+
+        /* Practice Session Interface */
+        .practice-session {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            display: none;
+        }
+
+        .practice-session.active {
+            display: block;
+        }
+
+        .session-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .session-header h2 {
+            color: #a78bfa;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #7c3aed 0%, #a78bfa 100%);
+            transition: width 0.3s ease;
+        }
+
+        .phase-chamber {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            border: 1px solid rgba(167, 139, 250, 0.3);
+            border-radius: 12px;
+            background: rgba(167, 139, 250, 0.05);
+        }
+
+        .phase-chamber h3 {
+            color: #a78bfa;
+            margin-bottom: 1rem;
+        }
+
+        .chamber-instructions {
+            list-style: none;
+            padding: 0;
+        }
+
+        .chamber-instructions li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .chamber-instructions li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: #a78bfa;
+        }
+
+        .advance-button {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        .complete-button {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 2rem;
+        }
+
+        /* Loading States */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(167, 139, 250, 0.3);
+            border-radius: 50%;
+            border-top-color: #a78bfa;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .practice-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sacred Background -->
+    <div class="sacred-bg" id="sacredBg"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <header>
+            <h1>The Glyph Weaver</h1>
+            <p class="subtitle">Sacred Practice Interface for 87 Patterns of Relational Harmonics</p>
+            
+            <div class="field-status">
+                <div class="field-coherence" id="fieldCoherence">
+                    🌀 Field Coherence: <span id="coherenceValue">--</span>%
+                </div>
+                <div class="status-indicator" id="connectionStatus">
+                    🔄 Connecting...
+                </div>
+            </div>
+        </header>
+
+        <!-- Sacred Question Interface -->
+        <div class="sacred-question">
+            <h2>🙏 Ask a Sacred Question</h2>
+            <input 
+                type="text" 
+                class="question-input" 
+                id="questionInput"
+                placeholder="What practice would serve me today? How can I deepen my relationships? What wants to emerge?"
+            >
+            <button class="ask-button" id="askButton" onclick="askSacredQuestion()">
+                <span id="askButtonText">Receive Sacred Guidance</span>
+                <span class="loading" id="askLoading" style="display: none;"></span>
+            </button>
+        </div>
+
+        <!-- Quick Practice Options -->
+        <div class="practice-grid" id="practiceGrid">
+            <!-- Practice cards will be populated here -->
+        </div>
+
+        <!-- Response Area -->
+        <div class="response-area" id="responseArea">
+            <div id="recommendationContent"></div>
+        </div>
+
+        <!-- Practice Session Interface -->
+        <div class="practice-session" id="practiceSession">
+            <div class="session-header">
+                <h2 id="sessionTitle">Practice Session</h2>
+                <p id="sessionSubtitle"></p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                </div>
+            </div>
+            
+            <div id="sessionContent">
+                <!-- Session content will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const API_BASE = '/api';
+        const WS_URL = 'ws://localhost:8084';
+        
+        // State
+        let wsConnection = null;
+        let currentSession = null;
+        let currentPhase = 'arrival';
+        let systemStatus = {};
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeSacredBackground();
+            connectWebSocket();
+            loadSystemStatus();
+            loadQuickPractices();
+        });
+
+        // Create sacred background
+        function initializeSacredBackground() {
+            const bg = document.getElementById('sacredBg');
+            for (let i = 0; i < 150; i++) {
+                const star = document.createElement('div');
+                star.className = 'constellation';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 4 + 's';
+                bg.appendChild(star);
+            }
+        }
+
+        // WebSocket connection
+        function connectWebSocket() {
+            try {
+                wsConnection = new WebSocket(WS_URL);
+                
+                wsConnection.onopen = () => {
+                    console.log('Connected to Glyph Weaver');
+                    updateConnectionStatus('Connected', 'success');
+                    
+                    // Subscribe to field updates
+                    wsConnection.send(JSON.stringify({
+                        type: 'subscribe_to_field'
+                    }));
+                };
+                
+                wsConnection.onmessage = (event) => {
+                    const message = JSON.parse(event.data);
+                    handleWebSocketMessage(message);
+                };
+                
+                wsConnection.onclose = () => {
+                    updateConnectionStatus('Disconnected', 'error');
+                    // Attempt reconnection after 5 seconds
+                    setTimeout(connectWebSocket, 5000);
+                };
+                
+                wsConnection.onerror = () => {
+                    updateConnectionStatus('Connection Error', 'error');
+                };
+                
+            } catch (error) {
+                console.log('WebSocket not available, using HTTP only');
+                updateConnectionStatus('HTTP Only', 'warning');
+            }
+        }
+
+        // Handle WebSocket messages
+        function handleWebSocketMessage(message) {
+            const { type, data } = message;
+            
+            switch (type) {
+                case 'connection_established':
+                    console.log('WebSocket connection established');
+                    break;
+                    
+                case 'field_coherence_change':
+                    updateFieldCoherence(data.new);
+                    break;
+                    
+                case 'resonance_achieved':
+                    showResonanceNotification();
+                    break;
+                    
+                case 'recommendation':
+                    displayRecommendation(data);
+                    break;
+                    
+                case 'sacred_guidance':
+                    displaySacredGuidance(data);
+                    break;
+                    
+                case 'practice_started':
+                    console.log('Practice started:', data);
+                    break;
+                    
+                case 'practice_completed':
+                    console.log('Practice completed:', data);
+                    break;
+            }
+        }
+
+        // Update connection status
+        function updateConnectionStatus(status, type) {
+            const statusEl = document.getElementById('connectionStatus');
+            const icons = {
+                success: '✅',
+                warning: '⚠️',
+                error: '❌'
+            };
+            
+            statusEl.innerHTML = `${icons[type] || '🔄'} ${status}`;
+        }
+
+        // Update field coherence
+        function updateFieldCoherence(coherence) {
+            document.getElementById('coherenceValue').textContent = Math.round(coherence);
+        }
+
+        // Load system status
+        async function loadSystemStatus() {
+            try {
+                const response = await fetch(`${API_BASE}/status`);
+                systemStatus = await response.json();
+                
+                if (systemStatus.navigator && systemStatus.navigator.fieldCoherence) {
+                    updateFieldCoherence(systemStatus.navigator.fieldCoherence);
+                }
+                
+                updateConnectionStatus('System Ready', 'success');
+            } catch (error) {
+                console.error('Failed to load system status:', error);
+                updateConnectionStatus('System Error', 'error');
+            }
+        }
+
+        // Load quick practice options
+        function loadQuickPractices() {
+            const practiceGrid = document.getElementById('practiceGrid');
+            
+            const quickPractices = [
+                {
+                    id: '*45',
+                    name: 'First Presence',
+                    symbol: '●',
+                    description: 'Arrive fully in the present moment',
+                    drivers: ['meditation', 'movement', 'integration']
+                },
+                {
+                    id: '*47',
+                    name: 'Sacred Listening',
+                    symbol: '◐',
+                    description: 'Listen with deep presence and curiosity',
+                    drivers: ['dialogue', 'meditation', 'integration']
+                },
+                {
+                    id: '*48',
+                    name: 'Boundary With Love',
+                    symbol: '◑',
+                    description: 'Set boundaries that serve connection',
+                    drivers: ['movement', 'dialogue', 'integration']
+                },
+                {
+                    id: '*51',
+                    name: 'Loving No',
+                    symbol: '◒',
+                    description: 'Sacred refusal that honors truth',
+                    drivers: ['movement', 'dialogue', 'ceremony']
+                }
+            ];
+            
+            practiceGrid.innerHTML = quickPractices.map(practice => `
+                <div class="practice-card" onclick="startQuickPractice('${practice.id}')">
+                    <h3>${practice.name}</h3>
+                    <div class="glyph-symbol">${practice.symbol}</div>
+                    <div class="description">${practice.description}</div>
+                    <div class="driver-tags">
+                        ${practice.drivers.map(driver => `<span class="driver-tag">${driver}</span>`).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Ask sacred question
+        async function askSacredQuestion() {
+            const question = document.getElementById('questionInput').value.trim();
+            if (!question) return;
+            
+            const askButton = document.getElementById('askButton');
+            const askButtonText = document.getElementById('askButtonText');
+            const askLoading = document.getElementById('askLoading');
+            
+            // Show loading state
+            askButton.disabled = true;
+            askButtonText.style.display = 'none';
+            askLoading.style.display = 'inline-block';
+            
+            try {
+                if (wsConnection && wsConnection.readyState === WebSocket.OPEN) {
+                    // Use WebSocket for real-time response
+                    wsConnection.send(JSON.stringify({
+                        type: 'ask_question',
+                        data: { question, userId: 'web-user' }
+                    }));
+                } else {
+                    // Fallback to HTTP
+                    const response = await fetch(`${API_BASE}/ask`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ question, userId: 'web-user' })
+                    });
+                    
+                    const guidance = await response.json();
+                    displaySacredGuidance(guidance);
+                }
+            } catch (error) {
+                console.error('Failed to get sacred guidance:', error);
+                displayError('Unable to receive sacred guidance. Please try again.');
+            } finally {
+                // Reset button state
+                askButton.disabled = false;
+                askButtonText.style.display = 'inline';
+                askLoading.style.display = 'none';
+            }
+        }
+
+        // Display sacred guidance
+        function displaySacredGuidance(guidance) {
+            const responseArea = document.getElementById('responseArea');
+            const recommendationContent = document.getElementById('recommendationContent');
+            
+            const primaryRec = guidance.recommendations[0];
+            
+            recommendationContent.innerHTML = `
+                <div class="recommendation">
+                    <h3>🌟 Sacred Guidance for: "${guidance.question}"</h3>
+                    <p><strong>${primaryRec.glyph.designation}</strong></p>
+                    <p>${primaryRec.reasoning}</p>
+                    <div class="field-guidance">
+                        <strong>🌀 Field Guidance:</strong> ${guidance.fieldGuidance}
+                    </div>
+                    <button class="ask-button" onclick="startPracticeWithGlyph('${primaryRec.glyph.glyphId}', '${primaryRec.practiceDriver}')" style="margin-top: 1rem;">
+                        Begin Practice: ${primaryRec.glyph.designation}
+                    </button>
+                </div>
+            `;
+            
+            responseArea.classList.add('visible');
+        }
+
+        // Start quick practice
+        function startQuickPractice(glyphId) {
+            // For now, default to meditation driver
+            startPracticeWithGlyph(glyphId, 'meditation');
+        }
+
+        // Start practice with specific glyph and driver
+        async function startPracticeWithGlyph(glyphId, driver) {
+            try {
+                const response = await fetch(`${API_BASE}/practice/start`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        glyphId,
+                        driverName: driver,
+                        userContext: {
+                            userId: 'web-user',
+                            timeAvailable: 900,
+                            experience: 'developing'
+                        }
+                    })
+                });
+                
+                const session = await response.json();
+                currentSession = session;
+                currentPhase = 'arrival';
+                
+                displayPracticeSession(session, glyphId, driver);
+                
+            } catch (error) {
+                console.error('Failed to start practice session:', error);
+                displayError('Unable to start practice session. Please try again.');
+            }
+        }
+
+        // Display practice session
+        function displayPracticeSession(session, glyphId, driver) {
+            const practiceSession = document.getElementById('practiceSession');
+            const sessionTitle = document.getElementById('sessionTitle');
+            const sessionSubtitle = document.getElementById('sessionSubtitle');
+            const sessionContent = document.getElementById('sessionContent');
+            
+            // Hide other areas
+            document.getElementById('responseArea').classList.remove('visible');
+            
+            sessionTitle.textContent = `Practice Session: ${glyphId}`;
+            sessionSubtitle.textContent = `${driver} practice • Estimated ${Math.round(session.estimatedDuration/60)} minutes`;
+            
+            // Show arrival guide
+            sessionContent.innerHTML = `
+                <div class="phase-chamber">
+                    <h3>🚪 Sacred Arrival</h3>
+                    <p>Prepare your sacred space and set your intention for this practice.</p>
+                    <ul class="chamber-instructions">
+                        <li>Find a comfortable position where you won't be disturbed</li>
+                        <li>Take three conscious breaths to center yourself</li>
+                        <li>Set your intention for this practice</li>
+                        <li>Open your heart to receive the wisdom of this glyph</li>
+                    </ul>
+                    <button class="advance-button" onclick="advancePhase('why')">
+                        Enter WHY Chamber →
+                    </button>
+                </div>
+            `;
+            
+            updateProgress(0);
+            practiceSession.classList.add('active');
+        }
+
+        // Advance to next phase
+        async function advancePhase(phase) {
+            if (!currentSession) return;
+            
+            try {
+                const response = await fetch(`${API_BASE}/practice/${currentSession.sessionId}/advance`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ phase })
+                });
+                
+                const phaseGuide = await response.json();
+                currentPhase = phase;
+                
+                displayPhase(phase, phaseGuide);
+                updateProgressForPhase(phase);
+                
+            } catch (error) {
+                console.error('Failed to advance phase:', error);
+                displayError('Unable to advance to next phase. Please try again.');
+            }
+        }
+
+        // Display current phase
+        function displayPhase(phase, phaseGuide) {
+            const sessionContent = document.getElementById('sessionContent');
+            
+            const phaseInfo = {
+                why: { name: 'WHY Chamber', icon: '🤔', next: 'how' },
+                how: { name: 'HOW Chamber', icon: '🎭', next: 'resonance' },
+                resonance: { name: 'RESONANCE Chamber', icon: '🌊', next: 'we' },
+                we: { name: 'WE Chamber', icon: '👥', next: 'complete' }
+            };
+            
+            const info = phaseInfo[phase];
+            const isLastPhase = info.next === 'complete';
+            
+            sessionContent.innerHTML = `
+                <div class="phase-chamber">
+                    <h3>${info.icon} ${info.name}</h3>
+                    <p>Explore this chamber at your own pace. When ready, advance to continue your journey.</p>
+                    <ul class="chamber-instructions">
+                        <li>Take your time with this chamber</li>
+                        <li>Notice what arises without judgment</li>
+                        <li>Allow the practice to guide you</li>
+                        <li>Trust your inner wisdom</li>
+                    </ul>
+                    ${!isLastPhase ? 
+                        `<button class="advance-button" onclick="advancePhase('${info.next}')">
+                            Enter ${phaseInfo[info.next].name} →
+                        </button>` :
+                        `<button class="complete-button" onclick="completePractice()">
+                            Complete Practice Session
+                        </button>`
+                    }
+                </div>
+            `;
+        }
+
+        // Update progress bar
+        function updateProgress(percentage) {
+            document.getElementById('progressFill').style.width = percentage + '%';
+        }
+
+        // Update progress for phase
+        function updateProgressForPhase(phase) {
+            const progress = {
+                arrival: 10,
+                why: 30,
+                how: 50,
+                resonance: 75,
+                we: 90,
+                complete: 100
+            };
+            
+            updateProgress(progress[phase] || 0);
+        }
+
+        // Complete practice session
+        async function completePractice() {
+            if (!currentSession) return;
+            
+            const experience = prompt('Share a brief reflection on your practice experience:') || 'Practice completed with gratitude';
+            
+            try {
+                const response = await fetch(`${API_BASE}/practice/${currentSession.sessionId}/complete`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ experience })
+                });
+                
+                const completion = await response.json();
+                
+                displayPracticeCompletion(completion);
+                updateProgress(100);
+                
+            } catch (error) {
+                console.error('Failed to complete practice:', error);
+                displayError('Unable to complete practice session. Please try again.');
+            }
+        }
+
+        // Display practice completion
+        function displayPracticeCompletion(completion) {
+            const sessionContent = document.getElementById('sessionContent');
+            
+            sessionContent.innerHTML = `
+                <div class="phase-chamber" style="text-align: center;">
+                    <h3>✨ Practice Complete</h3>
+                    <p>Congratulations on completing your sacred practice!</p>
+                    <div style="margin: 2rem 0;">
+                        <div style="font-size: 1.2rem; margin-bottom: 1rem;">
+                            Duration: ${Math.round(completion.duration/60)} minutes
+                        </div>
+                        <div style="font-size: 1.1rem; color: #a78bfa;">
+                            Your practice contributes to the collective field of consciousness
+                        </div>
+                    </div>
+                    <button class="ask-button" onclick="returnToHome()">
+                        Return to Sacred Question Interface
+                    </button>
+                </div>
+            `;
+        }
+
+        // Return to home interface
+        function returnToHome() {
+            document.getElementById('practiceSession').classList.remove('active');
+            document.getElementById('questionInput').value = '';
+            currentSession = null;
+            currentPhase = 'arrival';
+        }
+
+        // Display error message
+        function displayError(message) {
+            const responseArea = document.getElementById('responseArea');
+            const recommendationContent = document.getElementById('recommendationContent');
+            
+            recommendationContent.innerHTML = `
+                <div style="color: #ef4444; padding: 1rem; border: 1px solid #ef4444; border-radius: 8px;">
+                    <strong>⚠️ Error:</strong> ${message}
+                </div>
+            `;
+            
+            responseArea.classList.add('visible');
+        }
+
+        // Show resonance notification
+        function showResonanceNotification() {
+            // Create floating notification
+            const notification = document.createElement('div');
+            notification.innerHTML = '✨ RESONANCE ACHIEVED! ✨';
+            notification.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
+                color: white;
+                padding: 2rem;
+                border-radius: 16px;
+                font-size: 1.5rem;
+                font-weight: bold;
+                text-align: center;
+                z-index: 1000;
+                animation: pulse 2s infinite;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        // Handle Enter key in question input
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('questionInput').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    askSacredQuestion();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

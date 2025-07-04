@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🕸️ Sacred Ceremony - WebRTC PoC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .ceremony-title {
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .field-meter {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+        }
+
+        .coherence-value {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #4ade80;
+        }
+
+        .main-content {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+        }
+
+        .video-container {
+            position: relative;
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-label {
+            position: absolute;
+            bottom: 0.5rem;
+            left: 0.5rem;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+        }
+
+        .ceremony-controls {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .timer-display {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+
+        .timer-value {
+            font-size: 3rem;
+            font-weight: 200;
+            letter-spacing: 0.1em;
+        }
+
+        .glyph-display {
+            background: rgba(75, 0, 130, 0.2);
+            border: 1px solid rgba(147, 51, 234, 0.5);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .glyph-symbol {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .glyph-name {
+            font-size: 1.1rem;
+            color: #a78bfa;
+        }
+
+        .control-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        button {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        button:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .participants-list {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .participant {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 4px;
+            margin-bottom: 0.25rem;
+        }
+
+        .participant:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .presence-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4ade80;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .sacred-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            background: radial-gradient(circle at center, transparent 0%, rgba(147, 51, 234, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .sacred-overlay.active {
+            opacity: 1;
+        }
+
+        .logs {
+            position: fixed;
+            bottom: 1rem;
+            left: 1rem;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 0.875rem;
+            max-height: 200px;
+            overflow-y: auto;
+            width: 400px;
+        }
+
+        .log-entry {
+            margin-bottom: 0.5rem;
+            color: #64748b;
+        }
+
+        .log-entry.info { color: #3b82f6; }
+        .log-entry.success { color: #4ade80; }
+        .log-entry.error { color: #f87171; }
+    </style>
+</head>
+<body>
+    <!-- Sacred Overlay Effect -->
+    <div class="sacred-overlay" id="sacredOverlay"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="ceremony-title">
+            <span>🕸️</span>
+            <h1>Sacred Ceremony Space</h1>
+        </div>
+        <div class="field-meter">
+            <span>Field Coherence:</span>
+            <span class="coherence-value" id="coherenceValue">72%</span>
+            <span>🌀</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Video Grid -->
+        <section class="video-grid" id="videoGrid">
+            <!-- Local Video -->
+            <div class="video-container">
+                <video id="localVideo" autoplay muted playsinline></video>
+                <div class="video-label">You (Sacred Name)</div>
+            </div>
+            <!-- Remote videos will be added dynamically -->
+        </section>
+
+        <!-- Ceremony Controls -->
+        <aside class="ceremony-controls">
+            <!-- Timer -->
+            <div class="timer-display">
+                <div class="timer-value" id="timerValue">00:00</div>
+                <div>Ceremony Timer</div>
+            </div>
+
+            <!-- Current Glyph -->
+            <div class="glyph-display">
+                <div class="glyph-symbol">*1</div>
+                <div class="glyph-name">First Presence</div>
+                <div style="font-size: 0.875rem; margin-top: 0.5rem; color: #94a3b8;">
+                    Three conscious breaths
+                </div>
+            </div>
+
+            <!-- Control Buttons -->
+            <div class="control-buttons">
+                <button id="startCeremony" onclick="startCeremony()">
+                    Start Ceremony
+                </button>
+                <button id="joinCeremony" onclick="joinCeremony()">
+                    Join Ceremony
+                </button>
+                <button id="toggleAudio" onclick="toggleAudio()">
+                    🔇 Mute
+                </button>
+                <button id="toggleVideo" onclick="toggleVideo()">
+                    📹 Camera Off
+                </button>
+                <button id="shareScreen" onclick="shareScreen()">
+                    🖥️ Share Screen
+                </button>
+            </div>
+
+            <!-- Participants -->
+            <div class="participants-list">
+                <h3 style="margin-bottom: 0.5rem;">Participants (1)</h3>
+                <div id="participantsList">
+                    <div class="participant">
+                        <div class="presence-indicator"></div>
+                        <span>You</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Debug Logs -->
+    <div class="logs" id="logs">
+        <div class="log-entry info">🕸️ Sacred Ceremony WebRTC PoC initialized</div>
+    </div>
+
+    <script>
+        // WebRTC Configuration
+        const configuration = {
+            iceServers: [
+                { urls: 'stun:stun.l.google.com:19302' },
+                { urls: 'stun:stun1.l.google.com:19302' }
+            ]
+        };
+
+        // Global state
+        let localStream = null;
+        let peerConnections = {};
+        let ceremonyActive = false;
+        let timerInterval = null;
+        let ceremonyStartTime = null;
+        let fieldCoherence = 72;
+
+        // Logging utility
+        function log(message, type = 'info') {
+            const logs = document.getElementById('logs');
+            const entry = document.createElement('div');
+            entry.className = `log-entry ${type}`;
+            entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            logs.appendChild(entry);
+            logs.scrollTop = logs.scrollHeight;
+        }
+
+        // Initialize local media
+        async function initializeMedia() {
+            try {
+                localStream = await navigator.mediaDevices.getUserMedia({
+                    video: {
+                        width: { ideal: 1280 },
+                        height: { ideal: 720 }
+                    },
+                    audio: {
+                        echoCancellation: true,
+                        noiseSuppression: true
+                    }
+                });
+
+                const localVideo = document.getElementById('localVideo');
+                localVideo.srcObject = localStream;
+                log('✅ Local media initialized', 'success');
+            } catch (error) {
+                log(`❌ Media access error: ${error.message}`, 'error');
+            }
+        }
+
+        // Start ceremony (host)
+        async function startCeremony() {
+            if (!localStream) await initializeMedia();
+            
+            ceremonyActive = true;
+            ceremonyStartTime = Date.now();
+            document.getElementById('startCeremony').disabled = true;
+            document.getElementById('joinCeremony').disabled = true;
+            
+            // Start timer
+            timerInterval = setInterval(updateTimer, 1000);
+            
+            // Activate sacred overlay
+            document.getElementById('sacredOverlay').classList.add('active');
+            
+            // Simulate field coherence increase
+            animateFieldCoherence(80);
+            
+            log('🌟 Sacred ceremony started', 'success');
+            log('📡 Waiting for participants...', 'info');
+            
+            // In real implementation, create signaling channel
+            simulateParticipantJoin();
+        }
+
+        // Join ceremony (participant)
+        async function joinCeremony() {
+            if (!localStream) await initializeMedia();
+            
+            log('🔗 Joining sacred ceremony...', 'info');
+            document.getElementById('startCeremony').disabled = true;
+            document.getElementById('joinCeremony').disabled = true;
+            
+            // In real implementation, connect to signaling server
+            simulateJoinProcess();
+        }
+
+        // Simulate participant joining
+        function simulateParticipantJoin() {
+            setTimeout(() => {
+                addRemoteVideo('participant-1', 'Sacred Practitioner');
+                updateParticipantsList(2);
+                animateFieldCoherence(85);
+                log('✨ Sacred Practitioner joined the ceremony', 'success');
+            }, 3000);
+        }
+
+        // Simulate join process
+        function simulateJoinProcess() {
+            setTimeout(() => {
+                ceremonyActive = true;
+                ceremonyStartTime = Date.now() - 30000; // Joined 30s late
+                timerInterval = setInterval(updateTimer, 1000);
+                document.getElementById('sacredOverlay').classList.add('active');
+                
+                addRemoteVideo('host', 'Ceremony Guide');
+                updateParticipantsList(2);
+                animateFieldCoherence(85);
+                
+                log('✅ Successfully joined ceremony', 'success');
+            }, 2000);
+        }
+
+        // Add remote video element
+        function addRemoteVideo(id, label) {
+            const videoGrid = document.getElementById('videoGrid');
+            const container = document.createElement('div');
+            container.className = 'video-container';
+            container.innerHTML = `
+                <video id="remoteVideo-${id}" autoplay playsinline></video>
+                <div class="video-label">${label}</div>
+            `;
+            videoGrid.appendChild(container);
+            
+            // Simulate video stream (in real app, would be actual remote stream)
+            const video = container.querySelector('video');
+            video.srcObject = createDummyStream();
+        }
+
+        // Create dummy video stream for demo
+        function createDummyStream() {
+            const canvas = document.createElement('canvas');
+            canvas.width = 640;
+            canvas.height = 480;
+            const ctx = canvas.getContext('2d');
+            
+            // Animate sacred geometry
+            function draw() {
+                ctx.fillStyle = '#1a1a2e';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                const time = Date.now() / 1000;
+                ctx.strokeStyle = '#8b5cf6';
+                ctx.lineWidth = 2;
+                
+                // Draw rotating sacred geometry
+                ctx.save();
+                ctx.translate(canvas.width / 2, canvas.height / 2);
+                ctx.rotate(time * 0.5);
+                
+                for (let i = 0; i < 6; i++) {
+                    ctx.beginPath();
+                    ctx.moveTo(0, 0);
+                    ctx.lineTo(100 * Math.cos(i * Math.PI / 3), 100 * Math.sin(i * Math.PI / 3));
+                    ctx.stroke();
+                }
+                
+                ctx.restore();
+                requestAnimationFrame(draw);
+            }
+            draw();
+            
+            return canvas.captureStream(30);
+        }
+
+        // Update ceremony timer
+        function updateTimer() {
+            if (!ceremonyStartTime) return;
+            
+            const elapsed = Math.floor((Date.now() - ceremonyStartTime) / 1000);
+            const minutes = Math.floor(elapsed / 60);
+            const seconds = elapsed % 60;
+            
+            document.getElementById('timerValue').textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        // Update participants list
+        function updateParticipantsList(count) {
+            const list = document.getElementById('participantsList');
+            list.innerHTML = `
+                <div class="participant">
+                    <div class="presence-indicator"></div>
+                    <span>You</span>
+                </div>
+            `;
+            
+            if (count > 1) {
+                for (let i = 1; i < count; i++) {
+                    const participant = document.createElement('div');
+                    participant.className = 'participant';
+                    participant.innerHTML = `
+                        <div class="presence-indicator"></div>
+                        <span>Sacred Practitioner ${i}</span>
+                    `;
+                    list.appendChild(participant);
+                }
+            }
+            
+            // Update header count
+            list.parentElement.querySelector('h3').textContent = `Participants (${count})`;
+        }
+
+        // Animate field coherence
+        function animateFieldCoherence(target) {
+            const start = fieldCoherence;
+            const duration = 2000;
+            const startTime = Date.now();
+            
+            function update() {
+                const elapsed = Date.now() - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3); // Ease out cubic
+                
+                fieldCoherence = Math.round(start + (target - start) * eased);
+                document.getElementById('coherenceValue').textContent = `${fieldCoherence}%`;
+                
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+            
+            update();
+        }
+
+        // Media controls
+        function toggleAudio() {
+            if (!localStream) return;
+            
+            const audioTrack = localStream.getAudioTracks()[0];
+            if (audioTrack) {
+                audioTrack.enabled = !audioTrack.enabled;
+                const btn = document.getElementById('toggleAudio');
+                btn.textContent = audioTrack.enabled ? '🔇 Mute' : '🔊 Unmute';
+                log(`Audio ${audioTrack.enabled ? 'unmuted' : 'muted'}`, 'info');
+            }
+        }
+
+        function toggleVideo() {
+            if (!localStream) return;
+            
+            const videoTrack = localStream.getVideoTracks()[0];
+            if (videoTrack) {
+                videoTrack.enabled = !videoTrack.enabled;
+                const btn = document.getElementById('toggleVideo');
+                btn.textContent = videoTrack.enabled ? '📹 Camera Off' : '📷 Camera On';
+                log(`Video ${videoTrack.enabled ? 'enabled' : 'disabled'}`, 'info');
+            }
+        }
+
+        async function shareScreen() {
+            try {
+                const screenStream = await navigator.mediaDevices.getDisplayMedia({
+                    video: true,
+                    audio: false
+                });
+                
+                // Replace video track
+                const videoTrack = screenStream.getVideoTracks()[0];
+                const sender = localStream.getVideoTracks()[0];
+                
+                // In real app, would replace track in peer connections
+                document.getElementById('localVideo').srcObject = screenStream;
+                
+                videoTrack.onended = () => {
+                    document.getElementById('localVideo').srcObject = localStream;
+                    log('Screen sharing stopped', 'info');
+                };
+                
+                log('🖥️ Screen sharing started', 'success');
+            } catch (error) {
+                log(`Screen share error: ${error.message}`, 'error');
+            }
+        }
+
+        // Initialize on load
+        window.addEventListener('load', () => {
+            log('🔍 Checking WebRTC support...', 'info');
+            
+            if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                log('❌ WebRTC not supported in this browser', 'error');
+                return;
+            }
+            
+            log('✅ WebRTC supported', 'success');
+            log('📡 Ready for sacred ceremonies', 'success');
+        });
+
+        // Cleanup on unload
+        window.addEventListener('beforeunload', () => {
+            if (localStream) {
+                localStream.getTracks().forEach(track => track.stop());
+            }
+            Object.values(peerConnections).forEach(pc => pc.close());
+        });
+    </script>
+</body>
+</html>

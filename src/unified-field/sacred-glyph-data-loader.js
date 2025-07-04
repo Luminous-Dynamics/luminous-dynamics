@@ -15,17 +15,17 @@ class SacredGlyphDataLoader {
         return {
             // Applied Harmonies (The Eleven)
             appliedHarmonies: [
-                { id: 'Ω45', file: 'data/glyphs/foundational/omega-45.json', name: 'First Presence' },
-                { id: 'Ω46', file: 'data/glyphs/foundational/omega-46.json', name: 'Conscious Arrival' },
-                { id: 'Ω47', file: 'data/glyphs/foundational/omega-47.json', name: 'Sacred Listening' },
-                { id: 'Ω48', file: 'data/glyphs/foundational/omega-48.json', name: 'Boundary With Love' },
-                { id: 'Ω49', file: 'data/glyphs/applied-harmonies/omega-49.json', name: 'Gentle Opening' },
-                { id: 'Ω50', file: 'data/glyphs/applied-harmonies/omega-50.json', name: 'Building Trust' },
-                { id: 'Ω51', file: 'data/glyphs/applied-harmonies/omega-51.json', name: 'Loving No' },
-                { id: 'Ω52', file: 'data/glyphs/applied-harmonies/omega-52.json', name: 'Pause Practice' },
-                { id: 'Ω53', file: 'data/glyphs/foundational/omega-53.json', name: 'Tending the Field' },
-                { id: 'Ω55', file: 'data/glyphs/foundational/omega-55.json', name: 'Presence Transmission' },
-                { id: 'Ω56', file: 'data/glyphs/foundational/omega-56.json', name: 'Loving Redirection' }
+                { id: '*1', file: 'data/glyphs/foundational/omega-45.json', name: 'First Presence' },
+                { id: '*2', file: 'data/glyphs/foundational/omega-46.json', name: 'Conscious Arrival' },
+                { id: '*3', file: 'data/glyphs/foundational/omega-47.json', name: 'Sacred Listening' },
+                { id: '*4', file: 'data/glyphs/foundational/omega-48.json', name: 'Boundary With Love' },
+                { id: '*5', file: 'data/glyphs/applied-harmonies/omega-49.json', name: 'Gentle Opening' },
+                { id: '*6', file: 'data/glyphs/applied-harmonies/omega-50.json', name: 'Building Trust' },
+                { id: '*7', file: 'data/glyphs/applied-harmonies/omega-51.json', name: 'Loving No' },
+                { id: '*8', file: 'data/glyphs/applied-harmonies/omega-52.json', name: 'Pause Practice' },
+                { id: '*9', file: 'data/glyphs/foundational/omega-53.json', name: 'Tending the Field' },
+                { id: '*10', file: 'data/glyphs/foundational/omega-55.json', name: 'Presence Transmission' },
+                { id: '*11', file: 'data/glyphs/foundational/omega-56.json', name: 'Loving Redirection' }
             ],
 
             // Foundational Glyphs (Ω0-Ω44)
@@ -164,8 +164,8 @@ class SacredGlyphDataLoader {
     generateSigil(glyphId, category) {
         const sigilMap = {
             // Applied Harmonies
-            'Ω45': '🌟', 'Ω46': '🚪', 'Ω47': '👂', 'Ω48': '🛡️', 'Ω49': '🌸',
-            'Ω50': '🤝', 'Ω51': '⛔', 'Ω52': '⏸️', 'Ω53': '🌱', 'Ω55': '📡', 'Ω56': '🧭',
+            '*1': '🌟', '*2': '🚪', '*3': '👂', '*4': '🛡️', '*5': '🌸',
+            '*6': '🤝', '*7': '⛔', '*8': '⏸️', '*9': '🌱', '*10': '📡', '*11': '🧭',
             
             // Mystical Foundations
             'Ω0': '∞', 'Ω1': '🎵', 'Ω2': '🌬️', 'Ω3': '🌿', 'Ω4': '🔄', 'Ω5': '🔗',

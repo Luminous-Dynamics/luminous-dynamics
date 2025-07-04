@@ -1,0 +1,12 @@
+name: organizations/1024050524495/policies/iam.allowedPolicyMemberDomains
+spec:
+  rules:
+  - allowAll: true
+    condition:
+      expression: "resource.name.contains('the-weave-sacred')"
+      title: "Allow public access for the-weave-sacred project"
+      description: "Allows allUsers for sacred infrastructure project"
+  - values:
+      allowedValues:
+      - C03fi62x7
+  etag: CLbz98EGEOjYwQs=

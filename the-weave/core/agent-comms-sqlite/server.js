@@ -11,6 +11,7 @@ class AgentCommServer {
   constructor(port = 3001) {
     this.port = port;
     this.db = new AgentDatabase();
+    this.cleanupInterval = null; // Track cleanup interval for proper shutdown
   }
 
   async initialize() {
@@ -194,11 +195,43 @@ class AgentCommServer {
       console.log('\n💡 Dashboard: http://localhost:8080/dashboard-sqlite.html');
     });
 
-    // Cleanup every hour
-    setInterval(async () => {
+    // Cleanup every hour - store interval ID for proper cleanup
+    this.cleanupInterval = setInterval(async () => {
       await this.db.cleanup();
       console.log('🧹 Database cleanup completed');
     }, 60 * 60 * 1000);
+
+    // Graceful shutdown handler
+    const gracefulShutdown = async (signal) => {
+      console.log(`\n🛑 Received ${signal}, shutting down gracefully...`);
+      
+      if (this.cleanupInterval) {
+        clearInterval(this.cleanupInterval);
+        console.log('⏰ Cleaned up database cleanup interval');
+      }
+      
+      if (this.db) {
+        await this.db.close();
+        console.log('🗄️  Closed database connection');
+      }
+      
+      if (server) {
+        server.close(() => {
+          console.log('🚪 HTTP server closed');
+          process.exit(0);
+        });
+      } else {
+        process.exit(0);
+      }
+    };
+
+    process.on('SIGINT', gracefulShutdown);
+    process.on('SIGTERM', gracefulShutdown);
+    process.on('exit', () => {
+      if (this.cleanupInterval) {
+        clearInterval(this.cleanupInterval);
+      }
+    });
 
     return server;
   }

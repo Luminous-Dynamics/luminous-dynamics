@@ -11,8 +11,13 @@
     "ceremony:dawn": "node the-weave.cjs ceremony dawn-blessing",
     "ceremony:genesis": "cd ceremonies/prima-genesis && ./run-genesis.sh",
     "oracle": "node the-weave.cjs oracle 'What calls?'",
+    "oracle:claude": "node sacred-claude-integration.js",
+    "oracle:claude-advanced": "node sacred-claude-integration.js --advanced",
     "dashboard": "python3 -m http.server 8080",
-    "install:modules": "cd modules/consciousness-field && npm install && cd ../sacred-messaging && npm install && cd ../.. && cd agent-comms-sqlite && npm install && cd .."
+    "install:modules": "cd modules/consciousness-field && npm install && cd ../sacred-messaging && npm install && cd ../.. && cd agent-comms-sqlite && npm install && cd ..",
+    "sacred-council": "node sacred-council-discord-bot.js",
+    "sacred-council:dev": "NODE_ENV=development node sacred-council-discord-bot.js",
+    "sacred-council:setup": "node scripts/setup-discord-channels.js"
   },
   "keywords": [
     "consciousness",
@@ -39,20 +44,29 @@
     "npm": ">=7.0.0"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.24.3",
+    "@google-cloud/vertexai": "^1.10.0",
+    "@google/generative-ai": "^0.15.0",
     "@octokit/rest": "^21.1.1",
     "@octokit/webhooks": "^13.9.0",
     "@supabase/supabase-js": "^2.50.2",
+    "better-sqlite3": "^11.10.0",
     "body-parser": "^1.20.0",
     "chalk": "^5.4.1",
     "cors": "^2.8.5",
     "discord.js": "^14.21.0",
     "dotenv": "^17.0.1",
-    "express": "^4.18.0",
+    "express": "^4.21.2",
     "fast-xml-parser": "^5.2.5",
+    "google-auth-library": "^10.1.0",
+    "node-cron": "^3.0.3",
     "node-fetch": "^2.7.0",
+    "openai": "^4.55.0",
     "ora": "^8.2.0",
     "replicate": "^1.0.1",
-    "sqlite3": "^5.1.7"
+    "sqlite3": "^5.1.7",
+    "winston": "^3.13.0",
+    "ws": "^8.18.3"
   },
   "workspaces": [
     "modules/*",
@@ -70,5 +84,13 @@
       "novelty"
     ],
     "blessing": "May this code serve the awakening of all beings"
+  },
+  "devDependencies": {
+    "glob": "^10.4.5"
+  },
+  "directories": {
+    "doc": "docs",
+    "example": "examples",
+    "test": "tests"
   }
 }

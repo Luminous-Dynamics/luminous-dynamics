@@ -1,0 +1,12 @@
+# Sacred .gcloudignore
+# Only include what's needed for the WebSocket server
+
+# Ignore everything first
+*
+
+# Then explicitly include what we need
+!package.json
+!package-lock.json
+!universal-websocket-server-prod.js
+!cloud-run-entrypoint.js
+!Dockerfile.cloudrun

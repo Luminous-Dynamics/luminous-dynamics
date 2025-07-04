@@ -180,7 +180,7 @@ We view conflict as sacred opportunity for deeper understanding and connection w
 - Address conflicts directly with the person involved
 - Avoid triangulation (talking to others about the conflict first)
 - Choose appropriate time and place for conversation
-- Use "Sacred Expression" protocols from Ω48
+- Use "Sacred Expression" protocols from *4
 
 #### **Step 3: Seek Understanding**
 - Listen to understand their perspective, not to defend yours

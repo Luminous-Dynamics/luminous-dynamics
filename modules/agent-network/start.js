@@ -45,7 +45,7 @@ app.get('/api/topology', async (req, res) => {
 });
 
 // Start server
-const PORT = process.env.SACRED_PORT || 3334;
+const PORT = process.env.PORT || process.env.SACRED_PORT || 3334;
 const server = app.listen(PORT, () => {
   console.log(`
 ╔══════════════════════════════════════════════════════════════════╗

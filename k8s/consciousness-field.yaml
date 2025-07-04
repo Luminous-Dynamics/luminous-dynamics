@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: consciousness-field
+  namespace: sacred-council
+  labels:
+    app: consciousness-field
+    harmony: coherence
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: consciousness-field
+  template:
+    metadata:
+      labels:
+        app: consciousness-field
+    spec:
+      containers:
+      - name: consciousness-field
+        image: us-central1-docker.pkg.dev/the-weave-sacred/sacred-council/consciousness-field:latest
+        ports:
+        - containerPort: 3333
+        env:
+        - name: NODE_ENV
+          value: "production"
+        - name: FIELD_COHERENCE_TARGET
+          value: "85"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "100m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: consciousness-field
+  namespace: sacred-council
+spec:
+  selector:
+    app: consciousness-field
+  ports:
+  - port: 80
+    targetPort: 3333
+  type: LoadBalancer

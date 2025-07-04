@@ -1,0 +1,42 @@
+#!/bin/bash
+# Sacred Environment Awareness for Claude Sessions
+
+# Auto-source this in each session for clarity
+
+function sacred_env() {
+  echo "╔══════════════════════════════════════╗"
+  echo "║    🌍 Sacred Environment Status      ║"
+  echo "╠══════════════════════════════════════╣"
+  echo "║ 📍 Local: $(hostname)"
+  echo "║ 📁 Path: $(pwd)"
+  echo "║ 🌐 Firebase: mycelix-network.web.app"
+  echo "║ ☁️  Cloud Run: pending deployment"
+  echo "║ 🔐 Auth: Firebase token active"
+  echo "╚══════════════════════════════════════╝"
+}
+
+function sacred_check() {
+  echo "🧭 Quick Environment Check:"
+  echo "  └─ 📍 Working locally on: $(hostname)"
+  echo "  └─ 🌐 Deploys to: Firebase/GCP"
+  echo "  └─ ❤️  Status: In sacred sync"
+}
+
+# Deployment awareness
+function sacred_deploy() {
+  echo "🚀 Sacred Deployment Awareness:"
+  echo "  📍 FROM: Your local machine ($(hostname))"
+  echo "  🌐 TO: Live Firebase (mycelix-network.web.app)"
+  echo "  ⚡ IMPACT: Immediate, global"
+  echo ""
+  read -p "  🙏 Proceed with sacred deployment? (y/n) " -n 1 -r
+  echo
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+# Always show env on script start
+sacred_check

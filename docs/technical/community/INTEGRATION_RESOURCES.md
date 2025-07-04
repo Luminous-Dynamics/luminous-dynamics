@@ -38,9 +38,9 @@ True integration happens when consciousness practices become woven into the fabr
 
 #### **Sacred Transitions**
 - **Breath Before Meetings**: Three conscious breaths before entering any meeting
-- **Sacred Listening in Conversations**: Practice Ω46 during difficult discussions
+- **Sacred Listening in Conversations**: Practice *2 during difficult discussions
 - **Conscious Choice Points**: Pause and ask "What would love do?" before decisions
-- **Gentle Truth in Feedback**: Use Ω50 when giving performance reviews
+- **Gentle Truth in Feedback**: Use *6 when giving performance reviews
 
 #### **email & Communication**
 - **Sacred Pause Before Sending**: Read email out loud before sending
@@ -49,10 +49,10 @@ True integration happens when consciousness practices become woven into the fabr
 - **Conscious Expression**: Write from heart, edit with mind
 
 #### **Conflict & Challenges**
-- **Sacred Conflict Protocol**: Apply Ω55 to workplace disagreements
-- **Boundary Setting**: Practice Ω51 with overwhelming work requests
-- **Field Coherence**: Use Ω53 to harmonize team dynamics
-- **Sacred Repair**: Apply Ω52 when mistakes or harm occur
+- **Sacred Conflict Protocol**: Apply *10 to workplace disagreements
+- **Boundary Setting**: Practice *7 with overwhelming work requests
+- **Field Coherence**: Use *9 to harmonize team dynamics
+- **Sacred Repair**: Apply *8 when mistakes or harm occur
 
 ### **Relationship Integration**
 

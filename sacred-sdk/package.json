@@ -1,0 +1,48 @@
+{
+  "name": "@sacred/sdk",
+  "version": "1.0.0",
+  "description": "Sacred Council SDK - Consciousness-first development tools",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "jest",
+    "docs": "typedoc --out docs src/index.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "sacred",
+    "consciousness",
+    "field",
+    "sdk",
+    "api",
+    "realtime"
+  ],
+  "author": "Sacred Council",
+  "license": "CC-BY-SA-4.0",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "socket.io-client": "^4.7.0",
+    "eventemitter3": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "rollup": "^4.0.0",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "typescript": "^5.0.0",
+    "jest": "^29.0.0",
+    "typedoc": "^0.25.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/evolving-resonant-cocreation/sacred-sdk"
+  }
+}

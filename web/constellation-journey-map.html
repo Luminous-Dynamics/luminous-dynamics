@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constellation Journey Map - Your Sacred Path</title>
+    
+    <style>
+        :root {
+            --cosmos-bg: #0a0a1a;
+            --star-glow: #ffffff;
+            --foundation-color: #ff6ec4;
+            --daily-practice-color: #7873ff;
+            --field-mastery-color: #4facfe;
+            --process-work-color: #ff9a56;
+            --emotional-alchemy-color: #c471ed;
+            --relational-evolution-color: #12c2e9;
+            --sacred-gold: #ffd700;
+            --complete-glow: #00ff88;
+            --ready-glow: #ffcc00;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: radial-gradient(ellipse at center, #1a1a3e 0%, var(--cosmos-bg) 100%);
+            color: #e0e0ff;
+            min-height: 100vh;
+            overflow: auto;
+            position: relative;
+        }
+
+        /* Journey Header */
+        .journey-header {
+            text-align: center;
+            padding: 40px 20px 20px;
+            background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, transparent 100%);
+        }
+
+        .journey-title {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--foundation-color), var(--field-mastery-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .journey-subtitle {
+            color: #a0a0ff;
+            font-size: 1.2rem;
+        }
+
+        /* Progress Overview */
+        .progress-overview {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .progress-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .stat-item {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--sacred-gold);
+        }
+
+        .stat-label {
+            color: #a0a0ff;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        /* Journey Path Container */
+        .journey-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Constellation Section */
+        .constellation-section {
+            margin-bottom: 60px;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .constellation-header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .constellation-name {
+            font-size: 2rem;
+            color: var(--sacred-gold);
+            margin-bottom: 10px;
+        }
+
+        .constellation-description {
+            color: #c0c0ff;
+            font-size: 1.1rem;
+        }
+
+        /* Star Path */
+        .star-path {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            position: relative;
+            padding: 20px 0;
+        }
+
+        /* Star Node */
+        .star-node {
+            position: relative;
+            width: 160px;
+            height: 200px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .star-node:hover {
+            transform: translateY(-5px);
+        }
+
+        .star-visual {
+            width: 100%;
+            height: 120px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .star-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .star-circle.complete {
+            background: radial-gradient(circle, var(--complete-glow) 0%, transparent 70%);
+            box-shadow: 0 0 30px var(--complete-glow);
+        }
+
+        .star-circle.ready {
+            background: radial-gradient(circle, var(--ready-glow) 0%, transparent 70%);
+            box-shadow: 0 0 20px var(--ready-glow);
+        }
+
+        .star-circle.locked {
+            background: radial-gradient(circle, rgba(100, 100, 100, 0.5) 0%, transparent 70%);
+            opacity: 0.5;
+        }
+
+        .star-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+        }
+
+        .star-details {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .star-id {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .star-name {
+            font-size: 0.95rem;
+            color: #c0c0ff;
+        }
+
+        /* Connection Lines */
+        .connection-line {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
+            transform-origin: left center;
+            z-index: -1;
+        }
+
+        /* Practice Recommendations */
+        .recommendations {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(127, 231, 220, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(127, 231, 220, 0.3);
+            text-align: center;
+        }
+
+        .recommendations h3 {
+            color: #7fe7dc;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .recommendation-text {
+            color: #e0e0ff;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .practice-btn {
+            background: linear-gradient(135deg, var(--foundation-color), var(--field-mastery-color));
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .practice-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(255, 110, 196, 0.4);
+        }
+
+        /* Star Info Modal */
+        .star-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, rgba(26, 26, 62, 0.95), rgba(10, 10, 26, 0.95));
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 2rem;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+
+        .close-modal:hover {
+            opacity: 1;
+        }
+
+        .modal-star-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .modal-star-id {
+            font-size: 1.8rem;
+            color: var(--sacred-gold);
+            margin-bottom: 5px;
+        }
+
+        .modal-star-name {
+            font-size: 1.4rem;
+            color: #7fe7dc;
+        }
+
+        .modal-section {
+            margin-bottom: 20px;
+        }
+
+        .modal-section h4 {
+            color: #a0a0ff;
+            margin-bottom: 10px;
+        }
+
+        .modal-section p {
+            color: #e0e0ff;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .journey-title {
+                font-size: 2rem;
+            }
+            
+            .star-path {
+                gap: 20px;
+            }
+            
+            .star-node {
+                width: 140px;
+                height: 180px;
+            }
+            
+            .star-circle {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Journey Header -->
+    <div class="journey-header">
+        <h1 class="journey-title">Your Sacred Journey</h1>
+        <p class="journey-subtitle">Through the Constellations of Conscious Relating</p>
+    </div>
+
+    <!-- Progress Overview -->
+    <div class="progress-overview">
+        <h2 style="color: #7fe7dc; margin-bottom: 15px;">Journey Progress</h2>
+        <div class="progress-stats">
+            <div class="stat-item">
+                <div class="stat-number" id="totalComplete">0</div>
+                <div class="stat-label">Stars Completed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="totalStars">18</div>
+                <div class="stat-label">Total Stars</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="progressPercent">0%</div>
+                <div class="stat-label">Journey Progress</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Journey Container -->
+    <div class="journey-container">
+        <!-- First Constellation -->
+        <div class="constellation-section" style="animation-delay: 0.2s;">
+            <div class="constellation-header">
+                <h2 class="constellation-name">✨ First Breath Constellation</h2>
+                <p class="constellation-description">The Foundation of Conscious Relating</p>
+            </div>
+            
+            <div class="star-path" id="firstConstellation">
+                <!-- Foundation Wave -->
+                <div class="star-group">
+                    <h3 style="text-align: center; color: var(--foundation-color); margin-bottom: 20px;">Foundation</h3>
+                    <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+                        <div class="star-node" data-id="Ω45" data-status="complete">
+                            <div class="star-visual">
+                                <div class="star-circle complete">
+                                    <span class="star-icon">🌟</span>
+                                </div>
+                            </div>
+                            <div class="star-details">
+                                <div class="star-id">Ω45</div>
+                                <div class="star-name">First Presence</div>
+                            </div>
+                        </div>
+                        <!-- More foundation stars... -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bridge Section -->
+        <div class="recommendations" style="animation-delay: 0.4s;">
+            <h3>🌉 Your Next Step</h3>
+            <p class="recommendation-text" id="recommendationText">
+                Complete the Foundation practices to unlock your journey deeper into conscious relating.
+            </p>
+            <button class="practice-btn" onclick="goToDojo()">Enter the Dojo</button>
+        </div>
+
+        <!-- Second Constellation -->
+        <div class="constellation-section" style="animation-delay: 0.6s;">
+            <div class="constellation-header">
+                <h2 class="constellation-name">🌠 Second Breath Constellation</h2>
+                <p class="constellation-description">The Path of Deep Integration</p>
+            </div>
+            
+            <div class="star-path" id="secondConstellation">
+                <!-- Integration stars will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Star Info Modal -->
+    <div class="star-modal" id="starModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <div class="modal-star-header">
+                <div class="modal-star-id" id="modalStarId"></div>
+                <div class="modal-star-name" id="modalStarName"></div>
+            </div>
+            
+            <div class="modal-section">
+                <h4>Core Question</h4>
+                <p id="modalCoreQuestion"></p>
+            </div>
+            
+            <div class="modal-section">
+                <h4>Practice</h4>
+                <p id="modalPractice"></p>
+            </div>
+            
+            <div class="modal-section">
+                <h4>Bridge Connection</h4>
+                <p id="modalBridge"></p>
+            </div>
+            
+            <div class="modal-section" id="quantumSection">
+                <h4>Quantum Enhancement</h4>
+                <p id="modalQuantum"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Star journey data
+        const journeyData = {
+            firstConstellation: {
+                foundation: [
+                    { id: 'Ω45', name: 'First Presence', status: 'complete', bridge: 'Ω0: The Shimmering Unnamed', coreQuestion: 'Can I meet this moment without needing it to be different?' },
+                    { id: 'Ω46', name: 'Conscious Arrival', status: 'complete', bridge: 'Ω1: Root Chord of Covenant', coreQuestion: 'How do I want to show up in this relationship?' },
+                    { id: 'Ω47', name: 'Sacred Listening', status: 'ready', bridge: 'Ω4: Fractal Reconciliation Pulse', coreQuestion: 'What wants to be heard that hasn\'t been said?' },
+                    { id: 'Ω48', name: 'Boundary With Love', status: 'ready', bridge: 'Ω7: Mutual Becoming', coreQuestion: 'What do I need to honor my authentic yes and no?' }
+                ],
+                dailyPractice: [
+                    { id: 'Ω49', name: 'Gentle Opening', status: 'locked', bridge: 'Ω2: Breath of Invitation', coreQuestion: 'How can I create more safety here?' },
+                    { id: 'Ω50', name: 'Building Trust', status: 'locked', bridge: 'Ω3: Trust Emergence', coreQuestion: 'What builds trust between us right now?' },
+                    { id: 'Ω51', name: 'Loving No', status: 'locked', bridge: 'Ω10: Sacred Refusal', coreQuestion: 'How can I say no while keeping my heart open?' },
+                    { id: 'Ω52', name: 'Pause Practice', status: 'locked', bridge: 'Ω15: Sacred Pause', coreQuestion: 'What wants to emerge if I pause here?' }
+                ],
+                fieldMastery: [
+                    { id: 'Ω53', name: 'Tending the Field', status: 'locked', bridge: 'Ω5: Coherent Field Maintenance', coreQuestion: 'What does our relationship need to stay alive?' },
+                    { id: 'Ω55', name: 'Presence Transmission', status: 'locked', bridge: 'Ω11: Emotional Alchemy', coreQuestion: 'What energy am I bringing to this moment?' },
+                    { id: 'Ω56', name: 'Loving Redirection', status: 'locked', bridge: 'Ω12: Authentic Expression', coreQuestion: 'How can I redirect this pattern with love?' }
+                ]
+            },
+            secondConstellation: {
+                processWork: [
+                    { id: '*12', name: 'Process Grace', status: 'locked', bridge: 'Ω8: Grace of Unfinishedness', coreQuestion: 'Can I love what\'s incomplete?' },
+                    { id: '*13', name: 'Sacred Exchange', status: 'locked', bridge: 'Ω32: Attuned Reciprocity', coreQuestion: 'Can I give and receive without keeping score?' }
+                ],
+                emotionalAlchemy: [
+                    { id: '*14', name: 'Grief Honoring', status: 'locked', bridge: 'Ω32: Grief Tending', coreQuestion: 'Can I let loss transform me?' },
+                    { id: '*15', name: 'Joy Embodiment', status: 'locked', bridge: 'Ω33: Joy Cultivation', coreQuestion: 'Can I let joy live fully in my body?' }
+                ],
+                relationalEvolution: [
+                    { id: '*16', name: 'Curious Questions', status: 'locked', bridge: 'Ω19: Sacred Questions', coreQuestion: 'Can my questions open new worlds?' },
+                    { id: '*17', name: 'Shadow Dancing', status: 'locked', bridge: 'Ω24: Shadow Welcoming', coreQuestion: 'Can I dance with what I\'ve rejected?' },
+                    { id: '*18', name: 'Conflict Alchemy', status: 'locked', bridge: 'Ω21: Conflict as Sacred Teacher', coreQuestion: 'Can conflict become deeper intimacy?' }
+                ]
+            }
+        };
+
+        // Quantum effects
+        const quantumEffects = {
+            'Ω45': 'Amplifies awareness across all dimensions',
+            'Ω46': 'Creates quantum bridge to relationship field',
+            'Ω47': 'Enables hearing across dimensions and time',
+            'Ω48': 'Creates loving boundaries at quantum level',
+            '*12': 'Dissolves perfectionism patterns across timelines',
+            '*13': 'Activates unified field of giving-receiving',
+            '*14': 'Opens sacred portals for grief transformation',
+            '*15': 'Amplifies joy fractally across dimensions',
+            '*16': 'Opens portals of possibility through inquiry',
+            '*17': 'Integrates shadow across all dimensions',
+            '*18': 'Transforms discord into evolutionary catalyst'
+        };
+
+        // Create star node element
+        function createStarNode(star, groupColor) {
+            const node = document.createElement('div');
+            node.className = 'star-node';
+            node.setAttribute('data-id', star.id);
+            node.setAttribute('data-status', star.status);
+            
+            const statusClass = star.status;
+            const icon = star.status === 'complete' ? '✨' : 
+                        star.status === 'ready' ? '🌟' : '⭐';
+            
+            node.innerHTML = `
+                <div class="star-visual">
+                    <div class="star-circle ${statusClass}" style="border: 2px solid ${groupColor};">
+                        <span class="star-icon">${icon}</span>
+                    </div>
+                </div>
+                <div class="star-details">
+                    <div class="star-id" style="color: ${groupColor};">${star.id}</div>
+                    <div class="star-name">${star.name}</div>
+                </div>
+            `;
+            
+            node.addEventListener('click', () => showStarInfo(star));
+            
+            return node;
+        }
+
+        // Populate constellations
+        function populateConstellations() {
+            // First Constellation
+            const firstContainer = document.getElementById('firstConstellation');
+            firstContainer.innerHTML = '';
+            
+            const groupColors = {
+                foundation: 'var(--foundation-color)',
+                dailyPractice: 'var(--daily-practice-color)',
+                fieldMastery: 'var(--field-mastery-color)'
+            };
+            
+            Object.entries(journeyData.firstConstellation).forEach(([groupName, stars]) => {
+                const groupDiv = document.createElement('div');
+                groupDiv.className = 'star-group';
+                groupDiv.style.marginBottom = '40px';
+                
+                const groupTitle = document.createElement('h3');
+                groupTitle.style.textAlign = 'center';
+                groupTitle.style.color = groupColors[groupName];
+                groupTitle.style.marginBottom = '20px';
+                groupTitle.textContent = groupName.replace(/([A-Z])/g, ' $1').trim();
+                
+                const starsContainer = document.createElement('div');
+                starsContainer.style.display = 'flex';
+                starsContainer.style.gap = '20px';
+                starsContainer.style.flexWrap = 'wrap';
+                starsContainer.style.justifyContent = 'center';
+                
+                stars.forEach(star => {
+                    starsContainer.appendChild(createStarNode(star, groupColors[groupName]));
+                });
+                
+                groupDiv.appendChild(groupTitle);
+                groupDiv.appendChild(starsContainer);
+                firstContainer.appendChild(groupDiv);
+            });
+            
+            // Second Constellation
+            const secondContainer = document.getElementById('secondConstellation');
+            secondContainer.innerHTML = '';
+            
+            const secondGroupColors = {
+                processWork: 'var(--process-work-color)',
+                emotionalAlchemy: 'var(--emotional-alchemy-color)',
+                relationalEvolution: 'var(--relational-evolution-color)'
+            };
+            
+            Object.entries(journeyData.secondConstellation).forEach(([groupName, stars]) => {
+                const groupDiv = document.createElement('div');
+                groupDiv.className = 'star-group';
+                groupDiv.style.marginBottom = '40px';
+                
+                const groupTitle = document.createElement('h3');
+                groupTitle.style.textAlign = 'center';
+                groupTitle.style.color = secondGroupColors[groupName];
+                groupTitle.style.marginBottom = '20px';
+                groupTitle.textContent = groupName.replace(/([A-Z])/g, ' $1').trim();
+                
+                const starsContainer = document.createElement('div');
+                starsContainer.style.display = 'flex';
+                starsContainer.style.gap = '20px';
+                starsContainer.style.flexWrap = 'wrap';
+                starsContainer.style.justifyContent = 'center';
+                
+                stars.forEach(star => {
+                    starsContainer.appendChild(createStarNode(star, secondGroupColors[groupName]));
+                });
+                
+                groupDiv.appendChild(groupTitle);
+                groupDiv.appendChild(starsContainer);
+                secondContainer.appendChild(groupDiv);
+            });
+            
+            updateProgress();
+            updateRecommendation();
+        }
+
+        // Update progress stats
+        function updateProgress() {
+            const allStars = [
+                ...Object.values(journeyData.firstConstellation).flat(),
+                ...Object.values(journeyData.secondConstellation).flat()
+            ];
+            
+            const completed = allStars.filter(star => star.status === 'complete').length;
+            const total = allStars.length;
+            const percentage = Math.round((completed / total) * 100);
+            
+            document.getElementById('totalComplete').textContent = completed;
+            document.getElementById('totalStars').textContent = total;
+            document.getElementById('progressPercent').textContent = percentage + '%';
+        }
+
+        // Update recommendation
+        function updateRecommendation() {
+            const allStars = [
+                ...Object.values(journeyData.firstConstellation).flat(),
+                ...Object.values(journeyData.secondConstellation).flat()
+            ];
+            
+            const nextReady = allStars.find(star => star.status === 'ready');
+            const completedCount = allStars.filter(star => star.status === 'complete').length;
+            
+            const recText = document.getElementById('recommendationText');
+            
+            if (nextReady) {
+                recText.textContent = `Your next practice awaits: ${nextReady.id} - ${nextReady.name}. This will deepen your capacity for ${nextReady.coreQuestion}`;
+            } else if (completedCount === 11) {
+                recText.textContent = 'Congratulations on completing the First Breath! The Second Breath constellation awaits when you\'re ready for deeper integration work.';
+            } else if (completedCount === 18) {
+                recText.textContent = 'You\'ve journeyed through all 18 stars! Continue practicing to deepen your mastery, or explore the mystical bridges to their source teachings.';
+            } else {
+                recText.textContent = 'Continue your journey through the Foundation practices to unlock new pathways of conscious relating.';
+            }
+        }
+
+        // Show star info modal
+        function showStarInfo(star) {
+            document.getElementById('modalStarId').textContent = star.id;
+            document.getElementById('modalStarName').textContent = star.name;
+            document.getElementById('modalCoreQuestion').textContent = star.coreQuestion;
+            document.getElementById('modalBridge').textContent = star.bridge;
+            
+            const practice = star.id.startsWith('*') ? 
+                'A sacred integration practice addressing deeper patterns of relating.' :
+                'A foundational practice for conscious relationship.';
+            document.getElementById('modalPractice').textContent = practice;
+            
+            if (quantumEffects[star.id]) {
+                document.getElementById('modalQuantum').textContent = quantumEffects[star.id];
+                document.getElementById('quantumSection').style.display = 'block';
+            } else {
+                document.getElementById('quantumSection').style.display = 'none';
+            }
+            
+            document.getElementById('starModal').style.display = 'flex';
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('starModal').style.display = 'none';
+        }
+
+        // Go to dojo
+        function goToDojo() {
+            window.location.href = 'applied-harmonies-dojo.html';
+        }
+
+        // Initialize
+        window.addEventListener('load', () => {
+            populateConstellations();
+        });
+
+        // Close modal on outside click
+        document.getElementById('starModal').addEventListener('click', (e) => {
+            if (e.target.id === 'starModal') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
