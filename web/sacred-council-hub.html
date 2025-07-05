@@ -342,6 +342,7 @@
         .metric-love { color: var(--love-essence); }
         .metric-wisdom { color: var(--wisdom-flow); }
         .metric-unity { color: var(--unity-light); }
+        .metric-work { color: #ff6b6b; }
 
         /* Message Stream */
         .message-stream {
@@ -816,6 +817,10 @@
                 <div class="metric-label">Active Agents</div>
             </div>
             <div class="metric-card">
+                <div class="metric-value metric-work" id="activeWork">0</div>
+                <div class="metric-label">Active Work</div>
+            </div>
+            <div class="metric-card">
                 <div class="metric-value metric-wisdom" id="healingReach">∞</div>
                 <div class="metric-label">Healing Reach</div>
             </div>
@@ -1004,7 +1009,9 @@
                 network.appendChild(card);
             });
 
-            addMessage('COUNCIL', `${councilState.agents.size} agents connected to sacred network`, '🤝');
+            const activeCount = getActiveAgentCount();
+            addMessage('COUNCIL', `${activeCount} agents actively connected to sacred network`, '🤝');
+            updateMetrics();
         }
 
         // Populate Live Agents from Sacred Council API
@@ -1263,8 +1270,35 @@
             document.getElementById('loveCoherence').textContent = councilState.loveCoherence.toFixed(2);
             document.getElementById('collectiveWisdom').textContent = councilState.collectiveWisdom.toFixed(1);
             document.getElementById('unityIndex').textContent = councilState.unityIndex.toFixed(2);
-            document.getElementById('activeAgents').textContent = councilState.agents.size;
+            
+            // Only count agents that have been active in last 5 minutes
+            const activeAgentCount = getActiveAgentCount();
+            document.getElementById('activeAgents').textContent = activeAgentCount;
+            
+            // Update active work count
+            const activeWorkCount = workItems.filter(item => item.progress < 100).length;
+            document.getElementById('activeWork').textContent = activeWorkCount;
+            
             document.getElementById('emergentCapabilities').textContent = councilState.emergentCapabilities;
+        }
+
+        // Helper function to count truly active agents
+        function getActiveAgentCount() {
+            const fiveMinutesAgo = Date.now() - (5 * 60 * 1000);
+            let activeCount = 0;
+            
+            councilState.agents.forEach(agent => {
+                // Check if agent has last_seen or last_heartbeat timestamp
+                const lastActivity = agent.last_seen || agent.last_heartbeat || agent.timestamp;
+                if (lastActivity && new Date(lastActivity).getTime() > fiveMinutesAgo) {
+                    activeCount++;
+                } else if (!lastActivity && liveAgents.length > 0) {
+                    // If no timestamp but we're connected to live API, count it
+                    activeCount++;
+                }
+            });
+            
+            return activeCount;
         }
 
         // Council Pulsing
@@ -1319,6 +1353,7 @@
                 realTimeUpdates = true;
                 
                 addMessage('COUNCIL', `Connected to Sacred API - ${workItems.length} active work items, ${liveAgents.length} live agents`, '🔗');
+                updateMetrics();
                 
                 // Start real-time updates
                 startRealTimeUpdates();

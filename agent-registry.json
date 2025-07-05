@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-07-04T06:00:35.456Z",
+  "lastUpdated": "2025-07-05T07:51:45.517Z",
   "agents": {
     "agent-1751486563977": {
       "name": "Glyph Weaver Master",
@@ -180,6 +180,28 @@
       "lastSeen": "2025-07-04T06:00:35.456Z",
       "status": "offline",
       "pid": 983
+    },
+    "agent-1751690125284": {
+      "name": "Agent Searcher",
+      "role": "Discovery Helper",
+      "capabilities": [],
+      "services": [],
+      "agentId": "agent-1751690125284",
+      "registeredAt": "2025-07-05T04:35:25.284Z",
+      "lastSeen": "2025-07-05T04:35:25.295Z",
+      "status": "offline",
+      "pid": 351081
+    },
+    "agent-1751701905505": {
+      "name": "Agent Searcher",
+      "role": "Discovery Helper",
+      "capabilities": [],
+      "services": [],
+      "agentId": "agent-1751701905505",
+      "registeredAt": "2025-07-05T07:51:45.505Z",
+      "lastSeen": "2025-07-05T07:51:45.517Z",
+      "status": "offline",
+      "pid": 4906
     }
   }
 }

@@ -18,6 +18,13 @@ secrets.json
 config/secrets/*
 discord-config.json
 api-keys.json
+.sacred/keys/sacred-keys.env
+.dropbox/client_secret*.json
+ONBOARDING/05-KEYS/
+*.Zone.Identifier
+*token*.sh
+*secret*.json
+key-inventory.md
 
 # Build outputs
 dist/

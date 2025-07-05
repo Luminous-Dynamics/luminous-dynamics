@@ -1,12 +1,20 @@
 {
   "hosting": {
-    "public": "firebase-build",
+    "public": "websites/relationalharmonics",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [],
+    "rewrites": [
+      {
+        "source": "/api/**",
+        "run": {
+          "serviceId": "sacred-heartbeat",
+          "region": "us-central1"
+        }
+      }
+    ],
     "headers": [
       {
         "source": "**/*.@(js|css)",
@@ -23,6 +31,13 @@
         }]
       },
       {
+        "source": "**/*.@(jpg|jpeg|gif|png|svg|webp)",
+        "headers": [{
+          "key": "Cache-Control",
+          "value": "public, max-age=7200"
+        }]
+      },
+      {
         "source": "/pwa/service-worker.js",
         "headers": [{
           "key": "Cache-Control",
@@ -33,9 +48,31 @@
     "redirects": [
       {
         "source": "/",
-        "destination": "/sacred-council-hub.html",
+        "destination": "/first-breath-portal.html",
         "type": 301
       }
     ]
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "functions": {
+    "source": "functions",
+    "runtime": "nodejs18"
+  },
+  "emulators": {
+    "hosting": {
+      "port": 5000
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "functions": {
+      "port": 5001
+    },
+    "pubsub": {
+      "port": 8085
+    }
   }
 }
