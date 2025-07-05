@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sacred Geometry Test</title>
+    <style>
+        body {
+            margin: 0;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        canvas {
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="testCanvas" width="800" height="800"></canvas>
+    
+    <script src="sacred-geometry.js"></script>
+    <script>
+        // Test sacred geometry engine
+        const canvas = document.getElementById('testCanvas');
+        const engine = new SacredGeometryEngine(canvas);
+        
+        console.log('Sacred Geometry Engine initialized:', engine);
+        
+        // Animation loop
+        function animate() {
+            engine.update(0.7, null);
+            engine.render();
+            requestAnimationFrame(animate);
+        }
+        
+        animate();
+        
+        // Test coherence changes
+        setInterval(() => {
+            const newCoherence = 0.5 + Math.random() * 0.5;
+            engine.coherence = newCoherence;
+            console.log('Coherence:', newCoherence);
+        }, 3000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# Ignore artifacts and caches
+artifacts/
+target/
+node_modules/
+*.log
+.git/
+
+# Ignore sensitive files
+.env
+secrets/
+
+# Keep the build light
+*.pdf
+*.mp4
+*.zip

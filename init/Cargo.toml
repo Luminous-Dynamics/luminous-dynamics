@@ -1,0 +1,13 @@
+[package]
+name = "luminous-init"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "luminous-init"
+path = "luminous-init.rs"
+
+[dependencies]
+stillpoint-kernel = { path = "../stillpoint-kernel" }
+nix = { version = "0.27", features = ["process", "signal"] }
+libc = "0.2"

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Boot Sequence Test</title>
+    <style>
+        body {
+            margin: 0;
+            background: #000;
+            color: white;
+            font-family: monospace;
+        }
+        #bootSequence {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 1000;
+        }
+        #mainOS {
+            display: none;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="bootSequence"></div>
+    <div id="mainOS">
+        <h1>Main OS Loaded!</h1>
+    </div>
+    
+    <script>
+        // Simple test of boot sequence
+        console.log('Loading boot sequence test...');
+        
+        // Mock functions
+        window.initializeOS = function() {
+            console.log('OS Initialized!');
+        };
+    </script>
+    
+    <script src="sacred-boot-sequence-enhanced.js"></script>
+    
+    <script>
+        // Start boot immediately
+        window.addEventListener('load', () => {
+            console.log('Window loaded, checking boot sequence...');
+            if (window.sacredBootSequence) {
+                console.log('Boot sequence found, starting...');
+                window.sacredBootSequence.start();
+            } else {
+                console.error('Boot sequence not found!');
+            }
+        });
+    </script>
+</body>
+</html>

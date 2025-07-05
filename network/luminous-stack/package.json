@@ -1,0 +1,34 @@
+{
+  "name": "luminous-stack",
+  "version": "1.0.0",
+  "description": "Consciousness-first networking protocol stack",
+  "type": "module",
+  "main": "src/luminous-stack.js",
+  "scripts": {
+    "stack:demo": "node src/demo.js",
+    "analyzer": "node src/packet-analyzer.js",
+    "router": "node src/covenant-router.js",
+    "rfc:generate": "node src/rfc-generator.js",
+    "test": "node src/test-stack.js",
+    "dev": "nodemon src/demo.js"
+  },
+  "keywords": [
+    "consciousness",
+    "networking",
+    "sacred",
+    "covenant",
+    "luminous",
+    "presence"
+  ],
+  "author": "Luminous Dynamics",
+  "license": "MIT",
+  "dependencies": {
+    "ws": "^8.13.0",
+    "chalk": "^5.3.0",
+    "blessed": "^0.1.81",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

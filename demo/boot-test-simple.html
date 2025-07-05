@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Boot Test</title>
+    <style>
+        body { 
+            background: #000; 
+            color: white; 
+            font-family: monospace;
+            margin: 0;
+            padding: 20px;
+        }
+        #bootSequence { }
+        #mainOS { display: none; }
+    </style>
+</head>
+<body>
+    <div id="bootSequence"></div>
+    <div id="mainOS">
+        <h1>Boot Complete!</h1>
+    </div>
+    
+    <!-- Load optimized version by default -->
+    <script src="sacred-boot-optimized.js"></script>
+    <script>
+        // Simple initialization
+        window.initializeOS = function() {
+            console.log('OS initialized');
+            document.getElementById('mainOS').style.display = 'block';
+        };
+        
+        // Start boot after a short delay
+        setTimeout(() => {
+            console.log('Window objects:', {
+                optimizedBootSequence: window.optimizedBootSequence,
+                OptimizedSacredBoot: window.OptimizedSacredBoot
+            });
+            
+            if (window.optimizedBootSequence) {
+                console.log('Starting boot sequence...');
+                window.optimizedBootSequence.start();
+            } else if (window.OptimizedSacredBoot) {
+                console.log('Creating and starting boot sequence...');
+                const boot = new OptimizedSacredBoot();
+                boot.start();
+            } else {
+                console.error('No boot sequence found!');
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

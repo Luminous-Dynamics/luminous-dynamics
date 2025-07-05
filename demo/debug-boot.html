@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Boot Debug</title>
+    <style>
+        body {
+            margin: 0;
+            background: #111;
+            color: white;
+            font-family: monospace;
+            padding: 20px;
+        }
+        #status {
+            background: rgba(0,0,0,0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .test-box {
+            width: 200px;
+            height: 200px;
+            background: #333;
+            margin: 20px;
+            display: inline-block;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        canvas {
+            background: #222;
+            border: 1px solid #555;
+        }
+    </style>
+</head>
+<body>
+    <div id="status">
+        <h2>Boot Sequence Debug</h2>
+        <p>Checking components...</p>
+    </div>
+
+    <div class="test-box">
+        <h3>Canvas Test</h3>
+        <canvas id="testCanvas" width="150" height="150"></canvas>
+    </div>
+
+    <div class="test-box">
+        <h3>Animation Test</h3>
+        <div id="animTest" style="width: 50px; height: 50px; background: #6B46C1; border-radius: 50%;"></div>
+    </div>
+
+    <div id="bootSequence" style="display: none;"></div>
+
+    <script>
+        // Test basic functionality
+        const status = document.getElementById('status');
+        let messages = [];
+        
+        function log(msg, isError = false) {
+            messages.push(`<div style="color: ${isError ? '#ff6b6b' : '#4ecdc4'}">${msg}</div>`);
+            status.innerHTML = '<h2>Boot Sequence Debug</h2>' + messages.join('');
+        }
+
+        // Test 1: Canvas support
+        const canvas = document.getElementById('testCanvas');
+        const ctx = canvas.getContext('2d');
+        if (ctx) {
+            log('✓ Canvas 2D supported');
+            // Draw test
+            ctx.fillStyle = '#6B46C1';
+            ctx.fillRect(20, 20, 110, 110);
+            ctx.fillStyle = '#EC4899';
+            ctx.beginPath();
+            ctx.arc(75, 75, 30, 0, Math.PI * 2);
+            ctx.fill();
+        } else {
+            log('✗ Canvas 2D not supported', true);
+        }
+
+        // Test 2: WebGL support
+        const testGL = document.createElement('canvas');
+        const gl = testGL.getContext('webgl') || testGL.getContext('experimental-webgl');
+        if (gl) {
+            log('✓ WebGL supported');
+        } else {
+            log('⚠ WebGL not supported (not critical)');
+        }
+
+        // Test 3: Animation
+        let animFrame = 0;
+        function testAnimation() {
+            const elem = document.getElementById('animTest');
+            elem.style.transform = `rotate(${animFrame}deg) scale(${1 + Math.sin(animFrame * 0.02) * 0.2})`;
+            animFrame += 2;
+            if (animFrame < 360) {
+                requestAnimationFrame(testAnimation);
+            } else {
+                log('✓ Animation working');
+            }
+        }
+        testAnimation();
+
+        // Test 4: Boot sequence class
+        setTimeout(() => {
+            log('Loading boot sequence script...');
+        }, 500);
+    </script>
+
+    <!-- Simple boot sequence fallback -->
+    <script>
+        class SimpleBootSequence {
+            constructor() {
+                this.container = document.getElementById('bootSequence');
+                log('✓ SimpleBootSequence class created');
+            }
+            
+            start() {
+                log('Starting simple boot sequence...');
+                this.container.style.display = 'block';
+                this.container.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: #000;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    color: white;
+                    z-index: 1000;
+                `;
+                
+                this.container.innerHTML = `
+                    <h1 style="font-size: 48px; margin-bottom: 20px;">LuminousOS</h1>
+                    <p style="font-size: 20px; opacity: 0.7;">Initializing consciousness...</p>
+                    <div style="margin-top: 40px;">
+                        <div style="width: 200px; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px;">
+                            <div id="simpleProgress" style="width: 0%; height: 100%; background: linear-gradient(90deg, #6B46C1, #EC4899); transition: width 3s ease;"></div>
+                        </div>
+                    </div>
+                `;
+                
+                // Animate progress
+                setTimeout(() => {
+                    document.getElementById('simpleProgress').style.width = '100%';
+                }, 100);
+                
+                // Complete after 3 seconds
+                setTimeout(() => {
+                    this.complete();
+                }, 3000);
+            }
+            
+            complete() {
+                log('Boot sequence complete');
+                this.container.style.opacity = '0';
+                setTimeout(() => {
+                    this.container.style.display = 'none';
+                    if (document.getElementById('mainOS')) {
+                        document.getElementById('mainOS').style.display = 'block';
+                    }
+                }, 1000);
+            }
+        }
+        
+        // Create simple boot sequence
+        window.simpleBootSequence = new SimpleBootSequence();
+        log('✓ Simple boot sequence ready');
+    </script>
+
+    <!-- Try loading enhanced boot sequence -->
+    <script src="sacred-boot-sequence-enhanced.js"></script>
+
+    <script>
+        // Final test
+        setTimeout(() => {
+            if (window.EnhancedSacredBootSequence) {
+                log('✓ Enhanced boot sequence loaded');
+            } else {
+                log('✗ Enhanced boot sequence failed to load', true);
+            }
+            
+            if (window.sacredBootSequence) {
+                log('✓ Boot sequence instance created');
+            } else {
+                log('⚠ Boot sequence instance not created');
+            }
+            
+            // Add start button
+            const button = document.createElement('button');
+            button.textContent = 'Start Boot Sequence';
+            button.style.cssText = `
+                margin-top: 20px;
+                padding: 10px 20px;
+                background: #6B46C1;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+            `;
+            button.onclick = () => {
+                if (window.sacredBootSequence) {
+                    log('Starting enhanced boot sequence...');
+                    window.sacredBootSequence.start();
+                } else if (window.simpleBootSequence) {
+                    log('Starting simple boot sequence...');
+                    window.simpleBootSequence.start();
+                } else {
+                    log('No boot sequence available!', true);
+                }
+            };
+            document.getElementById('status').appendChild(button);
+            
+        }, 1000);
+    </script>
+</body>
+</html>

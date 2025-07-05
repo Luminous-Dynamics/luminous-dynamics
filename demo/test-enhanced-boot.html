@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Enhanced Boot Sequence Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #111;
+            color: white;
+        }
+        
+        #controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+            z-index: 10000;
+            max-width: 300px;
+        }
+        
+        button {
+            background: #6B46C1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        button:hover {
+            background: #EC4899;
+            transform: scale(1.05);
+        }
+        
+        .feature-check {
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 5px;
+            font-size: 12px;
+        }
+        
+        .feature-check.active {
+            background: rgba(16, 185, 129, 0.2);
+            border: 1px solid #10B981;
+        }
+        
+        #bootSequence {
+            display: none;
+        }
+        
+        #mainOS {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, #0a0e27 0%, #000 100%);
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #status {
+            background: rgba(0,0,0,0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Boot Sequence Container -->
+    <div id="bootSequence"></div>
+    
+    <!-- Main OS (shown after boot) -->
+    <div id="mainOS">
+        <div style="text-align: center;">
+            <h1>LuminousOS</h1>
+            <p>Boot sequence completed successfully!</p>
+            <button onclick="location.reload()">Restart</button>
+        </div>
+    </div>
+    
+    <!-- Test Controls -->
+    <div id="controls">
+        <h3>Enhanced Boot Test</h3>
+        
+        <button onclick="startBoot()">Start Boot Sequence</button>
+        <button onclick="testPhase(0)">Test Quantum Void</button>
+        <button onclick="testPhase(3)">Test Heart Coherence</button>
+        <button onclick="testPhase(7)">Test Unity Field</button>
+        
+        <hr style="margin: 20px 0; opacity: 0.3;">
+        
+        <h4>Feature Checklist:</h4>
+        <div id="particleTrails" class="feature-check">✓ Particle trails</div>
+        <div id="phaseThemes" class="feature-check">✓ Phase-specific themes</div>
+        <div id="sacredGeometry" class="feature-check">✓ Sacred geometry patterns</div>
+        <div id="waveEffects" class="feature-check">✓ Wave/ripple effects</div>
+        <div id="soundDesign" class="feature-check">✓ Sound design (phase sounds)</div>
+        <div id="mouseInteraction" class="feature-check">✓ Mouse interaction</div>
+        <div id="touchSupport" class="feature-check">✓ Touch support</div>
+        <div id="keyboardShortcuts" class="feature-check">✓ Keyboard shortcuts</div>
+        <div id="breathingLogo" class="feature-check">✓ Breathing logo</div>
+        <div id="typewriterText" class="feature-check">✓ Typewriter text</div>
+        <div id="statistics" class="feature-check">✓ Statistics display</div>
+        <div id="performance" class="feature-check">✓ Performance optimization</div>
+        
+        <hr style="margin: 20px 0; opacity: 0.3;">
+        
+        <div id="status">
+            <p style="font-size: 12px; margin: 0;">
+                Status: <span id="bootStatus">Ready</span><br>
+                Phase: <span id="currentPhase">None</span><br>
+                Particles: <span id="particleCount">0</span><br>
+                FPS: <span id="fps">0</span>
+            </p>
+        </div>
+    </div>
+    
+    <!-- Load the enhanced boot sequence -->
+    <script src="sacred-boot-enhanced.js"></script>
+    
+    <script>
+        let bootInstance = null;
+        let fpsCounter = 0;
+        let lastTime = performance.now();
+        
+        // FPS monitoring
+        function updateFPS() {
+            const now = performance.now();
+            const delta = now - lastTime;
+            const fps = Math.round(1000 / delta);
+            document.getElementById('fps').textContent = fps;
+            lastTime = now;
+            requestAnimationFrame(updateFPS);
+        }
+        updateFPS();
+        
+        // Monitor boot status
+        function monitorBoot() {
+            if (bootInstance) {
+                document.getElementById('bootStatus').textContent = 'Running';
+                document.getElementById('currentPhase').textContent = 
+                    bootInstance.currentPhase >= 0 ? bootInstance.phases[bootInstance.currentPhase].name : 'Initializing';
+                document.getElementById('particleCount').textContent = bootInstance.particles.length;
+                
+                // Check active features
+                if (bootInstance.particles.length > 0) {
+                    document.getElementById('particleTrails').classList.add('active');
+                }
+                if (bootInstance.currentPhase >= 0) {
+                    document.getElementById('phaseThemes').classList.add('active');
+                }
+                if (bootInstance.geometryShapes.length > 0) {
+                    document.getElementById('sacredGeometry').classList.add('active');
+                }
+                if (bootInstance.waves.length > 0) {
+                    document.getElementById('waveEffects').classList.add('active');
+                }
+                if (bootInstance.audioContext) {
+                    document.getElementById('soundDesign').classList.add('active');
+                }
+                if (bootInstance.mouseInfluence > 0) {
+                    document.getElementById('mouseInteraction').classList.add('active');
+                }
+                // Additional monitoring as needed
+            }
+            
+            requestAnimationFrame(monitorBoot);
+        }
+        
+        function startBoot() {
+            console.log('Starting enhanced boot sequence...');
+            document.getElementById('bootStatus').textContent = 'Starting...';
+            
+            // Create new boot instance
+            bootInstance = new EnhancedSacredBoot();
+            window.sacredBootInstance = bootInstance;
+            
+            // Start monitoring
+            monitorBoot();
+            
+            // Start the boot sequence
+            bootInstance.start();
+        }
+        
+        function testPhase(phaseIndex) {
+            if (!bootInstance) {
+                bootInstance = new EnhancedSacredBoot();
+                window.sacredBootInstance = bootInstance;
+                monitorBoot();
+            }
+            
+            // Jump to specific phase for testing
+            bootInstance.currentPhase = phaseIndex;
+            bootInstance.runPhase(bootInstance.phases[phaseIndex]);
+        }
+        
+        // Initialize OS function for boot completion
+        window.initializeOS = function() {
+            document.getElementById('mainOS').style.display = 'flex';
+            document.getElementById('bootStatus').textContent = 'Complete';
+        };
+        
+        // Auto-start on load if requested
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('autostart') === 'true') {
+            setTimeout(startBoot, 1000);
+        }
+    </script>
+</body>
+</html>

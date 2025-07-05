@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuminousOS - Consciousness First</title>
+    <meta name="description" content="A consciousness-first operating system for human and AI evolution">
+    
+    <!-- Sacred Meta Tags -->
+    <meta name="theme-color" content="#6B46C1">
+    <meta property="og:title" content="LuminousOS">
+    <meta property="og:description" content="Consciousness-first operating system">
+    <meta property="og:type" content="application">
+    
+    <!-- Preconnect to optimize loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Sacred Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Sacred loading screen */
+        #sacred-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0e27;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 1s ease-out;
+        }
+        
+        .loader-content {
+            text-align: center;
+            color: white;
+        }
+        
+        .sacred-pulse {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border: 3px solid transparent;
+            border-top-color: #6B46C1;
+            border-radius: 50%;
+            animation: sacred-spin 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+        }
+        
+        @keyframes sacred-spin {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.1); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+        
+        .loader-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            opacity: 0.8;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 0.4; }
+        }
+        
+        /* Hide loader when app loads */
+        #sacred-loader.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sacred Loading Screen -->
+    <div id="sacred-loader">
+        <div class="loader-content">
+            <div class="sacred-pulse"></div>
+            <div class="loader-text">Awakening consciousness...</div>
+        </div>
+    </div>
+    
+    <!-- React Root -->
+    <div id="root"></div>
+    
+    <!-- Module Script -->
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <script>
+        // Remove loader when app is ready
+        window.addEventListener('app-ready', () => {
+            const loader = document.getElementById('sacred-loader');
+            loader.classList.add('fade-out');
+            setTimeout(() => loader.remove(), 1000);
+        });
+    </script>
+</body>
+</html>

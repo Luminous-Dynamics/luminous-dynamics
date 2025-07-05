@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>3D Sacred Geometry Test</title>
+    <style>
+        body {
+            margin: 0;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: monospace;
+            color: white;
+        }
+        canvas {
+            border: 1px solid #333;
+            display: block;
+        }
+        #controls {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        button {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="testCanvas" width="800" height="800"></canvas>
+    
+    <div id="controls">
+        <h3>3D Sacred Geometry Test</h3>
+        <p>Status: <span id="status">Initializing...</span></p>
+        <p>Coherence: <span id="coherence">70%</span></p>
+        <input type="range" id="coherenceSlider" min="0" max="100" value="70" style="width: 200px;">
+        <br><br>
+        <button onclick="toggleMute()">🔊 Toggle Sound</button>
+        <button onclick="resetView()">Reset View</button>
+    </div>
+    
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+    
+    <!-- Sacred Geometry 3D -->
+    <script src="sacred-geometry-3d.js"></script>
+    <script src="enhanced-luminous-demo.js"></script>
+    
+    <script>
+        // Test 3D sacred geometry engine
+        const canvas = document.getElementById('testCanvas');
+        let engine;
+        
+        try {
+            engine = new SacredGeometry3D(canvas);
+            document.getElementById('status').textContent = '✓ 3D Engine Active';
+            document.getElementById('status').style.color = '#10B981';
+        } catch (e) {
+            console.error('3D initialization failed:', e);
+            document.getElementById('status').textContent = '✗ 3D Failed: ' + e.message;
+            document.getElementById('status').style.color = '#EF4444';
+        }
+        
+        // Animation loop
+        function animate() {
+            if (engine) {
+                const coherence = document.getElementById('coherenceSlider').value / 100;
+                engine.update(coherence);
+                engine.render();
+            }
+            requestAnimationFrame(animate);
+        }
+        
+        animate();
+        
+        // Coherence slider
+        document.getElementById('coherenceSlider').addEventListener('input', (e) => {
+            const coherence = e.target.value;
+            document.getElementById('coherence').textContent = coherence + '%';
+            if (engine) {
+                engine.setCoherence(coherence / 100);
+            }
+        });
+        
+        // Reset view
+        function resetView() {
+            if (engine && engine.camera) {
+                engine.camera.position.set(0, 0, 30);
+                engine.camera.lookAt(0, 0, 0);
+            }
+        }
+        
+        // Handle resize
+        window.addEventListener('resize', () => {
+            if (engine) {
+                canvas.width = window.innerWidth - 100;
+                canvas.height = window.innerHeight - 100;
+                engine.resize(canvas.width, canvas.height);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "luminous-network-server",
+  "version": "1.0.0",
+  "description": "WebSocket server for LuminousOS consciousness network",
+  "type": "module",
+  "main": "websocket-server.js",
+  "scripts": {
+    "start": "node websocket-server.js",
+    "dev": "node --watch websocket-server.js"
+  },
+  "dependencies": {
+    "ws": "^8.16.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

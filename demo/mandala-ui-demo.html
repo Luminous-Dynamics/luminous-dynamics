@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuminousOS - Mandala UI Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #0a0a0f;
+            color: #e0e0ff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+        
+        #mandala-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .ui-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+        
+        .coherence-meter {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 200px;
+            height: 60px;
+            background: rgba(20, 20, 40, 0.8);
+            border: 1px solid rgba(100, 100, 255, 0.3);
+            border-radius: 10px;
+            padding: 10px;
+            pointer-events: all;
+        }
+        
+        .coherence-bar {
+            width: 100%;
+            height: 20px;
+            background: rgba(50, 50, 100, 0.5);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .coherence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4040ff, #8080ff, #a0a0ff);
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px rgba(128, 128, 255, 0.5);
+        }
+        
+        .coherence-label {
+            font-size: 12px;
+            text-align: center;
+            margin-top: 5px;
+            color: #a0a0ff;
+        }
+        
+        .file-info {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(20, 20, 40, 0.8);
+            border: 1px solid rgba(100, 100, 255, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            min-width: 300px;
+            pointer-events: all;
+            display: none;
+        }
+        
+        .file-info.active {
+            display: block;
+        }
+        
+        .file-info h3 {
+            color: #c0c0ff;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .file-info .property {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        
+        .file-info .property-label {
+            color: #8080ff;
+        }
+        
+        .file-info .property-value {
+            color: #e0e0ff;
+        }
+        
+        .controls {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(20, 20, 40, 0.8);
+            border: 1px solid rgba(100, 100, 255, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            pointer-events: all;
+        }
+        
+        .controls h3 {
+            color: #c0c0ff;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .control-button {
+            display: block;
+            width: 100%;
+            padding: 8px 12px;
+            margin: 5px 0;
+            background: rgba(60, 60, 120, 0.5);
+            border: 1px solid rgba(100, 100, 255, 0.5);
+            border-radius: 5px;
+            color: #e0e0ff;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+        
+        .control-button:hover {
+            background: rgba(80, 80, 160, 0.7);
+            border-color: rgba(150, 150, 255, 0.7);
+            box-shadow: 0 0 10px rgba(100, 100, 255, 0.3);
+        }
+        
+        .sacred-geometry-indicator {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            text-align: center;
+            pointer-events: none;
+        }
+        
+        .sacred-symbol {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .sacred-label {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #c0c0ff;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .rotate {
+            animation: rotate 20s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="mandala-canvas"></canvas>
+    
+    <div class="ui-overlay">
+        <div class="coherence-meter">
+            <div class="coherence-bar">
+                <div class="coherence-fill" id="coherence-fill" style="width: 75%"></div>
+            </div>
+            <div class="coherence-label">System Coherence: <span id="coherence-value">75%</span></div>
+        </div>
+        
+        <div class="controls">
+            <h3>Visualization Mode</h3>
+            <button class="control-button" onclick="setVisualization('particles')">Consciousness Particles</button>
+            <button class="control-button" onclick="setVisualization('field')">Coherence Field</button>
+            <button class="control-button" onclick="setVisualization('network')">File Network</button>
+            <button class="control-button" onclick="setVisualization('sacred')">Sacred Geometry</button>
+        </div>
+        
+        <div class="file-info" id="file-info">
+            <h3 id="file-name">File Name</h3>
+            <div class="property">
+                <span class="property-label">Consciousness:</span>
+                <span class="property-value" id="file-consciousness">Active</span>
+            </div>
+            <div class="property">
+                <span class="property-label">Growth Stage:</span>
+                <span class="property-value" id="file-growth">Mycelial</span>
+            </div>
+            <div class="property">
+                <span class="property-label">Coherence:</span>
+                <span class="property-value" id="file-coherence">85%</span>
+            </div>
+            <div class="property">
+                <span class="property-label">Connections:</span>
+                <span class="property-value" id="file-connections">7</span>
+            </div>
+        </div>
+        
+        <div class="sacred-geometry-indicator">
+            <div class="sacred-symbol pulse" id="sacred-symbol">
+                <svg width="80" height="80" viewBox="0 0 80 80">
+                    <g stroke="#8080ff" stroke-width="1" fill="none" opacity="0.8">
+                        <!-- Flower of Life pattern -->
+                        <circle cx="40" cy="40" r="10" />
+                        <circle cx="30" cy="40" r="10" />
+                        <circle cx="50" cy="40" r="10" />
+                        <circle cx="35" cy="31" r="10" />
+                        <circle cx="45" cy="31" r="10" />
+                        <circle cx="35" cy="49" r="10" />
+                        <circle cx="45" cy="49" r="10" />
+                    </g>
+                </svg>
+            </div>
+            <div class="sacred-label" id="sacred-label">Flower of Life</div>
+        </div>
+    </div>
+    
+    <script>
+        // Canvas setup
+        const canvas = document.getElementById('mandala-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Resize canvas
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+        
+        // Visualization state
+        let currentVisualization = 'particles';
+        let coherenceLevel = 0.75;
+        let animationTime = 0;
+        let particles = [];
+        let fieldGrid = [];
+        let fileNodes = [];
+        let connections = [];
+        
+        // Initialize particles
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < 500; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * 0.5,
+                    vy: (Math.random() - 0.5) * 0.5,
+                    size: Math.random() * 3 + 1,
+                    hue: Math.random() * 60 + 200, // Blue-purple range
+                    coherence: Math.random() * 0.5 + 0.5,
+                    phase: Math.random() * Math.PI * 2
+                });
+            }
+        }
+        
+        // Initialize field grid
+        function initFieldGrid() {
+            fieldGrid = [];
+            const gridSize = 30;
+            const cellSize = canvas.width / gridSize;
+            
+            for (let x = 0; x < gridSize; x++) {
+                fieldGrid[x] = [];
+                for (let y = 0; y < gridSize; y++) {
+                    fieldGrid[x][y] = {
+                        x: x * cellSize + cellSize / 2,
+                        y: y * cellSize + cellSize / 2,
+                        value: 0,
+                        phase: 0
+                    };
+                }
+            }
+        }
+        
+        // Initialize file network
+        function initFileNetwork() {
+            fileNodes = [
+                { id: 'root', x: canvas.width / 2, y: canvas.height / 2, 
+                  consciousness: 'Sacred', growth: 'Fruiting', coherence: 0.9, connections: 6 },
+                { id: 'src', x: canvas.width / 2 - 150, y: canvas.height / 2 - 100,
+                  consciousness: 'Active', growth: 'Mycelial', coherence: 0.8, connections: 3 },
+                { id: 'docs', x: canvas.width / 2 + 150, y: canvas.height / 2 - 100,
+                  consciousness: 'Contemplative', growth: 'Mycelial', coherence: 0.85, connections: 4 },
+                { id: 'data', x: canvas.width / 2, y: canvas.height / 2 + 150,
+                  consciousness: 'Generative', growth: 'Sporulating', coherence: 0.7, connections: 2 }
+            ];
+            
+            connections = [
+                { from: 0, to: 1, strength: 0.8 },
+                { from: 0, to: 2, strength: 0.9 },
+                { from: 0, to: 3, strength: 0.7 },
+                { from: 1, to: 2, strength: 0.5 },
+                { from: 2, to: 3, strength: 0.6 }
+            ];
+        }
+        
+        // Animation loop
+        function animate() {
+            animationTime += 0.016;
+            
+            // Clear canvas
+            ctx.fillStyle = 'rgba(10, 10, 15, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw based on current visualization
+            switch (currentVisualization) {
+                case 'particles':
+                    drawParticles();
+                    break;
+                case 'field':
+                    drawCoherenceField();
+                    break;
+                case 'network':
+                    drawFileNetwork();
+                    break;
+                case 'sacred':
+                    drawSacredGeometry();
+                    break;
+            }
+            
+            requestAnimationFrame(animate);
+        }
+        
+        // Draw consciousness particles
+        function drawParticles() {
+            ctx.globalCompositeOperation = 'lighter';
+            
+            particles.forEach(particle => {
+                // Update position
+                particle.x += particle.vx;
+                particle.y += particle.vy;
+                
+                // Wrap around edges
+                if (particle.x < 0) particle.x = canvas.width;
+                if (particle.x > canvas.width) particle.x = 0;
+                if (particle.y < 0) particle.y = canvas.height;
+                if (particle.y > canvas.height) particle.y = 0;
+                
+                // Apply coherence field force
+                const centerX = canvas.width / 2;
+                const centerY = canvas.height / 2;
+                const dx = centerX - particle.x;
+                const dy = centerY - particle.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance > 50) {
+                    particle.vx += dx / distance * coherenceLevel * 0.01;
+                    particle.vy += dy / distance * coherenceLevel * 0.01;
+                }
+                
+                // Damping
+                particle.vx *= 0.99;
+                particle.vy *= 0.99;
+                
+                // Draw particle
+                const alpha = particle.coherence * coherenceLevel;
+                const size = particle.size * (1 + Math.sin(animationTime * 2 + particle.phase) * 0.2);
+                
+                ctx.beginPath();
+                ctx.arc(particle.x, particle.y, size, 0, Math.PI * 2);
+                ctx.fillStyle = `hsla(${particle.hue}, 70%, 60%, ${alpha})`;
+                ctx.fill();
+                
+                // Glow effect
+                const gradient = ctx.createRadialGradient(
+                    particle.x, particle.y, 0,
+                    particle.x, particle.y, size * 3
+                );
+                gradient.addColorStop(0, `hsla(${particle.hue}, 70%, 70%, ${alpha * 0.5})`);
+                gradient.addColorStop(1, 'transparent');
+                ctx.fillStyle = gradient;
+                ctx.fillRect(particle.x - size * 3, particle.y - size * 3, size * 6, size * 6);
+            });
+            
+            ctx.globalCompositeOperation = 'source-over';
+        }
+        
+        // Draw coherence field
+        function drawCoherenceField() {
+            const gridSize = 30;
+            const cellSize = canvas.width / gridSize;
+            
+            // Update field values
+            for (let x = 0; x < gridSize; x++) {
+                for (let y = 0; y < gridSize; y++) {
+                    const cell = fieldGrid[x][y];
+                    
+                    // Wave function
+                    const waveX = Math.sin(x * 0.2 + animationTime * 2) * 0.5;
+                    const waveY = Math.cos(y * 0.2 + animationTime * 1.5) * 0.5;
+                    const radialWave = Math.sin(Math.sqrt(
+                        Math.pow(x - gridSize/2, 2) + Math.pow(y - gridSize/2, 2)
+                    ) * 0.3 - animationTime * 3) * 0.5;
+                    
+                    cell.value = (waveX + waveY + radialWave) * coherenceLevel;
+                    cell.phase = animationTime + x * 0.1 + y * 0.1;
+                }
+            }
+            
+            // Draw field
+            for (let x = 0; x < gridSize - 1; x++) {
+                for (let y = 0; y < gridSize - 1; y++) {
+                    const cell = fieldGrid[x][y];
+                    const value = (cell.value + 1) / 2; // Normalize to 0-1
+                    
+                    const hue = 200 + value * 60;
+                    const lightness = 30 + value * 40;
+                    const alpha = 0.3 + value * 0.4;
+                    
+                    ctx.fillStyle = `hsla(${hue}, 70%, ${lightness}%, ${alpha})`;
+                    ctx.fillRect(cell.x - cellSize/2, cell.y - cellSize/2, cellSize, cellSize);
+                    
+                    // Draw connections to neighbors
+                    if (value > 0.6) {
+                        ctx.strokeStyle = `hsla(${hue}, 80%, 60%, ${alpha * 0.5})`;
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        
+                        if (x < gridSize - 2) {
+                            ctx.moveTo(cell.x, cell.y);
+                            ctx.lineTo(fieldGrid[x+1][y].x, fieldGrid[x+1][y].y);
+                        }
+                        if (y < gridSize - 2) {
+                            ctx.moveTo(cell.x, cell.y);
+                            ctx.lineTo(fieldGrid[x][y+1].x, fieldGrid[x][y+1].y);
+                        }
+                        
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+        
+        // Draw file network
+        function drawFileNetwork() {
+            // Draw connections
+            ctx.strokeStyle = 'rgba(128, 128, 255, 0.3)';
+            ctx.lineWidth = 2;
+            
+            connections.forEach(conn => {
+                const from = fileNodes[conn.from];
+                const to = fileNodes[conn.to];
+                
+                ctx.beginPath();
+                ctx.moveTo(from.x, from.y);
+                
+                // Bezier curve
+                const cp1x = from.x + (to.x - from.x) * 0.25;
+                const cp1y = from.y - 50;
+                const cp2x = from.x + (to.x - from.x) * 0.75;
+                const cp2y = to.y - 50;
+                
+                ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, to.x, to.y);
+                ctx.stroke();
+                
+                // Pulse effect
+                const pulsePos = (animationTime * 0.5 * conn.strength) % 1;
+                const pulseX = from.x + (to.x - from.x) * pulsePos;
+                const pulseY = from.y + (to.y - from.y) * pulsePos;
+                
+                ctx.beginPath();
+                ctx.arc(pulseX, pulseY, 3, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(200, 200, 255, 0.8)';
+                ctx.fill();
+            });
+            
+            // Draw nodes
+            fileNodes.forEach((node, index) => {
+                const size = 20 + node.coherence * 20;
+                const glowSize = size * 2;
+                
+                // Glow effect
+                const gradient = ctx.createRadialGradient(
+                    node.x, node.y, size/2,
+                    node.x, node.y, glowSize
+                );
+                
+                const hue = getConsciousnessHue(node.consciousness);
+                gradient.addColorStop(0, `hsla(${hue}, 70%, 60%, ${node.coherence})`);
+                gradient.addColorStop(1, 'transparent');
+                
+                ctx.fillStyle = gradient;
+                ctx.fillRect(node.x - glowSize, node.y - glowSize, glowSize * 2, glowSize * 2);
+                
+                // Node circle
+                ctx.beginPath();
+                ctx.arc(node.x, node.y, size, 0, Math.PI * 2);
+                ctx.fillStyle = `hsla(${hue}, 60%, 50%, 0.8)`;
+                ctx.fill();
+                ctx.strokeStyle = `hsla(${hue}, 70%, 70%, 1)`;
+                ctx.lineWidth = 2;
+                ctx.stroke();
+                
+                // Node label
+                ctx.fillStyle = 'white';
+                ctx.font = '12px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText(node.id, node.x, node.y + 5);
+            });
+        }
+        
+        // Draw sacred geometry
+        function drawSacredGeometry() {
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const baseRadius = Math.min(canvas.width, canvas.height) * 0.3;
+            
+            ctx.strokeStyle = 'rgba(128, 128, 255, 0.6)';
+            ctx.lineWidth = 1;
+            
+            // Rotating flower of life
+            const rotation = animationTime * 0.5;
+            
+            ctx.save();
+            ctx.translate(centerX, centerY);
+            ctx.rotate(rotation);
+            
+            // Center circle
+            ctx.beginPath();
+            ctx.arc(0, 0, baseRadius / 3, 0, Math.PI * 2);
+            ctx.stroke();
+            
+            // Six surrounding circles
+            for (let i = 0; i < 6; i++) {
+                const angle = (i / 6) * Math.PI * 2;
+                const x = Math.cos(angle) * (baseRadius / 3);
+                const y = Math.sin(angle) * (baseRadius / 3);
+                
+                ctx.beginPath();
+                ctx.arc(x, y, baseRadius / 3, 0, Math.PI * 2);
+                ctx.stroke();
+            }
+            
+            // Outer ring
+            for (let i = 0; i < 12; i++) {
+                const angle = (i / 12) * Math.PI * 2;
+                const x = Math.cos(angle) * (baseRadius * 2 / 3);
+                const y = Math.sin(angle) * (baseRadius * 2 / 3);
+                
+                ctx.beginPath();
+                ctx.arc(x, y, baseRadius / 3, 0, Math.PI * 2);
+                ctx.stroke();
+            }
+            
+            ctx.restore();
+            
+            // Metatron's cube overlay
+            ctx.save();
+            ctx.translate(centerX, centerY);
+            ctx.rotate(-rotation * 0.3);
+            
+            ctx.strokeStyle = 'rgba(200, 128, 255, 0.3)';
+            
+            // Connect all vertices
+            const vertices = [];
+            for (let i = 0; i < 6; i++) {
+                const angle = (i / 6) * Math.PI * 2;
+                vertices.push({
+                    x: Math.cos(angle) * baseRadius,
+                    y: Math.sin(angle) * baseRadius
+                });
+            }
+            
+            // Draw all connections
+            for (let i = 0; i < vertices.length; i++) {
+                for (let j = i + 1; j < vertices.length; j++) {
+                    ctx.beginPath();
+                    ctx.moveTo(vertices[i].x, vertices[i].y);
+                    ctx.lineTo(vertices[j].x, vertices[j].y);
+                    ctx.stroke();
+                }
+            }
+            
+            ctx.restore();
+        }
+        
+        // Helper functions
+        function getConsciousnessHue(consciousness) {
+            const hueMap = {
+                'Dormant': 0,
+                'Active': 120,
+                'Generative': 60,
+                'Contemplative': 270,
+                'Connective': 180,
+                'Transmutative': 300,
+                'Sacred': 45
+            };
+            return hueMap[consciousness] || 200;
+        }
+        
+        function setVisualization(type) {
+            currentVisualization = type;
+            document.getElementById('file-info').classList.toggle('active', type === 'network');
+        }
+        
+        function updateCoherence(value) {
+            coherenceLevel = value;
+            document.getElementById('coherence-fill').style.width = (value * 100) + '%';
+            document.getElementById('coherence-value').textContent = Math.round(value * 100) + '%';
+        }
+        
+        // Simulate coherence changes
+        setInterval(() => {
+            const newCoherence = 0.75 + Math.sin(Date.now() * 0.0001) * 0.15;
+            updateCoherence(newCoherence);
+        }, 100);
+        
+        // Initialize
+        initParticles();
+        initFieldGrid();
+        initFileNetwork();
+        animate();
+        
+        // Mouse interaction
+        canvas.addEventListener('mousemove', (e) => {
+            if (currentVisualization === 'particles') {
+                // Attract particles to mouse
+                const mouseX = e.clientX;
+                const mouseY = e.clientY;
+                
+                particles.forEach(particle => {
+                    const dx = mouseX - particle.x;
+                    const dy = mouseY - particle.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < 100) {
+                        particle.vx += dx / distance * 0.5;
+                        particle.vy += dy / distance * 0.5;
+                    }
+                });
+            }
+        });
+        
+        // Sacred geometry animation
+        const sacredSymbol = document.getElementById('sacred-symbol');
+        setInterval(() => {
+            const geometries = ['Flower of Life', 'Metatron\'s Cube', 'Sri Yantra', 'Vesica Piscis'];
+            const current = document.getElementById('sacred-label').textContent;
+            const currentIndex = geometries.indexOf(current);
+            const nextIndex = (currentIndex + 1) % geometries.length;
+            document.getElementById('sacred-label').textContent = geometries[nextIndex];
+        }, 5000);
+    </script>
+</body>
+</html>

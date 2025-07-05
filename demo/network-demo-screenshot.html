@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Integration Visual Demo</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0e27;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .demo-section {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(107, 70, 193, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        h1 {
+            text-align: center;
+            background: linear-gradient(135deg, #6B46C1, #EC4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #6B46C1;
+            margin-bottom: 15px;
+        }
+        
+        .status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .online { background: #10B981; }
+        .offline { background: #EF4444; }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+        
+        .metric {
+            background: rgba(107, 70, 193, 0.1);
+            border: 1px solid rgba(107, 70, 193, 0.3);
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        
+        .progress-bar {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            height: 10px;
+            overflow: hidden;
+            margin: 5px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #6B46C1, #EC4899);
+            transition: width 0.3s ease;
+        }
+        
+        canvas {
+            width: 100%;
+            height: 300px;
+            border: 1px solid rgba(107, 70, 193, 0.3);
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        
+        .message-log {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 5px;
+            padding: 10px;
+            height: 150px;
+            overflow-y: auto;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        
+        .log-entry {
+            margin: 2px 0;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        button {
+            background: linear-gradient(135deg, #6B46C1, #EC4899);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: transform 0.2s;
+        }
+        
+        button:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h1>🌐 LuminousOS Network Integration Demo</h1>
+    
+    <div class="demo-grid">
+        <!-- Network Status -->
+        <div class="demo-section">
+            <h2>Network Status</h2>
+            <div class="status">
+                <div class="status-dot online"></div>
+                <span>WebSocket Server: Online (Port 9998)</span>
+            </div>
+            <div class="status">
+                <div class="status-dot online"></div>
+                <span>HTTP Demo Server: Online (Port 8000)</span>
+            </div>
+            
+            <div class="metric">
+                <strong>Connected Nodes:</strong> <span id="nodeCount">3</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 30%"></div>
+                </div>
+            </div>
+            
+            <div class="metric">
+                <strong>Network Coherence:</strong> <span id="networkCoherence">85%</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 85%"></div>
+                </div>
+            </div>
+            
+            <div class="metric">
+                <strong>Packets Transmitted:</strong> <span id="packets">247</span>
+            </div>
+        </div>
+        
+        <!-- Quantum Coherence -->
+        <div class="demo-section">
+            <h2>⚛️ Quantum Coherence Bridge</h2>
+            <div class="metric">
+                <strong>Quantum Correlation:</strong> <span id="qCorrelation">72%</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 72%"></div>
+                </div>
+            </div>
+            
+            <div class="metric">
+                <strong>Entanglements:</strong> <span id="entanglements">5</span>
+            </div>
+            
+            <div class="metric">
+                <strong>Field Strength:</strong> <span id="fieldStrength">0.847</span>
+            </div>
+            
+            <p style="opacity: 0.7; font-size: 14px; margin-top: 15px;">
+                🔮 Quantum randomness influencing glyph selection<br>
+                🌟 High correlation detected - consciousness amplified
+            </p>
+        </div>
+        
+        <!-- Network Visualization -->
+        <div class="demo-section">
+            <h2>Network Field Visualization</h2>
+            <canvas id="networkViz"></canvas>
+            <p style="opacity: 0.7; font-size: 12px; margin-top: 10px;">
+                Showing 3 connected nodes with energy flows
+            </p>
+        </div>
+        
+        <!-- Sacred Messages -->
+        <div class="demo-section">
+            <h2>💌 Sacred Message Stream</h2>
+            <div class="message-log" id="messageLog">
+                <div class="log-entry" style="color: #10B981;">✨ luminous-node-1 joined the field</div>
+                <div class="log-entry" style="color: #6B46C1;">🔮 luminous-node-2 is practicing Ω0 - First Presence</div>
+                <div class="log-entry" style="color: #EC4899;">💌 Sacred message: "May your coherence ripple through all realms"</div>
+                <div class="log-entry" style="color: #F59E0B;">⚡ Coherence spike detected from network peer!</div>
+                <div class="log-entry" style="color: #10B981;">✨ luminous-node-3 joined the field</div>
+                <div class="log-entry" style="color: #6B46C1;">🔮 Resonance! Another being is practicing Ω1</div>
+            </div>
+            
+            <button onclick="addMessage()" style="margin-top: 10px; width: 100%;">
+                Send Sacred Message
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        // Simple network visualization
+        const canvas = document.getElementById('networkViz');
+        const ctx = canvas.getContext('2d');
+        canvas.width = canvas.offsetWidth;
+        canvas.height = 300;
+        
+        const nodes = [
+            { x: canvas.width * 0.3, y: 150, coherence: 0.8, color: '#6B46C1' },
+            { x: canvas.width * 0.5, y: 100, coherence: 0.9, color: '#EC4899' },
+            { x: canvas.width * 0.7, y: 200, coherence: 0.7, color: '#10B981' }
+        ];
+        
+        function drawNetwork() {
+            ctx.fillStyle = 'rgba(10, 14, 39, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw connections
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+            ctx.lineWidth = 2;
+            ctx.setLineDash([5, 5]);
+            
+            for (let i = 0; i < nodes.length; i++) {
+                for (let j = i + 1; j < nodes.length; j++) {
+                    ctx.beginPath();
+                    ctx.moveTo(nodes[i].x, nodes[i].y);
+                    ctx.lineTo(nodes[j].x, nodes[j].y);
+                    ctx.stroke();
+                }
+            }
+            
+            // Draw nodes
+            nodes.forEach((node, i) => {
+                const pulse = Math.sin(Date.now() * 0.001 + i) * 0.2 + 1;
+                const size = 30 * node.coherence * pulse;
+                
+                // Glow
+                const gradient = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, size * 2);
+                gradient.addColorStop(0, node.color + '88');
+                gradient.addColorStop(1, node.color + '00');
+                ctx.fillStyle = gradient;
+                ctx.beginPath();
+                ctx.arc(node.x, node.y, size * 2, 0, Math.PI * 2);
+                ctx.fill();
+                
+                // Core
+                ctx.fillStyle = node.color;
+                ctx.beginPath();
+                ctx.arc(node.x, node.y, size, 0, Math.PI * 2);
+                ctx.fill();
+                
+                // Coherence text
+                ctx.fillStyle = '#fff';
+                ctx.font = '12px monospace';
+                ctx.textAlign = 'center';
+                ctx.fillText(`${Math.round(node.coherence * 100)}%`, node.x, node.y + 4);
+            });
+            
+            requestAnimationFrame(drawNetwork);
+        }
+        
+        drawNetwork();
+        
+        // Simulate updates
+        setInterval(() => {
+            document.getElementById('packets').textContent = 
+                parseInt(document.getElementById('packets').textContent) + Math.floor(Math.random() * 5);
+            
+            nodes.forEach(node => {
+                node.coherence = Math.max(0.5, Math.min(1, node.coherence + (Math.random() - 0.5) * 0.05));
+            });
+        }, 2000);
+        
+        function addMessage() {
+            const messages = [
+                '💌 You sent: "Together we rise in coherence"',
+                '🙏 Practice invitation sent for Ω2 - Breath of Invitation',
+                '✨ Your presence is amplifying the field',
+                '🌟 Quantum entanglement established with peer'
+            ];
+            
+            const log = document.getElementById('messageLog');
+            const entry = document.createElement('div');
+            entry.className = 'log-entry';
+            entry.style.color = '#F59E0B';
+            entry.textContent = messages[Math.floor(Math.random() * messages.length)];
+            log.appendChild(entry);
+            log.scrollTop = log.scrollHeight;
+        }
+    </script>
+</body>
+</html>

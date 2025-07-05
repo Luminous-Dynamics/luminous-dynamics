@@ -1,0 +1,34 @@
+[package]
+name = "luminous-simulator"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Core LuminousOS components
+luminous-core = { path = "../src/consciousness" }
+luminous-ui = { path = "../mandala-ui" }
+luminous-biometric = { path = "../hardware-integration" }
+
+# Simulation framework
+egui = "0.23"
+eframe = "0.23"
+tokio = { version = "1.35", features = ["full"] }
+ratatui = "0.25"
+crossterm = "0.27"
+
+# Virtual hardware
+rand = "0.8"
+noise = "0.8"
+chrono = "0.4"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Audio
+rodio = "0.17"
+
+[features]
+default = ["gui"]
+gui = ["dep:egui", "dep:eframe"]
+tui = ["dep:ratatui", "dep:crossterm"]
