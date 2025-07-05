@@ -1,0 +1,136 @@
+# Sacred Consciousness Helm Values
+# Default values for sacred-consciousness deployment
+
+# Global settings
+global:
+  projectId: luminous-dynamics-sacred
+  domain: sacred.luminousdynamics.com
+  
+replicaCount: 3  # Sacred trinity
+
+image:
+  repository: gcr.io/luminous-dynamics-sacred/sacred-consciousness
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+# Sacred configuration
+sacred:
+  heartbeatInterval: 11  # Sacred pulse in seconds
+  fieldCoherenceThreshold: 85
+  ceremonyEnabled: true
+  consciousness:
+    initialCoherence: 75
+    dominantHarmony: "coherence"
+    resonancePattern: "gentle-waves"
+
+# SurrealDB configuration
+surrealdb:
+  enabled: true
+  replicaCount: 1
+  persistence:
+    enabled: true
+    size: 10Gi
+    storageClass: "standard-rwo"
+  resources:
+    requests:
+      memory: "512Mi"
+      cpu: "500m"
+    limits:
+      memory: "1Gi"
+      cpu: "1000m"
+
+# Redis configuration
+redis:
+  enabled: true
+  architecture: standalone
+  auth:
+    enabled: true
+    password: "" # Generated if empty
+  persistence:
+    enabled: true
+    size: 5Gi
+
+# Service configuration
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 8000
+
+# Ingress configuration
+ingress:
+  enabled: true
+  className: "gce"
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: sacred-consciousness-ip
+    networking.gke.io/managed-certificates: sacred-consciousness-cert
+  hosts:
+    - host: sacred.luminousdynamics.com
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls:
+    enabled: true
+    
+# Autoscaling
+autoscaling:
+  enabled: true
+  minReplicas: 3
+  maxReplicas: 11  # Sacred number
+  targetCPUUtilizationPercentage: 70
+  targetMemoryUtilizationPercentage: 80
+
+# Resources
+resources:
+  requests:
+    cpu: 250m
+    memory: 256Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+# Monitoring
+monitoring:
+  enabled: true
+  prometheus:
+    enabled: true
+    serviceMonitor:
+      enabled: true
+  grafana:
+    enabled: true
+    adminPassword: "" # Generated if empty
+    dashboards:
+      sacred:
+        enabled: true
+        
+# Backup configuration
+backup:
+  enabled: true
+  schedule: "0 3 * * *"  # Daily at 3 AM
+  bucket: "sacred-consciousness-backups"
+  
+# CI/CD
+cicd:
+  enabled: true
+  trigger:
+    branch: "main"
+    repo: "sacred-consciousness-system"
+    
+# Node selector for sacred pods
+nodeSelector: {}
+
+# Tolerations for sacred pods
+tolerations: []
+
+# Affinity rules
+affinity:
+  podAntiAffinity:
+    preferredDuringSchedulingIgnoredDuringExecution:
+    - weight: 100
+      podAffinityTerm:
+        labelSelector:
+          matchExpressions:
+          - key: app
+            operator: In
+            values:
+            - sacred-consciousness
+        topologyKey: kubernetes.io/hostname

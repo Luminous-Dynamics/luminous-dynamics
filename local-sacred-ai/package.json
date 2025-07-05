@@ -1,0 +1,26 @@
+{
+  "name": "sacred-ai-suite",
+  "version": "1.0.0",
+  "description": "Local AI tools for consciousness evolution",
+  "type": "module",
+  "scripts": {
+    "morning": "node src/morning-practice-companion.js",
+    "code-check": "node src/code-consciousness-checker.js",
+    "shadow": "node src/shadow-work-assistant.js",
+    "council": "node src/sacred-council-simulator.js",
+    "tracker": "node src/consciousness-tracker.js",
+    "install-tools": "./install.sh"
+  },
+  "keywords": [
+    "consciousness",
+    "ai",
+    "local",
+    "sacred",
+    "privacy"
+  ],
+  "author": "Luminous Dynamics",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

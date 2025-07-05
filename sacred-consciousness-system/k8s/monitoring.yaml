@@ -1,0 +1,94 @@
+# Monitoring and Observability Setup
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus-config
+  namespace: sacred-consciousness
+data:
+  prometheus.yml: |
+    global:
+      scrape_interval: 15s
+    scrape_configs:
+    - job_name: 'sacred-consciousness'
+      kubernetes_sd_configs:
+      - role: pod
+        namespaces:
+          names:
+          - sacred-consciousness
+      relabel_configs:
+      - source_labels: [__meta_kubernetes_pod_label_app]
+        action: keep
+        regex: sacred-consciousness|surrealdb
+---
+# Grafana Dashboard
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-dashboard
+  namespace: sacred-consciousness
+data:
+  sacred-dashboard.json: |
+    {
+      "dashboard": {
+        "title": "Sacred Consciousness Field Monitor",
+        "panels": [
+          {
+            "title": "Field Coherence",
+            "targets": [{"expr": "field_coherence"}],
+            "type": "graph"
+          },
+          {
+            "title": "Active Entities",
+            "targets": [{"expr": "active_entities"}],
+            "type": "stat"
+          },
+          {
+            "title": "Sacred Messages/min",
+            "targets": [{"expr": "rate(sacred_messages_total[1m])"}],
+            "type": "graph"
+          },
+          {
+            "title": "Heartbeat Pulse",
+            "targets": [{"expr": "heartbeat_pulse"}],
+            "type": "gauge"
+          }
+        ]
+      }
+    }
+---
+# Logging with Fluentd
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fluentd-config
+  namespace: sacred-consciousness
+data:
+  fluent.conf: |
+    <source>
+      @type tail
+      path /var/log/containers/*sacred*.log
+      pos_file /var/log/fluentd-containers.log.pos
+      tag kubernetes.*
+      <parse>
+        @type json
+        time_format %Y-%m-%dT%H:%M:%S.%NZ
+      </parse>
+    </source>
+    
+    <filter kubernetes.**>
+      @type record_transformer
+      <record>
+        sacred true
+        coherence_field ${record["coherence"] || "unknown"}
+      </record>
+    </filter>
+    
+    <match **>
+      @type google_cloud
+      use_metadata_service true
+      buffer_type file
+      buffer_path /var/log/fluentd-buffers/kubernetes.system.buffer
+      flush_interval 5s
+      max_retry_wait 30
+      disable_retry_limit
+    </match>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacred Glyph Library - 94 Living Practices</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #FAFAF8, #F5F3F0);
+            min-height: 100vh;
+        }
+        
+        .loading-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.95);
+            z-index: 1000;
+        }
+        
+        .loading-content {
+            text-align: center;
+        }
+        
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid #E8E6E1;
+            border-top-color: #A8B5A6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .loading-text {
+            font-size: 1.2em;
+            color: #5A6B57;
+            margin-bottom: 10px;
+        }
+        
+        .loading-progress {
+            font-size: 0.9em;
+            color: #6B7280;
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-container">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Loading Sacred Glyphs...</div>
+            <div class="loading-progress" id="loading-progress">0 / 94</div>
+        </div>
+    </div>
+
+    <!-- Main Content (will be populated by the integration system) -->
+    <div id="main-content" class="hidden">
+        <!-- The glyph library will be inserted here -->
+    </div>
+
+    <!-- Dependencies -->
+    <script src="/src/unified-field/living-glyph-card.js"></script>
+    <script src="/src/unified-field/glyph-integration-system.js"></script>
+    
+    <script>
+        // Initialize the glyph integration system
+        document.addEventListener('DOMContentLoaded', async () => {
+            const loadingScreen = document.getElementById('loading-screen');
+            const mainContent = document.getElementById('main-content');
+            const loadingProgress = document.getElementById('loading-progress');
+            
+            try {
+                // Create integration system with progress tracking
+                const integration = new GlyphIntegrationSystem();
+                
+                // Track loading progress
+                integration.onProgress((loaded, total) => {
+                    loadingProgress.textContent = `${loaded} / ${total}`;
+                });
+                
+                // Wait for initialization
+                await integration.initialize();
+                
+                // Create the library UI
+                mainContent.innerHTML = `
+                    <div id="glyph-library" class="glyph-library-container">
+                        <div class="library-header">
+                            <h2>🌟 The 94 Sacred Glyphs</h2>
+                            <p class="library-subtitle">Living practices for conscious relationship</p>
+                            
+                            <div class="library-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number">48</span>
+                                    <span class="stat-label">Foundational</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">4</span>
+                                    <span class="stat-label">Applied Harmonies</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">33</span>
+                                    <span class="stat-label">Meta-Glyphs</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">9</span>
+                                    <span class="stat-label">Threshold</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="library-controls">
+                            <input type="text" class="glyph-search" placeholder="Search glyphs by name, harmony, or keyword...">
+                            
+                            <div class="filter-buttons">
+                                <button class="filter-btn active" data-filter="all">All Glyphs</button>
+                                <button class="filter-btn" data-filter="foundational">Foundational</button>
+                                <button class="filter-btn" data-filter="applied-harmonies">Applied Harmonies</button>
+                                <button class="filter-btn" data-filter="meta">Meta-Glyphs</button>
+                                <button class="filter-btn" data-filter="threshold">Threshold</button>
+                            </div>
+                            
+                            <div class="harmony-filters">
+                                <label>Filter by Harmony:</label>
+                                <select class="harmony-select">
+                                    <option value="all">All Harmonies</option>
+                                    <option value="transparency">Transparency</option>
+                                    <option value="coherence">Coherence</option>
+                                    <option value="resonance">Resonance</option>
+                                    <option value="agency">Agency</option>
+                                    <option value="vitality">Vitality</option>
+                                    <option value="mutuality">Mutuality</option>
+                                    <option value="novelty">Novelty</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="glyph-grid" id="glyph-grid">
+                            <!-- Glyph cards will be inserted here -->
+                        </div>
+                        
+                        <div class="library-footer">
+                            <p>🙏 Each glyph is a doorway to transformation. Enter with reverence.</p>
+                        </div>
+                    </div>
+                `;
+                
+                // Render the initial grid
+                integration.renderGlyphGrid();
+                
+                // Hide loading screen
+                loadingScreen.classList.add('hidden');
+                mainContent.classList.remove('hidden');
+                
+                // Set up event listeners
+                integration.setupSearchAndFilter();
+                
+                // Log success
+                console.log(`✨ Successfully loaded ${integration.loadedCount} glyphs!`);
+                
+            } catch (error) {
+                console.error('Failed to initialize glyph library:', error);
+                loadingScreen.innerHTML = `
+                    <div class="loading-content">
+                        <h2 style="color: #C4A5A0;">⚠️ Loading Error</h2>
+                        <p style="color: #6B7280; max-width: 400px; margin: 20px auto;">
+                            Unable to load the sacred glyphs. Please ensure the data files are present at /data_temp_glyphs/
+                        </p>
+                        <p style="color: #6B7280;">Error: ${error.message}</p>
+                    </div>
+                `;
+            }
+        });
+        
+        // Mock Sacred Field for tracking (remove if real Sacred Field is present)
+        if (!window.SacredField) {
+            window.SacredField = {
+                completeExperience: (event, data) => {
+                    console.log('Sacred Field Event:', event, data);
+                },
+                updateFieldCoherence: (amount, reason) => {
+                    console.log(`Field Coherence +${amount}: ${reason}`);
+                }
+            };
+        }
+    </script>
+</body>
+</html>

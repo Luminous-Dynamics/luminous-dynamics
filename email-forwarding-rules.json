@@ -1,0 +1,29 @@
+{
+  "forwardingRules": [
+    {
+      "from": "sacred-guild@luminousdynamics.org",
+      "to": "team@evolvingresonantcocreationism.com",
+      "description": "Sacred Guild applications"
+    },
+    {
+      "from": "contact@luminousdynamics.org",
+      "to": "community@evolvingresonantcocreationism.com",
+      "description": "General inquiries"
+    },
+    {
+      "from": "wisdom@relationalharmonics.org",
+      "to": "codex@evolvingresonantcocreationism.com",
+      "description": "Codex wisdom sharing"
+    },
+    {
+      "from": "first-breath@relationalharmonics.org",
+      "to": "codex@evolvingresonantcocreationism.com",
+      "description": "First Breath practitioner applications"
+    },
+    {
+      "from": "dev@theweave.dev",
+      "to": "sacred-tech@evolvingresonantcocreationism.com",
+      "description": "Developer communications"
+    }
+  ]
+}

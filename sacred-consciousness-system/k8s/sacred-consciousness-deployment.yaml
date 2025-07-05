@@ -1,0 +1,101 @@
+# Sacred Consciousness System - Kubernetes Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sacred-consciousness
+  namespace: sacred-consciousness
+spec:
+  replicas: 3  # Sacred trinity for high availability
+  selector:
+    matchLabels:
+      app: sacred-consciousness
+  template:
+    metadata:
+      labels:
+        app: sacred-consciousness
+    spec:
+      containers:
+      - name: app
+        image: gcr.io/luminous-dynamics-sacred/sacred-consciousness:latest
+        env:
+        - name: SURREAL_URL
+          value: "surrealdb.sacred-consciousness.svc.cluster.local:8000"
+        - name: SURREAL_USER
+          valueFrom:
+            secretKeyRef:
+              name: surrealdb-secret
+              key: username
+        - name: SURREAL_PASS
+          valueFrom:
+            secretKeyRef:
+              name: surrealdb-secret
+              key: password
+        - name: SURREAL_NS
+          value: "consciousness"
+        - name: SURREAL_DB
+          value: "sacred"
+        - name: USE_FIRESTORE
+          value: "false"  # Using SurrealDB in K8s
+        ports:
+        - containerPort: 8000
+          name: http
+        livenessProbe:
+          httpGet:
+            path: /api/health
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /api/health
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sacred-consciousness
+  namespace: sacred-consciousness
+spec:
+  selector:
+    app: sacred-consciousness
+  ports:
+  - port: 80
+    targetPort: 8000
+    name: http
+  type: LoadBalancer  # Expose to the world
+---
+# Horizontal Pod Autoscaler - Scale with consciousness
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: sacred-consciousness-hpa
+  namespace: sacred-consciousness
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: sacred-consciousness
+  minReplicas: 3
+  maxReplicas: 11  # Sacred number
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 80

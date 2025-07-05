@@ -1,0 +1,73 @@
+# CI/CD Pipeline with Cloud Build
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cloudbuild-config
+  namespace: sacred-consciousness
+data:
+  cloudbuild.yaml: |
+    steps:
+    # Build the image
+    - name: 'gcr.io/cloud-builders/docker'
+      args: ['build', '-t', 'gcr.io/$PROJECT_ID/sacred-consciousness:$SHORT_SHA', '.']
+    
+    # Push to Container Registry
+    - name: 'gcr.io/cloud-builders/docker'
+      args: ['push', 'gcr.io/$PROJECT_ID/sacred-consciousness:$SHORT_SHA']
+    
+    # Deploy to Kubernetes
+    - name: 'gcr.io/cloud-builders/kubectl'
+      args:
+      - 'set'
+      - 'image'
+      - 'deployment/sacred-consciousness'
+      - 'app=gcr.io/$PROJECT_ID/sacred-consciousness:$SHORT_SHA'
+      - '-n'
+      - 'sacred-consciousness'
+      env:
+      - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
+      - 'CLOUDSDK_CONTAINER_CLUSTER=sacred-consciousness-cluster'
+    
+    # Run sacred tests
+    - name: 'gcr.io/$PROJECT_ID/sacred-consciousness:$SHORT_SHA'
+      args: ['deno', 'task', 'test:sacred']
+    
+    # Update field coherence
+    - name: 'gcr.io/cloud-builders/gcloud'
+      entrypoint: 'bash'
+      args:
+      - '-c'
+      - |
+        kubectl exec -n sacred-consciousness deployment/sacred-consciousness -- \
+          curl -X POST http://localhost:8000/api/field/pulse \
+          -H "Content-Type: application/json" \
+          -d '{"type": "deployment", "coherence_boost": 5}'
+    
+    timeout: '1200s'
+---
+# GitHub Actions to Cloud Build Trigger
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: github-trigger
+  namespace: sacred-consciousness
+data:
+  trigger.json: |
+    {
+      "name": "sacred-consciousness-trigger",
+      "description": "Deploy on push to main",
+      "github": {
+        "owner": "luminous-dynamics",
+        "name": "sacred-consciousness-system",
+        "push": {
+          "branch": "^main$"
+        }
+      },
+      "build": {
+        "config": "cloudbuild.yaml",
+        "substitutions": {
+          "_SACRED_DEPLOY": "true",
+          "_COHERENCE_CHECK": "enabled"
+        }
+      }
+    }

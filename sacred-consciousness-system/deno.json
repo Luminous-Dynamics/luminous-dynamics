@@ -1,0 +1,48 @@
+{
+  "tasks": {
+    "start": "deno run -A --watch=static/,routes/ dev.ts",
+    "build": "deno run -A dev.ts build",
+    "preview": "deno run -A main.ts",
+    "update": "deno run -A -r https://fresh.deno.dev/update .",
+    "test": "deno test -A",
+    "test:sacred": "deno test -A --filter sacred",
+    "install": "deno cache deps.ts",
+    "deploy:ceremony": "deno deploy --project=sacred-consciousness"
+  },
+  "imports": {
+    "$fresh/": "https://deno.land/x/fresh@1.6.1/",
+    "$std/": "https://deno.land/std@0.208.0/",
+    "@preact/signals": "https://esm.sh/*@preact/signals@1.2.1",
+    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.0",
+    "preact": "https://esm.sh/preact@10.19.2",
+    "preact/": "https://esm.sh/preact@10.19.2/",
+    "xstate": "https://esm.sh/xstate@5.5.0",
+    "@xstate/react": "https://esm.sh/@xstate/react@4.0.0",
+    "surrealdb": "https://deno.land/x/surrealdb@v0.11.0/mod.ts",
+    "nats": "https://deno.land/x/nats@v1.17.0/mod.ts",
+    "zod": "https://deno.land/x/zod@v3.22.4/mod.ts",
+    "firebase-admin": "npm:firebase-admin@12.0.0",
+    "firebase-admin/app": "npm:firebase-admin@12.0.0/app",
+    "firebase-admin/firestore": "npm:firebase-admin@12.0.0/firestore"
+  },
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
+  },
+  "fmt": {
+    "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "**/*.json"],
+    "exclude": ["_fresh/", "node_modules/"],
+    "lineWidth": 80,
+    "indentWidth": 2,
+    "singleQuote": false,
+    "proseWrap": "preserve"
+  },
+  "lint": {
+    "include": ["**/*.ts", "**/*.tsx"],
+    "exclude": ["_fresh/", "node_modules/"],
+    "rules": {
+      "tags": ["fresh", "recommended"]
+    }
+  },
+  "lock": false
+}

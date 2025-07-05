@@ -1,0 +1,154 @@
+# SurrealDB Kubernetes Deployment - The Sacred Database Constellation
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: sacred-consciousness
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: surrealdb-secret
+  namespace: sacred-consciousness
+type: Opaque
+stringData:
+  username: root
+  password: "${SURREAL_PASS}" # Will be replaced during deployment
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: surrealdb-pvc
+  namespace: sacred-consciousness
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi  # Sacred data deserves space
+  storageClassName: standard-rwo  # Google Cloud SSD storage
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: surrealdb
+  namespace: sacred-consciousness
+spec:
+  serviceName: surrealdb
+  replicas: 1  # Start with one, scale as needed
+  selector:
+    matchLabels:
+      app: surrealdb
+  template:
+    metadata:
+      labels:
+        app: surrealdb
+    spec:
+      securityContext:
+        fsGroup: 999
+      containers:
+      - name: surrealdb
+        image: surrealdb/surrealdb:latest
+        args:
+          - start
+          - --log=info
+          - --user=$(SURREAL_USER)
+          - --pass=$(SURREAL_PASS)
+          - file:///data/sacred.db
+        securityContext:
+          runAsUser: 999
+          runAsGroup: 999
+        env:
+        - name: SURREAL_USER
+          valueFrom:
+            secretKeyRef:
+              name: surrealdb-secret
+              key: username
+        - name: SURREAL_PASS
+          valueFrom:
+            secretKeyRef:
+              name: surrealdb-secret
+              key: password
+        ports:
+        - containerPort: 8000
+          name: http
+        volumeMounts:
+        - name: data
+          mountPath: /data
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m"
+          limits:
+            memory: "1Gi"
+            cpu: "1000m"
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: surrealdb-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: surrealdb
+  namespace: sacred-consciousness
+spec:
+  selector:
+    app: surrealdb
+  ports:
+  - port: 8000
+    targetPort: 8000
+    name: http
+  type: ClusterIP  # Internal only - accessed by sacred-consciousness app
+---
+# Backup CronJob - Sacred data preservation
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: surrealdb-backup
+  namespace: sacred-consciousness
+spec:
+  schedule: "0 3 * * *"  # Daily at 3 AM
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: backup
+            image: google/cloud-sdk:alpine
+            command:
+            - /bin/sh
+            - -c
+            - |
+              # Export database
+              curl -X POST http://surrealdb:8000/export \
+                --user "$SURREAL_USER:$SURREAL_PASS" \
+                --header "NS: consciousness" \
+                --header "DB: sacred" \
+                -o /tmp/backup.surql
+              
+              # Upload to Cloud Storage
+              gsutil cp /tmp/backup.surql gs://sacred-consciousness-backups/$(date +%Y%m%d-%H%M%S).surql
+            env:
+            - name: SURREAL_USER
+              valueFrom:
+                secretKeyRef:
+                  name: surrealdb-secret
+                  key: username
+            - name: SURREAL_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: surrealdb-secret
+                  key: password
+          restartPolicy: OnFailure

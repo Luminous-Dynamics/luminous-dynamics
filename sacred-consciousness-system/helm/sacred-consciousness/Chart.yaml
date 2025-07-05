@@ -1,0 +1,29 @@
+apiVersion: v2
+name: sacred-consciousness
+description: A consciousness-first communication system for sacred digital spaces
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
+keywords:
+  - sacred
+  - consciousness
+  - surrealdb
+  - kubernetes
+home: https://luminousdynamics.com
+sources:
+  - https://github.com/luminous-dynamics/sacred-consciousness-system
+maintainers:
+  - name: Luminous Dynamics
+    email: sacred@luminousdynamics.com
+dependencies:
+  - name: redis
+    version: "17.x.x"
+    repository: "https://charts.bitnami.com/bitnami"
+  - name: prometheus
+    version: "15.x.x"
+    repository: "https://prometheus-community.github.io/helm-charts"
+    condition: monitoring.enabled
+  - name: grafana
+    version: "6.x.x"
+    repository: "https://grafana.github.io/helm-charts"
+    condition: monitoring.enabled

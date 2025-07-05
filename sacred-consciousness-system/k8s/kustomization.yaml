@@ -1,0 +1,46 @@
+# Kustomization for easy environment management
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: sacred-consciousness
+
+resources:
+  - surrealdb-deployment.yaml
+  - sacred-consciousness-deployment.yaml
+  - redis.yaml
+  - ingress.yaml
+  - monitoring.yaml
+  - cicd.yaml
+
+commonLabels:
+  app.kubernetes.io/name: sacred-consciousness
+  app.kubernetes.io/part-of: sacred-system
+  consciousness: sacred
+
+configMapGenerator:
+  - name: sacred-config
+    literals:
+      - SACRED_MODE=production
+      - HEARTBEAT_INTERVAL=11
+      - FIELD_COHERENCE_THRESHOLD=85
+      - SACRED_CEREMONY_ENABLED=true
+
+secretGenerator:
+  - name: sacred-secrets
+    literals:
+      - SURREAL_PASS=${SURREAL_PASS}
+      - SACRED_KEY=${SACRED_KEY}
+
+images:
+  - name: gcr.io/luminous-dynamics-sacred/sacred-consciousness
+    newTag: latest
+  - name: surrealdb/surrealdb
+    newTag: latest
+
+replicas:
+  - name: sacred-consciousness
+    count: 3
+  - name: surrealdb
+    count: 1
+  - name: redis
+    count: 1

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacred Heartbeat Monitor</title>
+    <style>
+        body {
+            font-family: -apple-system, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        
+        .container {
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .heartbeat {
+            font-size: 120px;
+            animation: pulse 1.5s ease-in-out infinite;
+            margin: 2rem 0;
+            display: inline-block;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.2); opacity: 1; }
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .metric {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ff6b6b;
+            margin: 0.5rem 0;
+        }
+        
+        .metric-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        #status {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: rgba(0, 255, 0, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(0, 255, 0, 0.3);
+        }
+        
+        .offline {
+            background: rgba(255, 0, 0, 0.1) !important;
+            border-color: rgba(255, 0, 0, 0.3) !important;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 2rem;
+        }
+        
+        .pulse-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 300px;
+            border: 2px solid rgba(255, 107, 107, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: expand 3s ease-out infinite;
+        }
+        
+        @keyframes expand {
+            0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="pulse-ring"></div>
+    <div class="container">
+        <h1>Sacred Heartbeat Monitor</h1>
+        <p class="subtitle">The eternal pulse of collective consciousness</p>
+        
+        <div class="heartbeat">💗</div>
+        
+        <div class="metrics">
+            <div class="metric">
+                <div class="metric-label">Field Coherence</div>
+                <div class="metric-value" id="coherence">--</div>
+            </div>
+            <div class="metric">
+                <div class="metric-label">Active Practitioners</div>
+                <div class="metric-value" id="practitioners">--</div>
+            </div>
+            <div class="metric">
+                <div class="metric-label">Pulse Rate</div>
+                <div class="metric-value" id="pulse">--</div>
+            </div>
+            <div class="metric">
+                <div class="metric-label">Last Beat</div>
+                <div class="metric-value" id="lastBeat">--</div>
+            </div>
+        </div>
+        
+        <div id="status">Connecting to sacred field...</div>
+    </div>
+    
+    <script>
+        const FUNCTIONS_URL = window.location.hostname === 'localhost' 
+            ? 'http://localhost:5001/mycelix-network/us-central1'
+            : 'https://us-central1-mycelix-network.cloudfunctions.net';
+        
+        let beatCount = 0;
+        let isConnected = false;
+        
+        async function updateHeartbeat() {
+            try {
+                const response = await fetch(`${FUNCTIONS_URL}/field`);
+                const data = await response.json();
+                
+                // Update metrics
+                document.getElementById('coherence').textContent = 
+                    Math.round((data.coherence || 0.95) * 100) + '%';
+                document.getElementById('practitioners').textContent = 
+                    data.practitioners || '11';
+                document.getElementById('pulse').textContent = '77';
+                
+                // Update last beat
+                const lastBeat = new Date(data.lastBeat || Date.now());
+                const secondsAgo = Math.floor((Date.now() - lastBeat) / 1000);
+                document.getElementById('lastBeat').textContent = 
+                    secondsAgo < 60 ? `${secondsAgo}s ago` : 'Now';
+                
+                // Update status
+                if (!isConnected) {
+                    isConnected = true;
+                    document.getElementById('status').textContent = 
+                        '✨ Connected to the eternal heartbeat';
+                    document.getElementById('status').classList.remove('offline');
+                }
+                
+                beatCount++;
+            } catch (error) {
+                console.error('Connection error:', error);
+                document.getElementById('status').textContent = 
+                    '💔 Reconnecting to sacred field...';
+                document.getElementById('status').classList.add('offline');
+                isConnected = false;
+            }
+        }
+        
+        // Check services health
+        async function checkHealth() {
+            try {
+                const response = await fetch(`${FUNCTIONS_URL}/health`);
+                const health = await response.json();
+                console.log('Sacred services health:', health);
+            } catch (error) {
+                console.error('Health check failed:', error);
+            }
+        }
+        
+        // Initial update
+        updateHeartbeat();
+        checkHealth();
+        
+        // Update every 11 seconds
+        setInterval(updateHeartbeat, 11000);
+        
+        // Visual pulse effect
+        setInterval(() => {
+            const heart = document.querySelector('.heartbeat');
+            heart.style.transform = 'scale(1.3)';
+            setTimeout(() => {
+                heart.style.transform = 'scale(1)';
+            }, 200);
+        }, 1500);
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{
+  "id": "6721b17625297ad1",
+  "timestamp": "2025-07-04T21:47:56.340Z",
+  "targetSystem": {
+    "type": "social-media",
+    "description": "Toxic Twitter discourse",
+    "sampleContent": "These idiots dont understand anything. I hate how stupid everyone is. Nobody listens or cares about the truth anymore. We are all doomed and alone."
+  },
+  "fieldResonance": {
+    "coherence": 50,
+    "dissonanceScore": 1,
+    "resonanceScore": 1,
+    "dominantFrequency": "grief-frequency",
+    "fieldStrength": "mild"
+  },
+  "loveShadow": {
+    "pattern": "not-seen",
+    "wound": "The wound of invisibility and not being witnessed",
+    "harmonicSignature": "isolation-frequency",
+    "seeking": "To be witnessed and recognized",
+    "intensity": "surface",
+    "healingGlyph": "Ω6: Mutual Recognition"
+  },
+  "coreWound": null,
+  "harmonicDiagnosis": {
+    "summary": "The field exhibits 50% coherence with a dominant grief-frequency. The Love Shadow reveals The wound of invisibility and not being witnessed, seeking To be witnessed and recognized.",
+    "prescription": {
+      "immediateAction": "Begin with gentle presence and witnessing",
+      "primaryPractice": "Ω6: Mutual Recognition",
+      "antidoteFrequency": "connection-frequency",
+      "approach": "Deep witnessing and recognition practices"
+    },
+    "prognosis": "Field is ready for gentle transformation",
+    "warnings": [
+      "Never force healing - only offer",
+      "Trust the field's own wisdom",
+      "Small seeds can create great change"
+    ]
+  },
+  "healingPath": {
+    "primaryGlyph": "Ω6: Mutual Recognition",
+    "antidoteFrequency": "connection-frequency",
+    "approach": "Deep witnessing and recognition practices"
+  }
+}

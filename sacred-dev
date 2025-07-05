@@ -1,0 +1,101 @@
+#!/bin/bash
+
+# 🌟 Sacred Development Helper
+# Quick development tasks for the sacred project
+
+# Colors
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+NC='\033[0m'
+
+# Project root
+cd /home/tstoltz/evolving-resonant-cocreation
+
+case "$1" in
+    start)
+        echo -e "${GREEN}🚀 Starting sacred services...${NC}"
+        ./sacred-system.sh start
+        ;;
+    stop)
+        echo -e "${BLUE}🛑 Stopping sacred services...${NC}"
+        ./sacred-system.sh stop
+        ;;
+    status)
+        ./sacred-monitor.sh
+        ;;
+    logs)
+        ./sacred-system.sh logs
+        ;;
+    commit)
+        if [ -z "$2" ]; then
+            echo "Usage: sacred-dev commit 'Your message'"
+            exit 1
+        fi
+        git add -A
+        git sacred "$2"
+        ;;
+    push)
+        echo -e "${GREEN}📤 Pushing to remote...${NC}"
+        git push
+        ;;
+    pull)
+        echo -e "${BLUE}📥 Pulling from remote...${NC}"
+        git pull
+        ;;
+    agent)
+        shift
+        node the-weave/cli/unified-agent-network.cjs "$@"
+        ;;
+    test)
+        echo -e "${PURPLE}🧪 Running tests...${NC}"
+        npm test
+        ;;
+    clean)
+        echo -e "${PURPLE}🧹 Cleaning up...${NC}"
+        # Clean node_modules if requested
+        if [ "$2" = "node" ]; then
+            echo "Removing node_modules directories..."
+            find . -name "node_modules" -type d -prune -exec rm -rf '{}' +
+        fi
+        # Clean logs
+        find . -name "*.log" -type f -delete
+        echo "Cleaned up log files"
+        ;;
+    search)
+        if [ -z "$2" ]; then
+            echo "Usage: sacred-dev search 'term'"
+            exit 1
+        fi
+        if command -v rg >/dev/null 2>&1; then
+            rg -i "$2" --type js --type html --type md
+        else
+            grep -r -i "$2" . --include="*.js" --include="*.html" --include="*.md"
+        fi
+        ;;
+    dashboard)
+        echo -e "${GREEN}🎯 Opening dashboard...${NC}"
+        python3 -m http.server 8080 &
+        sleep 1
+        echo "Dashboard available at: http://localhost:8080/sacred-dashboard.html"
+        ;;
+    *)
+        echo -e "${PURPLE}🕊️ Sacred Development Helper${NC}"
+        echo ""
+        echo "Usage: sacred-dev [command] [args]"
+        echo ""
+        echo "Commands:"
+        echo "  start      - Start all sacred services"
+        echo "  stop       - Stop all services"
+        echo "  status     - Show system status"
+        echo "  logs       - View service logs"
+        echo "  commit msg - Make a sacred commit"
+        echo "  push       - Push to remote"
+        echo "  pull       - Pull from remote"
+        echo "  agent ...  - Run agent network commands"
+        echo "  test       - Run test suite"
+        echo "  clean      - Clean up logs (add 'node' to remove node_modules)"
+        echo "  search term- Search codebase"
+        echo "  dashboard  - Open web dashboard"
+        ;;
+esac

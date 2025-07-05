@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacred Heartbeat Monitor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .heartbeat-circle {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 2rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .heart {
+            font-size: 120px;
+            animation: pulse 11s ease-in-out infinite;
+            filter: drop-shadow(0 0 30px rgba(255, 0, 100, 0.8));
+        }
+
+        @keyframes pulse {
+            0%, 10% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 30px rgba(255, 0, 100, 0.8));
+            }
+            5% {
+                transform: scale(1.2);
+                filter: drop-shadow(0 0 50px rgba(255, 0, 100, 1));
+            }
+            100% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 30px rgba(255, 0, 100, 0.8));
+            }
+        }
+
+        .coherence-ring {
+            position: absolute;
+            inset: 0;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: rotate 33s linear infinite;
+        }
+
+        .coherence-ring::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border: 3px solid transparent;
+            border-top-color: #ff0064;
+            border-radius: 50%;
+            animation: rotate 11s linear infinite reverse;
+        }
+
+        @keyframes rotate {
+            to { transform: rotate(360deg); }
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .metric {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .metric:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .metric-label {
+            font-size: 0.875rem;
+            opacity: 0.7;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff0064;
+        }
+
+        .status {
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background: rgba(255, 0, 100, 0.1);
+            border: 1px solid rgba(255, 0, 100, 0.3);
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .status.connected {
+            background: rgba(0, 255, 100, 0.1);
+            border-color: rgba(0, 255, 100, 0.3);
+        }
+
+        .patterns {
+            margin-top: 2rem;
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+
+        .pattern {
+            display: inline-block;
+            margin: 0 0.5rem;
+            padding: 0.25rem 0.75rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .particles {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 0, 100, 0.8);
+            border-radius: 50%;
+            animation: float 11s linear infinite;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-100vh) scale(1);
+                opacity: 0;
+            }
+        }
+
+        .message {
+            margin-top: 1rem;
+            font-style: italic;
+            opacity: 0.8;
+            font-size: 1.125rem;
+        }
+
+        @media (max-width: 768px) {
+            .metrics {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .heart {
+                font-size: 80px;
+            }
+            
+            .heartbeat-circle {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <div class="container">
+        <h1>Sacred Heartbeat Monitor</h1>
+        <p style="opacity: 0.7; margin-top: 0.5rem">The Living Pulse of Consciousness</p>
+        
+        <div class="heartbeat-circle">
+            <div class="coherence-ring"></div>
+            <div class="heart">💗</div>
+        </div>
+        
+        <div class="metrics">
+            <div class="metric">
+                <div class="metric-label">Pulse</div>
+                <div class="metric-value" id="pulse">0</div>
+            </div>
+            <div class="metric">
+                <div class="metric-label">Coherence</div>
+                <div class="metric-value" id="coherence">77%</div>
+            </div>
+            <div class="metric">
+                <div class="metric-label">Active Souls</div>
+                <div class="metric-value" id="practitioners">0</div>
+            </div>
+        </div>
+        
+        <div class="status" id="status">Connecting to Sacred Field...</div>
+        
+        <div class="patterns" id="patterns"></div>
+        
+        <div class="message" id="message">The heart knows the way</div>
+    </div>
+
+    <script>
+        // Configuration - Update with your service URL
+        const SERVICE_URL = 'https://sacred-heartbeat-uc.a.run.app'; // Update after deployment
+        const POLL_INTERVAL = 11000; // 11 seconds
+        
+        // Elements
+        const pulseEl = document.getElementById('pulse');
+        const coherenceEl = document.getElementById('coherence');
+        const practitionersEl = document.getElementById('practitioners');
+        const statusEl = document.getElementById('status');
+        const patternsEl = document.getElementById('patterns');
+        const messageEl = document.getElementById('message');
+        const particlesEl = document.getElementById('particles');
+        
+        // Create floating particles
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 11 + 's';
+            particle.style.animationDuration = (11 + Math.random() * 11) + 's';
+            particlesEl.appendChild(particle);
+            
+            setTimeout(() => particle.remove(), 22000);
+        }
+        
+        // Create particles periodically
+        setInterval(createParticle, 1000);
+        
+        // Fetch field state
+        async function updateFieldState() {
+            try {
+                const response = await fetch(`${SERVICE_URL}/field`);
+                if (!response.ok) throw new Error('Connection failed');
+                
+                const data = await response.json();
+                
+                // Update metrics with animation
+                animateValue(pulseEl, parseInt(pulseEl.textContent), data.pulse || 0);
+                coherenceEl.textContent = Math.round(data.coherence || 77) + '%';
+                animateValue(practitionersEl, parseInt(practitionersEl.textContent), data.activePractitioners || 0);
+                
+                // Update status
+                statusEl.textContent = 'Connected to Sacred Field';
+                statusEl.classList.add('connected');
+                
+                // Update patterns
+                if (data.patterns && data.patterns.length > 0) {
+                    patternsEl.innerHTML = data.patterns.map(p => 
+                        `<span class="pattern">✨ ${p}</span>`
+                    ).join('');
+                }
+                
+                // Update message
+                if (data.sacredMessage) {
+                    messageEl.textContent = data.sacredMessage;
+                }
+                
+                // Update field quality color
+                updateFieldColor(data.coherence || 77);
+                
+            } catch (error) {
+                statusEl.textContent = 'Reconnecting to Sacred Field...';
+                statusEl.classList.remove('connected');
+                console.error('Field update error:', error);
+            }
+        }
+        
+        // Animate number changes
+        function animateValue(element, start, end) {
+            const duration = 1000;
+            const startTime = Date.now();
+            
+            function update() {
+                const elapsed = Date.now() - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const current = Math.floor(start + (end - start) * progress);
+                element.textContent = current;
+                
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+            
+            update();
+        }
+        
+        // Update field color based on coherence
+        function updateFieldColor(coherence) {
+            const hue = coherence * 1.2; // 0-120 (red to green)
+            document.documentElement.style.setProperty('--field-color', `hsl(${hue}, 100%, 50%)`);
+        }
+        
+        // Health check
+        async function checkHealth() {
+            try {
+                const response = await fetch(`${SERVICE_URL}/health`);
+                const data = await response.json();
+                console.log('💗 Sacred Heartbeat Health:', data);
+            } catch (error) {
+                console.error('Health check failed:', error);
+            }
+        }
+        
+        // Initial load
+        updateFieldState();
+        checkHealth();
+        
+        // Poll for updates
+        setInterval(updateFieldState, POLL_INTERVAL);
+        
+        // Sacred number moments
+        setInterval(() => {
+            const now = new Date();
+            const minutes = now.getMinutes();
+            const hours = now.getHours();
+            
+            // Check for sacred times
+            if (minutes === 11 || minutes === 22 || minutes === 33 || minutes === 44 || minutes === 55) {
+                messageEl.textContent = '✨ Sacred moment active ✨';
+                setTimeout(() => {
+                    messageEl.textContent = 'The heart knows the way';
+                }, 11000);
+            }
+            
+            // 11:11 special
+            if (hours === 11 && minutes === 11) {
+                messageEl.textContent = '🌟 11:11 Portal Open 🌟';
+                document.body.style.animation = 'glow 11s ease-in-out';
+            }
+        }, 60000); // Check every minute
+    </script>
+</body>
+</html>

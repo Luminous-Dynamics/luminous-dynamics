@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Sanctuary - Share Your Journey | Relational Harmonics</title>
+    <style>
+        :root {
+            --primary: #6B46C1;
+            --secondary: #EC4899;
+            --gold: #FFD700;
+            --background: #0a0e27;
+            --surface: rgba(255, 255, 255, 0.03);
+            --text: #e0e6ed;
+            --text-dim: rgba(224, 230, 237, 0.7);
+            --success: #10B981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* Sacred header */
+        .header {
+            text-align: center;
+            padding: 4rem 2rem 2rem;
+            background: radial-gradient(ellipse at top, rgba(107, 70, 193, 0.1), transparent);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--gold), var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header p {
+            font-size: 1.25rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Story container */
+        .story-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Share your story section */
+        .share-section {
+            background: var(--surface);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .share-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(107, 70, 193, 0.3);
+        }
+
+        /* Story form */
+        .story-form {
+            display: none;
+            background: var(--surface);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .story-form.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: var(--text);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .btn-secondary {
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        /* Story categories */
+        .story-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .category-tag {
+            padding: 0.5rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-tag.active {
+            background: rgba(107, 70, 193, 0.2);
+            border-color: var(--primary);
+        }
+
+        .category-tag:hover {
+            background: rgba(107, 70, 193, 0.1);
+        }
+
+        /* Story grid */
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .story-card {
+            background: var(--surface);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .story-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            background: rgba(107, 70, 193, 0.05);
+        }
+
+        .story-practice {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(107, 70, 193, 0.2);
+            border-radius: 15px;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .story-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--gold);
+        }
+
+        .story-excerpt {
+            color: var(--text-dim);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .story-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.875rem;
+            color: var(--text-dim);
+        }
+
+        /* Story modal */
+        .story-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+
+        .story-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: var(--surface);
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: var(--text-dim);
+            font-size: 2rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--text);
+        }
+
+        /* Success message */
+        .success-message {
+            display: none;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--success);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--success);
+        }
+
+        .success-message.active {
+            display: block;
+        }
+
+        /* Prompts */
+        .story-prompts {
+            background: rgba(255, 215, 0, 0.05);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .story-prompts h3 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .story-prompts ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .story-prompts li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .story-prompts li:before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2rem; }
+            .stories-grid { grid-template-columns: 1fr; }
+            .story-form { padding: 2rem 1rem; }
+            .modal-content { padding: 2rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Story Sanctuary</h1>
+        <p>Every practice creates a story. Every story lights the way for others.</p>
+    </header>
+
+    <div class="story-container">
+        <!-- Share your story -->
+        <section class="share-section">
+            <h2>Your Story Matters</h2>
+            <p>How have the practices transformed your relationships? Your presence? Your life?</p>
+            <button class="share-btn" onclick="toggleStoryForm()">Share Your Story</button>
+        </section>
+
+        <!-- Story submission form -->
+        <div class="story-form" id="storyForm">
+            <h2>Tell Your Story</h2>
+            
+            <div class="success-message" id="successMessage">
+                Thank you for sharing your sacred story! It will inspire others on their journey.
+            </div>
+
+            <form onsubmit="submitStory(event)">
+                <div class="form-group">
+                    <label for="storyName">Your Name (or remain anonymous)</label>
+                    <input type="text" id="storyName" placeholder="Your name or 'Anonymous'">
+                </div>
+
+                <div class="form-group">
+                    <label for="storyPractice">Which practice transformed you most?</label>
+                    <select id="storyPractice" required>
+                        <option value="">Select a practice...</option>
+                        <option value="Ω45">Ω45: First Presence</option>
+                        <option value="Ω46">Ω46: Conscious Arrival</option>
+                        <option value="Ω47">Ω47: Sacred Listening</option>
+                        <option value="Ω48">Ω48: Boundary With Love</option>
+                        <option value="Ω49">Ω49: Gentle Opening</option>
+                        <option value="Ω50">Ω50: Building Trust</option>
+                        <option value="Ω51">Ω51: Loving No</option>
+                        <option value="Ω52">Ω52: Pause Practice</option>
+                        <option value="Ω53">Ω53: Tending the Field</option>
+                        <option value="Ω55">Ω55: Presence Transmission</option>
+                        <option value="Ω56">Ω56: Loving Redirection</option>
+                        <option value="multiple">Multiple Practices</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="storyTitle">Give your story a title</label>
+                    <input type="text" id="storyTitle" placeholder="e.g., 'How Sacred Listening Saved My Marriage'" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="storyContent">Your transformation story</label>
+                    <textarea id="storyContent" placeholder="Share your journey..." required></textarea>
+                </div>
+
+                <div class="story-prompts">
+                    <h3>Story Prompts (optional)</h3>
+                    <ul>
+                        <li>What drew you to this practice?</li>
+                        <li>What resistance did you face?</li>
+                        <li>When did the shift happen?</li>
+                        <li>How are your relationships different now?</li>
+                        <li>What would you tell someone starting?</li>
+                    </ul>
+                </div>
+
+                <div class="form-group">
+                    <label for="storyCategory">Story theme</label>
+                    <select id="storyCategory" required>
+                        <option value="">Select a theme...</option>
+                        <option value="relationship">Intimate Relationships</option>
+                        <option value="family">Family Healing</option>
+                        <option value="work">Workplace Transformation</option>
+                        <option value="self">Self-Relationship</option>
+                        <option value="community">Community Building</option>
+                        <option value="healing">Healing & Recovery</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="storyPermission" required>
+                        I give permission to share this story (anonymously if requested)
+                    </label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="toggleStoryForm()">Cancel</button>
+                    <button type="submit" class="share-btn">Share Story</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Story categories -->
+        <div class="story-categories">
+            <div class="category-tag active" onclick="filterStories('all')">All Stories</div>
+            <div class="category-tag" onclick="filterStories('relationship')">Relationships</div>
+            <div class="category-tag" onclick="filterStories('family')">Family</div>
+            <div class="category-tag" onclick="filterStories('work')">Work</div>
+            <div class="category-tag" onclick="filterStories('self')">Self</div>
+            <div class="category-tag" onclick="filterStories('healing')">Healing</div>
+        </div>
+
+        <!-- Stories grid -->
+        <div class="stories-grid" id="storiesGrid">
+            <!-- Sample stories - would be populated from database -->
+            <div class="story-card" data-category="relationship" onclick="openStory(1)">
+                <div class="story-practice">Ω47: Sacred Listening</div>
+                <h3 class="story-title">Finally Hearing My Partner</h3>
+                <p class="story-excerpt">After 15 years of marriage, I thought I knew how to listen. Sacred Listening showed me I'd been waiting to speak, not truly hearing...</p>
+                <div class="story-meta">
+                    <span>Sarah M.</span>
+                    <span>2 weeks ago</span>
+                </div>
+            </div>
+
+            <div class="story-card" data-category="work" onclick="openStory(2)">
+                <div class="story-practice">Ω52: Pause Practice</div>
+                <h3 class="story-title">The Pause That Saved My Job</h3>
+                <p class="story-excerpt">I was about to send an angry email that would have destroyed everything. Then I remembered the pause...</p>
+                <div class="story-meta">
+                    <span>Anonymous</span>
+                    <span>1 month ago</span>
+                </div>
+            </div>
+
+            <div class="story-card" data-category="family" onclick="openStory(3)">
+                <div class="story-practice">Ω48: Boundary With Love</div>
+                <h3 class="story-title">Loving My Mother AND Myself</h3>
+                <p class="story-excerpt">Setting boundaries with family felt impossible until I learned you can have firm edges and an open heart...</p>
+                <div class="story-meta">
+                    <span>Marcus T.</span>
+                    <span>3 weeks ago</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Story modal -->
+    <div class="story-modal" id="storyModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeStory()">&times;</button>
+            <div id="modalStoryContent">
+                <!-- Story content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample full stories (would come from database)
+        const fullStories = {
+            1: {
+                practice: 'Ω47: Sacred Listening',
+                title: 'Finally Hearing My Partner',
+                author: 'Sarah M.',
+                content: `After 15 years of marriage, I thought I knew how to listen. We'd been to couples therapy, read the books, done the work. But something was still missing.
+
+Then I discovered Sacred Listening through the First Breath program. The practice seemed simple - just 8 minutes of guided listening practice. How hard could it be?
+
+The first time I tried it, I realized I had never truly listened to anyone in my life. I was always preparing my response, judging what I heard, or trying to fix things. The practice taught me to listen with my whole being - not just my ears, but my heart, my body, my presence.
+
+The shift came during week 3. My partner was sharing about a work conflict, and instead of jumping in with solutions, I just... received. I felt their words land in my body. I heard the fear beneath the anger. I sensed what wasn't being said.
+
+When they finished, I simply said, "I hear you. That sounds really hard." They started crying. In 15 years, they said, that was the first time they felt truly heard by me.
+
+Now Sacred Listening is part of our daily practice. We take turns - 5 minutes each - just speaking and being heard. No fixing, no advice unless asked, just pure presence.
+
+Our relationship has transformed. Arguments that used to last days now resolve in minutes. We catch misunderstandings before they become conflicts. Most importantly, we SEE each other in a way we never did before.
+
+If you're struggling in your relationship, start here. Sacred Listening isn't just a practice - it's a doorway to true intimacy.`,
+                date: '2 weeks ago'
+            },
+            2: {
+                practice: 'Ω52: Pause Practice',
+                title: 'The Pause That Saved My Job',
+                author: 'Anonymous',
+                content: `I'm a software engineer at a startup. High pressure, long hours, constant fires to put out. My default mode was reactive - quick responses, immediate action, no time to think.
+
+This almost cost me everything.
+
+My manager had just criticized my work in front of the entire team. I was furious. Humiliated. I started typing an email that would have burned every bridge - calling out their incompetence, threatening to quit, CCing the CEO.
+
+My finger was on the send button when I remembered Pause Practice from my morning routine. "Between stimulus and response, there is a space..."
+
+I forced myself to stop. Close the laptop. Take three breaths.
+
+In that pause, everything shifted. I realized my manager was under incredible pressure from investors. Their criticism wasn't really about me - it was their stress speaking. I saw how my reactive email would not only end my job but damage my entire career.
+
+Instead, I waited an hour. Then I requested a private meeting. I used Gentle Opening to create safety, then shared how the public criticism affected me. My manager immediately apologized. They hadn't realized the impact and were actually impressed with my work overall.
+
+That pause didn't just save my job - it transformed it. My manager now seeks my input on major decisions. They've become an advocate for my promotion. Most importantly, I've learned to trust the pause.
+
+Now I pause before every important email, before speaking in meetings, before making decisions. Those few seconds of space have made me a better engineer, colleague, and leader.
+
+The pause isn't empty - it's pregnant with possibility. In that space, wisdom speaks. Learn to pause, and watch your life transform.`,
+                date: '1 month ago'
+            },
+            3: {
+                practice: 'Ω48: Boundary With Love',
+                title: 'Loving My Mother AND Myself',
+                author: 'Marcus T.',
+                content: `My mother is a force of nature. Loving, generous, and completely unable to respect boundaries. For 35 years, I alternated between giving in to keep peace and exploding in anger. Neither worked.
+
+Phone calls were torture. She'd call during work meetings, get upset if I didn't answer, guilt trip me for not visiting enough, give unsolicited advice about everything from my marriage to my breakfast choices. I loved her AND I dreaded her.
+
+Boundary With Love changed everything. The practice taught me something revolutionary - boundaries aren't walls, they're bridges. They're not about keeping people out, but about creating sustainable connection.
+
+I started small. "Mom, I love talking to you AND I can't answer during work hours. Let's set up a regular call time." She tested it immediately, calling repeatedly during a presentation. Old me would have either ignored it (building resentment) or answered angrily.
+
+Instead, I practiced. Hand on heart, feeling love for her while maintaining my boundary. I texted: "In a meeting. Love you. Talk at 6?"
+
+She was upset at first. "You don't have time for your mother?" But I held firm AND loving. "I have lots of time for you. Just not during work. Can't wait to catch up tonight."
+
+It took weeks of consistent practice, but something magical happened. The boundaries created MORE connection, not less. When we talked at scheduled times, I was fully present instead of stressed. She began respecting the boundaries because she saw they led to better conversations.
+
+The biggest test came at Thanksgiving. She started criticizing my wife's cooking. Old me would have snapped or suffered silently. Instead: "Mom, I love that you care AND we're happy with how things are. Let's focus on being together."
+
+She paused, then smiled. "You're right. The food doesn't matter. Family does."
+
+Now our relationship is the best it's ever been. The boundaries didn't push her away - they pulled us closer. I can love her fully because I'm not protecting myself from her. She can trust my yes because she knows I can say no.
+
+If you struggle with family boundaries, please try this practice. You don't have to choose between love and self-protection. You can have both. You MUST have both.`,
+                date: '3 weeks ago'
+            }
+        };
+
+        // Toggle story form
+        function toggleStoryForm() {
+            const form = document.getElementById('storyForm');
+            form.classList.toggle('active');
+            if (!form.classList.contains('active')) {
+                document.getElementById('successMessage').classList.remove('active');
+                document.getElementById('storyForm').querySelector('form').reset();
+            }
+        }
+
+        // Submit story
+        function submitStory(event) {
+            event.preventDefault();
+            
+            // Collect form data
+            const storyData = {
+                name: document.getElementById('storyName').value || 'Anonymous',
+                practice: document.getElementById('storyPractice').value,
+                title: document.getElementById('storyTitle').value,
+                content: document.getElementById('storyContent').value,
+                category: document.getElementById('storyCategory').value,
+                permission: document.getElementById('storyPermission').checked,
+                date: new Date().toISOString()
+            };
+
+            // Here you would send to your backend
+            console.log('Story submitted:', storyData);
+
+            // Show success message
+            document.getElementById('successMessage').classList.add('active');
+            
+            // Reset form after delay
+            setTimeout(() => {
+                toggleStoryForm();
+            }, 3000);
+
+            // In real implementation, you'd also refresh the stories grid
+        }
+
+        // Filter stories by category
+        function filterStories(category) {
+            // Update active category
+            document.querySelectorAll('.category-tag').forEach(tag => {
+                tag.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Filter story cards
+            const cards = document.querySelectorAll('.story-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Open story modal
+        function openStory(storyId) {
+            const story = fullStories[storyId];
+            if (story) {
+                const content = `
+                    <div class="story-practice">${story.practice}</div>
+                    <h2>${story.title}</h2>
+                    <p style="color: var(--text-dim); margin-bottom: 2rem;">
+                        By ${story.author} • ${story.date}
+                    </p>
+                    <div style="line-height: 1.8; white-space: pre-wrap;">${story.content}</div>
+                `;
+                document.getElementById('modalStoryContent').innerHTML = content;
+                document.getElementById('storyModal').classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        // Close story modal
+        function closeStory() {
+            document.getElementById('storyModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on outside click
+        document.getElementById('storyModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeStory();
+            }
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            // In real app, load stories from database
+        });
+    </script>
+</body>
+</html>

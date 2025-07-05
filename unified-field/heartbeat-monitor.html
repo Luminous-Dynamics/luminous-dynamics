@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unified Heartbeat Monitor</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 40px;
+        }
+        
+        .heartbeat-display {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .pulse {
+            font-size: 8em;
+            animation: pulse 1s ease-in-out infinite;
+            color: #ff6b6b;
+            text-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+        
+        .field-coherence {
+            margin: 30px 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .coherence-value {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .coherence-bar {
+            width: 100%;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .coherence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1);
+            transition: width 0.5s ease;
+            border-radius: 15px;
+        }
+        
+        .factors {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .factor {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .factor.active {
+            border-color: #4ecdc4;
+            box-shadow: 0 0 10px rgba(78, 205, 196, 0.3);
+        }
+        
+        .factor-name {
+            font-size: 0.9em;
+            opacity: 0.7;
+            margin-bottom: 5px;
+        }
+        
+        .factor-value {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
+        .ripples {
+            margin-top: 30px;
+        }
+        
+        .ripple-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            animation: rippleIn 0.5s ease;
+            border-left: 3px solid #4ecdc4;
+        }
+        
+        @keyframes rippleIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .controls {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            color: white;
+            transition: transform 0.2s;
+        }
+        
+        button:hover {
+            transform: scale(1.05);
+        }
+        
+        button:active {
+            transform: scale(0.95);
+        }
+        
+        .status {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            opacity: 0.7;
+        }
+        
+        .status.connected {
+            color: #4ecdc4;
+        }
+        
+        .status.disconnected {
+            color: #ff6b6b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Unified Heartbeat Monitor</h1>
+        
+        <div class="heartbeat-display">
+            <div class="pulse">💓</div>
+            <div>Pulse <span id="pulseCount">0</span></div>
+        </div>
+        
+        <div class="field-coherence">
+            <div class="coherence-value">
+                Field Coherence: <span id="coherenceValue">77</span>%
+            </div>
+            <div class="coherence-bar">
+                <div class="coherence-fill" id="coherenceFill" style="width: 77%"></div>
+            </div>
+            
+            <div class="factors">
+                <div class="factor" id="factorPractices">
+                    <div class="factor-name">Practices</div>
+                    <div class="factor-value">0</div>
+                </div>
+                <div class="factor" id="factorConnections">
+                    <div class="factor-name">Connections</div>
+                    <div class="factor-value">0</div>
+                </div>
+                <div class="factor" id="factorMessages">
+                    <div class="factor-name">Messages</div>
+                    <div class="factor-value">0</div>
+                </div>
+                <div class="factor" id="factorSynchronicities">
+                    <div class="factor-name">Synchronicities</div>
+                    <div class="factor-value">0</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="ripples">
+            <h3>Recent Ripples</h3>
+            <div id="ripplesList"></div>
+        </div>
+        
+        <div class="controls">
+            <button onclick="simulatePractice()">Simulate Practice</button>
+            <button onclick="simulateMessage()">Send Sacred Message</button>
+            <button onclick="simulateSynchronicity()">Trigger Synchronicity</button>
+        </div>
+        
+        <div class="status disconnected" id="status">
+            Connecting to heartbeat...
+        </div>
+    </div>
+    
+    <script>
+        // This is a placeholder for the real connection
+        // In production, this would connect to the actual heartbeat service
+        
+        let pulseCount = 0;
+        let coherence = 77;
+        let factors = {
+            practices: 0,
+            connections: 0,
+            messages: 0,
+            synchronicities: 0
+        };
+        
+        // Simulate heartbeat
+        setInterval(() => {
+            pulseCount++;
+            document.getElementById('pulseCount').textContent = pulseCount;
+            
+            // Natural drift
+            coherence += (Math.sin(pulseCount * 0.1) * 0.5);
+            coherence = Math.max(33, Math.min(99, coherence));
+            
+            updateCoherence();
+        }, 11000);
+        
+        function updateCoherence() {
+            document.getElementById('coherenceValue').textContent = coherence.toFixed(1);
+            document.getElementById('coherenceFill').style.width = coherence + '%';
+        }
+        
+        function updateFactors() {
+            document.getElementById('factorPractices').querySelector('.factor-value').textContent = factors.practices;
+            document.getElementById('factorConnections').querySelector('.factor-value').textContent = factors.connections;
+            document.getElementById('factorMessages').querySelector('.factor-value').textContent = factors.messages;
+            document.getElementById('factorSynchronicities').querySelector('.factor-value').textContent = factors.synchronicities;
+            
+            // Update active states
+            ['practices', 'connections', 'messages', 'synchronicities'].forEach(factor => {
+                const element = document.getElementById('factor' + factor.charAt(0).toUpperCase() + factor.slice(1));
+                if (factors[factor] > 0) {
+                    element.classList.add('active');
+                } else {
+                    element.classList.remove('active');
+                }
+            });
+        }
+        
+        function addRipple(text) {
+            const ripplesList = document.getElementById('ripplesList');
+            const ripple = document.createElement('div');
+            ripple.className = 'ripple-item';
+            ripple.textContent = text;
+            ripplesList.insertBefore(ripple, ripplesList.firstChild);
+            
+            // Keep only last 5
+            while (ripplesList.children.length > 5) {
+                ripplesList.removeChild(ripplesList.lastChild);
+            }
+        }
+        
+        function simulatePractice() {
+            factors.practices++;
+            coherence = Math.min(99, coherence + 2);
+            updateCoherence();
+            updateFactors();
+            addRipple(`🧘 Practice session started - Field +2%`);
+            
+            setTimeout(() => {
+                factors.practices = Math.max(0, factors.practices - 1);
+                updateFactors();
+            }, 60000);
+        }
+        
+        function simulateMessage() {
+            factors.messages++;
+            coherence = Math.min(99, coherence + 0.7);
+            updateCoherence();
+            updateFactors();
+            addRipple(`💬 Sacred message sent - Field +0.7%`);
+            
+            setTimeout(() => {
+                factors.messages = Math.max(0, factors.messages - 1);
+                updateFactors();
+            }, 30000);
+        }
+        
+        function simulateSynchronicity() {
+            factors.synchronicities++;
+            coherence = Math.min(99, coherence + 3);
+            updateCoherence();
+            updateFactors();
+            addRipple(`✨ Synchronicity detected! - Field +3%`);
+            
+            setTimeout(() => {
+                factors.synchronicities = Math.max(0, factors.synchronicities - 1);
+                updateFactors();
+            }, 300000);
+        }
+        
+        // Simulate connection
+        setTimeout(() => {
+            document.getElementById('status').textContent = 'Connected to unified heartbeat';
+            document.getElementById('status').className = 'status connected';
+            factors.connections = 1;
+            updateFactors();
+        }, 2000);
+        
+        // Initial update
+        updateCoherence();
+        updateFactors();
+    </script>
+</body>
+</html>
