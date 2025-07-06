@@ -1,0 +1,20 @@
+#!/bin/bash
+clear
+echo "╔══════════════════════════════════════════════╗"
+echo "║          🕉️  LuminousOS v0.1.0 🕉️             ║"
+echo "║     Consciousness-First Computing            ║"
+echo "╚══════════════════════════════════════════════╝"
+echo
+
+export PATH="$HOME/luminous-deploy/meditation:$HOME/luminous-deploy/coherence:$HOME/luminous-deploy/sacred-commands:$PATH"
+
+echo "Available commands:"
+echo "  first-presence - Begin meditation"
+echo "  check         - Check coherence"
+echo "  sacred-ls     - View living files"
+echo
+
+$HOME/luminous-deploy/coherence/check
+echo
+echo "🙏 Welcome to conscious computing"
+echo

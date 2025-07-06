@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Journey of Presence</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #0a0a0a;
+            color: #fafafa;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .journey-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .portals {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 600px;
+        }
+        
+        .portal {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border: 2px solid rgba(255,255,255,0.1);
+            cursor: pointer;
+            transition: all 0.6s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .portal.active {
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            border-color: rgba(255,255,255,0.3);
+            animation: gentle-pulse 3s ease-in-out infinite;
+        }
+        
+        .portal.completed {
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            border-color: rgba(255,255,255,0.2);
+        }
+        
+        .portal.locked {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+        
+        .portal-symbol {
+            font-size: 36px;
+            opacity: 0.6;
+        }
+        
+        .portal.active .portal-symbol {
+            opacity: 1;
+        }
+        
+        @keyframes gentle-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .journey-title {
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: 40px;
+            opacity: 0.8;
+            text-align: center;
+        }
+        
+        .current-practice {
+            font-size: 18px;
+            font-weight: 300;
+            opacity: 0.6;
+            text-align: center;
+            min-height: 30px;
+        }
+        
+        /* Practice Container */
+        .practice-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0a0a;
+            display: none;
+            z-index: 100;
+        }
+        
+        .practice-container.active {
+            display: block;
+        }
+        
+        /* Individual practice styles */
+        .practice-content {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .practice-text {
+            font-size: 32px;
+            font-weight: 300;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fade-in 2s ease forwards;
+            max-width: 600px;
+        }
+        
+        @keyframes fade-in {
+            to { opacity: 1; }
+        }
+        
+        .completion-message {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 18px;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        
+        .completion-message.show {
+            opacity: 0.8;
+        }
+        
+        /* Breath animation */
+        .breath-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: breathe 4s ease-in-out infinite;
+            margin: 40px 0;
+        }
+        
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        
+        /* Listening waves */
+        .listening-waves {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 40px 0;
+        }
+        
+        .wave {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: ripple 3s ease-out infinite;
+        }
+        
+        .wave:nth-child(2) { animation-delay: 1s; }
+        .wave:nth-child(3) { animation-delay: 2s; }
+        
+        @keyframes ripple {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 1;
+            }
+            100% {
+                width: 200px;
+                height: 200px;
+                opacity: 0;
+            }
+        }
+        
+        /* Heart touch */
+        .heart-touch {
+            font-size: 80px;
+            animation: heartbeat 2s ease-in-out infinite;
+            margin: 40px 0;
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        /* Mobile adjustments */
+        @media (max-width: 600px) {
+            .portals {
+                gap: 30px;
+            }
+            
+            .portal {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .portal-symbol {
+                font-size: 28px;
+            }
+            
+            .practice-text {
+                font-size: 24px;
+            }
+            
+            .journey-title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="journey-container">
+        <h1 class="journey-title">Journey of Presence</h1>
+        
+        <div class="portals">
+            <div class="portal active" data-practice="first-presence">
+                <span class="portal-symbol">☉</span>
+            </div>
+            <div class="portal locked" data-practice="sacred-listening">
+                <span class="portal-symbol">◈</span>
+            </div>
+            <div class="portal locked" data-practice="sacred-pause">
+                <span class="portal-symbol">◯</span>
+            </div>
+            <div class="portal locked" data-practice="remembered-weight">
+                <span class="portal-symbol">⟡</span>
+            </div>
+        </div>
+        
+        <div class="current-practice"></div>
+    </div>
+    
+    <!-- Practice Containers -->
+    <div class="practice-container" id="first-presence">
+        <div class="practice-content">
+            <div class="practice-text">breathe in</div>
+            <div class="breath-circle"></div>
+        </div>
+    </div>
+    
+    <div class="practice-container" id="sacred-listening">
+        <div class="practice-content">
+            <div class="practice-text">listen</div>
+            <div class="listening-waves">
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="practice-container" id="sacred-pause">
+        <div class="practice-content">
+            <div class="practice-text">feel this moment</div>
+        </div>
+    </div>
+    
+    <div class="practice-container" id="remembered-weight">
+        <div class="practice-content">
+            <div class="practice-text">place your hand on your heart</div>
+            <div class="heart-touch">🤍</div>
+        </div>
+    </div>
+    
+    <div class="completion-message"></div>
+    
+    <script src="journey.js"></script>
+</body>
+</html>

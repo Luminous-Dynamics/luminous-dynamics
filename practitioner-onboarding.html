@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome, Practitioner - Your Journey Begins</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+        
+        .welcome-screen {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+        }
+        
+        .glyph-symbol {
+            font-size: 4em;
+            color: #FFD700;
+            margin-bottom: 30px;
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .intro-text {
+            font-size: 1.2em;
+            color: #b0b0b0;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        
+        .journey-container {
+            display: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .step-indicator {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .step {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            margin: 0 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .step.active {
+            background: #FFD700;
+            border-color: #FFD700;
+            color: #0a0a0a;
+            font-weight: bold;
+        }
+        
+        .step.completed {
+            background: rgba(255, 215, 0, 0.3);
+            border-color: #FFD700;
+        }
+        
+        .content-panel {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            display: none;
+        }
+        
+        .content-panel.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .panel-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .panel-header h2 {
+            font-size: 2em;
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+        
+        .assessment-question {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .assessment-question h3 {
+            color: #FFA500;
+            margin-bottom: 15px;
+        }
+        
+        .response-options {
+            display: grid;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .response-option {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .response-option:hover {
+            background: rgba(255, 215, 0, 0.1);
+            border-color: #FFD700;
+        }
+        
+        .response-option.selected {
+            background: rgba(255, 215, 0, 0.2);
+            border-color: #FFD700;
+        }
+        
+        .practice-card {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 165, 0, 0.05));
+            border: 1px solid #FFD700;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .practice-card h3 {
+            color: #FFD700;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        .glyph-preview {
+            font-size: 3em;
+            margin: 20px 0;
+            color: #FFA500;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #0a0a0a;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #FFD700;
+            border: 2px solid #FFD700;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 215, 0, 0.1);
+        }
+        
+        .results-summary {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+        }
+        
+        .harmony-result {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 15px 0;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+        
+        .harmony-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            flex: 1;
+            margin: 0 20px;
+            overflow: hidden;
+        }
+        
+        .harmony-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #FFD700, #FFA500);
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+        
+        .path-recommendation {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 165, 0, 0.1));
+            border: 2px solid #FFD700;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .path-recommendation h3 {
+            color: #FFD700;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .recommended-practices {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .practice-mini {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .step-indicator { gap: 5px; }
+            .step { margin: 5px; }
+            .panel-header h2 { font-size: 1.5em; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div class="welcome-screen" id="welcomeScreen">
+        <div class="glyph-symbol">∞</div>
+        <h1>Welcome, Practitioner</h1>
+        <p class="intro-text">
+            You stand at the threshold of a profound journey. The Codex of Relational Harmonics 
+            contains over 100 sacred glyphs - living practices for conscious relationship and 
+            transformation. Let us discover which practices call to you now.
+        </p>
+        <button class="btn" onclick="beginJourney()">Begin Your Journey</button>
+    </div>
+    
+    <!-- Journey Container -->
+    <div class="journey-container" id="journeyContainer">
+        <!-- Step Indicator -->
+        <div class="step-indicator">
+            <div class="step active" data-step="1">1</div>
+            <div class="step" data-step="2">2</div>
+            <div class="step" data-step="3">3</div>
+            <div class="step" data-step="4">4</div>
+            <div class="step" data-step="5">5</div>
+        </div>
+        
+        <!-- Step 1: Introduction -->
+        <div class="content-panel active" data-panel="1">
+            <div class="panel-header">
+                <h2>The Living Philosophy</h2>
+                <p>Understanding the foundation of your practice</p>
+            </div>
+            
+            <div class="practice-card">
+                <h3>The Core Directive: Make It Better!</h3>
+                <p style="font-size: 1.1em; line-height: 1.8; margin: 20px 0;">
+                    At the heart of everything is a simple, profound invitation: to participate 
+                    in making the world better through love, wisdom, and joyful co-creation. 
+                    This isn't about perfection - it's about showing up with an open heart 
+                    and asking, "How can I help?"
+                </p>
+                <div class="glyph-preview">🌟</div>
+                <p>
+                    The practices you'll discover are tools for this sacred work. Each glyph 
+                    is a doorway to greater love, deeper wisdom, and more skillful action.
+                </p>
+            </div>
+            
+            <div class="button-group">
+                <button class="btn" onclick="nextStep()">I'm Ready to Learn More</button>
+            </div>
+        </div>
+        
+        <!-- Step 2: Assessment -->
+        <div class="content-panel" data-panel="2">
+            <div class="panel-header">
+                <h2>Discovering Your Path</h2>
+                <p>Let's explore what resonates with you</p>
+            </div>
+            
+            <div class="assessment-question">
+                <h3>What calls to you most strongly right now?</h3>
+                <div class="response-options">
+                    <div class="response-option" data-harmony="RESONANT_COHERENCE" onclick="selectResponse(this)">
+                        Finding inner peace and balance amidst life's chaos
+                    </div>
+                    <div class="response-option" data-harmony="PAN_SENTIENT_FLOURISHING" onclick="selectResponse(this)">
+                        Caring more deeply for others and the world
+                    </div>
+                    <div class="response-option" data-harmony="INTEGRAL_WISDOM_CULTIVATION" onclick="selectResponse(this)">
+                        Understanding life's deeper patterns and meanings
+                    </div>
+                    <div class="response-option" data-harmony="INFINITE_PLAY" onclick="selectResponse(this)">
+                        Bringing more joy and creativity to daily life
+                    </div>
+                </div>
+            </div>
+            
+            <div class="assessment-question">
+                <h3>Where do you feel most challenged?</h3>
+                <div class="response-options">
+                    <div class="response-option" data-harmony="UNIVERSAL_INTERCONNECTEDNESS" onclick="selectResponse(this)">
+                        Feeling isolated or disconnected from others
+                    </div>
+                    <div class="response-option" data-harmony="SACRED_RECIPROCITY" onclick="selectResponse(this)">
+                        Struggling with giving and receiving in balance
+                    </div>
+                    <div class="response-option" data-harmony="EVOLUTIONARY_PROGRESSION" onclick="selectResponse(this)">
+                        Feeling stuck or unclear about my direction
+                    </div>
+                    <div class="response-option" data-harmony="RESONANT_COHERENCE" onclick="selectResponse(this)">
+                        Managing stress and maintaining centeredness
+                    </div>
+                </div>
+            </div>
+            
+            <div class="button-group">
+                <button class="btn btn-secondary" onclick="previousStep()">Back</button>
+                <button class="btn" onclick="processAssessment()">Continue</button>
+            </div>
+        </div>
+        
+        <!-- Step 3: Results -->
+        <div class="content-panel" data-panel="3">
+            <div class="panel-header">
+                <h2>Your Harmony Profile</h2>
+                <p>Based on your responses, here's where you are now</p>
+            </div>
+            
+            <div class="results-summary" id="resultsContainer">
+                <!-- Results will be dynamically inserted here -->
+            </div>
+            
+            <div class="path-recommendation">
+                <h3>Your Recommended Starting Path</h3>
+                <p id="pathDescription" style="font-size: 1.1em; margin: 20px 0;"></p>
+                
+                <div class="recommended-practices" id="recommendedPractices">
+                    <!-- Practices will be dynamically inserted -->
+                </div>
+            </div>
+            
+            <div class="button-group">
+                <button class="btn btn-secondary" onclick="previousStep()">Back</button>
+                <button class="btn" onclick="nextStep()">See Your Practices</button>
+            </div>
+        </div>
+        
+        <!-- Step 4: First Practice -->
+        <div class="content-panel" data-panel="4">
+            <div class="panel-header">
+                <h2>Your First Practice</h2>
+                <p>Let's begin with something simple and powerful</p>
+            </div>
+            
+            <div class="practice-card">
+                <h3 id="firstPracticeName">First Presence (Ω0)</h3>
+                <div class="glyph-preview">Ω</div>
+                <p id="firstPracticeDescription" style="font-size: 1.1em; margin: 20px 0;">
+                    The foundation of all practice. Simply arriving fully in this moment, 
+                    without trying to change anything. Just being here, now, with whatever is.
+                </p>
+                
+                <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 10px; margin: 20px 0;">
+                    <h4 style="color: #FFA500; margin-bottom: 10px;">Simple Practice:</h4>
+                    <p id="firstPracticeInstruction">
+                        Take three conscious breaths. Feel your feet on the ground. 
+                        Notice five things you can sense right now. Say silently: "I am here."
+                    </p>
+                </div>
+                
+                <button class="btn" onclick="tryPractice()">Try It Now</button>
+            </div>
+            
+            <div class="button-group">
+                <button class="btn btn-secondary" onclick="previousStep()">Back</button>
+                <button class="btn" onclick="nextStep()">Continue Journey</button>
+            </div>
+        </div>
+        
+        <!-- Step 5: Next Steps -->
+        <div class="content-panel" data-panel="5">
+            <div class="panel-header">
+                <h2>Your Journey Continues</h2>
+                <p>Many paths await your exploration</p>
+            </div>
+            
+            <div class="practice-card">
+                <h3>Ways to Deepen Your Practice</h3>
+                
+                <div class="recommended-practices">
+                    <div class="practice-mini">
+                        <h4 style="color: #FFD700;">Daily Practice</h4>
+                        <p>Start with 5-10 minutes each morning with your chosen glyph</p>
+                    </div>
+                    
+                    <div class="practice-mini">
+                        <h4 style="color: #FFD700;">Explore the Arcs</h4>
+                        <p>Journey through the Seven Sacred Arcs of transformation</p>
+                    </div>
+                    
+                    <div class="practice-mini">
+                        <h4 style="color: #FFD700;">Join Others</h4>
+                        <p>Connect with fellow practitioners in Resonance Circles</p>
+                    </div>
+                    
+                    <div class="practice-mini">
+                        <h4 style="color: #FFD700;">Living Glyphs</h4>
+                        <p>Let practices emerge naturally throughout your day</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin: 40px 0;">
+                <p style="font-size: 1.2em; color: #FFD700; margin-bottom: 20px;">
+                    Remember: You're not alone on this path. Every practice, every moment of presence, 
+                    every act of love makes the world better.
+                </p>
+            </div>
+            
+            <div class="button-group">
+                <button class="btn" onclick="window.location.href='portal.html'">Enter the Portal</button>
+                <button class="btn" onclick="window.location.href='make-it-better-guide.html'">Daily Practice Guide</button>
+                <button class="btn" onclick="window.location.href='arc-visualization.html'">Explore the Arcs</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let currentStep = 1;
+        let assessmentData = {
+            harmonies: {},
+            responses: []
+        };
+        
+        function beginJourney() {
+            document.getElementById('welcomeScreen').style.display = 'none';
+            document.getElementById('journeyContainer').style.display = 'block';
+        }
+        
+        function showStep(step) {
+            // Update step indicators
+            document.querySelectorAll('.step').forEach(s => {
+                const stepNum = parseInt(s.dataset.step);
+                s.classList.remove('active');
+                if (stepNum < step) s.classList.add('completed');
+                if (stepNum === step) s.classList.add('active');
+            });
+            
+            // Show correct panel
+            document.querySelectorAll('.content-panel').forEach(p => {
+                p.classList.remove('active');
+            });
+            document.querySelector(`[data-panel="${step}"]`).classList.add('active');
+            
+            currentStep = step;
+        }
+        
+        function nextStep() {
+            if (currentStep < 5) {
+                showStep(currentStep + 1);
+            }
+        }
+        
+        function previousStep() {
+            if (currentStep > 1) {
+                showStep(currentStep - 1);
+            }
+        }
+        
+        function selectResponse(element) {
+            // Toggle selection
+            const wasSelected = element.classList.contains('selected');
+            
+            // For single select per question
+            element.parentElement.querySelectorAll('.response-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            if (!wasSelected) {
+                element.classList.add('selected');
+            }
+        }
+        
+        function processAssessment() {
+            // Collect all selected responses
+            const selected = document.querySelectorAll('.response-option.selected');
+            
+            if (selected.length === 0) {
+                alert('Please select at least one response to continue.');
+                return;
+            }
+            
+            // Reset harmony scores
+            const harmonies = {
+                'RESONANT_COHERENCE': 0,
+                'PAN_SENTIENT_FLOURISHING': 0,
+                'INTEGRAL_WISDOM_CULTIVATION': 0,
+                'INFINITE_PLAY': 0,
+                'UNIVERSAL_INTERCONNECTEDNESS': 0,
+                'SACRED_RECIPROCITY': 0,
+                'EVOLUTIONARY_PROGRESSION': 0
+            };
+            
+            // Calculate scores based on selections
+            selected.forEach(opt => {
+                const harmony = opt.dataset.harmony;
+                if (harmony) {
+                    harmonies[harmony] += 1;
+                }
+            });
+            
+            // Normalize scores
+            Object.keys(harmonies).forEach(key => {
+                harmonies[key] = harmonies[key] / 2; // Max 2 questions
+            });
+            
+            assessmentData.harmonies = harmonies;
+            
+            // Display results
+            displayResults();
+            nextStep();
+        }
+        
+        function displayResults() {
+            const container = document.getElementById('resultsContainer');
+            const harmonies = assessmentData.harmonies;
+            
+            // Sort by score
+            const sorted = Object.entries(harmonies).sort((a, b) => b[1] - a[1]);
+            
+            // Create visual representation
+            let html = '';
+            const harmonyNames = {
+                'RESONANT_COHERENCE': 'Inner Harmony & Balance',
+                'PAN_SENTIENT_FLOURISHING': 'Universal Care & Compassion',
+                'INTEGRAL_WISDOM_CULTIVATION': 'Deep Understanding & Wisdom',
+                'INFINITE_PLAY': 'Joy & Creative Expression',
+                'UNIVERSAL_INTERCONNECTEDNESS': 'Connection & Unity',
+                'SACRED_RECIPROCITY': 'Balanced Giving & Receiving',
+                'EVOLUTIONARY_PROGRESSION': 'Growth & Transformation'
+            };
+            
+            sorted.forEach(([key, value]) => {
+                const percentage = Math.round(value * 100);
+                html += `
+                    <div class="harmony-result">
+                        <span style="min-width: 200px;">${harmonyNames[key]}</span>
+                        <div class="harmony-bar">
+                            <div class="harmony-fill" style="width: ${percentage}%"></div>
+                        </div>
+                        <span style="min-width: 50px; text-align: right;">${percentage}%</span>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+            
+            // Update path recommendation
+            const topHarmony = sorted[0][0];
+            const pathDesc = document.getElementById('pathDescription');
+            const practicesContainer = document.getElementById('recommendedPractices');
+            
+            const pathDescriptions = {
+                'RESONANT_COHERENCE': 'Your path begins with cultivating inner peace and balance. Through practices of presence and integration, you\'ll discover the stable center from which all transformation flows.',
+                'PAN_SENTIENT_FLOURISHING': 'Your journey starts with opening your heart to all beings. Through practices of compassion and care, you\'ll expand your capacity to contribute to universal flourishing.',
+                'INTEGRAL_WISDOM_CULTIVATION': 'Your path begins with deepening understanding. Through practices of witnessing and inquiry, you\'ll cultivate the wisdom that illuminates all of life.',
+                'INFINITE_PLAY': 'Your journey starts with rediscovering joy. Through practices of creativity and spontaneity, you\'ll unlock the playful spirit that makes life a celebration.',
+                'UNIVERSAL_INTERCONNECTEDNESS': 'Your path begins with remembering your connection to all. Through practices of recognition and empathy, you\'ll dissolve the illusion of separation.',
+                'SACRED_RECIPROCITY': 'Your journey starts with balancing the flow. Through practices of giving and receiving, you\'ll discover the sacred dance of exchange.',
+                'EVOLUTIONARY_PROGRESSION': 'Your path begins with embracing growth. Through practices of renewal and becoming, you\'ll align with life\'s evolutionary impulse.'
+            };
+            
+            pathDesc.textContent = pathDescriptions[topHarmony];
+            
+            // Recommend specific practices
+            const practices = {
+                'RESONANT_COHERENCE': ['First Presence (Ω0)', 'Inner Coherence (Ω8)', 'Field Maintenance (Ω5)'],
+                'PAN_SENTIENT_FLOURISHING': ['Emotional Alchemy (Ω11)', 'Joy Cultivation (Ω33)', 'Compassion Practice'],
+                'INTEGRAL_WISDOM_CULTIVATION': ['Witnessing Without Fixing (Ω18)', 'Sacred Questions (Ω19)', 'Pattern Memory (Ω26)'],
+                'INFINITE_PLAY': ['Co-Creative Reality (Ω22)', 'Child Mind (Ω43)', 'Dream Sharing (Ω25)'],
+                'UNIVERSAL_INTERCONNECTEDNESS': ['Mutual Recognition (Ω6)', 'Sacred Mirroring (Ω9)', 'Collective Breathing (Ω17)'],
+                'SACRED_RECIPROCITY': ['Sacred Invitation (Ω2)', 'Trust Emergence (Ω3)', 'Forgiveness Process (Ω37)'],
+                'EVOLUTIONARY_PROGRESSION': ['Root Chord of Covenant (Ω1)', 'Fractal Reconciliation (Ω4)', 'Mutual Becoming (Ω7)']
+            };
+            
+            let practicesHtml = '';
+            practices[topHarmony].forEach(practice => {
+                practicesHtml += `
+                    <div class="practice-mini">
+                        <h4 style="color: #FFD700;">${practice}</h4>
+                        <p>A key practice for your journey</p>
+                    </div>
+                `;
+            });
+            
+            practicesContainer.innerHTML = practicesHtml;
+            
+            // Update first practice based on results
+            updateFirstPractice(topHarmony);
+        }
+        
+        function updateFirstPractice(topHarmony) {
+            const practiceData = {
+                'RESONANT_COHERENCE': {
+                    name: 'First Presence (Ω0)',
+                    description: 'The foundation of all practice. Simply arriving fully in this moment, without trying to change anything. Just being here, now, with whatever is.',
+                    instruction: 'Take three conscious breaths. Feel your feet on the ground. Notice five things you can sense right now. Say silently: "I am here."'
+                },
+                'PAN_SENTIENT_FLOURISHING': {
+                    name: 'Emotional Alchemy (Ω11)',
+                    description: 'Transform personal emotions into universal compassion. Your feelings become gateways to understanding all beings.',
+                    instruction: 'Place your hand on your heart. Feel whatever emotion is present. Breathe into it with kindness. Now imagine others feeling this same emotion. Send them compassion.'
+                },
+                'INTEGRAL_WISDOM_CULTIVATION': {
+                    name: 'Witnessing Without Fixing (Ω18)',
+                    description: 'The practice of pure observation. Learning to see clearly without immediately trying to change or judge what you observe.',
+                    instruction: 'For the next minute, simply observe your thoughts and sensations without trying to change them. Notice without judgment. Just witness what is.'
+                }
+                // Add more as needed
+            };
+            
+            const practice = practiceData[topHarmony] || practiceData['RESONANT_COHERENCE'];
+            
+            document.getElementById('firstPracticeName').textContent = practice.name;
+            document.getElementById('firstPracticeDescription').textContent = practice.description;
+            document.getElementById('firstPracticeInstruction').textContent = practice.instruction;
+        }
+        
+        function tryPractice() {
+            alert('Beautiful! You\'ve just taken your first step. Notice how you feel right now. This is the beginning of your journey with the sacred glyphs.');
+        }
+        
+        // Allow clicking on step indicators
+        document.querySelectorAll('.step').forEach(step => {
+            step.addEventListener('click', function() {
+                const stepNum = parseInt(this.dataset.step);
+                if (stepNum <= currentStep || this.classList.contains('completed')) {
+                    showStep(stepNum);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

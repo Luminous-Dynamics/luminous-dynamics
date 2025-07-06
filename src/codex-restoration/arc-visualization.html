@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seven Sacred Arcs - Living Mandala of Consciousness</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0a0a0a;
+            color: #ffffff;
+            font-family: 'Georgia', serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #canvas {
+            display: block;
+            cursor: crosshair;
+        }
+
+        /* Info Panel */
+        #info-panel {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 350px;
+            background: rgba(10, 10, 10, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        #info-panel h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.5em;
+            font-weight: normal;
+        }
+
+        #info-panel h3 {
+            margin: 15px 0 5px 0;
+            font-size: 1.1em;
+            color: #DFAE3D;
+            font-weight: normal;
+        }
+
+        .arc-symbol {
+            font-size: 3em;
+            text-align: center;
+            margin: 10px 0;
+            opacity: 0.8;
+        }
+
+        .poetic-name {
+            font-style: italic;
+            color: #aaa;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .teachings {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .teachings li {
+            margin: 5px 0;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+
+        /* Controls */
+        #controls {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(10, 10, 10, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .control-group {
+            margin: 10px 0;
+        }
+
+        .control-group label {
+            display: inline-block;
+            width: 150px;
+            font-size: 0.9em;
+            color: #DFAE3D;
+        }
+
+        .control-group input[type="range"] {
+            width: 150px;
+        }
+
+        .control-group span {
+            margin-left: 10px;
+            color: #fff;
+        }
+
+        button {
+            background: #DFAE3D;
+            color: #0a0a0a;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+            font-family: 'Georgia', serif;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #f0c050;
+            transform: translateY(-1px);
+        }
+
+        /* Field Coherence Indicator */
+        #coherence-meter {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 200px;
+            background: rgba(10, 10, 10, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .coherence-bar {
+            width: 100%;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .coherence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #DFAE3D, #4AAE8F, #8F5DA3);
+            width: 0%;
+            transition: width 1s ease;
+        }
+
+        /* Loading Screen */
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0a0a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .loading-text {
+            font-size: 1.5em;
+            color: #DFAE3D;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* Legend */
+        #legend {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(10, 10, 10, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 15px;
+            backdrop-filter: blur(10px);
+            font-size: 0.85em;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        /* Glyph Tooltip */
+        #glyph-tooltip {
+            position: absolute;
+            background: rgba(10, 10, 10, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+            padding: 10px;
+            font-size: 0.9em;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 100;
+            max-width: 250px;
+        }
+
+        #glyph-tooltip.active {
+            opacity: 1;
+        }
+
+        .glyph-symbol {
+            font-size: 1.5em;
+            color: #DFAE3D;
+            margin-bottom: 5px;
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(223, 174, 61, 0.5);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(223, 174, 61, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading">
+        <div class="loading-text">Awakening the Sacred Mandala...</div>
+    </div>
+
+    <!-- Main Canvas -->
+    <canvas id="canvas"></canvas>
+
+    <!-- Field Coherence Meter -->
+    <div id="coherence-meter">
+        <h3>Field Coherence</h3>
+        <div class="coherence-bar">
+            <div class="coherence-fill" id="coherence-fill"></div>
+        </div>
+        <div id="coherence-value">0%</div>
+        <div id="emergence-status" style="font-size: 0.8em; margin-top: 10px; color: #4AAE8F;">
+            Awaiting resonance...
+        </div>
+    </div>
+
+    <!-- Info Panel -->
+    <div id="info-panel">
+        <h2>Seven Sacred Arcs</h2>
+        <p>Click on any Arc or Glyph to explore</p>
+        <div id="arc-details"></div>
+    </div>
+
+    <!-- Controls -->
+    <div id="controls">
+        <div class="control-group">
+            <label>Animation Speed:</label>
+            <input type="range" id="speed" min="0" max="2" step="0.1" value="1">
+            <span id="speed-value">1.0x</span>
+        </div>
+        <div class="control-group">
+            <label>Spiral Density:</label>
+            <input type="range" id="density" min="1" max="8" step="1" value="3">
+            <span id="density-value">3</span>
+        </div>
+        <button id="toggle-animation">Pause</button>
+        <button id="toggle-connections">Hide Connections</button>
+        <button id="reset-view">Reset View</button>
+    </div>
+
+    <!-- Legend -->
+    <div id="legend">
+        <h4 style="margin: 0 0 10px 0;">Arc Legend</h4>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #CCCCCC;"></div>
+            <span>Arc 0: Thresholds</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #DFAE3D;"></div>
+            <span>Arc I: Foundations</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #FFFFFF;"></div>
+            <span>Arc ∞: Living Harmonics</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #4AAE8F;"></div>
+            <span>Kinship Spiral</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #8F5DA3;"></div>
+            <span>Reciprocity Spiral</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #D14A3D;"></div>
+            <span>Emergence Spiral</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #A020F0;"></div>
+            <span>Steward's Octave</span>
+        </div>
+    </div>
+
+    <!-- Glyph Tooltip -->
+    <div id="glyph-tooltip">
+        <div class="glyph-symbol" id="tooltip-symbol"></div>
+        <div id="tooltip-name"></div>
+        <div id="tooltip-harmony" style="font-size: 0.8em; color: #4AAE8F; margin-top: 5px;"></div>
+    </div>
+
+    <!-- Load visualization script -->
+    <script src="arc-visualization.js"></script>
+</body>
+</html>
