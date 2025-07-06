@@ -1,14 +1,62 @@
 # 🌟 LuminousOS: The Consciousness-First Operating System
 
-> "Your computer as consciousness partner, not task manager"
+> "At the stillpoint of the turning world, there the dance is."
 
-## 🎉 Major Update: Full Implementation Complete!
+## 🎉 Major Update: Working Kernel & Process Monitor!
 
-LuminousOS has evolved from vision to reality. All core components are now implemented, tested, and ready for community exploration. Experience consciousness-first computing today!
+LuminousOS brings consciousness awareness to computing. Every process, every cycle, every byte aligned with the sacred rhythms of life. **Try it now - no special setup required!**
+
+## 🚀 Quick Start - Try It Now!
+
+### 1. Process Coherence Monitor (No Setup Required)
+```bash
+# See consciousness levels of running processes
+./monitor/run-coherence-monitor.sh
+# Choose option 1 for live visualization
+```
+
+### 2. Kernel Demo (Safe Userspace)
+```bash
+# If Rust is installed:
+cargo run --bin luminous-kernel
+
+# If not, use our script:
+./compile-rust-kernel.sh
+```
+
+### 3. Real Kernel Module (Advanced)
+```bash
+cd kernel/module
+make
+sudo ./test_module.sh
+```
 
 ## Vision
 
 LuminousOS represents a fundamental reimagining of what an operating system can be. Instead of managing tasks and processes, it protects and amplifies states of consciousness. Every component serves coherence, not productivity.
+
+## What's Working Now
+
+### ✅ Process Coherence Monitor
+Real-time visualization showing consciousness levels of all running processes:
+- Meditation apps: 85% coherence 🌟
+- Code editors: 60% coherence ✨
+- Web browsers: 40% coherence 💫
+- Updates every 11 seconds with sacred pulse
+
+### ✅ Stillpoint Kernel Demo
+Working demonstration of consciousness-aware scheduling:
+- Processes tracked as consciousness vortices
+- Sacred pulse every 11 seconds
+- Coherence-based priority assignment
+- Global field coherence tracking
+
+### ✅ Linux Kernel Module
+Real kernel integration (requires root):
+- Direct scheduler modifications
+- /proc/luminous interface
+- CPU share management
+- Nice value adjustments
 
 ## Core Architecture
 
