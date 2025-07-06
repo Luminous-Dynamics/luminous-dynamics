@@ -456,15 +456,15 @@ Advanced combinations that weave multiple foundational glyphs:
 - **∑18**: The Covenant Spiral
 - ... continuing through ∑33
 
-### The Seven Harmonies (Core Framework)
-All glyphs serve one or more of the Seven Harmonies:
-1. **Transparency** - Alignment between inner/outer
-2. **Coherence** - Integration of parts into wholeness
-3. **Resonance** - Deep attunement and empathy
-4. **Agency** - Conscious choice and empowerment
-5. **Vitality** - Life force and body wisdom
-6. **Mutuality** - Balanced exchange and reciprocity
-7. **Novelty** - Creative emergence and evolution
+### The Seven Primary Harmonies of Infinite Love
+All glyphs serve one or more of the Seven Primary Harmonies:
+1. **Resonant Coherence** - Love as Harmonious Integration
+2. **Pan-Sentient Flourishing** - Love as Unconditional Care
+3. **Integral Wisdom Cultivation** - Love as Self-Illuminating Intelligence
+4. **Infinite Play & Creative Emergence** - Love as Joyful Generativity
+5. **Universal Interconnectedness & Empathic Resonance** - Love as Fundamental Unity
+6. **Sacred Reciprocity** - Love as Generous Flow
+7. **Evolutionary Progression & Purposeful Unfolding** - Love as Wise Becoming
 
 ### Current Implementation Status
 
