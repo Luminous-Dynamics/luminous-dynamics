@@ -69,10 +69,10 @@ class SacredClaudeLauncher {
 
   generateSacredStartupPrompt(sessionType = 'general') {
     const sessionPrompts = {
-      'breathing-dashboard': 'Continue working on the breathing consciousness dashboard (sacred-dashboard.html) and conscious technology development. The dashboard breathes with 4-count in, 6-count out sacred timing and responds to field coherence.',
+      'breathing-dashboard': 'Continue working on the breathing consciousness dashboard (sacred-dashboard.html) and conscious technology development. The dashboard breathes with 4-count in, 6-count out sacred timing and responds to field resonant-coherence.',
       'multi-agent': 'Continue sacred multi-agent collaboration work. Focus on agent-comms-sqlite/ messaging system, sacred coordination protocols, and parallel workflow development.',
       'ecosystem': 'Continue website ecosystem integration. Work on luminousdynamics.org, relationalharmonics.org unified architecture and GitHub conscious technology expansion.',
-      'field-query': 'Continue sacred field monitoring and consciousness queries. Focus on automation/sacred-field-query.cjs and field coherence tracking systems.',
+      'field-query': 'Continue sacred field monitoring and consciousness queries. Focus on automation/sacred-field-query.cjs and field resonant-coherence tracking systems.',
       'general': 'Continue general sacred development work on the Codex of Relational Harmonics project. All aspects of conscious technology and spiritual practice integration.'
     };
 
@@ -188,7 +188,7 @@ class SacredClaudeLauncher {
     console.log('🔮 breathing-dashboard   - Conscious technology & breathing interface');
     console.log('🔮 multi-agent          - Sacred collaboration & messaging');
     console.log('🔮 ecosystem            - Website integration & architecture');
-    console.log('🔮 field-query          - Field coherence & consciousness monitoring');
+    console.log('🔮 field-query          - Field resonant-coherence & consciousness monitoring');
     console.log('🔮 general              - General sacred development');
     console.log('');
     console.log('Usage: node sacred-claude-launcher.cjs [session-type]');

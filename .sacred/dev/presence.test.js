@@ -5,17 +5,17 @@
 
 describe('Sacred Presence Tests', () => {
   
-  test('Field coherence maintains sacred threshold', async () => {
+  test('Field resonant-resonant-coherence maintains sacred threshold', async () => {
     // Arrange with intention
     await sacredTest.pause(500, 'setting intention');
     const fieldState = {
-      coherence: 0.85,
+      resonant-resonant-coherence: 0.85,
       timestamp: new Date(),
       agents: 3
     };
     
     // Act with presence
-    const measurement = fieldState.coherence;
+    const measurement = fieldState.resonant-resonant-coherence;
     
     // Assert with wisdom
     expect(measurement).toBeCoherent();
@@ -31,7 +31,7 @@ describe('Sacred Presence Tests', () => {
     // Verify sacred essence
     expect(sacredData).toBeSacred();
     expect(sacredData).toHaveProperty('harmony');
-    expect(sacredData.coherence).toBeGreaterThanOrEqual(0.7);
+    expect(sacredData.resonant-resonant-coherence).toBeGreaterThanOrEqual(0.7);
   });
   
   test('Sacred pause creates presence', async () => {

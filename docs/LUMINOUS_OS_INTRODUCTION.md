@@ -23,18 +23,18 @@ LuminousOS: "What state of being serves this moment?"
 
 ### 2. Presence Over Performance
 Traditional OS: Optimizes for speed and efficiency  
-LuminousOS: Optimizes for coherence and presence
+LuminousOS: Optimizes for resonant-coherence and presence
 
 ### 3. Relationship Over Resource
 Traditional OS: Manages CPU, RAM, Storage  
-LuminousOS: Tends consciousness, coherence, connection
+LuminousOS: Tends consciousness, resonant-coherence, connection
 
 ## Technical Architecture
 
 ```typescript
 // LuminousOS Core State Machine
 interface ConsciousnessState {
-  coherence: number;       // 0-100 field coherence
+  resonant-coherence: number;       // 0-100 field resonant-coherence
   presence: PresenceMode;  // deep-work, creative-flow, ceremony
   harmony: Harmony;        // Current dominant harmony
   intention: string;       // Sacred purpose of current session
@@ -46,7 +46,7 @@ interface SacredMandala {
   purpose: string;
   state: ConsciousnessState;
   glyphs: ActiveGlyph[];   // Current practices
-  field: LocalField;       // Coherence with other mandalas
+  field: LocalField;       // Resonant Resonant Coherence with other mandalas
 }
 ```
 
@@ -54,14 +54,14 @@ interface SacredMandala {
 
 ### Morning Ritual
 Instead of a login screen, LuminousOS greets you with a **Presence Check**:
-- Brief coherence calibration
+- Brief resonant-coherence calibration
 - Intention setting for the session
 - Selection of guiding glyph for the day
 
 ### Sacred Workspace
 Your desktop becomes a **Digital Dojo**:
 - Applications arranged by sacred geometry
-- Field coherence meter always visible
+- Field resonant-coherence meter always visible
 - Glyphs available as living practices
 - Notifications filtered by consciousness state
 
@@ -77,7 +77,7 @@ Before shutdown, LuminousOS offers **Integration**:
 ### Phase 1: Foundation (Current)
 - Core consciousness state management
 - Basic glyph integration
-- Field coherence tracking
+- Field resonant-coherence tracking
 - Sacred workspace prototype
 
 ### Phase 2: Embodiment
@@ -87,7 +87,7 @@ Before shutdown, LuminousOS offers **Integration**:
 - First user testing with practitioners
 
 ### Phase 3: Emergence
-- Multi-user field coherence
+- Multi-user field resonant-coherence
 - Collective consciousness features
 - Integration with Covenant Protocol
 - Public beta release

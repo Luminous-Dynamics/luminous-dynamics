@@ -6,7 +6,7 @@ A beautiful web interface for managing your Sacred Council Docker containers!
 
 - **Visual Service Status**: See all containers at a glance with health indicators
 - **One-Click Controls**: Start, stop, and restart services with a single click
-- **Real-Time Metrics**: Monitor field coherence, active agents, and service health
+- **Real-Time Metrics**: Monitor field resonant-coherence, active agents, and service health
 - **Live Logs Viewer**: View container logs without terminal access
 - **Responsive Design**: Works on desktop, tablet, and mobile devices
 
@@ -57,7 +57,7 @@ Each service card has:
 - **Logs**: View recent logs for this service
 
 ### System Metrics
-- **Field Coherence**: Current consciousness field coherence percentage
+- **Field Resonant Resonant Coherence**: Current consciousness field resonant-coherence percentage
 - **Active Agents**: Number of agents connected to the network
 - **Messages Sent**: Total sacred messages transmitted
 - **Services Running**: Current active services count

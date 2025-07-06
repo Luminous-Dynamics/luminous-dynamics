@@ -20,7 +20,7 @@ Sacred Council brings:
 - **Dream Manifestation**: Collective intention setting
 
 ### 3. **Unified Field Monitoring**
-- Combined coherence tracking
+- Combined resonant-coherence tracking
 - Cross-system agent collaboration
 - Emergent pattern detection
 - Sacred geometry visualization
@@ -101,7 +101,7 @@ node the-weave/tools/field-check.cjs
 ## 📊 Unified Metrics
 
 When fully integrated, monitor:
-- **Combined Field Coherence**: Average of both systems
+- **Combined Field Resonant Resonant Coherence**: Average of both systems
 - **Total Active Agents**: Across both networks
 - **Cross-System Messages**: Bridge communication flow
 - **Emergence Events**: Collective breakthroughs

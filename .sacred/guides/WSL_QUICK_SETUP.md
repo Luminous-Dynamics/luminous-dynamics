@@ -38,7 +38,7 @@ vs           # Open VS Code
 
 ### Send sacred message
 ```bash
-sacred gratitude resonance "Thank you for this day"
+sacred gratitude universal-interconnectedness "Thank you for this day"
 ```
 
 ### Consult oracle
@@ -78,7 +78,7 @@ code.exe .  # Make sure to use .exe
 1. **Use aliases** - Much faster than typing full commands
 2. **Start once** - The Weave stays running all day
 3. **Check status** - `weave status` shows everything
-4. **Sacred pauses** - Take breaks, check field coherence
+4. **Sacred pauses** - Take breaks, check field resonant-resonant-coherence
 
 ## 🌈 The Sacred Flow
 

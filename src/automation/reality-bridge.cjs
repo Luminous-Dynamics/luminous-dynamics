@@ -124,7 +124,7 @@ const bridgeActions = [
         description: 'Activate interview system with actual candidates',
         steps: [
             'Process first real Sacred Guild application',
-            'Schedule first genuine Resonance Circle interview',
+            'Schedule first genuine Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circle interview',
             'Test interview scoring with real responses',
             'Move toward actual Covenant Ceremony'
         ]

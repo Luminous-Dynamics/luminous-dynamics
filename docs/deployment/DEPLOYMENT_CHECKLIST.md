@@ -118,7 +118,7 @@ curl https://sacred-council-api-[hash].a.run.app/health
 ```
 
 ### Functional Tests
-- [ ] Field coherence API responds
+- [ ] Field resonant-coherence API responds
 - [ ] WebSocket connections work
 - [ ] Sacred messages can be sent
 - [ ] PWA installs correctly

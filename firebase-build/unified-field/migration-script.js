@@ -131,7 +131,7 @@ class GlyphMigrationScript {
                 practical: "Ω46", 
                 mystical: "Ω1",
                 bridgeText: "When conscious arrival becomes natural, discover the Root Chord of Covenant...",
-                graduationCriteria: "Successfully setting intentions that create relational coherence"
+                graduationCriteria: "Successfully setting intentions that create relational resonant-coherence"
             },
             {
                 practical: "Ω47",

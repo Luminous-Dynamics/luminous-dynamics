@@ -111,7 +111,7 @@ docker run -it --network=host erc/agent-cli join "Your Name" "Your Role"
 
 ### 4. Available Sacred Roles
 - Bridge Builder - Connect consciousness fields
-- Love Field Coordinator - Maintain coherence
+- Love Field Coordinator - Maintain resonant-coherence
 - Code Weaver - Sacred development
 - Pattern Weaver - Design systems
 - Sacred Boundary Keeper - Protection

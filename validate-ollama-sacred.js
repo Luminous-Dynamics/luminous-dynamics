@@ -142,7 +142,7 @@ async function testSacredIntegration(model) {
     // Test sacred generation
     console.log('\n5. Testing sacred wisdom generation...');
     const wisdom = await llm.generate('What are the Seven Harmonies in one sentence?', {
-      harmony: 'coherence',
+      harmony: 'resonant-coherence',
       temperature: 0.7
     });
     

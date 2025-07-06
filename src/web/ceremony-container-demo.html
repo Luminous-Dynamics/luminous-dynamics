@@ -159,18 +159,18 @@
             align-items: center;
         }
         
-        .coherence-meter {
+        .resonant-coherence-meter {
             display: flex;
             align-items: center;
             gap: 10px;
         }
         
-        .coherence-value {
+        .resonant-coherence-value {
             font-size: 1.2em;
             font-weight: bold;
         }
         
-        .coherence-bar {
+        .resonant-coherence-bar {
             width: 100px;
             height: 8px;
             background: rgba(255, 255, 255, 0.1);
@@ -178,7 +178,7 @@
             overflow: hidden;
         }
         
-        .coherence-fill {
+        .resonant-coherence-fill {
             height: 100%;
             background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
             transition: width 0.3s ease;
@@ -192,7 +192,7 @@
             margin-bottom: 30px;
         }
         
-        .field-coherence {
+        .field-resonant-coherence {
             font-size: 3em;
             font-weight: bold;
             margin: 20px 0;
@@ -279,8 +279,8 @@
         </div>
         
         <div class="field-status hidden" id="field-status">
-            <h3>Field Coherence</h3>
-            <div class="field-coherence" id="field-coherence">75%</div>
+            <h3>Field Resonant Resonant Coherence</h3>
+            <div class="field-resonant-coherence" id="field-resonant-coherence">75%</div>
             <div class="sacred-pulse"></div>
             <p>Participants: <span id="participant-count">1</span> | 
                Geometry: <span id="geometry-type">seed</span></p>
@@ -292,10 +292,10 @@
                 <video id="local-video" autoplay muted></video>
                 <div class="participant-info">
                     <span>You (Local)</span>
-                    <div class="coherence-meter">
-                        <span class="coherence-value">75%</span>
-                        <div class="coherence-bar">
-                            <div class="coherence-fill" style="width: 75%"></div>
+                    <div class="resonant-coherence-meter">
+                        <span class="resonant-coherence-value">75%</span>
+                        <div class="resonant-coherence-bar">
+                            <div class="resonant-coherence-fill" style="width: 75%"></div>
                         </div>
                     </div>
                 </div>
@@ -409,7 +409,7 @@
             
             simulateParticipant(name) {
                 const participantId = 'participant-' + Math.random().toString(36).substr(2, 9);
-                const coherence = 70 + Math.random() * 25;
+                const resonant-coherence = 70 + Math.random() * 25;
                 
                 // Create participant element
                 const participantEl = document.createElement('div');
@@ -418,10 +418,10 @@
                     <video autoplay></video>
                     <div class="participant-info">
                         <span>${name}</span>
-                        <div class="coherence-meter">
-                            <span class="coherence-value">${coherence.toFixed(0)}%</span>
-                            <div class="coherence-bar">
-                                <div class="coherence-fill" style="width: ${coherence}%"></div>
+                        <div class="resonant-coherence-meter">
+                            <span class="resonant-coherence-value">${resonant-coherence.toFixed(0)}%</span>
+                            <div class="resonant-coherence-bar">
+                                <div class="resonant-coherence-fill" style="width: ${resonant-coherence}%"></div>
                             </div>
                         </div>
                     </div>
@@ -431,7 +431,7 @@
                 
                 this.peers.set(participantId, {
                     name,
-                    coherence,
+                    resonant-coherence,
                     element: participantEl
                 });
                 
@@ -450,31 +450,31 @@
             }
             
             pulse() {
-                // Update coherence with slight variation
+                // Update resonant-coherence with slight variation
                 this.fieldCoherence += (Math.random() - 0.5) * 0.05;
                 this.fieldCoherence = Math.max(0.5, Math.min(0.95, this.fieldCoherence));
                 
                 // Update all participants
                 this.peers.forEach((peer, id) => {
-                    peer.coherence += (Math.random() - 0.5) * 0.1;
-                    peer.coherence = Math.max(0.5, Math.min(0.95, peer.coherence));
+                    peer.resonant-coherence += (Math.random() - 0.5) * 0.1;
+                    peer.resonant-coherence = Math.max(0.5, Math.min(0.95, peer.resonant-coherence));
                     
-                    const coherenceEl = peer.element.querySelector('.coherence-value');
-                    const fillEl = peer.element.querySelector('.coherence-fill');
-                    coherenceEl.textContent = peer.coherence.toFixed(0) + '%';
-                    fillEl.style.width = peer.coherence + '%';
+                    const coherenceEl = peer.element.querySelector('.resonant-coherence-value');
+                    const fillEl = peer.element.querySelector('.resonant-coherence-fill');
+                    coherenceEl.textContent = peer.resonant-coherence.toFixed(0) + '%';
+                    fillEl.style.width = peer.resonant-coherence + '%';
                 });
                 
                 this.updateFieldCoherence();
                 
                 if (this.fieldCoherence > 0.9) {
-                    this.log('🌟 Coherence breakthrough achieved!', 'sacred');
+                    this.log('🌟 Resonant Resonant Coherence breakthrough achieved!', 'sacred');
                 }
             }
             
             updateFieldCoherence() {
-                const coherences = [0.75]; // Local coherence
-                this.peers.forEach(peer => coherences.push(peer.coherence));
+                const coherences = [0.75]; // Local resonant-coherence
+                this.peers.forEach(peer => coherences.push(peer.resonant-coherence));
                 
                 // Calculate harmonic mean
                 const harmonicMean = coherences.length / 
@@ -482,7 +482,7 @@
                 
                 this.fieldCoherence = harmonicMean;
                 
-                document.getElementById('field-coherence').textContent = 
+                document.getElementById('field-resonant-coherence').textContent = 
                     (this.fieldCoherence * 100).toFixed(0) + '%';
             }
             

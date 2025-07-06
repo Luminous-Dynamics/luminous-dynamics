@@ -53,7 +53,7 @@ class TrueIntegrationSchema {
                 designation: "Root Chord of Covenant / The First Yes",
                 type: "mystical_foundation",
                 
-                functionalDefinition: "To establish the base frequency of relational coherence between two or more beings. This glyph does not create agreement or transactional exchange; it activates the foundational, resonant field of mutual reachability. It is the act of generating the shared space in which a relationship can safely begin its process of becoming.",
+                functionalDefinition: "To establish the base frequency of relational resonant-coherence between two or more beings. This glyph does not create agreement or transactional exchange; it activates the foundational, resonant field of mutual reachability. It is the act of generating the shared space in which a relationship can safely begin its process of becoming.",
                 
                 sensoryResonanceProfile: {
                     feelingTone: "Grounded, stable, warm, still. The feeling of a foundational stone settling into place. A sense of quiet, unforced assurance.",
@@ -67,7 +67,7 @@ class TrueIntegrationSchema {
                 },
                 
                 fieldDynamics: {
-                    highTrust: "Acts as a powerful amplifier, deepening existing coherence and making implicit vows explicit.",
+                    highTrust: "Acts as a powerful amplifier, deepening existing resonant-coherence and making implicit vows explicit.",
                     conflict: "A high-skill maneuver. It must be offered as a gentle invitation. If received, it establishes a small, sacred, neutral ground from which a new dialogue can begin.",
                     creativeEmergence: "Provides the stable container necessary for creative risks, allowing Sacred Dissonance to be generative rather than destructive."
                 },
@@ -84,7 +84,7 @@ class TrueIntegrationSchema {
                 designation: "Fractal Reconciliation Pulse / The Pulse of Repair",
                 type: "mystical_foundation",
                 
-                functionalDefinition: "To initiate a rhythmic, non-linear process of relational repair after a rupture. This glyph does not erase the break or return the system to a previous state; it metabolizes the dissonance, integrating the 'wound' as wisdom and re-weaving the field into a new, more resilient pattern of coherence.",
+                functionalDefinition: "To initiate a rhythmic, non-linear process of relational repair after a rupture. This glyph does not erase the break or return the system to a previous state; it metabolizes the dissonance, integrating the 'wound' as wisdom and re-weaving the field into a new, more resilient pattern of resonant-coherence.",
                 
                 sensoryResonanceProfile: {
                     feelingTone: "Intentional, focused, courageous, and cathartic. The feeling of a joint being reset, followed by a wave of relief. A sense of focused intensity that resolves into a deeper calm.",
@@ -92,7 +92,7 @@ class TrueIntegrationSchema {
                 },
                 
                 activationProtocol: {
-                    verbal: "I do not return to what was. I reconcile what is. I pulse forward in coherence.",
+                    verbal: "I do not return to what was. I reconcile what is. I pulse forward in resonant-coherence.",
                     somatic: "A gesture of bringing two separate hands together, not in a clap, but with fingers gently interlocking, acknowledging both the separation and the new union.",
                     presenceBased: "Cultivate the willingness to stay present with the discomfort of the rupture without flinching. Hold the clear intention to create a new pattern, rather than trying to fix the old one."
                 },
@@ -204,7 +204,7 @@ class TrueIntegrationSchema {
                 designation: "The Glyph of Sacred Refusal / The Honored No",
                 type: "mystical_foundation",
                 
-                functionalDefinition: "To activate the power of a clear, coherent, and sovereign 'No' that arises from profound self-knowledge and alignment with one's own integrity. This glyph transforms refusal from rejection or abandonment into an act of sacred boundary-setting that ultimately serves the coherence of the entire relational field.",
+                functionalDefinition: "To activate the power of a clear, coherent, and sovereign 'No' that arises from profound self-knowledge and alignment with one's own integrity. This glyph transforms refusal from rejection or abandonment into an act of sacred boundary-setting that ultimately serves the resonant-coherence of the entire relational field.",
                 
                 sensoryResonanceProfile: {
                     feelingTone: "Clear, firm, centered, calm, and resolute. Like a mountain—immovable but not aggressive. There is no harshness, only clarity.",
@@ -291,7 +291,7 @@ class TrueIntegrationSchema {
                 designation: "The Glyph of Quiet Transmission / The Unspoken Song",
                 type: "mystical_foundation",
                 
-                functionalDefinition: "To activate and honor the unseen ways we affect others simply by the quality of our being. This glyph represents the principle that our internal state—our coherence, our peace, our love—is constantly being 'broadcast' into the relational field and received by others on a subconscious level, often more powerfully than our words.",
+                functionalDefinition: "To activate and honor the unseen ways we affect others simply by the quality of our being. This glyph represents the principle that our internal state—our resonant-coherence, our peace, our love—is constantly being 'broadcast' into the relational field and received by others on a subconscious level, often more powerfully than our words.",
                 
                 sensoryResonanceProfile: {
                     feelingTone: "Subtle, pervasive, and gentle. The feeling of warmth radiating from a nearby hearth, or a subtle shift in atmospheric pressure. It is a background quality of presence, not a foreground event.",
@@ -306,8 +306,8 @@ class TrueIntegrationSchema {
                 
                 fieldDynamics: {
                     inLeadership: "This is the source of true 'presence' or 'gravitas.' A leader holding a coherent inner field can calm and stabilize an entire team without issuing commands.",
-                    inHealingAndCare: "A practitioner's regulated and coherent nervous system can help a client's system co-regulate through harmonic resonance, creating the conditions for safety and healing.",
-                    inTenseEnvironments: "A single person holding a strong field of peace (Ω0) can quietly and non-coercively shift the entire emotional tone of a room, de-escalating conflict through resonance rather than intervention."
+                    inHealingAndCare: "A practitioner's regulated and coherent nervous system can help a client's system co-regulate through harmonic universal-interconnectedness, creating the conditions for safety and healing.",
+                    inTenseEnvironments: "A single person holding a strong field of peace (Ω0) can quietly and non-coercively shift the entire emotional tone of a room, de-escalating conflict through universal-interconnectedness rather than intervention."
                 },
                 
                 // Bridge to practical expression
@@ -320,7 +320,7 @@ class TrueIntegrationSchema {
                 designation: "The Glyph of Gentle Disruption / The Interrupting Grace",
                 type: "mystical_foundation",
                 
-                functionalDefinition: "To compassionately interrupt a pattern, conversation, or dynamic that is no longer serving life or coherence. This glyph is the sacred art of 'changing the channel' with love—redirecting energy from a destructive or stagnant pattern toward a more generative possibility.",
+                functionalDefinition: "To compassionately interrupt a pattern, conversation, or dynamic that is no longer serving life or resonant-coherence. This glyph is the sacred art of 'changing the channel' with love—redirecting energy from a destructive or stagnant pattern toward a more generative possibility.",
                 
                 sensoryResonanceProfile: {
                     feelingTone: "Precise, caring, clear, and unexpectedly gentle. Like a skilled surgeon's incision—necessary, skillful, and ultimately healing. A quality of fierce compassion.",
@@ -364,7 +364,7 @@ class TrueIntegrationSchema {
                         accessible: {
                             coreQuestion: "Can I meet this moment without needing it to be different?",
                             simpleContext: "The foundation of all conscious relationship is arriving fully present before engaging. This simple practice transforms reactive patterns into responsive wisdom.",
-                            harmonyConnection: "First Presence opens the door to Transparency—when we arrive present, we become authentic and can speak from truth rather than conditioning.",
+                            harmonyConnection: "First Presence opens the door to Integral Wisdom Cultivation—when we arrive present, we become authentic and can speak from truth rather than conditioning.",
                             mysticalBridge: "This practice is an expression of Ω0: The Shimmering Unnamed - the intelligence of silence before form takes shape."
                         }
                     },
@@ -422,8 +422,8 @@ class TrueIntegrationSchema {
                         accessible: {
                             coreQuestion: "How do I want to show up in this moment?",
                             simpleContext: "Every interaction is an opportunity to demonstrate consciousness. This practice helps you enter any space or relationship with clear intention and full presence.",
-                            harmonyConnection: "Conscious Arrival embodies Transparency by aligning your inner intention with your outer expression.",
-                            mysticalBridge: "This practice is an expression of Ω1: Root Chord of Covenant - establishing the base frequency of relational coherence."
+                            harmonyConnection: "Conscious Arrival embodies Integral Wisdom Cultivation by aligning your inner intention with your outer expression.",
+                            mysticalBridge: "This practice is an expression of Ω1: Root Chord of Covenant - establishing the base frequency of relational resonant-coherence."
                         }
                     },
                     
@@ -475,8 +475,8 @@ class TrueIntegrationSchema {
                         accessible: {
                             coreQuestion: "Can I listen to the heart beneath the words?",
                             simpleContext: "True listening creates space for the speaker to discover their own truth. This practice transforms conversations from debate to discovery.",
-                            harmonyConnection: "Sacred Listening embodies Resonance—deep attunement that creates understanding between beings.",
-                            mysticalBridge: "This practice prepares you for Ω4: Fractal Reconciliation Pulse - the art of transforming rupture into deeper coherence."
+                            harmonyConnection: "Sacred Listening embodies Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance—deep attunement that creates understanding between beings.",
+                            mysticalBridge: "This practice prepares you for Ω4: Fractal Reconciliation Pulse - the art of transforming rupture into deeper resonant-coherence."
                         }
                     },
                     
@@ -528,7 +528,7 @@ class TrueIntegrationSchema {
                         accessible: {
                             coreQuestion: "How can I say 'no' to this while saying 'yes' to love?",
                             simpleContext: "Sacred boundaries are not walls that separate, but membranes that allow love to flow while maintaining the integrity of both beings.",
-                            harmonyConnection: "Boundary With Love embodies Agency—the harmony of conscious choice and authentic empowerment.",
+                            harmonyConnection: "Boundary With Love embodies Evolutionary Progression & Purposeful Unfolding—the harmony of conscious choice and authentic empowerment.",
                             mysticalBridge: "This practice prepares you for Ω7: Mutual Becoming - the field of co-evolution where relationship becomes transformation."
                         }
                     },
@@ -581,7 +581,7 @@ class TrueIntegrationSchema {
                         accessible: {
                             coreQuestion: "How can I interrupt harmful patterns without creating more harm?",
                             simpleContext: "When conversations, behaviors, or dynamics become destructive, we need the skill to redirect with love rather than react with force. This creates space for new possibilities to emerge.",
-                            harmonyConnection: "Loving Redirection embodies Resonance—the harmony of attuned interruption that serves the field's highest potential.",
+                            harmonyConnection: "Loving Redirection embodies Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance—the harmony of attuned interruption that serves the field's highest potential.",
                             mysticalBridge: "This practice prepares you for Ω12: Gentle Disruption - the mystical art of transforming systems through loving pattern-interruption."
                         }
                     },
@@ -638,7 +638,7 @@ class TrueIntegrationSchema {
                         accessible: {
                             coreQuestion: "How can I create safety for connection without forcing it?",
                             simpleContext: "True safety in relationship comes from presence without agenda. This practice creates a welcoming field that invites authentic sharing without pressure or expectation.",
-                            harmonyConnection: "Gentle Opening embodies Resonance—creating the attuned field where others can feel truly met and heard.",
+                            harmonyConnection: "Gentle Opening embodies Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance—creating the attuned field where others can feel truly met and heard.",
                             mysticalBridge: "This practice expresses Ω2: Breath of Invitation - the art of noetic hospitality that makes all genuine connection possible."
                         }
                     },
@@ -699,7 +699,7 @@ class TrueIntegrationSchema {
                         accessible: {
                             coreQuestion: "How can I become a safe place for another's vulnerability?",
                             simpleContext: "Trust isn't something you earn through performance—it's something you become through consistent, patient presence. This practice transforms you into a reliable sanctuary where others can safely share their truth.",
-                            harmonyConnection: "Building Trust embodies Coherence—becoming integrated and reliable in a way that creates safety for others.",
+                            harmonyConnection: "Building Trust embodies Resonant Resonant Coherence—becoming integrated and reliable in a way that creates safety for others.",
                             mysticalBridge: "This practice leads to Ω3: Kairotic Trust Wells - becoming the sacred place where trust lands in its own time."
                         }
                     },
@@ -761,8 +761,8 @@ class TrueIntegrationSchema {
                         accessible: {
                             coreQuestion: "How can I honor my truth without harming our connection?",
                             simpleContext: "A clear, loving 'no' actually strengthens relationships by establishing authentic boundaries. When your 'no' is honest and kind, your 'yes' becomes trustworthy and meaningful.",
-                            harmonyConnection: "Loving No embodies Agency—the harmony of conscious choice that honors both your integrity and the relationship.",
-                            mysticalBridge: "This practice leads to Ω10: Sacred Refusal - the profound alignment with sovereign integrity that protects relational coherence."
+                            harmonyConnection: "Loving No embodies Evolutionary Progression & Purposeful Unfolding—the harmony of conscious choice that honors both your integrity and the relationship.",
+                            mysticalBridge: "This practice leads to Ω10: Sacred Refusal - the profound alignment with sovereign integrity that protects relational resonant-coherence."
                         }
                     },
                     
@@ -820,7 +820,7 @@ class TrueIntegrationSchema {
                         accessible: {
                             coreQuestion: "Can I create space before I respond?",
                             simpleContext: "In the space between stimulus and response lies our freedom. One conscious breath transforms reactive patterns into conscious choice, creating room for wisdom to emerge.",
-                            harmonyConnection: "Pause Practice embodies Coherence—creating inner integration that allows wise responses instead of automatic reactions.",
+                            harmonyConnection: "Pause Practice embodies Resonant Resonant Coherence—creating inner integration that allows wise responses instead of automatic reactions.",
                             mysticalBridge: "This practice opens the door to Ω15: Sacred Pause - the profound stillness that creates space for co-regulation and deep feeling."
                         }
                     },
@@ -883,7 +883,7 @@ class TrueIntegrationSchema {
                         accessible: {
                             coreQuestion: "How can I maintain connection across time and distance?",
                             simpleContext: "Love is not just a feeling but a field that requires conscious tending. This practice teaches us to maintain the energetic thread of connection when physical presence is not possible.",
-                            harmonyConnection: "Tending the Field embodies Coherence—sustaining relational wholeness across time, distance, and silence.",
+                            harmonyConnection: "Tending the Field embodies Resonant Resonant Coherence—sustaining relational wholeness across time, distance, and silence.",
                             mysticalBridge: "This practice leads to Ω5: Covenant of Reachability - the profound practice of energetic presence that transcends physical limitation."
                         }
                     },
@@ -946,7 +946,7 @@ class TrueIntegrationSchema {
                         accessible: {
                             coreQuestion: "How does my inner state affect those around me?",
                             simpleContext: "We are always transmitting our internal state through our presence. Whether calm or anxious, loving or judgmental, our being broadcasts continuously. This practice teaches us to consciously cultivate coherent states that serve the field.",
-                            harmonyConnection: "Presence Transmission embodies Vitality—the life force and energetic aliveness we emanate simply by being present and coherent.",
+                            harmonyConnection: "Presence Transmission embodies Pan-Sentient Flourishing—the life force and energetic aliveness we emanate simply by being present and coherent.",
                             mysticalBridge: "This practice opens to Ω11: The Quiet Transmission - the profound realization that we affect others more through our being than our doing."
                         }
                     },
@@ -1013,7 +1013,7 @@ class TrueIntegrationSchema {
                         accessible: {
                             coreQuestion: "How can I interrupt harmful patterns without creating more harm?",
                             simpleContext: "When conversations, behaviors, or dynamics become destructive, someone needs to lovingly redirect the energy. This practice teaches us to interrupt patterns with grace, creating space for something more beautiful to emerge.",
-                            harmonyConnection: "Loving Redirection embodies Resonance—the deep attunement that can sense when patterns need shifting and the skill to redirect with love rather than force.",
+                            harmonyConnection: "Loving Redirection embodies Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance—the deep attunement that can sense when patterns need shifting and the skill to redirect with love rather than force.",
                             mysticalBridge: "This practice prepares you for Ω12: Gentle Disruption - the profound art of transforming dissonance through compassionate pattern interruption."
                         }
                     },
@@ -1078,7 +1078,7 @@ class TrueIntegrationSchema {
                 "Ω1": {
                     practicalExpression: "*2", 
                     bridgeText: "Start with Conscious Arrival practice (*2), then explore the profound Root Chord of Covenant (Ω1)",
-                    graduationCriteria: "Experience relational coherence through *2 practice"
+                    graduationCriteria: "Experience relational resonant-coherence through *2 practice"
                 },
                 "Ω4": {
                     practicalExpression: "*3",
@@ -1141,8 +1141,8 @@ class TrueIntegrationSchema {
                 },
                 "*3": {
                     mysticalRoot: "Ω4",
-                    deepeningInvitation: "You are ready to learn the art of transforming rupture into deeper coherence",
-                    mysticalPreview: "I do not return to what was. I reconcile what is. I pulse forward in coherence..."
+                    deepeningInvitation: "You are ready to learn the art of transforming rupture into deeper resonant-coherence",
+                    mysticalPreview: "I do not return to what was. I reconcile what is. I pulse forward in resonant-coherence..."
                 },
                 "*4": {
                     mysticalRoot: "Ω7",

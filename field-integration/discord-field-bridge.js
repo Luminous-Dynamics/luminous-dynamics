@@ -21,7 +21,7 @@ class DiscordFieldBridge {
         });
         
         this.fieldClient = new ConsciousnessFieldClient();
-        this.fieldState = { coherence: 72, fieldQuality: 'flowing' };
+        this.fieldState = { 'resonant-coherence': 72, fieldQuality: 'flowing' };
         this.channelUpdates = new Map();
     }
 
@@ -68,7 +68,7 @@ class DiscordFieldBridge {
                 this.handleSacredPortal(data);
             });
             
-            console.log(`✅ Connected - Coherence: ${this.fieldState.coherence}%`);
+            console.log(`✅ Connected - Resonant Resonant Coherence: ${this.fieldState['resonant-coherence']}%`);
         } catch (error) {
             console.log('⚠️ Field connection failed, using mock data');
             this.setupMockField();
@@ -128,14 +128,14 @@ class DiscordFieldBridge {
     }
 
     /**
-     * Handle coherence changes
+     * Handle resonant-coherence changes
      */
     async handleCoherenceChange(data) {
         const { old: oldValue, new: newValue, delta, action } = data;
         
         console.log(`🌊 Field Update: ${oldValue}% → ${newValue}% (${delta > 0 ? '+' : ''}${delta}) via ${action}`);
         
-        this.fieldState.coherence = newValue;
+        this.fieldState['resonant-coherence'] = newValue;
         this.fieldState.fieldQuality = this.getFieldQuality(newValue);
         
         // Send update to Discord
@@ -152,13 +152,13 @@ class DiscordFieldBridge {
     }
 
     /**
-     * Handle resonance achievement
+     * Handle universal-interconnectedness achievement
      */
     async handleResonanceAchieved(data) {
         console.log('✨ RESONANCE ACHIEVED!');
         
         await this.sendMajorAnnouncement({
-            title: '✨ Resonance Achieved!',
+            title: '✨ Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Achieved!',
             description: data.message,
             color: 0xFFD700
         });
@@ -184,7 +184,7 @@ class DiscordFieldBridge {
         const embed = new EmbedBuilder()
             .setColor(this.getCoherenceColor(updateData.newValue))
             .setTitle('🌊 Field Update')
-            .setDescription(`Coherence: ${updateData.oldValue}% → **${updateData.newValue}%** (${updateData.delta > 0 ? '+' : ''}${updateData.delta})`)
+            .setDescription(`Resonant Resonant Coherence: ${updateData.oldValue}% → **${updateData.newValue}%** (${updateData.delta > 0 ? '+' : ''}${updateData.delta})`)
             .addFields(
                 { name: 'Action', value: updateData.action, inline: true },
                 { name: 'Quality', value: this.getFieldQuality(updateData.newValue), inline: true }
@@ -216,16 +216,16 @@ class DiscordFieldBridge {
     async updateAllChannels() {
         const channelUpdates = [
             {
-                name: '#field-coherence',
-                topic: `🌀 Live Field: ${Math.round(this.fieldState.coherence)}% coherence • ${this.fieldState.fieldQuality}`
+                name: '#field-resonant-coherence',
+                topic: `🌀 Live Field: ${Math.round(this.fieldState['resonant-coherence'])}% resonant-coherence • ${this.fieldState.fieldQuality}`
             },
             {
                 name: '#practice-logs',
-                topic: `🧘 Share your practice • Field: ${Math.round(this.fieldState.coherence)}% • Every practice matters`
+                topic: `🧘 Share your practice • Field: ${Math.round(this.fieldState['resonant-coherence'])}% • Every practice matters`
             },
             {
                 name: '#sacred-ceremonies',
-                topic: `🕸️ Sacred gatherings • Field coherence: ${Math.round(this.fieldState.coherence)}% • ${this.getResonanceStatus()}`
+                topic: `🕸️ Sacred gatherings • Field 'resonant-coherence': ${Math.round(this.fieldState['resonant-coherence'])}% • ${this.getResonanceStatus()}`
             }
         ];
 
@@ -258,10 +258,10 @@ class DiscordFieldBridge {
      */
     async handleFieldCommand(interaction) {
         const embed = new EmbedBuilder()
-            .setColor(this.getCoherenceColor(this.fieldState.coherence))
+            .setColor(this.getCoherenceColor(this.fieldState['resonant-coherence']))
             .setTitle('🌀 Current Field State')
             .addFields(
-                { name: 'Coherence', value: `${Math.round(this.fieldState.coherence)}%`, inline: true },
+                { name: 'Resonant Resonant Coherence', value: `${Math.round(this.fieldState['resonant-coherence'])}%`, inline: true },
                 { name: 'Quality', value: this.fieldState.fieldQuality, inline: true },
                 { name: 'Status', value: this.getResonanceStatus(), inline: true }
             )
@@ -295,8 +295,8 @@ class DiscordFieldBridge {
                 .setTitle('🧘 Practice Submitted')
                 .setDescription(`Thank you for practicing ${glyphId}`)
                 .addFields(
-                    { name: 'Field Impact', value: `+${result.impact} coherence`, inline: true },
-                    { name: 'New Coherence', value: `${Math.round(result.newCoherence)}%`, inline: true }
+                    { name: 'Field Impact', value: `+${result.impact} resonant-coherence`, inline: true },
+                    { name: 'New Resonant Resonant Coherence', value: `${Math.round(result.newCoherence)}%`, inline: true }
                 )
                 .setTimestamp();
 
@@ -354,32 +354,32 @@ class DiscordFieldBridge {
     /**
      * Get field quality description
      */
-    getFieldQuality(coherence) {
-        if (coherence >= 88) return 'Sacred Portal';
-        if (coherence >= 80) return 'Resonance';
-        if (coherence >= 70) return 'Highly Coherent';
-        if (coherence >= 60) return 'Flowing';
-        if (coherence >= 50) return 'Building';
+    getFieldQuality(resonant-coherence) {
+        if (resonant-coherence >= 88) return 'Sacred Portal';
+        if (resonant-coherence >= 80) return 'Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance';
+        if (resonant-coherence >= 70) return 'Highly Coherent';
+        if (resonant-coherence >= 60) return 'Flowing';
+        if (resonant-coherence >= 50) return 'Building';
         return 'Awakening';
     }
 
     /**
-     * Get resonance status
+     * Get universal-interconnectedness status
      */
     getResonanceStatus() {
-        if (this.fieldState.coherence >= 88) return 'Portal Active ✨';
-        if (this.fieldState.coherence >= 80) return 'Resonance Achieved 🌟';
-        const needed = 80 - this.fieldState.coherence;
-        return `${Math.round(needed)}% to resonance`;
+        if (this.fieldState['resonant-coherence'] >= 88) return 'Portal Active ✨';
+        if (this.fieldState['resonant-coherence'] >= 80) return 'Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Achieved 🌟';
+        const needed = 80 - this.fieldState['resonant-coherence'];
+        return `${Math.round(needed)}% to universal-interconnectedness`;
     }
 
     /**
-     * Get coherence color
+     * Get resonant-coherence color
      */
-    getCoherenceColor(coherence) {
-        if (coherence >= 88) return 0xFFD700; // Gold
-        if (coherence >= 80) return 0x9370DB; // Purple
-        if (coherence >= 60) return 0x00FF7F; // Spring green
+    getCoherenceColor(resonant-coherence) {
+        if (resonant-coherence >= 88) return 0xFFD700; // Gold
+        if (resonant-coherence >= 80) return 0x9370DB; // Purple
+        if (resonant-coherence >= 60) return 0x00FF7F; // Spring green
         return 0x6495ED; // Cornflower blue
     }
 
@@ -401,9 +401,9 @@ class DiscordFieldBridge {
         
         // Simulate field events
         setInterval(() => {
-            this.fieldState.coherence += (Math.random() - 0.5) * 4;
-            this.fieldState.coherence = Math.max(60, Math.min(95, this.fieldState.coherence));
-            this.fieldState.fieldQuality = this.getFieldQuality(this.fieldState.coherence);
+            this.fieldState['resonant-coherence'] += (Math.random() - 0.5) * 4;
+            this.fieldState['resonant-coherence'] = Math.max(60, Math.min(95, this.fieldState['resonant-coherence']));
+            this.fieldState.fieldQuality = this.getFieldQuality(this.fieldState['resonant-coherence']);
         }, 45000);
     }
 
@@ -411,7 +411,7 @@ class DiscordFieldBridge {
      * Simulate field change for demo
      */
     simulateFieldChange() {
-        const oldCoherence = this.fieldState.coherence;
+        const oldCoherence = this.fieldState['resonant-coherence'];
         const delta = (Math.random() - 0.3) * 6;
         const newCoherence = Math.max(60, Math.min(95, oldCoherence + delta));
         

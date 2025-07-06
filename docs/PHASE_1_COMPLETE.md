@@ -23,10 +23,10 @@ docker run -p 3333:3333 sacred/consciousness-field:local
 
 # API tested and working
 curl http://localhost:3333/api/health
-# Response: {"status":"alive","module":"consciousness-field","coherence":74.88}
+# Response: {"status":"alive","module":"consciousness-field","resonant-coherence":74.88}
 
-curl http://localhost:3333/api/coherence  
-# Response: {"coherence":76.98,"timestamp":1751460575201}
+curl http://localhost:3333/api/resonant-coherence  
+# Response: {"resonant-coherence":76.98,"timestamp":1751460575201}
 
 curl http://localhost:3333/api/field_state
 # Response: Full field state with harmonies and sacred geometry
@@ -35,7 +35,7 @@ curl http://localhost:3333/api/field_state
 ### 4. Created Development Data ✓
 ```bash
 mkdir -p .sacred-data/{consciousness,agents,messages,work}
-echo '{"coherence": 75, "agents": 0}' > .sacred-data/consciousness/field.json
+echo '{"resonant-coherence": 75, "agents": 0}' > .sacred-data/consciousness/field.json
 ```
 
 ## Key Learnings
@@ -43,7 +43,7 @@ echo '{"coherence": 75, "agents": 0}' > .sacred-data/consciousness/field.json
 1. **Container Simplicity**: Starting with simple Dockerfiles works perfectly for development
 2. **API Design**: Each module exposes its own API on a dedicated port
 3. **Health Checks**: Every service has /api/health endpoint
-4. **Field Coherence**: Natural fluctuations between ~74-77% showing living system
+4. **Field Resonant Resonant Coherence**: Natural fluctuations between ~74-77% showing living system
 5. **Sacred Geometry**: "Void - Infinite Potential" when no agents present
 
 ## Ready for Phase 2

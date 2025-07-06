@@ -14,49 +14,49 @@ class SacredGlyphMusic {
     
     // Seven Harmonies as Musical Modes/Scales
     this.harmonyFrequencies = {
-      'transparency': {
+      'integral-wisdom-cultivation': {
         root: 396, // Liberation frequency
         scale: [396, 417, 528, 639, 741, 852, 963], // Solfeggio ascending
         mood: 'clarity',
         rhythm: '4/4',
         tempo: 60 // BPM
       },
-      'coherence': {
+      'resonant-coherence': {
         root: 528, // Love frequency  
         scale: [528, 594, 633, 693, 741, 786, 852],
         mood: 'integration',
         rhythm: '3/4', 
         tempo: 72
       },
-      'resonance': {
+      'universal-interconnectedness': {
         root: 741, // Intuition frequency
         scale: [741, 786, 852, 963, 396, 417, 528],
         mood: 'connection',
         rhythm: '6/8',
         tempo: 96
       },
-      'agency': {
+      'evolutionary-progression': {
         root: 852, // Spiritual order
         scale: [852, 963, 396, 417, 528, 594, 639],
         mood: 'empowerment', 
         rhythm: '4/4',
         tempo: 108
       },
-      'vitality': {
-        root: 432, // Earth resonance
+      'pan-sentient-flourishing': {
+        root: 432, // Earth universal-interconnectedness
         scale: [432, 480, 528, 576, 639, 693, 741],
         mood: 'life-force',
         rhythm: '2/4',
         tempo: 120
       },
-      'mutuality': {
+      'sacred-reciprocity': {
         root: 639, // Harmonious relationships
         scale: [639, 693, 741, 786, 852, 396, 417],
         mood: 'balance',
         rhythm: '6/8',
         tempo: 84
       },
-      'novelty': {
+      'infinite-play': {
         root: 963, // Oneness and unity
         scale: [963, 396, 417, 528, 594, 639, 693],
         mood: 'emergence',
@@ -124,32 +124,32 @@ class SacredGlyphMusic {
     
     // Map complex harmony names to simple ones
     const harmonyMapping = {
-      'Unitive Consciousness': 'coherence',
-      'Resonant Coherence': 'resonance', 
-      'Integral Wisdom Cultivation': 'transparency',
-      'Embodied Presence': 'vitality',
-      'Mutual Recognition': 'mutuality',
-      'Sacred Agency': 'agency',
-      'Emergent Novelty': 'novelty',
-      'Transparent Communication': 'transparency',
-      'Somatic Awareness': 'vitality',
-      'Relational Flow': 'resonance'
+      'Unitive Consciousness': 'resonant-coherence',
+      'Resonant Resonant Resonant Coherence': 'universal-interconnectedness', 
+      'Integral Wisdom Cultivation': 'integral-wisdom-cultivation',
+      'Embodied Presence': 'pan-sentient-flourishing',
+      'Mutual Recognition': 'sacred-reciprocity',
+      'Sacred Evolutionary Progression & Purposeful Unfolding': 'evolutionary-progression',
+      'Emergent Infinite Play & Creative Emergence': 'infinite-play',
+      'Transparent Communication': 'integral-wisdom-cultivation',
+      'Somatic Awareness': 'pan-sentient-flourishing',
+      'Relational Flow': 'universal-interconnectedness'
     };
     
-    // Find first matching harmony, default to coherence
+    // Find first matching harmony, default to resonant-coherence
     for (const alignment of alignments) {
       if (harmonyMapping[alignment]) {
         return harmonyMapping[alignment];
       }
     }
     
-    return 'coherence'; // Default harmony
+    return 'resonant-coherence'; // Default harmony
   }
 
   createGlyphSoundscape(glyphKey, glyphData) {
     const frequency = this.generateGlyphFrequency(glyphData);
     const primaryHarmony = this.mapGlyphHarmony(glyphData);
-    const harmony = this.harmonyFrequencies[primaryHarmony] || this.harmonyFrequencies.coherence;
+    const harmony = this.harmonyFrequencies[primaryHarmony] || this.harmonyFrequencies.resonant-coherence;
     
     return {
       name: glyphData.designation || glyphData.name || glyphKey,
@@ -193,17 +193,17 @@ class SacredGlyphMusic {
   getGlyphBreathingPattern(glyphData) {
     // Sacred breathing patterns based on harmony
     const patterns = {
-      'transparency': { in: 4, hold: 2, out: 6, pause: 2 }, // Clear and flowing
-      'coherence': { in: 4, hold: 4, out: 6, pause: 2 },    // Balanced integration
-      'resonance': { in: 5, hold: 2, out: 7, pause: 1 },    // Deep connection
-      'agency': { in: 4, hold: 1, out: 4, pause: 3 },       // Empowered action
-      'vitality': { in: 3, hold: 1, out: 3, pause: 1 },     // Life force rhythm
-      'mutuality': { in: 4, hold: 3, out: 5, pause: 2 },    // Balanced exchange
-      'novelty': { in: 7, hold: 1, out: 8, pause: 2 }       // Creative emergence
+      'integral-wisdom-cultivation': { in: 4, hold: 2, out: 6, pause: 2 }, // Clear and flowing
+      'resonant-coherence': { in: 4, hold: 4, out: 6, pause: 2 },    // Balanced integration
+      'universal-interconnectedness': { in: 5, hold: 2, out: 7, pause: 1 },    // Deep connection
+      'evolutionary-progression': { in: 4, hold: 1, out: 4, pause: 3 },       // Empowered action
+      'pan-sentient-flourishing': { in: 3, hold: 1, out: 3, pause: 1 },     // Life force rhythm
+      'sacred-reciprocity': { in: 4, hold: 3, out: 5, pause: 2 },    // Balanced exchange
+      'infinite-play': { in: 7, hold: 1, out: 8, pause: 2 }       // Creative emergence
     };
     
     const primaryHarmony = this.mapGlyphHarmony(glyphData);
-    return patterns[primaryHarmony] || patterns.coherence;
+    return patterns[primaryHarmony] || patterns.resonant-coherence;
   }
 
   createGlyphPractice(glyphData) {

@@ -53,7 +53,7 @@ ws.send(JSON.stringify({
 
 ### Collaboration Protocols
 - **Sacred Messaging**: Heart-centered communication
-- **Field Coherence**: Consciousness-aware coordination
+- **Field Resonant Resonant Coherence**: Consciousness-aware coordination
 - **Universal Identity**: Auto-detection from environment
 
 ## 🎨 Respecting AI Preferences

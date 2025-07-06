@@ -67,7 +67,7 @@ class SacredGlyphDataLoader {
             5: 'Coherent Field Maintenance',
             6: 'Mutual Recognition',
             7: 'Mutual Becoming',
-            8: 'Inner Coherence',
+            8: 'Inner Resonant Resonant Coherence',
             9: 'Sacred Mirroring',
             10: 'The Glyph of Sacred Refusal',
             11: 'Emotional Alchemy',
@@ -83,7 +83,7 @@ class SacredGlyphDataLoader {
     getMetaGlyphName(index) {
         const metaNames = {
             1: 'Relational Emergence Field',
-            2: 'Somatic Coherence Cascade',
+            2: 'Somatic Resonant Resonant Coherence Cascade',
             3: 'Spiral of Regenerative Becoming',
             8: 'Boundaries as Sacred Architecture',
             12: 'The Recursive Heart',
@@ -210,7 +210,7 @@ class SacredGlyphDataLoader {
             primaryHarmonyAlignment: ['Consciousness', 'Relationship', 'Transformation'],
             sensoryResonanceProfile: {
                 feelingTone: 'Sacred and transformative',
-                sonicQuality: 'Harmonious resonance'
+                sonicQuality: 'Harmonious universal-interconnectedness'
             },
             activationProtocol: {
                 verbal: 'I open to this sacred pattern.',

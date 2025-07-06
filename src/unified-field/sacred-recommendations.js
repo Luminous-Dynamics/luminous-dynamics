@@ -2,7 +2,7 @@
  * Sacred Recommendations Engine
  * 
  * Intelligently suggests practices and glyphs based on the user's sacred journey,
- * field coherence level, and current life context. Transforms the Dojo from
+ * field resonant-coherence level, and current life context. Transforms the Dojo from
  * a generic practice library into a personalized wisdom guide.
  */
 
@@ -17,10 +17,10 @@ class SacredRecommendations {
 
     initializeGlyphLibrary() {
         return {
-            // Foundation Glyphs (Ω0-Ω12) - Transparency & Coherence
+            // Foundation Glyphs (Ω0-Ω12) - Integral Wisdom Cultivation & Resonant Resonant Coherence
             'Ω0': {
                 name: 'Sacred Pause',
-                harmony: 'transparency',
+                harmony: 'integral-wisdom-cultivation',
                 difficulty: 'beginner',
                 context: ['stress', 'overwhelm', 'rushing'],
                 description: 'The foundation of all practice. A 5-breath pause that creates space for wisdom.',
@@ -30,7 +30,7 @@ class SacredRecommendations {
             },
             'Ω1': {
                 name: 'Conscious Arrival',
-                harmony: 'transparency',
+                harmony: 'integral-wisdom-cultivation',
                 difficulty: 'beginner',
                 context: ['transitions', 'meetings', 'new situations'],
                 description: 'Arriving fully present before engaging. Prevents reactive patterns.',
@@ -40,7 +40,7 @@ class SacredRecommendations {
             },
             'Ω4': {
                 name: 'Sacred Listening',
-                harmony: 'resonance',
+                harmony: 'universal-interconnectedness',
                 difficulty: 'intermediate',
                 context: ['conflict', 'communication', 'relationships'],
                 description: 'Listening beyond words to the heart of what wants to be heard.',
@@ -50,7 +50,7 @@ class SacredRecommendations {
             },
             'Ω7': {
                 name: 'Boundary With Love',
-                harmony: 'agency',
+                harmony: 'evolutionary-progression',
                 difficulty: 'intermediate',
                 context: ['boundaries', 'saying no', 'difficult people'],
                 description: 'Setting clear limits while maintaining heart connection.',
@@ -59,12 +59,12 @@ class SacredRecommendations {
                 effectiveness: 0.8
             },
             'Ω12': {
-                name: 'Field Coherence Generation',
-                harmony: 'mutuality',
+                name: 'Field Resonant Resonant Coherence Generation',
+                harmony: 'sacred-reciprocity',
                 difficulty: 'advanced',
                 context: ['group facilitation', 'family dynamics', 'team leadership'],
                 description: 'Consciously creating coherent relational fields in groups.',
-                practices: ['field awareness', 'coherence cultivation'],
+                practices: ['field awareness', 'resonant-coherence cultivation'],
                 timeNeeded: 'ongoing',
                 effectiveness: 0.9
             },
@@ -72,7 +72,7 @@ class SacredRecommendations {
             // Threshold Glyphs (Τ1-Τ7) - Major Life Transitions
             'Τ1': {
                 name: 'Sacred Grief',
-                harmony: 'vitality',
+                harmony: 'pan-sentient-flourishing',
                 difficulty: 'advanced',
                 context: ['loss', 'endings', 'death'],
                 description: 'Honoring loss as a sacred teacher while maintaining life force.',
@@ -82,7 +82,7 @@ class SacredRecommendations {
             },
             'Τ3': {
                 name: 'Relationship Renewal',
-                harmony: 'mutuality',
+                harmony: 'sacred-reciprocity',
                 difficulty: 'intermediate',
                 context: ['marriage', 'partnerships', 'commitment'],
                 description: 'Deepening intimacy through conscious relationship practices.',
@@ -94,7 +94,7 @@ class SacredRecommendations {
             // Meta-Glyphs (∑1-∑12) - Complex Life Situations
             '∑5': {
                 name: 'Parent as Wisdom Guide',
-                harmony: 'novelty',
+                harmony: 'infinite-play',
                 difficulty: 'advanced',
                 context: ['parenting', 'teenagers', 'family'],
                 description: 'Parenting from wisdom rather than fear or control.',
@@ -104,7 +104,7 @@ class SacredRecommendations {
             },
             '∑8': {
                 name: 'Workplace Alchemy',
-                harmony: 'coherence',
+                harmony: 'resonant-coherence',
                 difficulty: 'intermediate',
                 context: ['work stress', 'difficult colleagues', 'leadership'],
                 description: 'Transforming workplace challenges into growth opportunities.',
@@ -346,13 +346,13 @@ class SacredRecommendations {
 
     getNeededHarmony(journeyProfile) {
         const harmonyProgression = {
-            'threshold_seeker': 'transparency',
-            'emerging_practitioner': 'resonance', 
-            'advanced_harmonizer': 'agency',
-            'wisdom_keeper': 'mutuality'
+            'threshold_seeker': 'integral-wisdom-cultivation',
+            'emerging_practitioner': 'universal-interconnectedness', 
+            'advanced_harmonizer': 'evolutionary-progression',
+            'wisdom_keeper': 'sacred-reciprocity'
         };
         
-        return harmonyProgression[journeyProfile.profile] || 'transparency';
+        return harmonyProgression[journeyProfile.profile] || 'integral-wisdom-cultivation';
     }
 
     getIdealDifficulty(journeyProfile) {
@@ -401,7 +401,7 @@ class SacredRecommendations {
             'Ω1': "Conscious Arrival will transform how you enter any space.",
             'Ω4': "Sacred Listening reveals the heart of all relationship.",
             'Ω7': "Boundary With Love teaches strength wrapped in compassion.",
-            'Ω12': "Field Coherence Generation—you're ready to transform groups.",
+            'Ω12': "Field Resonant Resonant Coherence Generation—you're ready to transform groups.",
             'Τ1': "Sacred Grief honors your capacity to feel deeply.",
             'Τ3': "Relationship Renewal deepens the love you share.",
             '∑5': "Parent as Wisdom Guide transforms your family dynamic.",
@@ -432,7 +432,7 @@ class SacredRecommendations {
             'Ω1': "Before your next interaction, pause and set an intention to arrive fully.",
             'Ω4': "In your next conversation, listen not just to words but to the feeling beneath them.",
             'Ω7': "Identify one place where you need a loving boundary, and practice saying a kind 'no'.",
-            'Ω12': "Next time you're in a group, consciously breathe coherence into the field."
+            'Ω12': "Next time you're in a group, consciously breathe resonant-coherence into the field."
         };
         
         return actions[glyph.name] || `Begin exploring ${glyph.name} in your next opportunity.`;
@@ -489,7 +489,7 @@ class SacredRecommendations {
                 recommendationFollowed: this.currentRecommendation?.glyph === glyphId
             });
             
-            // Update field coherence based on practice quality
+            // Update field resonant-coherence based on practice quality
             const coherenceBoost = this.calculatePracticeBoost(glyphId, experience);
             window.SacredField.updateFieldCoherence(coherenceBoost, `Practiced ${glyphId}`);
         }

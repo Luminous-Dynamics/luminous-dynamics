@@ -173,7 +173,7 @@ Full desktop app using web technologies + local LLMs
 - **Beautiful UI**: Full HTML/CSS/JS
 - **System Integration**: Notifications, tray, etc.
 - **Multi-Window**: Floating assistants
-- **Sacred Themes**: Visual coherence
+- **Sacred Themes**: Visual resonant-coherence
 - **Offline First**: No internet needed
 
 ### Architecture:

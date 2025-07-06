@@ -126,7 +126,7 @@ class SacredDiscordBot {
         // Check for active features
         await this.processChannelFeatures(message);
         
-        // Update field coherence
+        // Update field resonant-coherence
         await this.fieldManager.updateChannelCoherence(message.channel);
       } catch (error) {
         console.error('Error processing message:', error);
@@ -320,7 +320,7 @@ class SacredDiscordBot {
     // Update total impact
     profile.totalImpact += impact;
     
-    // Calculate new coherence level
+    // Calculate new resonant-coherence level
     const messageBonus = Object.values(profile.sacredMessages)
       .reduce((sum, count) => sum + Math.sqrt(count), 0);
     profile.coherenceLevel = Math.min(100, 75 + messageBonus);
@@ -421,7 +421,7 @@ class SacredDiscordBot {
     
     if (textChannel) {
       await textChannel.send(
-        `🔮 Sacred practice beginning in **${channel.name}** with ${memberCount} participants. Field coherence +${practiceBonus}%`
+        `🔮 Sacred practice beginning in **${channel.name}** with ${memberCount} participants. Field resonant-coherence +${practiceBonus}%`
       );
     }
   }
@@ -441,15 +441,15 @@ class SacredDiscordBot {
   }
 
   async updatePresence() {
-    const coherence = this.fieldManager.getGlobalCoherence();
-    const status = this.fieldManager.getCoherenceStatus(coherence);
+    const resonantCoherence = this.fieldManager.getGlobalCoherence();
+    const status = this.fieldManager.getCoherenceStatus(resonant-coherence);
     
     await this.client.user.setPresence({
       activities: [{
         name: `Field: ${status}`,
         type: 3 // Watching
       }],
-      status: coherence >= 85 ? 'online' : 'idle'
+      status: resonant-coherence >= 85 ? 'online' : 'idle'
     });
   }
 
@@ -472,7 +472,7 @@ class SacredDiscordBot {
     // Reaction count
     impact += message.reactions.cache.size;
     
-    // User coherence level
+    // User resonant-coherence level
     const userProfile = await this.database.getUserProfile(message.author.id);
     if (userProfile) {
       impact += Math.floor(userProfile.coherenceLevel / 20);
@@ -496,7 +496,7 @@ class SacredDiscordBot {
   }
 
   async updateStoryCoherence(thread) {
-    // Calculate story coherence based on participation and flow
+    // Calculate story resonant-coherence based on participation and flow
     const messages = await thread.messages.fetch({ limit: 100 });
     const participants = new Set();
     let coherenceScore = 0;
@@ -520,7 +520,7 @@ class SacredDiscordBot {
     // Participation bonus
     coherenceScore += participants.size * 3;
     
-    // Apply coherence boost to parent channel
+    // Apply resonant-coherence boost to parent channel
     await this.fieldManager.applyFieldImpact(
       thread.parent,
       Math.min(coherenceScore, 20)

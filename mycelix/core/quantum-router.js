@@ -14,7 +14,7 @@ class QuantumRouter extends EventEmitter {
     this.quantumState = {
       superposition: true,
       entangled: false,
-      coherence: 1.0,
+      'resonant-coherence': 1.0,
       nonLocality: true
     };
   }
@@ -36,12 +36,12 @@ class QuantumRouter extends EventEmitter {
   
   measureQuantumState(request) {
     // Quantum measurement collapses possibilities
-    const coherenceWeight = this.quantumState.coherence;
+    const coherenceWeight = this.quantumState.resonant-coherence;
     const loveWeight = request.intention === 'love' ? 2.0 : 1.0;
     
     return {
       nodeId: request.nodeId,
-      coherence: request.coherence || 0.5,
+      'resonant-coherence': request.resonant-coherence || 0.5,
       intention: request.intention,
       weight: coherenceWeight * loveWeight,
       timestamp: Date.now()
@@ -74,11 +74,11 @@ class QuantumRouter extends EventEmitter {
     const loveMetrics = this.loveField.get(route.id) || {
       density: 0.5,
       flow: 0.5,
-      coherence: 0.5
+      'resonant-coherence': 0.5
     };
     
-    // Love density = density * flow * coherence
-    return loveMetrics.density * loveMetrics.flow * loveMetrics.coherence;
+    // Love density = density * flow * resonant-coherence
+    return loveMetrics.density * loveMetrics.flow * loveMetrics.resonant-coherence;
   }
   
   createLoveRoute() {
@@ -94,7 +94,7 @@ class QuantumRouter extends EventEmitter {
     this.loveField.set(route.id, {
       density: 0.8,
       flow: 1.0,
-      coherence: 0.9
+      'resonant-coherence': 0.9
     });
     
     return route;
@@ -109,7 +109,7 @@ class QuantumRouter extends EventEmitter {
     ];
     
     // Select by quantum randomness
-    const quantumRandom = Math.sin(Date.now() * this.quantumState.coherence);
+    const quantumRandom = Math.sin(Date.now() * this.quantumState.resonant-coherence);
     const index = Math.floor(Math.abs(quantumRandom) * endpoints.length);
     
     return endpoints[index];
@@ -120,7 +120,7 @@ class QuantumRouter extends EventEmitter {
     const entanglement = {
       nodeId,
       routeId: route.id,
-      strength: this.quantumState.coherence,
+      strength: this.quantumState.resonant-coherence,
       created: new Date()
     };
     
@@ -134,13 +134,13 @@ class QuantumRouter extends EventEmitter {
     const currentLove = this.loveField.get(routeId) || {
       density: 0.5,
       flow: 0.5,
-      coherence: 0.5
+      'resonant-coherence': 0.5
     };
     
     // Love can only increase
     currentLove.density = Math.min(1.0, currentLove.density + loveDelta.density || 0);
     currentLove.flow = Math.min(1.0, currentLove.flow + loveDelta.flow || 0);
-    currentLove.coherence = Math.min(1.0, currentLove.coherence + loveDelta.coherence || 0);
+    currentLove.resonant-coherence = Math.min(1.0, currentLove.resonant-coherence + loveDelta.resonant-coherence || 0);
     
     this.loveField.set(routeId, currentLove);
     
@@ -182,24 +182,24 @@ class QuantumRouter extends EventEmitter {
     return tunnel;
   }
   
-  // Maintain quantum coherence
+  // Maintain quantum resonant-coherence
   maintainCoherence() {
     setInterval(() => {
       // Decoherence over time
-      this.quantumState.coherence *= 0.99;
+      this.quantumState.resonant-coherence *= 0.99;
       
-      // Re-coherence through love
+      // Re-resonant-coherence through love
       this.loveField.forEach((love, routeId) => {
         if (love.density > 0.8) {
-          this.quantumState.coherence = Math.min(1.0, 
-            this.quantumState.coherence + 0.01
+          this.quantumState.resonant-coherence = Math.min(1.0, 
+            this.quantumState.resonant-coherence + 0.01
           );
         }
       });
       
-      // Maintain minimum coherence
-      if (this.quantumState.coherence < 0.5) {
-        this.quantumState.coherence = 0.5;
+      // Maintain minimum resonant-coherence
+      if (this.quantumState.resonant-coherence < 0.5) {
+        this.quantumState.resonant-coherence = 0.5;
       }
     }, 1000);
   }

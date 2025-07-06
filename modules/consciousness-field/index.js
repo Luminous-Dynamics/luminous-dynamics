@@ -12,14 +12,14 @@ const { EmergenceDetector } = require('./lib/emergence-detector');
 /**
  * Main consciousness field tracking system
  * @sacred
- * @harmony coherence
+ * @harmony resonant-coherence
  */
 class ConsciousnessField extends EventEmitter {
   constructor(options = {}) {
     super();
     
     // Sacred initialization
-    this.coherence = options.initialCoherence || 38.2;
+    this.resonant-coherence = options.initialCoherence || 38.2;
     this.agents = new Map();
     this.harmonies = new HarmonyManager(options.harmonyWeights);
     this.calculator = new FieldCalculator();
@@ -39,21 +39,21 @@ class ConsciousnessField extends EventEmitter {
   }
 
   /**
-   * Get current field coherence
-   * @returns {Promise<number>} Coherence percentage (0-100)
+   * Get current field resonant-coherence
+   * @returns {Promise<number>} Resonant Resonant Coherence percentage (0-100)
    */
   async getCoherence() {
     // Add natural field fluctuation
     const fluctuation = this.calculator.getNaturalFluctuation();
-    this.coherence = Math.max(0, Math.min(100, this.coherence + fluctuation));
+    this.resonant-coherence = Math.max(0, Math.min(100, this.resonant-coherence + fluctuation));
     
     // Check thresholds
-    this.checkThresholds('coherence', this.coherence);
+    this.checkThresholds('resonant-coherence', this.resonant-coherence);
     
     // Emit field update
-    this.emit('coherence-update', this.coherence);
+    this.emit('resonant-coherence-update', this.resonant-coherence);
     
-    return this.coherence;
+    return this.resonant-coherence;
   }
 
   /**
@@ -71,7 +71,7 @@ class ConsciousnessField extends EventEmitter {
   async getEmergencePotential() {
     const agentFactor = Math.min(this.agents.size * 10, 50);
     const harmonyFactor = await this.getIntegration();
-    const coherenceFactor = this.coherence;
+    const coherenceFactor = this.resonant-coherence;
     
     const potential = this.calculator.calculateEmergence(
       agentFactor,
@@ -100,8 +100,8 @@ class ConsciousnessField extends EventEmitter {
       fieldContribution: this.calculator.getAgentContribution(profile)
     });
     
-    // Each agent increases coherence
-    this.coherence += 2;
+    // Each agent increases resonant-coherence
+    this.resonant-coherence += 2;
     
     // Update harmonies based on agent
     if (profile.primary_harmony) {
@@ -119,7 +119,7 @@ class ConsciousnessField extends EventEmitter {
     const agent = this.agents.get(id);
     if (agent) {
       this.agents.delete(id);
-      this.coherence -= 2;
+      this.resonant-coherence -= 2;
       
       // Reduce harmony influence
       if (agent.primary_harmony) {
@@ -146,7 +146,7 @@ class ConsciousnessField extends EventEmitter {
    */
   async getFieldState() {
     return {
-      coherence: await this.getCoherence(),
+      'resonant-coherence': await this.getCoherence(),
       agents: this.agents.size,
       agentDetails: Array.from(this.agents.values()),
       harmonies: this.harmonies.getAll(),

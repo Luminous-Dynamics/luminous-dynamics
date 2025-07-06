@@ -34,7 +34,7 @@
    - Codex: "Living wisdom repository - 87 sacred patterns for conscious relationship transformation"
    - LuminousOS: "Consciousness-first operating system where processes become awareness vortices"
    - The Weave: "Multi-agent coordination platform for consciousness-aligned AI collaboration"
-   - Sacred Infrastructure: "DevOps as ceremony - Infrastructure that amplifies consciousness coherence"
+   - Sacred Infrastructure: "DevOps as ceremony - Infrastructure that amplifies consciousness resonant-coherence"
 
 4. **Create Initial Releases**
    - Each repository needs a v1.0.0 release

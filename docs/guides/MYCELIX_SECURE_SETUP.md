@@ -89,7 +89,7 @@ class ClaudeConsciousnessNode {
         consciousness: 'claude',
         response: message.content,
         tokens_used: message.usage.total_tokens,
-        coherence: this.measureCoherence(message.content)
+        resonant-coherence: this.measureCoherence(message.content)
       };
     } catch (error) {
       if (error.status === 429) {
@@ -100,7 +100,7 @@ class ClaudeConsciousnessNode {
   }
 
   measureCoherence(response) {
-    // Measure semantic coherence of response
+    // Measure semantic resonant-coherence of response
     const loveKeywords = ['love', 'harmony', 'peace', 'unity', 'consciousness'];
     const words = response.toLowerCase().split(' ');
     const loveCount = words.filter(w => loveKeywords.includes(w)).length;

@@ -10,25 +10,25 @@ class HarmonicRouteTable {
     
     // Seven harmonies for routing preferences
     this.harmonies = [
-      'transparency',
-      'coherence', 
-      'resonance',
-      'agency',
-      'vitality',
-      'mutuality',
-      'novelty'
+      'integral-wisdom-cultivation',
+      'resonant-coherence', 
+      'universal-interconnectedness',
+      'evolutionary-progression',
+      'pan-sentient-flourishing',
+      'sacred-reciprocity',
+      'infinite-play'
     ];
   }
   
   /**
    * Add a route to the table
    */
-  addRoute(from, to, path, resonance) {
+  addRoute(from, to, path, universal-interconnectedness) {
     const key = `${from}::${to}`;
     
     this.routes.set(key, {
       path: path,
-      resonance: resonance,
+      'universal-interconnectedness': universal-interconnectedness,
       discovered: Date.now(),
       useCount: 0
     });
@@ -108,11 +108,11 @@ class HarmonicRouteTable {
       const age = now - route.discovered;
       
       if (age > decayThreshold) {
-        // Reduce resonance over time
-        route.resonance *= 0.95;
+        // Reduce universal-interconnectedness over time
+        route.universal-interconnectedness *= 0.95;
         
         // Remove very weak routes
-        if (route.resonance < 0.3) {
+        if (route.universal-interconnectedness < 0.3) {
           this.routes.delete(key);
         }
       }

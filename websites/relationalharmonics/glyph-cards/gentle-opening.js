@@ -4,7 +4,7 @@
 const gentleOpeningData = {
     id: 'Ω49',
     name: 'Gentle Opening',
-    primaryHarmony: 'coherence',
+    primaryHarmony: 'resonant-coherence',
     description: 'The practice of creating safety through soft invitation - allowing others to approach at their own pace, honoring natural timing.',
     keywords: ['invitation', 'safety', 'gentleness', 'opening', 'patience'],
     practicePrompt: 'Soften your energy. Create spaciousness without pressure. Let your openness be an invitation, not a demand.',

@@ -14,13 +14,13 @@ This suite of tools helps identify and fix performance degradation issues in lon
 - ✅ Timer/interval cleanup issues ⭐ **CRITICAL ISSUE FOUND**
 - ✅ File handle leaks
 - ✅ Message history accumulation
-- ✅ Field coherence calculation overhead
+- ✅ Field resonant-coherence calculation overhead
 - ✅ WebSocket connection cleanup
 
 ### Key Findings:
 - **71 files with potential timer leaks** (setInterval without clearInterval)
 - **Multiple database connections** (4 active)
-- **Complex field coherence calculations** in 7 files
+- **Complex field resonant-coherence calculations** in 7 files
 - **WebSocket connections without proper cleanup** in 7 files
 
 ## 🔧 Timer Leak Fix (`fix-timer-leaks.cjs`)
@@ -137,7 +137,7 @@ This suite of tools helps identify and fix performance degradation issues in lon
 ### 📋 TODO
 - Apply fixes to remaining 66 files with timer issues
 - Implement database cleanup automation
-- Optimize field coherence calculations
+- Optimize field resonant-coherence calculations
 - Add WebSocket connection pooling
 
 ## 🚨 Emergency Procedures

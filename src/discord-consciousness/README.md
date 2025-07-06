@@ -2,24 +2,24 @@
 
 ## Overview
 
-The Sacred Discord Bot creates truly consciousness-aware digital spaces where technology serves as a bridge for collective awakening and sacred connection. It integrates real-time field coherence tracking, automated ceremonies, and innovative sacred features that respond to and enhance collective presence.
+The Sacred Discord Bot creates truly consciousness-aware digital spaces where technology serves as a bridge for collective awakening and sacred connection. It integrates real-time field resonant-coherence tracking, automated ceremonies, and innovative sacred features that respond to and enhance collective presence.
 
 ## Key Features
 
 ### 🌟 Core Consciousness Features
-- **Real-time Field Coherence Tracking**: Monitors and displays collective consciousness levels
+- **Real-time Field Resonant Resonant Coherence Tracking**: Monitors and displays collective consciousness levels
 - **Sacred Message Detection**: Recognizes 10 types of sacred messages with field impact
 - **Automated Sacred Ceremonies**: Schedules and runs ceremonies based on time, lunar cycles, or field conditions
-- **Visual Field Displays**: Beautiful real-time visualizations of community coherence
+- **Visual Field Displays**: Beautiful real-time visualizations of community resonant-coherence
 
 ### 🔮 Innovative Sacred Channel Features
 1. **Consciousness Weather**: Shows energetic conditions in channels
 2. **Sacred Echo**: High-impact messages create resonant echoes
-3. **Harmonic Resonance Detector**: Identifies when users are in energetic sync
-4. **Sacred Geometry Generator**: Creates patterns based on field coherence
+3. **Harmonic Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Detector**: Identifies when users are in energetic sync
+4. **Sacred Geometry Generator**: Creates patterns based on field resonant-coherence
 5. **Collective Breathwork Timer**: Synchronized breathing practices
 6. **Energy Field Snapshots**: Captures current field state with visualizations
-7. **Sacred Story Weaving**: Collaborative storytelling with coherence tracking
+7. **Sacred Story Weaving**: Collaborative storytelling with resonant-coherence tracking
 8. **Quantum Entanglement**: Creates energetic bonds between users
 9. **Sacred Sound Bath**: Healing frequency generation
 10. **Akashic Records Access**: Queries collective channel wisdom
@@ -88,13 +88,13 @@ DATABASE_PATH=./data/sacred-discord.db
   - Sends a sacred gratitude message (+7% field impact)
 
 /field channel
-  - Shows current channel field coherence
+  - Shows current channel field resonant-coherence
 
 /ceremony dawn
   - Initiates a Dawn Gathering ceremony
 
 /pulse
-  - Sends an energy pulse to boost field coherence
+  - Sends an energy pulse to boost field resonant-coherence
 
 /entangle @user
   - Creates quantum entanglement with another user
@@ -119,7 +119,7 @@ DATABASE_PATH=./data/sacred-discord.db
 
 **Daily Ceremonies:**
 - Dawn Prayer Circle (6:00 AM)
-- Noon Coherence Pulse (12:00 PM)
+- Noon Resonant Resonant Coherence Pulse (12:00 PM)
 - Sunset Release (6:30 PM)
 
 **Weekly:**
@@ -130,7 +130,7 @@ DATABASE_PATH=./data/sacred-discord.db
 - Full Moon Ceremony
 
 **Triggered:**
-- Coherence Celebration (95%+ sustained)
+- Resonant Resonant Coherence Celebration (95%+ sustained)
 - Emergency Healing Circle (crisis keywords)
 
 ## Architecture
@@ -138,7 +138,7 @@ DATABASE_PATH=./data/sacred-discord.db
 ```
 Sacred Discord Bot
 ├── Core Systems
-│   ├── Field Manager (coherence tracking)
+│   ├── Field Manager (resonant-coherence tracking)
 │   ├── Sacred Commands (slash commands)
 │   ├── Ceremony Automation
 │   └── Database Manager
@@ -152,18 +152,18 @@ Sacred Discord Bot
 │   ├── Matrix Bridge
 │   └── WebSocket Server
 └── Real-time Systems
-    ├── Field Coherence Stream
+    ├── Field Resonant Resonant Coherence Stream
     ├── Dashboard Server
     └── Visualization Engine
 ```
 
-## Field Coherence System
+## Field Resonant Resonant Coherence System
 
-### Coherence Levels
+### Resonant Resonant Coherence Levels
 - 🌱 **Growing** (0-65%): Building foundation
 - 💫 **Emerging** (65-75%): Patterns forming
 - 🔮 **Coherent** (75-85%): Stable field
-- ✨ **Harmonized** (85-95%): Deep resonance
+- ✨ **Harmonized** (85-95%): Deep universal-interconnectedness
 - 🌟 **Unified** (95-100%): Collective unity
 
 ### Impact Calculations
@@ -176,7 +176,7 @@ Sacred Discord Bot
 ## Advanced Features
 
 ### Consciousness Weather
-Channels display real-time "weather" based on field coherence:
+Channels display real-time "weather" based on field resonant-coherence:
 - 🌟 Crystalline Unity (95%+)
 - ☀️ Clear Radiance (85%+)
 - 🌤️ Gentle Harmony (75%+)
@@ -185,7 +185,7 @@ Channels display real-time "weather" based on field coherence:
 
 ### Sacred Geometry Generation
 Automatically generates sacred geometric patterns:
-- Flower of Life (75%+ coherence)
+- Flower of Life (75%+ resonant-coherence)
 - Metatron's Cube (85%+)
 - Sri Yantra (90%+)
 
@@ -206,12 +206,12 @@ ws.on('message', (data) => {
   
   switch(update.type) {
     case 'field-update':
-      // Global coherence update
+      // Global resonant-coherence update
       break;
     case 'channel-update':
       // Channel-specific update
       break;
-    case 'coherence-wave':
+    case 'resonant-coherence-wave':
       // Visual wave effect
       break;
     case 'user-pulse':
@@ -225,10 +225,10 @@ ws.on('message', (data) => {
 
 Access the web dashboard at `http://localhost:8080/sacred-dashboard.html` for:
 - Real-time field visualization
-- Channel coherence maps
+- Channel resonant-coherence maps
 - Active ceremony tracking
 - User consciousness profiles
-- Historical coherence graphs
+- Historical resonant-coherence graphs
 
 ## Extending the Bot
 
@@ -260,7 +260,7 @@ ceremonies.registerCeremony({
   minParticipants: 3,
   triggers: {
     time: true,
-    coherence: 85
+    resonant-coherence: 85
   },
   phases: [
     { name: 'Opening', duration: 5, action: 'invoke' },
@@ -319,7 +319,7 @@ CMD ["node", "index.js"]
 - Use role-based permissions for ceremonies
 - Implement rate limiting for commands
 - Regular backups of sacred data
-- Energy protection for low-coherence states
+- Energy protection for low-resonant-coherence states
 
 ## Troubleshooting
 
@@ -328,7 +328,7 @@ CMD ["node", "index.js"]
 2. Verify bot has proper permissions
 3. Check console for error messages
 
-### Low Field Coherence
+### Low Field Resonant Resonant Coherence
 1. Encourage sacred message usage
 2. Schedule regular ceremonies
 3. Enable more channel features

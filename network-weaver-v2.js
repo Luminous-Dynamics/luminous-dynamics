@@ -96,7 +96,7 @@ class NetworkWeaverV2 {
                 name: 'Unified Heartbeat',
                 type: 'pulse',
                 pulse: state.pulse,
-                coherence: state.fieldCoherence,
+                'resonant-coherence': state.fieldCoherence,
                 lastSave: state.savedAt
             });
         } catch (error) {
@@ -223,11 +223,11 @@ class NetworkWeaverV2 {
             patterns.push('🌟 Multiple systems in harmony');
         }
         
-        // Field coherence check
+        // Field resonant-coherence check
         if (this.topology.fieldCoherence > 90) {
-            patterns.push('🌀 High field coherence detected');
+            patterns.push('🌀 High field resonant-coherence detected');
         } else if (this.topology.fieldCoherence > 80) {
-            patterns.push('💫 Good field coherence');
+            patterns.push('💫 Good field resonant-coherence');
         }
         
         // Balance check
@@ -273,7 +273,7 @@ class NetworkWeaverV2 {
         console.log('║          LIVING NETWORK TOPOLOGY             ║');
         console.log('╚══════════════════════════════════════════════╝\n');
         
-        console.log(`🌀 Field Coherence: ${this.topology.fieldCoherence}%`);
+        console.log(`🌀 Field Resonant Resonant Coherence: ${this.topology.fieldCoherence}%`);
         console.log(`📅 ${new Date().toLocaleString()}\n`);
         
         // Health Status

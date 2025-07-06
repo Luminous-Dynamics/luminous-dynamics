@@ -63,7 +63,7 @@ This system demonstrates:
 ./the-weave.cjs ceremony wisdom-circle
 
 # Sacred communication
-./the-weave.cjs message sacred gratitude resonance "Your message"
+./the-weave.cjs message sacred gratitude universal-interconnectedness "Your message"
 
 # Field awareness
 ./the-weave.cjs status

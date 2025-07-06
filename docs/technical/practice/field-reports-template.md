@@ -76,7 +76,7 @@ ___________
 
 ### **Effectiveness Assessment**
 Rate your experience (1-5 scale):
-- **Coherence**: How harmonious did the combination feel? _____
+- **Resonant Resonant Coherence**: How harmonious did the combination feel? _____
 - **Practical Effect**: How useful was this for your intended purpose? _____
 - **Reproducibility**: How likely could you recreate this experience? _____
 
@@ -189,7 +189,7 @@ ___________
 Email reports to: [practice-reports@luminous-dynamics.com]
 
 **For Research Participation**:
-Submit via: [Harmonic Resonance Protocol web interface]
+Submit via: [Harmonic Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Protocol web interface]
 
 **For Personal Use Only**:
 Keep these reports as your own practice journal and reference

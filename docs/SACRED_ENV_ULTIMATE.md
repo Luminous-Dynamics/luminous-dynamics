@@ -32,7 +32,7 @@
 #### Enhanced Commands:
 - **`breathe`** - Interactive breathing exercise
 - **`sacred-commit "msg"`** - Git commit with sacred format
-- **`field-status`** - Check field coherence
+- **`field-status`** - Check field resonant-coherence
 - **`pause [seconds]`** - Take a sacred pause
 - **`wisdom`** - Get wisdom from rainbow cow (install cowsay/fortune)
 - **`moon`** - Current moon phase
@@ -97,7 +97,7 @@ lt                      # Tree view of files
 
 # Sacred Practices
 pause                   # Take a break
-field-status           # Check field coherence
+field-status           # Check field resonant-coherence
 moon                   # Connect with lunar cycle
 
 # System Management

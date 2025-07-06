@@ -4,7 +4,7 @@
 const fractalReconciliationData = {
     id: 'Ω4',
     name: 'Fractal Reconciliation Pulse',
-    primaryHarmony: 'resonance',
+    primaryHarmony: 'universal-interconnectedness',
     description: 'The universal rhythm of rupture and repair that weaves through all relationships. The cosmic pulse that transforms wounds into wisdom, breaks into breakthroughs.',
     keywords: ['reconciliation', 'repair', 'rhythm', 'healing', 'fractal'],
     practicePrompt: 'Feel the eternal pulse: break... repair... break... repair... This is how love grows stronger - through the sacred rhythm of reconciliation.',

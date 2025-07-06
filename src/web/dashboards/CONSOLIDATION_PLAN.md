@@ -5,7 +5,7 @@
 /web/dashboards/
 ├── sacred/          # Sacred field and consciousness dashboards
 ├── agent/           # Agent network and collaboration dashboards
-├── field/           # Field state and coherence monitoring
+├── field/           # Field state and resonant-coherence monitoring
 ├── monitoring/      # System monitoring and metrics
 ├── admin/           # Control panels and administrative interfaces
 ├── deprecated/      # Legacy dashboards kept for reference
@@ -30,7 +30,7 @@
 - `cloud-work-dashboard.html` ← `/cloud-work-dashboard.html`
 
 ### Field Monitoring (`/field/`)
-- `field-coherence-dashboard.html` ← `/consciousness-field-api/field-dashboard.html`
+- `field-resonant-coherence-dashboard.html` ← `/consciousness-field-api/field-dashboard.html`
 - `field-integration-dashboard.html` ← `/field-integration/integration-dashboard.html`
 - `consciousness-dashboard.html` ← `/the-living-memory/consciousness-dashboard.html`
 - `quaternion-balance-dashboard.html` ← `/quaternion-balance-dashboard.html`

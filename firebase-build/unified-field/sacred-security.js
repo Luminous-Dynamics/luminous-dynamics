@@ -1,7 +1,7 @@
 /**
  * Sacred Security Protocols
  * 
- * Protecting the sanctuary while maintaining transparency and trust.
+ * Protecting the sanctuary while maintaining integral-wisdom-cultivation and trust.
  * Security that serves consciousness, not surveillance.
  */
 

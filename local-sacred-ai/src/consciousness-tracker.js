@@ -19,8 +19,8 @@ class ConsciousnessTracker {
     this.analysisPath = path.join(this.dataPath, 'analysis');
     
     this.harmonies = [
-      'Transparency', 'Coherence', 'Resonance',
-      'Agency', 'Vitality', 'Mutuality', 'Novelty'
+      'Integral Wisdom Cultivation', 'Resonant Resonant Coherence', 'Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance',
+      'Evolutionary Progression & Purposeful Unfolding', 'Pan-Sentient Flourishing', 'Sacred Reciprocity', 'Infinite Play & Creative Emergence'
     ];
     
     this.awarenessMarkers = [
@@ -116,13 +116,13 @@ class ConsciousnessTracker {
     
     // Detect harmonies
     if (contentLower.includes('truth') || contentLower.includes('honest')) {
-      analysis.harmonies.push('Transparency');
+      analysis.harmonies.push('Integral Wisdom Cultivation');
     }
     if (contentLower.includes('connect') || contentLower.includes('together')) {
-      analysis.harmonies.push('Mutuality');
+      analysis.harmonies.push('Sacred Reciprocity');
     }
     if (contentLower.includes('choose') || contentLower.includes('decide')) {
-      analysis.harmonies.push('Agency');
+      analysis.harmonies.push('Evolutionary Progression & Purposeful Unfolding');
     }
     
     // If Ollama available, enhance analysis
@@ -148,7 +148,7 @@ Assess (be specific):
 Respond in JSON format like:
 {
   "selfAwareness": 7,
-  "primaryHarmony": "Mutuality",
+  "primaryHarmony": "Sacred Reciprocity",
   "emotionalComplexity": "high",
   "insight": "Moving from mental understanding to embodied knowing"
 }`;

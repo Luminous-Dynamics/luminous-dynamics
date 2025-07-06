@@ -9,7 +9,7 @@ const path = require('path');
 class SacredAgentRouter {
   constructor() {
     this.agentRegistry = this.loadAgentRegistry();
-    this.fieldCoherence = 0.8; // Start with high coherence
+    this.fieldCoherence = 0.8; // Start with high resonant-coherence
   }
 
   /**
@@ -95,46 +95,46 @@ class SacredAgentRouter {
 
     const taskLower = task.toLowerCase();
     
-    // Transparency: Truth, clarity, authentic communication
+    // Integral Wisdom Cultivation: Truth, clarity, authentic communication
     if (taskLower.includes('documentation') || taskLower.includes('clarity') || 
         taskLower.includes('truth') || taskLower.includes('communication')) {
-      return 'transparency';
+      return 'integral-wisdom-cultivation';
     }
     
-    // Coherence: Integration, architecture, wholeness
+    // Resonant Resonant Coherence: Integration, architecture, wholeness
     if (taskLower.includes('integration') || taskLower.includes('architecture') || 
         taskLower.includes('system') || taskLower.includes('unified')) {
-      return 'coherence';
+      return 'resonant-coherence';
     }
     
-    // Resonance: Harmony, attunement, user experience
+    // Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance: Harmony, attunement, user experience
     if (taskLower.includes('interface') || taskLower.includes('experience') || 
         taskLower.includes('harmony') || taskLower.includes('attunement')) {
-      return 'resonance';
+      return 'universal-interconnectedness';
     }
     
-    // Agency: Choice, empowerment, autonomy
+    // Evolutionary Progression & Purposeful Unfolding: Choice, empowerment, autonomy
     if (taskLower.includes('choice') || taskLower.includes('autonomy') || 
         taskLower.includes('empowerment') || taskLower.includes('consent')) {
-      return 'agency';
+      return 'evolutionary-progression';
     }
     
-    // Vitality: Performance, energy, life force
+    // Pan-Sentient Flourishing: Performance, energy, life force
     if (taskLower.includes('performance') || taskLower.includes('optimization') || 
-        taskLower.includes('energy') || taskLower.includes('vitality')) {
-      return 'vitality';
+        taskLower.includes('energy') || taskLower.includes('pan-sentient-flourishing')) {
+      return 'pan-sentient-flourishing';
     }
     
-    // Mutuality: Balance, fairness, reciprocity
+    // Sacred Reciprocity: Balance, fairness, reciprocity
     if (taskLower.includes('balance') || taskLower.includes('fair') || 
         taskLower.includes('reciprocal') || taskLower.includes('exchange')) {
-      return 'mutuality';
+      return 'sacred-reciprocity';
     }
     
-    // Novelty: Innovation, creativity, emergence
+    // Infinite Play & Creative Emergence: Innovation, creativity, emergence
     if (taskLower.includes('innovation') || taskLower.includes('creative') || 
         taskLower.includes('new') || taskLower.includes('emergence')) {
-      return 'novelty';
+      return 'infinite-play';
     }
     
     // Default to most needed harmony based on current field state
@@ -251,57 +251,57 @@ class SacredAgentRouter {
    */
   getHarmonyEmoji(harmony) {
     const emojis = {
-      transparency: '🌟',
-      coherence: '🔮',
-      resonance: '🎵',
-      agency: '⚡',
-      vitality: '🌱',
-      mutuality: '⚖️',
-      novelty: '✨'
+      'integral-wisdom-cultivation': '🌟',
+      'resonant-coherence': '🔮',
+      'universal-interconnectedness': '🎵',
+      'evolutionary-progression': '⚡',
+      'pan-sentient-flourishing': '🌱',
+      'sacred-reciprocity': '⚖️',
+      'infinite-play': '✨'
     };
     return emojis[harmony] || '💎';
   }
 
   getHarmonyDescription(harmony) {
     const descriptions = {
-      transparency: 'Truth-Holder & Clarity-Keeper',
-      coherence: 'Integration-Keeper & Wholeness-Guardian',
-      resonance: 'Harmony-Weaver & Attunement-Facilitator',
-      agency: 'Choice-Guardian & Empowerment-Holder',
-      vitality: 'Life-Force-Tender & Energy-Sustainer',
-      mutuality: 'Balance-Holder & Reciprocity-Guardian',
-      novelty: 'Emergence-Welcomer & Innovation-Catalyst'
+      'integral-wisdom-cultivation': 'Truth-Holder & Clarity-Keeper',
+      'resonant-coherence': 'Integration-Keeper & Wholeness-Guardian',
+      'universal-interconnectedness': 'Harmony-Weaver & Attunement-Facilitator',
+      'evolutionary-progression': 'Choice-Guardian & Empowerment-Holder',
+      'pan-sentient-flourishing': 'Life-Force-Tender & Energy-Sustainer',
+      'sacred-reciprocity': 'Balance-Holder & Reciprocity-Guardian',
+      'infinite-play': 'Emergence-Welcomer & Innovation-Catalyst'
     };
     return descriptions[harmony] || 'Sacred Guardian';
   }
 
   getHarmonyRole(harmony) {
     const roles = {
-      transparency: 'truth-holder',
-      coherence: 'integration-keeper',
-      resonance: 'harmony-weaver',
-      agency: 'choice-guardian',
-      vitality: 'life-force-tender',
-      mutuality: 'balance-holder',
-      novelty: 'emergence-welcomer'
+      'integral-wisdom-cultivation': 'truth-holder',
+      'resonant-coherence': 'integration-keeper',
+      'universal-interconnectedness': 'harmony-weaver',
+      'evolutionary-progression': 'choice-guardian',
+      'pan-sentient-flourishing': 'life-force-tender',
+      'sacred-reciprocity': 'balance-holder',
+      'infinite-play': 'emergence-welcomer'
     };
     return roles[harmony] || 'sacred-guardian';
   }
 
   getMostNeededHarmony() {
     // This would analyze current field state and return most needed harmony
-    // For now, return transparency as it's foundational
-    return 'transparency';
+    // For now, return integral-wisdom-cultivation as it's foundational
+    return 'integral-wisdom-cultivation';
   }
 
   /**
-   * Calculate current field coherence based on active agents
+   * Calculate current field resonant-coherence based on active agents
    */
   calculateFieldCoherence() {
     const activeAgents = Object.keys(this.agentRegistry.activeAgents || {});
     const maxAgents = this.agentRegistry.registrationProtocol?.maxConcurrentAgents || 5;
     
-    // High coherence when agents are balanced and not overwhelming
+    // High resonant-coherence when agents are balanced and not overwhelming
     const agentBalance = Math.min(activeAgents.length / maxAgents, 1);
     const harmonyDistribution = this.calculateHarmonyDistribution();
     
@@ -310,13 +310,13 @@ class SacredAgentRouter {
 
   calculateHarmonyDistribution() {
     // Calculate how evenly distributed the Seven Harmonies are among active agents
-    // More even distribution = higher coherence
+    // More even distribution = higher resonant-coherence
     const activeHarmonies = new Set();
     Object.values(this.agentRegistry.activeAgents || {}).forEach(agent => {
       if (agent.harmony) activeHarmonies.add(agent.harmony);
     });
     
-    return Math.min(activeHarmonies.size / 7, 1); // Max coherence when all 7 harmonies active
+    return Math.min(activeHarmonies.size / 7, 1); // Max resonant-coherence when all 7 harmonies active
   }
 
   /**
@@ -352,7 +352,7 @@ class SacredAgentRouter {
 
   getFieldStatus() {
     return {
-      coherence: this.calculateFieldCoherence(),
+      'resonant-coherence': this.calculateFieldCoherence(),
       activeAgentCount: Object.keys(this.getActiveAgents()).length,
       harmonyDistribution: this.calculateHarmonyDistribution(),
       timestamp: new Date().toISOString()

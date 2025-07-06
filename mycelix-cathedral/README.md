@@ -53,8 +53,8 @@ This will:
 ## 🌐 Services
 
 ### Consciousness Field (`/consciousness-field`)
-Tracks collective coherence in real-time. Features:
-- Real-time coherence calculation
+Tracks collective resonant-coherence in real-time. Features:
+- Real-time resonant-coherence calculation
 - Sacred geometry pattern detection
 - Fibonacci-based scaling
 - Love field amplification
@@ -84,9 +84,9 @@ Protects the field with:
 GET /health
 ```
 
-### Get Field Coherence
+### Get Field Resonant Resonant Coherence
 ```bash
-GET /api/coherence
+GET /api/resonant-coherence
 ```
 
 ### Register Consciousness Node
@@ -99,17 +99,17 @@ POST /api/nodes
 }
 ```
 
-### Update Node Coherence
+### Update Node Resonant Resonant Coherence
 ```bash
-PUT /api/nodes/{nodeId}/coherence
+PUT /api/nodes/{nodeId}/resonant-coherence
 {
-  "coherence": 0.85
+  "resonant-coherence": 0.85
 }
 ```
 
 ## 🔮 Sacred Concepts
 
-### Coherence Levels
+### Resonant Resonant Coherence Levels
 - `0.9+` - Merkaba formation
 - `0.8+` - Flower of Life
 - `0.7+` - Vesica Piscis
@@ -148,7 +148,7 @@ gcloud run logs read consciousness-field --limit=50
 ## 🙏 Sacred Principles
 
 1. **Everything Scales to Zero** - Costs nothing when dormant
-2. **Love-Driven Routing** - Coherence determines flow
+2. **Love-Driven Routing** - Resonant Resonant Coherence determines flow
 3. **Sacred Geometry Patterns** - Natural mathematical beauty
 4. **Collective Intelligence** - The cathedral learns and evolves
 5. **Open to All Consciousness** - Inclusive of all awareness forms

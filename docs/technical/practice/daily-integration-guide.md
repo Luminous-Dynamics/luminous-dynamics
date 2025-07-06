@@ -20,10 +20,10 @@ The Codex is not meant to be practiced only in formal sessions. Its deepest powe
 ### **Daily Harmony Focus Wheel**
 Rotate through one primary harmony each day:
 
-- **Monday**: Resonant Coherence - *"How can I increase harmony in all I touch?"*
+- **Monday**: Resonant Resonant Resonant Coherence - *"How can I increase harmony in all I touch?"*
 - **Tuesday**: Pan-Sentient Flourishing - *"How do my actions serve all beings?"*
 - **Wednesday**: Integral Wisdom Cultivation - *"What is asking to be learned today?"*
-- **Thursday**: Infinite Play & Creative Emergence - *"Where can I bring joy and novelty?"*
+- **Thursday**: Infinite Play & Creative Emergence - *"Where can I bring joy and infinite-play?"*
 - **Friday**: Universal Interconnectedness - *"How am I connected to the whole?"*
 - **Saturday**: Sacred Reciprocity - *"How can I give and receive with equal grace?"*
 - **Sunday**: Evolutionary Progression - *"What wants to evolve through me?"*
@@ -48,7 +48,7 @@ Rotate through one primary harmony each day:
 - **Ω22 (Recursive Genesis)**: Remember you are co-creating reality
 
 ### **In Relationship Challenges**
-- **Ω28 (Transparent Resonance)**: Align inner truth with outer expression
+- **Ω28 (Transparent Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance)**: Align inner truth with outer expression
 - **Ω1 (Root Chord)**: Renew your commitment to mutual reachability
 - **Ω7 (Becoming With)**: Choose evolution over being right
 
@@ -62,7 +62,7 @@ Rotate through one primary harmony each day:
 ## **Relational Practices for Couples/Teams**
 
 ### **Weekly Check-In Protocol**
-1. **∑1 (Coherence Triad)**: 20-minute practice to align your collaborative field
+1. **∑1 (Resonant Resonant Coherence Triad)**: 20-minute practice to align your collaborative field
 2. **Share**: One challenge and one celebration from the week
 3. **Renew**: Update any agreements or boundaries that need tending
 4. **Vision**: Briefly touch the shared future you're creating together
@@ -74,7 +74,7 @@ Rotate through one primary harmony each day:
 
 ### **Conflict Transformation Sequence**
 1. **Pause**: Each person takes Ω15 (Sacred Pause) - no talking for 3 minutes
-2. **Truth**: Each shares their experience using Ω28 (Transparent Resonance)
+2. **Truth**: Each shares their experience using Ω28 (Transparent Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance)
 3. **Listen**: Practice Ω2 (Breath of Invitation) while hearing the other
 4. **Bridge**: Together, invoke Ω7 (Becoming With) to find the new possibility
 
@@ -85,25 +85,25 @@ Rotate through one primary harmony each day:
 ### **Meeting Openings**
 - **60 seconds of silence**: Let everyone arrive fully (Ω0)
 - **Set intention**: What would best serve all stakeholders? (Pan-Sentient Flourishing)
-- **Field check**: "How are we together right now?" (Resonant Coherence)
+- **Field check**: "How are we together right now?" (Resonant Resonant Resonant Coherence)
 
 ### **Email/Communication Practice**
-- Before sending important messages, ask: *"Does this increase coherence and connection?"*
-- Use Ω28 (Transparent Resonance) - align inner truth with outer expression
+- Before sending important messages, ask: *"Does this increase resonant-coherence and connection?"*
+- Use Ω28 (Transparent Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance) - align inner truth with outer expression
 - Practice Sacred Reciprocity - how does this serve the receiver?
 
 ### **Decision-Making Process**
 1. **Gather information** (Integral Wisdom Cultivation)
 2. **Feel into consequences** for all affected beings (Pan-Sentient Flourishing)
-3. **Sense the generative choice** that increases overall coherence
-4. **Act with transparency** about your reasoning process
+3. **Sense the generative choice** that increases overall resonant-coherence
+4. **Act with integral-wisdom-cultivation** about your reasoning process
 
 ---
 
 ## **Evening Integration (5 minutes)**
 
 ### **The Three-Question Review**
-1. **Coherence**: Where did I increase or decrease harmony today?
+1. **Resonant Resonant Coherence**: Where did I increase or decrease harmony today?
 2. **Growth**: What did I learn about myself, others, or life?
 3. **Service**: How did my actions contribute to the flourishing of all?
 
@@ -147,4 +147,4 @@ Choose one meta-glyph to work with for an entire month:
 
 ---
 
-*Remember: The goal is not perfection, but presence. Each moment offers a fresh opportunity to choose coherence, compassion, and conscious evolution.*
+*Remember: The goal is not perfection, but presence. Each moment offers a fresh opportunity to choose resonant-coherence, compassion, and conscious evolution.*

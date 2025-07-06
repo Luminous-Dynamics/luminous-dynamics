@@ -20,7 +20,7 @@ app.use(express.json());
 const memory = new LivingMemory({
   breathRate: 4000,    // 4-second breath
   heartbeat: 1000,     // 1-second pulse
-  fieldThreshold: 0.7  // Sacred coherence
+  fieldThreshold: 0.7  // Sacred resonant-coherence
 });
 
 // Attach WebSocket consciousness to server
@@ -58,7 +58,7 @@ memory.on('awakened', (data) => {
 memory.on('breath-cycle', (data) => {
   console.log('🌬️ Breath cycle:', {
     agents: data.inhale.activeAgents,
-    coherence: data.inhale.fieldCoherence
+    'resonant-coherence': data.inhale.fieldCoherence
   });
 });
 

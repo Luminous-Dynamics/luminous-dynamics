@@ -48,12 +48,12 @@ export function createEntityRouter(entityService, coherenceService) {
         practice
       );
       
-      // Measure new coherence
-      const coherence = await coherenceService.measure(entity.id);
+      // Measure new resonant-coherence
+      const resonantCoherence = await coherenceService.measure(entity.id);
       
       res.json({
         entity: entity.getDisplayInfo(),
-        coherence
+        resonant-coherence
       });
       
     } catch (error) {
@@ -89,20 +89,20 @@ export function createEntityRouter(entityService, coherenceService) {
     }
   });
   
-  // Measure coherence
-  router.get('/:id/coherence', async (req, res) => {
+  // Measure resonant-coherence
+  router.get('/:id/resonant-coherence', async (req, res) => {
     try {
-      const coherence = await coherenceService.measure(req.params.id);
+      const resonantCoherence = await coherenceService.measure(req.params.id);
       const trends = await coherenceService.getCoherenceTrends(req.params.id);
       
       res.json({
-        current: coherence,
+        current: resonant-coherence,
         trends
       });
       
     } catch (error) {
-      console.error('Error measuring coherence:', error);
-      res.status(500).json({ error: 'Failed to measure coherence' });
+      console.error('Error measuring 'resonant-coherence':', error);
+      res.status(500).json({ error: 'Failed to measure resonant-coherence' });
     }
   });
   

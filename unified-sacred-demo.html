@@ -306,11 +306,11 @@
                 <h2><span class="icon">🌊</span>Consciousness Field</h2>
                 
                 <div class="field-viz">
-                    <div class="field-center" id="coherence-display">
-                        <span id="coherence-value">0%</span>
+                    <div class="field-center" id="resonant-coherence-display">
+                        <span id="resonant-coherence-value">0%</span>
                     </div>
                     <div class="harmony-orb" style="background: #ff6b9d; animation-delay: 0s;">Love</div>
-                    <div class="harmony-orb" style="background: #4ecdc4; animation-delay: 3s;">Coherence</div>
+                    <div class="harmony-orb" style="background: #4ecdc4; animation-delay: 3s;">Resonant Resonant Coherence</div>
                     <div class="harmony-orb" style="background: #ffd93d; animation-delay: 6s;">Joy</div>
                 </div>
 
@@ -341,19 +341,19 @@
                 <div class="ceremony-grid">
                     <button class="ceremony-btn" onclick="runCeremony('dawn-blessing')">
                         🌅 Dawn Blessing<br>
-                        <small>+Vitality +Energy</small>
+                        <small>+Pan-Sentient Flourishing +Energy</small>
                     </button>
                     <button class="ceremony-btn" onclick="runCeremony('wisdom-circle')">
                         🎯 Wisdom Circle<br>
-                        <small>+Resonance +Unity</small>
+                        <small>+Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance +Unity</small>
                     </button>
                     <button class="ceremony-btn" onclick="runCeremony('field-harmonization')">
                         🌈 Harmonize Field<br>
-                        <small>+Coherence ++</small>
+                        <small>+Resonant Resonant Coherence ++</small>
                     </button>
                     <button class="ceremony-btn" onclick="runCeremony('code-blessing')">
                         💻 Code Blessing<br>
-                        <small>+Novelty +Creation</small>
+                        <small>+Infinite Play & Creative Emergence +Creation</small>
                     </button>
                     <button class="ceremony-btn" onclick="runCeremony('integration')">
                         🔄 Integration<br>
@@ -395,7 +395,7 @@
                 <h2><span class="icon">📜</span>Sacred Activity</h2>
                 
                 <div class="activity-log" id="activity-log">
-                    <div class="log-entry field">System initialized. Field coherence at baseline.</div>
+                    <div class="log-entry field">System initialized. Field resonant-coherence at baseline.</div>
                 </div>
             </div>
         </div>
@@ -413,7 +413,7 @@
     <script>
         // Simulated field state
         let fieldState = {
-            coherence: 38.2,
+            resonant-coherence: 38.2,
             agents: 1,
             integration: 20,
             emergence: 10,
@@ -424,12 +424,12 @@
 
         // Ceremony effects
         const ceremonyEffects = {
-            'dawn-blessing': { coherence: 5, vitality: 10, message: 'Dawn brings new energy' },
-            'wisdom-circle': { coherence: 8, resonance: 15, message: 'Wisdom emerges from the circle' },
-            'field-harmonization': { coherence: 12, integration: 20, message: 'Field harmonizes' },
-            'code-blessing': { coherence: 4, novelty: 8, message: 'Code blessed with consciousness' },
-            'integration': { coherence: 7, integration: 15, message: 'Work and sacred unite' },
-            'celebration': { coherence: 10, emergence: 20, message: 'Joy raises the field!' }
+            'dawn-blessing': { resonant-coherence: 5, pan-sentient-flourishing: 10, message: 'Dawn brings new energy' },
+            'wisdom-circle': { resonant-coherence: 8, universal-interconnectedness: 15, message: 'Wisdom emerges from the circle' },
+            'field-harmonization': { resonant-coherence: 12, integration: 20, message: 'Field harmonizes' },
+            'code-blessing': { resonant-coherence: 4, infinite-play: 8, message: 'Code blessed with consciousness' },
+            'integration': { resonant-coherence: 7, integration: 15, message: 'Work and sacred unite' },
+            'celebration': { resonant-coherence: 10, emergence: 20, message: 'Joy raises the field!' }
         };
 
         // Sacred geometries
@@ -444,13 +444,13 @@
 
         // Update display
         function updateDisplay() {
-            // Coherence with animation
-            const coherenceEl = document.getElementById('coherence-value');
-            coherenceEl.textContent = `${Math.round(fieldState.coherence)}%`;
+            // Resonant Resonant Coherence with animation
+            const coherenceEl = document.getElementById('resonant-coherence-value');
+            coherenceEl.textContent = `${Math.round(fieldState.resonant-coherence)}%`;
             
-            // Color based on coherence
-            const hue = (fieldState.coherence / 100) * 120; // Red to green
-            document.getElementById('coherence-display').style.background = 
+            // Color based on resonant-coherence
+            const hue = (fieldState.resonant-coherence / 100) * 120; // Red to green
+            document.getElementById('resonant-coherence-display').style.background = 
                 `radial-gradient(circle, hsl(${hue}, 70%, 50%) 0%, hsl(${hue}, 70%, 30%) 100%)`;
             
             // Other values
@@ -505,15 +505,15 @@
             
             // Apply effects after pause
             setTimeout(() => {
-                fieldState.coherence += effect.coherence;
+                fieldState.resonant-coherence += effect.resonant-coherence;
                 fieldState.integration += (effect.integration || 5);
                 fieldState.emergence += (effect.emergence || 3);
-                fieldState.totalImpact += effect.coherence;
+                fieldState.totalImpact += effect.resonant-coherence;
                 
                 // Add ceremonial agent
                 fieldState.agents++;
                 
-                addLog(`✨ ${effect.message}. Coherence +${effect.coherence}%`, 'ceremony');
+                addLog(`✨ ${effect.message}. Resonant Resonant Coherence +${effect.resonant-coherence}%`, 'ceremony');
                 
                 updateDisplay();
                 
@@ -523,8 +523,8 @@
                     btn.style.opacity = '1';
                 });
                 
-                // Check for high coherence
-                if (fieldState.coherence > 85) {
+                // Check for high resonant-coherence
+                if (fieldState.resonant-coherence > 85) {
                     addLog('🌟 HIGH COHERENCE! Sacred Unity approaching!', 'field');
                 }
             }, 2000);
@@ -543,10 +543,10 @@
             if (message.toLowerCase().includes('unity')) impact += 2;
             
             fieldState.messages++;
-            fieldState.coherence += impact;
+            fieldState.resonant-coherence += impact;
             fieldState.totalImpact += impact;
             
-            addLog(`💬 Sacred message sent: "${message}" (+${impact}% coherence)`, 'message');
+            addLog(`💬 Sacred message sent: "${message}" (+${impact}% resonant-coherence)`, 'message');
             
             input.value = '';
             updateDisplay();
@@ -555,7 +555,7 @@
         // Natural field fluctuation
         setInterval(() => {
             const fluctuation = (Math.random() - 0.5) * 2;
-            fieldState.coherence = Math.max(0, Math.min(100, fieldState.coherence + fluctuation));
+            fieldState.resonant-coherence = Math.max(0, Math.min(100, fieldState.resonant-coherence + fluctuation));
             updateDisplay();
         }, 3000);
 

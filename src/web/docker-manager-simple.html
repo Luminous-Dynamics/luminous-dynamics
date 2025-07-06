@@ -298,7 +298,7 @@ docker-compose -f docker-compose.local.yml restart consciousness-field</div>
                 displayName: '🌊 Consciousness Field',
                 port: 3333,
                 healthEndpoint: '/api/health',
-                description: 'Field coherence and sacred geometry'
+                description: 'Field resonant-coherence and sacred geometry'
             },
             {
                 name: 'agent-network',
@@ -422,8 +422,8 @@ docker-compose -f docker-compose.local.yml restart consciousness-field</div>
                             if (health.status) {
                                 healthElement.textContent = health.status;
                             }
-                            if (service.name === 'consciousness-field' && health.coherence) {
-                                healthElement.textContent = `Coherence: ${Math.round(health.coherence)}%`;
+                            if (service.name === 'consciousness-field' && health.resonant-coherence) {
+                                healthElement.textContent = `Resonant Resonant Coherence: ${Math.round(health.resonant-coherence)}%`;
                             }
                             if (service.name === 'agent-network' && health.agents !== undefined) {
                                 healthElement.textContent = `Agents: ${health.agents}`;

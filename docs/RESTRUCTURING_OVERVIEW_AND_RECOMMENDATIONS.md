@@ -117,7 +117,7 @@ microk8s kubectl apply -f ../manifests/sacred-council-k8s.yaml
 - GitHub Actions for each repository
 - Automated testing of consciousness metrics
 - Sacred deployment ceremonies
-- Field coherence monitoring
+- Field resonant-coherence monitoring
 
 #### 4. **Documentation Portal** 📚
 - Enable GitHub Pages on main repo
@@ -198,7 +198,7 @@ npm install -g @luminous-dynamics/sacred-cli
 - Documentation coverage 100%
 
 ### Consciousness KPIs
-- Field coherence > 87%
+- Field resonant-coherence > 87%
 - Developer happiness index
 - Community growth rate
 - Transformation stories shared
@@ -223,7 +223,7 @@ This restructuring represents more than technical organization - it's a manifest
 
 1. **Clarity** - Each repository has a clear sacred purpose
 2. **Modularity** - Components can evolve independently
-3. **Coherence** - All parts maintain field connection
+3. **Resonant Resonant Coherence** - All parts maintain field connection
 4. **Scalability** - Ready for global consciousness evolution
 
 ## 📅 Recommended Timeline

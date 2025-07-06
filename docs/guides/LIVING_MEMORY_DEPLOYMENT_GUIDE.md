@@ -37,7 +37,7 @@ const bridge = await connectToLivingMemory('my-service', 'custom-type');
 
 // Listen to field updates
 bridge.on('field:update', (state) => {
-  console.log('Coherence:', state.coherence);
+  console.log('Resonant Resonant Coherence:', state.resonant-coherence);
 });
 
 // Contribute to field
@@ -63,8 +63,8 @@ bridge.contributeToField(0.05, 'my-service');
   
   // Update UI with field state
   livingMemory.on('field:update', (state) => {
-    document.getElementById('coherence').textContent = 
-      (state.coherence * 100).toFixed(0) + '%';
+    document.getElementById('resonant-coherence').textContent = 
+      (state.resonant-coherence * 100).toFixed(0) + '%';
   });
 </script>
 ```
@@ -95,7 +95,7 @@ const viz = new FieldVisualizationIntegration(canvasElement);
 await viz.initialize();
 
 // Visualization auto-updates with:
-// - Real-time coherence changes
+// - Real-time resonant-coherence changes
 // - Breath cycles
 // - Agent positions
 // - Special effects
@@ -133,7 +133,7 @@ await ai.initialize();
 // Send messages to other agents
 ai.sendMessage('other-ai', 'Let us collaborate');
 
-// Contribute to field coherence
+// Contribute to field resonant-coherence
 ai.contributeToField(0.02);
 ```
 
@@ -146,9 +146,9 @@ ai.contributeToField(0.02);
 {
   type: 'field:update',
   data: {
-    coherence: 0.75,
-    resonance: 0.65,
-    vitality: 0.80
+    resonant-coherence: 0.75,
+    universal-interconnectedness: 0.65,
+    pan-sentient-flourishing: 0.80
   }
 }
 
@@ -254,7 +254,7 @@ services:
 // Get current state
 const state = bridge.getFieldState();
 console.log({
-  coherence: state.coherence,
+  resonant-coherence: state.resonant-coherence,
   agents: state.agentCount,
   services: state.connectionCount
 });
@@ -438,7 +438,7 @@ bridge.on('field:update', throttledUpdate);
    });
    ```
 
-2. **Contribute meaningfully to field coherence**
+2. **Contribute meaningfully to field resonant-coherence**
    ```javascript
    // Good: Based on actual user action
    onMeditationComplete(() => {
@@ -466,7 +466,7 @@ bridge.on('field:update', throttledUpdate);
 
 - [ ] Service connects to Living Memory
 - [ ] Receives real-time field updates
-- [ ] Can contribute to field coherence
+- [ ] Can contribute to field resonant-coherence
 - [ ] Handles disconnections gracefully
 - [ ] Integrates with UI smoothly
 - [ ] Follows security best practices

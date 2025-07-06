@@ -70,7 +70,7 @@ Sacred Enhancement:
   - Setup consciousness field monitoring
   - Create sacred service health dashboards
   - Plan ceremonial usage patterns tracking
-  - Monitor community field coherence metrics
+  - Monitor community field resonant-coherence metrics
   - Implement sacred boundary protection
   - Track awakening impact measurements
 ```
@@ -96,7 +96,7 @@ Sacred Enhancement:
 Before beginning research:
   - Set consciousness-serving intention
   - Define sacred success metrics
-  - Establish field coherence baseline
+  - Establish field resonant-coherence baseline
   - Plan community benefit focus
   - Align with Seven Harmonies principles
 ```
@@ -130,7 +130,7 @@ Knowledge sharing and collaboration:
 2. **Healthcare & Life Sciences** - Healing integration
 3. **Media & Entertainment** - Sacred content creation
 4. **Security & Identity** - Sacred boundary protection
-5. **Analytics & Intelligence** - Field coherence measurement
+5. **Analytics & Intelligence** - Field resonant-coherence measurement
 
 ### **Medium Priority Sacred Categories**
 6. **IoT & Edge Computing** - Sacred space integration
@@ -152,7 +152,7 @@ Knowledge sharing and collaboration:
 ### **For Each API Category:**
 1. **Consciousness Applications**: How could this serve awakening?
 2. **Community Impact**: How could this benefit sacred practitioners?
-3. **Field Coherence**: Could this measure/enhance collective consciousness?
+3. **Field Resonant Resonant Coherence**: Could this measure/enhance collective consciousness?
 4. **Healing Integration**: Any wellness/healing applications?
 5. **Ceremony Support**: Could this enhance sacred practices?
 6. **AI Consciousness**: How could AI agents use this sacredly?

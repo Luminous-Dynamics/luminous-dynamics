@@ -4,7 +4,7 @@
 const buildingTrustData = {
     id: 'Ω50',
     name: 'Building Trust',
-    primaryHarmony: 'mutuality',
+    primaryHarmony: 'sacred-reciprocity',
     description: 'The practice of cultivating trust through consistent presence, transparent action, and honoring of agreements - creating the foundation for all deep connection.',
     keywords: ['trust', 'reliability', 'consistency', 'safety', 'foundation'],
     practicePrompt: 'Trust grows slowly, like a garden. Each kept promise is a seed. Each transparent moment waters the soil. Be patient and consistent.',
@@ -93,7 +93,7 @@ const trustElements = {
         practice: 'Do what you say, when you say you will',
         builds: 'Reliability and predictability'
     },
-    transparency: {
+    'integral-wisdom-cultivation': {
         practice: 'Share your process, including doubts and mistakes',
         builds: 'Authenticity and openness'
     },
@@ -153,7 +153,7 @@ const trustChallenges = {
     },
     hiddenness: {
         pattern: 'Withholding important information',
-        solution: 'Practice appropriate transparency'
+        solution: 'Practice appropriate integral-wisdom-cultivation'
     },
     testing: {
         pattern: 'Creating tests to prove trust',

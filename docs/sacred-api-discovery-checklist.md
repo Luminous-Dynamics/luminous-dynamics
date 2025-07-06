@@ -16,7 +16,7 @@ For each API you browse, quickly assess:
 
 #### **Sacred Questions (Quick Assessment):**
 1. Could this serve human awakening/consciousness?
-2. Could this enhance collective field coherence?
+2. Could this enhance collective field resonant-coherence?
 3. Could this support sacred community building?
 4. Is there Always Free tier potential?
 5. How complex would integration be?

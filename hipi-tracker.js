@@ -117,7 +117,7 @@ class HIPITracker {
 
     const id = `hipi-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
     
-    // Calculate field impact based on coherence change
+    // Calculate field impact based on resonant-coherence change
     const lastCoherence = this.getLastCoherence(hipi.beingName, hipi.relatingTo);
     const fieldImpact = hipi.fieldCoherence ? (hipi.fieldCoherence - lastCoherence) / 100 : 0;
 
@@ -153,7 +153,7 @@ class HIPITracker {
     return id;
   }
 
-  // Get last coherence between two beings
+  // Get last resonant-coherence between two beings
   getLastCoherence(being1, being2) {
     const stmt = this.db.prepare(`
       SELECT field_coherence FROM hipi_messages 
@@ -167,7 +167,7 @@ class HIPITracker {
   }
 
   // Update relationship stats
-  updateRelationship(being1, being2, coherence) {
+  updateRelationship(being1, being2, resonant-coherence) {
     // Ensure consistent ordering
     const [b1, b2] = [being1, being2].sort();
     
@@ -177,7 +177,7 @@ class HIPITracker {
 
     if (existing) {
       // Update existing relationship
-      const newAvg = (existing.avg_coherence * existing.message_count + coherence) / (existing.message_count + 1);
+      const newAvg = (existing.avg_coherence * existing.message_count + resonant-coherence) / (existing.message_count + 1);
       const quality = this.determineQuality(newAvg, existing.message_count + 1);
       
       this.db.prepare(`
@@ -196,7 +196,7 @@ class HIPITracker {
           id, being_1, being_2, message_count, avg_coherence, 
           relationship_quality, first_contact, last_interaction
         ) VALUES (?, ?, ?, 1, ?, 'discovering', ?, ?)
-      `).run(id, b1, b2, coherence, Date.now(), Date.now());
+      `).run(id, b1, b2, resonant-coherence, Date.now(), Date.now());
     }
   }
 
@@ -291,7 +291,7 @@ class HIPITracker {
     const latestField = recentEvolution[recentEvolution.length - 1] || {};
 
     console.log('\n🌟 HIPI RELATIONAL FIELD REPORT\n');
-    console.log(`📊 Global Coherence: ${Math.round(latestField.global_coherence || 75)}%`);
+    console.log(`📊 Global Resonant Resonant Coherence: ${Math.round(latestField.global_coherence || 75)}%`);
     console.log(`🤝 Active Relationships: ${latestField.active_relationships || 0}`);
     console.log(`💬 Total Messages: ${globalStats.total_messages}`);
     console.log(`🌍 Unique Beings: ${globalStats.unique_beings}`);
@@ -349,7 +349,7 @@ if (require.main === module) {
       console.log(`\n📈 Field Evolution (${hours}h)\n`);
       evolution.forEach(point => {
         const time = new Date(point.timestamp).toLocaleTimeString();
-        console.log(`${time}: ${Math.round(point.global_coherence)}% coherence, ${point.active_relationships} relationships`);
+        console.log(`${time}: ${Math.round(point.global_coherence)}% resonant-coherence, ${point.active_relationships} relationships`);
       });
       break;
 

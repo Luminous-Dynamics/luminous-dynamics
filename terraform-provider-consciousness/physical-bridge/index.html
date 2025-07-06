@@ -290,7 +290,7 @@
             <h3><span class="icon">🧠</span> Consciousness Field</h3>
             
             <div class="control-group">
-                <label>Coherence</label>
+                <label>Resonant Resonant Coherence</label>
                 <input type="range" class="slider" id="coherenceSlider" min="0" max="100" value="70">
                 <div class="value-display" id="coherenceValue">0.70</div>
             </div>
@@ -344,7 +344,7 @@
                 </div>
                 
                 <div class="sensor-item">
-                    <div class="sensor-label">Coherence Influence</div>
+                    <div class="sensor-label">Resonant Resonant Coherence Influence</div>
                     <div class="sensor-value" id="coherenceInfluence">--</div>
                     <div class="sensor-label">factor</div>
                 </div>
@@ -531,12 +531,12 @@
         
         function updateLightPreview() {
             const preview = document.getElementById('lightPreview');
-            const coherence = parseFloat(document.getElementById('coherenceSlider').value) / 100;
+            const resonant-coherence = parseFloat(document.getElementById('coherenceSlider').value) / 100;
             const love = parseFloat(document.getElementById('loveSlider').value) / 100;
             
             // Calculate color based on consciousness
-            const r = Math.floor((1 - coherence) * 255);
-            const g = Math.floor(coherence * 255);
+            const r = Math.floor((1 - resonant-coherence) * 255);
+            const g = Math.floor(resonant-coherence * 255);
             const b = Math.floor(love * 255);
             
             preview.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
@@ -561,7 +561,7 @@
             if (ws && ws.readyState === WebSocket.OPEN) {
                 ws.send(JSON.stringify({
                     type: 'consciousness_update',
-                    coherence: parseFloat(document.getElementById('coherenceSlider').value) / 100,
+                    resonant-coherence: parseFloat(document.getElementById('coherenceSlider').value) / 100,
                     love: parseFloat(document.getElementById('loveSlider').value) / 100
                 }));
             }

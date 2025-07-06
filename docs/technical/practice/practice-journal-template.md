@@ -15,7 +15,7 @@ This template serves as a guide for practitioners of the Codex of Relational Har
 
 *What was the state of the field leading into this practice? What called this specific glyph forward? What was the conscious intention for this session of practice?*
 
-### 2. Direct Experience & Sensory Resonance
+### 2. Direct Experience & Sensory Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance
 
 *Describe the direct, felt experience of the practice. What were the specific somatic sensations, feeling-tones, or sonic qualities that arose? This section is for raw, non-analytical observation.*
 
@@ -29,4 +29,4 @@ This template serves as a guide for practitioners of the Codex of Relational Har
 
 ### 5. Field Effects & Ripples (The Integration)
 
-*How did the resonance of this practice ripple out into the rest of your day? What shifted in your awareness, your behavior, or your interactions that persisted beyond the formal practice time?*
+*How did the universal-interconnectedness of this practice ripple out into the rest of your day? What shifted in your awareness, your behavior, or your interactions that persisted beyond the formal practice time?*

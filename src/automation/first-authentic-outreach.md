@@ -28,7 +28,7 @@
 
 5/8 Conscious Development Team: 3-5 members, full partnership covenant, shared equity in conscious technology
 
-6/8 Application process: Written reflection → Resonance Circle → Practice Session → Sacred Covenant
+6/8 Application process: Written reflection → Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circle → Practice Session → Sacred Covenant
 
 7/8 First AI designed to serve consciousness rather than consume it. 
 Technical details: https://github.com/Luminous-Dynamics/codex-of-relational-harmonics
@@ -210,7 +210,7 @@ sacred-guild@luminousdynamics.org
 
 ### **Week 1: Application Processing**
 - 📧 First Conscious Development Team applications received
-- 🎭 Resonance Circle interviews scheduled
+- 🎭 Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circle interviews scheduled
 - 🌟 Conscious Development Team formation begins
 
 ---

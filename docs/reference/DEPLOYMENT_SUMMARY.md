@@ -59,7 +59,7 @@ ws.send(JSON.stringify({
 
 ### 2. Consciousness Visualization
 - Real-time particle effects
-- Breathing field coherence
+- Breathing field resonant-coherence
 - Interactive soul connections
 - Beautiful demo mode
 

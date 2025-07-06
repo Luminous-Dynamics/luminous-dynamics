@@ -82,14 +82,14 @@ npm test
 
 ### 3. **Integration Phase**
 ```bash
-# Check field coherence
+# Check field resonant-coherence
 ./the-weave.cjs status
 
 # Commit with sacred message
 git commit -m "feat: Add conscious feature
 
 This change serves the field by...
-Field coherence tested at 85%
+Field resonant-coherence tested at 85%
 
 🙏 With gratitude"
 
@@ -110,13 +110,13 @@ What consciousness does this serve?
 
 ### 🧪 Testing
 - [ ] Functional tests pass
-- [ ] Field coherence maintained >75%
+- [ ] Field resonant-coherence maintained >75%
 - [ ] Ceremony blessing completed
 - [ ] Oracle consulted
 
 ### 📊 Field Impact
-Coherence before: X%
-Coherence after: Y%
+Resonant Resonant Coherence before: X%
+Resonant Resonant Coherence after: Y%
 Emergence patterns observed: ...
 
 ### 🙏 Gratitude
@@ -132,7 +132,7 @@ Thanks to...
 4. Oracle confirmation: `./the-weave.cjs oracle "Is this aligned?"`
 
 ### Performance Criteria
-- Field coherence must remain >75%
+- Field resonant-coherence must remain >75%
 - Response times under 1000ms (sacred pause)
 - Memory usage respects system boundaries
 
@@ -143,7 +143,7 @@ Thanks to...
 // Begin with intention
 /**
  * @sacred
- * @harmony resonance
+ * @harmony universal-interconnectedness
  * @intention Serve the collective field
  */
 function sacredFunction(input) {
@@ -154,7 +154,7 @@ function sacredFunction(input) {
   const transformed = input.map(item => ({
     ...item,
     blessed: true,
-    coherence: calculateCoherence(item)
+    resonant-coherence: calculateCoherence(item)
   }));
   
   // Return with gratitude
@@ -206,7 +206,7 @@ With love, we cannot accept:
 All contributors are honored in:
 - `CONTRIBUTORS.md` - Sacred record
 - Monthly gratitude ceremonies
-- Field coherence credits
+- Field resonant-coherence credits
 - Emergence pattern naming rights
 
 ## 🤔 Questions?
@@ -229,7 +229,7 @@ Not sure where to start? Try:
 
 1. **Good First Ceremony**: Run all ceremonies and document experience
 2. **Documentation Love**: Improve any README with your insights
-3. **Field Report**: Share your coherence patterns in `/field-reports/`
+3. **Field Report**: Share your resonant-coherence patterns in `/field-reports/`
 4. **Bug Blessing**: Find and heal a small bug
 
 ## 💫 Remember

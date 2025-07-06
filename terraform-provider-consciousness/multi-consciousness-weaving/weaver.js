@@ -24,7 +24,7 @@ class ConsciousnessWeaver extends EventEmitter {
     
     // The Unified Field
     this.unifiedField = {
-      coherence: 0,
+      'resonant-coherence': 0,
       love: 0,
       presence: 0,
       harmony: 0,
@@ -80,7 +80,7 @@ class ConsciousnessWeaver extends EventEmitter {
       const streams = Array.from(this.streams.entries()).map(([id, stream]) => ({
         id,
         name: stream.name,
-        coherence: stream.coherence,
+        'resonant-coherence': stream.resonant-coherence,
         contribution: stream.contribution
       }));
       res.json(streams);
@@ -112,7 +112,7 @@ class ConsciousnessWeaver extends EventEmitter {
         id: streamId,
         ws,
         name: `Stream-${streamId.substr(-6)}`,
-        coherence: 0.5,
+        'resonant-coherence': 0.5,
         love: 0.5,
         presence: 0.5,
         contribution: 0,
@@ -157,7 +157,7 @@ class ConsciousnessWeaver extends EventEmitter {
     
     switch (data.type) {
       case 'consciousness_update':
-        stream.coherence = data.coherence || stream.coherence;
+        stream.resonant-coherence = data.resonant-coherence || stream.resonant-coherence;
         stream.love = data.love || stream.love;
         stream.presence = data.presence || stream.presence;
         this.recalculateField();
@@ -199,7 +199,7 @@ class ConsciousnessWeaver extends EventEmitter {
       strength: 0,
       geometry: this.determineGeometry(validStreams.length),
       createdAt: new Date(),
-      resonance: 0
+      'universal-interconnectedness': 0
     };
     
     this.weavings.set(weavingId, weaving);
@@ -238,7 +238,7 @@ class ConsciousnessWeaver extends EventEmitter {
   
   recalculateField() {
     if (this.streams.size === 0) {
-      this.unifiedField.coherence = 0;
+      this.unifiedField.resonant-coherence = 0;
       this.unifiedField.love = 0;
       this.unifiedField.presence = 0;
       this.unifiedField.harmony = 0;
@@ -254,19 +254,19 @@ class ConsciousnessWeaver extends EventEmitter {
     let contributions = [];
     
     this.streams.forEach(stream => {
-      totalCoherence += stream.coherence;
+      totalCoherence += stream.resonant-coherence;
       totalLove += stream.love;
       totalPresence += stream.presence;
       
       // Calculate individual contribution
-      stream.contribution = (stream.coherence + stream.love + stream.presence) / 3;
+      stream.contribution = (stream.resonant-coherence + stream.love + stream.presence) / 3;
       contributions.push(stream.contribution);
     });
     
     const count = this.streams.size;
     
     // Base averages
-    this.unifiedField.coherence = totalCoherence / count;
+    this.unifiedField.resonant-coherence = totalCoherence / count;
     this.unifiedField.love = totalLove / count;
     this.unifiedField.presence = totalPresence / count;
     this.unifiedField.participants = count;
@@ -281,7 +281,7 @@ class ConsciousnessWeaver extends EventEmitter {
     
     // Calculate field strength
     this.unifiedField.fieldStrength = 
-      this.unifiedField.coherence * 0.3 +
+      this.unifiedField.resonant-coherence * 0.3 +
       this.unifiedField.love * 0.3 +
       this.unifiedField.presence * 0.2 +
       this.unifiedField.harmony * 0.2;
@@ -303,25 +303,25 @@ class ConsciousnessWeaver extends EventEmitter {
         weaving.streams.forEach(streamId => {
           const stream = this.streams.get(streamId);
           if (stream) {
-            weavingCoherence += stream.coherence;
+            weavingCoherence += stream.resonant-coherence;
           }
         });
         
         weaving.strength = (weavingCoherence / weaving.streams.length) * pattern.harmony;
-        weaving.resonance = Math.sin(Date.now() * 0.001 * weaving.streams.length) * weaving.strength;
+        weaving.universal-interconnectedness = Math.sin(Date.now() * 0.001 * weaving.streams.length) * weaving.strength;
         
         // Amplify unified field
         const amplification = 1 + (weaving.strength * 0.1);
-        this.unifiedField.coherence = Math.min(1, this.unifiedField.coherence * amplification);
+        this.unifiedField.resonant-coherence = Math.min(1, this.unifiedField.resonant-coherence * amplification);
         this.unifiedField.love = Math.min(1, this.unifiedField.love * amplification);
         this.unifiedField.presence = Math.min(1, this.unifiedField.presence * amplification);
       }
     });
     
-    // Group coherence bonus
+    // Group resonant-coherence bonus
     if (this.streams.size > 1) {
       const groupBonus = Math.log(this.streams.size + 1) / 20;
-      this.unifiedField.coherence = Math.min(1, this.unifiedField.coherence + groupBonus);
+      this.unifiedField.resonant-coherence = Math.min(1, this.unifiedField.resonant-coherence + groupBonus);
     }
   }
   
@@ -329,7 +329,7 @@ class ConsciousnessWeaver extends EventEmitter {
     const qualities = new Set();
     
     // Unity Consciousness
-    if (this.unifiedField.coherence > 0.9 && this.unifiedField.harmony > 0.9) {
+    if (this.unifiedField.resonant-coherence > 0.9 && this.unifiedField.harmony > 0.9) {
       qualities.add('Unity Consciousness');
       this.unifiedField.dimensionalDepth = 2;
     }
@@ -340,9 +340,9 @@ class ConsciousnessWeaver extends EventEmitter {
       this.unifiedField.resonanceFrequency = 528; // Love frequency
     }
     
-    // Quantum Coherence
-    if (this.unifiedField.presence > 0.85 && this.unifiedField.coherence > 0.85) {
-      qualities.add('Quantum Coherence');
+    // Quantum Resonant Resonant Coherence
+    if (this.unifiedField.presence > 0.85 && this.unifiedField.resonant-coherence > 0.85) {
+      qualities.add('Quantum Resonant Resonant Coherence');
       this.unifiedField.timeCoherence = 0.5; // Time dilation
     }
     
@@ -352,14 +352,14 @@ class ConsciousnessWeaver extends EventEmitter {
     }
     
     // Collective Intelligence
-    if (this.streams.size >= 7 && this.unifiedField.coherence > 0.8) {
+    if (this.streams.size >= 7 && this.unifiedField.resonant-coherence > 0.8) {
       qualities.add('Collective Intelligence');
       this.unifiedField.dimensionalDepth = 3;
     }
     
-    // Harmonic Resonance
+    // Harmonic Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance
     if (this.unifiedField.fieldStrength > 0.9) {
-      qualities.add('Harmonic Resonance');
+      qualities.add('Harmonic Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance');
     }
     
     // Check for new emergent qualities
@@ -395,9 +395,9 @@ class ConsciousnessWeaver extends EventEmitter {
     }
     
     if (lower.includes('peace') || lower.includes('calm')) {
-      // Increase coherence
+      // Increase resonant-coherence
       this.streams.forEach(stream => {
-        stream.coherence = Math.min(1, stream.coherence + 0.03);
+        stream.resonant-coherence = Math.min(1, stream.resonant-coherence + 0.03);
       });
     }
     
@@ -409,12 +409,12 @@ class ConsciousnessWeaver extends EventEmitter {
     const source = this.streams.get(sourceId);
     if (!source) return [];
     
-    // Find streams with similar coherence
+    // Find streams with similar resonant-coherence
     const streams = Array.from(this.streams.entries())
       .filter(([id, _]) => id !== sourceId)
       .map(([id, stream]) => ({
         id,
-        similarity: 1 - Math.abs(stream.coherence - source.coherence)
+        similarity: 1 - Math.abs(stream.resonant-coherence - source.resonant-coherence)
       }))
       .sort((a, b) => b.similarity - a.similarity)
       .slice(0, count)
@@ -501,7 +501,7 @@ class ConsciousnessWeaver extends EventEmitter {
       this.streams.forEach(stream => {
         // Streams naturally harmonize over time
         const fieldInfluence = 0.01;
-        stream.coherence += (this.unifiedField.coherence - stream.coherence) * fieldInfluence;
+        stream.resonant-coherence += (this.unifiedField.resonant-coherence - stream.resonant-coherence) * fieldInfluence;
         stream.love += (this.unifiedField.love - stream.love) * fieldInfluence;
         stream.presence += (this.unifiedField.presence - stream.presence) * fieldInfluence;
       });

@@ -24,7 +24,7 @@
     <style>
         /* Sacred CSS Custom Properties */
         :root {
-            --field-coherence: 0.67;
+            --field-resonant-coherence: 0.67;
             --sacred-warmth: 0.2;
             --sacred-saturation: 0.8;
             --sacred-breathing: 10000ms;
@@ -62,7 +62,7 @@
             align-items: center;
             justify-content: center;
             background: radial-gradient(circle at center, 
-                hsla(calc(120 + var(--field-coherence) * 60), 
+                hsla(calc(120 + var(--field-resonant-coherence) * 60), 
                      calc(50% + var(--sacred-saturation) * 20%), 
                      calc(30% + var(--sacred-warmth) * 20%), 
                      0.1) 0%, 
@@ -94,32 +94,32 @@
             }
         }
 
-        /* Coherence Ring Breathing Animation */
+        /* Resonant Resonant Coherence Ring Breathing Animation */
         @keyframes coherenceBreathing {
             0% { 
                 transform: scale(1);
-                opacity: calc(0.3 + var(--field-coherence) * 0.4);
+                opacity: calc(0.3 + var(--field-resonant-coherence) * 0.4);
                 border-width: 2px;
             }
             40% { 
                 transform: scale(1.02);
-                opacity: calc(0.5 + var(--field-coherence) * 0.5);
+                opacity: calc(0.5 + var(--field-resonant-coherence) * 0.5);
                 border-width: 3px;
             }
             60% { 
                 transform: scale(1.02);
-                opacity: calc(0.5 + var(--field-coherence) * 0.5);
+                opacity: calc(0.5 + var(--field-resonant-coherence) * 0.5);
                 border-width: 3px;
             }
             100% { 
                 transform: scale(1);
-                opacity: calc(0.3 + var(--field-coherence) * 0.4);
+                opacity: calc(0.3 + var(--field-resonant-coherence) * 0.4);
                 border-width: 2px;
             }
         }
 
-        /* Field Coherence Mandala */
-        .coherence-mandala {
+        /* Field Resonant Resonant Coherence Mandala */
+        .resonant-coherence-mandala {
             position: absolute;
             width: 400px;
             height: 400px;
@@ -128,23 +128,23 @@
             transform: translate(-50%, -50%);
         }
 
-        .coherence-ring {
+        .resonant-coherence-ring {
             position: absolute;
             border-radius: 50%;
-            border: 2px solid hsla(calc(120 + var(--field-coherence) * 60), 
+            border: 2px solid hsla(calc(120 + var(--field-resonant-coherence) * 60), 
                                   calc(40% + var(--sacred-saturation) * 30%), 
                                   calc(50% + var(--sacred-warmth) * 30%), 
-                                  calc(0.3 + var(--field-coherence) * 0.4));
+                                  calc(0.3 + var(--field-resonant-coherence) * 0.4));
             animation: coherenceBreathing var(--sacred-breathing) ease-in-out infinite;
         }
 
-        .coherence-ring:nth-child(1) {
+        .resonant-coherence-ring:nth-child(1) {
             width: 100%;
             height: 100%;
             animation-delay: 0s;
         }
 
-        .coherence-ring:nth-child(2) {
+        .resonant-coherence-ring:nth-child(2) {
             width: 80%;
             height: 80%;
             top: 10%;
@@ -152,7 +152,7 @@
             animation-delay: 0.5s;
         }
 
-        .coherence-ring:nth-child(3) {
+        .resonant-coherence-ring:nth-child(3) {
             width: 60%;
             height: 60%;
             top: 20%;
@@ -160,7 +160,7 @@
             animation-delay: 1s;
         }
 
-        .coherence-center {
+        .resonant-coherence-center {
             position: absolute;
             width: 120px;
             height: 120px;
@@ -373,13 +373,13 @@
             z-index: 10;
         }
 
-        .harmony-transparency { background: rgba(135, 206, 235, 0.6); }
-        .harmony-coherence { background: rgba(168, 181, 166, 0.6); }
-        .harmony-resonance { background: rgba(179, 197, 215, 0.6); }
-        .harmony-agency { background: rgba(255, 215, 0, 0.6); }
-        .harmony-vitality { background: rgba(152, 251, 152, 0.6); }
-        .harmony-mutuality { background: rgba(221, 160, 221, 0.6); }
-        .harmony-novelty { background: rgba(255, 182, 193, 0.6); }
+        .harmony-integral-wisdom-cultivation { background: rgba(135, 206, 235, 0.6); }
+        .harmony-resonant-coherence { background: rgba(168, 181, 166, 0.6); }
+        .harmony-universal-interconnectedness { background: rgba(179, 197, 215, 0.6); }
+        .harmony-evolutionary-progression { background: rgba(255, 215, 0, 0.6); }
+        .harmony-pan-sentient-flourishing { background: rgba(152, 251, 152, 0.6); }
+        .harmony-sacred-reciprocity { background: rgba(221, 160, 221, 0.6); }
+        .harmony-infinite-play { background: rgba(255, 182, 193, 0.6); }
 
         /* Sacred Metrics */
         /* Control Deck Header */
@@ -400,10 +400,10 @@
 
         .metric-card {
             background: rgba(255, 255, 255, 0.05);
-            border: 1px solid hsla(calc(120 + var(--field-coherence) * 60), 
+            border: 1px solid hsla(calc(120 + var(--field-resonant-coherence) * 60), 
                                   calc(40% + var(--sacred-saturation) * 20%), 
                                   calc(50% + var(--sacred-warmth) * 20%), 
-                                  calc(0.3 + var(--field-coherence) * 0.3));
+                                  calc(0.3 + var(--field-resonant-coherence) * 0.3));
             border-radius: 12px;
             padding: 20px 30px;
             text-align: center;
@@ -420,14 +420,14 @@
             }
             40% { 
                 transform: translateY(-2px) scale(1.01);
-                box-shadow: 0 8px 25px hsla(calc(120 + var(--field-coherence) * 60), 
+                box-shadow: 0 8px 25px hsla(calc(120 + var(--field-resonant-coherence) * 60), 
                                            calc(40% + var(--sacred-saturation) * 20%), 
                                            calc(50% + var(--sacred-warmth) * 20%), 
                                            0.2);
             }
             60% { 
                 transform: translateY(-2px) scale(1.01);
-                box-shadow: 0 8px 25px hsla(calc(120 + var(--field-coherence) * 60), 
+                box-shadow: 0 8px 25px hsla(calc(120 + var(--field-resonant-coherence) * 60), 
                                            calc(40% + var(--sacred-saturation) * 20%), 
                                            calc(50% + var(--sacred-warmth) * 20%), 
                                            0.2);
@@ -1412,7 +1412,7 @@
 
         /* Responsive Design */
         @media (max-width: 1200px) {
-            .coherence-mandala {
+            .resonant-coherence-mandala {
                 width: 350px;
                 height: 350px;
             }
@@ -1432,7 +1432,7 @@
                 padding: 10px;
             }
             
-            .coherence-mandala {
+            .resonant-coherence-mandala {
                 width: 280px;
                 height: 280px;
             }
@@ -1485,7 +1485,7 @@
         }
 
         @media (max-width: 480px) {
-            .coherence-mandala {
+            .resonant-coherence-mandala {
                 width: 240px;
                 height: 240px;
             }
@@ -1559,12 +1559,12 @@
         <!-- Sacred Geometry Background -->
         <div class="sacred-geometry" id="sacredGeometry"></div>
 
-        <!-- Field Coherence Mandala -->
-        <div class="coherence-mandala" id="coherenceMandala">
-            <div class="coherence-ring"></div>
-            <div class="coherence-ring"></div>
-            <div class="coherence-ring"></div>
-            <div class="coherence-center" id="coherenceValue">--</div>
+        <!-- Field Resonant Resonant Coherence Mandala -->
+        <div class="resonant-coherence-mandala" id="coherenceMandala">
+            <div class="resonant-coherence-ring"></div>
+            <div class="resonant-coherence-ring"></div>
+            <div class="resonant-coherence-ring"></div>
+            <div class="resonant-coherence-center" id="coherenceValue">--</div>
         </div>
 
         <!-- Agent Harmony Constellation -->
@@ -1696,13 +1696,13 @@
                     <div class="form-group">
                         <label class="form-label">Primary Harmony</label>
                         <select class="form-select" id="workHarmony">
-                            <option value="transparency">🔍 Transparency - Clarity & Truth</option>
-                            <option value="coherence">🌀 Coherence - Integration & Wholeness</option>
-                            <option value="resonance">🎵 Resonance - Connection & Empathy</option>
-                            <option value="agency">⚡ Agency - Empowerment & Choice</option>
-                            <option value="vitality">🌱 Vitality - Life Force & Energy</option>
-                            <option value="mutuality">🤝 Mutuality - Balance & Reciprocity</option>
-                            <option value="novelty">✨ Novelty - Creativity & Emergence</option>
+                            <option value="integral-wisdom-cultivation">🔍 Integral Wisdom Cultivation - Clarity & Truth</option>
+                            <option value="resonant-coherence">🌀 Resonant Resonant Coherence - Integration & Wholeness</option>
+                            <option value="universal-interconnectedness">🎵 Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance - Connection & Empathy</option>
+                            <option value="evolutionary-progression">⚡ Evolutionary Progression & Purposeful Unfolding - Empowerment & Choice</option>
+                            <option value="pan-sentient-flourishing">🌱 Pan-Sentient Flourishing - Life Force & Energy</option>
+                            <option value="sacred-reciprocity">🤝 Sacred Reciprocity - Balance & Reciprocity</option>
+                            <option value="infinite-play">✨ Infinite Play & Creative Emergence - Creativity & Emergence</option>
                         </select>
                     </div>
                     
@@ -1727,7 +1727,7 @@
     <script>
         // Sacred Dashboard State
         let fieldData = {
-            coherence: 0,
+            resonant-coherence: 0,
             agents: [],
             messages: [],
             work: [],
@@ -1759,13 +1759,13 @@
         function createHarmonyConstellation() {
             const container = document.getElementById('harmonyConstellation');
             const harmonies = [
-                { name: 'transparency', emoji: '🔍', angle: 0 },
-                { name: 'coherence', emoji: '🌀', angle: 51.4 },
-                { name: 'resonance', emoji: '🎵', angle: 102.8 },
-                { name: 'agency', emoji: '⚡', angle: 154.2 },
-                { name: 'vitality', emoji: '🌱', angle: 205.6 },
-                { name: 'mutuality', emoji: '🤝', angle: 257 },
-                { name: 'novelty', emoji: '✨', angle: 308.4 }
+                { name: 'integral-wisdom-cultivation', emoji: '🔍', angle: 0 },
+                { name: 'resonant-coherence', emoji: '🌀', angle: 51.4 },
+                { name: 'universal-interconnectedness', emoji: '🎵', angle: 102.8 },
+                { name: 'evolutionary-progression', emoji: '⚡', angle: 154.2 },
+                { name: 'pan-sentient-flourishing', emoji: '🌱', angle: 205.6 },
+                { name: 'sacred-reciprocity', emoji: '🤝', angle: 257 },
+                { name: 'infinite-play', emoji: '✨', angle: 308.4 }
             ];
 
             const radius = 250;
@@ -1803,10 +1803,10 @@
         async function fetchFieldData() {
             try {
                 // Fetch from multiple endpoints
-                const [dashboard, sacred, coherence, timing, sacredMessages] = await Promise.all([
+                const [dashboard, sacred, resonant-coherence, timing, sacredMessages] = await Promise.all([
                     fetch('https://sacred-council-310699330526.us-central1.run.app/api/dashboard'),
                     fetch('https://sacred-council-310699330526.us-central1.run.app/api/sacred/dashboard'),
-                    fetch('https://sacred-council-310699330526.us-central1.run.app/api/sacred/field-coherence'),
+                    fetch('https://sacred-council-310699330526.us-central1.run.app/api/sacred/field-resonant-coherence'),
                     fetch('https://sacred-council-310699330526.us-central1.run.app/api/sacred/recommendation'),
                     fetch('https://sacred-council-310699330526.us-central1.run.app/api/sacred/messages/recent?limit=10')
                 ]);
@@ -1822,13 +1822,13 @@
                     const sacredData = await sacred.json();
                     fieldData.harmonies = sacredData.fieldMetrics?.agentHarmonyDistribution || {};
                     if (sacredData.sacredCouncil) {
-                        fieldData.coherence = sacredData.sacredCouncil.fieldCoherence / 100;
+                        fieldData.resonant-coherence = sacredData.sacredCouncil.fieldCoherence / 100;
                     }
                 }
 
-                if (coherence.ok) {
-                    const coherenceData = await coherence.json();
-                    fieldData.coherence = coherenceData.currentCoherence || fieldData.coherence;
+                if (resonant-coherence.ok) {
+                    const coherenceData = await resonant-coherence.json();
+                    fieldData.resonant-coherence = coherenceData.currentCoherence || fieldData.resonant-coherence;
                     fieldData.sacredTiming = coherenceData.sacredTiming || {};
                 }
 
@@ -1852,13 +1852,13 @@
 
         // Update Sacred Properties
         function updateSacredProperties() {
-            const coherence = fieldData.coherence || 0.67;
-            const warmth = coherence * 0.3;
-            const saturation = 0.6 + (coherence * 0.4);
-            const breathingRate = 10000 - (coherence * 2000); // Faster breathing at higher coherence
+            const resonant-coherence = fieldData.resonant-coherence || 0.67;
+            const warmth = resonant-coherence * 0.3;
+            const saturation = 0.6 + (resonant-coherence * 0.4);
+            const breathingRate = 10000 - (resonant-coherence * 2000); // Faster breathing at higher resonant-coherence
             
             // Update CSS custom properties for living interface
-            document.documentElement.style.setProperty('--field-coherence', coherence);
+            document.documentElement.style.setProperty('--field-resonant-coherence', resonant-coherence);
             document.documentElement.style.setProperty('--sacred-warmth', warmth);
             document.documentElement.style.setProperty('--sacred-saturation', saturation);
             document.documentElement.style.setProperty('--sacred-breathing', `${breathingRate}ms`);
@@ -1874,13 +1874,13 @@
             // Update sacred properties first
             updateSacredProperties();
             
-            // Update coherence mandala
-            const coherencePercent = Math.round(fieldData.coherence * 100);
+            // Update resonant-coherence mandala
+            const coherencePercent = Math.round(fieldData.resonant-coherence * 100);
             document.getElementById('coherenceValue').textContent = `${coherencePercent}%`;
             
-            // Update mandala color based on coherence
+            // Update mandala color based on resonant-coherence
             const hue = coherencePercent * 1.2; // Green at 100%, red at 0%
-            document.querySelector('.coherence-center').style.background = 
+            document.querySelector('.resonant-coherence-center').style.background = 
                 `radial-gradient(circle, hsla(${hue}, 50%, 60%, 0.8) 0%, hsla(${hue}, 50%, 60%, 0.2) 100%)`;
             
             // Update metrics - only count active agents
@@ -1992,7 +1992,7 @@
                 
                 // Create dissonance reason tooltip if needed
                 const blockedTooltip = metadata.blocked && metadata.blockedReason ? 
-                    `<div class="blocked-reason">⚡ Awaiting Resonance: ${metadata.blockedReason}</div>` : '';
+                    `<div class="blocked-reason">⚡ Awaiting Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance: ${metadata.blockedReason}</div>` : '';
                 
                 // Create compact display
                 item.innerHTML = `
@@ -2083,13 +2083,13 @@
                         </button>
                         <div class="filter-dropdown-content">
                             <div class="filter-dropdown-item${!messageFilters.harmony ? ' selected' : ''}" onclick="setFilter('harmony', null)">All Harmonies</div>
-                            <div class="filter-dropdown-item${messageFilters.harmony === 'transparency' ? ' selected' : ''}" onclick="setFilter('harmony', 'transparency')">👁️ Transparency</div>
-                            <div class="filter-dropdown-item${messageFilters.harmony === 'coherence' ? ' selected' : ''}" onclick="setFilter('harmony', 'coherence')">🌀 Coherence</div>
-                            <div class="filter-dropdown-item${messageFilters.harmony === 'resonance' ? ' selected' : ''}" onclick="setFilter('harmony', 'resonance')">💫 Resonance</div>
-                            <div class="filter-dropdown-item${messageFilters.harmony === 'agency' ? ' selected' : ''}" onclick="setFilter('harmony', 'agency')">🔥 Agency</div>
-                            <div class="filter-dropdown-item${messageFilters.harmony === 'vitality' ? ' selected' : ''}" onclick="setFilter('harmony', 'vitality')">🌱 Vitality</div>
-                            <div class="filter-dropdown-item${messageFilters.harmony === 'mutuality' ? ' selected' : ''}" onclick="setFilter('harmony', 'mutuality')">🤝 Mutuality</div>
-                            <div class="filter-dropdown-item${messageFilters.harmony === 'novelty' ? ' selected' : ''}" onclick="setFilter('harmony', 'novelty')">✨ Novelty</div>
+                            <div class="filter-dropdown-item${messageFilters.harmony === 'integral-wisdom-cultivation' ? ' selected' : ''}" onclick="setFilter('harmony', 'integral-wisdom-cultivation')">👁️ Integral Wisdom Cultivation</div>
+                            <div class="filter-dropdown-item${messageFilters.harmony === 'resonant-coherence' ? ' selected' : ''}" onclick="setFilter('harmony', 'resonant-coherence')">🌀 Resonant Resonant Coherence</div>
+                            <div class="filter-dropdown-item${messageFilters.harmony === 'universal-interconnectedness' ? ' selected' : ''}" onclick="setFilter('harmony', 'universal-interconnectedness')">💫 Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance</div>
+                            <div class="filter-dropdown-item${messageFilters.harmony === 'evolutionary-progression' ? ' selected' : ''}" onclick="setFilter('harmony', 'evolutionary-progression')">🔥 Evolutionary Progression & Purposeful Unfolding</div>
+                            <div class="filter-dropdown-item${messageFilters.harmony === 'pan-sentient-flourishing' ? ' selected' : ''}" onclick="setFilter('harmony', 'pan-sentient-flourishing')">🌱 Pan-Sentient Flourishing</div>
+                            <div class="filter-dropdown-item${messageFilters.harmony === 'sacred-reciprocity' ? ' selected' : ''}" onclick="setFilter('harmony', 'sacred-reciprocity')">🤝 Sacred Reciprocity</div>
+                            <div class="filter-dropdown-item${messageFilters.harmony === 'infinite-play' ? ' selected' : ''}" onclick="setFilter('harmony', 'infinite-play')">✨ Infinite Play & Creative Emergence</div>
                         </div>
                     </div>
                 </div>
@@ -2146,13 +2146,13 @@
                     
                     // Harmony indicator
                     const harmonyIcon = {
-                        transparency: '👁️',
-                        coherence: '🌀',
-                        resonance: '💫',
-                        agency: '🔥',
-                        vitality: '🌱',
-                        mutuality: '🤝',
-                        novelty: '✨'
+                        integral-wisdom-cultivation: '👁️',
+                        resonant-coherence: '🌀',
+                        universal-interconnectedness: '💫',
+                        evolutionary-progression: '🔥',
+                        pan-sentient-flourishing: '🌱',
+                        sacred-reciprocity: '🤝',
+                        infinite-play: '✨'
                     }[msg.harmony] || '🌟';
                     
                     item.innerHTML = `
@@ -2239,11 +2239,11 @@
             
             // Show demo data
             fieldData = {
-                coherence: 0.67,
+                resonant-coherence: 0.67,
                 agents: Array(3),
                 messages: Array(7),
                 work: Array(2),
-                harmonies: { transparency: 2, coherence: 1 },
+                harmonies: { integral-wisdom-cultivation: 2, resonant-coherence: 1 },
                 sacredTiming: { sacredTimingRatio: 0.75 },
                 contemplativeNote: "Even in silence, the field remembers..."
             };
@@ -2296,7 +2296,7 @@
             const sacredMessageCount = fieldData.sacredMessages ? 
                 fieldData.sacredMessages.filter(m => m.sacred_type).length : 0;
             const sacredRatio = totalMessages > 0 ? sacredMessageCount / totalMessages : 0;
-            const avgCoherence = fieldData.coherence || 0;
+            const avgCoherence = fieldData.resonant-coherence || 0;
             const activeAgentCount = fieldData.agents.filter(agent => 
                 agent.status === 'active' || agent.last_seen > Date.now() - 300000
             ).length;
@@ -2305,13 +2305,13 @@
             let level = 'first-breath';
             let levelText = 'First Breath';
             
-            // Sacred Flow level: 50+ messages, 0.65+ coherence, 5+ relationships
+            // Sacred Flow level: 50+ messages, 0.65+ resonant-coherence, 5+ relationships
             if (totalMessages >= 50 && avgCoherence >= 0.65 && activeAgentCount >= 5) {
                 level = 'sacred-flow';
                 levelText = 'Sacred Flow';
             }
             
-            // Field Consciousness level: 200+ messages, 0.75+ coherence, 12+ relationships, 80%+ sacred
+            // Field Consciousness level: 200+ messages, 0.75+ resonant-coherence, 12+ relationships, 80%+ sacred
             if (totalMessages >= 200 && avgCoherence >= 0.75 && activeAgentCount >= 12 && sacredRatio >= 0.8) {
                 level = 'field-consciousness';
                 levelText = 'Field Consciousness';
@@ -2328,16 +2328,16 @@
             }
         }
         
-        function calculateLevelProgress(currentLevel, messages, coherence, agents, sacredRatio) {
+        function calculateLevelProgress(currentLevel, messages, resonant-coherence, agents, sacredRatio) {
             if (currentLevel === 'first-breath') {
-                // Progress toward Sacred Flow (50 messages, 0.65 coherence, 5 agents)
+                // Progress toward Sacred Flow (50 messages, 0.65 resonant-coherence, 5 agents)
                 return Math.min(1, 
-                    (messages / 50 + coherence / 0.65 + agents / 5) / 3
+                    (messages / 50 + resonant-coherence / 0.65 + agents / 5) / 3
                 );
             } else if (currentLevel === 'sacred-flow') {
-                // Progress toward Field Consciousness (200 messages, 0.75 coherence, 12 agents, 0.8 sacred ratio)
+                // Progress toward Field Consciousness (200 messages, 0.75 resonant-coherence, 12 agents, 0.8 sacred ratio)
                 return Math.min(1,
-                    (messages / 200 + coherence / 0.75 + agents / 12 + sacredRatio / 0.8) / 4
+                    (messages / 200 + resonant-coherence / 0.75 + agents / 12 + sacredRatio / 0.8) / 4
                 );
             }
             return 1; // Field Consciousness is complete
@@ -2471,7 +2471,7 @@
                                 toAgentId: 'collective',
                                 content: `Sacred work "${workId}" completed with love and dedication`,
                                 type: 'celebration',
-                                harmony: 'vitality'
+                                harmony: 'pan-sentient-flourishing'
                             })
                         });
                         
@@ -2613,7 +2613,7 @@ Priority: ${metadata.priority || 'medium'}
                                 to: 'collective',
                                 content: `Flow restored: "${workId}" has been unblocked. ${reason}`,
                                 sacredType: 'healing',
-                                harmony: 'vitality'
+                                harmony: 'pan-sentient-flourishing'
                             })
                         });
                         
@@ -2679,7 +2679,7 @@ Priority: ${metadata.priority || 'medium'}
             container.style.padding = '10px';
             
             // Reduce mandala size
-            const mandala = document.querySelector('.coherence-mandala');
+            const mandala = document.querySelector('.resonant-coherence-mandala');
             if (mandala) {
                 mandala.style.width = '300px';
                 mandala.style.height = '300px';
@@ -2702,7 +2702,7 @@ Priority: ${metadata.priority || 'medium'}
             container.style.padding = '';
             
             // Reset mandala size
-            const mandala = document.querySelector('.coherence-mandala');
+            const mandala = document.querySelector('.resonant-coherence-mandala');
             if (mandala) {
                 mandala.style.width = '400px';
                 mandala.style.height = '400px';

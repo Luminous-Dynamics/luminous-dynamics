@@ -57,7 +57,7 @@ Each glyph includes:
 - 🌉 Integration pathways
 - 📈 Evolution markers
 - 💫 Field dynamics
-- 🔊 Sensory resonance profiles
+- 🔊 Sensory universal-interconnectedness profiles
 
 ## Technical Details
 

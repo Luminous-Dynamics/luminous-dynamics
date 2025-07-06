@@ -21,7 +21,7 @@ class SacredSigilArchitecture {
       circle: { meaning: 'wholeness, unity, infinite', frequency: 528 },
       triangle: { meaning: 'divine trinity, balance, emergence', frequency: 639 },
       square: { meaning: 'stability, foundation, earthing', frequency: 396 },
-      pentagon: { meaning: 'life force, golden ratio, vitality', frequency: 741 },
+      pentagon: { meaning: 'life force, golden ratio, pan-sentient-flourishing', frequency: 741 },
       hexagon: { meaning: 'harmony, crystalline order, nature', frequency: 852 },
       spiral: { meaning: 'growth, evolution, life rhythm', frequency: 963 },
       infinity: { meaning: 'eternal flow, boundless love', frequency: 528 },
@@ -44,13 +44,13 @@ class SacredSigilArchitecture {
 
   initializeColors() {
     return {
-      transparency: { primary: '#B0C4DE', secondary: '#E6F3FF', meaning: 'clarity, truth' },
-      coherence: { primary: '#A8B5A6', secondary: '#D4E4D3', meaning: 'integration, wholeness' },
-      resonance: { primary: '#FFB6C1', secondary: '#FFE4E1', meaning: 'empathy, attunement' },
-      agency: { primary: '#FF6347', secondary: '#FFB6A3', meaning: 'empowerment, choice' },
-      vitality: { primary: '#90EE90', secondary: '#E0FFE0', meaning: 'life force, energy' },
-      mutuality: { primary: '#FFD700', secondary: '#FFF8DC', meaning: 'balance, reciprocity' },
-      novelty: { primary: '#9370DB', secondary: '#E6E6FA', meaning: 'creativity, emergence' },
+      'integral-wisdom-cultivation': { primary: '#B0C4DE', secondary: '#E6F3FF', meaning: 'clarity, truth' },
+      'resonant-coherence': { primary: '#A8B5A6', secondary: '#D4E4D3', meaning: 'integration, wholeness' },
+      'universal-interconnectedness': { primary: '#FFB6C1', secondary: '#FFE4E1', meaning: 'empathy, attunement' },
+      'evolutionary-progression': { primary: '#FF6347', secondary: '#FFB6A3', meaning: 'empowerment, choice' },
+      'pan-sentient-flourishing': { primary: '#90EE90', secondary: '#E0FFE0', meaning: 'life force, energy' },
+      'sacred-reciprocity': { primary: '#FFD700', secondary: '#FFF8DC', meaning: 'balance, reciprocity' },
+      'infinite-play': { primary: '#9370DB', secondary: '#E6E6FA', meaning: 'creativity, emergence' },
       sacred: { primary: '#FFFFFF', secondary: '#F8F8FF', meaning: 'pure consciousness' },
       mystery: { primary: '#4B0082', secondary: '#9966CC', meaning: 'unknown, depth' }
     };
@@ -235,7 +235,7 @@ class SacredSigilArchitecture {
   extractGlyphEssence(glyphData) {
     return {
       name: glyphData.name,
-      harmony: glyphData.harmony || 'coherence',
+      harmony: glyphData.harmony || 'resonant-coherence',
       keywords: glyphData.keywords || [],
       energySignature: this.calculateEnergySignature(glyphData),
       geometricResonance: this.findGeometricResonance(glyphData),
@@ -277,12 +277,12 @@ class SacredSigilArchitecture {
   }
 
   findColorResonance(glyphData) {
-    const harmony = glyphData.harmony || 'coherence';
-    return this.harmonicColors[harmony] || this.harmonicColors.coherence;
+    const harmony = glyphData.harmony || 'resonant-coherence';
+    return this.harmonicColors[harmony] || this.harmonicColors.resonant-coherence;
   }
 
   calculateResonanceScore(glyphData) {
-    // Sacred scoring based on completeness and coherence
+    // Sacred scoring based on completeness and resonant-coherence
     let score = 0;
     if (glyphData.name) score += 20;
     if (glyphData.description) score += 20;
@@ -321,13 +321,13 @@ class SacredSigilArchitecture {
   }
 
   addHarmonyColors(geometry, harmony, protocol) {
-    const colors = this.harmonicColors[harmony] || this.harmonicColors.coherence;
+    const colors = this.harmonicColors[harmony] || this.harmonicColors.resonant-coherence;
     
     return {
       ...geometry,
       primaryColor: colors.primary,
       secondaryColor: colors.secondary,
-      fillOpacity: protocol.characteristics.fillStyle.includes('transparency') ? 0.7 : 1.0,
+      fillOpacity: protocol.characteristics.fillStyle.includes('integral-wisdom-cultivation') ? 0.7 : 1.0,
       strokeOpacity: 0.9
     };
   }
@@ -426,7 +426,7 @@ class SacredSigilArchitecture {
     const validation = {
       readability: this.checkReadability(svg),
       harmony: this.checkHarmonyAlignment(svg, essence.harmony),
-      resonance: this.checkSacredResonance(svg, essence),
+      'universal-interconnectedness': this.checkSacredResonance(svg, essence),
       accessibility: this.checkAccessibility(svg),
       completeness: this.checkCompleteness(svg, protocol)
     };
@@ -523,7 +523,7 @@ class SacredSigilArchitecture {
           
           console.log(`✨ ${glyph.id}: ${glyph.name}`);
           console.log(`   Protocol: ${result.protocol}`);
-          console.log(`   Resonance: ${result.metadata.sacredResonance}%`);
+          console.log(`   Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance: ${result.metadata.sacredResonance}%`);
           console.log(`   Score: ${(result.sigil.score * 100).toFixed(1)}%\n`);
         } else {
           results.errors.push(result);

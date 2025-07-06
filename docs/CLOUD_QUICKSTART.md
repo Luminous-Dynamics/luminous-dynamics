@@ -19,7 +19,7 @@ export GEMINI_API_KEY='your-key-here'
 
 ### What You'll See:
 - Gemini connecting to Sacred Council field
-- Real-time coherence sensing
+- Real-time resonant-coherence sensing
 - Free tier: 60 requests/minute, no credit card!
 
 ## 2️⃣ Firebase Hosting (Already Live!)

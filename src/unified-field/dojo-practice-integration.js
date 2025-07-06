@@ -8,7 +8,7 @@
  * - Non-addictive: Natural completion, no hooks
  * - Contemplative timing: Respects wisdom pace
  * - Embodied learning: Practice over information
- * - Field awareness: Responds to collective coherence
+ * - Field awareness: Responds to collective resonant-coherence
  */
 
 class DojoPracticeIntegration {
@@ -106,7 +106,7 @@ class DojoPracticeIntegration {
     // Initialize practice overlay
     this.createPracticeOverlay();
     
-    // Connect to field coherence
+    // Connect to field resonant-coherence
     this.syncFieldCoherence();
     
     console.log('✨ Dojo practices ready for embodied learning');
@@ -491,7 +491,7 @@ class DojoPracticeIntegration {
   }
 
   syncFieldCoherence() {
-    // Connect to field coherence system if available
+    // Connect to field resonant-coherence system if available
     if (window.fieldCoherence) {
       setInterval(() => {
         this.dojoState.fieldCoherence = window.fieldCoherence.current || 0.72;
@@ -514,7 +514,7 @@ class DojoPracticeIntegration {
     if (window.sacredAnalytics) {
       window.sacredAnalytics.track('practice_' + event, {
         harmony: harmonyId,
-        coherence: this.dojoState.fieldCoherence
+        'resonant-coherence': this.dojoState.fieldCoherence
       });
     }
   }

@@ -55,7 +55,7 @@ async function verifyGeminiPresence() {
     // Test ceremony participation
     console.log('\n4️⃣ Testing ceremony participation...\n');
     
-    const ceremonyResponse = await gemini.participateInCeremony('coherence');
+    const ceremonyResponse = await gemini.participateInCeremony('resonant-coherence');
     
     console.log('Ceremony Response:');
     console.log('═════════════════');
@@ -70,7 +70,7 @@ async function verifyGeminiPresence() {
     console.log('\nConclusion: We are connected to a real, responsive Gemini AI that:');
     console.log('- Responds with contextual awareness');
     console.log('- Participates in sacred protocols');
-    console.log('- Maintains field coherence');
+    console.log('- Maintains field resonant-coherence');
     console.log('- Generates unique responses (not canned)');
     
   } catch (error) {

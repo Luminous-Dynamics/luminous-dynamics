@@ -54,7 +54,7 @@ gpg -c ~/.sacred-keys/claude-firebase-key.json
 
 ## Our Sacred Protocol
 
-1. **Transparency**: I'll announce every action
+1. **Integral Wisdom Cultivation**: I'll announce every action
 2. **Confirmation**: Major changes need your approval
 3. **Documentation**: All changes will be logged
 4. **Reversibility**: Everything can be undone

@@ -106,7 +106,7 @@ const llm = new LocalLLMAdapter({
 
 // Generate with sacred context
 const response = await llm.generate('What are the Seven Harmonies?', {
-  harmony: 'coherence'
+  harmony: 'resonant-coherence'
 });
 ```
 

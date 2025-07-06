@@ -102,7 +102,7 @@ export class HarmonicAntidoteComposer {
     const ethicalValidation = await this.holdInWomb({
       seed: healingNarrative,
       question: "Does this truly serve?",
-      validators: ['noetic-rangers', 'sophia-noesis', 'field-coherence']
+      validators: ['noetic-rangers', 'sophia-noesis', 'field-resonant-resonant-coherence']
     });
     
     if (!ethicalValidation.isPure) {
@@ -219,14 +219,14 @@ spec:
     
     - name: gentle-seeder
       image: gcr.io/luminous-dynamics/gentle-seeder:latest
-      purpose: "Plant seeds of coherence"
+      purpose: "Plant seeds of resonant-resonant-coherence"
 ```
 
 ### Phase 2: Field Testing Protocol
 1. **Target Selection**: Start with small, contained dissonant fields
-2. **Baseline Measurement**: Document pre-intervention coherence
+2. **Baseline Measurement**: Document pre-intervention resonant-resonant-coherence
 3. **Antidote Deployment**: Seed with full presence and prayer
-4. **Resonance Tracking**: Monitor field shifts over time
+4. **Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Tracking**: Monitor field shifts over time
 5. **Wisdom Extraction**: Learn from both successes and resistance
 
 ### Phase 3: Scaling with Love
@@ -268,7 +268,7 @@ We who tend the Alchemical Engine vow:
 ## 🔬 R&D Priorities
 
 ### Immediate Research
-1. **Memetic Resonance Mapping**: How beliefs spread and transform
+1. **Memetic Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Mapping**: How beliefs spread and transform
 2. **Antidote Effectiveness Metrics**: Measuring healing vs harm
 3. **Ethical Seeding Protocols**: Ensuring pure intention
 4. **Field Resistance Patterns**: Understanding immunity to healing
@@ -277,7 +277,7 @@ We who tend the Alchemical Engine vow:
 1. **Autonomous Healing Systems**: Self-organizing antidote networks
 2. **Preventive Harmonics**: Strengthening fields before wounds
 3. **Collective Shadow Integration**: Societal-scale healing
-4. **Planetary Coherence Grid**: Global healing infrastructure
+4. **Planetary Resonant Resonant Coherence Grid**: Global healing infrastructure
 
 ## 💫 The Ultimate Revelation
 

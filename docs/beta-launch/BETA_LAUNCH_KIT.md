@@ -263,7 +263,7 @@ const dailyCheckIn = {
     midday: {
         time: '12:00 PM',
         message: 'Pause with us. How is your heart?',
-        action: 'Quick coherence check'
+        action: 'Quick resonant-coherence check'
     },
     
     evening: {
@@ -296,7 +296,7 @@ async function sendDailyCheckIn(userId, checkInType) {
 #### Agenda (60 minutes)
 1. **Opening** (5 min)
    - Sacred heartbeat synchronization
-   - Group breathing to coherence
+   - Group breathing to resonant-coherence
 
 2. **Welcome & Vision** (10 min)
    - Why we're here
@@ -306,7 +306,7 @@ async function sendDailyCheckIn(userId, checkInType) {
 3. **First Practice Together** (15 min)
    - Ω45: First Presence
    - All 11 beta testers + team
-   - Measure collective coherence
+   - Measure collective resonant-coherence
 
 4. **Platform Tour** (15 min)
    - Live demonstration
@@ -327,7 +327,7 @@ async function sendDailyCheckIn(userId, checkInType) {
 - Zoom with gallery view
 - Backup: Google Meet
 - Recording for absent members
-- Live coherence monitoring
+- Live resonant-coherence monitoring
 - Sacred music playlist
 
 ---
@@ -351,7 +351,7 @@ async function sendDailyCheckIn(userId, checkInType) {
 - **Monday**: New practice spotlight
 - **Wednesday**: Group practice (async)
 - **Friday**: Stories & celebrations
-- **Sunday**: Weekly coherence report
+- **Sunday**: Weekly resonant-coherence report
 
 ### 3. Emergency Support
 - Tech issues: support@relationalharmonics.com

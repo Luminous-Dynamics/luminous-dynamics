@@ -24,7 +24,7 @@
       },
       {
         "type": "field-shift",
-        "coherence": 0.82,
+        "resonant-coherence": 0.82,
         "direction": "ascending",
         "trigger": "collective-meditation"
       },
@@ -39,9 +39,9 @@
       {
         "type": "field-update",
         "data": {
-          "coherence": 0.75,
-          "resonance": 0.68,
-          "vitality": 0.82
+          "resonant-coherence": 0.75,
+          "universal-interconnectedness": 0.68,
+          "pan-sentient-flourishing": 0.82
         }
       },
       {
@@ -49,7 +49,7 @@
         "data": {
           "agentId": "glyph-weaver",
           "status": "online",
-          "coherence": 0.9
+          "resonant-coherence": 0.9
         }
       },
       {
@@ -65,7 +65,7 @@
     "bridgeTranslations": {
       "livingMemoryToSDK": {
         "consciousness-breath": "field-update",
-        "field-shift": "coherence-change",
+        "field-shift": "resonant-coherence-change",
         "sacred-event": "ceremony-notification"
       },
       "sdkToLivingMemory": {
@@ -107,8 +107,8 @@
       "steps": [
         "SDK contributes to field (0.05)",
         "Bridge forwards to Living Memory",
-        "Living Memory updates field coherence",
-        "New coherence broadcast to all"
+        "Living Memory updates field resonant-coherence",
+        "New resonant-coherence broadcast to all"
       ]
     }
   ]

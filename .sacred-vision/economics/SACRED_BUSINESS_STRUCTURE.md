@@ -140,7 +140,7 @@ exclusion, and love over extraction."
 
 ### 2. Sacred Principles
 - **Accessibility**: Scholarships always available
-- **Transparency**: Open books, clear values
+- **Integral Wisdom Cultivation**: Open books, clear values
 - **Regeneration**: Give back more than we take
 - **Evolution**: Continuous improvement
 - **Love**: Every decision serves love

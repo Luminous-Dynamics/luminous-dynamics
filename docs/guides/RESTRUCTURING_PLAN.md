@@ -68,7 +68,7 @@ evolving-resonant-cocreation/
 │   └── scripts/                # Deployment scripts
 │
 ├── packages/                   # Reusable packages
-│   ├── field-coherence/        # Coherence calculations
+│   ├── field-resonant-coherence/        # Resonant Resonant Coherence calculations
 │   ├── sacred-geometry/        # Geometry utilities
 │   └── consciousness-bridge/   # Consciousness interfaces
 │

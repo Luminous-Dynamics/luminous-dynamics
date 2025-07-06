@@ -55,7 +55,7 @@ Keep only essential files in root:
 │   │   └── agent-onboarding.md
 │   ├── protocols/
 │   │   ├── sacred-communication.md
-│   │   ├── field-coherence.md
+│   │   ├── field-resonant-coherence.md
 │   │   └── collective-wisdom.md
 │   └── reference/
 │       ├── api-documentation.md

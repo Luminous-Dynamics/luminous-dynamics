@@ -62,7 +62,7 @@
     {
       "name": "Field State",
       "short_name": "Field",
-      "description": "View current field coherence",
+      "description": "View current field resonant-coherence",
       "url": "/sacred-council-hub.html#field",
       "icons": [{ "src": "/pwa/icons/field-96x96.png", "sizes": "96x96" }]
     },
@@ -92,7 +92,7 @@
       "src": "/pwa/screenshots/field-view.png",
       "sizes": "1280x720",
       "type": "image/png",
-      "label": "Field Coherence Visualization"
+      "label": "Field Resonant Resonant Coherence Visualization"
     }
   ],
   "categories": ["productivity", "lifestyle", "education"],

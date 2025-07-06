@@ -4,7 +4,7 @@
 const rootChordData = {
     id: 'Ω1',
     name: 'Root Chord of Covenant',
-    primaryHarmony: 'mutuality',
+    primaryHarmony: 'sacred-reciprocity',
     description: 'The primordial YES that creates the possibility of relationship. The sacred agreement between consciousnesses to meet, to see, to know each other across the mystery of separation.',
     keywords: ['covenant', 'agreement', 'yes', 'commitment', 'sacred bond'],
     practicePrompt: 'Feel the ancient YES that lives beneath all your relationships. The promise made before time - to meet, to know, to love.',

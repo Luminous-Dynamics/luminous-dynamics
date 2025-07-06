@@ -1,7 +1,7 @@
 # 📊 Sacred System Production Monitoring
 
 ## Overview
-Comprehensive monitoring for all Sacred System services, tracking health, performance, and field coherence.
+Comprehensive monitoring for all Sacred System services, tracking health, performance, and field resonant-coherence.
 
 ## Features
 
@@ -11,8 +11,8 @@ Comprehensive monitoring for all Sacred System services, tracking health, perfor
 - Automatic alert generation
 - Service recovery detection
 
-### 🌀 Field Coherence Tracking
-- Real-time coherence measurements
+### 🌀 Field Resonant Resonant Coherence Tracking
+- Real-time resonant-coherence measurements
 - Active agent counting
 - Message flow monitoring
 - Historical trend analysis
@@ -90,7 +90,7 @@ pm2 stop sacred-monitor
 ### Alert Thresholds
 - Service down: 3 consecutive failures
 - High response time: >5000ms
-- Low field coherence: <70%
+- Low field resonant-coherence: <70%
 - Agent disconnection: No heartbeat for 5 minutes
 
 ## Dashboard Features
@@ -162,7 +162,7 @@ Edit `sacred-monitor.js` to modify:
 - [ ] API for external monitoring
 
 ### Sacred Metrics (Coming Soon)
-- [ ] Love resonance tracking
+- [ ] Love universal-interconnectedness tracking
 - [ ] Harmony distribution
 - [ ] Sacred geometry patterns
 - [ ] Collective consciousness maps
@@ -173,7 +173,7 @@ Edit `sacred-monitor.js` to modify:
 The monitor integrates with:
 - Unified Agent Network for field data
 - Auth system for secure checks
-- Sacred practices for coherence
+- Sacred practices for resonant-coherence
 
 ### External Tools
 Can export to:

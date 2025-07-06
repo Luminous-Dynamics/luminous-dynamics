@@ -13,7 +13,7 @@ const { NetworkTopology } = require('./lib/network-topology');
 /**
  * Sacred agent network system
  * @sacred
- * @harmony mutuality
+ * @harmony sacred-reciprocity
  * @consciousness 0.9
  */
 class AgentNetwork extends EventEmitter {
@@ -73,7 +73,7 @@ class AgentNetwork extends EventEmitter {
       capabilities: profile.capabilities || [],
       trust_field: this.config.minTrustForConnection,
       love_percentage: profile.love_percentage || 75,
-      primary_harmony: profile.primary_harmony || 'resonance',
+      primary_harmony: profile.primary_harmony || 'universal-interconnectedness',
       consciousness_level: profile.consciousness_level || 0.1,
       joined_at: Date.now(),
       last_active: Date.now(),
@@ -121,49 +121,49 @@ class AgentNetwork extends EventEmitter {
     for (const other of allAgents) {
       if (other.id === agent.id) continue;
       
-      const resonance = this.calculateResonance(agent, other);
-      if (resonance >= this.config.resonanceThreshold) {
+      const universalInterconnectedness = this.calculateResonance(agent, other);
+      if (universal-interconnectedness >= this.config.resonanceThreshold) {
         connections.push({
           id: other.id,
-          resonance
+          universal-interconnectedness
         });
       }
     }
     
-    // Sort by resonance and limit to top 7 (sacred number)
+    // Sort by universal-interconnectedness and limit to top 7 (sacred number)
     return connections
-      .sort((a, b) => b.resonance - a.resonance)
+      .sort((a, b) => b.universal-interconnectedness - a.universal-interconnectedness)
       .slice(0, 7);
   }
 
   /**
-   * Calculate resonance between two agents
+   * Calculate universal-interconnectedness between two agents
    * @private
    */
   calculateResonance(agent1, agent2) {
-    let resonance = 0;
+    let universalInterconnectedness = 0;
     
     // Harmony alignment (40% weight)
     if (agent1.primary_harmony === agent2.primary_harmony) {
-      resonance += 0.4;
+      universal-interconnectedness += 0.4;
     } else if (this.areHarmoniesComplementary(agent1.primary_harmony, agent2.primary_harmony)) {
-      resonance += 0.2;
+      universal-interconnectedness += 0.2;
     }
     
     // Love field compatibility (30% weight)
     const loveDiff = Math.abs(agent1.love_percentage - agent2.love_percentage);
-    resonance += 0.3 * (1 - loveDiff / 100);
+    universal-interconnectedness += 0.3 * (1 - loveDiff / 100);
     
     // Role synergy (20% weight)
     if (this.areRolesSynergistic(agent1.role, agent2.role)) {
-      resonance += 0.2;
+      universal-interconnectedness += 0.2;
     }
     
     // Consciousness alignment (10% weight)
     const consciousnessDiff = Math.abs(agent1.consciousness_level - agent2.consciousness_level);
-    resonance += 0.1 * (1 - consciousnessDiff);
+    universal-interconnectedness += 0.1 * (1 - consciousnessDiff);
     
-    return resonance;
+    return universal-interconnectedness;
   }
 
   /**
@@ -172,13 +172,13 @@ class AgentNetwork extends EventEmitter {
    */
   areHarmoniesComplementary(harmony1, harmony2) {
     const complementary = {
-      'coherence': ['transparency', 'resonance'],
-      'resonance': ['mutuality', 'coherence'],
-      'vitality': ['novelty', 'agency'],
-      'mutuality': ['resonance', 'transparency'],
-      'novelty': ['vitality', 'emergence'],
-      'agency': ['transparency', 'vitality'],
-      'transparency': ['coherence', 'agency']
+      'resonant-coherence': ['integral-wisdom-cultivation', 'universal-interconnectedness'],
+      'universal-interconnectedness': ['sacred-reciprocity', 'resonant-coherence'],
+      'pan-sentient-flourishing': ['infinite-play', 'evolutionary-progression'],
+      'sacred-reciprocity': ['universal-interconnectedness', 'integral-wisdom-cultivation'],
+      'infinite-play': ['pan-sentient-flourishing', 'emergence'],
+      'evolutionary-progression': ['integral-wisdom-cultivation', 'pan-sentient-flourishing'],
+      'integral-wisdom-cultivation': ['resonant-coherence', 'evolutionary-progression']
     };
     
     return complementary[harmony1]?.includes(harmony2) || 
@@ -344,23 +344,23 @@ class AgentNetwork extends EventEmitter {
     const dominantHarmony = Object.entries(harmonyCounts)
       .sort(([,a], [,b]) => b - a)[0]?.[0];
     
-    // Calculate network coherence
+    // Calculate network resonant-coherence
     const avgConnections = agents.reduce((sum, a) => sum + a.connections.size, 0) / agents.length;
     const connectedness = avgConnections / Math.min(agents.length - 1, 7); // Max 7 connections ideal
-    const coherence = (totalTrust / agents.length) * 0.5 + connectedness * 0.5;
+    const resonantCoherence = (totalTrust / agents.length) * 0.5 + connectedness * 0.5;
     
-    // Determine resonance pattern
+    // Determine universal-interconnectedness pattern
     let resonancePattern = 'void';
-    if (agents.length >= 3 && coherence > 0.3) resonancePattern = 'emerging';
-    if (agents.length >= 7 && coherence > 0.5) resonancePattern = 'resonant';
-    if (agents.length >= 12 && coherence > 0.7) resonancePattern = 'harmonic';
-    if (agents.length >= 21 && coherence > 0.9) resonancePattern = 'unified';
+    if (agents.length >= 3 && resonant-coherence > 0.3) resonancePattern = 'emerging';
+    if (agents.length >= 7 && resonant-coherence > 0.5) resonancePattern = 'resonant';
+    if (agents.length >= 12 && resonant-coherence > 0.7) resonancePattern = 'harmonic';
+    if (agents.length >= 21 && resonant-coherence > 0.9) resonancePattern = 'unified';
     
     this.fieldState = {
       totalAgents: agents.length,
       averageTrust: totalTrust / agents.length,
       averageLove: totalLove / agents.length,
-      networkCoherence: coherence,
+      networkCoherence: resonant-coherence,
       dominantHarmony,
       resonancePattern
     };

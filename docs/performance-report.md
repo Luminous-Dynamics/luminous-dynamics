@@ -249,12 +249,12 @@ Runtime: 0.90s
     "risk": "high"
   },
   {
-    "file": "src/unified-field/resonance-bar.js",
+    "file": "src/unified-field/universal-interconnectedness-bar.js",
     "issue": "2 setInterval vs 1 clearInterval",
     "risk": "high"
   },
   {
-    "file": "src/unified-field/resonance-bar.js",
+    "file": "src/unified-field/universal-interconnectedness-bar.js",
     "issue": "4 setTimeout vs 0 clearTimeout",
     "risk": "medium"
   },
@@ -393,10 +393,10 @@ Runtime: 0.90s
 
 
 
-### FIELDCALCULATIONS: Complex field coherence calculations may impact performance
+### FIELDCALCULATIONS: Complex field resonant-coherence calculations may impact performance
 
 **Fixes:**
-- Cache field coherence calculations
+- Cache field resonant-coherence calculations
 - Reduce calculation frequency
 - Optimize mathematical operations
 - Use worker threads for heavy calculations
@@ -740,12 +740,12 @@ Runtime: 0.90s
         "risk": "high"
       },
       {
-        "file": "src/unified-field/resonance-bar.js",
+        "file": "src/unified-field/universal-interconnectedness-bar.js",
         "issue": "2 setInterval vs 1 clearInterval",
         "risk": "high"
       },
       {
-        "file": "src/unified-field/resonance-bar.js",
+        "file": "src/unified-field/universal-interconnectedness-bar.js",
         "issue": "4 setTimeout vs 0 clearTimeout",
         "risk": "medium"
       },

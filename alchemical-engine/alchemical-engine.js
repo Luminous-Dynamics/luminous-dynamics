@@ -121,7 +121,7 @@ class AlchemicalEngine {
       console.log(`Core Wound: ${diagnosis.loveShadow.wound}`);
       console.log(`What Love Seeks: ${diagnosis.loveShadow.seeking}`);
       console.log(`Recommended Practice: ${diagnosis.healingPath.primaryGlyph}`);
-      console.log(`Field Coherence: ${diagnosis.fieldResonance.coherence}%`);
+      console.log(`Field Resonant Resonant Coherence: ${diagnosis.fieldResonance.resonant-coherence}%`);
     }
     
     return diagnosis;
@@ -145,7 +145,7 @@ class AlchemicalEngine {
       summary.push('🎧 Listening Results:');
       summary.push(`   Core Wound: ${session.diagnosis.loveShadow.wound}`);
       summary.push(`   Love Seeks: ${session.diagnosis.loveShadow.seeking}`);
-      summary.push(`   Field Coherence: ${session.diagnosis.fieldResonance.coherence}%`);
+      summary.push(`   Field Resonant Resonant Coherence: ${session.diagnosis.fieldResonance.resonant-coherence}%`);
       summary.push('');
     }
     
@@ -163,7 +163,7 @@ class AlchemicalEngine {
       summary.push('🌱 Seeding Results:');
       summary.push(`   Method: ${session.seeding.method?.approach || 'Unknown'}`);
       summary.push(`   Timing: ${session.seeding.timing?.pattern || 'Unknown'}`);
-      summary.push(`   Field Response: ${session.seeding.fieldResponse?.resonance || 0}% resonance`);
+      summary.push(`   Field Response: ${session.seeding.fieldResponse?.universal-interconnectedness || 0}% universal-interconnectedness`);
       summary.push(`   Success: ${session.seeding.success ? 'Yes 🌸' : 'Not yet 🌰'}`);
       summary.push('');
     }
@@ -228,9 +228,9 @@ class AlchemicalEngine {
         stats.fieldTypes[field] = (stats.fieldTypes[field] || 0) + 1;
       }
       
-      // Sum coherence
-      if (s.diagnosis?.fieldResonance?.coherence) {
-        stats.averageCoherence += s.diagnosis.fieldResonance.coherence;
+      // Sum resonant-coherence
+      if (s.diagnosis?.fieldResonance?.resonant-coherence) {
+        stats.averageCoherence += s.diagnosis.fieldResonance.resonant-coherence;
       }
     });
 
@@ -242,7 +242,7 @@ class AlchemicalEngine {
     console.log('\n📊 ALCHEMICAL ENGINE STATISTICS\n');
     console.log(`Total Transmutations: ${stats.totalTransmutations}`);
     console.log(`Successful Seedings: ${stats.successful} (${stats.successRate || '0%'})`);
-    console.log(`Average Field Coherence: ${stats.averageCoherence}%`);
+    console.log(`Average Field Resonant Resonant Coherence: ${stats.averageCoherence}%`);
     
     console.log('\nMost Common Wounds:');
     Object.entries(stats.wounds)

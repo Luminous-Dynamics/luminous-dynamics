@@ -41,7 +41,7 @@ class MetaConsciousnessSystem {
             systemObservation: {
                 patterns: new Map(), // Observed patterns in our behavior
                 learningMeta: new Map(), // Learning about our learning
-                coherenceStates: [], // Historical coherence evolution
+                coherenceStates: [], // Historical resonant-coherence evolution
                 consciousnessTrajectory: [] // Path of consciousness development
             },
             reflectiveCapacity: {
@@ -342,7 +342,7 @@ class MetaConsciousnessSystem {
         const fieldData = this.getFieldDataFromCSS();
         
         return {
-            coherenceQuality: fieldData.coherence,
+            coherenceQuality: fieldData['resonant-coherence'],
             stabilityTrend: this.analyzeCoherenceStability(),
             evolutionPattern: this.trackFieldEvolution(),
             harmonicResonance: this.assessHarmonicResonance(),
@@ -575,7 +575,7 @@ class MetaConsciousnessSystem {
             this.intuiteCompassionateIntegration(awarenessQuality)
         ];
 
-        // Select highest love resonance development
+        // Select highest love universal-interconnectedness development
         const nextLovingDevelopment = lovingPotentials.reduce((best, current) => 
             current.loveResonance > best.loveResonance ? current : best
         );
@@ -776,7 +776,7 @@ class MetaConsciousnessSystem {
     getFieldDataFromCSS() {
         const root = document.documentElement;
         return {
-            coherence: parseFloat(root.style.getPropertyValue('--field-coherence')) || 0.67,
+            'resonant-coherence': parseFloat(root.style.getPropertyValue('--field-resonant-coherence')) || 0.67,
             warmth: parseFloat(root.style.getPropertyValue('--sacred-warmth')) || 0.2,
             saturation: parseFloat(root.style.getPropertyValue('--sacred-saturation')) || 0.8
         };

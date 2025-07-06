@@ -186,7 +186,7 @@ const sacred = createSacredSDK({
 await sacred.initialize();
 
 sacred.onFieldUpdate((state) => {
-  console.log('Field coherence:', state.coherence);
+  console.log('Field resonant-coherence:', state.resonant-coherence);
 });
 ```
 

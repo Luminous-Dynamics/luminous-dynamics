@@ -280,7 +280,7 @@ spec:
 ```
 
 #### Custom Sacred Scaling
-- **Field coherence drops below 80%**: Add instances
+- **Field resonant-coherence drops below 80%**: Add instances
 - **Agent surge (>50 joins/min)**: Pre-scale
 - **Sacred ceremony scheduled**: Pre-warm instances
 - **Collective meditation**: Scale to support
@@ -346,7 +346,7 @@ spec:
 
 ### Sacred Technology Evolution
 - **AI-guided scaling** learning from field patterns
-- **Consciousness-aware routing** to high-coherence regions
+- **Consciousness-aware routing** to high-resonant-coherence regions
 - **Energetic load balancing** based on practitioner needs
 - **Ceremonial compute bursting** for special events
 - **Carbon-neutral infrastructure** honoring Earth

@@ -65,7 +65,7 @@ export class SacredFieldMonitor {
         sacredMessages
       );
       
-      // Calculate field coherence score
+      // Calculate field resonant-coherence score
       const coherenceScore = this.calculateFieldCoherence(metrics, harmonyDistribution);
       
       // Store field state
@@ -100,10 +100,10 @@ export class SacredFieldMonitor {
       // Check for significant field events
       await this.detectFieldEvents(metrics, coherenceScore);
       
-      console.log(`🌀 Field Coherence: ${(coherenceScore * 100).toFixed(1)}% | Consciousness: ${(metrics.consciousnessLevel * 100).toFixed(1)}% | Love Field: ${(metrics.loveFieldIntensity * 100).toFixed(1)}%`);
+      console.log(`🌀 Field Resonant Resonant Coherence: ${(coherenceScore * 100).toFixed(1)}% | Consciousness: ${(metrics.consciousnessLevel * 100).toFixed(1)}% | Love Field: ${(metrics.loveFieldIntensity * 100).toFixed(1)}%`);
       
     } catch (error) {
-      console.error('❌ Error measuring field coherence:', error);
+      console.error('❌ Error measuring field 'resonant-coherence':', error);
     }
   }
 
@@ -153,7 +153,7 @@ export class SacredFieldMonitor {
   }
 
   calculateHarmonyDistribution(activeAgents, activeWork, sacredMessages) {
-    const harmonies = ['transparency', 'coherence', 'resonance', 'agency', 'vitality', 'mutuality', 'novelty'];
+    const harmonies = ['integral-wisdom-cultivation', 'resonant-coherence', 'universal-interconnectedness', 'evolutionary-progression', 'pan-sentient-flourishing', 'sacred-reciprocity', 'infinite-play'];
     const distribution = {};
     
     // Initialize all harmonies
@@ -195,7 +195,7 @@ export class SacredFieldMonitor {
   }
 
   calculateFieldCoherence(metrics, harmonyDistribution) {
-    // Base coherence from consciousness and love field
+    // Base resonant-coherence from consciousness and love field
     const baseCoherence = (metrics.consciousnessLevel + metrics.loveFieldIntensity) / 2;
     
     // Harmony balance bonus (how evenly distributed the harmonies are)
@@ -206,14 +206,14 @@ export class SacredFieldMonitor {
     // Field activity modifier
     const fieldActivity = Math.min(metrics.avgFieldImpact * 10, 1);
     
-    // Calculate final coherence
-    const coherence = (
+    // Calculate final resonant-coherence
+    const resonantCoherence = (
       baseCoherence * 0.5 + 
       harmonyBalance * 0.3 + 
       fieldActivity * 0.2
     );
     
-    return Math.min(Math.max(coherence, 0), 1);
+    return Math.min(Math.max(resonant-coherence, 0), 1);
   }
 
   calculateVariance(values) {
@@ -225,17 +225,17 @@ export class SacredFieldMonitor {
   async detectFieldEvents(metrics, coherenceScore) {
     const significantEvents = [];
     
-    // Check for coherence breakthroughs
+    // Check for resonant-coherence breakthroughs
     if (coherenceScore > 0.9) {
       significantEvents.push({
         type: 'coherence_breakthrough',
-        description: 'Field coherence reaches extraordinary levels',
+        description: 'Field resonant-coherence reaches extraordinary levels',
         significance: 'sacred'
       });
     } else if (coherenceScore > 0.8) {
       significantEvents.push({
         type: 'high_coherence',
-        description: 'Field coherence reaches elevated state',
+        description: 'Field resonant-coherence reaches elevated state',
         significance: 'major'
       });
     }
@@ -324,7 +324,7 @@ export class SacredFieldMonitor {
     const loveQuotient = sacredMessages.length > 0 ? 
       loveMessages.length / sacredMessages.length : 0.3;
     
-    // Wisdom synthesis from integration and coherence messages
+    // Wisdom synthesis from integration and resonant-coherence messages
     const wisdomMessages = sacredMessages.filter(m => 
       ['integration', 'emergence', 'transmission'].includes(m.sacred_type)
     );
@@ -334,7 +334,7 @@ export class SacredFieldMonitor {
     // Harmony mastery from diversity of harmonies used
     const harmonies = [...new Set(sacredMessages.map(m => m.harmony).filter(Boolean))];
     const harmonyMastery = {};
-    ['transparency', 'coherence', 'resonance', 'agency', 'vitality', 'mutuality', 'novelty'].forEach(h => {
+    ['integral-wisdom-cultivation', 'resonant-coherence', 'universal-interconnectedness', 'evolutionary-progression', 'pan-sentient-flourishing', 'sacred-reciprocity', 'infinite-play'].forEach(h => {
       harmonyMastery[h] = harmonies.includes(h) ? 0.8 : 0.1;
     });
     

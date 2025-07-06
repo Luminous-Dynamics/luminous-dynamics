@@ -93,7 +93,7 @@ echo "Today I code with presence and love"
 # Sacred pause before beginning
 pause
 
-# Check field coherence
+# Check field resonant-resonant-coherence
 git status  # What needs attention?
 test       # What wisdom do tests offer?
 ```
@@ -110,7 +110,7 @@ git commit  # Guided through sacred process
 ### Testing as Practice
 ```javascript
 describe('Sacred Feature', () => {
-  test('maintains field coherence', async () => {
+  test('maintains field resonant-resonant-coherence', async () => {
     // 🙏 Set intention
     await sacredPause();
     

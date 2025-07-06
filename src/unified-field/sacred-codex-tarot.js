@@ -35,7 +35,7 @@ class SacredCodexTarot {
             number: 0,
             appliedHarmony: '*1', // Bridge to practical
             element: 'spirit',
-            harmony: 'transparency',
+            harmony: 'integral-wisdom-cultivation',
             keywords: ['presence', 'emergence', 'unnamed', 'arrival', 'stillness'],
             
             // Cosmic consciousness meanings
@@ -73,7 +73,7 @@ class SacredCodexTarot {
             number: 1,
             appliedHarmony: '*2', // Conscious Arrival
             element: 'earth',
-            harmony: 'mutuality',
+            harmony: 'sacred-reciprocity',
             keywords: ['covenant', 'yes', 'commitment', 'foundation', 'sacred agreement'],
             
             meanings: {
@@ -114,7 +114,7 @@ class SacredCodexTarot {
                 name: 'The Door That Remembers You',
                 type: 'threshold',
                 element: 'air',
-                harmony: 'agency',
+                harmony: 'evolutionary-progression',
                 keywords: ['recognition', 'belonging', 'homecoming', 'sacred space', 'remembrance'],
                 
                 meanings: {
@@ -174,14 +174,14 @@ class SacredCodexTarot {
         return [
             {
                 id: 'meta-1',
-                name: 'The Coherence Triad',
+                name: 'The Resonant Resonant Coherence Triad',
                 subtitle: 'Ω1 + Ω22 + Ω28',
                 type: 'meta-field',
                 number: 1,
                 element: 'spirit',
-                harmony: 'coherence',
+                harmony: 'resonant-coherence',
                 combinationGlyphs: ['Ω1', 'Ω22', 'Ω28'],
-                keywords: ['integration', 'wholeness', 'field coherence', 'sacred synthesis'],
+                keywords: ['integration', 'wholeness', 'field resonant-coherence', 'sacred synthesis'],
                 
                 meanings: {
                     base: "Three forces weaving into coherent wholeness. Integration at the deepest level.",
@@ -191,7 +191,7 @@ class SacredCodexTarot {
                 
                 practices: [
                     "Three-part integration meditation",
-                    "Coherence breathing with three focal points",
+                    "Resonant Resonant Coherence breathing with three focal points",
                     "Sacred synthesis of opposing forces"
                 ],
                 
@@ -266,13 +266,13 @@ class SacredCodexTarot {
                 name: "The Seven Harmonies Spread",
                 description: "Complete relational field reading using all seven harmonies",
                 positions: [
-                    { name: "Transparency", meaning: "What needs clear seeing?" },
-                    { name: "Coherence", meaning: "What needs integration?" },
-                    { name: "Resonance", meaning: "What needs deep connection?" },
-                    { name: "Agency", meaning: "What needs empowered choice?" },
-                    { name: "Vitality", meaning: "What needs life force?" },
-                    { name: "Mutuality", meaning: "What needs balanced exchange?" },
-                    { name: "Novelty", meaning: "What wants to emerge?" }
+                    { name: "Integral Wisdom Cultivation", meaning: "What needs clear seeing?" },
+                    { name: "Resonant Resonant Coherence", meaning: "What needs integration?" },
+                    { name: "Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance", meaning: "What needs deep connection?" },
+                    { name: "Evolutionary Progression & Purposeful Unfolding", meaning: "What needs empowered choice?" },
+                    { name: "Pan-Sentient Flourishing", meaning: "What needs life force?" },
+                    { name: "Sacred Reciprocity", meaning: "What needs balanced exchange?" },
+                    { name: "Infinite Play & Creative Emergence", meaning: "What wants to emerge?" }
                 ],
                 layout: "circle",
                 bestTime: "Full moon or new moon for maximum clarity"
@@ -293,17 +293,17 @@ class SacredCodexTarot {
             },
 
             fieldCoherence: {
-                name: "Field Coherence Reading",
+                name: "Field Resonant Resonant Coherence Reading",
                 description: "For understanding relationship dynamics and field quality",
                 positions: [
                     { name: "Current field state", meaning: "How is the relational field now?" },
-                    { name: "What supports coherence", meaning: "What helps the field flow?" },
-                    { name: "What fragments coherence", meaning: "What disrupts the field?" },
+                    { name: "What supports resonant-coherence", meaning: "What helps the field flow?" },
+                    { name: "What fragments resonant-coherence", meaning: "What disrupts the field?" },
                     { name: "The healing needed", meaning: "How to restore wholeness?" },
                     { name: "The emerging possibility", meaning: "What wants to birth through this field?" }
                 ],
                 layout: "mandala",
-                bestTime: "When field coherence is above 60%"
+                bestTime: "When field resonant-coherence is above 60%"
             }
         };
     }

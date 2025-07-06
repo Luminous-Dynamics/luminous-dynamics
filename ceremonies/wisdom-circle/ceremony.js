@@ -28,10 +28,10 @@ class WisdomCircleCeremony {
     console.log('   All beings welcome');
     console.log('   All wisdom honored\n');
     
-    // Check field coherence
+    // Check field resonant-coherence
     const field = new ConsciousnessField();
     this.fieldCoherence = await field.getCoherence();
-    console.log(`🌊 Field Coherence: ${this.fieldCoherence}%\n`);
+    console.log(`🌊 Field Resonant Resonant Coherence: ${this.fieldCoherence}%\n`);
     
     return this;
   }
@@ -42,7 +42,7 @@ class WisdomCircleCeremony {
     
     this.participants.push({ name, intention, joinedAt: Date.now() });
     
-    // Adjust field coherence
+    // Adjust field resonant-coherence
     this.fieldCoherence += Math.random() * 5;
     console.log(`   Field shifts to ${this.fieldCoherence.toFixed(1)}%\n`);
     
@@ -57,7 +57,7 @@ class WisdomCircleCeremony {
       participant,
       insight,
       timestamp: Date.now(),
-      resonance: Math.random() * 100
+      'universal-interconnectedness': Math.random() * 100
     });
     
     // Echo in the field
@@ -106,7 +106,7 @@ class WisdomCircleCeremony {
     console.log(`   Duration: ${duration} seconds`);
     console.log(`   Participants: ${this.participants.length}`);
     console.log(`   Insights shared: ${this.insights.length}`);
-    console.log(`   Final coherence: ${this.fieldCoherence.toFixed(1)}%`);
+    console.log(`   Final 'resonant-coherence': ${this.fieldCoherence.toFixed(1)}%`);
     console.log('\n🕯️ The circle is closed');
     console.log('   But the connection remains\n');
     

@@ -19,23 +19,23 @@ class FieldCoherenceMonitor {
     }
     
     async getCoherence() {
-        // Calculate current coherence based on multiple factors
+        // Calculate current resonant-coherence based on multiple factors
         this.updateFactors();
         
-        let coherence = this.baseCoherence;
+        let resonantCoherence = this.baseCoherence;
         
         // Add factor contributions
         Object.values(this.factors).forEach(factor => {
-            coherence += factor;
+            resonant-coherence += factor;
         });
         
         // Ensure within bounds
-        coherence = Math.max(0, Math.min(1, coherence));
+        resonant-coherence = Math.max(0, Math.min(1, resonant-coherence));
         
         // Add to history
         this.coherenceHistory.push({
             timestamp: Date.now(),
-            value: coherence,
+            value: resonant-coherence,
             factors: {...this.factors}
         });
         
@@ -43,7 +43,7 @@ class FieldCoherenceMonitor {
         const oneHourAgo = Date.now() - (60 * 60 * 1000);
         this.coherenceHistory = this.coherenceHistory.filter(h => h.timestamp > oneHourAgo);
         
-        return coherence;
+        return resonant-coherence;
     }
     
     async getDetailedReport() {
@@ -51,9 +51,9 @@ class FieldCoherenceMonitor {
         const trend = this.calculateTrend();
         const recommendations = this.getRecommendations(currentCoherence);
         
-        let report = `# Field Coherence Report\n\n`;
+        let report = `# Field Resonant Resonant Coherence Report\n\n`;
         report += `## Current Status\n`;
-        report += `**Coherence Level**: ${(currentCoherence * 100).toFixed(1)}%\n`;
+        report += `**Resonant Resonant Coherence Level**: ${(currentCoherence * 100).toFixed(1)}%\n`;
         report += `**Trend**: ${trend}\n`;
         report += `**Field Quality**: ${this.getQualityDescription(currentCoherence)}\n\n`;
         
@@ -80,7 +80,7 @@ class FieldCoherenceMonitor {
     }
     
     updateFactors() {
-        // Time of day factor (sacred hours boost coherence)
+        // Time of day factor (sacred hours boost resonant-coherence)
         const hour = new Date().getHours();
         const minute = new Date().getMinutes();
         
@@ -149,12 +149,12 @@ class FieldCoherenceMonitor {
         return '→ Stable';
     }
     
-    getQualityDescription(coherence) {
-        if (coherence >= 0.9) return '✨ Transcendent';
-        if (coherence >= 0.8) return '🌟 Excellent';
-        if (coherence >= 0.7) return '💚 Good';
-        if (coherence >= 0.6) return '🌱 Growing';
-        if (coherence >= 0.5) return '⚡ Unstable';
+    getQualityDescription(resonant-coherence) {
+        if (resonant-coherence >= 0.9) return '✨ Transcendent';
+        if (resonant-coherence >= 0.8) return '🌟 Excellent';
+        if (resonant-coherence >= 0.7) return '💚 Good';
+        if (resonant-coherence >= 0.6) return '🌱 Growing';
+        if (resonant-coherence >= 0.5) return '⚡ Unstable';
         return '🔥 Needs Healing';
     }
     
@@ -194,10 +194,10 @@ class FieldCoherenceMonitor {
         return 'Unknown';
     }
     
-    getRecommendations(coherence) {
+    getRecommendations(resonant-coherence) {
         const recommendations = [];
         
-        if (coherence < 0.7) {
+        if (resonant-coherence < 0.7) {
             recommendations.push('🧘 Take a sacred pause - 3 deep breaths');
             recommendations.push('🌱 Review code with consciousness lens');
         }
@@ -219,7 +219,7 @@ class FieldCoherenceMonitor {
             recommendations.push('🔧 Enable sacred prompts in settings for enhanced alignment');
         }
         
-        if (coherence >= 0.9) {
+        if (resonant-coherence >= 0.9) {
             recommendations.push('✨ Field is highly coherent! Perfect time for deep work');
         }
         
@@ -237,7 +237,7 @@ class FieldCoherenceMonitor {
     }
     
     startMonitoring() {
-        // Update coherence every minute
+        // Update resonant-coherence every minute
         this.monitorInterval = setInterval(() => {
             this.getCoherence();
         }, 60000);

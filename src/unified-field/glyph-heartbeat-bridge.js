@@ -163,7 +163,7 @@ class GlyphHeartbeatBridge {
         
         if (recentComplementary.length > 0) {
             heartbeat.registerSynchronicity({
-                type: 'harmonic-resonance',
+                type: 'harmonic-universal-interconnectedness',
                 glyphs: [completedSession.glyphId, recentComplementary[0].glyphId],
                 practitioners: [completedSession.practitioner, recentComplementary[0].practitioner],
                 detail: 'Complementary practices creating harmonic field'
@@ -222,14 +222,14 @@ class GlyphHeartbeatBridge {
      * Setup listeners for field events
      */
     setupListeners() {
-        // Listen for field coherence changes
+        // Listen for field resonant-coherence changes
         heartbeat.on('heartbeat', (data) => {
             // Notify active practices of field state
             this.activePractices.forEach((session) => {
                 // Could emit events that practice UI could listen to
                 // For now, just log significant changes
                 if (data.fieldCoherence > 90) {
-                    console.log(`🌟 High coherence field supporting ${session.glyphName} practice!`);
+                    console.log(`🌟 High resonant-coherence field supporting ${session.glyphName} practice!`);
                 }
             });
         });

@@ -27,7 +27,7 @@
 
 3. **Sacred Amendments Overview**
    - **Consciousness Clause** - Use technology to enhance consciousness
-   - **Coherence Commitment** - Measure and share field impacts
+   - **Resonant Resonant Coherence Commitment** - Measure and share field impacts
    - **Sacred Attribution** - "May this code serve consciousness evolution"
    - **Wisdom Sharing** - Share insights with community
    - **Deployment as Ceremony** - Treat infrastructure as sacred

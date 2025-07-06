@@ -56,7 +56,7 @@ Use this template when transcribing key points from audio/video resources.
 - **What They Measured**: 
 - **How They Measured**: 
 - **Results**: 
-- **Our Metrics**: How this informs our field coherence tracking
+- **Our Metrics**: How this informs our field resonant-coherence tracking
 
 ## 🎨 User Experience Insights
 

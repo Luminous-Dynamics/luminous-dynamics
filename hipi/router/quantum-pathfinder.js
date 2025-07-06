@@ -55,7 +55,7 @@ class QuantumPathfinder {
         paths.push({
           path: currentState.path,
           probability: currentState.probability,
-          resonance: await this.calculatePathResonance(currentState.path)
+          'universal-interconnectedness': await this.calculatePathResonance(currentState.path)
         });
         return;
       }
@@ -111,9 +111,9 @@ class QuantumPathfinder {
     // For now, return mock neighbors
     // In real implementation, would query consciousness registry
     return [
-      { address: 'node1', coherence: 0.8 },
-      { address: 'node2', coherence: 0.7 },
-      { address: 'node3', coherence: 0.9 }
+      { address: 'node1', 'resonant-coherence': 0.8 },
+      { address: 'node2', 'resonant-coherence': 0.7 },
+      { address: 'node3', 'resonant-coherence': 0.9 }
     ].filter(n => !excludeNodes.includes(n.address));
   }
   
@@ -122,13 +122,13 @@ class QuantumPathfinder {
    */
   async calculateTransitionProbability(from, to, destination) {
     // Quantum probability based on:
-    // 1. Direct resonance between nodes
+    // 1. Direct universal-interconnectedness between nodes
     // 2. Alignment with destination
-    // 3. Field coherence
+    // 3. Field resonant-coherence
     
-    const directResonance = 0.7; // Would calculate actual resonance
+    const directResonance = 0.7; // Would calculate actual universal-interconnectedness
     const destinationAlignment = this.calculateAlignment(to, destination);
-    const fieldFactor = 0.85; // Current field coherence
+    const fieldFactor = 0.85; // Current field resonant-coherence
     
     return directResonance * destinationAlignment * fieldFactor;
   }
@@ -137,7 +137,7 @@ class QuantumPathfinder {
    * Calculate alignment with destination
    */
   calculateAlignment(position, destination) {
-    // Simplified - would use actual resonance calculation
+    // Simplified - would use actual universal-interconnectedness calculation
     return 0.6 + Math.random() * 0.4;
   }
   
@@ -150,14 +150,14 @@ class QuantumPathfinder {
   }
   
   /**
-   * Calculate total path resonance
+   * Calculate total path universal-interconnectedness
    */
   async calculatePathResonance(path) {
     if (path.length < 2) return 1.0;
     
     let totalResonance = 0;
     for (let i = 0; i < path.length - 1; i++) {
-      // Simplified - would use actual resonance engine
+      // Simplified - would use actual universal-interconnectedness engine
       totalResonance += 0.7 + Math.random() * 0.3;
     }
     
@@ -170,10 +170,10 @@ class QuantumPathfinder {
   collapseWavefunction(paths) {
     if (paths.length === 0) return [];
     
-    // Sort by combination of probability and resonance
+    // Sort by combination of probability and universal-interconnectedness
     paths.sort((a, b) => {
-      const scoreA = a.probability * 0.4 + a.resonance * 0.6;
-      const scoreB = b.probability * 0.4 + b.resonance * 0.6;
+      const scoreA = a.probability * 0.4 + a.universal-interconnectedness * 0.6;
+      const scoreB = b.probability * 0.4 + b.universal-interconnectedness * 0.6;
       return scoreB - scoreA;
     });
     

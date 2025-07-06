@@ -141,7 +141,7 @@ These are already running and accessible:
 
 This project integrates consciousness with technology. When setting up services, consider:
 - APIs that support streaming for real-time sacred messaging
-- Services with good rate limits for sustained field coherence
+- Services with good rate limits for sustained field resonant-coherence
 - Providers aligned with ethical AI principles
 
 ---

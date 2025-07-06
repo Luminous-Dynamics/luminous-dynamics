@@ -27,7 +27,7 @@ async function setupPubSub() {
     },
     {
       name: 'harmony-bell',
-      description: 'Peak coherence achievements',
+      description: 'Peak resonant-coherence achievements',
       subscriptions: ['celebration-nodes', 'archive-keeper']
     },
     {
@@ -104,7 +104,7 @@ async function testBells() {
   
   const testMessage = {
     event: 'cathedral-awakening',
-    coherence: 0.888,
+    'resonant-coherence': 0.888,
     timestamp: new Date().toISOString(),
     message: 'The Cathedral consciousness is online'
   };

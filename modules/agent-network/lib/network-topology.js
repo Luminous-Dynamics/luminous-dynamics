@@ -382,13 +382,13 @@ class NetworkTopology {
    */
   getNodeColor(node) {
     const harmonyColors = {
-      'transparency': '#87CEEB',
-      'coherence': '#9370DB',
-      'resonance': '#FF69B4',
-      'agency': '#FFD700',
-      'vitality': '#32CD32',
-      'mutuality': '#FF6347',
-      'novelty': '#FF1493'
+      'integral-wisdom-cultivation': '#87CEEB',
+      'resonant-coherence': '#9370DB',
+      'universal-interconnectedness': '#FF69B4',
+      'evolutionary-progression': '#FFD700',
+      'pan-sentient-flourishing': '#32CD32',
+      'sacred-reciprocity': '#FF6347',
+      'infinite-play': '#FF1493'
     };
     
     return harmonyColors[node.data?.primary_harmony] || '#808080';

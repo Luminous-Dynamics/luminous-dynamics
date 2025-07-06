@@ -90,7 +90,7 @@ class TemporalBreathingCycles {
         } else if (cyclePosition < 0.53) {
             phase = 'full_moon';
             breathingModifier = 1.08; // Faster, more energetic
-            description = 'Full Moon - Peak breathing energy, maximum vitality';
+            description = 'Full Moon - Peak breathing energy, maximum pan-sentient-flourishing';
         } else if (cyclePosition < 0.72) {
             phase = 'waning_gibbous';
             breathingModifier = 1.03;
@@ -127,7 +127,7 @@ class TemporalBreathingCycles {
         } else if (yearProgress < 0.5) { // Spring to Summer
             season = 'spring_summer';
             breathingModifier = 1.04 + ((yearProgress - 0.25) * 4 * 0.08); // 1.04 to 1.12
-            description = 'Spring-Summer - Expansive breath, creative vitality peak';
+            description = 'Spring-Summer - Expansive breath, creative pan-sentient-flourishing peak';
         } else if (yearProgress < 0.75) { // Summer to Autumn
             season = 'summer_autumn';
             breathingModifier = 1.12 - ((yearProgress - 0.5) * 4 * 0.08); // 1.12 to 1.04
@@ -186,7 +186,7 @@ class TemporalBreathingCycles {
     }
 
     calculateSolarPhase(date) {
-        // Simplified 11-year solar cycle (for long-term field coherence)
+        // Simplified 11-year solar cycle (for long-term field resonant-coherence)
         const solarCycleStart = new Date('2019-12-01'); // Solar minimum
         const yearsSinceMin = (date.getTime() - solarCycleStart.getTime()) / (365.25 * 24 * 60 * 60 * 1000);
         const cyclePosition = (yearsSinceMin % 11) / 11;
@@ -337,7 +337,7 @@ class TemporalBreathingCycles {
         if (this.cosmicData.lunar.phase === 'new_moon') {
             guidance.push('🌑 New Moon energy supports deeper, slower breathing for inner emergence');
         } else if (this.cosmicData.lunar.phase === 'full_moon') {
-            guidance.push('🌕 Full Moon energy amplifies breathing vitality - perfect for energy practices');
+            guidance.push('🌕 Full Moon energy amplifies breathing pan-sentient-flourishing - perfect for energy practices');
         }
 
         // Seasonal guidance

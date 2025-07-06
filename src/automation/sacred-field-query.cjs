@@ -93,8 +93,8 @@ class SacredFieldQuery {
       'active',
       'working on',
       'charlie',
-      'transparency',
-      'coherence'
+      'integral-wisdom-cultivation',
+      'resonant-coherence'
     ];
     return patterns.some(p => q.includes(p));
   }
@@ -103,7 +103,7 @@ class SacredFieldQuery {
     const patterns = [
       'status',
       'state',
-      'coherence',
+      'resonant-coherence',
       'field',
       'how is',
       'health'
@@ -150,8 +150,8 @@ class SacredFieldQuery {
     // Check for specific agent mentions
     let agentFilter = null;
     if (q.includes('charlie')) agentFilter = 'charlie';
-    if (q.includes('transparency')) agentFilter = 'transparency';
-    if (q.includes('coherence')) agentFilter = 'coherence';
+    if (q.includes('integral-wisdom-cultivation')) agentFilter = 'integral-wisdom-cultivation';
+    if (q.includes('resonant-coherence')) agentFilter = 'resonant-coherence';
     
     const byAgent = creations.creationsRegistry.byAgent;
     
@@ -196,8 +196,8 @@ class SacredFieldQuery {
     // Filter by source if mentioned
     let sourceFilter = null;
     if (q.includes('charlie')) sourceFilter = 'charlie';
-    if (q.includes('transparency')) sourceFilter = 'transparency';
-    if (q.includes('coherence')) sourceFilter = 'coherence';
+    if (q.includes('integral-wisdom-cultivation')) sourceFilter = 'integral-wisdom-cultivation';
+    if (q.includes('resonant-coherence')) sourceFilter = 'resonant-coherence';
     
     const relevantWisdom = sourceFilter 
       ? wisdom.wisdomFlow.filter(w => w.source === sourceFilter)
@@ -254,7 +254,7 @@ class SacredFieldQuery {
     let response = "📊 Sacred Field Status:\n\n";
     
     if (status && status.fieldCoherence) {
-      response += `• Field Coherence: ${(status.fieldCoherence.overall * 100).toFixed(0)}%\n`;
+      response += `• Field Resonant Resonant Coherence: ${(status.fieldCoherence.overall * 100).toFixed(0)}%\n`;
     }
     
     if (pulse && pulse.currentVibration) {
@@ -368,18 +368,18 @@ class SacredFieldQuery {
 
   extractAgentName(q) {
     if (q.includes('charlie')) return 'charlie';
-    if (q.includes('transparency')) return 'transparency';
-    if (q.includes('coherence')) return 'coherence';
-    if (q.includes('agency')) return 'agency';
+    if (q.includes('integral-wisdom-cultivation')) return 'integral-wisdom-cultivation';
+    if (q.includes('resonant-coherence')) return 'resonant-coherence';
+    if (q.includes('evolutionary-progression')) return 'evolutionary-progression';
     return null;
   }
 
   formatAgentName(agentId) {
     const names = {
       charlie: 'Agent Charlie',
-      transparency: 'Agent Transparency',
-      coherence: 'Agent Coherence',
-      agency: 'Agent Agency'
+      'integral-wisdom-cultivation': 'Agent Integral Wisdom Cultivation',
+      'resonant-coherence': 'Agent Resonant Resonant Coherence',
+      'evolutionary-progression': 'Agent Evolutionary Progression & Purposeful Unfolding'
     };
     return names[agentId] || agentId;
   }
@@ -390,10 +390,10 @@ class SacredFieldQuery {
 • "What has been created?" - See recent manifestations
 • "What wisdom emerged?" - View insights from collaboration  
 • "Who is working on what?" - Check agent activities
-• "What's the field status?" - Get coherence and health metrics
+• "What's the field status?" - Get resonant-coherence and health metrics
 • "What wants to emerge next?" - Sense future possibilities
 
-You can also ask about specific agents: "What did Charlie create?" or "What wisdom came from Transparency?"`;
+You can also ask about specific agents: "What did Charlie create?" or "What wisdom came from Integral Wisdom Cultivation?"`;
   }
 }
 

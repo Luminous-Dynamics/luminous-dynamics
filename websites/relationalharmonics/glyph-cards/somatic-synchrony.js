@@ -8,8 +8,8 @@ const somaticSynchronyData = {
     type: 'foundational',
     category: 'embodied-connection',
     subcategory: 'somatic-practices',
-    primaryHarmony: 'resonance',
-    supportingHarmonies: ['coherence', 'vitality'],
+    primaryHarmony: 'universal-interconnectedness',
+    supportingHarmonies: ['resonant-coherence', 'pan-sentient-flourishing'],
     
     description: 'The sacred practice of bodies finding shared rhythm. When we synchronize breath, heartbeat, and movement, we create a field of embodied unity that transcends words.',
     
@@ -125,7 +125,7 @@ const somaticSynchronyData = {
     },
     
     variations: {
-        solo: 'Synchronize with your own heartbeat and breath, creating internal coherence',
+        solo: 'Synchronize with your own heartbeat and breath, creating internal resonant-coherence',
         group: 'Circle breathing and movement, creating collective somatic field',
         nature: 'Synchronize with natural rhythms - waves, wind, bird songs',
         distance: 'Practice synchrony while physically apart, connected in consciousness'
@@ -165,7 +165,7 @@ const somaticSynchronyData = {
     },
     
     scientificBasis: {
-        interpersonalNeurobiology: 'Mirror neurons facilitate somatic resonance',
+        interpersonalNeurobiology: 'Mirror neurons facilitate somatic universal-interconnectedness',
         heartRateVariability: 'Cardiac synchrony measurably increases with practice',
         nervousSystemTheory: 'Co-regulation promotes mutual healing',
         breathworkResearch: 'Synchronized breathing alters consciousness',
@@ -196,14 +196,14 @@ const somaticSynchronyData = {
     },
     
     prerequisites: [
-        'Ω8: Inner Coherence',
+        'Ω8: Inner Resonant Resonant Coherence',
         'Ω13: Conscious Touch',
         'Ω5: Coherent Field Maintenance'
     ],
     
     nextPractices: [
         'Ω35: Energy Circulation',
-        '∑2: Somatic Coherence Cascade',
+        '∑2: Somatic Resonant Resonant Coherence Cascade',
         'Advanced movement practices'
     ],
     

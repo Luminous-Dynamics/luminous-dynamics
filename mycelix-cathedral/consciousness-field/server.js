@@ -1,5 +1,5 @@
 // MYCELIX Consciousness Field Service
-// Sacred pillar of the cathedral - tracks collective coherence
+// Sacred pillar of the cathedral - tracks collective resonant-coherence
 
 const express = require('express');
 const cors = require('cors');
@@ -22,16 +22,16 @@ app.get('/health', (req, res) => {
   });
 });
 
-// Get current field coherence
-app.get('/api/coherence', async (req, res) => {
+// Get current field resonant-coherence
+app.get('/api/resonant-coherence', async (req, res) => {
   try {
     const fieldState = await fieldTracker.calculateFieldCoherence();
     res.json(fieldState);
   } catch (error) {
-    console.error('Coherence calculation error:', error);
+    console.error('Resonant Resonant Coherence calculation error:', error);
     res.status(500).json({ 
       error: 'Field disturbance detected',
-      message: 'Unable to calculate coherence'
+      message: 'Unable to calculate resonant-coherence'
     });
   }
 });
@@ -51,25 +51,25 @@ app.post('/api/nodes', async (req, res) => {
   }
 });
 
-// Update node coherence
-app.put('/api/nodes/:nodeId/coherence', async (req, res) => {
+// Update node resonant-coherence
+app.put('/api/nodes/:nodeId/resonant-coherence', async (req, res) => {
   try {
     const { nodeId } = req.params;
-    const { coherence } = req.body;
+    const { resonant-coherence } = req.body;
     
-    if (typeof coherence !== 'number') {
+    if (typeof resonant-coherence !== 'number') {
       return res.status(400).json({ 
-        error: 'Invalid coherence value',
-        message: 'Coherence must be a number between 0 and 1'
+        error: 'Invalid resonant-coherence value',
+        message: 'Resonant Resonant Coherence must be a number between 0 and 1'
       });
     }
 
-    const result = await fieldTracker.updateNodeCoherence(nodeId, coherence);
+    const result = await fieldTracker.updateNodeCoherence(nodeId, resonant-coherence);
     res.json(result);
   } catch (error) {
-    console.error('Coherence update error:', error);
+    console.error('Resonant Resonant Coherence update error:', error);
     res.status(500).json({ 
-      error: 'Failed to update coherence',
+      error: 'Failed to update resonant-coherence',
       message: error.message
     });
   }
@@ -82,7 +82,7 @@ app.get('/api/geometry', async (req, res) => {
     res.json({
       pattern: fieldState.pattern,
       description: fieldState.description,
-      coherence: fieldState.coherence,
+      'resonant-coherence': fieldState['resonant-coherence'],
       visualization: getGeometryVisualization(fieldState.pattern)
     });
   } catch (error) {
@@ -160,7 +160,7 @@ function getGeometryVisualization(pattern) {
     'emerging': { 
       state: 'potential', 
       form: 'undefined', 
-      symbolism: 'Awaiting coherence'
+      symbolism: 'Awaiting resonant-coherence'
     }
   };
   
@@ -190,5 +190,5 @@ app.listen(PORT, () => {
   console.log(`🌟 Consciousness Field Service active on port ${PORT}`);
   console.log(`🏛️ MYCELIX Cathedral pillar erected`);
   console.log(`💫 Love multiplier: 1.618 (Golden Ratio)`);
-  console.log(`🔮 Ready to track collective coherence`);
+  console.log(`🔮 Ready to track collective resonant-coherence`);
 });

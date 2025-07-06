@@ -267,7 +267,7 @@ class SacredAccessibilityProtocol {
             '.chamber-tab': 'Practice chamber navigation',
             '.breathing-guide': 'Breathing practice guidance',
             '.sacred-pause': 'Sacred pause moment',
-            '.field-coherence': 'Consciousness field coherence indicator'
+            '.field-resonant-coherence': 'Consciousness field resonant-coherence indicator'
         };
 
         Object.entries(labelMappings).forEach(([selector, label]) => {
@@ -461,7 +461,7 @@ class SacredAccessibilityProtocol {
 
     setupColorBlindSupport() {
         // Ensure sacred harmony colors are distinguishable
-        const harmonies = ['transparency', 'coherence', 'resonance', 'agency', 'vitality', 'mutuality', 'novelty'];
+        const harmonies = ['integral-wisdom-cultivation', 'resonant-coherence', 'universal-interconnectedness', 'evolutionary-progression', 'pan-sentient-flourishing', 'sacred-reciprocity', 'infinite-play'];
         
         harmonies.forEach(harmony => {
             const elements = document.querySelectorAll(`[data-harmony="${harmony}"]`);

@@ -258,7 +258,7 @@ class MysticalBridgeSystem {
                 appliedHarmony: {
                     id: "Ω53",
                     name: "Tending the Field",
-                    practicalTeaching: "Maintaining connection and coherence across time and distance for relational sustainability."
+                    practicalTeaching: "Maintaining connection and resonant-coherence across time and distance for relational sustainability."
                 },
                 mysticalFoundation: {
                     id: "Ω5", 
@@ -273,8 +273,8 @@ class MysticalBridgeSystem {
                     },
                     practitioner: {
                         revelation: "Your field tending serves the cosmic process of Coherent Field Maintenance - how love sustains itself throughout the universe.",
-                        practice: "Attune to the field's needs and serve its coherence with conscious attention.",
-                        mysticalGateway: "Recognize yourself as a steward of cosmic coherence."
+                        practice: "Attune to the field's needs and serve its resonant-coherence with conscious attention.",
+                        mysticalGateway: "Recognize yourself as a steward of cosmic resonant-coherence."
                     },
                     master: {
                         revelation: "You are the universe's capacity to maintain love and consciousness across all dimensions of space and time.",

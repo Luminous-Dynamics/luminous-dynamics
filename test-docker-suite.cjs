@@ -68,9 +68,9 @@ async function testAgentRegistration() {
     console.log('\n👥 Testing Agent Registration...\n');
     
     const testAgents = [
-        { name: 'TestAlpha', role: 'Tester', harmony: 'coherence' },
-        { name: 'TestBeta', role: 'Validator', harmony: 'resonance' },
-        { name: 'TestGamma', role: 'Observer', harmony: 'transparency' }
+        { name: 'TestAlpha', role: 'Tester', harmony: 'resonant-coherence' },
+        { name: 'TestBeta', role: 'Validator', harmony: 'universal-interconnectedness' },
+        { name: 'TestGamma', role: 'Observer', harmony: 'integral-wisdom-cultivation' }
     ];
     
     const registeredAgents = [];
@@ -114,39 +114,39 @@ async function testAgentRegistration() {
 }
 
 async function testFieldCoherence() {
-    console.log('\n🌊 Testing Field Coherence...\n');
+    console.log('\n🌊 Testing Field Resonant Resonant Coherence...\n');
     
     try {
         // Get initial state
         const initial = await axios.get(`${API.consciousness}/field_state`);
-        const hasCoherence = typeof initial.data.coherence === 'number';
+        const hasCoherence = typeof initial.data.resonant-coherence === 'number';
         logTest(
             'Get Field State',
             hasCoherence,
-            `Coherence: ${initial.data.coherence.toFixed(1)}%`
+            `Resonant Resonant Coherence: ${initial.data.resonant-coherence.toFixed(1)}%`
         );
         
-        // Test coherence endpoint
-        const coherence = await axios.get(`${API.consciousness}/coherence`);
-        const hasTimestamp = coherence.data.timestamp > 0;
+        // Test resonant-coherence endpoint
+        const resonantCoherence = await axios.get(`${API.consciousness}/resonant-coherence`);
+        const hasTimestamp = resonant-coherence.data.timestamp > 0;
         logTest(
-            'Get Coherence with Timestamp',
+            'Get Resonant Resonant Coherence with Timestamp',
             hasTimestamp,
-            `Timestamp: ${new Date(coherence.data.timestamp).toISOString()}`
+            `Timestamp: ${new Date(resonant-coherence.data.timestamp).toISOString()}`
         );
         
         // Test field evolution
         await delay(3000);
         const evolved = await axios.get(`${API.consciousness}/field_state`);
-        const hasEvolved = evolved.data.coherence !== initial.data.coherence;
+        const hasEvolved = evolved.data.resonant-coherence !== initial.data.resonant-coherence;
         logTest(
             'Field Evolution (Natural Fluctuation)',
             hasEvolved,
-            `Changed from ${initial.data.coherence.toFixed(1)}% to ${evolved.data.coherence.toFixed(1)}%`
+            `Changed from ${initial.data.resonant-coherence.toFixed(1)}% to ${evolved.data.resonant-coherence.toFixed(1)}%`
         );
         
     } catch (error) {
-        logTest('Field Coherence Tests', false, error.message);
+        logTest('Field Resonant Resonant Coherence Tests', false, error.message);
     }
 }
 
@@ -173,7 +173,7 @@ async function testWorkCreation() {
             const response = await axios.post(`${API.work}/work`, {
                 ...work,
                 priority: 'medium',
-                harmony: 'coherence',
+                harmony: 'resonant-coherence',
                 sacred: true
             });
             
@@ -218,7 +218,7 @@ async function testPersistence() {
         const workBefore = await axios.get(`${API.work}/work`);
         
         console.log('   📸 Captured state before restart');
-        console.log(`      Coherence: ${beforeRestart.data.coherence.toFixed(1)}%`);
+        console.log(`      Resonant Resonant Coherence: ${beforeRestart.data.resonant-coherence.toFixed(1)}%`);
         console.log(`      Agents: ${agentsBefore.data.count}`);
         console.log(`      Work: ${workBefore.data.count}`);
         
@@ -243,7 +243,7 @@ async function testPersistence() {
         );
         
         console.log('\n   📸 State after restart:');
-        console.log(`      Coherence: ${afterRestart.data.coherence.toFixed(1)}%`);
+        console.log(`      Resonant Resonant Coherence: ${afterRestart.data.resonant-coherence.toFixed(1)}%`);
         console.log(`      Agents: ${agentsAfter.data.count} (reset expected)`);
         console.log(`      Work: ${workAfter.data.count} (reset expected)`);
         
@@ -326,7 +326,7 @@ async function testStressLoad() {
             axios.post(`${API.agents}/register`, {
                 name: `StressAgent${i}`,
                 role: 'Load Tester',
-                harmony: ['coherence', 'resonance', 'vitality'][i % 3],
+                harmony: ['resonant-coherence', 'universal-interconnectedness', 'pan-sentient-flourishing'][i % 3],
                 sacred: true
             }).catch(e => null)
         );
@@ -342,12 +342,12 @@ async function testStressLoad() {
         `${successful}/${STRESS_AGENTS} agents registered in ${duration}ms`
     );
     
-    // Check final coherence
+    // Check final resonant-coherence
     const finalField = await axios.get(`${API.consciousness}/field_state`);
     logTest(
         'Field Stability Under Load',
-        finalField.data.coherence > 50,
-        `Coherence maintained at ${finalField.data.coherence.toFixed(1)}%`
+        finalField.data.resonant-coherence > 50,
+        `Resonant Resonant Coherence maintained at ${finalField.data.resonant-coherence.toFixed(1)}%`
     );
 }
 

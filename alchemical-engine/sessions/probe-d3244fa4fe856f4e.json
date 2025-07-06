@@ -7,7 +7,7 @@
     "sampleContent": "Never enough time, always more work. Nobody appreciates what I do. I feel invisible and exhausted. Just trying to survive another day."
   },
   "fieldResonance": {
-    "coherence": 0,
+    "resonant-coherence": 0,
     "dissonanceScore": 0,
     "resonanceScore": 0,
     "dominantFrequency": "fear-frequency",
@@ -23,7 +23,7 @@
   },
   "coreWound": null,
   "harmonicDiagnosis": {
-    "summary": "The field exhibits 0% coherence with a dominant fear-frequency. The Love Shadow reveals The wound of invisibility and not being witnessed, seeking To be witnessed and recognized.",
+    "summary": "The field exhibits 0% resonant-coherence with a dominant fear-frequency. The Love Shadow reveals The wound of invisibility and not being witnessed, seeking To be witnessed and recognized.",
     "prescription": {
       "immediateAction": "Begin with gentle presence and witnessing",
       "primaryPractice": "Ω6: Mutual Recognition",

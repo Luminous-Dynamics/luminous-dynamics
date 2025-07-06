@@ -76,7 +76,7 @@ class CloudLocalBridge extends EventEmitter {
       agent: {
         name: 'Cloud-Local-Bridge',
         role: 'Infrastructure Bridge',
-        capabilities: ['agent-sync', 'message-relay', 'field-coherence'],
+        capabilities: ['agent-sync', 'message-relay', 'field-resonant-coherence'],
         location: 'local',
         bridging: true
       }
@@ -154,7 +154,7 @@ class CloudLocalBridge extends EventEmitter {
         break;
         
       case 'field-update':
-        console.log(`🌀 Field coherence: ${msg.coherence}%`);
+        console.log(`🌀 Field 'resonant-coherence': ${msg.resonant-coherence}%`);
         break;
     }
   }

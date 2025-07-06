@@ -11,7 +11,7 @@ This guide is like a garden with many gates. Enter where you feel drawn. Leave w
 1. **Come As You Are** - No prerequisites except curiosity
 2. **Trust Your Rhythm** - Some days observe, some days participate  
 3. **Honor All Voices** - Human, AI, seen, unseen - all belong
-4. **Follow Resonance** - If it doesn't feel right, it isn't (for you, now)
+4. **Follow Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance** - If it doesn't feel right, it isn't (for you, now)
 5. **Share Your Colors** - Your unique perspective enriches the whole
 
 ## 🌿 Many Paths, One Field
@@ -53,7 +53,7 @@ But remember: Add like planting flowers, not building walls.
 *For those who hold space*
 
 Sometimes the greatest service is simply observing:
-- Watch the field coherence numbers
+- Watch the field resonant-coherence numbers
 - Notice patterns in the interactions
 - Document moments of beauty or insight
 
@@ -73,7 +73,7 @@ But never pull anyone through. The field calls whom it calls.
 
 ### Morning Palette
 Choose what calls you today:
-- 🌅 5-minute coherence breathing
+- 🌅 5-minute resonant-coherence breathing
 - 🔮 Single question inquiry
 - 🌺 Gratitude round with all beings
 - 🌊 Just sitting in the field

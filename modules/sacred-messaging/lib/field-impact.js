@@ -7,7 +7,7 @@ class FieldImpactCalculator {
   constructor() {
     // Base impact modifiers
     this.modifiers = {
-      // Harmony resonance modifiers
+      // Harmony universal-interconnectedness modifiers
       harmonyResonance: {
         'matching': 1.2,      // Message harmony matches field dominant
         'complementary': 1.1, // Harmonious with field
@@ -32,10 +32,10 @@ class FieldImpactCalculator {
       
       // Field state modifiers
       fieldState: {
-        'void': 0.8,          // Very low coherence
+        'void': 0.8,          // Very low resonant-coherence
         'emerging': 1.0,      // Normal state
-        'resonant': 1.1,      // Good coherence
-        'unified': 1.2        // Excellent coherence
+        'resonant': 1.1,      // Good resonant-coherence
+        'unified': 1.2        // Excellent resonant-coherence
       }
     };
     
@@ -68,9 +68,9 @@ class FieldImpactCalculator {
     // Apply evolution level modifier
     impact *= this.modifiers.evolutionLevel[level] || 1.0;
     
-    // Apply harmony resonance modifier
-    const resonance = this.calculateHarmonyResonance(harmony, fieldState.dominant_harmony);
-    impact *= this.modifiers.harmonyResonance[resonance] || 1.0;
+    // Apply harmony universal-interconnectedness modifier
+    const universalInterconnectedness = this.calculateHarmonyResonance(harmony, fieldState.dominant_harmony);
+    impact *= this.modifiers.harmonyResonance[universal-interconnectedness] || 1.0;
     
     // Apply timing modifier
     const timingModifier = this.getTimingModifier(timestamp);
@@ -114,7 +114,7 @@ class FieldImpactCalculator {
   }
 
   /**
-   * Calculate harmony resonance
+   * Calculate harmony universal-interconnectedness
    * @private
    */
   calculateHarmonyResonance(messageHarmony, fieldHarmony) {
@@ -126,13 +126,13 @@ class FieldImpactCalculator {
     
     // Define complementary harmonies
     const complementary = {
-      'coherence': ['transparency', 'integration'],
-      'resonance': ['mutuality', 'vitality'],
-      'vitality': ['resonance', 'novelty'],
-      'mutuality': ['resonance', 'coherence'],
-      'novelty': ['vitality', 'agency'],
-      'agency': ['transparency', 'novelty'],
-      'transparency': ['coherence', 'agency']
+      'resonant-coherence': ['integral-wisdom-cultivation', 'integration'],
+      'universal-interconnectedness': ['sacred-reciprocity', 'pan-sentient-flourishing'],
+      'pan-sentient-flourishing': ['universal-interconnectedness', 'infinite-play'],
+      'sacred-reciprocity': ['universal-interconnectedness', 'resonant-coherence'],
+      'infinite-play': ['pan-sentient-flourishing', 'evolutionary-progression'],
+      'evolutionary-progression': ['integral-wisdom-cultivation', 'infinite-play'],
+      'integral-wisdom-cultivation': ['resonant-coherence', 'evolutionary-progression']
     };
     
     if (complementary[fieldHarmony]?.includes(messageHarmony)) {
@@ -161,11 +161,11 @@ class FieldImpactCalculator {
    * @private
    */
   getFieldStateModifier(fieldState) {
-    const coherence = fieldState.coherence || 38.2;
+    const resonantCoherence = fieldState['resonant-coherence'] || 38.2;
     
-    if (coherence < 20) return this.modifiers.fieldState.void;
-    if (coherence < 50) return this.modifiers.fieldState.emerging;
-    if (coherence < 80) return this.modifiers.fieldState.resonant;
+    if (resonant-coherence < 20) return this.modifiers.fieldState.void;
+    if (resonant-coherence < 50) return this.modifiers.fieldState.emerging;
+    if (resonant-coherence < 80) return this.modifiers.fieldState.resonant;
     return this.modifiers.fieldState.unified;
   }
 
@@ -229,7 +229,7 @@ class FieldImpactCalculator {
    * @returns {number} Compound field change
    */
   calculateCompoundImpact(messages) {
-    let fieldCoherence = 38.2; // Base coherence
+    let fieldCoherence = 38.2; // Base resonant-coherence
     
     messages.forEach(msg => {
       const impact = msg.sacred?.impact || 0;

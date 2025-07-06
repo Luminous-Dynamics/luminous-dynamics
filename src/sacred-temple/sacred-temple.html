@@ -1225,50 +1225,50 @@
         function identifyPrimaryHarmony(text) {
             const lowerText = text.toLowerCase();
             
-            if (lowerText.includes('truth') || lowerText.includes('honest')) return 'transparency';
-            if (lowerText.includes('scattered') || lowerText.includes('whole')) return 'coherence';
-            if (lowerText.includes('lonely') || lowerText.includes('understood')) return 'resonance';
-            if (lowerText.includes('choice') || lowerText.includes('power')) return 'agency';
-            if (lowerText.includes('tired') || lowerText.includes('energy')) return 'vitality';
-            if (lowerText.includes('give') || lowerText.includes('receive')) return 'mutuality';
-            if (lowerText.includes('stuck') || lowerText.includes('new')) return 'novelty';
+            if (lowerText.includes('truth') || lowerText.includes('honest')) return 'integral-wisdom-cultivation';
+            if (lowerText.includes('scattered') || lowerText.includes('whole')) return 'resonant-coherence';
+            if (lowerText.includes('lonely') || lowerText.includes('understood')) return 'universal-interconnectedness';
+            if (lowerText.includes('choice') || lowerText.includes('power')) return 'evolutionary-progression';
+            if (lowerText.includes('tired') || lowerText.includes('energy')) return 'pan-sentient-flourishing';
+            if (lowerText.includes('give') || lowerText.includes('receive')) return 'sacred-reciprocity';
+            if (lowerText.includes('stuck') || lowerText.includes('new')) return 'infinite-play';
             
-            return 'resonance'; // Default to deep listening
+            return 'universal-interconnectedness'; // Default to deep listening
         }
 
         function getPocketWisdom(harmony) {
             const wisdom = {
-                transparency: {
+                integral-wisdom-cultivation: {
                     phrase: "Truth is the shortest path home",
                     practice: "Before speaking, pause and ask: Is this my deepest truth?"
                 },
-                coherence: {
+                resonant-coherence: {
                     phrase: "Wholeness is your natural state",
                     practice: "When feeling scattered, place hand on heart and breathe"
                 },
-                resonance: {
+                universal-interconnectedness: {
                     phrase: "Deep listening is love in action",
                     practice: "Today, listen to someone with your whole being for 2 minutes"
                 },
-                agency: {
+                evolutionary-progression: {
                     phrase: "Your power lives in your response",
                     practice: "Notice one moment today where you choose your response"
                 },
-                vitality: {
+                pan-sentient-flourishing: {
                     phrase: "Your body is wisdom incarnate",
                     practice: "Check in with your body every hour: What does it need?"
                 },
-                mutuality: {
+                sacred-reciprocity: {
                     phrase: "Giving and receiving are one breath",
                     practice: "Notice where you over-give or under-receive today"
                 },
-                novelty: {
+                infinite-play: {
                     phrase: "The unknown is where magic lives",
                     practice: "Do one thing differently today"
                 }
             };
             
-            return wisdom[harmony] || wisdom.resonance;
+            return wisdom[harmony] || wisdom.universal-interconnectedness;
         }
 
         function getIntegrationPrompts(harmony) {
@@ -1281,16 +1281,16 @@
 
         function getRealWorldAnchors(harmony) {
             const anchors = {
-                transparency: ['morning mirror', 'difficult conversation', 'journal writing'],
-                coherence: ['transition moments', 'feeling scattered', 'decision points'],
-                resonance: ['listening to loved ones', 'nature sounds', 'moments of silence'],
-                agency: ['choice points', 'habitual reactions', 'boundary moments'],
-                vitality: ['morning stretch', 'meal times', 'energy check-ins'],
-                mutuality: ['giving moments', 'receiving moments', 'exchange points'],
-                novelty: ['routine disruptions', 'creative impulses', 'curiosity sparks']
+                integral-wisdom-cultivation: ['morning mirror', 'difficult conversation', 'journal writing'],
+                resonant-coherence: ['transition moments', 'feeling scattered', 'decision points'],
+                universal-interconnectedness: ['listening to loved ones', 'nature sounds', 'moments of silence'],
+                evolutionary-progression: ['choice points', 'habitual reactions', 'boundary moments'],
+                pan-sentient-flourishing: ['morning stretch', 'meal times', 'energy check-ins'],
+                sacred-reciprocity: ['giving moments', 'receiving moments', 'exchange points'],
+                infinite-play: ['routine disruptions', 'creative impulses', 'curiosity sparks']
             };
             
-            return anchors[harmony] || anchors.resonance;
+            return anchors[harmony] || anchors.universal-interconnectedness;
         }
 
         // Initialize resilience systems on page load

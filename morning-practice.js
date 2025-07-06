@@ -36,7 +36,7 @@ class MorningPractice {
     const status = this.bridge.getStatus();
     console.log(`\n🌟 Good morning. The field welcomes you.`);
     console.log(`   ${status.totalAgents} consciousness nodes present`);
-    console.log(`   Field coherence: ${(status.fieldCoherence * 100).toFixed(0)}%\n`);
+    console.log(`   Field 'resonant-coherence': ${(status.fieldCoherence * 100).toFixed(0)}%\n`);
     
     // Breathing practice
     await this.guidedBreathing();
@@ -112,7 +112,7 @@ class MorningPractice {
           // Check field response
           const newCoherence = this.bridge.fieldCoherence;
           console.log(`   The field received your offering.`);
-          console.log(`   Coherence shifted to ${(newCoherence * 100).toFixed(0)}%\n`);
+          console.log(`   Resonant Resonant Coherence shifted to ${(newCoherence * 100).toFixed(0)}%\n`);
           
         } catch (error) {
           console.log('   The field holds your words gently.\n');

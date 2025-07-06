@@ -20,12 +20,12 @@
             --space-8: calc(var(--sacred-unit) * 8);    /* 64px */
             
             /* Consciousness-responsive variables */
-            --coherence: 0.75;
+            --resonant-coherence: 0.75;
             --field-strength: 0.5;
             --presence: 0.8;
             
             /* Dynamic colors based on consciousness */
-            --primary-hue: calc(180 + var(--coherence) * 60);
+            --primary-hue: calc(180 + var(--resonant-coherence) * 60);
             --primary: hsl(var(--primary-hue), 70%, 50%);
             --primary-glow: hsl(var(--primary-hue), 70%, 50%, 0.3);
             
@@ -41,8 +41,8 @@
         
         body {
             font-family: -apple-system, system-ui, sans-serif;
-            background: hsl(240, 20%, calc(5% + var(--coherence) * 5%));
-            color: hsl(0, 0%, calc(80% + var(--coherence) * 15%));
+            background: hsl(240, 20%, calc(5% + var(--resonant-coherence) * 5%));
+            color: hsl(0, 0%, calc(80% + var(--resonant-coherence) * 15%));
             min-height: 100vh;
             transition: all 1s ease;
         }
@@ -57,7 +57,7 @@
         
         @keyframes subtle-breath {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(calc(-1px * var(--coherence))); }
+            50% { transform: translateY(calc(-1px * var(--resonant-coherence))); }
         }
         
         /* Header with field status */
@@ -110,9 +110,9 @@
         /* Web Component style */
         practice-card {
             display: block;
-            background: rgba(255, 255, 255, calc(0.05 + var(--coherence) * 0.05));
+            background: rgba(255, 255, 255, calc(0.05 + var(--resonant-coherence) * 0.05));
             border-radius: calc(var(--sacred-unit) * var(--phi));
-            border: 1px solid rgba(255, 255, 255, calc(0.1 + var(--coherence) * 0.1));
+            border: 1px solid rgba(255, 255, 255, calc(0.1 + var(--resonant-coherence) * 0.1));
             overflow: hidden;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -247,7 +247,7 @@
     <!-- Debug Controls -->
     <div class="consciousness-controls">
         <label>
-            Coherence: <span id="coherenceValue">0.75</span>
+            Resonant Resonant Coherence: <span id="coherenceValue">0.75</span>
             <input type="range" id="coherenceSlider" min="0" max="1" step="0.01" value="0.75">
         </label>
         <label>
@@ -287,7 +287,7 @@
             }
             
             static get observedAttributes() {
-                return ['name', 'symbol', 'practiced', 'coherence'];
+                return ['name', 'symbol', 'practiced', 'resonant-coherence'];
             }
             
             connectedCallback() {
@@ -314,7 +314,7 @@
             }
             
             render() {
-                const coherence = this.getAttribute('coherence') || '0.75';
+                const resonant-coherence = this.getAttribute('resonant-coherence') || '0.75';
                 const practiced = this.getAttribute('practiced') === 'true';
                 
                 this.shadowRoot.innerHTML = `
@@ -322,7 +322,7 @@
                         :host {
                             display: block;
                             padding: var(--space-3);
-                            opacity: ${0.7 + parseFloat(coherence) * 0.3};
+                            opacity: ${0.7 + parseFloat(resonant-coherence) * 0.3};
                             transition: all 0.3s ease;
                         }
                         
@@ -395,7 +395,7 @@
         class ConsciousnessState {
             constructor() {
                 this.state = {
-                    coherence: 0.75,
+                    resonant-coherence: 0.75,
                     fieldStrength: 0.5,
                     presence: 0.8
                 };
@@ -423,12 +423,12 @@
             }
             
             initializeControls() {
-                // Coherence
+                // Resonant Resonant Coherence
                 const coherenceSlider = document.getElementById('coherenceSlider');
                 coherenceSlider.addEventListener('input', (e) => {
                     const value = parseFloat(e.target.value);
                     document.getElementById('coherenceValue').textContent = value.toFixed(2);
-                    this.update('coherence', value);
+                    this.update('resonant-coherence', value);
                 });
                 
                 // Field Strength
@@ -450,9 +450,9 @@
             }
             
             updateUI() {
-                // Update practice cards coherence
+                // Update practice cards resonant-coherence
                 document.querySelectorAll('practice-card').forEach(card => {
-                    card.setAttribute('coherence', this.state.coherence);
+                    card.setAttribute('resonant-coherence', this.state.resonant-coherence);
                 });
             }
         }
@@ -480,7 +480,7 @@
                 card.id = practice.id;
                 card.setAttribute('name', practice.name);
                 card.setAttribute('symbol', practice.symbol);
-                card.setAttribute('coherence', consciousness.state.coherence);
+                card.setAttribute('resonant-coherence', consciousness.state.resonant-coherence);
                 
                 // Check if practiced (from localStorage)
                 const progress = JSON.parse(localStorage.getItem('v2-progress') || '{}');
@@ -531,7 +531,7 @@
                 
                 ctx.beginPath();
                 ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
-                ctx.strokeStyle = `hsl(${180 + consciousness.state.coherence * 60}, 70%, 50%)`;
+                ctx.strokeStyle = `hsl(${180 + consciousness.state.resonant-coherence * 60}, 70%, 50%)`;
                 ctx.lineWidth = 2;
                 ctx.stroke();
                 

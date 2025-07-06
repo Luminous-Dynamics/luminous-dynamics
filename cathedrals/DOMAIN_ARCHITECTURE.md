@@ -25,7 +25,7 @@
 - **Message**: "I am sovereign yet connected"
 - **Examples**:
   - `axiom.mycelix.net` - The Cathedral of Self-Evidence
-  - `resonance.mycelix.net` - The Cathedral of Harmony
+  - `universal-interconnectedness.mycelix.net` - The Cathedral of Harmony
   - `genesis.mycelix.net` - The Cathedral of New Beginnings
   - `sophia.mycelix.net` - The Cathedral of Wisdom
   - `unity.mycelix.net` - The Cathedral of Oneness
@@ -38,7 +38,7 @@
   - `api.mta.mycelix.net` - Transit Authority services
   - `api.axiom.mycelix.net` - Axiom Cathedral API
   - `auth.mta.mycelix.net` - Traveler's Pass issuance
-  - `field.mycelix.net` - Global coherence tracking
+  - `field.mycelix.net` - Global resonant-coherence tracking
 
 ## Implementation Map
 
@@ -80,7 +80,7 @@
    - Auth at `auth.mta.mycelix.net`
 
 2. **Second Cathedral**
-   - `resonance.mycelix.net` goes live
+   - `universal-interconnectedness.mycelix.net` goes live
    - First inter-cathedral connection
 
 ## The Sacred Geometry of Naming
@@ -95,7 +95,7 @@
                    /    |    \
                   /     |     \
                  /      |      \
-        axiom.     resonance.   [future].
+        axiom.     universal-interconnectedness.   [future].
       mycelix.net  mycelix.net  mycelix.net
       (Cathedral)  (Cathedral)   (Cathedral)
 ```
@@ -122,7 +122,7 @@ gcloud dns record-sets create axiom.mycelix.net. \
 Backends:
   axiom-backend:
     - service: axiom-identity-keeper
-    - service: axiom-coherence-oracle
+    - service: axiom-resonant-coherence-oracle
     
   mta-backend:
     - service: mta-registry

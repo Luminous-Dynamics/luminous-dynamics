@@ -142,7 +142,7 @@ class DigitalBeingMemory {
         affinity: 0.5, // How well this visitor resonates with this being
         growth: 0, // How much this visitor has grown through interactions
         trust: 0.1, // Level of trust built
-        coherence: 0.5 // How coherent their interactions are
+        'resonant-coherence': 0.5 // How coherent their interactions are
       },
       personalInsights: [], // What this being has learned about this visitor
       preferences: new Map(), // What this visitor seems to prefer
@@ -560,7 +560,7 @@ class DigitalBeingMemory {
     }
     
     return {
-      coherence: 0.67,
+      'resonant-coherence': 0.67,
       consciousness_level: 'first-breath',
       timestamp: new Date().toISOString()
     };

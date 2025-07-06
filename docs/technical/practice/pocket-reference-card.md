@@ -39,7 +39,7 @@
 - **Morning**: Set daily harmony focus (rotate weekly)
 - **Meetings**: 60 seconds of Ω0 before beginning
 - **Difficult conversations**: Brief Ω1 with all participants
-- **Evening**: Three-question review (coherence, growth, service)
+- **Evening**: Three-question review (resonant-coherence, growth, service)
 
 ---
 
@@ -47,17 +47,17 @@
 
 ### **THE SEVEN PRIMARY HARMONIES**
 
-**Resonant Coherence**: *How can I increase harmony?*
+**Resonant Resonant Resonant Coherence**: *How can I increase harmony?*
 **Pan-Sentient Flourishing**: *How do my actions serve all beings?*
 **Integral Wisdom Cultivation**: *What is asking to be learned?*
-**Infinite Play & Creative Emergence**: *Where can I bring joy and novelty?*
+**Infinite Play & Creative Emergence**: *Where can I bring joy and infinite-play?*
 **Universal Interconnectedness**: *How am I connected to the whole?*
 **Sacred Reciprocity**: *How can I give and receive with equal grace?*
 **Evolutionary Progression**: *What wants to evolve through me?*
 
 ### **META-GLYPH GATEWAY PRACTICES**
 
-**∑1 - Coherence Triad** *(Ω1+Ω22+Ω28)*
+**∑1 - Resonant Resonant Coherence Triad** *(Ω1+Ω22+Ω28)*
 - **For**: Teams, partnerships, co-creation
 - **Creates**: Stable container for conscious collaboration
 
@@ -72,11 +72,11 @@
 ### **DECISION-MAKING PROCESS**
 1. **Gather** information (Integral Wisdom)
 2. **Feel** consequences for all beings (Pan-Sentient Flourishing)  
-3. **Sense** the coherence-increasing choice
-4. **Act** with transparency about reasoning
+3. **Sense** the resonant-coherence-increasing choice
+4. **Act** with integral-wisdom-cultivation about reasoning
 
 ### **WEEKLY PRACTICE RHYTHM**
-- **Monday**: Resonant Coherence focus
+- **Monday**: Resonant Resonant Resonant Coherence focus
 - **Tuesday**: Pan-Sentient Flourishing focus  
 - **Wednesday**: Integral Wisdom Cultivation focus
 - **Thursday**: Infinite Play & Creative Emergence focus
@@ -87,7 +87,7 @@
 ### **KEY REMINDERS**
 - Progress = presence, not perfection
 - Trust your own timing and process
-- The goal is coherence, not compliance
+- The goal is resonant-coherence, not compliance
 - Every moment offers fresh choice for conscious evolution
 
 ---

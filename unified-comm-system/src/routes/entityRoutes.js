@@ -59,11 +59,11 @@ router.patch('/:id/presence', async (req, res) => {
   }
 });
 
-// Update entity coherence
-router.patch('/:id/coherence', async (req, res) => {
+// Update entity resonant-coherence
+router.patch('/:id/resonant-coherence', async (req, res) => {
   try {
-    const { coherence } = req.body;
-    const entity = await entityService.updateCoherence(req.params.id, coherence);
+    const { resonant-coherence } = req.body;
+    const entity = await entityService.updateCoherence(req.params.id, resonant-coherence);
     res.json(entity);
   } catch (error) {
     res.status(400).json({ error: error.message });

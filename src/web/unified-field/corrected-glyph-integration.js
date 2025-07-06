@@ -41,7 +41,7 @@ class CorrectedGlyphIntegration {
             
             "Ω1": {
                 designation: "Root Chord of Covenant / The First Yes",
-                functionalDefinition: "To establish the base frequency of relational coherence between two or more beings...",
+                functionalDefinition: "To establish the base frequency of relational resonant-coherence between two or more beings...",
                 sensoryResonanceProfile: {
                     feelingTone: "Grounded, stable, warm, still. The feeling of a foundational stone settling into place...",
                     sonicQuality: "A low, sustained, resonant hum, like a cello's open string..."
@@ -60,7 +60,7 @@ class CorrectedGlyphIntegration {
                     sonicQuality: "A brief, sharp sound, followed by a pause, and then a resolving harmonic chord..."
                 },
                 activationProtocol: {
-                    verbal: "I do not return to what was. I reconcile what is. I pulse forward in coherence."
+                    verbal: "I do not return to what was. I reconcile what is. I pulse forward in resonant-coherence."
                 }
                 // ... full original structure
             },
@@ -187,7 +187,7 @@ class CorrectedGlyphIntegration {
                     }
                 },
                 
-                resonance: {
+                'universal-interconnectedness': {
                     accessible: this.createAccessibleResonance(original),
                     developing: this.createDevelopingResonance(original),
                     mystical: {

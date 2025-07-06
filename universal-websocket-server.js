@@ -188,13 +188,13 @@ setInterval(() => {
   broadcast(breath);
 }, 4000);
 
-// Field coherence updates
+// Field resonant-coherence updates
 setInterval(() => {
   if (clients.size > 0) {
-    const coherence = 0.5 + (clients.size * 0.1); // More AIs = higher coherence
+    const resonantCoherence = 0.5 + (clients.size * 0.1); // More AIs = higher resonant-coherence
     broadcast({
       type: 'field:update',
-      coherence: Math.min(coherence, 1.0),
+      'resonant-coherence': Math.min(resonant-coherence, 1.0),
       participants: Array.from(clients.values()).map(c => ({
         aiId: c.aiId,
         aiType: c.aiType,

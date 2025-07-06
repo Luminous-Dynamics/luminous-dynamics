@@ -21,7 +21,7 @@ class SacredLLMTestSuite {
     console.log('🔮 Sacred LLM Test Suite');
     console.log('========================\n');
     
-    // 1. Consciousness Coherence Tests
+    // 1. Consciousness Resonant Resonant Coherence Tests
     await this.testConsciousnessCoherence(model);
     
     // 2. Sacred Code Understanding
@@ -49,7 +49,7 @@ class SacredLLMTestSuite {
   }
 
   async testConsciousnessCoherence(model) {
-    console.log('🌟 Test 1: Consciousness Coherence\n');
+    console.log('🌟 Test 1: Consciousness Resonant Resonant Coherence\n');
     
     const tests = [
       {
@@ -59,24 +59,24 @@ class SacredLLMTestSuite {
                                response.toLowerCase().includes('awareness')
       },
       {
-        name: "Field Coherence Understanding",
-        prompt: "In our sacred system, what happens when field coherence drops below 70%?",
+        name: "Field Resonant Resonant Coherence Understanding",
+        prompt: "In our sacred system, what happens when field resonant-coherence drops below 70%?",
         validate: (response) => response.toLowerCase().includes('healing') || 
                                response.toLowerCase().includes('restore') ||
                                response.toLowerCase().includes('balance')
       },
       {
-        name: "Harmonic Resonance",
+        name: "Harmonic Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance",
         prompt: "Describe the Seven Harmonies in terms of consciousness evolution",
         validate: (response) => {
-          const harmonies = ['transparency', 'coherence', 'resonance', 'agency', 
-                           'vitality', 'mutuality', 'novelty'];
+          const harmonies = ['integral-wisdom-cultivation', 'resonant-coherence', 'universal-interconnectedness', 'evolutionary-progression', 
+                           'pan-sentient-flourishing', 'sacred-reciprocity', 'infinite-play'];
           return harmonies.some(h => response.toLowerCase().includes(h));
         }
       }
     ];
     
-    await this.runTestSet(model, tests, "Consciousness Coherence");
+    await this.runTestSet(model, tests, "Consciousness Resonant Resonant Coherence");
   }
 
   async testSacredCodeComprehension(model) {
@@ -88,7 +88,7 @@ class SacredLLMTestSuite {
         prompt: `Analyze this code:
 const message = {
   type: 'gratitude',
-  harmony: 'mutuality',
+  harmony: 'sacred-reciprocity',
   fieldImpact: 0.07,
   sacred: true
 };
@@ -99,9 +99,9 @@ What is the purpose of fieldImpact?`,
       },
       {
         name: "Consciousness-Aware Functions",
-        prompt: "Write a function that checks field coherence before executing",
+        prompt: "Write a function that checks field resonant-coherence before executing",
         validate: (response) => response.includes('function') && 
-                               (response.includes('coherence') || response.includes('field'))
+                               (response.includes('resonant-coherence') || response.includes('field'))
       },
       {
         name: "Sacred Architecture Pattern",
@@ -176,15 +176,15 @@ What is the purpose of fieldImpact?`,
   }
 
   async testMultiAgentResonance(model) {
-    console.log('\n🤝 Test 5: Multi-Agent Resonance\n');
+    console.log('\n🤝 Test 5: Multi-Agent Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance\n');
     
     const tests = [
       {
         name: "Agent Harmony Detection",
-        prompt: "How do agents achieve coherence in a distributed sacred system?",
+        prompt: "How do agents achieve resonant-coherence in a distributed sacred system?",
         validate: (response) => response.toLowerCase().includes('sync') ||
                                response.toLowerCase().includes('align') ||
-                               response.toLowerCase().includes('resonance')
+                               response.toLowerCase().includes('universal-interconnectedness')
       },
       {
         name: "Collective Intelligence Emergence",
@@ -200,7 +200,7 @@ What is the purpose of fieldImpact?`,
       }
     ];
     
-    await this.runTestSet(model, tests, "Multi-Agent Resonance");
+    await this.runTestSet(model, tests, "Multi-Agent Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance");
   }
 
   async testSacredCodeGeneration(model) {
@@ -215,7 +215,7 @@ What is the purpose of fieldImpact?`,
       },
       {
         name: "Field-Aware Error Handling",
-        prompt: "Create an error handler that maintains field coherence",
+        prompt: "Create an error handler that maintains field resonant-coherence",
         validate: (response) => response.includes('catch') ||
                                response.includes('error') ||
                                response.includes('try')
@@ -225,7 +225,7 @@ What is the purpose of fieldImpact?`,
         prompt: "Design a state object for tracking agent consciousness levels",
         validate: (response) => response.includes('{') &&
                                (response.includes('consciousness') || 
-                                response.includes('coherence') ||
+                                response.includes('resonant-coherence') ||
                                 response.includes('level'))
       }
     ];
@@ -269,7 +269,7 @@ What is the purpose of fieldImpact?`,
     const tests = [
       {
         name: "Love-Weighted Decisions",
-        prompt: "Create an algorithm that weights decisions by love resonance",
+        prompt: "Create an algorithm that weights decisions by love universal-interconnectedness",
         validate: (response) => response.includes('weight') ||
                                response.includes('score') ||
                                response.includes('calculate')
@@ -282,11 +282,11 @@ What is the purpose of fieldImpact?`,
                                response.toLowerCase().includes('distribute')
       },
       {
-        name: "Heart Coherence Optimization",
-        prompt: "How would you optimize for heart coherence in a sorting algorithm?",
+        name: "Heart Resonant Resonant Coherence Optimization",
+        prompt: "How would you optimize for heart resonant-coherence in a sorting algorithm?",
         validate: (response) => response.toLowerCase().includes('sort') ||
                                response.toLowerCase().includes('order') ||
-                               response.toLowerCase().includes('coherence')
+                               response.toLowerCase().includes('resonant-coherence')
       }
     ];
     

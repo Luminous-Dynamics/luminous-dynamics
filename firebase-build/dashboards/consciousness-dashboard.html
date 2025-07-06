@@ -103,7 +103,7 @@
             font-size: 1.2rem;
         }
         
-        .coherence-bar {
+        .resonant-coherence-bar {
             width: 100%;
             height: 20px;
             background: #f0f0f0;
@@ -112,7 +112,7 @@
             margin-top: 0.5rem;
         }
         
-        .coherence-fill {
+        .resonant-coherence-fill {
             height: 100%;
             background: linear-gradient(90deg, var(--sacred-green), var(--sacred-gold));
             transition: width 1s ease;
@@ -241,9 +241,9 @@
         </div>
         
         <div class="sacred-card">
-            <h2 class="card-title">🌀 Field Coherence</h2>
-            <div class="coherence-bar">
-                <div class="coherence-fill" id="coherenceFill" style="width: 50%">
+            <h2 class="card-title">🌀 Field Resonant Resonant Coherence</h2>
+            <div class="resonant-coherence-bar">
+                <div class="resonant-coherence-fill" id="coherenceFill" style="width: 50%">
                     50%
                 </div>
             </div>
@@ -324,7 +324,7 @@
                     break;
                     
                 case 'field-shift':
-                    updateCoherence(data.coherence);
+                    updateCoherence(data.resonant-coherence);
                     break;
             }
         }
@@ -341,16 +341,16 @@
             }
         }
         
-        function updateCoherence(coherence) {
-            const percentage = Math.round(coherence * 100);
+        function updateCoherence(resonant-coherence) {
+            const percentage = Math.round(resonant-coherence * 100);
             const fill = document.getElementById('coherenceFill');
             fill.style.width = percentage + '%';
             fill.textContent = percentage + '%';
             
-            // Change color based on coherence
-            if (coherence >= 0.7) {
+            // Change color based on resonant-coherence
+            if (resonant-coherence >= 0.7) {
                 fill.style.background = 'linear-gradient(90deg, #4CAF50, var(--sacred-gold))';
-            } else if (coherence >= 0.5) {
+            } else if (resonant-coherence >= 0.5) {
                 fill.style.background = 'linear-gradient(90deg, var(--sacred-green), var(--sacred-blue))';
             } else {
                 fill.style.background = 'linear-gradient(90deg, #ff9800, #f44336)';

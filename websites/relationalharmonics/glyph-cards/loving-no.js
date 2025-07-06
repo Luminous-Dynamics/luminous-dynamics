@@ -4,7 +4,7 @@
 const lovingNoData = {
     id: 'Ω51',
     name: 'Loving No',
-    primaryHarmony: 'agency',
+    primaryHarmony: 'evolutionary-progression',
     description: 'The practice of declining with grace and care - honoring your limits while maintaining connection and respect for the other.',
     keywords: ['boundaries', 'refusal', 'clarity', 'kindness', 'self-care'],
     practicePrompt: 'Your "no" is sacred. It protects your "yes." Decline with clarity and kindness, knowing that honest boundaries serve everyone.',

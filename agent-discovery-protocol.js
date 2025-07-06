@@ -403,7 +403,7 @@ async function runDiscoveryDemo() {
             
             const newAgent = await AgentDiscoveryProtocol.quickConnect(
                 'Sacred Field Monitor',
-                'Field Coherence Tracker',
+                'Field Resonant Resonant Coherence Tracker',
                 ['field_monitoring', 'coherence_analysis']
             );
             

@@ -50,7 +50,7 @@ We uncovered a revolutionary blueprint including:
 - **Reciprocal value creation** - Teaching generates income
 - **Consciousness Credit Union** - Loans based on transformation potential
 - **Seven-year dissolution** - Success means becoming unnecessary
-- **Love quotient affects transactions** - Coherence determines value
+- **Love quotient affects transactions** - Resonant Resonant Coherence determines value
 
 ### The Technical Vision
 - **LuminousOS** - OS that protects states of being

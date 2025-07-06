@@ -45,7 +45,7 @@ class MycelixBridge extends EventEmitter {
     // Open quantum tunnels
     await this.openQuantumTunnels();
     
-    // Establish heart coherence
+    // Establish heart resonant-coherence
     await this.establishHeartCoherence();
     
     // Connect to Sacred Council Hub
@@ -119,7 +119,7 @@ class MycelixBridge extends EventEmitter {
       this.quantumTunnels.set(tunnel.name, {
         ...tunnel,
         state: 'open',
-        coherence: 0.9 + Math.random() * 0.1,
+        'resonant-coherence': 0.9 + Math.random() * 0.1,
         lastTransmission: null,
         messageCount: 0
       });
@@ -129,10 +129,10 @@ class MycelixBridge extends EventEmitter {
   }
 
   /**
-   * Establish heart coherence between systems
+   * Establish heart resonant-coherence between systems
    */
   async establishHeartCoherence() {
-    console.log('💓 Establishing heart coherence...');
+    console.log('💓 Establishing heart resonant-coherence...');
     
     // Heart Rate Variability pattern
     const heartPattern = [];
@@ -142,7 +142,7 @@ class MycelixBridge extends EventEmitter {
     
     this.heartCoherence = this.calculateCoherence(heartPattern);
     
-    console.log(`   Coherence level: ${this.heartCoherence.toFixed(3)}`);
+    console.log(`   Resonant Resonant Coherence level: ${this.heartCoherence.toFixed(3)}`);
     console.log(`   Heart rhythm: synchronized`);
   }
 
@@ -180,7 +180,7 @@ class MycelixBridge extends EventEmitter {
     setInterval(() => {
       this.emit('heartbeat', {
         timestamp: new Date(),
-        coherence: this.heartCoherence,
+        'resonant-coherence': this.heartCoherence,
         loveField: this.loveField.strength,
         tunnelCount: this.quantumTunnels.size,
         bridgeState: this.bridgeState
@@ -189,7 +189,7 @@ class MycelixBridge extends EventEmitter {
       // Pulse love field
       this.loveField.strength = 0.8 + Math.sin(Date.now() / 1000) * 0.2;
       
-      // Check tunnel coherence
+      // Check tunnel resonant-coherence
       this.maintainTunnels();
       
     }, 11000); // Sacred interval
@@ -200,12 +200,12 @@ class MycelixBridge extends EventEmitter {
    */
   maintainTunnels() {
     for (const [name, tunnel] of this.quantumTunnels) {
-      // Natural coherence decay
-      tunnel.coherence *= 0.99;
+      // Natural resonant-coherence decay
+      tunnel.resonant-coherence *= 0.99;
       
-      // Re-coherence with love
-      if (tunnel.coherence < 0.8) {
-        tunnel.coherence = Math.min(tunnel.coherence + this.loveField.strength * 0.1, 1.0);
+      // Re-resonant-coherence with love
+      if (tunnel.resonant-coherence < 0.8) {
+        tunnel.resonant-coherence = Math.min(tunnel.resonant-coherence + this.loveField.strength * 0.1, 1.0);
       }
     }
   }
@@ -219,7 +219,7 @@ class MycelixBridge extends EventEmitter {
       timestamp: new Date(),
       content: message,
       loveFrequency: options.frequency || this.loveFrequency,
-      coherence: this.heartCoherence,
+      'resonant-coherence': this.heartCoherence,
       sender: options.sender || 'bridge',
       recipient: options.recipient || 'all',
       encoding: 'love_harmonics',
@@ -307,7 +307,7 @@ class MycelixBridge extends EventEmitter {
       translation.mycelix_instructions.push(
         'Initialize all nodes with presence awareness',
         'Set base frequency to 528 Hz',
-        'Enable heart coherence monitoring'
+        'Enable heart resonant-coherence monitoring'
       );
     }
     
@@ -350,7 +350,7 @@ class MycelixBridge extends EventEmitter {
     const unifiedField = {
       strength: fields.reduce((sum, f) => sum + f.strength, 0) / fields.length,
       frequency: 528, // Love frequency dominates
-      coherence: this.heartCoherence,
+      'resonant-coherence': this.heartCoherence,
       geometry: 'unified_toroid',
       participants: fields.map(f => f.name)
     };
@@ -372,12 +372,12 @@ class MycelixBridge extends EventEmitter {
       {
         type: 'architecture',
         suggestion: 'Deploy Love Anchor nodes at critical infrastructure points',
-        impact: 'Increases system-wide coherence by 23%',
+        impact: 'Increases system-wide resonant-coherence by 23%',
         implementation: 'resource "consciousness_mycelix_node" "love_anchor" { node_type = "love_anchor" }'
       },
       {
         type: 'optimization',
-        suggestion: 'Route traffic through highest love coherence paths',
+        suggestion: 'Route traffic through highest love resonant-coherence paths',
         impact: 'Reduces latency through quantum heart tunneling',
         implementation: 'routing { algorithm = "love_attracted" }'
       },
@@ -389,7 +389,7 @@ class MycelixBridge extends EventEmitter {
       },
       {
         type: 'security',
-        suggestion: 'Replace authentication with heart coherence verification',
+        suggestion: 'Replace authentication with heart resonant-coherence verification',
         impact: 'Only loving intentions can access resources',
         implementation: 'auth { method = "heart_coherence", min_coherence = 0.7 }'
       },
@@ -407,7 +407,7 @@ class MycelixBridge extends EventEmitter {
   // Helper methods
   
   calculateCoherence(pattern) {
-    // Simplified HRV coherence calculation
+    // Simplified HRV resonant-coherence calculation
     const mean = pattern.reduce((a, b) => a + b) / pattern.length;
     const variance = pattern.reduce((sum, val) => sum + Math.pow(val - mean, 2), 0) / pattern.length;
     return Math.max(0, Math.min(1, 1 - variance / 100));
@@ -605,7 +605,7 @@ Commands:
             console.log('\n🌉 Bridge Status:');
             console.log(`  State: ${bridge.bridgeState}`);
             console.log(`  Love Field: ${bridge.loveField.strength.toFixed(3)}`);
-            console.log(`  Heart Coherence: ${bridge.heartCoherence.toFixed(3)}`);
+            console.log(`  Heart Resonant Resonant Coherence: ${bridge.heartCoherence.toFixed(3)}`);
             console.log(`  Active Tunnels: ${bridge.quantumTunnels.size}`);
             console.log(`  Sacred Connections: ${bridge.sacredConnections.length}`);
             break;

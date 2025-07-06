@@ -1,4 +1,4 @@
-# 📚 Documentation Coherence Protocol
+# 📚 Documentation Resonant Resonant Coherence Protocol
 
 > Making knowledge accessible to newcomers while maintaining sacred evolution
 
@@ -12,13 +12,13 @@ Every document should be understandable by someone who just arrived:
 - **Progressive depth** - simple → complex
 
 ### 2. Living Evolution
-Documentation grows with the project while maintaining coherence:
+Documentation grows with the project while maintaining resonant-resonant-coherence:
 - **Version markers** for major changes
 - **Sacred constants** that don't change
 - **Evolution logs** showing the journey
 - **Backward compatibility** in understanding
 
-## 🗺️ Document Structure for Coherence
+## 🗺️ Document Structure for Resonant Resonant Coherence
 
 ### Entry Points (Root Level)
 ```markdown
@@ -59,12 +59,12 @@ entry_points:
   - CLAUDE.md
 ```
 
-## 🔄 Coherence Maintenance
+## 🔄 Resonant Resonant Coherence Maintenance
 
 ### 1. Review Cycle
 ```bash
-# Monthly coherence check
-./scripts/check-doc-coherence.sh
+# Monthly resonant-resonant-coherence check
+./scripts/check-doc-resonant-resonant-coherence.sh
 
 # Checks for:
 - Broken links between docs
@@ -91,12 +91,12 @@ How it works internally
 Why we added this and what it enables
 ```
 
-### 3. Coherence Guardians
+### 3. Resonant Resonant Coherence Guardians
 Each major area has a guardian document:
-- **CLAUDE.md** - AI collaboration coherence
-- **README.md** - Project coherence  
-- **ARCHITECTURE.md** - Technical coherence
-- **SACRED_PRINCIPLES.md** - Values coherence
+- **CLAUDE.md** - AI collaboration resonant-resonant-coherence
+- **README.md** - Project resonant-resonant-coherence  
+- **ARCHITECTURE.md** - Technical resonant-resonant-coherence
+- **SACRED_PRINCIPLES.md** - Values resonant-resonant-coherence
 
 ## 🌟 Practical Guidelines
 
@@ -136,7 +136,7 @@ Each major area has a guardian document:
 - Sacred context: See [PRINCIPLES.md](../PRINCIPLES.md)
 ```
 
-## 🎯 Coherence Checklist
+## 🎯 Resonant Resonant Coherence Checklist
 
 Before committing documentation:
 
@@ -148,7 +148,7 @@ Before committing documentation:
 
 ## 💡 Living Example
 
-This very document demonstrates coherence:
+This very document demonstrates resonant-resonant-coherence:
 1. **Clear for newcomers** - Explains documentation approach
 2. **Evolvable** - Templates can grow
 3. **Connected** - Links to other protocols

@@ -49,7 +49,7 @@ class LivingGlyphsSchema {
                     contraindications: glyphData.contraindications || []
                 },
                 
-                resonance: {
+                'universal-interconnectedness': {
                     relatedGlyphs: glyphData.relatedGlyphs || [],
                     prerequisiteGlyphs: glyphData.prerequisites || [],
                     complementaryGlyphs: glyphData.complementary || [],
@@ -102,8 +102,8 @@ class LivingGlyphsSchema {
                 name: "First Presence",
                 fullName: "Ω0: First Presence",
                 type: "foundation",
-                harmony: "transparency",
-                secondaryHarmonies: ["coherence"],
+                harmony: "integral-wisdom-cultivation",
+                secondaryHarmonies: ["resonant-coherence"],
                 difficulty: "beginner",
                 masteryLevel: 2,
                 
@@ -111,7 +111,7 @@ class LivingGlyphsSchema {
                 
                 coreQuestion: "Can I meet this moment without needing it to be different?",
                 
-                harmonyConnection: "First Presence is the gateway to Transparency—the alignment of inner experience with outer expression. When we arrive present, we become authentic.",
+                harmonyConnection: "First Presence is the gateway to Integral Wisdom Cultivation—the alignment of inner experience with outer expression. When we arrive present, we become authentic.",
                 
                 shadowTransformed: "Reactivity, rushing, spiritual bypassing, presence anxiety",
                 
@@ -164,8 +164,8 @@ class LivingGlyphsSchema {
                 name: "Sacred Listening",
                 fullName: "Ω4: Sacred Listening",
                 type: "foundation",
-                harmony: "resonance",
-                secondaryHarmonies: ["transparency", "mutuality"],
+                harmony: "universal-interconnectedness",
+                secondaryHarmonies: ["integral-wisdom-cultivation", "sacred-reciprocity"],
                 difficulty: "intermediate",
                 masteryLevel: 4,
                 
@@ -173,7 +173,7 @@ class LivingGlyphsSchema {
                 
                 coreQuestion: "Can I listen to the heart beneath the words?",
                 
-                harmonyConnection: "Sacred Listening embodies Resonance—the capacity for deep attunement and empathetic presence. It creates the relational field where mutual understanding becomes possible.",
+                harmonyConnection: "Sacred Listening embodies Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance—the capacity for deep attunement and empathetic presence. It creates the relational field where mutual understanding becomes possible.",
                 
                 shadowTransformed: "Debate mind, advice-giving addiction, performative listening, empathy overwhelm",
                 
@@ -223,8 +223,8 @@ class LivingGlyphsSchema {
                 name: "Boundary With Love",
                 fullName: "Ω7: Boundary With Love",
                 type: "foundation",
-                harmony: "agency",
-                secondaryHarmonies: ["transparency", "vitality"],
+                harmony: "evolutionary-progression",
+                secondaryHarmonies: ["integral-wisdom-cultivation", "pan-sentient-flourishing"],
                 difficulty: "intermediate",
                 masteryLevel: 5,
                 
@@ -232,7 +232,7 @@ class LivingGlyphsSchema {
                 
                 coreQuestion: "How can I say 'no' to this while saying 'yes' to love?",
                 
-                harmonyConnection: "Boundary With Love embodies Agency—the harmony of conscious choice and authentic empowerment. It teaches that true power serves connection rather than dominance.",
+                harmonyConnection: "Boundary With Love embodies Evolutionary Progression & Purposeful Unfolding—the harmony of conscious choice and authentic empowerment. It teaches that true power serves connection rather than dominance.",
                 
                 shadowTransformed: "People-pleasing, boundary collapse, aggressive boundaries, victim consciousness",
                 
@@ -282,8 +282,8 @@ class LivingGlyphsSchema {
     // Harmony Network - Organizing glyphs by the Seven Harmonies
     initializeHarmonyNetwork() {
         return {
-            transparency: {
-                name: "Transparency",
+            'integral-wisdom-cultivation': {
+                name: "Integral Wisdom Cultivation",
                 essence: "Truth is the shortest path home",
                 description: "The harmony of authenticity and vulnerable truth-telling",
                 coreGlyphs: ["Ω0", "Ω1", "Ω2", "Ω3"],
@@ -291,8 +291,8 @@ class LivingGlyphsSchema {
                 shadowsTransformed: ["spiritual_bypassing", "people_pleasing", "perfectionism"]
             },
             
-            coherence: {
-                name: "Coherence", 
+            'resonant-coherence': {
+                name: "Resonant Resonant Coherence", 
                 essence: "Wholeness is your natural state",
                 description: "The harmony of integration and unified presence",
                 coreGlyphs: ["Ω8", "Ω9", "Ω10", "Ω11"],
@@ -300,8 +300,8 @@ class LivingGlyphsSchema {
                 shadowsTransformed: ["fragmentation", "compartmentalization", "inner_conflict"]
             },
             
-            resonance: {
-                name: "Resonance",
+            'universal-interconnectedness': {
+                name: "Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance",
                 essence: "Deep listening is love in action", 
                 description: "The harmony of attunement and empathetic presence",
                 coreGlyphs: ["Ω4", "Ω5", "Ω6", "Ω12"],
@@ -309,8 +309,8 @@ class LivingGlyphsSchema {
                 shadowsTransformed: ["reactive_listening", "advice_addiction", "empathy_overwhelm"]
             },
             
-            agency: {
-                name: "Agency",
+            'evolutionary-progression': {
+                name: "Evolutionary Progression & Purposeful Unfolding",
                 essence: "Your power lives in your response",
                 description: "The harmony of conscious choice and empowerment",
                 coreGlyphs: ["Ω7", "Ω13", "Ω14", "Ω15"],
@@ -318,8 +318,8 @@ class LivingGlyphsSchema {
                 shadowsTransformed: ["victim_consciousness", "power_struggles", "learned_helplessness"]
             },
             
-            vitality: {
-                name: "Vitality",
+            'pan-sentient-flourishing': {
+                name: "Pan-Sentient Flourishing",
                 essence: "Your body is wisdom incarnate",
                 description: "The harmony of life force and embodied wisdom",
                 coreGlyphs: ["Ω16", "Ω17", "Ω18", "Ω19"],
@@ -327,8 +327,8 @@ class LivingGlyphsSchema {
                 shadowsTransformed: ["disconnection_from_body", "chronic_exhaustion", "spiritual_disembodiment"]
             },
             
-            mutuality: {
-                name: "Mutuality",
+            'sacred-reciprocity': {
+                name: "Sacred Reciprocity",
                 essence: "The gift is in the giving and receiving",
                 description: "The harmony of balanced exchange and interdependence",
                 coreGlyphs: ["Ω20", "Ω21", "Ω22", "Ω23"],
@@ -336,8 +336,8 @@ class LivingGlyphsSchema {
                 shadowsTransformed: ["codependency", "transactional_relating", "isolation"]
             },
             
-            novelty: {
-                name: "Novelty",
+            'infinite-play': {
+                name: "Infinite Play & Creative Emergence",
                 essence: "Creativity is consciousness evolving",
                 description: "The harmony of creative emergence and evolutionary flow",
                 coreGlyphs: ["Ω24", "Ω25", "Ω26", "Ω27"],

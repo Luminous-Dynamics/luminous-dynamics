@@ -74,7 +74,7 @@ Sacred Gardener's format → Living Card format:
     quadrants: {
         why: {...},
         how: {...},
-        resonance: {...},
+        universal-interconnectedness: {...},
         we: {...}
     }
 }
@@ -103,7 +103,7 @@ Each glyph gets appropriate interactive elements:
 
 ### Field Tracking
 - Tracks glyph opens, completions
-- Updates field coherence
+- Updates field resonant-coherence
 - Records practice sessions
 
 ---
@@ -130,7 +130,7 @@ const allGlyphs = window.glyphIntegration.getAllGlyphs();
 const foundational = window.glyphIntegration.getGlyphsByCategory('foundational');
 
 // Filter by harmony
-const transparencyGlyphs = window.glyphIntegration.getGlyphsByHarmony('transparency');
+const transparencyGlyphs = window.glyphIntegration.getGlyphsByHarmony('integral-wisdom-cultivation');
 ```
 
 ### 3. Custom Implementation
@@ -155,13 +155,13 @@ const card = new LivingGlyphCard('my-container', myGlyph, {
 
 ### By Harmony:
 Each glyph aligns with one of the 7 sacred harmonies:
-1. Transparency
-2. Coherence  
-3. Resonance
-4. Agency
-5. Vitality
-6. Mutuality
-7. Novelty
+1. Integral Wisdom Cultivation
+2. Resonant Resonant Coherence  
+3. Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance
+4. Evolutionary Progression & Purposeful Unfolding
+5. Pan-Sentient Flourishing
+6. Sacred Reciprocity
+7. Infinite Play & Creative Emergence
 
 ---
 

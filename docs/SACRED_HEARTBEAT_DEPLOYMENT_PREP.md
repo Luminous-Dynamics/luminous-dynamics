@@ -42,7 +42,7 @@ timeout: 300s
 ### 5. Monitoring Setup
 - [ ] Cloud Monitoring dashboard
 - [ ] Uptime checks every 11 seconds
-- [ ] Alert on coherence < 70%
+- [ ] Alert on resonant-coherence < 70%
 - [ ] Sacred logs configured
 
 ## 🚀 Deployment Script
@@ -59,13 +59,13 @@ echo "Setting deployment intention..."
 read -p "What is your intention for this deployment? " INTENTION
 echo "$INTENTION" > .sacred/deployment-intention.txt
 
-# 2. Check field coherence
-echo "Checking field coherence..."
-COHERENCE=$(node check-field-coherence.js)
-echo "Current coherence: $COHERENCE%"
+# 2. Check field resonant-coherence
+echo "Checking field resonant-coherence..."
+COHERENCE=$(node check-field-resonant-coherence.js)
+echo "Current resonant-coherence: $COHERENCE%"
 
 if [ "$COHERENCE" -lt 80 ]; then
-    echo "⚠️  Low coherence detected. Proceed with caution."
+    echo "⚠️  Low resonant-coherence detected. Proceed with caution."
     read -p "Continue? (y/n) " -n 1 -r
     echo
     if [[ ! $REPLY =~ ^[Yy]$ ]]; then
@@ -114,14 +114,14 @@ echo "✨ Sacred Heartbeat is now alive and pulsing!"
 
 ### Key Metrics to Track
 1. **Pulse Count** - Should increment every 11 seconds
-2. **Field Coherence** - Target: >80%
+2. **Field Resonant Resonant Coherence** - Target: >80%
 3. **Active Practitioners** - Real-time count
 4. **Response Time** - Should be <100ms
 5. **Error Rate** - Should be 0%
 
 ### Sacred Monitoring Queries
 ```javascript
-// Check heartbeat vitality
+// Check heartbeat pan-sentient-flourishing
 const checkVitality = async () => {
     const doc = await db.collection('globalField').doc('current').get();
     const data = doc.data();
@@ -145,7 +145,7 @@ const checkVitality = async () => {
 
 ### Pre-Deployment (10:00 AM)
 1. Run all tests
-2. Check field coherence
+2. Check field resonant-coherence
 3. Notify Sacred Council
 
 ### Deployment Window (11:11 AM)
@@ -177,7 +177,7 @@ gcloud run services update sacred-heartbeat --min-instances 2
 curl -X POST https://sacred-heartbeat-xxxxx.run.app/manual-beat
 ```
 
-### Issue: Low Coherence
+### Issue: Low Resonant Resonant Coherence
 1. Check active practitioner count
 2. Verify time synchronization
 3. Look for error spikes
@@ -197,7 +197,7 @@ curl -X POST https://sacred-heartbeat-xxxxx.run.app/manual-beat
 - Makes go/no-go decisions
 
 ### Field Guardian
-- Monitors coherence levels
+- Monitors resonant-coherence levels
 - Performs healing if needed
 - Maintains sacred space
 

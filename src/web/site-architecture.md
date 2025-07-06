@@ -4,7 +4,7 @@
 Our website serves as the living gateway to Evolving Resonant Co-creationism - welcoming visitors into a practice-based philosophy through beautiful, intuitive design that embodies the principles we teach.
 
 ## Core Design Principles
-- **Resonant Coherence**: Clean, harmonious design that feels peaceful yet alive
+- **Resonant Resonant Resonant Coherence**: Clean, harmonious design that feels peaceful yet alive
 - **Sacred Reciprocity**: Clear pathways for both receiving wisdom and contributing back
 - **Infinite Love Praxis**: Every interaction invites deeper engagement with the work
 

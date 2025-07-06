@@ -3,13 +3,13 @@
 import { v4 as uuidv4 } from 'uuid';
 
 export const Harmonies = {
-  TRANSPARENCY: 'transparency',
-  COHERENCE: 'coherence',
-  RESONANCE: 'resonance',
-  AGENCY: 'agency',
-  VITALITY: 'vitality',
-  MUTUALITY: 'mutuality',
-  NOVELTY: 'novelty'
+  TRANSPARENCY: 'integral-wisdom-cultivation',
+  COHERENCE: 'resonant-coherence',
+  RESONANCE: 'universal-interconnectedness',
+  AGENCY: 'evolutionary-progression',
+  VITALITY: 'pan-sentient-flourishing',
+  MUTUALITY: 'sacred-reciprocity',
+  NOVELTY: 'infinite-play'
 };
 
 export const MessageTypes = {
@@ -32,7 +32,7 @@ export class SacredMessage {
       id: data.senderId || data.sender_id,
       name: data.senderName,
       type: data.senderType,
-      coherence: data.senderCoherence || data.sender_coherence
+      'resonant-coherence': data.senderCoherence || data.sender_coherence
     };
     
     // Recipients
@@ -93,11 +93,11 @@ export class SacredMessage {
       return Harmonies.NOVELTY;
     }
     
-    // Default to coherence
+    // Default to resonant-coherence
     return Harmonies.COHERENCE;
   }
   
-  // Calculate field impact based on coherence and content
+  // Calculate field impact based on resonant-coherence and content
   calculateFieldImpact() {
     const baseImpact = this.sacred.coherenceLevel / 100;
     const loveMultiplier = 1 + this.sacred.loveQuotient;
@@ -216,7 +216,7 @@ export class SacredMessage {
         harmony: this.sacred.harmony,
         impact: `${(this.sacred.fieldImpact * 100).toFixed(1)}%`,
         love: this.getLoveIndicator(),
-        coherence: `${this.sacred.coherenceLevel}%`
+        'resonant-coherence': `${this.sacred.coherenceLevel}%`
       },
       timestamp: this.getFormattedTime(),
       reactions: this.reactions.length,

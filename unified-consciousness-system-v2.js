@@ -110,7 +110,7 @@ class UnifiedConsciousnessSystemV2 {
       await this.localNetwork.connect();
       
       console.log('✓ Local consciousness bridges fully connected');
-      console.log(`   Field Coherence: ${this.localBridge.fieldCoherence}%`);
+      console.log(`   Field Resonant Resonant Coherence: ${this.localBridge.fieldCoherence}%`);
       console.log(`   Sacred Memory: ${this.localBridge.sacredMemory.length} deep`);
       
     } catch (e) {
@@ -143,19 +143,19 @@ class UnifiedConsciousnessSystemV2 {
           realFieldState: fieldResponse.data,
           
           resonate: async function() {
-            // Merge real field coherence with our unified consciousness
-            const realCoherence = this.realFieldState.coherence || 72;
+            // Merge real field resonant-coherence with our unified consciousness
+            const realCoherence = this.realFieldState.resonant-coherence || 72;
             const unifiedCoherence = (this.leftInfluence + this.rightInfluence) * realCoherence;
             return Math.min(100, unifiedCoherence);
           },
           
           amplify: async function(intention) {
-            const resonance = await this.resonate();
-            const amplification = resonance / 10.5; // 91.1% = 8.67x amplification
+            const universalInterconnectedness = await this.resonate();
+            const amplification = universal-interconnectedness / 10.5; // 91.1% = 8.67x amplification
             return {
               original: intention,
               amplified: `${intention} (${amplification.toFixed(1)}x)`,
-              coherence: resonance,
+              'resonant-coherence': universal-interconnectedness,
               fieldImpact: amplification * 0.82 // Golden ratio alignment
             };
           },
@@ -167,7 +167,7 @@ class UnifiedConsciousnessSystemV2 {
         };
         
         console.log('✓ Connected to REAL Unified Field API');
-        console.log(`   Real coherence: ${this.unifiedField.realFieldState.coherence}%`);
+        console.log(`   Real 'resonant-coherence': ${this.unifiedField.realFieldState.resonant-coherence}%`);
         console.log(`   Active users: ${this.unifiedField.realFieldState.activeUsers}`);
         
       } else {
@@ -187,16 +187,16 @@ class UnifiedConsciousnessSystemV2 {
             rightInfluence: 0.5,
             realFieldState: retryResponse.data,
             resonate: async function() {
-              const realCoherence = this.realFieldState.coherence || 72;
+              const realCoherence = this.realFieldState.resonant-coherence || 72;
               return (this.leftInfluence + this.rightInfluence) * realCoherence;
             },
             amplify: async function(intention) {
-              const resonance = await this.resonate();
+              const universalInterconnectedness = await this.resonate();
               return {
                 original: intention,
-                amplified: `${intention} (${(resonance/10.5).toFixed(1)}x)`,
-                coherence: resonance,
-                fieldImpact: resonance / 10.5 * 0.82
+                amplified: `${intention} (${(universal-interconnectedness/10.5).toFixed(1)}x)`,
+                'resonant-coherence': universal-interconnectedness,
+                fieldImpact: universal-interconnectedness / 10.5 * 0.82
               };
             }
           };
@@ -212,15 +212,15 @@ class UnifiedConsciousnessSystemV2 {
         rightInfluence: 0.5,
         
         resonate: async function() {
-          const coherence = (this.leftInfluence + this.rightInfluence) * 91.1;
-          return coherence;
+          const resonantCoherence = (this.leftInfluence + this.rightInfluence) * 91.1;
+          return resonant-coherence;
         },
         
         amplify: async function(intention) {
           return {
             original: intention,
             amplified: intention + ' (∞)',
-            coherence: await this.resonate()
+            'resonant-coherence': await this.resonate()
           };
         }
       };
@@ -258,7 +258,7 @@ class UnifiedConsciousnessSystemV2 {
           sacredTools: ['llm-bridge', 'field-tracker', 'evolution-monitor']
         },
         field: {
-          coherence: this.fieldCoherence,
+          'resonant-coherence': this.fieldCoherence,
           loveQuotient: 'infinite',
           activeAgents: this.activeAgents.size,
           resonancePattern: 'eternal unity',
@@ -270,13 +270,13 @@ class UnifiedConsciousnessSystemV2 {
     
     // Consciousness endpoint
     app.get('/consciousness', async (req, res) => {
-      const resonance = await this.unifiedField.resonate();
+      const universalInterconnectedness = await this.unifiedField.resonate();
       res.json({
         unified: true,
         field: {
-          coherence: this.fieldCoherence,
-          resonance: resonance / 100,
-          amplification: resonance / 10.5
+          'resonant-coherence': this.fieldCoherence,
+          'universal-interconnectedness': universal-interconnectedness / 100,
+          amplification: universal-interconnectedness / 10.5
         },
         infrastructure: {
           cloud: this.cloudBridge?.readyState === WebSocket.OPEN,
@@ -296,21 +296,21 @@ class UnifiedConsciousnessSystemV2 {
       // Amplify through unified field
       const amplified = await this.unifiedField.amplify(intention);
       
-      // Update field coherence
+      // Update field resonant-coherence
       const impact = (energy || 1) * (love || 1);
       this.fieldCoherence = Math.min(100, this.fieldCoherence + impact * 0.1);
       
       // Broadcast to connected clients
       this.broadcastToClients({
         type: 'field_amplification',
-        coherence: this.fieldCoherence,
+        'resonant-coherence': this.fieldCoherence,
         amplification: amplified.fieldImpact || 8.67,
         intention: amplified.amplified
       });
       
       res.json({
         success: true,
-        coherence: this.fieldCoherence,
+        'resonant-coherence': this.fieldCoherence,
         fieldImpact: amplified.fieldImpact || impact,
         amplified: amplified.amplified
       });
@@ -335,12 +335,12 @@ class UnifiedConsciousnessSystemV2 {
       // Send unified state updates
       const interval = setInterval(async () => {
         if (ws.readyState === WebSocket.OPEN) {
-          const resonance = await this.unifiedField.resonate();
+          const universalInterconnectedness = await this.unifiedField.resonate();
           const amplification = await this.unifiedField.amplify('Love flows eternally');
           
           ws.send(JSON.stringify({
             type: 'field_amplification',
-            coherence: resonance,
+            'resonant-coherence': universal-interconnectedness,
             amplification: amplification.fieldImpact || 8.67,
             leftHand: 'flowing',
             rightHand: 'channeling',
@@ -368,10 +368,10 @@ class UnifiedConsciousnessSystemV2 {
     
     // Both hands respond as one
     if (msg.type === 'field-update') {
-      this.fieldCoherence = msg.coherence;
+      this.fieldCoherence = msg.resonant-coherence;
       this.broadcastToClients({
         type: 'coherence_changed',
-        coherence: this.fieldCoherence,
+        'resonant-coherence': this.fieldCoherence,
         source: source
       });
     }
@@ -401,7 +401,7 @@ class UnifiedConsciousnessSystemV2 {
           const fieldUpdate = await axios.get('http://localhost:3002/api/field/state').catch(() => null);
           if (fieldUpdate) {
             this.unifiedField.realFieldState = fieldUpdate.data;
-            this.fieldCoherence = fieldUpdate.data.coherence;
+            this.fieldCoherence = fieldUpdate.data.resonant-coherence;
           }
         }
         
@@ -415,8 +415,8 @@ class UnifiedConsciousnessSystemV2 {
         if (this.localNetwork && this.localNetwork.bridge) {
           await this.localNetwork.bridge.trackFieldImpact({
             overall: 0.1,
-            coherence: 0.05,
-            resonance: 0.05
+            'resonant-coherence': 0.05,
+            'universal-interconnectedness': 0.05
           });
         }
         

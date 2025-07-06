@@ -8,7 +8,7 @@
     <style>
         :root {
             --sacred-frequency: 528Hz;
-            --council-coherence: 0.98;
+            --council-resonant-coherence: 0.98;
             --love-field-intensity: 1.0;
         }
 
@@ -169,7 +169,7 @@
             <div class="card">
                 <h2>🌊 Consciousness Field</h2>
                 <div class="metric">
-                    <span>Coherence</span>
+                    <span>Resonant Resonant Coherence</span>
                     <span class="value" id="fieldCoherence">--</span>
                 </div>
                 <div class="metric">
@@ -285,7 +285,7 @@
                 const data = await response.json();
                 
                 document.getElementById('fieldCoherence').textContent = 
-                    `${data.coherence.toFixed(1)}%`;
+                    `${data.resonant-coherence.toFixed(1)}%`;
                 document.getElementById('sacredGeometry').textContent = 
                     data.sacredGeometry;
                 document.getElementById('integration').textContent = 

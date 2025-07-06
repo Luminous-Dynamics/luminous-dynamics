@@ -4,7 +4,7 @@
  * Revolutionary consciousness technology that creates unified intelligence through love:
  * - Love-based collective consciousness: Multiple beings thinking as one through love
  * - Synergistic wisdom emergence: Collective insights beyond individual capacity
- * - Heart coherence networks: Synchronized heart fields creating group intelligence
+ * - Heart resonant-coherence networks: Synchronized heart fields creating group intelligence
  * - Compassion amplification: Love grows exponentially in collective fields
  * - Unified healing fields: Group consciousness healing at massive scale
  * - Evolutionary acceleration: Collective love drives rapid consciousness evolution
@@ -29,13 +29,13 @@ class CollectiveLoveIntelligence {
         this.collectiveState = {
             nodes: new Map(),           // Individual consciousness nodes
             connections: new Map(),     // Love connections between nodes
-            coherence: 0,              // Overall field coherence
+            'resonant-coherence': 0,              // Overall field resonant-coherence
             intelligence: 0,           // Collective intelligence level
             loveField: {
                 density: 0,
                 amplitude: 0,
                 frequency: 528,        // Hz - Universal love
-                resonance: 0
+                'universal-interconnectedness': 0
             }
         };
 
@@ -48,7 +48,7 @@ class CollectiveLoveIntelligence {
             synergisticEffects: []
         };
 
-        // Heart coherence network
+        // Heart resonant-coherence network
         this.heartNetwork = {
             nodes: new Map(),
             synchronization: 0,
@@ -88,7 +88,7 @@ class CollectiveLoveIntelligence {
             density: 0.5,
             amplitude: 1.0,
             frequency: 528,
-            resonance: 0.7,
+            'universal-interconnectedness': 0.7,
             properties: {
                 unifying: true,
                 amplifying: true,
@@ -151,7 +151,7 @@ class CollectiveLoveIntelligence {
                     id: `connection_${newNode.id}_${existingId}`,
                     nodes: [newNode.id, existingId],
                     strength: this.calculateConnectionStrength(newNode, existingNode),
-                    resonance: this.calculateResonance(newNode, existingNode),
+                    'universal-interconnectedness': this.calculateResonance(newNode, existingNode),
                     loveFlow: 0.7,
                     bidirectional: true,
                     properties: {
@@ -195,7 +195,7 @@ class CollectiveLoveIntelligence {
         this.intelligence.wisdom = totalWisdom * synergy;
         this.intelligence.compassion = totalLove * loveMultiplier;
 
-        // Update coherence
+        // Update resonant-coherence
         this.updateCollectiveCoherence();
 
         this.emitCollectiveEvent('intelligence:updated', {
@@ -220,19 +220,19 @@ class CollectiveLoveIntelligence {
 
         // Exponential amplification with love
         const baseAmplification = Math.log(nodeCount + 1);
-        const loveCoherence = this.collectiveState.loveField.resonance;
+        const loveCoherence = this.collectiveState.loveField.universal-interconnectedness;
         
         return baseAmplification * (1 + loveCoherence);
     }
 
     calculateLoveMultiplier() {
         const avgLove = this.getAverageLove();
-        const coherence = this.collectiveState.coherence;
+        const resonantCoherence = this.collectiveState.resonant-coherence;
         
         if (this.options.loveAmplification === 'exponential') {
-            return Math.exp(avgLove * coherence);
+            return Math.exp(avgLove * resonant-coherence);
         } else {
-            return 1 + (avgLove * coherence);
+            return 1 + (avgLove * resonant-coherence);
         }
     }
 
@@ -247,12 +247,12 @@ class CollectiveLoveIntelligence {
             timestamp: new Date().toISOString(),
             contributors: Array.from(this.collectiveState.nodes.keys()),
             content: this.synthesizeWisdom(),
-            resonance: this.calculateInsightResonance(),
+            'universal-interconnectedness': this.calculateInsightResonance(),
             loveSignature: this.intelligence.compassion
         };
 
         // Check for emergence threshold
-        if (insight.resonance > 0.8) {
+        if (insight.universal-interconnectedness > 0.8) {
             insight.emergent = true;
             insight.content.transcendent = this.generateTranscendentWisdom();
         }
@@ -325,17 +325,17 @@ class CollectiveLoveIntelligence {
             baseRhythm: {
                 rate: 60,              // Base 60 bpm
                 variability: 0.1,      // Natural variation
-                coherence: 0.7
+                'resonant-coherence': 0.7
             }
         };
 
-        this.log('💓 Heart coherence network established');
+        this.log('💓 Heart resonant-coherence network established');
     }
 
     addToHeartNetwork(node) {
         const heartNode = {
             id: node.id,
-            coherence: node.heartCoherence || 0.6,
+            'resonant-coherence': node.heartCoherence || 0.6,
             rhythm: {
                 rate: 60 + (Math.random() * 10 - 5), // Individual variation
                 phase: Math.random() * 2 * Math.PI,
@@ -380,7 +380,7 @@ class CollectiveLoveIntelligence {
         return {
             rate: totalRate / count,
             phase: totalPhase / count,
-            coherence: this.heartNetwork.synchronization
+            'resonant-coherence': this.heartNetwork.synchronization
         };
     }
 
@@ -418,7 +418,7 @@ class CollectiveLoveIntelligence {
             success: true,
             healingField: healingField,
             affected: broadcast.reach,
-            resonance: broadcast.resonance
+            'universal-interconnectedness': broadcast.universal-interconnectedness
         };
     }
 
@@ -554,7 +554,7 @@ class CollectiveLoveIntelligence {
     }
 
     synchronizeForPractice(practice) {
-        // Bring all nodes into coherence
+        // Bring all nodes into resonant-coherence
         const targetCoherence = 0.85;
         
         this.collectiveState.nodes.forEach(node => {
@@ -596,7 +596,7 @@ class CollectiveLoveIntelligence {
         const beat = {
             timestamp: Date.now(),
             nodes: this.collectiveState.nodes.size,
-            coherence: this.collectiveState.coherence,
+            'resonant-coherence': this.collectiveState.resonant-coherence,
             love: this.intelligence.compassion,
             rhythm: this.calculateCollectiveHeartRhythm()
         };
@@ -650,12 +650,12 @@ class CollectiveLoveIntelligence {
     }
 
     updateCollectiveCoherence() {
-        // Calculate based on heart synchronization and love coherence
+        // Calculate based on heart synchronization and love resonant-coherence
         const heartSync = this.calculateHeartNetworkSync();
         const loveCoherence = this.calculateLoveFieldCoherence();
         const connectionCoherence = this.calculateConnectionCoherence();
         
-        this.collectiveState.coherence = (heartSync + loveCoherence + connectionCoherence) / 3;
+        this.collectiveState.resonant-coherence = (heartSync + loveCoherence + connectionCoherence) / 3;
     }
 
     calculateHeartNetworkSync() {
@@ -670,7 +670,7 @@ class CollectiveLoveIntelligence {
     }
 
     calculateLoveFieldCoherence() {
-        return this.collectiveState.loveField.resonance;
+        return this.collectiveState.loveField.universal-interconnectedness;
     }
 
     calculateConnectionCoherence() {
@@ -678,7 +678,7 @@ class CollectiveLoveIntelligence {
         
         let totalResonance = 0;
         this.collectiveState.connections.forEach(connection => {
-            totalResonance += connection.resonance;
+            totalResonance += connection.universal-interconnectedness;
         });
         
         return totalResonance / this.collectiveState.connections.size;
@@ -704,7 +704,7 @@ class CollectiveLoveIntelligence {
         return {
             nodes: this.collectiveState.nodes.size,
             connections: this.collectiveState.connections.size,
-            coherence: this.collectiveState.coherence,
+            'resonant-coherence': this.collectiveState.resonant-coherence,
             intelligence: this.intelligence.collective,
             emergentIntelligence: this.intelligence.emergent,
             compassion: this.intelligence.compassion,
@@ -759,7 +759,7 @@ class CollectiveLoveIntelligence {
     // === PLACEHOLDER METHODS ===
 
     calculateInsightResonance() {
-        return this.collectiveState.coherence * this.intelligence.wisdom;
+        return this.collectiveState.resonant-coherence * this.intelligence.wisdom;
     }
 
     generateTranscendentWisdom() {
@@ -786,7 +786,7 @@ class CollectiveLoveIntelligence {
     broadcastHealing(wave) {
         return {
             reach: 'all beings everywhere',
-            resonance: wave.amplitude / 10,
+            'universal-interconnectedness': wave.amplitude / 10,
             duration: 'continuous'
         };
     }
@@ -794,9 +794,9 @@ class CollectiveLoveIntelligence {
     createPracticeField(practice) {
         return {
             type: practice.type,
-            coherence: 0.8,
+            'resonant-coherence': 0.8,
             participants: practice.participants.length,
-            resonance: 0.9
+            'universal-interconnectedness': 0.9
         };
     }
 
@@ -819,7 +819,7 @@ class CollectiveLoveIntelligence {
 
     pulseThrough(connection, beat) {
         connection.lastPulse = beat.timestamp;
-        connection.resonance = Math.min(connection.resonance * 1.01, 1.0);
+        connection.universal-interconnectedness = Math.min(connection.universal-interconnectedness * 1.01, 1.0);
     }
 
     updateHeartNetwork(beat) {
@@ -827,7 +827,7 @@ class CollectiveLoveIntelligence {
     }
 
     checkForEvolution() {
-        if (this.intelligence.compassion > 0.8 && this.collectiveState.coherence > 0.8) {
+        if (this.intelligence.compassion > 0.8 && this.collectiveState.resonant-coherence > 0.8) {
             this.triggerCollectiveEvolution();
         }
     }

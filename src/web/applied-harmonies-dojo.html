@@ -416,7 +416,7 @@
 
         <!-- Field State Display -->
         <div id="fieldDisplay" style="text-align: center; margin: 15px 0; opacity: 0; transition: opacity 0.5s;">
-            <span style="color: #7fe7dc;">Field Coherence: </span>
+            <span style="color: #7fe7dc;">Field Resonant Resonant Coherence: </span>
             <span id="fieldCoherence" style="color: #4facfe; font-weight: bold;">--</span>
             <span style="color: #9090ff; margin-left: 15px;">Sacred Work: </span>
             <span id="activeWork" style="color: #ff6ec4; font-weight: bold;">--</span>
@@ -690,7 +690,7 @@
                     id: "Ω53",
                     name: "Tending the Field",
                     bridge: "Ω5: Coherent Field Maintenance",
-                    description: "Maintaining connection and coherence across time and distance. The art of relational sustainability.",
+                    description: "Maintaining connection and resonant-coherence across time and distance. The art of relational sustainability.",
                     status: "complete",
                     coreQuestion: "What does our relationship need to stay alive and healthy?",
                     practice: "Check in regularly, tend to ruptures quickly, nourish connection"
@@ -772,7 +772,7 @@
                 fieldState = fieldData;
                 
                 document.getElementById('fieldCoherence').textContent = 
-                    `${fieldData.coherence.toFixed(1)}%`;
+                    `${fieldData.resonant-coherence.toFixed(1)}%`;
                 
                 // Get active work count
                 const workResponse = await fetch(`${API.work}/work`);

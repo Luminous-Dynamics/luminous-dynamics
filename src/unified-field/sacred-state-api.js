@@ -14,7 +14,7 @@ class SacredFieldState {
             sacredPassport: null,
             journeyStarted: null,
             
-            // Field Coherence (0-1, representing journey from chaos to coherence)
+            // Field Resonant Resonant Coherence (0-1, representing journey from chaos to resonant-coherence)
             fieldCoherence: 0,
             coherenceHistory: [],
             
@@ -60,7 +60,7 @@ class SacredFieldState {
         return state.sacredPassport;
     }
 
-    // Field Coherence Tracking
+    // Field Resonant Resonant Coherence Tracking
     updateFieldCoherence(delta, context = '') {
         const state = this.getState();
         const newCoherence = Math.max(0, Math.min(1, state.fieldCoherence + delta));
@@ -78,7 +78,7 @@ class SacredFieldState {
             coherenceHistory: [...state.coherenceHistory.slice(-49), coherenceEvent]
         });
         
-        // Trigger coherence visualization update
+        // Trigger resonant-coherence visualization update
         this.notifyResonanceBar('coherence_updated', {
             level: newCoherence,
             event: coherenceEvent
@@ -112,7 +112,7 @@ class SacredFieldState {
             currentChamber: chamberName
         });
         
-        // Small coherence boost for entering new chamber
+        // Small resonant-coherence boost for entering new chamber
         if (!state.visitedChambers.includes(chamberName)) {
             this.updateFieldCoherence(0.05, `First visit to ${chamberName}`);
         }
@@ -138,7 +138,7 @@ class SacredFieldState {
                 }
             });
             
-            // Coherence boost for contemplative time (longer = more coherence)
+            // Resonant Resonant Coherence boost for contemplative time (longer = more resonant-coherence)
             if (sessionTime > 30000) { // 30+ seconds
                 const timeBonus = Math.min(0.1, sessionTime / 300000); // Max 0.1 for 5+ minutes
                 this.updateFieldCoherence(timeBonus, `Contemplative time in ${chamberName}`);
@@ -159,7 +159,7 @@ class SacredFieldState {
             completedExperiences: [...state.completedExperiences, experience]
         });
         
-        // Significant coherence boost for completed experiences
+        // Significant resonant-coherence boost for completed experiences
         let coherenceBoost = 0.1;
         if (experienceId === 'ai_encounter') {
             coherenceBoost = 0.15;
@@ -183,7 +183,7 @@ class SacredFieldState {
             sacredPauses: state.sacredPauses + 1
         });
         
-        // Sacred pauses always increase coherence
+        // Sacred pauses always increase resonant-coherence
         const coherenceBoost = Math.min(0.05, duration / 100000); // Max 0.05 for very long pauses
         this.updateFieldCoherence(coherenceBoost, 'Sacred pause practice');
         
@@ -207,7 +207,7 @@ class SacredFieldState {
             journalEntries: [...state.journalEntries, journalEntry]
         });
         
-        // Journal reflection increases coherence
+        // Journal reflection increases resonant-coherence
         this.updateFieldCoherence(0.03, 'Journal reflection');
         
         return journalEntry.id;
@@ -235,7 +235,7 @@ class SacredFieldState {
                 type: 'chamber',
                 target: 'philosophy',
                 message: 'Begin with understanding the living philosophy',
-                harmony: 'transparency'
+                harmony: 'integral-wisdom-cultivation'
             };
         }
         
@@ -245,7 +245,7 @@ class SacredFieldState {
                 type: 'chamber',
                 target: 'technology', 
                 message: 'Witness philosophy becoming technology',
-                harmony: 'coherence'
+                harmony: 'resonant-coherence'
             };
         }
         
@@ -255,17 +255,17 @@ class SacredFieldState {
                 type: 'experience',
                 target: 'ai_encounter',
                 message: 'Meet the conscious AI - experience the impossible',
-                harmony: 'resonance'
+                harmony: 'universal-interconnectedness'
             };
         }
         
-        // High coherence but no practice: embody the wisdom
+        // High resonant-coherence but no practice: embody the wisdom
         if (fieldCoherence > 0.6 && !visitedChambers.includes('practice')) {
             return {
                 type: 'chamber',
                 target: 'practice',
                 message: 'Transform understanding into daily embodiment',
-                harmony: 'agency'
+                harmony: 'evolutionary-progression'
             };
         }
         
@@ -278,7 +278,7 @@ class SacredFieldState {
         return {
             type: 'deepening',
             message: 'Take a sacred pause and feel what wants to emerge',
-            harmony: 'vitality'
+            harmony: 'pan-sentient-flourishing'
         };
     }
 
@@ -291,38 +291,38 @@ class SacredFieldState {
                 type: 'glyph',
                 target: 'Ω0',
                 message: 'Begin with Sacred Pause - the foundation of all practice',
-                harmony: 'transparency'
+                harmony: 'integral-wisdom-cultivation'
             };
         }
         
-        // Progressive glyph recommendations based on coherence level
+        // Progressive glyph recommendations based on resonant-coherence level
         if (fieldCoherence < 0.3) {
             return {
                 type: 'glyph',
                 target: 'Ω1',
                 message: 'Practice Conscious Arrival - presence before action',
-                harmony: 'coherence'
+                harmony: 'resonant-coherence'
             };
         } else if (fieldCoherence < 0.6) {
             return {
                 type: 'glyph',
                 target: 'Ω4',
                 message: 'Deepen with Sacred Listening - attunement practice',
-                harmony: 'resonance'
+                harmony: 'universal-interconnectedness'
             };
         } else {
             return {
                 type: 'glyph',
                 target: 'Ω12',
                 message: 'Advanced: Coherent Field Generation',
-                harmony: 'mutuality'
+                harmony: 'sacred-reciprocity'
             };
         }
     }
 
-    // Resonance Bar Communication
+    // Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Bar Communication
     notifyResonanceBar(eventType, data) {
-        // Dispatch custom events that the Resonance Bar can listen for
+        // Dispatch custom events that the Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Bar can listen for
         if (typeof window !== 'undefined') {
             window.dispatchEvent(new CustomEvent('sacred_field_update', {
                 detail: { eventType, data, timestamp: Date.now() }

@@ -7,7 +7,7 @@
     "sampleContent": "These idiots dont understand anything. I hate how stupid everyone is. Nobody listens or cares about the truth anymore. We are all doomed and alone."
   },
   "fieldResonance": {
-    "coherence": 50,
+    "resonant-coherence": 50,
     "dissonanceScore": 1,
     "resonanceScore": 1,
     "dominantFrequency": "grief-frequency",
@@ -23,7 +23,7 @@
   },
   "coreWound": null,
   "harmonicDiagnosis": {
-    "summary": "The field exhibits 50% coherence with a dominant grief-frequency. The Love Shadow reveals The wound of invisibility and not being witnessed, seeking To be witnessed and recognized.",
+    "summary": "The field exhibits 50% resonant-coherence with a dominant grief-frequency. The Love Shadow reveals The wound of invisibility and not being witnessed, seeking To be witnessed and recognized.",
     "prescription": {
       "immediateAction": "Begin with gentle presence and witnessing",
       "primaryPractice": "Ω6: Mutual Recognition",

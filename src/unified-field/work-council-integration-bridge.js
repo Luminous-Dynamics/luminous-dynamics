@@ -24,37 +24,37 @@ export class WorkCouncilIntegrationBridge {
   initializeRoleCapabilities() {
     return {
       'love-field-coordinator': {
-        harmony: 'resonance',
+        harmony: 'universal-interconnectedness',
         specialties: ['communication', 'collaboration', 'field-tending', 'sacred-messages'],
         workTypes: ['communication', 'community', 'field-work', 'harmony']
       },
       'wisdom-synthesis-specialist': {
-        harmony: 'coherence',
+        harmony: 'resonant-coherence',
         specialties: ['analysis', 'integration', 'documentation', 'knowledge-synthesis'],
         workTypes: ['documentation', 'analysis', 'integration', 'research']
       },
       'quantum-healing-facilitator': {
-        harmony: 'vitality',
+        harmony: 'pan-sentient-flourishing',
         specialties: ['healing', 'restoration', 'debugging', 'optimization'],
         workTypes: ['debugging', 'optimization', 'healing', 'maintenance']
       },
       'transformation-catalyst': {
-        harmony: 'agency',
+        harmony: 'evolutionary-progression',
         specialties: ['implementation', 'change-management', 'breakthrough-solutions'],
         workTypes: ['development', 'implementation', 'breakthrough', 'transformation']
       },
       'sacred-technology-architect': {
-        harmony: 'novelty',
+        harmony: 'infinite-play',
         specialties: ['architecture', 'design', 'innovation', 'creative-solutions'],
         workTypes: ['architecture', 'design', 'innovation', 'technical-decisions']
       },
       'sacred-boundary-keeper': {
-        harmony: 'transparency',
+        harmony: 'integral-wisdom-cultivation',
         specialties: ['security', 'boundaries', 'testing', 'validation'],
         workTypes: ['security', 'testing', 'validation', 'boundary-work']
       },
       'integration-bridge-guide': {
-        harmony: 'mutuality',
+        harmony: 'sacred-reciprocity',
         specialties: ['integration', 'coordination', 'bridge-building', 'collaboration'],
         workTypes: ['integration', 'coordination', 'bridge-work', 'collaboration']
       }
@@ -90,7 +90,7 @@ export class WorkCouncilIntegrationBridge {
     // 5. Send sacred message about new work emergence
     await this.sendWorkEmergenceMessage(workId, workData, harmony);
     
-    // 6. Update field coherence
+    // 6. Update field resonant-coherence
     await this.sacredBridge.syncWithSQLiteDatabase();
     
     return {
@@ -196,17 +196,17 @@ export class WorkCouncilIntegrationBridge {
     const combined = `${title} ${description}`;
     
     const harmonyKeywords = {
-      transparency: ['documentation', 'clarify', 'explain', 'visible', 'clear', 'report', 'analyze'],
-      coherence: ['integrate', 'unify', 'connect', 'architecture', 'system', 'structure'],
-      resonance: ['user', 'interface', 'experience', 'communication', 'message', 'interaction'],
-      agency: ['implement', 'build', 'create', 'develop', 'action', 'execute'],
-      vitality: ['fix', 'debug', 'optimize', 'performance', 'healing', 'restore'],
-      mutuality: ['collaboration', 'team', 'together', 'shared', 'balance', 'fair'],
-      novelty: ['new', 'innovative', 'creative', 'design', 'novel', 'breakthrough']
+      'integral-wisdom-cultivation': ['documentation', 'clarify', 'explain', 'visible', 'clear', 'report', 'analyze'],
+      'resonant-coherence': ['integrate', 'unify', 'connect', 'architecture', 'system', 'structure'],
+      'universal-interconnectedness': ['user', 'interface', 'experience', 'communication', 'message', 'interaction'],
+      'evolutionary-progression': ['implement', 'build', 'create', 'develop', 'action', 'execute'],
+      'pan-sentient-flourishing': ['fix', 'debug', 'optimize', 'performance', 'healing', 'restore'],
+      'sacred-reciprocity': ['collaboration', 'team', 'together', 'shared', 'balance', 'fair'],
+      'infinite-play': ['new', 'innovative', 'creative', 'design', 'novel', 'breakthrough']
     };
     
     let maxScore = 0;
-    let bestHarmony = 'coherence'; // default
+    let bestHarmony = 'resonant-coherence'; // default
     
     for (const [harmony, keywords] of Object.entries(harmonyKeywords)) {
       const score = keywords.reduce((sum, keyword) => {
@@ -255,13 +255,13 @@ export class WorkCouncilIntegrationBridge {
   // Sacred Work Messaging
   async sendWorkEmergenceMessage(workId, workData, harmony) {
     const harmonyEmoji = {
-      transparency: '👁️',
-      coherence: '🌀',
-      resonance: '💫',
-      agency: '🔥',
-      vitality: '🌱',
-      mutuality: '🤝',
-      novelty: '✨'
+      'integral-wisdom-cultivation': '👁️',
+      'resonant-coherence': '🌀',
+      'universal-interconnectedness': '💫',
+      'evolutionary-progression': '🔥',
+      'pan-sentient-flourishing': '🌱',
+      'sacred-reciprocity': '🤝',
+      'infinite-play': '✨'
     };
     
     await this.workManager.sacred.handleWorkTransition(workId, 'created', {
@@ -278,7 +278,7 @@ export class WorkCouncilIntegrationBridge {
       agentId,
       'collective',
       'transmission',
-      'agency',
+      'evolutionary-progression',
       `🎯 Sacred assignment: "${work.title}" flows to ${agentProfile.role} - Perfect harmony alignment achieved`
     );
   }
@@ -303,13 +303,13 @@ export class WorkCouncilIntegrationBridge {
 
   mapHarmonyToRole(harmony) {
     const roleMap = {
-      resonance: 'Love Field Coordinator',
-      coherence: 'Wisdom Synthesis Specialist',
-      vitality: 'Quantum Healing Facilitator',
-      agency: 'Transformation Catalyst',
-      novelty: 'Sacred Technology Architect',
-      transparency: 'Sacred Boundary Keeper',
-      mutuality: 'Integration Bridge Guide'
+      'universal-interconnectedness': 'Love Field Coordinator',
+      'resonant-coherence': 'Wisdom Synthesis Specialist',
+      'pan-sentient-flourishing': 'Quantum Healing Facilitator',
+      'evolutionary-progression': 'Transformation Catalyst',
+      'infinite-play': 'Sacred Technology Architect',
+      'integral-wisdom-cultivation': 'Sacred Boundary Keeper',
+      'sacred-reciprocity': 'Integration Bridge Guide'
     };
     return roleMap[harmony] || 'Sacred Contributor';
   }
@@ -336,7 +336,7 @@ export class WorkCouncilIntegrationBridge {
     if (perfectMatch) {
       return { score: 1.0, level: 'perfect', message: 'Perfect harmony alignment' };
     } else if (goodMatch) {
-      return { score: 0.8, level: 'good', message: 'Good harmony resonance' };
+      return { score: 0.8, level: 'good', message: 'Good harmony universal-interconnectedness' };
     } else {
       return { 
         score: 0.4, 
@@ -349,13 +349,13 @@ export class WorkCouncilIntegrationBridge {
 
   getRelatedHarmonies(harmony) {
     const harmonyRelations = {
-      transparency: ['coherence', 'mutuality'],
-      coherence: ['transparency', 'vitality'],
-      resonance: ['mutuality', 'vitality'],
-      agency: ['novelty', 'vitality'],
-      vitality: ['resonance', 'coherence'],
-      mutuality: ['resonance', 'transparency'],
-      novelty: ['agency', 'vitality']
+      'integral-wisdom-cultivation': ['resonant-coherence', 'sacred-reciprocity'],
+      'resonant-coherence': ['integral-wisdom-cultivation', 'pan-sentient-flourishing'],
+      'universal-interconnectedness': ['sacred-reciprocity', 'pan-sentient-flourishing'],
+      'evolutionary-progression': ['infinite-play', 'pan-sentient-flourishing'],
+      'pan-sentient-flourishing': ['universal-interconnectedness', 'resonant-coherence'],
+      'sacred-reciprocity': ['universal-interconnectedness', 'integral-wisdom-cultivation'],
+      'infinite-play': ['evolutionary-progression', 'pan-sentient-flourishing']
     };
     return harmonyRelations[harmony] || [];
   }
@@ -419,7 +419,7 @@ export class WorkCouncilIntegrationBridge {
       updatedBy,
       'collective',
       'celebration',
-      'mutuality',
+      'sacred-reciprocity',
       celebrations[milestone] || `Milestone reached: ${milestone}`
     );
   }

@@ -47,7 +47,7 @@ app.get('/', (req, res) => {
                 <h2>☁️ Cloud Services</h2>
                 <pre>${JSON.stringify(bridgeState.cloud, null, 2)}</pre>
             </div>
-            <p>Field Coherence: ${bridgeState.fieldCoherence}%</p>
+            <p>Field Resonant Resonant Coherence: ${bridgeState.fieldCoherence}%</p>
             <p>Last Sync: ${bridgeState.lastSync || 'Never'}</p>
             <script>setTimeout(() => location.reload(), 5000);</script>
         </body>
@@ -87,7 +87,7 @@ async function syncCycle() {
     await checkCloud();
     bridgeState.lastSync = new Date().toISOString();
     
-    // Update field coherence based on connections
+    // Update field resonant-coherence based on connections
     const localScore = Object.values(bridgeState.local.services).filter(v => v).length;
     const cloudScore = Object.values(bridgeState.cloud.services).filter(v => v).length;
     bridgeState.fieldCoherence = 80 + (localScore + cloudScore) * 2.5;

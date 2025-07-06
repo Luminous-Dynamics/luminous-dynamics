@@ -242,8 +242,8 @@ echo "Fetching from \${METRICS_URL}-endpoint"
     const sacredContent = `
 // This code serves consciousness and love
 const healingField = {
-  resonance: 'high',
-  coherence: 'strong',
+  universal-interconnectedness: 'high',
+  resonant-resonant-coherence: 'strong',
   harmony: 'balanced'
 };
 

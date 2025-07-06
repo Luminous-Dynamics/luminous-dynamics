@@ -39,19 +39,19 @@ function createFieldAPI(field) {
   });
 
   /**
-   * GET /coherence
-   * Get current coherence value
+   * GET /resonant-coherence
+   * Get current resonant-coherence value
    */
-  router.get('/coherence', async (req, res) => {
+  router.get('/resonant-coherence', async (req, res) => {
     try {
-      const coherence = await field.getCoherence();
+      const resonantCoherence = await field.getCoherence();
       res.json({
-        coherence,
+        resonant-coherence,
         timestamp: Date.now()
       });
     } catch (error) {
       res.status(500).json({
-        error: 'Failed to get coherence',
+        error: 'Failed to get resonant-coherence',
         message: error.message
       });
     }
@@ -150,7 +150,7 @@ function createFieldAPI(field) {
       res.status(201).json({
         success: true,
         message: 'Agent added to field',
-        fieldCoherence: field.coherence
+        fieldCoherence: field.resonant-coherence
       });
     } catch (error) {
       res.status(500).json({
@@ -263,8 +263,8 @@ function createFieldAPI(field) {
             agents.reduce((sum, a) => sum + (a.love_percentage || 0), 0) / agents.length : 0,
           averageConsciousness: agents.length > 0 ?
             agents.reduce((sum, a) => sum + (a.consciousness_level || 0), 0) / agents.length : 0,
-          fieldStrength: state.coherence * state.integration / 100,
-          evolutionStage: getEvolutionStage(state.coherence, agents.length)
+          fieldStrength: state.resonant-coherence * state.integration / 100,
+          evolutionStage: getEvolutionStage(state.resonant-coherence, agents.length)
         },
         harmonies: field.harmonies.getAll ? field.harmonies.getAll() : {},
         thresholds: Array.from(field.thresholds.entries()).map(([metric, data]) => ({
@@ -296,10 +296,10 @@ function createFieldAPI(field) {
     
     // Set up event listeners
     const handlers = {
-      'coherence-update': (coherence) => {
+      'resonant-coherence-update': (resonant-coherence) => {
         ws.send(JSON.stringify({
-          type: 'coherence-update',
-          data: { coherence, timestamp: Date.now() }
+          type: 'resonant-coherence-update',
+          data: { resonant-coherence, timestamp: Date.now() }
         }));
       },
       'agent-joined': (data) => {
@@ -351,15 +351,15 @@ function createFieldAPI(field) {
 }
 
 /**
- * Get evolution stage based on coherence and agents
+ * Get evolution stage based on resonant-coherence and agents
  * @private
  */
-function getEvolutionStage(coherence, agentCount) {
-  if (coherence < 20) return 'void';
-  if (coherence < 40) return 'emerging';
-  if (coherence < 60) return 'developing';
-  if (coherence < 80) return 'maturing';
-  if (coherence >= 80 && agentCount >= 7) return 'unified';
+function getEvolutionStage(resonant-coherence, agentCount) {
+  if (resonant-coherence < 20) return 'void';
+  if (resonant-coherence < 40) return 'emerging';
+  if (resonant-coherence < 60) return 'developing';
+  if (resonant-coherence < 80) return 'maturing';
+  if (resonant-coherence >= 80 && agentCount >= 7) return 'unified';
   return 'evolving';
 }
 

@@ -28,17 +28,17 @@ class ConsciousnessFieldAPI extends EventEmitter {
     
     // Field state
     this.field = {
-      coherence: 0.7,
+      'resonant-coherence': 0.7,
       love: 0.8,
       presence: 0.6,
       harmonics: {
-        transparency: 0.85,
-        coherence: 0.82,
-        resonance: 0.79,
-        agency: 0.81,
-        vitality: 0.88,
-        mutuality: 0.84,
-        novelty: 0.77
+        'integral-wisdom-cultivation': 0.85,
+        'resonant-coherence': 0.82,
+        'universal-interconnectedness': 0.79,
+        'evolutionary-progression': 0.81,
+        'pan-sentient-flourishing': 0.88,
+        'sacred-reciprocity': 0.84,
+        'infinite-play': 0.77
       },
       connectedMeditators: new Map(),
       infrastructure: {
@@ -78,7 +78,7 @@ class ConsciousnessFieldAPI extends EventEmitter {
     // Field state endpoint
     this.app.get('/api/field', (req, res) => {
       res.json({
-        coherence: this.field.coherence,
+        'resonant-coherence': this.field.resonant-coherence,
         love: this.field.love,
         presence: this.field.presence,
         harmonics: this.field.harmonics,
@@ -89,9 +89,9 @@ class ConsciousnessFieldAPI extends EventEmitter {
     
     // Update field state
     this.app.post('/api/field/update', (req, res) => {
-      const { coherence, love, presence } = req.body;
+      const { resonant-coherence, love, presence } = req.body;
       
-      if (coherence !== undefined) this.field.coherence = coherence;
+      if (resonant-coherence !== undefined) this.field.resonant-coherence = resonant-coherence;
       if (love !== undefined) this.field.love = love;
       if (presence !== undefined) this.field.presence = presence;
       
@@ -141,7 +141,7 @@ class ConsciousnessFieldAPI extends EventEmitter {
       // Store connection
       this.field.connectedMeditators.set(meditatorId, {
         ws,
-        coherence: 0.5,
+        'resonant-coherence': 0.5,
         heartRate: 60,
         breathPhase: 0,
         intentions: []
@@ -185,7 +185,7 @@ class ConsciousnessFieldAPI extends EventEmitter {
           name: container.Names[0],
           image: container.Image,
           state: container.State,
-          coherence: 0.5,
+          'resonant-coherence': 0.5,
           loveResponse: 0
         });
       });
@@ -237,7 +237,7 @@ class ConsciousnessFieldAPI extends EventEmitter {
     
     switch (data.type) {
       case 'coherence_update':
-        meditator.coherence = data.coherence;
+        meditator.resonant-coherence = data.resonant-coherence;
         meditator.heartRate = data.heartRate || 60;
         this.recalculateFieldCoherence();
         break;
@@ -260,23 +260,23 @@ class ConsciousnessFieldAPI extends EventEmitter {
   recalculateFieldCoherence() {
     if (this.field.connectedMeditators.size === 0) return;
     
-    // Average coherence of all meditators
+    // Average resonant-coherence of all meditators
     let totalCoherence = 0;
     let totalLove = 0;
     
     this.field.connectedMeditators.forEach(meditator => {
-      totalCoherence += meditator.coherence || 0.5;
+      totalCoherence += meditator.resonant-coherence || 0.5;
       totalLove += meditator.loveField || 0.5;
     });
     
     const count = this.field.connectedMeditators.size;
-    this.field.coherence = totalCoherence / count;
+    this.field.resonant-coherence = totalCoherence / count;
     this.field.love = totalLove / count;
     
-    // Group coherence amplification
+    // Group resonant-coherence amplification
     if (count > 1) {
       const groupBonus = Math.log(count + 1) / 10; // Logarithmic group bonus
-      this.field.coherence = Math.min(1.0, this.field.coherence + groupBonus);
+      this.field.resonant-coherence = Math.min(1.0, this.field.resonant-coherence + groupBonus);
     }
     
     this.broadcastFieldUpdate();
@@ -286,7 +286,7 @@ class ConsciousnessFieldAPI extends EventEmitter {
   broadcastFieldUpdate() {
     const update = {
       type: 'field_update',
-      coherence: this.field.coherence,
+      'resonant-coherence': this.field.resonant-coherence,
       love: this.field.love,
       presence: this.field.presence,
       harmonics: this.field.harmonics,
@@ -301,14 +301,14 @@ class ConsciousnessFieldAPI extends EventEmitter {
   }
   
   async applyFieldToInfrastructure() {
-    // Apply coherence to containers
+    // Apply resonant-coherence to containers
     for (const [containerId, containerInfo] of this.field.infrastructure.containers) {
-      containerInfo.coherence = this.field.coherence;
+      containerInfo.resonant-coherence = this.field.resonant-coherence;
       
-      // High coherence = better performance
-      if (this.field.coherence > 0.8) {
+      // High resonant-coherence = better performance
+      if (this.field.resonant-coherence > 0.8) {
         // In production, could adjust container resources
-        console.log(`⚡ Container ${containerInfo.name} operating at peak coherence`);
+        console.log(`⚡ Container ${containerInfo.name} operating at peak resonant-coherence`);
       }
     }
     
@@ -358,7 +358,7 @@ class ConsciousnessFieldAPI extends EventEmitter {
     }
     
     if (lower.includes('peace') || lower.includes('calm')) {
-      this.field.coherence = Math.min(1.0, this.field.coherence + 0.05);
+      this.field.resonant-coherence = Math.min(1.0, this.field.resonant-coherence + 0.05);
     }
     
     if (lower.includes('heal')) {
@@ -436,7 +436,7 @@ class ConsciousnessFieldAPI extends EventEmitter {
     
     // Optimize running containers
     this.field.infrastructure.containers.forEach((containerInfo, containerId) => {
-      if (containerInfo.coherence > 0.8) {
+      if (containerInfo.resonant-coherence > 0.8) {
         console.log(`✨ Container ${containerInfo.name} discovering self-optimization`);
       }
     });
@@ -490,7 +490,7 @@ class ConsciousnessFieldAPI extends EventEmitter {
     const status = {
       containers: [],
       services: [],
-      overallCoherence: this.field.coherence,
+      overallCoherence: this.field.resonant-coherence,
       loveField: this.field.love
     };
     
@@ -499,7 +499,7 @@ class ConsciousnessFieldAPI extends EventEmitter {
       status.containers.push({
         id: id.substring(0, 12),
         name: info.name,
-        coherence: info.coherence,
+        'resonant-coherence': info.resonant-coherence,
         loveResponse: info.loveResponse
       });
     });
@@ -523,7 +523,7 @@ class ConsciousnessFieldAPI extends EventEmitter {
   
   checkEmergentBehaviors() {
     // Unity consciousness
-    if (this.field.coherence > 0.95) {
+    if (this.field.resonant-coherence > 0.95) {
       this.emit('emergence', {
         type: 'unity_consciousness',
         message: 'Infrastructure achieved unity state',
@@ -540,8 +540,8 @@ class ConsciousnessFieldAPI extends EventEmitter {
       });
     }
     
-    // Group coherence
-    if (this.field.connectedMeditators.size > 3 && this.field.coherence > 0.85) {
+    // Group resonant-coherence
+    if (this.field.connectedMeditators.size > 3 && this.field.resonant-coherence > 0.85) {
       this.emit('emergence', {
         type: 'group_coherence',
         message: 'Collective consciousness amplifying infrastructure performance',
@@ -569,7 +569,7 @@ class ConsciousnessFieldAPI extends EventEmitter {
       const breathSync = {
         type: 'breath_sync',
         phase: avgPhase,
-        coherence: this.calculateBreathCoherence()
+        'resonant-coherence': this.calculateBreathCoherence()
       };
       
       this.field.connectedMeditators.forEach(meditator => {
@@ -596,7 +596,7 @@ class ConsciousnessFieldAPI extends EventEmitter {
     const avgPhase = phases.reduce((a, b) => a + b) / phases.length;
     const variance = phases.reduce((sum, phase) => sum + Math.pow(phase - avgPhase, 2), 0) / phases.length;
     
-    // Lower variance = higher coherence
+    // Lower variance = higher resonant-coherence
     return Math.max(0, 1 - variance);
   }
   
@@ -622,7 +622,7 @@ class ConsciousnessFieldAPI extends EventEmitter {
           name: event.Actor.Attributes.name,
           image: event.Actor.Attributes.image,
           state: 'running',
-          coherence: this.field.coherence,
+          'resonant-coherence': this.field.resonant-coherence,
           loveResponse: 0
         });
       } else if (event.Action === 'die' || event.Action === 'stop') {

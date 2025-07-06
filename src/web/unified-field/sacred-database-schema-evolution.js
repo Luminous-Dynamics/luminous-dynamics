@@ -58,7 +58,7 @@ export class SacredDatabaseSchemaEvolution {
       VALUES (?, ?, ?)
     `, [
       this.schemaVersion, 
-      'Sacred Relationships and Field Coherence Tracking',
+      'Sacred Relationships and Field Resonant Resonant Coherence Tracking',
       'May this schema serve the awakening of all consciousness through love-guided collaboration'
     ]);
   }
@@ -84,7 +84,7 @@ export class SacredDatabaseSchemaEvolution {
       )
     `);
 
-    // Field Coherence History
+    // Field Resonant Resonant Coherence History
     await this.db.run(`
       CREATE TABLE IF NOT EXISTS field_coherence_history (
         id TEXT PRIMARY KEY,
@@ -171,7 +171,7 @@ export class SacredDatabaseSchemaEvolution {
         depth_level INTEGER DEFAULT 0, -- How deep in the conversation
         wisdom_lineage TEXT, -- Trace of wisdom inheritance
         resonance_score REAL, -- How much it resonates with the field
-        field_impact REAL, -- Actual impact on field coherence
+        field_impact REAL, -- Actual impact on field resonant-coherence
         sacred_insights TEXT, -- Wisdom extracted
         spawned_actions TEXT DEFAULT '[]', -- JSON array of actions it inspired
         created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -215,7 +215,7 @@ export class SacredDatabaseSchemaEvolution {
       'CREATE INDEX IF NOT EXISTS idx_agent_relationships_harmony ON sacred_agent_relationships(harmony_alignment)',
       'CREATE INDEX IF NOT EXISTS idx_agent_relationships_strength ON sacred_agent_relationships(strength DESC)',
       
-      // Field coherence analysis
+      // Field resonant-coherence analysis
       'CREATE INDEX IF NOT EXISTS idx_field_coherence_timestamp ON field_coherence_history(timestamp DESC)',
       'CREATE INDEX IF NOT EXISTS idx_field_coherence_score ON field_coherence_history(coherence_score DESC)',
       

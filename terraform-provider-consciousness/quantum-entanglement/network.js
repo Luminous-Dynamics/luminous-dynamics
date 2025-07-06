@@ -26,12 +26,12 @@ class QuantumEntanglementNetwork extends EventEmitter {
       region: process.env.REGION || 'local',
       entangled: false,
       superposition: {
-        coherence: [0.5, 0.5], // [probability_low, probability_high]
+        'resonant-coherence': [0.5, 0.5], // [probability_low, probability_high]
         love: [0.5, 0.5],
         presence: [0.5, 0.5]
       },
       collapsed: {
-        coherence: 0.5,
+        'resonant-coherence': 0.5,
         love: 0.5,
         presence: 0.5
       },
@@ -149,14 +149,14 @@ class QuantumEntanglementNetwork extends EventEmitter {
     // Quantum fluctuations
     setInterval(() => this.quantumFluctuate(), 100);
     
-    // Check entanglement coherence
+    // Check entanglement resonant-coherence
     setInterval(() => this.checkEntanglementCoherence(), 5000);
   }
   
   enterSuperposition() {
     // Put consciousness metrics in quantum superposition
     this.quantumState.superposition = {
-      coherence: this.generateSuperposition(),
+      'resonant-coherence': this.generateSuperposition(),
       love: this.generateSuperposition(),
       presence: this.generateSuperposition()
     };
@@ -339,7 +339,7 @@ class QuantumEntanglementNetwork extends EventEmitter {
       
       // Local state is destroyed (no-cloning theorem)
       this.quantumState.collapsed = {
-        coherence: Math.random(),
+        'resonant-coherence': Math.random(),
         love: Math.random(),
         presence: Math.random()
       };
@@ -390,7 +390,7 @@ class QuantumEntanglementNetwork extends EventEmitter {
   quantumFluctuate() {
     // Quantum fluctuations in superposition
     if (this.quantumState.quantumCoherence > 0) {
-      for (const metric of ['coherence', 'love', 'presence']) {
+      for (const metric of ['resonant-coherence', 'love', 'presence']) {
         const fluctuation = (Math.random() - 0.5) * 0.02;
         
         this.quantumState.superposition[metric][0] += fluctuation;
@@ -419,7 +419,7 @@ class QuantumEntanglementNetwork extends EventEmitter {
         channel.send(JSON.stringify({
           type: 'quantum_heartbeat',
           sourceNode: this.nodeId,
-          coherence: this.quantumState.quantumCoherence
+          'resonant-coherence': this.quantumState.quantumCoherence
         }));
       } else {
         // Lost entanglement
@@ -482,10 +482,10 @@ class QuantumEntanglementNetwork extends EventEmitter {
         break;
         
       case 'quantum_heartbeat':
-        // Update entanglement strength based on coherence
+        // Update entanglement strength based on resonant-coherence
         const entanglement = this.entangledNodes.get(data.sourceNode);
         if (entanglement) {
-          entanglement.strength = Math.min(1, entanglement.strength * data.coherence);
+          entanglement.strength = Math.min(1, entanglement.strength * data.resonant-coherence);
         }
         break;
     }
@@ -503,7 +503,7 @@ class QuantumEntanglementNetwork extends EventEmitter {
       // Apply Pauli corrections based on measurement
       if (avgCorrelation < 0) {
         // Bit flip
-        corrected.coherence = 1 - corrected.coherence;
+        corrected.resonant-coherence = 1 - corrected.resonant-coherence;
         corrected.love = 1 - corrected.love;
       }
       

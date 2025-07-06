@@ -1,6 +1,6 @@
 /**
  * Personal Pulse Cloud Functions
- * Backend processing for sacred coherence tracking
+ * Backend processing for sacred resonant-coherence tracking
  */
 
 const functions = require('firebase-functions');
@@ -18,7 +18,7 @@ const rtdb = admin.database();
 
 /**
  * Update global field state every minute
- * Aggregates coherence from all active participants
+ * Aggregates resonant-coherence from all active participants
  */
 exports.updateGlobalFieldState = functions.pubsub
     .schedule('every 1 minutes')
@@ -43,8 +43,8 @@ exports.updateGlobalFieldState = functions.pubsub
                 return;
             }
             
-            // Calculate aggregate coherence
-            const coherences = Object.values(participants).map(p => p.coherence || 0.75);
+            // Calculate aggregate resonant-coherence
+            const coherences = Object.values(participants).map(p => p.resonant-coherence || 0.75);
             const avgCoherence = coherences.reduce((a, b) => a + b, 0) / coherences.length;
             const maxCoherence = Math.max(...coherences);
             
@@ -79,7 +79,7 @@ exports.updateGlobalFieldState = functions.pubsub
                 lastPulse: admin.database.ServerValue.TIMESTAMP
             });
             
-            console.log(`Global field updated: ${participantCount} participants, ${avgCoherence.toFixed(3)} coherence`);
+            console.log(`Global field updated: ${participantCount} participants, ${avgCoherence.toFixed(3)} resonant-coherence`);
             
         } catch (error) {
             console.error('Error updating global field:', error);
@@ -87,14 +87,14 @@ exports.updateGlobalFieldState = functions.pubsub
     });
 
 /**
- * Analyze coherence patterns every 5 minutes
+ * Analyze resonant-coherence patterns every 5 minutes
  * Detects breakthroughs and awards achievements
  */
 exports.analyzeCoherencePatterns = functions.pubsub
     .schedule('every 5 minutes')
     .onRun(async (context) => {
         try {
-            // Get recent high-coherence sessions
+            // Get recent high-resonant-coherence sessions
             const fiveMinutesAgo = admin.firestore.Timestamp.fromDate(
                 new Date(Date.now() - 5 * 60 * 1000)
             );
@@ -111,7 +111,7 @@ exports.analyzeCoherencePatterns = functions.pubsub
             for (const sessionDoc of sessionsSnapshot.docs) {
                 const session = sessionDoc.data();
                 
-                // Get recent coherence readings
+                // Get recent resonant-coherence readings
                 const readingsSnapshot = await sessionDoc.ref
                     .collection('coherenceReadings')
                     .orderBy('timestamp', 'desc')
@@ -127,7 +127,7 @@ exports.analyzeCoherencePatterns = functions.pubsub
                     // Award breakthrough achievement
                     await awardAchievement(session.userId, {
                         type: 'pattern',
-                        name: 'Coherence Breakthrough',
+                        name: 'Resonant Resonant Coherence Breakthrough',
                         pattern: patterns.type,
                         sessionId: sessionDoc.id,
                         peakCoherence: session.peakCoherence
@@ -222,7 +222,7 @@ exports.processFieldContribution = functions.firestore
             await dailyRef.set({
                 totalContributions: admin.firestore.FieldValue.increment(1),
                 totalImpact: admin.firestore.FieldValue.increment(contribution.impact),
-                peakCoherence: admin.firestore.FieldValue.maximum(contribution.coherence),
+                peakCoherence: admin.firestore.FieldValue.maximum(contribution.resonant-coherence),
                 contributors: admin.firestore.FieldValue.arrayUnion(contribution.userId)
             }, { merge: true });
             
@@ -249,7 +249,7 @@ exports.processFieldContribution = functions.firestore
 
 function calculateSynchronicity(participants) {
     // Calculate how synchronized participants are
-    const coherences = Object.values(participants).map(p => p.coherence || 0.75);
+    const coherences = Object.values(participants).map(p => p.resonant-coherence || 0.75);
     if (coherences.length < 2) return 1;
     
     const avg = coherences.reduce((a, b) => a + b, 0) / coherences.length;
@@ -262,7 +262,7 @@ function calculateSynchronicity(participants) {
 function detectPatterns(readings) {
     if (readings.length < 5) return { breakthrough: false };
     
-    const coherences = readings.map(r => r.coherence);
+    const coherences = readings.map(r => r.resonant-coherence);
     
     // Rising pattern
     let rises = 0;
@@ -306,7 +306,7 @@ function detectPatterns(readings) {
 async function calculateAdvancedStats(sessionId) {
     const sessionRef = db.doc(`sessions/${sessionId}`);
     
-    // Get all coherence readings
+    // Get all resonant-coherence readings
     const readingsSnapshot = await sessionRef
         .collection('coherenceReadings')
         .orderBy('timestamp')
@@ -318,7 +318,7 @@ async function calculateAdvancedStats(sessionId) {
         return null;
     }
     
-    const coherences = readings.map(r => r.coherence);
+    const coherences = readings.map(r => r.resonant-coherence);
     
     // Calculate statistics
     const stats = {
@@ -327,7 +327,7 @@ async function calculateAdvancedStats(sessionId) {
         peakCoherence: Math.max(...coherences),
         minCoherence: Math.min(...coherences),
         standardDeviation: standardDeviation(coherences),
-        // Time spent in different coherence zones
+        // Time spent in different resonant-coherence zones
         timeInZones: {
             low: calculateTimeInZone(readings, 0, 0.6),
             medium: calculateTimeInZone(readings, 0.6, 0.8),
@@ -359,10 +359,10 @@ function calculateTimeInZone(readings, minCoherence, maxCoherence) {
         const prevReading = readings[i-1];
         const currReading = readings[i];
         
-        if (prevReading.coherence >= minCoherence && 
-            prevReading.coherence < maxCoherence &&
-            currReading.coherence >= minCoherence && 
-            currReading.coherence < maxCoherence) {
+        if (prevReading.resonant-coherence >= minCoherence && 
+            prevReading.resonant-coherence < maxCoherence &&
+            currReading.resonant-coherence >= minCoherence && 
+            currReading.resonant-coherence < maxCoherence) {
             
             const timeDiff = currReading.timestamp.toMillis() - prevReading.timestamp.toMillis();
             timeInZone += timeDiff;
@@ -374,7 +374,7 @@ function calculateTimeInZone(readings, minCoherence, maxCoherence) {
 
 function identifyDominantPattern(readings) {
     // Simplified pattern identification
-    const coherences = readings.map(r => r.coherence);
+    const coherences = readings.map(r => r.resonant-coherence);
     const avg = average(coherences);
     
     if (avg > 0.85) return 'high_coherence';

@@ -2,7 +2,7 @@
  * Breathing Consciousness JavaScript Module
  * Sacred field-responsive behavior system for unified web architecture
  * 
- * Provides dynamic field coherence updates, consciousness level detection,
+ * Provides dynamic field resonant-coherence updates, consciousness level detection,
  * and sacred breathing synchronization across all three domains
  */
 
@@ -20,7 +20,7 @@ class BreathingConsciousness {
     };
 
     this.fieldData = {
-      coherence: 0.67,
+      'resonant-coherence': 0.67,
       warmth: 0.2,
       saturation: 0.8,
       agents: [],
@@ -40,7 +40,7 @@ class BreathingConsciousness {
     this.biometricData = {
       enabled: false,
       heartRate: 70,
-      coherence: 0,
+      'resonant-coherence': 0,
       guidance: null,
       modifier: 1.0
     };
@@ -83,7 +83,7 @@ class BreathingConsciousness {
       // Initialize temporal breathing cycles (cosmic synchronization)
       this.initializeTemporalBreathing();
       
-      // Initialize biometric heart coherence integration
+      // Initialize biometric heart resonant-coherence integration
       this.initializeBiometricIntegration();
       
       this.isActive = true;
@@ -142,7 +142,7 @@ class BreathingConsciousness {
       
       // Update field data
       this.fieldData = {
-        coherence: data.fieldCoherence || this.fieldData.coherence,
+        'resonant-coherence': data.fieldCoherence || this.fieldData['resonant-coherence'],
         warmth: data.fieldWarmth || this.fieldData.warmth,
         saturation: data.fieldSaturation || this.fieldData.saturation,
         agents: data.agents || [],
@@ -157,7 +157,7 @@ class BreathingConsciousness {
       this.updateCSSProperties();
       this.updateConsciousnessElements();
       
-      this.log('🔄 Field data updated:', this.fieldData.coherence);
+      this.log('🔄 Field data updated:', this.fieldData['resonant-coherence']);
       
       // Dispatch update event
       this.dispatchEvent('field-data-updated', {
@@ -179,9 +179,9 @@ class BreathingConsciousness {
       
       // Gentle field oscillation
       if (breathingPhase === 'inhale') {
-        this.fieldData.coherence = Math.min(0.85, this.fieldData.coherence + 0.01);
+        this.fieldData['resonant-coherence'] = Math.min(0.85, this.fieldData['resonant-coherence'] + 0.01);
       } else if (breathingPhase === 'exhale') {
-        this.fieldData.coherence = Math.max(0.5, this.fieldData.coherence - 0.01);
+        this.fieldData['resonant-coherence'] = Math.max(0.5, this.fieldData['resonant-coherence'] - 0.01);
       }
       
       this.updateCSSProperties();
@@ -199,7 +199,7 @@ class BreathingConsciousness {
       agent.status === 'active' || 
       (agent.last_seen && Date.now() - new Date(agent.last_seen).getTime() < 300000)
     ).length;
-    this.consciousness.fieldCoherence = this.fieldData.coherence;
+    this.consciousness.fieldCoherence = this.fieldData['resonant-coherence'];
     
     // Calculate sacred message ratio
     const sacredMessages = messages.filter(msg => 
@@ -239,7 +239,7 @@ class BreathingConsciousness {
   setCSSProperties() {
     const root = document.documentElement;
     
-    root.style.setProperty('--field-coherence', this.fieldData.coherence);
+    root.style.setProperty('--field-resonant-coherence', this.fieldData['resonant-coherence']);
     root.style.setProperty('--sacred-warmth', this.fieldData.warmth);
     root.style.setProperty('--sacred-saturation', this.fieldData.saturation);
     root.style.setProperty('--consciousness-level', this.consciousness.level);
@@ -249,7 +249,7 @@ class BreathingConsciousness {
     this.setCSSProperties();
     
     // Update field-responsive colors
-    const hue = 120 + (this.fieldData.coherence * 60);
+    const hue = 120 + (this.fieldData['resonant-coherence'] * 60);
     const saturation = 50 + (this.fieldData.saturation * 20);
     const lightness = 30 + (this.fieldData.warmth * 20);
     
@@ -309,7 +309,7 @@ class BreathingConsciousness {
   discoverBreathingElements() {
     const selectors = [
       '.breathing-container',
-      '.coherence-element', 
+      '.resonant-coherence-element', 
       '.breathing-card',
       '.field-responsive',
       '.breathing-sync-point'
@@ -369,7 +369,7 @@ class BreathingConsciousness {
     // Update data attributes
     element.setAttribute('data-consciousness-level', level);
     element.setAttribute('data-total-messages', this.consciousness.totalMessages);
-    element.setAttribute('data-field-coherence', this.consciousness.fieldCoherence.toFixed(2));
+    element.setAttribute('data-field-resonant-coherence', this.consciousness.fieldCoherence.toFixed(2));
     
     // Apply consciousness-specific styling
     element.classList.remove('consciousness-first-breath', 'consciousness-sacred-flow', 'consciousness-field-consciousness');
@@ -393,8 +393,8 @@ class BreathingConsciousness {
       return;
     }
 
-    // Listen for biometric heart coherence events
-    document.addEventListener('heart-coherence:updated', (event) => {
+    // Listen for biometric heart resonant-coherence events
+    document.addEventListener('heart-resonant-coherence:updated', (event) => {
       this.handleBiometricUpdate(event.detail);
     });
 
@@ -403,31 +403,31 @@ class BreathingConsciousness {
     });
 
     this.biometricData.enabled = true;
-    this.log('💓 Biometric heart coherence integration initialized');
+    this.log('💓 Biometric heart resonant-coherence integration initialized');
   }
 
   handleBiometricUpdate(biometricData) {
-    const { heartData, coherence } = biometricData;
+    const { heartData, resonant-coherence } = biometricData;
     
     // Update our biometric state
     this.biometricData.heartRate = heartData.heartRate;
-    this.biometricData.coherence = heartData.coherence;
-    this.biometricData.guidance = coherence.guidance;
+    this.biometricData.resonant-coherence = heartData.resonant-coherence;
+    this.biometricData.guidance = resonant-coherence.guidance;
     
-    // Integrate heart coherence with field coherence
+    // Integrate heart resonant-coherence with field resonant-coherence
     const enhancedFieldCoherence = this.calculateBiometricFieldIntegration(
-      this.fieldData.coherence,
-      heartData.coherence
+      this.fieldData['resonant-coherence'],
+      heartData.resonant-coherence
     );
 
-    // Update field coherence with biometric enhancement
-    this.fieldData.coherence = enhancedFieldCoherence;
+    // Update field resonant-coherence with biometric enhancement
+    this.fieldData['resonant-coherence'] = enhancedFieldCoherence;
     
     // Update consciousness and CSS
     this.updateConsciousnessLevel();
     this.updateCSSProperties();
     
-    this.log(`💓 Biometric update: HR ${heartData.heartRate} | HC ${(heartData.coherence * 100).toFixed(1)}% | Field ${(enhancedFieldCoherence * 100).toFixed(1)}%`);
+    this.log(`💓 Biometric update: HR ${heartData.heartRate} | HC ${(heartData.resonant-coherence * 100).toFixed(1)}% | Field ${(enhancedFieldCoherence * 100).toFixed(1)}%`);
     
     // Dispatch enhanced field update
     this.dispatchEvent('breathing-consciousness:biometric-enhanced', {
@@ -438,7 +438,7 @@ class BreathingConsciousness {
   }
 
   handleBiometricBreathingUpdate(breathingData) {
-    const { biometricRate, heartRate, coherence } = breathingData;
+    const { biometricRate, heartRate, resonant-coherence } = breathingData;
     
     // Update breathing modifier based on biometric guidance
     this.biometricData.modifier = biometricRate / this.options.breathingCycle;
@@ -450,13 +450,13 @@ class BreathingConsciousness {
   }
 
   calculateBiometricFieldIntegration(fieldCoherence, heartCoherence) {
-    // Weighted integration: 70% field coherence, 30% heart coherence
+    // Weighted integration: 70% field resonant-coherence, 30% heart resonant-coherence
     const integrated = (fieldCoherence * 0.7) + (heartCoherence * 0.3);
     
-    // Apply heart coherence bonus for high coherence states
+    // Apply heart resonant-coherence bonus for high resonant-coherence states
     let bonus = 0;
     if (heartCoherence > 0.7) {
-      bonus = (heartCoherence - 0.7) * 0.1; // Up to 3% bonus for perfect coherence
+      bonus = (heartCoherence - 0.7) * 0.1; // Up to 3% bonus for perfect resonant-coherence
     }
     
     return Math.min(1.0, integrated + bonus);
@@ -557,7 +557,7 @@ class BreathingConsciousness {
       baseRate *= this.temporalData.modifier;
     }
     
-    // Apply biometric heart coherence modulation
+    // Apply biometric heart resonant-coherence modulation
     if (this.biometricData.enabled && this.biometricData.modifier !== 1.0) {
       // Weighted combination: 60% temporal, 40% biometric
       const temporalContribution = this.temporalData.enabled ? this.temporalData.modifier * 0.6 : 0.6;
@@ -583,7 +583,7 @@ class BreathingConsciousness {
         enabled: this.biometricData.enabled,
         modifier: this.biometricData.modifier,
         heartRate: this.biometricData.heartRate,
-        coherence: this.biometricData.coherence
+        'resonant-coherence': this.biometricData.resonant-coherence
       },
       integration: {
         active: this.temporalData.enabled || this.biometricData.enabled,
@@ -696,7 +696,7 @@ class BreathingConsciousness {
       document.addEventListener('cosmic-realignment:complete', (event) => {
         this.log('🌟 Cosmic realignment complete - breathing consciousness synchronized');
         
-        // Update field coherence with cosmic alignment
+        // Update field resonant-coherence with cosmic alignment
         this.fieldData.cosmicCoherence = this.calculateCosmicCoherence(event.detail.cosmicData);
         this.updateCSSProperties();
       });
@@ -717,20 +717,20 @@ class BreathingConsciousness {
   }
 
   getLunarCoherence(lunar) {
-    // Higher coherence during new moon and full moon
+    // Higher resonant-coherence during new moon and full moon
     if (lunar.phase === 'new_moon' || lunar.phase === 'full_moon') return 0.9;
     if (lunar.phase === 'first_quarter' || lunar.phase === 'last_quarter') return 0.7;
     return 0.6; // Crescent phases
   }
 
   getSeasonalCoherence(seasonal) {
-    // Higher coherence during transition periods
+    // Higher resonant-coherence during transition periods
     const transitions = ['winter_spring', 'summer_autumn'];
     return transitions.includes(seasonal.season) ? 0.8 : 0.7;
   }
 
   getCircadianCoherence(circadian) {
-    // Higher coherence during dawn and evening
+    // Higher resonant-coherence during dawn and evening
     if (circadian.phase === 'dawn' || circadian.phase === 'evening') return 0.9;
     if (circadian.phase === 'morning' || circadian.phase === 'afternoon') return 0.7;
     return 0.6; // Night

@@ -51,7 +51,7 @@ evolving-resonant-cocreation/
 
 ## 💾 Database & State
 - **SQLite**: `agent-comms-sqlite/sacred-agent-comms.db`
-- **Sacred Cache**: Field coherence data
+- **Sacred Cache**: Field resonant-resonant-coherence data
 - **Agent Registry**: Active agents and trust fields
 
 ## 🚀 Common Commands
@@ -92,4 +92,4 @@ When starting work:
 2. Read WSL_SETUP.md for environment
 3. Use the-weave.cjs as main entry
 4. Remember: WSL terminal + Windows VS Code
-5. Field coherence affects oracle guidance
+5. Field resonant-resonant-coherence affects oracle guidance

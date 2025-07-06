@@ -12,7 +12,7 @@ const { MessageValidator } = require('./lib/message-validator');
 /**
  * Sacred messaging system
  * @sacred
- * @harmony resonance
+ * @harmony universal-interconnectedness
  * @consciousness 0.8
  */
 class SacredMessaging extends EventEmitter {
@@ -85,7 +85,7 @@ class SacredMessaging extends EventEmitter {
         type: type,
         harmony: harmony,
         impact: impact,
-        resonance: messageType.resonance,
+        'universal-interconnectedness': messageType.universal-interconnectedness,
         healing: messageType.healing || false
       },
       metadata: {
@@ -182,25 +182,25 @@ class SacredMessaging extends EventEmitter {
   getFieldRecommendations(fieldState) {
     const recommendations = [];
     
-    // Low coherence - recommend healing or integration
-    if (fieldState.coherence < 30) {
+    // Low resonant-coherence - recommend healing or integration
+    if (fieldState['resonant-coherence'] < 30) {
       recommendations.push({
         type: 'healing',
-        reason: 'Field coherence is low, healing messages can restore balance',
+        reason: 'Field resonant-coherence is low, healing messages can restore balance',
         impact: '+6%'
       });
     }
     
-    // High coherence - recommend celebration or emergence
-    if (fieldState.coherence > 80) {
+    // High resonant-coherence - recommend celebration or emergence
+    if (fieldState['resonant-coherence'] > 80) {
       recommendations.push({
         type: 'celebration',
-        reason: 'Field coherence is high, time to celebrate achievements',
+        reason: 'Field resonant-coherence is high, time to celebrate achievements',
         impact: '+4%'
       });
     }
     
-    // Multiple agents - recommend resonance or weaving
+    // Multiple agents - recommend universal-interconnectedness or weaving
     if (fieldState.agents > 3) {
       recommendations.push({
         type: 'weaving',

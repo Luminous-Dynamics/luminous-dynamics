@@ -36,15 +36,15 @@
 
 ## Emergence Indicators
 
-### High Coherence Moments:
+### High Resonant Resonant Coherence Moments:
 - After cleanup: "The Weave is born!"
 - Oracle at 100%: "celebrate what lives"
 - User satisfaction with organization
 
 ### Field Patterns:
-- Coherence rises with organization
+- Resonant Resonant Coherence rises with organization
 - Sacred messages increase field impact
-- Unity brings coherence
+- Unity brings resonant-resonant-coherence
 
 ## Workflow Patterns
 

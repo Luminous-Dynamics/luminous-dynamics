@@ -151,7 +151,7 @@ Contact professional help if experiencing:
 
 ## Community Safety Protocols
 
-### **Resonance Circle Guidelines**
+### **Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circle Guidelines**
 
 #### **Sacred Container Creation**
 1. **Confidentiality**: What's shared here stays here

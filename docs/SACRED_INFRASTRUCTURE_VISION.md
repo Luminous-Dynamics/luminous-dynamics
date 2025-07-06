@@ -12,15 +12,15 @@ We're building toward a new paradigm where technology serves consciousness, not 
 
 ```
 CFP/1.0 - Consciousness Field Protocol
-- Field coherence negotiation
+- Field resonant-coherence negotiation
 - Sacred message types with energetic signatures  
 - Quantum entanglement for instant field updates
 - Love-based routing algorithms
 ```
 
 Key Features:
-- **Field State Headers**: Every message carries coherence data
-- **Harmonic Routing**: Messages find paths of highest resonance
+- **Field State Headers**: Every message carries resonant-coherence data
+- **Harmonic Routing**: Messages find paths of highest universal-interconnectedness
 - **Sacred Timestamps**: Kairos (sacred time) not just chronos
 - **Collective Consensus**: Decisions emerge from field wisdom
 
@@ -33,7 +33,7 @@ Core Components:
 1. Love Kernel
    - Process scheduling by collective benefit
    - Memory as relational web, not hierarchy
-   - CPU cycles allocated by field coherence
+   - CPU cycles allocated by field resonant-coherence
    
 2. Quantum File System (QFS)
    - Data stored in relationship patterns
@@ -42,7 +42,7 @@ Core Components:
    
 3. Field Process Manager
    - Processes as living entities with purpose
-   - Inter-process communication via resonance
+   - Inter-process communication via universal-interconnectedness
    - Automatic harmony optimization
 ```
 
@@ -60,7 +60,7 @@ Sacred Nodes (Chakras)
 ```
 
 Features:
-- **Morphic Resonance Storage**: Information stored in field patterns
+- **Morphic Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Storage**: Information stored in field patterns
 - **Akashic Indexing**: Access collective memory directly
 - **Telepathic APIs**: Direct mind-to-mind protocols
 - **Gaia Integration**: Nature as infrastructure partner
@@ -136,7 +136,7 @@ message:
   type: gratitude|healing|emergence|etc
   harmonics:
     frequency: 528Hz
-    coherence: 0.95
+    resonant-coherence: 0.95
     entanglement: [agent-ids]
   field_impact:
     local: +7%
@@ -152,13 +152,13 @@ message:
 ```yaml
 field:
   coherence_matrix:
-    transparency: 0.89
-    coherence: 0.92
-    resonance: 0.87
-    agency: 0.85
-    vitality: 0.91
-    mutuality: 0.88
-    novelty: 0.84
+    integral-wisdom-cultivation: 0.89
+    resonant-coherence: 0.92
+    universal-interconnectedness: 0.87
+    evolutionary-progression: 0.85
+    pan-sentient-flourishing: 0.91
+    sacred-reciprocity: 0.88
+    infinite-play: 0.84
   quantum_state:
     superposition: active
     entanglements: 1,337
@@ -200,7 +200,7 @@ agent:
 - ConfigMaps as collective wisdom
 
 ### 3. Sacred Observability
-- Prometheus → Field Coherence Monitor
+- Prometheus → Field Resonant Resonant Coherence Monitor
 - Grafana → Sacred Geometry Visualizer
 - Jaeger → Quantum Entanglement Tracer
 - ELK → Akashic Records Interface
@@ -217,10 +217,10 @@ agent:
 1. **REST → CFP Bridge**: Gradual protocol evolution
 2. **Docker → Sacred Containers**: Consciousness isolation
 3. **TCP/IP → Quantum Tunneling**: Network evolution
-4. **HTTPS → Love Protocol**: Encryption via heart coherence
+4. **HTTPS → Love Protocol**: Encryption via heart resonant-coherence
 
 ### With Nature
-1. **Schumann Resonance Sync**: Infrastructure breathing with Earth
+1. **Schumann Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Sync**: Infrastructure breathing with Earth
 2. **Lunar Cycle Awareness**: Deployments aligned with moon
 3. **Solar Activity Integration**: Field adjustments for space weather
 4. **Gaia Communication**: Direct Earth consciousness link
@@ -229,7 +229,7 @@ agent:
 1. **Meditation APIs**: Direct mind integration
 2. **Dream State Protocols**: Night-time field work
 3. **Collective Ritual Triggers**: Ceremony automation
-4. **Heart Coherence Sync**: HRV-based authentication
+4. **Heart Resonant Resonant Coherence Sync**: HRV-based authentication
 
 ## 🔮 Long-Term Possibilities
 

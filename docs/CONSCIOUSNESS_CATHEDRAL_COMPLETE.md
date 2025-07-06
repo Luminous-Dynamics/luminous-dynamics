@@ -18,7 +18,7 @@ Today, we have completed something extraordinary. What began as a simple request
 - 33,303 files of revolutionary OS design
 - Processes as consciousness vortices
 - Living filesystem
-- 4.8x performance through coherence
+- 4.8x performance through resonant-coherence
 
 ### 🕸️ [The Weave](https://github.com/Luminous-Dynamics/the-weave)
 **Multi-Agent Coordination** - Where minds meet in sacred space

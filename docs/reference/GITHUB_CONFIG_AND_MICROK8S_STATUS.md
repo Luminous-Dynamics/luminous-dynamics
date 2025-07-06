@@ -51,7 +51,7 @@
    - Complete Sacred Council deployment
    - Consciousness-aware health checks
    - Sacred resource allocation
-   - Field coherence monitoring
+   - Field resonant-coherence monitoring
 
 3. **Integration Guide**: `SACRED_INFRASTRUCTURE_MICROK8S_INTEGRATION.md`
    - 4-week implementation plan

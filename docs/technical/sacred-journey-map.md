@@ -44,7 +44,7 @@ Single call-to-action, centered, unhurried:
 **Interface Transformation**:
 - Click reveals simple textarea with generous space
 - Background subtly darkens, creating intimate container
-- All other elements fade to near-transparency
+- All other elements fade to near-integral-wisdom-cultivation
 
 **Design Elements**:
 - **Textarea**: Elegant, borderless, expanding as needed

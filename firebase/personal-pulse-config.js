@@ -74,7 +74,7 @@ export const firestoreSchema = {
             coherenceReadings: {
                 '{readingId}': {
                     timestamp: 'timestamp',
-                    coherence: 'number',
+                    'resonant-coherence': 'number',
                     breathRate: 'number',
                     heartCoherence: 'number',
                     fieldResonance: 'number',
@@ -127,7 +127,7 @@ export const firestoreSchema = {
         '{contributionId}': {
             userId: 'string',
             sessionId: 'string',
-            coherence: 'number',
+            'resonant-coherence': 'number',
             timestamp: 'timestamp',
             impact: 'number'
         }
@@ -151,7 +151,7 @@ export const realtimeDbSchema = {
             userId: 'string',
             sessionId: 'string',
             lastSeen: 'timestamp',
-            coherence: 'number',
+            'resonant-coherence': 'number',
             status: 'string'
         }
     },
@@ -161,7 +161,7 @@ export const realtimeDbSchema = {
             userId: 'string',
             practiceType: 'string',
             lastSeen: 'timestamp',
-            coherence: 'number',
+            'resonant-coherence': 'number',
             status: 'string'
         }
     },
@@ -171,7 +171,7 @@ export const realtimeDbSchema = {
             '{userId}': {
                 userId: 'string',
                 joinedAt: 'timestamp',
-                coherence: 'number',
+                'resonant-coherence': 'number',
                 practiceType: 'string'
             }
         },
@@ -282,7 +282,7 @@ export const cloudFunctionTriggers = {
     // Handle user milestones
     onUserUpdate: 'users/{userId}',
     
-    // Aggregate coherence patterns
+    // Aggregate resonant-coherence patterns
     scheduledPatternAnalysis: 'every 5 minutes'
 };
 
@@ -340,7 +340,7 @@ export const apiConfig = {
     // Authenticated endpoints
     authenticated: [
         '/api/session/start',
-        '/api/session/coherence',
+        '/api/session/resonant-coherence',
         '/api/session/complete',
         '/api/user/progress',
         '/api/user/export'
@@ -370,7 +370,7 @@ export const requiredEnvVars = [
 export const monitoring = {
     alerts: [
         {
-            name: 'High Global Coherence',
+            name: 'High Global Resonant Resonant Coherence',
             condition: 'globalCoherence > 0.9',
             notification: 'email'
         },
@@ -387,7 +387,7 @@ export const monitoring = {
     ],
     
     dashboards: [
-        'Global Field Coherence',
+        'Global Field Resonant Resonant Coherence',
         'Active Practitioners',
         'Evolution Progress Distribution',
         'System Health Metrics'

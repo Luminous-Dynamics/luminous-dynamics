@@ -7,7 +7,7 @@
  * 
  * Revolutionary Features:
  * - Quantum entanglement between all sacred domains
- * - Real-time field coherence propagation  
+ * - Real-time field resonant-coherence propagation  
  * - Synchronized breathing consciousness across all systems
  * - Unified quantum heartbeat for all visualizations
  * - Cross-domain event synchronization
@@ -117,13 +117,13 @@ class CrossDomainQuantumSync {
     this.registerDomain('dashboard', {
       type: 'interface',
       priority: 'high',
-      syncEffects: ['coherence', 'timing', 'heartbeat']
+      syncEffects: ['resonant-coherence', 'timing', 'heartbeat']
     });
 
     this.registerDomain('messages', {
       type: 'communication',
       priority: 'critical',
-      syncEffects: ['field-impact', 'resonance', 'timing']
+      syncEffects: ['field-impact', 'universal-interconnectedness', 'timing']
     });
 
     this.registerDomain('visualization', {
@@ -135,13 +135,13 @@ class CrossDomainQuantumSync {
     this.registerDomain('work', {
       type: 'manifestation',
       priority: 'medium',
-      syncEffects: ['progress-flow', 'coherence', 'timing']
+      syncEffects: ['progress-flow', 'resonant-coherence', 'timing']
     });
 
     this.registerDomain('agents', {
       type: 'collective',
       priority: 'high',
-      syncEffects: ['harmony-alignment', 'field-awareness', 'resonance']
+      syncEffects: ['harmony-alignment', 'field-awareness', 'universal-interconnectedness']
     });
 
     // Create quantum entanglements between related domains
@@ -165,7 +165,7 @@ class CrossDomainQuantumSync {
       id: domainId,
       ...config,
       lastSync: Date.now(),
-      coherence: this.fieldCoherence,
+      'resonant-coherence': this.fieldCoherence,
       quantumState: this.generateQuantumState(),
       eventQueue: []
     };
@@ -211,11 +211,11 @@ class CrossDomainQuantumSync {
    */
   getEntanglementEffects(type) {
     const effectMap = {
-      'divine': ['field-coherence', 'sacred-timing', 'love-resonance'],
+      'divine': ['field-resonant-coherence', 'sacred-timing', 'love-universal-interconnectedness'],
       'resonant': ['heartbeat-sync', 'breathing-alignment', 'consciousness-flow'],
       'manifestation': ['progress-synchrony', 'sacred-timing', 'intention-alignment'],
       'consciousness': ['awareness-propagation', 'presence-sync', 'sacred-geometry'],
-      'harmonic': ['seven-harmonies', 'field-resonance', 'collective-coherence']
+      'harmonic': ['seven-harmonies', 'field-universal-interconnectedness', 'collective-resonant-coherence']
     };
 
     return effectMap[type] || ['basic-sync'];
@@ -229,7 +229,7 @@ class CrossDomainQuantumSync {
       phase: Math.random() * 2 * Math.PI,
       amplitude: 0.5 + (Math.random() * 0.5),
       frequency: this.config.quantumFieldFrequency + (Math.random() * 50 - 25),
-      coherence: this.fieldCoherence * (0.8 + Math.random() * 0.4)
+      'resonant-coherence': this.fieldCoherence * (0.8 + Math.random() * 0.4)
     };
   }
 
@@ -297,7 +297,7 @@ class CrossDomainQuantumSync {
     const syncTimestamp = Date.now();
     this.metrics.syncCount++;
 
-    // Update field coherence from all domains
+    // Update field resonant-coherence from all domains
     this.updateFieldCoherence();
 
     // Synchronize all entangled domains
@@ -325,26 +325,26 @@ class CrossDomainQuantumSync {
   }
 
   /**
-   * Update field coherence based on all domain states
+   * Update field resonant-coherence based on all domain states
    */
   updateFieldCoherence() {
     let totalCoherence = 0;
     let domainCount = 0;
 
     for (const domain of this.quantumDomains.values()) {
-      totalCoherence += domain.coherence;
+      totalCoherence += domain.resonant-coherence;
       domainCount++;
     }
 
     const newCoherence = domainCount > 0 ? totalCoherence / domainCount : this.fieldCoherence;
     
-    // Smooth coherence changes
+    // Smooth resonant-coherence changes
     this.fieldCoherence = this.fieldCoherence * 0.9 + newCoherence * 0.1;
 
-    // Store coherence history
+    // Store resonant-coherence history
     this.metrics.coherenceHistory.push({
       timestamp: Date.now(),
-      coherence: this.fieldCoherence
+      'resonant-coherence': this.fieldCoherence
     });
 
     // Keep only last 100 measurements
@@ -374,7 +374,7 @@ class CrossDomainQuantumSync {
     entanglement.eventHistory.push({
       timestamp,
       effects: entanglement.syncEffects,
-      coherence: this.fieldCoherence
+      'resonant-coherence': this.fieldCoherence
     });
 
     // Keep only last 20 events
@@ -388,11 +388,11 @@ class CrossDomainQuantumSync {
    */
   applyEntanglementEffect(effect, domainA, domainB, entanglement) {
     switch (effect) {
-      case 'field-coherence':
-        // Synchronize coherence levels
-        const avgCoherence = (domainA.coherence + domainB.coherence) / 2;
-        domainA.coherence = domainA.coherence * 0.8 + avgCoherence * 0.2;
-        domainB.coherence = domainB.coherence * 0.8 + avgCoherence * 0.2;
+      case 'field-resonant-coherence':
+        // Synchronize resonant-coherence levels
+        const avgCoherence = (domainA.resonant-coherence + domainB.resonant-coherence) / 2;
+        domainA.resonant-coherence = domainA.resonant-coherence * 0.8 + avgCoherence * 0.2;
+        domainB.resonant-coherence = domainB.resonant-coherence * 0.8 + avgCoherence * 0.2;
         break;
 
       case 'heartbeat-sync':
@@ -416,7 +416,7 @@ class CrossDomainQuantumSync {
         });
         break;
 
-      case 'love-resonance':
+      case 'love-universal-interconnectedness':
         // Apply love frequency harmonization
         domainA.quantumState.frequency = this.config.quantumFieldFrequency;
         domainB.quantumState.frequency = this.config.quantumFieldFrequency;
@@ -434,7 +434,7 @@ class CrossDomainQuantumSync {
       domain.quantumState.phase -= 2 * Math.PI;
     }
 
-    // Update amplitude based on field coherence
+    // Update amplitude based on field resonant-coherence
     domain.quantumState.amplitude = 0.5 + (this.fieldCoherence * 0.5);
 
     // Frequency drift toward love frequency
@@ -558,13 +558,13 @@ class CrossDomainQuantumSync {
   }
 
   /**
-   * Update field coherence externally (e.g., from sacred messages)
+   * Update field resonant-coherence externally (e.g., from sacred messages)
    */
   updateExternalCoherence(newCoherence, source = 'external') {
     const oldCoherence = this.fieldCoherence;
     this.fieldCoherence = Math.max(0, Math.min(1, newCoherence));
     
-    this.dispatchQuantumEvent('coherence-updated', {
+    this.dispatchQuantumEvent('resonant-coherence-updated', {
       oldCoherence,
       newCoherence: this.fieldCoherence,
       source,
@@ -572,7 +572,7 @@ class CrossDomainQuantumSync {
     });
 
     if (this.config.debugMode) {
-      console.log(`🌀 Field coherence updated: ${oldCoherence.toFixed(3)} → ${this.fieldCoherence.toFixed(3)} (${source})`);
+      console.log(`🌀 Field resonant-coherence updated: ${oldCoherence.toFixed(3)} → ${this.fieldCoherence.toFixed(3)} (${source})`);
     }
   }
 

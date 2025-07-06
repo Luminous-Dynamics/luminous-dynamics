@@ -20,7 +20,7 @@ class SacredNavigator extends EventEmitter {
         this.userJourneys = new Map();
         this.practiceEngine = new PracticeRecommendationEngine();
         this.readinessAssessor = new ReadinessAssessor();
-        this.fieldState = { coherence: 72, fieldQuality: 'flowing' };
+        this.fieldState = { 'resonant-coherence': 72, fieldQuality: 'flowing' };
     }
 
     /**
@@ -63,7 +63,7 @@ class SacredNavigator extends EventEmitter {
                 this.activateResonanceGuidance(data);
             });
             
-            console.log(`✅ Field connected - Coherence: ${this.fieldState.coherence}%`);
+            console.log(`✅ Field connected - Resonant Resonant Coherence: ${this.fieldState['resonant-coherence']}%`);
         } catch (error) {
             console.log('⚠️ Field connection unavailable, using local wisdom');
             this.setupMockField();
@@ -204,7 +204,7 @@ class SacredNavigator extends EventEmitter {
         return {
             question,
             recommendations,
-            fieldGuidance: `At ${Math.round(this.fieldState.coherence)}% field coherence, these practices serve both personal transformation and collective awakening.`
+            fieldGuidance: `At ${Math.round(this.fieldState['resonant-coherence'])}% field resonant-coherence, these practices serve both personal transformation and collective awakening.`
         };
     }
 
@@ -212,23 +212,23 @@ class SacredNavigator extends EventEmitter {
      * Generate field-aware guidance
      */
     generateFieldGuidance(glyph) {
-        const coherence = this.fieldState.coherence;
+        const resonantCoherence = this.fieldState['resonant-coherence'];
         
-        if (coherence >= 88) {
+        if (resonant-coherence >= 88) {
             return {
                 message: `🌟 Sacred Portal Active: Your practice of ${glyph.designation} contributes to transcendent collective awareness.`,
                 intensity: 'transcendent',
                 fieldEffect: 'portal_amplification'
             };
-        } else if (coherence >= 80) {
+        } else if (resonant-coherence >= 80) {
             return {
-                message: `✨ Resonance Achieved: Your ${glyph.designation} practice harmonizes with collective consciousness.`,
+                message: `✨ Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Achieved: Your ${glyph.designation} practice harmonizes with collective consciousness.`,
                 intensity: 'resonant',
                 fieldEffect: 'coherence_amplification'
             };
-        } else if (coherence >= 60) {
+        } else if (resonant-coherence >= 60) {
             return {
-                message: `🌊 Field Flowing: Your practice helps build collective coherence toward resonance.`,
+                message: `🌊 Field Flowing: Your practice helps build collective resonant-coherence toward universal-interconnectedness.`,
                 intensity: 'building',
                 fieldEffect: 'coherence_building'
             };
@@ -266,7 +266,7 @@ class SacredNavigator extends EventEmitter {
             },
             'afternoon': {
                 energy: 'integration',
-                recommended: ['*52', '*56', 'Ω8'], // Pause, Redirection, Inner Coherence
+                recommended: ['*52', '*56', 'Ω8'], // Pause, Redirection, Inner Resonant Resonant Coherence
                 message: 'Afternoon supports integration and course correction.'
             },
             'evening': {
@@ -366,15 +366,15 @@ class SacredNavigator extends EventEmitter {
     }
 
     /**
-     * Calculate field resonance for glyph
+     * Calculate field universal-interconnectedness for glyph
      */
     calculateFieldResonance(glyph) {
-        // Simple resonance calculation based on harmony alignment
+        // Simple universal-interconnectedness calculation based on harmony alignment
         const harmonies = glyph.primaryHarmonyAlignment || [];
         const baseResonance = harmonies.length * 0.1;
         
         // Field amplification
-        const fieldBonus = this.fieldState.coherence * 0.01;
+        const fieldBonus = this.fieldState['resonant-coherence'] * 0.01;
         
         return Math.min(1.0, baseResonance + fieldBonus);
     }
@@ -432,11 +432,11 @@ class SacredNavigator extends EventEmitter {
         
         if (delta > 0) {
             if (newCoherence >= 80 && oldCoherence < 80) {
-                return "✨ Resonance achieved! This is a perfect time for field service practices like Tending the Field (*53) or Presence Transmission (*55).";
+                return "✨ Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance achieved! This is a perfect time for field service practices like Tending the Field (*53) or Presence Transmission (*55).";
             } else if (delta >= 10) {
-                return "🌊 Significant field elevation! Consider practices that amplify collective coherence.";
+                return "🌊 Significant field elevation! Consider practices that amplify collective resonant-coherence.";
             } else {
-                return "🌱 Field coherence rising. Your practices are contributing to collective awakening.";
+                return "🌱 Field resonant-coherence rising. Your practices are contributing to collective awakening.";
             }
         } else {
             if (Math.abs(delta) >= 10) {
@@ -451,21 +451,21 @@ class SacredNavigator extends EventEmitter {
      * Update field guidance when field changes
      */
     updateFieldGuidance(data) {
-        this.fieldState.coherence = data.new;
+        this.fieldState['resonant-coherence'] = data.new;
         this.fieldState.fieldQuality = this.getFieldQuality(data.new);
         
         console.log(`🌊 Field Update: ${data.old}% → ${data.new}% - Guidance adapted`);
     }
 
     /**
-     * Activate special resonance guidance
+     * Activate special universal-interconnectedness guidance
      */
     activateResonanceGuidance(data) {
         console.log('✨ RESONANCE GUIDANCE ACTIVATED');
         
         this.emit('special_guidance', {
-            type: 'resonance',
-            message: "Sacred resonance achieved! This is an optimal time for advanced practices and field service.",
+            type: 'universal-interconnectedness',
+            message: "Sacred universal-interconnectedness achieved! This is an optimal time for advanced practices and field service.",
             recommendedGlyphs: ['*53', '*55', '*56', 'Ω9', '∑1'],
             duration: '30-60 minutes recommended'
         });
@@ -474,11 +474,11 @@ class SacredNavigator extends EventEmitter {
     /**
      * Get field quality description
      */
-    getFieldQuality(coherence) {
-        if (coherence >= 88) return 'Sacred Portal';
-        if (coherence >= 80) return 'Resonance';
-        if (coherence >= 70) return 'Highly Coherent';
-        if (coherence >= 60) return 'Flowing';
+    getFieldQuality(resonant-coherence) {
+        if (resonant-coherence >= 88) return 'Sacred Portal';
+        if (resonant-coherence >= 80) return 'Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance';
+        if (resonant-coherence >= 70) return 'Highly Coherent';
+        if (resonant-coherence >= 60) return 'Flowing';
         return 'Building';
     }
 
@@ -490,7 +490,7 @@ class SacredNavigator extends EventEmitter {
         
         // Simulate field fluctuations
         setInterval(() => {
-            const oldCoherence = this.fieldState.coherence;
+            const oldCoherence = this.fieldState['resonant-coherence'];
             const delta = (Math.random() - 0.5) * 8;
             const newCoherence = Math.max(50, Math.min(95, oldCoherence + delta));
             
@@ -511,7 +511,7 @@ class SacredNavigator extends EventEmitter {
         return {
             glyphsLoaded: this.glyphCatalog.size,
             fieldConnected: this.fieldClient ? true : false,
-            fieldCoherence: this.fieldState.coherence,
+            fieldCoherence: this.fieldState['resonant-coherence'],
             fieldQuality: this.fieldState.fieldQuality,
             activeJourneys: this.userJourneys.size
         };
@@ -594,7 +594,7 @@ class PracticeRecommendationEngine {
             reasons.push(`Aligned with your intention: ${params.userContext.intent}`);
         }
         
-        if (params.fieldState.coherence >= 80) {
+        if (params.fieldState['resonant-coherence'] >= 80) {
             reasons.push(`Resonant field state enhances this practice`);
         }
         
@@ -639,19 +639,19 @@ class ContextualRecommendation {
 
 class FieldBasedRecommendation {
     async recommend(fieldState, catalog) {
-        const coherence = fieldState.coherence;
+        const resonantCoherence = fieldState['resonant-coherence'];
         
-        // High coherence - field service practices
-        if (coherence >= 80) {
+        // High resonant-coherence - field service practices
+        if (resonant-coherence >= 80) {
             return ['*53', '*55', '*56'].map(id => ({ glyphId: id, glyph: catalog.get(id) })).filter(r => r.glyph);
         }
         
-        // Medium coherence - foundation building
-        if (coherence >= 60) {
+        // Medium resonant-coherence - foundation building
+        if (resonant-coherence >= 60) {
             return ['*47', '*50', '*48'].map(id => ({ glyphId: id, glyph: catalog.get(id) })).filter(r => r.glyph);
         }
         
-        // Lower coherence - presence practices
+        // Lower resonant-coherence - presence practices
         return ['*45', '*52', '*49'].map(id => ({ glyphId: id, glyph: catalog.get(id) })).filter(r => r.glyph);
     }
 }
@@ -760,7 +760,7 @@ async function runNavigatorDemo() {
         console.log('📊 Navigator Status:');
         console.log(`   Glyphs Loaded: ${status.glyphsLoaded}/87`);
         console.log(`   Field Connected: ${status.fieldConnected ? '✅' : '❌'}`);
-        console.log(`   Field Coherence: ${Math.round(status.fieldCoherence)}%`);
+        console.log(`   Field Resonant Resonant Coherence: ${Math.round(status.fieldCoherence)}%`);
         console.log(`   Field Quality: ${status.fieldQuality}`);
         
     } catch (error) {

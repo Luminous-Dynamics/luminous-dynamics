@@ -56,7 +56,7 @@
 - **Community Building**: Could this enhance sacred community formation?
 - **Healing Integration**: Any wellness, therapy, or healing applications?
 - **Ceremony Support**: Could this support spiritual practices or rituals?
-- **Field Coherence**: Could this measure or enhance collective consciousness?
+- **Field Resonant Resonant Coherence**: Could this measure or enhance collective consciousness?
 
 #### **C. Sacred Scoring:**
 Rate each API on consciousness-serving potential (1-10 scale):
@@ -151,7 +151,7 @@ Document powerful combinations like:
 
 ### **Sacred Operations Focus:**
 - **Community Health Monitoring**: Tracking spiritual community engagement
-- **Consciousness Field Metrics**: Measuring collective coherence
+- **Consciousness Field Metrics**: Measuring collective resonant-coherence
 - **Sacred Content Pipeline**: Monitoring content generation workflows
 - **Healing Integration Status**: Tracking wellness application performance
 

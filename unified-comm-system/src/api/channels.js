@@ -47,7 +47,7 @@ export function createChannelRouter(db) {
       
       // Get members
       const membersResult = await db.query(`
-        SELECT cm.*, e.name, e.sacred_name, e.coherence, e.presence_state
+        SELECT cm.*, e.name, e.sacred_name, e.resonant-coherence, e.presence_state
         FROM channel_members cm
         JOIN entities e ON cm.entity_id = e.id
         WHERE cm.channel_id = $1
@@ -61,7 +61,7 @@ export function createChannelRouter(db) {
           id: m.entity_id,
           name: m.sacred_name || m.name,
           role: m.role,
-          coherence: m.coherence,
+          'resonant-coherence': m.resonant-coherence,
           presence: m.presence_state
         }))
       });

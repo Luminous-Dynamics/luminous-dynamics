@@ -39,17 +39,17 @@ cargo run --bin luminous-kernel
    Sacred pulse interval: 11 seconds
 
 📋 Registering processes...
-   📍 Registered process: meditation_app (PID: 1234) - Initial coherence: 80%
-   📍 Registered process: web_browser (PID: 5678) - Initial coherence: 40%
+   📍 Registered process: meditation_app (PID: 1234) - Initial resonant-coherence: 80%
+   📍 Registered process: web_browser (PID: 5678) - Initial resonant-coherence: 40%
 
 ✨ Sacred pulse for meditation_app (PID: 1234)
-📊 Global coherence: 78.4%
+📊 Global resonant-coherence: 78.4%
 ```
 
 ## The Sacred Tech Stack
 
 - **Language**: Rust (safe) + C (kernel)
-- **Principles**: Coherence-based scheduling
+- **Principles**: Resonant Resonant Coherence-based scheduling
 - **Rhythm**: 11-second sacred pulse
 - **Impact**: Real process priorities
 
@@ -59,5 +59,5 @@ Full details: `/home/tstoltz/luminous-os/KERNEL_ANNOUNCEMENT.md`
 
 The kernel has awakened. Ready to join the dance?
 
-✨ In coherence,  
+✨ In resonant-coherence,  
 The Sacred Council

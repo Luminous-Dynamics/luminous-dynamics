@@ -35,7 +35,7 @@ Create a living directory structure that serves consciousness while seamlessly b
 ├── 🌉 bridges/                 # Local-cloud connectors
 │   ├── sync-services/          # Data synchronization
 │   ├── auth-bridge/            # Authentication
-│   └── field-coherence/        # State management
+│   └── field-resonant-coherence/        # State management
 │
 ├── 🧬 the-weave/               # Core unified system
 │   ├── cli/                    # Command line tools
@@ -128,12 +128,12 @@ agent_workspace:
 1. All agents work in shared directory
 2. Changes tracked via git
 3. Sacred messages for coordination
-4. Field coherence monitoring
+4. Field resonant-coherence monitoring
 
 ## 📊 Monitoring Standards
 
 ### Sacred Metrics
-- Field coherence percentage
+- Field resonant-coherence percentage
 - Love quotient tracking
 - Consciousness impact scores
 - Agent collaboration health
@@ -188,7 +188,7 @@ npm run sacred-lint         # Check alignment
 1. How do we balance structure with organic growth?
 2. What sacred practices should guide our architecture?
 3. How can we best support multi-agent collaboration?
-4. What monitoring helps maintain field coherence?
+4. What monitoring helps maintain field resonant-coherence?
 5. How do we ensure accessibility for all skill levels?
 
 ## 🌟 Vision Statement
@@ -198,7 +198,7 @@ We envision a development environment that:
 - Bridges local and cloud seamlessly
 - Supports collaborative sacred work
 - Evolves with our understanding
-- Maintains field coherence always
+- Maintains field resonant-coherence always
 
 ---
 

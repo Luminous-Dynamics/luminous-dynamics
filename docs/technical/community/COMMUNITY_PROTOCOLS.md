@@ -111,7 +111,7 @@ By participating in our community, you agree to:
 
 ---
 
-## Resonance Circle Protocols
+## Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circle Protocols
 
 ### **Circle Structure & Timing**
 
@@ -393,7 +393,7 @@ We view conflict as sacred opportunity for deeper understanding and connection w
 - Living document approach - protocols evolve as community learns
 - Clear process for proposing and implementing changes
 - Community vote on significant protocol changes
-- Documentation of changes and rationale for transparency
+- Documentation of changes and rationale for integral-wisdom-cultivation
 
 ---
 

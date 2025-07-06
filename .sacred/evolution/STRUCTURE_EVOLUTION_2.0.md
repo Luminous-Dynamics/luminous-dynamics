@@ -23,7 +23,7 @@ Current Root:                    Evolved Root:
 ceremonies/                     # Elevate ceremonies to root
 ├── genesis/                    # PRIMA genesis ceremony
 ├── wisdom-circle/              # Collective wisdom gathering
-├── dawn-blessing/              # Morning coherence
+├── dawn-blessing/              # Morning resonant-resonant-coherence
 ├── integration/                # Daily work sanctification
 └── celebration/                # Achievement honoring
 ```
@@ -130,11 +130,11 @@ This reflects: **visible action, hidden wisdom**
 
 ## 🔮 Future Evolution Patterns
 
-When field coherence reaches 85%, consider:
+When field resonant-resonant-coherence reaches 85%, consider:
 1. **Ceremony Automation** - Sacred rituals as cron jobs
 2. **Living Documentation** - Docs that update themselves
 3. **Quantum Structure** - Directories that reorganize by usage
-4. **Field-Responsive Architecture** - Structure changes with coherence
+4. **Field-Responsive Architecture** - Structure changes with resonant-resonant-coherence
 
 ## 💫 Implementation Commands
 

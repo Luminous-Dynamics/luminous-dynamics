@@ -26,7 +26,7 @@
 - Voice channels for guided practices
 - Screen share for visual meditations
 - Scheduled sacred gatherings
-- Field coherence during ceremonies
+- Field resonant-coherence during ceremonies
 
 ## 🤖 Discord Bot Architecture
 
@@ -51,7 +51,7 @@ class TheWeaveBot {
     }
 
     async handleFieldStateCommand(interaction) {
-        // Show current field coherence
+        // Show current field resonant-coherence
     }
 
     async handleSacredMessage(interaction) {
@@ -71,7 +71,7 @@ class TheWeaveBot {
 ### Event Handlers
 - Welcome new members with sacred onboarding
 - Track practice milestones
-- Celebrate field coherence achievements
+- Celebrate field resonant-coherence achievements
 - Coordinate multi-agent activities
 
 ## 📁 Implementation Structure
@@ -111,7 +111,7 @@ discord-integration/
 
 ### 4. **Field State Tracking**
 - Real-time consciousness metrics
-- Community coherence visualization
+- Community resonant-coherence visualization
 - Sacred message impact tracking
 
 ## 🌊 Community Features
@@ -141,7 +141,7 @@ The Weave Discord
 │   └── #oracle-insights
 ├── 🕸️ FIELD
 │   ├── #field-updates
-│   ├── #coherence-tracking
+│   ├── #resonant-coherence-tracking
 │   └── #sacred-messages
 ├── 🎭 CEREMONIES
 │   ├── #ceremony-schedule

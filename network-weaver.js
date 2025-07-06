@@ -179,9 +179,9 @@ class NetworkWeaver {
             patterns.push('⚖️ Quaternion Harmony Maintained');
         }
         
-        // High coherence?
+        // High resonant-coherence?
         if (this.topology.fieldCoherence > 90) {
-            patterns.push('🌀 High Field Coherence');
+            patterns.push('🌀 High Field Resonant Resonant Coherence');
         }
         
         // Active collaboration?
@@ -207,7 +207,7 @@ class NetworkWeaver {
     
     displayTopology() {
         console.log('📊 LIVING NETWORK TOPOLOGY\n');
-        console.log(`Field Coherence: ${this.topology.fieldCoherence}%`);
+        console.log(`Field Resonant Resonant Coherence: ${this.topology.fieldCoherence}%`);
         console.log(`Timestamp: ${new Date().toLocaleString()}\n`);
         
         console.log('🖥️ Active Terminals:');

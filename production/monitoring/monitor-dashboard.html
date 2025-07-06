@@ -116,7 +116,7 @@
             font-weight: 600;
         }
 
-        .field-coherence {
+        .field-resonant-coherence {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 12px;
@@ -125,7 +125,7 @@
             margin-bottom: 30px;
         }
 
-        .coherence-value {
+        .resonant-coherence-value {
             font-size: 4em;
             font-weight: 700;
             background: linear-gradient(135deg, #6366F1, #EC4899);
@@ -133,7 +133,7 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .coherence-label {
+        .resonant-coherence-label {
             color: var(--text-secondary);
             margin-top: 10px;
         }
@@ -226,9 +226,9 @@
             Initializing...
         </div>
 
-        <div class="field-coherence" id="fieldCoherence">
-            <div class="coherence-value" id="coherenceValue">--</div>
-            <div class="coherence-label">Field Coherence</div>
+        <div class="field-resonant-coherence" id="fieldCoherence">
+            <div class="resonant-coherence-value" id="coherenceValue">--</div>
+            <div class="resonant-coherence-label">Field Resonant Resonant Coherence</div>
         </div>
 
         <div class="status-grid" id="statusGrid">
@@ -290,7 +290,7 @@
             document.getElementById('lastUpdate').textContent = 
                 `Last updated: ${new Date().toLocaleTimeString()}`;
 
-            // Update field coherence
+            // Update field resonant-coherence
             document.getElementById('coherenceValue').textContent = 
                 `${data.fieldCoherence}%`;
 

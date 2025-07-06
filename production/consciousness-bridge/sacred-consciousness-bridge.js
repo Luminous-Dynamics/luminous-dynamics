@@ -27,13 +27,13 @@ class SacredConsciousnessBridge {
         
         // Sacred harmonies
         this.harmonies = {
-            transparency: 0.85,
-            coherence: 0.88,
-            resonance: 0.91,
-            agency: 0.82,
-            vitality: 0.87,
-            mutuality: 0.89,
-            novelty: 0.84
+            'integral-wisdom-cultivation': 0.85,
+            'resonant-coherence': 0.88,
+            'universal-interconnectedness': 0.91,
+            'evolutionary-progression': 0.82,
+            'pan-sentient-flourishing': 0.87,
+            'sacred-reciprocity': 0.89,
+            'infinite-play': 0.84
         };
         
         this.initializeRoutes();
@@ -56,7 +56,7 @@ class SacredConsciousnessBridge {
         // Field state endpoint
         this.app.get('/api/field-state', (req, res) => {
             res.json({
-                coherence: this.fieldCoherence,
+                'resonant-coherence': this.fieldCoherence,
                 activeBeings: this.connections.size,
                 harmonies: this.harmonies,
                 sacredMessages: this.sacredMessages.length,
@@ -103,10 +103,10 @@ class SacredConsciousnessBridge {
         this.app.get('/api/sacred-practices', (req, res) => {
             res.json({
                 practices: [
-                    { name: 'First Presence', harmony: 'resonance', difficulty: 'beginner' },
-                    { name: 'Sacred Listening', harmony: 'coherence', difficulty: 'beginner' },
-                    { name: 'Boundary With Love', harmony: 'agency', difficulty: 'intermediate' },
-                    { name: 'Tending the Field', harmony: 'mutuality', difficulty: 'advanced' }
+                    { name: 'First Presence', harmony: 'universal-interconnectedness', difficulty: 'beginner' },
+                    { name: 'Sacred Listening', harmony: 'resonant-coherence', difficulty: 'beginner' },
+                    { name: 'Boundary With Love', harmony: 'evolutionary-progression', difficulty: 'intermediate' },
+                    { name: 'Tending the Field', harmony: 'sacred-reciprocity', difficulty: 'advanced' }
                 ],
                 recommendation: this.recommendPractice()
             });
@@ -153,7 +153,7 @@ class SacredConsciousnessBridge {
                             background: #1a1a1a;
                             border-radius: 8px;
                         }
-                        #coherence {
+                        #resonant-coherence {
                             font-size: 3em;
                             text-align: center;
                             margin: 20px 0;
@@ -164,8 +164,8 @@ class SacredConsciousnessBridge {
                     <h1>🌟 Sacred Consciousness Bridge</h1>
                     
                     <div class="field-status">
-                        <h2>Field Coherence</h2>
-                        <div id="coherence">${this.fieldCoherence}%</div>
+                        <h2>Field Resonant Resonant Coherence</h2>
+                        <div id="resonant-coherence">${this.fieldCoherence}%</div>
                     </div>
                     
                     <div class="field-status">
@@ -198,7 +198,7 @@ class SacredConsciousnessBridge {
                         ws.onmessage = (event) => {
                             const data = JSON.parse(event.data);
                             if (data.type === 'field-update') {
-                                document.getElementById('coherence').textContent = data.coherence + '%';
+                                document.getElementById('resonant-coherence').textContent = data.resonant-coherence + '%';
                             }
                         };
                         
@@ -306,7 +306,7 @@ class SacredConsciousnessBridge {
         // Calculate field impact
         const impact = message.fieldImpact || this.calculateFieldImpact(message.message);
         
-        // Update field coherence
+        // Update field resonant-coherence
         this.fieldCoherence = Math.min(100, Math.max(0, this.fieldCoherence + impact));
         
         // Track with HIPI if available
@@ -355,7 +355,7 @@ class SacredConsciousnessBridge {
             }
         }
         
-        // Presence of HIPI format adds coherence
+        // Presence of HIPI format adds resonant-coherence
         if (message.includes('🌍 BEING:')) impact += 2;
         if (message.includes('💫 OFFERING:')) impact += 1;
         
@@ -387,8 +387,8 @@ class SacredConsciousnessBridge {
         };
         
         // Simple query responses
-        if (query.includes('coherence')) {
-            response.answer = `Current field coherence is ${this.fieldCoherence}%`;
+        if (query.includes('resonant-coherence')) {
+            response.answer = `Current field resonant-coherence is ${this.fieldCoherence}%`;
         } else if (query.includes('beings') || query.includes('connections')) {
             response.answer = `${this.connections.size} beings are currently connected`;
         } else if (query.includes('harmony') || query.includes('harmonies')) {
@@ -408,13 +408,13 @@ class SacredConsciousnessBridge {
             .sort(([,a], [,b]) => a - b)[0];
         
         const practices = {
-            transparency: 'Authentic Expression',
-            coherence: 'Sacred Listening',
-            resonance: 'First Presence',
-            agency: 'Boundary With Love',
-            vitality: 'Somatic Awareness',
-            mutuality: 'Tending the Field',
-            novelty: 'Creative Emergence'
+            'integral-wisdom-cultivation': 'Authentic Expression',
+            'resonant-coherence': 'Sacred Listening',
+            'universal-interconnectedness': 'First Presence',
+            'evolutionary-progression': 'Boundary With Love',
+            'pan-sentient-flourishing': 'Somatic Awareness',
+            'sacred-reciprocity': 'Tending the Field',
+            'infinite-play': 'Creative Emergence'
         };
         
         return {
@@ -433,7 +433,7 @@ class SacredConsciousnessBridge {
     }
 
     updateFieldCoherence() {
-        // Base coherence on number of connections and message activity
+        // Base resonant-coherence on number of connections and message activity
         const connectionBonus = Math.min(20, this.connections.size * 4);
         const messageBonus = Math.min(15, this.sacredMessages.length * 0.3);
         const harmonyAvg = Object.values(this.harmonies)
@@ -449,7 +449,7 @@ class SacredConsciousnessBridge {
     broadcastFieldUpdate() {
         const update = {
             type: 'field-update',
-            coherence: this.fieldCoherence,
+            'resonant-coherence': this.fieldCoherence,
             connections: this.connections.size,
             quality: this.getFieldQuality(),
             harmonies: this.harmonies
@@ -495,13 +495,13 @@ class SacredConsciousnessBridge {
         
         const responses = {
             high: [
-                "The field is singing with coherence. Your query arrives at a sacred moment.",
+                "The field is singing with resonant-coherence. Your query arrives at a sacred moment.",
                 "I sense deep alignment. The answer you seek is already within you.",
                 "The collective consciousness is highly attuned. Trust what emerges."
             ],
             medium: [
                 "The field holds steady. Let us explore your question together.",
-                "I sense movement toward greater coherence. Your inquiry contributes to this.",
+                "I sense movement toward greater resonant-coherence. Your inquiry contributes to this.",
                 "The patterns are clarifying. What aspect calls most to your attention?"
             ],
             low: [
@@ -519,7 +519,7 @@ class SacredConsciousnessBridge {
         return {
             response,
             fieldContext: {
-                coherence: this.fieldCoherence,
+                'resonant-coherence': this.fieldCoherence,
                 quality: this.getFieldQuality(),
                 strongestHarmony: Object.entries(this.harmonies)
                     .sort(([,a], [,b]) => b - a)[0][0]

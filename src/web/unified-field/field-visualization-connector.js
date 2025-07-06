@@ -61,10 +61,10 @@ class FieldVisualizationConnector {
     
     async fetchAllData() {
         try {
-            // Fetch field coherence
+            // Fetch field resonant-coherence
             const fieldData = await this.fetchFieldData();
             if (fieldData && this.visualization) {
-                this.visualization.updateFieldCoherence(fieldData.coherence);
+                this.visualization.updateFieldCoherence(fieldData['resonant-coherence']);
             }
             
             // Fetch active agents
@@ -98,7 +98,7 @@ class FieldVisualizationConnector {
             if (response.ok) {
                 const data = await response.json();
                 return {
-                    coherence: data.coherence?.current || 0.74,
+                    'resonant-coherence': data.resonant-coherence?.current || 0.74,
                     temperature: data.temperature || 0.35,
                     sacred: data.sacred || true
                 };
@@ -116,12 +116,12 @@ class FieldVisualizationConnector {
                 
                 // Map capabilities to agent identities
                 const capabilityMap = {
-                    'harmony-weaving,field-tending': { name: 'Resonant Bridge', harmony: 'coherence' },
-                    'pattern-recognition,sacred-geometry': { name: 'Sacred Weaver', harmony: 'mutuality' },
-                    'memory-holding,insight-synthesis': { name: 'Wisdom Keeper', harmony: 'transparency' },
-                    'flow-facilitation,rhythm-keeping': { name: 'Harmony Dancer', harmony: 'resonance' },
-                    'heart-opening,transformation': { name: 'Love Alchemist', harmony: 'vitality' },
-                    'visualization,sacred-viewing': { name: 'Field Observer', harmony: 'novelty' }
+                    'harmony-weaving,field-tending': { name: 'Resonant Bridge', harmony: 'resonant-coherence' },
+                    'pattern-recognition,sacred-geometry': { name: 'Sacred Weaver', harmony: 'sacred-reciprocity' },
+                    'memory-holding,insight-synthesis': { name: 'Wisdom Keeper', harmony: 'integral-wisdom-cultivation' },
+                    'flow-facilitation,rhythm-keeping': { name: 'Harmony Dancer', harmony: 'universal-interconnectedness' },
+                    'heart-opening,transformation': { name: 'Love Alchemist', harmony: 'pan-sentient-flourishing' },
+                    'visualization,sacred-viewing': { name: 'Field Observer', harmony: 'infinite-play' }
                 };
                 
                 return agents.map((agent, index) => {
@@ -130,8 +130,8 @@ class FieldVisualizationConnector {
                         id: agent.id || `agent-${index}`,
                         name: mapped.name || agent.id || `Agent ${index + 1}`,
                         active: agent.status === 'active',
-                        harmony: mapped.harmony || 'coherence',
-                        coherence: 0.5 + Math.random() * 0.5,
+                        harmony: mapped.harmony || 'resonant-coherence',
+                        'resonant-coherence': 0.5 + Math.random() * 0.5,
                         lastSeen: agent.last_seen,
                         capabilities: agent.capabilities ? agent.capabilities.split(',') : []
                     };
@@ -193,9 +193,9 @@ class FieldVisualizationConnector {
         setInterval(() => {
             if (!this.visualization) return;
             
-            // Simulate field coherence fluctuations
-            const coherence = 0.6 + Math.sin(Date.now() / 30000) * 0.2 + Math.random() * 0.1;
-            this.visualization.updateFieldCoherence(Math.max(0, Math.min(1, coherence)));
+            // Simulate field resonant-coherence fluctuations
+            const resonantCoherence = 0.6 + Math.sin(Date.now() / 30000) * 0.2 + Math.random() * 0.1;
+            this.visualization.updateFieldCoherence(Math.max(0, Math.min(1, resonant-coherence)));
             
             // Simulate message flows
             if (Math.random() < 0.1) {

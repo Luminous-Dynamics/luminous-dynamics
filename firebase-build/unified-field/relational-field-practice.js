@@ -3,7 +3,7 @@
  * 
  * Transforms individual glyph practices into relational field cultivation.
  * Based on the field dynamics from the original mystical glyphs, these 
- * practices create shared coherence between beings.
+ * practices create shared resonant-coherence between beings.
  * 
  * "The field is more intelligent than any individual participant.
  *  When we practice together, something greater emerges."
@@ -90,7 +90,7 @@ class RelationalFieldPractice {
                                 "Gradually expand awareness to include the whole circle",
                                 "Notice how the group's presence supports your own settling",
                                 "Find the collective breathing rhythm without forcing",
-                                "Rest in the field of group coherence",
+                                "Rest in the field of group resonant-coherence",
                                 "Share one-word check-ins about the group field quality"
                             ],
                             participants: "5-20 people",
@@ -108,7 +108,7 @@ class RelationalFieldPractice {
                             ],
                             participants: "7-30 people",
                             duration: "15-30 minutes",
-                            fieldDynamic: "Group coherence that exceeds the sum of individual presence"
+                            fieldDynamic: "Group resonant-coherence that exceeds the sum of individual presence"
                         }
                     },
                     
@@ -126,7 +126,7 @@ class RelationalFieldPractice {
                             ],
                             ages: "All ages (adapted for attention spans)",
                             duration: "2-5 minutes",
-                            benefits: "Creates family coherence and reduces reactivity"
+                            benefits: "Creates family resonant-coherence and reduces reactivity"
                         },
                         
                         developing: {
@@ -199,7 +199,7 @@ class RelationalFieldPractice {
                                 "Check in throughout interaction: 'Are we living our intention?'"
                             ],
                             duration: "8-12 minutes",
-                            intention: "Discovering how conscious intention creates relational coherence"
+                            intention: "Discovering how conscious intention creates relational resonant-coherence"
                         },
                         
                         mystical: {
@@ -487,7 +487,7 @@ class RelationalFieldPractice {
                 },
                 
                 communityGroups: {
-                    focus: "Collective wisdom and social coherence",
+                    focus: "Collective wisdom and social resonant-coherence",
                     considerations: "Diverse backgrounds, varying comfort with intimacy, group dynamics",
                     adaptations: "Inclusive language, multiple entry points, clear facilitation"
                 }

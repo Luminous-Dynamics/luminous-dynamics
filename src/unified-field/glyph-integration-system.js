@@ -165,7 +165,7 @@ class GlyphIntegrationSystem {
                     variations: this.generateVariations(glyphData)
                 },
                 
-                resonance: {
+                'universal-interconnectedness': {
                     relatedGlyphs: glyphData.harmonicLineage?.precursor ? [glyphData.harmonicLineage.precursor] : [],
                     complementaryGlyphs: glyphData.harmonicLineage?.sibling || [],
                     advancementGlyphs: glyphData.harmonicLineage?.evolution ? [glyphData.harmonicLineage.evolution] : []
@@ -186,17 +186,17 @@ class GlyphIntegrationSystem {
     extractHarmony(glyphData) {
         // Map primary harmony alignment to simplified harmony names
         const harmonyMap = {
-            'Transparency': 'transparency',
-            'Coherence': 'coherence',
-            'Resonance': 'resonance',
-            'Agency': 'agency',
-            'Vitality': 'vitality',
-            'Mutuality': 'mutuality',
-            'Novelty': 'novelty'
+            'Integral Wisdom Cultivation': 'integral-wisdom-cultivation',
+            'Resonant Resonant Coherence': 'resonant-coherence',
+            'Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance': 'universal-interconnectedness',
+            'Evolutionary Progression & Purposeful Unfolding': 'evolutionary-progression',
+            'Pan-Sentient Flourishing': 'pan-sentient-flourishing',
+            'Sacred Reciprocity': 'sacred-reciprocity',
+            'Infinite Play & Creative Emergence': 'infinite-play'
         };
         
         const primaryHarmony = glyphData.primaryHarmonyAlignment?.primary;
-        return harmonyMap[primaryHarmony] || 'resonance';
+        return harmonyMap[primaryHarmony] || 'universal-interconnectedness';
     }
 
     calculateDifficulty(glyphData) {
@@ -372,7 +372,7 @@ class GlyphIntegrationSystem {
             fullName: `${metaData.metaGlyphId}: ${metaData.name}`,
             category: 'meta',
             
-            // Meta-glyphs typically work with coherence or resonance
+            // Meta-glyphs typically work with resonant-coherence or universal-interconnectedness
             harmony: this.extractMetaHarmony(metaData),
             
             // Meta-glyphs are advanced by nature
@@ -400,7 +400,7 @@ class GlyphIntegrationSystem {
                     variations: this.generateMetaVariations(metaData)
                 },
                 
-                resonance: {
+                'universal-interconnectedness': {
                     relatedGlyphs: metaData.constituentGlyphs || [],
                     complementaryGlyphs: [],
                     advancementGlyphs: []
@@ -424,11 +424,11 @@ class GlyphIntegrationSystem {
 
     extractMetaHarmony(metaData) {
         // Determine harmony based on spiral arc or field effect
-        if (metaData.spiralArc?.includes('Coherence')) return 'coherence';
-        if (metaData.spiralArc?.includes('Resonance')) return 'resonance';
-        if (metaData.fieldIntelligence?.includes('trust')) return 'transparency';
-        if (metaData.fieldIntelligence?.includes('agency')) return 'agency';
-        return 'coherence'; // Default for meta-glyphs
+        if (metaData.spiralArc?.includes('Resonant Resonant Coherence')) return 'resonant-coherence';
+        if (metaData.spiralArc?.includes('Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance')) return 'universal-interconnectedness';
+        if (metaData.fieldIntelligence?.includes('trust')) return 'integral-wisdom-cultivation';
+        if (metaData.fieldIntelligence?.includes('evolutionary-progression')) return 'evolutionary-progression';
+        return 'resonant-coherence'; // Default for meta-glyphs
     }
 
     extractMetaShadow(metaData) {
@@ -538,13 +538,13 @@ class GlyphIntegrationSystem {
                         <label>Filter by Harmony:</label>
                         <select class="harmony-select">
                             <option value="all">All Harmonies</option>
-                            <option value="transparency">Transparency</option>
-                            <option value="coherence">Coherence</option>
-                            <option value="resonance">Resonance</option>
-                            <option value="agency">Agency</option>
-                            <option value="vitality">Vitality</option>
-                            <option value="mutuality">Mutuality</option>
-                            <option value="novelty">Novelty</option>
+                            <option value="integral-wisdom-cultivation">Integral Wisdom Cultivation</option>
+                            <option value="resonant-coherence">Resonant Resonant Coherence</option>
+                            <option value="universal-interconnectedness">Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance</option>
+                            <option value="evolutionary-progression">Evolutionary Progression & Purposeful Unfolding</option>
+                            <option value="pan-sentient-flourishing">Pan-Sentient Flourishing</option>
+                            <option value="sacred-reciprocity">Sacred Reciprocity</option>
+                            <option value="infinite-play">Infinite Play & Creative Emergence</option>
                         </select>
                     </div>
                 </div>

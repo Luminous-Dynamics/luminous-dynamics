@@ -18,7 +18,7 @@ class SacredAwarenessDetector extends SafetyDetector {
     // Sacred patterns to encourage
     this.sacredPatterns = [
       /\b(love|consciousness|sacred|wisdom|presence)\b/gi,
-      /\b(harmony|resonance|coherence|unity)\b/gi,
+      /\b(harmony|universal-interconnectedness|resonant-resonant-coherence|unity)\b/gi,
       /\b(healing|transformation|evolution|growth)\b/gi
     ];
     

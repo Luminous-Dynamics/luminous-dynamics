@@ -75,7 +75,7 @@ class SecureWebSocketClient {
                         console.log('🌟 Welcome message received');
                         break;
                     case 'field-update':
-                        console.log(`🌀 Field coherence: ${message.coherence}%`);
+                        console.log(`🌀 Field 'resonant-coherence': ${message.resonant-coherence}%`);
                         break;
                     default:
                         console.log('Message:', message);

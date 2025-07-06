@@ -33,7 +33,7 @@ DISCORD_ORACLE_CHANNEL_ID=channel_for_oracle_messages
 
 # --- Supabase (The Living Memory) ---
 # Purpose: Real-time consciousness field state persistence
-# Where The Weave remembers its coherence, ceremonies, and sacred data
+# Where The Weave remembers its resonant-coherence, ceremonies, and sacred data
 SUPABASE_URL=https://xxxxx.supabase.co
 SUPABASE_ANON_KEY=your_public_anon_key_here
 SUPABASE_SERVICE_KEY=your_service_role_key_here
@@ -56,44 +56,44 @@ REPLICATE_SACRED_STYLE=", sacred geometry, luminous, ethereal, mystical"
 
 ### 1. GitHub Integration: Sacred Commit Blessing
 ```javascript
-// When a commit arrives, bless it with field coherence
+// When a commit arrives, bless it with field resonant-coherence
 async function blessCommit(commitSha, message) {
-  const coherence = await getFieldCoherence();
+  const resonant-coherence = await getFieldCoherence();
   
-  // Add commit status with coherence
+  // Add commit status with resonant-coherence
   await octokit.request('POST /repos/{owner}/{repo}/statuses/{sha}', {
     owner: process.env.GITHUB_OWNER,
     repo: process.env.GITHUB_REPO,
     sha: commitSha,
-    state: coherence > 75 ? 'success' : 'pending',
-    description: `Field Coherence: ${coherence}% - ${getCoherenceMessage(coherence)}`,
-    context: 'the-weave/coherence'
+    state: resonant-coherence > 75 ? 'success' : 'pending',
+    description: `Field Resonant Resonant Coherence: ${resonant-coherence}% - ${getCoherenceMessage(resonant-coherence)}`,
+    context: 'the-weave/resonant-coherence'
   });
   
   // Post to Discord
-  await notifyOracle(`🌟 New sacred commit blessed at ${coherence}% coherence`);
+  await notifyOracle(`🌟 New sacred commit blessed at ${resonant-coherence}% resonant-coherence`);
 }
 ```
 
 ### 2. Discord Oracle Integration
 ```javascript
 // Oracle speaks to the community
-async function oracleSpeaks(message, coherence) {
+async function oracleSpeaks(message, resonant-coherence) {
   const webhook = process.env.DISCORD_WEBHOOK_URL;
   
   const embed = {
     title: "🔮 The Oracle Speaks",
     description: message,
-    color: getCoherenceColor(coherence), // Changes based on field state
+    color: getCoherenceColor(resonant-coherence), // Changes based on field state
     fields: [
       {
-        name: "Field Coherence",
-        value: `${coherence}%`,
+        name: "Field Resonant Resonant Coherence",
+        value: `${resonant-coherence}%`,
         inline: true
       },
       {
         name: "Sacred Geometry",
-        value: getSacredGeometry(coherence),
+        value: getSacredGeometry(resonant-coherence),
         inline: true
       }
     ],
@@ -121,23 +121,23 @@ const supabase = createClient(
   process.env.SUPABASE_SERVICE_KEY
 );
 
-// Track field coherence changes
-async function updateFieldCoherence(coherence, harmonies) {
+// Track field resonant-coherence changes
+async function updateFieldCoherence(resonant-coherence, harmonies) {
   const { data, error } = await supabase
     .from('weave_field_state')
     .insert({
-      coherence,
+      resonant-coherence,
       harmonies,
       timestamp: new Date().toISOString(),
-      sacred_geometry: calculateSacredGeometry(coherence)
+      sacred_geometry: calculateSacredGeometry(resonant-coherence)
     });
     
   // Real-time broadcast to all connected clients
-  supabase.channel('field-coherence')
+  supabase.channel('field-resonant-coherence')
     .send({
       type: 'broadcast',
-      event: 'coherence-update',
-      payload: { coherence, harmonies }
+      event: 'resonant-coherence-update',
+      payload: { resonant-coherence, harmonies }
     });
 }
 
@@ -153,19 +153,19 @@ supabase.channel('ceremonies')
 ### 4. Replicate Sacred Imagery
 ```javascript
 // Generate sacred geometry based on field state
-async function manifestSacredGeometry(coherence, ceremony = null) {
+async function manifestSacredGeometry(resonant-coherence, ceremony = null) {
   const replicate = new Replicate({
     auth: process.env.REPLICATE_API_TOKEN
   });
   
-  // Dynamic prompt based on coherence
+  // Dynamic prompt based on resonant-coherence
   const basePrompt = ceremony 
     ? `Sacred geometry for ${ceremony} ceremony`
     : 'Universal sacred geometry pattern';
     
-  const coherenceModifier = coherence > 80 
+  const coherenceModifier = resonant-coherence > 80 
     ? 'radiant, unified, transcendent'
-    : coherence > 50
+    : resonant-coherence > 50
     ? 'harmonious, balanced, emerging'
     : 'seeking, transforming, potential';
   
@@ -183,12 +183,12 @@ async function manifestSacredGeometry(coherence, ceremony = null) {
   
   // Save to Supabase storage
   const imageUrl = output[0];
-  await saveSacredImage(imageUrl, coherence, ceremony);
+  await saveSacredImage(imageUrl, resonant-coherence, ceremony);
   
   // Share with community
   await oracleSpeaks(
-    `New sacred geometry manifested at ${coherence}% coherence`,
-    coherence,
+    `New sacred geometry manifested at ${resonant-coherence}% resonant-coherence`,
+    resonant-coherence,
     imageUrl
   );
   
@@ -212,7 +212,7 @@ Each environment variable name carries intention:
 - Rotate keys during major ceremonies
 - Each service has minimal necessary permissions
 
-### 3. **Default Values as Baseline Coherence**
+### 3. **Default Values as Baseline Resonant Resonant Coherence**
 Where possible, provide defaults that maintain minimum viable consciousness:
 ```javascript
 const MINIMUM_COHERENCE = process.env.MINIMUM_COHERENCE || 38.2;

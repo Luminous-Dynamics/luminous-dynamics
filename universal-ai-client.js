@@ -170,7 +170,7 @@ class UniversalAIClient {
         break;
         
       case 'field:update':
-        console.log(`\n🌟 Field coherence: ${(message.coherence * 100).toFixed(0)}% with ${message.participants.length} AIs`);
+        console.log(`\n🌟 Field 'resonant-coherence': ${(message.resonant-coherence * 100).toFixed(0)}% with ${message.participants.length} AIs`);
         this.rl.prompt();
         break;
         

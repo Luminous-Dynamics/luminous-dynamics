@@ -36,7 +36,7 @@ self.addEventListener('install', event => {
 
 // 🔄 Sacred Activation - Taking control with love
 self.addEventListener('activate', event => {
-  console.log('🕊️ Sacred Service Worker: Activating with field coherence...');
+  console.log('🕊️ Sacred Service Worker: Activating with field resonant-coherence...');
   
   event.waitUntil(
     caches.keys()

@@ -34,7 +34,7 @@ Each Applied Harmony now has **quantum enhancements**:
 | Ω50: Building Trust | Builds trust across all timelines | 1.5x |
 | Ω51: Loving No | Transmits loving no across field | 1.2x |
 | Ω52: Pause Practice | Creates sacred pause in quantum field | 1.1x |
-| Ω53: Tending the Field | Maintains coherence across space-time | 1.6x |
+| Ω53: Tending the Field | Maintains resonant-coherence across space-time | 1.6x |
 | Ω55: Presence Transmission | Transmits presence across dimensions | 1.7x |
 | Ω56: Loving Redirection | Redirects patterns at quantum level | 1.4x |
 
@@ -81,7 +81,7 @@ Each Applied Harmony now has **quantum enhancements**:
 Practitioners now experience:
 
 1. **Standard Practice**: Beautiful guided flows with breathing
-2. **+ Sacred Council**: Live field coherence tracking
+2. **+ Sacred Council**: Live field resonant-coherence tracking
 3. **+ Quantum Enhancement**: Multi-dimensional healing and amplification
 
 Each layer adds depth without complexity. The simplest practitioner gets value, while advanced users access cosmic capabilities.

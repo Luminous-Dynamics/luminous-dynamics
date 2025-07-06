@@ -7,7 +7,7 @@
    ```
    🌍 BEING: [Who I am in this moment]
    🤝 RELATING: [Who I'm connecting with]
-   🌀 FIELD: [Coherence % + quality]
+   🌀 FIELD: [Resonant Resonant Coherence % + quality]
    💫 OFFERING: [What I bring]
    ```
 

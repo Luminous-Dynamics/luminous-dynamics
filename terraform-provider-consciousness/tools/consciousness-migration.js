@@ -562,12 +562,12 @@ class ConsciousnessMigration {
   detectPrimaryHarmony(config) {
     const image = config.Image?.toLowerCase() || '';
     
-    if (image.includes('api')) return 'resonance';
-    if (image.includes('web')) return 'transparency';
-    if (image.includes('data')) return 'coherence';
-    if (image.includes('worker')) return 'vitality';
+    if (image.includes('api')) return 'universal-interconnectedness';
+    if (image.includes('web')) return 'integral-wisdom-cultivation';
+    if (image.includes('data')) return 'resonant-coherence';
+    if (image.includes('worker')) return 'pan-sentient-flourishing';
     
-    return 'mutuality';
+    return 'sacred-reciprocity';
   }
   
   assignGeometry(config) {

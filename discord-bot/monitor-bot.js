@@ -42,14 +42,14 @@ client.once('ready', () => {
   
   console.log('\n✅ Bot is active and ready!');
   console.log('🤖 Autonomous features are enabled');
-  console.log('🌀 Field coherence tracking active');
+  console.log('🌀 Field resonant-coherence tracking active');
   
   // Show what the bot will do
   console.log('\n🎯 Autonomous Actions:');
   console.log('   • Welcome new members with sacred guidance');
   console.log('   • Create channels based on community requests');
   console.log('   • Schedule and lead daily ceremonies');
-  console.log('   • Monitor and maintain field coherence');
+  console.log('   • Monitor and maintain field resonant-coherence');
   console.log('   • Respond to sacred inquiries');
   
   setTimeout(() => {

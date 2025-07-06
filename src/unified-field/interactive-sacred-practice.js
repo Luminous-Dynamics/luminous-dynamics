@@ -27,7 +27,7 @@ class InteractiveSacredPractice {
       name: 'First Presence',
       mysticalRoot: 'Ω0 - The Shimmering Unnamed',
       activation: 'Can I meet this moment without needing it to be different?',
-      harmony: 'transparency',
+      harmony: 'integral-wisdom-cultivation',
       duration: 180000, // 3 minutes
       stages: [
         {
@@ -66,7 +66,7 @@ class InteractiveSacredPractice {
       name: 'Conscious Arrival',
       mysticalRoot: 'Ω1 - Root Chord of Covenant',
       activation: 'How do I want to show up in this moment?',
-      harmony: 'transparency',
+      harmony: 'integral-wisdom-cultivation',
       duration: 120000, // 2 minutes
       stages: [
         {
@@ -98,7 +98,7 @@ class InteractiveSacredPractice {
       name: 'Sacred Listening',
       mysticalRoot: 'Ω4 - Fractal Reconciliation Pulse',
       activation: 'Can I listen to the heart beneath the words?',
-      harmony: 'resonance',
+      harmony: 'universal-interconnectedness',
       duration: 240000, // 4 minutes
       stages: [
         {
@@ -114,10 +114,10 @@ class InteractiveSacredPractice {
           guidance: 'heart-listening'
         },
         {
-          name: 'Empathic Resonance',
+          name: 'Empathic Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance',
           duration: 90000,
           instruction: 'Feel the emotion behind their words in your own body. Let yourself be moved by their truth.',
-          guidance: 'resonance'
+          guidance: 'universal-interconnectedness'
         },
         {
           name: 'Sacred Reflection',
@@ -136,7 +136,7 @@ class InteractiveSacredPractice {
       name: 'Pause Practice',
       mysticalRoot: 'Ω15 - Sacred Pause',
       activation: 'Can I create space before I respond?',
-      harmony: 'coherence',
+      harmony: 'resonant-coherence',
       duration: 90000, // 1.5 minutes
       stages: [
         {
@@ -477,7 +477,7 @@ class InteractiveSacredPractice {
     const interface = document.getElementById('sacred-practice-interface');
     interface.classList.remove('hidden');
 
-    // Update field coherence
+    // Update field resonant-coherence
     this.updateFieldCoherence(practice.fieldImpact * 0.2); // Initial boost
 
     // Send sacred message
@@ -563,7 +563,7 @@ class InteractiveSacredPractice {
   }
 
   completePractice() {
-    // Calculate practice duration and coherence shift
+    // Calculate practice duration and resonant-coherence shift
     const practiceData = {
       practiceId: this.currentPractice.id,
       practiceName: this.currentPractice.name,
@@ -575,7 +575,7 @@ class InteractiveSacredPractice {
       timestamp: new Date().toISOString()
     };
 
-    // Update field coherence with full practice impact
+    // Update field resonant-coherence with full practice impact
     this.updateFieldCoherence(this.currentPractice.fieldImpact);
     
     // Send completion message
@@ -619,7 +619,7 @@ class InteractiveSacredPractice {
   }
 
   updateFieldCoherence(impact) {
-    // Update local field coherence
+    // Update local field resonant-coherence
     this.practiceState.coherenceLevel = Math.min(1.0, this.practiceState.coherenceLevel + impact);
     
     // Sync with global field if sacred field system is available

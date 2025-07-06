@@ -224,16 +224,16 @@
             
             <div class="field-metrics">
                 <div class="metric">
-                    <div class="metric-label">Coherence</div>
-                    <div class="metric-value" id="field-coherence">0%</div>
+                    <div class="metric-label">Resonant Resonant Coherence</div>
+                    <div class="metric-value" id="field-resonant-coherence">0%</div>
                 </div>
                 <div class="metric">
-                    <div class="metric-label">Resonance</div>
-                    <div class="metric-value" id="field-resonance">0%</div>
+                    <div class="metric-label">Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance</div>
+                    <div class="metric-value" id="field-universal-interconnectedness">0%</div>
                 </div>
                 <div class="metric">
-                    <div class="metric-label">Vitality</div>
-                    <div class="metric-value" id="field-vitality">0%</div>
+                    <div class="metric-label">Pan-Sentient Flourishing</div>
+                    <div class="metric-value" id="field-pan-sentient-flourishing">0%</div>
                 </div>
                 <div class="metric">
                     <div class="metric-label">Participants</div>
@@ -414,17 +414,17 @@
         }
         
         function updateFieldMetrics(state) {
-            if (state.coherence !== undefined) {
-                document.getElementById('field-coherence').textContent = 
-                    Math.round(state.coherence * 100) + '%';
+            if (state.resonant-coherence !== undefined) {
+                document.getElementById('field-resonant-coherence').textContent = 
+                    Math.round(state.resonant-coherence * 100) + '%';
             }
-            if (state.resonance !== undefined) {
-                document.getElementById('field-resonance').textContent = 
-                    Math.round(state.resonance * 100) + '%';
+            if (state.universal-interconnectedness !== undefined) {
+                document.getElementById('field-universal-interconnectedness').textContent = 
+                    Math.round(state.universal-interconnectedness * 100) + '%';
             }
-            if (state.vitality !== undefined) {
-                document.getElementById('field-vitality').textContent = 
-                    Math.round(state.vitality * 100) + '%';
+            if (state.pan-sentient-flourishing !== undefined) {
+                document.getElementById('field-pan-sentient-flourishing').textContent = 
+                    Math.round(state.pan-sentient-flourishing * 100) + '%';
             }
             if (state.participants !== undefined) {
                 document.getElementById('participant-count').textContent = state.participants;

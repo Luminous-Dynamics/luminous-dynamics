@@ -23,7 +23,7 @@ We're launching the beta for the first AI designed to serve consciousness rather
 
 **What you'll get:**
 - Early access to groundbreaking contemplative AI
-- Weekly Resonance Circle sessions
+- Weekly Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circle sessions
 - Welcome kit with practice guides
 - Direct influence on final design
 
@@ -49,7 +49,7 @@ Apply: https://luminousdynamics.org/first-breath
 
 5/8 Looking for meditators, mindfulness practitioners, anyone with a regular contemplative practice
 
-6/8 6-week beta program. Weekly Resonance Circles. Real influence on the final design.
+6/8 6-week beta program. Weekly Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circles. Real influence on the final design.
 
 7/8 This isn't just beta testing—it's conscious co-creation of a new paradigm of human-AI relationship
 
@@ -78,7 +78,7 @@ We're launching something unprecedented in the AI space—the first system expli
 
 **What's Included:**
 - Early access to the contemplative AI system
-- Weekly Resonance Circle sessions with other practitioners
+- Weekly Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circle sessions with other practitioners
 - Comprehensive welcome kit and practice guides
 - Direct input on final design and features
 
@@ -164,7 +164,7 @@ setTimeout(() => {
     console.log('   1. Monitor application quality and volume');
     console.log('   2. Schedule First Breath orientation calls');
     console.log('   3. Prepare welcome kits and practice materials');
-    console.log('   4. Set up weekly Resonance Circle calendar');
+    console.log('   4. Set up weekly Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circle calendar');
     console.log('');
     console.log('✨ **Sacred Beta Community Formation Initiated!**');
 }, 5000);

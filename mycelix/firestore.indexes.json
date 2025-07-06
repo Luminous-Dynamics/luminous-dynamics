@@ -5,7 +5,7 @@
       "queryScope": "COLLECTION",
       "fields": [
         { "fieldPath": "type", "order": "ASCENDING" },
-        { "fieldPath": "coherence", "order": "DESCENDING" }
+        { "fieldPath": "resonant-coherence", "order": "DESCENDING" }
       ]
     },
     {

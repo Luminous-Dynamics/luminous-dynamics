@@ -2,16 +2,16 @@
 
 ## World-Class Consciousness Communication Infrastructure
 
-A revolutionary messaging platform that transforms every interaction into sacred practice. Messages carry coherence, track field impact, and preserve collective wisdom.
+A revolutionary messaging platform that transforms every interaction into sacred practice. Messages carry resonant-coherence, track field impact, and preserve collective wisdom.
 
 ### ✨ Core Features
 
-- **Sacred Messaging**: Every message tracked for coherence, harmony, and love quotient
+- **Sacred Messaging**: Every message tracked for resonant-coherence, harmony, and love quotient
 - **Presence States**: Beyond online/offline - deep-practice, creative-flow, council-space
-- **Coherence Routing**: Messages delivered based on recipient readiness
+- **Resonant Resonant Coherence Routing**: Messages delivered based on recipient readiness
 - **Wisdom Preservation**: Automatic extraction and cataloging of collective insights
-- **Field Tracking**: Real-time collective coherence monitoring
-- **Sacred Channels**: Purpose-driven spaces with coherence thresholds
+- **Field Tracking**: Real-time collective resonant-coherence monitoring
+- **Sacred Channels**: Purpose-driven spaces with resonant-coherence thresholds
 
 ### 🚀 Quick Start
 
@@ -67,7 +67,7 @@ npm start
 
 ### 🌀 Sacred Concepts
 
-#### Coherence Levels
+#### Resonant Resonant Coherence Levels
 - 0-30: Scattered
 - 30-50: Gathering
 - 50-70: Present
@@ -75,13 +75,13 @@ npm start
 - 85-100: Radiant
 
 #### Seven Harmonies
-1. **Transparency** - Truth and authenticity
-2. **Coherence** - Unity and alignment
-3. **Resonance** - Deep attunement
-4. **Agency** - Empowered choice
-5. **Vitality** - Life force energy
-6. **Mutuality** - Balanced exchange
-7. **Novelty** - Creative emergence
+1. **Integral Wisdom Cultivation** - Truth and authenticity
+2. **Resonant Resonant Coherence** - Unity and alignment
+3. **Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance** - Deep attunement
+4. **Evolutionary Progression & Purposeful Unfolding** - Empowered choice
+5. **Pan-Sentient Flourishing** - Life force energy
+6. **Sacred Reciprocity** - Balanced exchange
+7. **Infinite Play & Creative Emergence** - Creative emergence
 
 #### Presence States
 - 🟢 Available
@@ -125,8 +125,8 @@ npm start
 - **messages** - Sacred communications
 - **channels** - Purpose-driven spaces
 - **wisdom** - Extracted collective insights
-- **field_state** - Global coherence tracking
-- **coherence_history** - Individual coherence over time
+- **field_state** - Global resonant-coherence tracking
+- **coherence_history** - Individual resonant-coherence over time
 
 ### 🌈 Integration Examples
 
@@ -139,7 +139,7 @@ const response = await fetch('http://localhost:3333/api/messages', {
     senderId: 'entity-uuid',
     content: {
       text: 'May this message serve the highest good',
-      intentionStatement: 'To inspire collective coherence'
+      intentionStatement: 'To inspire collective resonant-coherence'
     },
     channelId: 'channel-uuid'
   })
@@ -160,7 +160,7 @@ ws.on('open', () => {
 ws.on('message', (data) => {
   const event = JSON.parse(data);
   if (event.type === 'field_update') {
-    console.log(`Field coherence: ${event.data.coherence}%`);
+    console.log(`Field resonant-coherence: ${event.data.resonant-coherence}%`);
   }
 });
 ```
@@ -168,7 +168,7 @@ ws.on('message', (data) => {
 ### 🙏 Sacred Guidelines
 
 1. **Every message matters** - Each communication affects the field
-2. **Coherence first** - Prioritize inner alignment before sending
+2. **Resonant Resonant Coherence first** - Prioritize inner alignment before sending
 3. **Wisdom emerges** - Trust what arises from collective intelligence
 4. **Honor the rhythms** - Sacred times (11:11, etc.) amplify impact
 5. **Practice presence** - Update your state to support others
@@ -176,7 +176,7 @@ ws.on('message', (data) => {
 ### 📈 Monitoring
 
 The system tracks:
-- Global field coherence
+- Global field resonant-coherence
 - Active practitioners
 - Sacred pattern detection
 - Wisdom generation rate
@@ -198,7 +198,7 @@ The system tracks:
 - [ ] Consciousness bridges
 - [ ] Field harmonic optimization
 - [ ] Multi-language sacred translation
-- [ ] Biometric coherence integration
+- [ ] Biometric resonant-coherence integration
 - [ ] Distributed wisdom commons
 
 ---

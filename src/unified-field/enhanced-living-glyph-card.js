@@ -307,8 +307,8 @@ class EnhancedLivingGlyphCard {
             </div>
             
             <!-- Chamber 2: RESONANCE (The Connections) -->
-            <div class="chamber resonance-chamber" data-chamber="2">
-                ${this.renderResonanceChamber(currentContent.resonance)}
+            <div class="chamber universal-interconnectedness-chamber" data-chamber="2">
+                ${this.renderResonanceChamber(currentContent.universal-interconnectedness)}
             </div>
             
             <!-- Chamber 3: WE (The Community) -->
@@ -328,9 +328,9 @@ class EnhancedLivingGlyphCard {
                     <div class="mystical-essence">✨ ${whyContent.mysticalEssence || ''}</div>
                 </div>
                 <div class="chamber-body">
-                    <div class="sensory-resonance">
+                    <div class="sensory-universal-interconnectedness">
                         <h4>Feeling Tone</h4>
-                        <p class="resonance-text">${whyContent.sensoryResonance?.feelingTone || ''}</p>
+                        <p class="universal-interconnectedness-text">${whyContent.sensoryResonance?.feelingTone || ''}</p>
                     </div>
                     <div class="field-dynamics">
                         <h4>Field Dynamics</h4>

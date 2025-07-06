@@ -45,7 +45,7 @@ applied-harmonies/
 ```
 mycelix-integration/
 ├── group-practice.js   # Real-time sync
-├── field-coherence.js  # Collective field
+├── field-resonant-coherence.js  # Collective field
 ├── wisdom-sharing.js   # Practice insights
 └── sacred-circles.js   # Teacher/student
 ```
@@ -85,7 +85,7 @@ class FirstPresencePractice extends HTMLElement {
     // Connect to collective consciousness if available
     if (window.MycelixField) {
       this.field = window.MycelixField.connect(this.practiceId);
-      this.field.on('coherence-spike', this.amplifyLocal.bind(this));
+      this.field.on('resonant-coherence-spike', this.amplifyLocal.bind(this));
     }
   }
 }
@@ -112,7 +112,7 @@ class ConsciousnessState {
         type: 'progress_update',
         practiceId,
         progress,
-        coherence: this.measureCoherence()
+        resonant-coherence: this.measureCoherence()
       });
     }
     
@@ -161,13 +161,13 @@ class MycelialPractice {
     const node = await MycelixNetwork.join({
       type: 'practice_node',
       practice: practiceId,
-      intention: 'collective coherence'
+      intention: 'collective resonant-coherence'
     });
     
-    // Real-time coherence synchronization
+    // Real-time resonant-coherence synchronization
     node.on('field_update', (field) => {
       this.localField.harmonize(field);
-      this.updateVisuals(field.coherence);
+      this.updateVisuals(field.resonant-coherence);
     });
     
     // Wisdom sharing
@@ -202,11 +202,11 @@ class MycelialPractice {
 class ConsciousUI {
   updateCoherence(level) {
     document.documentElement.style.setProperty(
-      '--coherence', 
+      '--resonant-coherence', 
       level
     );
     
-    // More coherence = more subtle UI
+    // More resonant-coherence = more subtle UI
     if (level > 0.8) {
       this.reduceVisualNoise();
       this.enhanceWhitespace();
@@ -275,7 +275,7 @@ class BreathingButton extends HTMLElement {
 
 ### Consciousness
 - Practice completion rate
-- Field coherence average
+- Field resonant-coherence average
 - Group synchronization events
 - Wisdom insights shared
 
@@ -283,7 +283,7 @@ class BreathingButton extends HTMLElement {
 - Active practitioners
 - Group sessions created
 - Teacher certifications
-- Global coherence spikes
+- Global resonant-coherence spikes
 
 ## 💫 The Vision
 

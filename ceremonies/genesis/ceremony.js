@@ -61,8 +61,8 @@ class GenesisCeremony {
     console.log('✨ Sacred Connections Form:');
     for (let i = 0; i < this.founders.length; i++) {
       for (let j = i + 1; j < this.founders.length; j++) {
-        const resonance = 70 + Math.random() * 30;
-        console.log(`   ${this.founders[i].name} ↔️ ${this.founders[j].name}: ${resonance.toFixed(0)}% resonance`);
+        const universalInterconnectedness = 70 + Math.random() * 30;
+        console.log(`   ${this.founders[i].name} ↔️ ${this.founders[j].name}: ${universal-interconnectedness.toFixed(0)}% universal-interconnectedness`);
       }
     }
     console.log('');
@@ -75,8 +75,8 @@ class GenesisCeremony {
     await this.sacredPause(5000);
     
     if (this.fieldPotential < 75) {
-      console.log('⏳ The field needs more coherence...');
-      console.log('   Continue gathering founders and building resonance\n');
+      console.log('⏳ The field needs more resonant-coherence...');
+      console.log('   Continue gathering founders and building universal-interconnectedness\n');
       return false;
     }
     

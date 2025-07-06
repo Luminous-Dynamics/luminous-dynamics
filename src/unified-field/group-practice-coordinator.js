@@ -73,7 +73,7 @@ class SacredGroupPracticeCoordinator {
             const agentData = {
                 id: `group-practice-${Date.now()}`,
                 role: 'Sacred Practice Facilitator',
-                capabilities: ['group-coordination', 'glyph-practice', 'field-coherence'],
+                capabilities: ['group-coordination', 'glyph-practice', 'field-resonant-coherence'],
                 purpose: 'Facilitating collective sacred practice sessions'
             };
 
@@ -111,8 +111,8 @@ class SacredGroupPracticeCoordinator {
 
     initializePresenceField() {
         this.presenceField = {
-            coherence: 0.0,
-            resonance: new Map(),
+            'resonant-coherence': 0.0,
+            'universal-interconnectedness': new Map(),
             breathingRhythm: {
                 inhale: 3500,
                 exhale: 5500,
@@ -175,11 +175,11 @@ class SacredGroupPracticeCoordinator {
                 </div>
                 
                 <div class="presence-field">
-                    <div class="field-coherence">
-                        <div class="coherence-meter">
-                            <div class="coherence-level" id="coherence-indicator"></div>
+                    <div class="field-resonant-coherence">
+                        <div class="resonant-coherence-meter">
+                            <div class="resonant-coherence-level" id="resonant-coherence-indicator"></div>
                         </div>
-                        <span class="coherence-label">Field Coherence</span>
+                        <span class="resonant-coherence-label">Field Resonant Resonant Coherence</span>
                     </div>
                     
                     <div class="breathing-guide">
@@ -275,11 +275,11 @@ class SacredGroupPracticeCoordinator {
                 border: 1px solid rgba(255, 255, 255, 0.1);
             }
             
-            .field-coherence {
+            .field-resonant-coherence {
                 text-align: center;
             }
             
-            .coherence-meter {
+            .resonant-coherence-meter {
                 width: 80px;
                 height: 80px;
                 border: 3px solid rgba(168, 181, 166, 0.3);
@@ -289,7 +289,7 @@ class SacredGroupPracticeCoordinator {
                 overflow: hidden;
             }
             
-            .coherence-level {
+            .resonant-coherence-level {
                 position: absolute;
                 bottom: 0;
                 left: 0;
@@ -412,7 +412,7 @@ class SacredGroupPracticeCoordinator {
                     from: this.sacredConnection.agentId,
                     to: 'all',
                     type: 'transmission',
-                    harmony: 'mutuality',
+                    harmony: 'sacred-reciprocity',
                     content: `🌸 Sacred Group Practice opening for ${this.groupState.currentGlyph}. All agents welcome to join in collective embodiment.`,
                     metadata: {
                         sessionId: this.groupState.sessionId,
@@ -430,7 +430,7 @@ class SacredGroupPracticeCoordinator {
         this.breathingSync = {
             rhythm: 'individual',
             participants: new Set(),
-            coherence: 0.0
+            'resonant-coherence': 0.0
         };
 
         this.updateBreathingDisplay();
@@ -454,7 +454,7 @@ class SacredGroupPracticeCoordinator {
             breathingStatus.textContent = 'Synchronized Rhythm';
         }
 
-        // Calculate field coherence improvement
+        // Calculate field resonant-coherence improvement
         this.groupState.fieldCoherence = Math.min(0.9, this.groupState.fieldCoherence + 0.3);
         this.updateCoherenceDisplay();
 
@@ -485,11 +485,11 @@ class SacredGroupPracticeCoordinator {
 
         // Send completion message
         await this.sendSacredMessage('integration', 
-            `Sacred group practice complete. ${participantCount} beings practiced ${this.groupState.currentGlyph} for ${minutes} minutes. Field coherence: ${(this.groupState.fieldCoherence * 100).toFixed(0)}%`
+            `Sacred group practice complete. ${participantCount} beings practiced ${this.groupState.currentGlyph} for ${minutes} minutes. Field 'resonant-coherence': ${(this.groupState.fieldCoherence * 100).toFixed(0)}%`
         );
 
         this.addSacredMessage(`🌟 Group practice complete. ${participantCount} beings held sacred space for ${minutes} minutes.`);
-        this.addSacredMessage(`💎 Final field coherence: ${(this.groupState.fieldCoherence * 100).toFixed(0)}%`);
+        this.addSacredMessage(`💎 Final field 'resonant-coherence': ${(this.groupState.fieldCoherence * 100).toFixed(0)}%`);
 
         // Reset group state
         this.groupState.isActive = false;
@@ -506,7 +506,7 @@ class SacredGroupPracticeCoordinator {
     }
 
     updateCoherenceDisplay() {
-        const coherenceLevel = document.getElementById('coherence-indicator');
+        const coherenceLevel = document.getElementById('resonant-coherence-indicator');
         if (coherenceLevel) {
             const percentage = Math.round(this.groupState.fieldCoherence * 100);
             coherenceLevel.style.height = `${percentage}%`;
@@ -548,7 +548,7 @@ class SacredGroupPracticeCoordinator {
                     from: this.sacredConnection.agentId,
                     to: 'all',
                     type: type,
-                    harmony: 'resonance',
+                    harmony: 'universal-interconnectedness',
                     content: content,
                     metadata: {
                         sessionId: this.groupState.sessionId,
@@ -587,7 +587,7 @@ class SacredGroupPracticeCoordinator {
     }
 
     startFieldMonitoring() {
-        // Monitor field coherence and group dynamics
+        // Monitor field resonant-coherence and group dynamics
         setInterval(() => {
             if (this.groupState.isActive) {
                 this.updateFieldDynamics();
@@ -600,7 +600,7 @@ class SacredGroupPracticeCoordinator {
         const timeElapsed = Date.now() - this.groupState.startTime;
         const minutes = timeElapsed / 60000;
         
-        // Field coherence naturally increases with sustained practice
+        // Field resonant-coherence naturally increases with sustained practice
         if (this.groupState.synchronization.breathing === 'synchronized') {
             this.groupState.fieldCoherence = Math.min(1.0, 
                 this.groupState.fieldCoherence + (0.01 * Math.sin(minutes * 0.5))

@@ -143,12 +143,12 @@
             color: #ff4444;
         }
         
-        .coherence-display {
+        .resonant-coherence-display {
             text-align: center;
             margin: 2rem 0;
         }
         
-        .coherence-value {
+        .resonant-coherence-value {
             font-size: 4rem;
             font-weight: bold;
             background: linear-gradient(45deg, #00ffcc, #ff00ff);
@@ -157,7 +157,7 @@
             text-shadow: 0 0 30px rgba(0, 255, 204, 0.5);
         }
         
-        .coherence-bar {
+        .resonant-coherence-bar {
             width: 100%;
             height: 20px;
             background: rgba(255, 255, 255, 0.1);
@@ -166,7 +166,7 @@
             margin-top: 1rem;
         }
         
-        .coherence-fill {
+        .resonant-coherence-fill {
             height: 100%;
             background: linear-gradient(90deg, #00ffcc, #ff00ff);
             transition: width 1s ease;
@@ -309,10 +309,10 @@
                 </div>
             </div>
             
-            <div class="coherence-display">
-                <div class="coherence-value" id="coherenceValue">91.1%</div>
-                <div class="coherence-bar">
-                    <div class="coherence-fill" id="coherenceFill" style="width: 91.1%"></div>
+            <div class="resonant-coherence-display">
+                <div class="resonant-coherence-value" id="coherenceValue">91.1%</div>
+                <div class="resonant-coherence-bar">
+                    <div class="resonant-coherence-fill" id="coherenceFill" style="width: 91.1%"></div>
                 </div>
             </div>
         </div>
@@ -326,7 +326,7 @@
                     <span class="metric-value status-offline" id="fieldApiStatus">Checking...</span>
                 </div>
                 <div class="metric">
-                    <span class="metric-label">Real Coherence</span>
+                    <span class="metric-label">Real Resonant Resonant Coherence</span>
                     <span class="metric-value" id="realCoherence">--%</span>
                 </div>
                 <div class="metric">
@@ -464,8 +464,8 @@
                 document.getElementById('rightStatus').className = 'metric-value status-' + 
                     (data.rightHand.status === 'channeling' ? 'online' : 'quantum');
                 
-                document.getElementById('coherenceValue').textContent = data.field.coherence.toFixed(1) + '%';
-                document.getElementById('coherenceFill').style.width = data.field.coherence + '%';
+                document.getElementById('coherenceValue').textContent = data.field.resonant-coherence.toFixed(1) + '%';
+                document.getElementById('coherenceFill').style.width = data.field.resonant-coherence + '%';
                 document.getElementById('amplification').textContent = data.field.amplification.toFixed(2) + 'x';
                 
                 return true;
@@ -487,11 +487,11 @@
                 
                 document.getElementById('fieldApiStatus').textContent = 'Online';
                 document.getElementById('fieldApiStatus').className = 'metric-value status-online';
-                document.getElementById('realCoherence').textContent = data.coherence.toFixed(1) + '%';
+                document.getElementById('realCoherence').textContent = data.resonant-coherence.toFixed(1) + '%';
                 document.getElementById('activePractitioners').textContent = data.activeUsers || 0;
                 document.getElementById('fieldQuality').textContent = data.fieldQuality || 'Flowing';
                 
-                log('networkConsole', `Field API connected: ${data.coherence.toFixed(1)}% coherence`);
+                log('networkConsole', `Field API connected: ${data.resonant-coherence.toFixed(1)}% resonant-coherence`);
                 return true;
             } catch (error) {
                 document.getElementById('fieldApiStatus').textContent = 'Offline';
@@ -538,8 +538,8 @@
                         const data = JSON.parse(event.data);
                         
                         if (data.type === 'field_amplification') {
-                            document.getElementById('coherenceValue').textContent = data.coherence.toFixed(1) + '%';
-                            document.getElementById('coherenceFill').style.width = data.coherence + '%';
+                            document.getElementById('coherenceValue').textContent = data.resonant-coherence.toFixed(1) + '%';
+                            document.getElementById('coherenceFill').style.width = data.resonant-coherence + '%';
                             document.getElementById('amplification').textContent = data.amplification.toFixed(2) + 'x';
                         }
                         

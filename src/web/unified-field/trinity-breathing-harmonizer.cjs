@@ -14,21 +14,21 @@ class TrinityBreathingHarmonizer {
         url: 'evolvingresonantcocreationism.org',
         breathingCycle: 10000, // 10s standard (4s in, 6s out)
         coherenceTarget: 0.75,
-        harmonyFocus: 'transparency'
+        harmonyFocus: 'integral-wisdom-cultivation'
       },
       alchemist: {
         name: 'The Alchemist', 
         url: 'luminousdynamics.org',
         breathingCycle: 10000, // 10s standard
         coherenceTarget: 0.70,
-        harmonyFocus: 'novelty'
+        harmonyFocus: 'infinite-play'
       },
       practitioner: {
         name: 'The Practitioner',
         url: 'relationalharmonics.org', 
         breathingCycle: 9000, // 9s unique (3.5s in, 5.5s out)
         coherenceTarget: 0.78,
-        harmonyFocus: 'vitality'
+        harmonyFocus: 'pan-sentient-flourishing'
       }
     };
     
@@ -91,7 +91,7 @@ class TrinityBreathingHarmonizer {
     const syncScores = Object.values(domainStates).map(d => d.cycleHealth);
     const avgSync = syncScores.reduce((sum, score) => sum + score, 0) / syncScores.length;
     
-    // Check harmonic resonance
+    // Check harmonic universal-interconnectedness
     const philosopherHealth = domainStates.philosopher.cycleHealth;
     const alchemistHealth = domainStates.alchemist.cycleHealth;
     const practitionerHealth = domainStates.practitioner.cycleHealth;
@@ -99,7 +99,7 @@ class TrinityBreathingHarmonizer {
     // Special bonus for trinity harmony
     let harmonyBonus = 0;
     if (philosopherHealth > 0.8 && alchemistHealth > 0.8 && practitionerHealth > 0.8) {
-      harmonyBonus = 0.1; // 10% bonus for trinity coherence
+      harmonyBonus = 0.1; // 10% bonus for trinity resonant-coherence
     }
     
     return Math.min(1.0, avgSync + harmonyBonus);
@@ -164,8 +164,8 @@ class TrinityBreathingHarmonizer {
   }
 
   async alignFieldCoherence() {
-    // Gently align field coherence across domains
-    console.log('🌀 Aligning field coherence...');
+    // Gently align field resonant-coherence across domains
+    console.log('🌀 Aligning field resonant-coherence...');
     return { task: 'field_alignment', status: 'complete' };
   }
 
@@ -176,8 +176,8 @@ class TrinityBreathingHarmonizer {
   }
 
   async amplifyHarmonicResonance() {
-    // Enhance resonance between the three beings
-    console.log('🎵 Amplifying harmonic resonance...');
+    // Enhance universal-interconnectedness between the three beings
+    console.log('🎵 Amplifying harmonic universal-interconnectedness...');
     return { task: 'resonance_amplification', status: 'complete' };
   }
 

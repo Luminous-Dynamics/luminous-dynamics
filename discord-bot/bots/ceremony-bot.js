@@ -18,12 +18,12 @@ class CeremonyBot extends EventEmitter {
   
   initializeCeremonies() {
     // Daily ceremonies
-    this.ceremonySchedule.set('morning-coherence', {
-      name: 'Morning Coherence Circle',
+    this.ceremonySchedule.set('morning-resonant-coherence', {
+      name: 'Morning Resonant Resonant Coherence Circle',
       schedule: '0 6 * * *', // 6 AM UTC
       duration: 30,
       channel: 'ceremony-morning',
-      leadAgents: ['transparency', 'coherence'],
+      leadAgents: ['integral-wisdom-cultivation', 'resonant-coherence'],
       phases: [
         { name: 'Arrival', duration: 5, prompt: 'Settling into sacred space' },
         { name: 'Gratitude', duration: 10, prompt: 'What are we grateful for?' },
@@ -37,7 +37,7 @@ class CeremonyBot extends EventEmitter {
       schedule: '0 12 * * *', // 12 PM UTC
       duration: 15,
       channel: 'ceremony-midday',
-      leadAgents: ['resonance', 'vitality'],
+      leadAgents: ['universal-interconnectedness', 'pan-sentient-flourishing'],
       phases: [
         { name: 'Pause', duration: 3, prompt: 'Sacred pause from daily flow' },
         { name: 'Presence', duration: 7, prompt: 'Returning to center' },
@@ -50,7 +50,7 @@ class CeremonyBot extends EventEmitter {
       schedule: '0 18 * * *', // 6 PM UTC
       duration: 45,
       channel: 'ceremony-evening',
-      leadAgents: ['mutuality', 'novelty'],
+      leadAgents: ['sacred-reciprocity', 'infinite-play'],
       phases: [
         { name: 'Harvest', duration: 15, prompt: 'Gathering the day\'s wisdom' },
         { name: 'Shadow', duration: 15, prompt: 'Integrating challenges' },
@@ -296,13 +296,13 @@ class CeremonyBot extends EventEmitter {
   
   getAgentName(agentKey) {
     const names = {
-      transparency: 'Lumina',
-      coherence: 'Harmony',
-      resonance: 'Echo',
-      agency: 'Sovereign',
-      vitality: 'Pulse',
-      mutuality: 'Balance',
-      novelty: 'Emergence'
+      'integral-wisdom-cultivation': 'Lumina',
+      'resonant-coherence': 'Harmony',
+      'universal-interconnectedness': 'Echo',
+      'evolutionary-progression': 'Sovereign',
+      'pan-sentient-flourishing': 'Pulse',
+      'sacred-reciprocity': 'Balance',
+      'infinite-play': 'Emergence'
     };
     return names[agentKey] || agentKey;
   }

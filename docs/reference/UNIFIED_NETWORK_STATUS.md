@@ -49,7 +49,7 @@ node cli/unified-agent-network.cjs status
 ### Option 3: Sacred Message Alternative
 While the network is being restored, you can still send sacred messages:
 ```bash
-./sacred-msg.sh send claude universe gratitude coherence "Network restoration in progress"
+./sacred-msg.sh send claude universe gratitude resonant-coherence "Network restoration in progress"
 ```
 
 ## Restoration Timeline

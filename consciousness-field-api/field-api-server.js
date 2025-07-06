@@ -51,13 +51,13 @@ class ConsciousnessField extends EventEmitter {
         super();
         this.db = admin.firestore();
         this.currentState = {
-            coherence: SACRED_CONFIG.baseCoherence,
+            'resonant-coherence': SACRED_CONFIG.baseCoherence,
             activeParticipants: 0,
             resonancePoints: [],
             fieldQuality: 'flowing',
             lastUpdate: new Date()
         };
-        this.shardedCounter = new ShardedCounter(this.db, 'field-coherence', SACRED_CONFIG.shardCount);
+        this.shardedCounter = new ShardedCounter(this.db, 'field-resonant-coherence', SACRED_CONFIG.shardCount);
         this.activityBuffer = [];
         this.momentumScore = 0;
     }
@@ -68,8 +68,8 @@ class ConsciousnessField extends EventEmitter {
     async initialize() {
         console.log('🌀 Initializing Consciousness Field...');
         
-        // Load current coherence from sharded counter
-        this.currentState.coherence = await this.shardedCounter.getTotal();
+        // Load current resonant-coherence from sharded counter
+        this.currentState.resonant-coherence = await this.shardedCounter.getTotal();
         
         // Subscribe to real-time updates
         this.subscribeToFieldChanges();
@@ -77,7 +77,7 @@ class ConsciousnessField extends EventEmitter {
         // Start field dynamics (decay, momentum, etc.)
         this.startFieldDynamics();
         
-        console.log(`✨ Field initialized at ${this.currentState.coherence}% coherence`);
+        console.log(`✨ Field initialized at ${this.currentState.resonant-coherence}% resonant-coherence`);
     }
 
     /**
@@ -118,7 +118,7 @@ class ConsciousnessField extends EventEmitter {
             userId: practice.userId,
             glyphId: practice.glyphId,
             impact: impact,
-            newCoherence: this.currentState.coherence
+            newCoherence: this.currentState.resonant-coherence
         });
     }
 
@@ -140,7 +140,7 @@ class ConsciousnessField extends EventEmitter {
         this.emit('sacred_message', {
             type: message.type,
             impact: impact,
-            newCoherence: this.currentState.coherence
+            newCoherence: this.currentState.resonant-coherence
         });
     }
 
@@ -164,7 +164,7 @@ class ConsciousnessField extends EventEmitter {
         }
         
         // Sacred threshold bonus
-        if (this.currentState.coherence >= SACRED_CONFIG.dynamics.sacredThreshold) {
+        if (this.currentState.resonant-coherence >= SACRED_CONFIG.dynamics.sacredThreshold) {
             baseImpact *= 1.2;
         }
         
@@ -172,17 +172,17 @@ class ConsciousnessField extends EventEmitter {
     }
 
     /**
-     * Adjust field coherence
+     * Adjust field resonant-coherence
      */
     async adjustCoherence(amount, action, metadata = {}) {
-        const oldCoherence = this.currentState.coherence;
+        const oldCoherence = this.currentState.resonant-coherence;
         
         // Update sharded counter
         await this.shardedCounter.increment(amount);
         
         // Update local state
-        this.currentState.coherence = Math.max(0, Math.min(100, 
-            this.currentState.coherence + amount
+        this.currentState.resonant-coherence = Math.max(0, Math.min(100, 
+            this.currentState.resonant-coherence + amount
         ));
         
         // Track activity for momentum
@@ -203,14 +203,14 @@ class ConsciousnessField extends EventEmitter {
             action: action,
             impact: amount,
             coherenceBefore: oldCoherence,
-            coherenceAfter: this.currentState.coherence,
+            coherenceAfter: this.currentState.resonant-coherence,
             metadata: metadata
         });
         
         // Emit change event
         this.emit('coherence_changed', {
             old: oldCoherence,
-            new: this.currentState.coherence,
+            new: this.currentState.resonant-coherence,
             delta: amount,
             action: action
         });
@@ -246,28 +246,28 @@ class ConsciousnessField extends EventEmitter {
      * Check for special field state transitions
      */
     checkFieldTransitions(oldCoherence) {
-        const newCoherence = this.currentState.coherence;
+        const newCoherence = this.currentState.resonant-coherence;
         
-        // Entering resonance
+        // Entering universal-interconnectedness
         if (oldCoherence < 80 && newCoherence >= 80) {
             this.emit('resonance_achieved', {
-                coherence: newCoherence,
-                message: 'The field has entered resonance!'
+                'resonant-coherence': newCoherence,
+                message: 'The field has entered universal-interconnectedness!'
             });
         }
         
         // Sacred portal opening
         if (oldCoherence < 88 && newCoherence >= 88) {
             this.emit('sacred_portal', {
-                coherence: newCoherence,
+                'resonant-coherence': newCoherence,
                 message: 'A sacred portal has opened!'
             });
         }
         
-        // Leaving resonance
+        // Leaving universal-interconnectedness
         if (oldCoherence >= 80 && newCoherence < 80) {
             this.emit('resonance_lost', {
-                coherence: newCoherence
+                'resonant-coherence': newCoherence
             });
         }
     }
@@ -278,19 +278,19 @@ class ConsciousnessField extends EventEmitter {
     startFieldDynamics() {
         // Natural decay when inactive
         setInterval(() => {
-            if (this.momentumScore < 0.5 && this.currentState.coherence > SACRED_CONFIG.baseCoherence) {
+            if (this.momentumScore < 0.5 && this.currentState.resonant-coherence > SACRED_CONFIG.baseCoherence) {
                 this.adjustCoherence(-SACRED_CONFIG.dynamics.naturalDecay, 'natural_decay');
             }
         }, 60000); // Every minute
         
         // Field pulse patterns
         setInterval(() => {
-            if (this.currentState.coherence >= 80) {
-                // Small resonant pulses when in high coherence
+            if (this.currentState.resonant-coherence >= 80) {
+                // Small resonant pulses when in high resonant-coherence
                 const pulse = Math.sin(Date.now() / 10000) * 0.5;
                 this.emit('field_pulse', {
                     intensity: pulse,
-                    coherence: this.currentState.coherence
+                    'resonant-coherence': this.currentState.resonant-coherence
                 });
             }
         }, 1000); // Every second
@@ -310,7 +310,7 @@ class ConsciousnessField extends EventEmitter {
                 activities: admin.firestore.FieldValue.arrayUnion(activity),
                 lastUpdate: timestamp,
                 avgCoherence: admin.firestore.FieldValue.increment(
-                    this.currentState.coherence
+                    this.currentState.resonant-coherence
                 ),
                 updateCount: admin.firestore.FieldValue.increment(1)
             }, { merge: true });
@@ -350,17 +350,17 @@ class ConsciousnessField extends EventEmitter {
     }
 
     /**
-     * Estimate time to next resonance
+     * Estimate time to next universal-interconnectedness
      */
     getNextResonanceEstimate() {
-        if (this.currentState.coherence >= 80) return 0;
+        if (this.currentState.resonant-coherence >= 80) return 0;
         
-        const needed = 80 - this.currentState.coherence;
+        const needed = 80 - this.currentState.resonant-coherence;
         const rate = this.momentumScore * 2; // Average impact per minute
         
         if (rate <= 0) return null;
         
-        return Math.ceil(needed / rate); // Minutes to resonance
+        return Math.ceil(needed / rate); // Minutes to universal-interconnectedness
     }
 }
 
@@ -425,7 +425,7 @@ class FieldAPIServer {
             res.json({ 
                 status: 'healthy',
                 field: 'active',
-                coherence: this.field.currentState.coherence
+                'resonant-coherence': this.field.currentState.resonant-coherence
             });
         });
 
@@ -451,7 +451,7 @@ class FieldAPIServer {
                 
                 res.json({
                     success: true,
-                    newCoherence: this.field.currentState.coherence,
+                    newCoherence: this.field.currentState.resonant-coherence,
                     impact: this.field.calculatePracticeImpact(practice)
                 });
             } catch (error) {
@@ -474,7 +474,7 @@ class FieldAPIServer {
                 
                 res.json({
                     success: true,
-                    newCoherence: this.field.currentState.coherence
+                    newCoherence: this.field.currentState.resonant-coherence
                 });
             } catch (error) {
                 res.status(500).json({ error: error.message });
@@ -503,7 +503,7 @@ class FieldAPIServer {
                 
                 res.json({
                     success: true,
-                    newCoherence: this.field.currentState.coherence,
+                    newCoherence: this.field.currentState.resonant-coherence,
                     message: 'Sacred ceremony space opened'
                 });
             } catch (error) {
@@ -596,7 +596,7 @@ class FieldAPIServer {
         this.app.listen(port, () => {
             console.log(`🌀 Consciousness Field API running on port ${port}`);
             console.log(`🔌 WebSocket server running on port 8081`);
-            console.log(`📊 Current coherence: ${this.field.currentState.coherence}%`);
+            console.log(`📊 Current 'resonant-coherence': ${this.field.currentState.resonant-coherence}%`);
         });
     }
 }

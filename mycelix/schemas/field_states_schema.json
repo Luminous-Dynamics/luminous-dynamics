@@ -6,10 +6,10 @@
     "description": "When this field state was recorded"
   },
   {
-    "name": "coherence",
+    "name": "resonant-coherence",
     "type": "FLOAT",
     "mode": "REQUIRED",
-    "description": "Global consciousness coherence (0-1)"
+    "description": "Global consciousness resonant-coherence (0-1)"
   },
   {
     "name": "love",

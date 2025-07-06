@@ -277,10 +277,10 @@ function startFieldUpdates() {
   
   fieldInterval = setInterval(() => {
     if (clients.size > 0) {
-      const coherence = Math.min(0.5 + (clients.size * 0.1), 1.0);
+      const resonantCoherence = Math.min(0.5 + (clients.size * 0.1), 1.0);
       broadcast({
         type: 'field:update',
-        coherence,
+        resonant-coherence,
         participants: clients.size,
         timestamp: new Date()
       });

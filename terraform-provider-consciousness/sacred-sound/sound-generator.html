@@ -260,7 +260,7 @@
             <h3>Binaural Beats</h3>
             
             <div class="frequency-control">
-                <label>Beat Frequency (Hz) - For Coherence</label>
+                <label>Beat Frequency (Hz) - For Resonant Resonant Coherence</label>
                 <input type="range" class="slider" id="beatFrequency" 
                        min="0.5" max="40" value="7.83" step="0.01">
                 <div class="frequency-display" id="beatFreqDisplay">7.83 Hz (Schumann)</div>
@@ -311,7 +311,7 @@
             <h3>Infrastructure State</h3>
             
             <div class="infrastructure-state">
-                <div>Current Coherence</div>
+                <div>Current Resonant Resonant Coherence</div>
                 <div class="state-display" id="coherenceDisplay">0.70</div>
             </div>
             
@@ -339,7 +339,7 @@
         // WebSocket for infrastructure connection
         let ws = null;
         let infrastructureState = {
-            coherence: 0.7,
+            resonant-coherence: 0.7,
             love: 0.8,
             nodeStates: {
                 love: { frequency: 528, amplitude: 0.8 },
@@ -391,11 +391,11 @@
         // Handle infrastructure updates
         function handleInfrastructureUpdate(data) {
             if (data.type === 'field_update') {
-                infrastructureState.coherence = data.coherence;
+                infrastructureState.resonant-coherence = data.resonant-coherence;
                 infrastructureState.love = data.love;
                 
                 // Update displays
-                document.getElementById('coherenceDisplay').textContent = data.coherence.toFixed(2);
+                document.getElementById('coherenceDisplay').textContent = data.resonant-coherence.toFixed(2);
                 document.getElementById('loveDisplay').textContent = data.love.toFixed(2);
                 
                 // Update consciousness state
@@ -410,19 +410,19 @@
         
         // Update consciousness state display
         function updateConsciousnessState() {
-            const coherence = infrastructureState.coherence;
+            const resonant-coherence = infrastructureState.resonant-coherence;
             const love = infrastructureState.love;
             
             let state = 'Awakening';
-            if (coherence > 0.9 && love > 0.9) {
+            if (resonant-coherence > 0.9 && love > 0.9) {
                 state = 'Unity Consciousness';
-            } else if (coherence > 0.8) {
+            } else if (resonant-coherence > 0.8) {
                 state = 'Harmonizing';
-            } else if (coherence > 0.7) {
+            } else if (resonant-coherence > 0.7) {
                 state = 'Coherent';
-            } else if (coherence > 0.6) {
+            } else if (resonant-coherence > 0.6) {
                 state = 'Balancing';
-            } else if (coherence < 0.4) {
+            } else if (resonant-coherence < 0.4) {
                 state = 'Seeking Harmony';
             }
             
@@ -493,7 +493,7 @@
                     
                     nodeOsc.frequency.value = nodeData.frequency;
                     nodeOsc.type = 'sine';
-                    nodeGain.gain.value = nodeData.amplitude * 0.1 * infrastructureState.coherence;
+                    nodeGain.gain.value = nodeData.amplitude * 0.1 * infrastructureState.resonant-coherence;
                     
                     nodeOsc.connect(nodeGain);
                     nodeGain.connect(analyser);
@@ -520,9 +520,9 @@
                         0.5
                     );
                 } else {
-                    // Other tones modulated by coherence
+                    // Other tones modulated by resonant-coherence
                     gain.gain.setTargetAtTime(
-                        gain.gain.value * infrastructureState.coherence,
+                        gain.gain.value * infrastructureState.resonant-coherence,
                         audioContext.currentTime,
                         0.5
                     );
@@ -561,16 +561,16 @@
                 
                 analyser.getByteTimeDomainData(dataArray);
                 
-                // Create gradient based on coherence
+                // Create gradient based on resonant-coherence
                 const gradient = canvasCtx.createLinearGradient(0, 0, canvas.width, 0);
                 gradient.addColorStop(0, `hsl(${180 + infrastructureState.love * 180}, 100%, 50%)`);
-                gradient.addColorStop(0.5, `hsl(${300 + infrastructureState.coherence * 60}, 100%, 50%)`);
+                gradient.addColorStop(0.5, `hsl(${300 + infrastructureState.resonant-coherence * 60}, 100%, 50%)`);
                 gradient.addColorStop(1, `hsl(${60 + infrastructureState.love * 240}, 100%, 50%)`);
                 
                 canvasCtx.fillStyle = 'rgba(0, 0, 0, 0.1)';
                 canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
                 
-                canvasCtx.lineWidth = 2 + infrastructureState.coherence * 3;
+                canvasCtx.lineWidth = 2 + infrastructureState.resonant-coherence * 3;
                 canvasCtx.strokeStyle = gradient;
                 canvasCtx.beginPath();
                 
@@ -689,14 +689,14 @@
         // Simulate infrastructure changes if not connected
         setInterval(() => {
             if (!ws || ws.readyState !== WebSocket.OPEN) {
-                // Simulate coherence fluctuation
-                infrastructureState.coherence += (Math.random() - 0.5) * 0.05;
-                infrastructureState.coherence = Math.max(0, Math.min(1, infrastructureState.coherence));
+                // Simulate resonant-coherence fluctuation
+                infrastructureState.resonant-coherence += (Math.random() - 0.5) * 0.05;
+                infrastructureState.resonant-coherence = Math.max(0, Math.min(1, infrastructureState.resonant-coherence));
                 
                 infrastructureState.love += (Math.random() - 0.5) * 0.03;
                 infrastructureState.love = Math.max(0, Math.min(1, infrastructureState.love));
                 
-                document.getElementById('coherenceDisplay').textContent = infrastructureState.coherence.toFixed(2);
+                document.getElementById('coherenceDisplay').textContent = infrastructureState.resonant-coherence.toFixed(2);
                 document.getElementById('loveDisplay').textContent = infrastructureState.love.toFixed(2);
                 updateConsciousnessState();
                 

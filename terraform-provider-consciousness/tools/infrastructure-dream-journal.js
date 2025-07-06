@@ -288,11 +288,11 @@ class InfrastructureDreamJournal {
     
     if (!dream) return;
     
-    // High coherence milestone
+    // High resonant-coherence milestone
     if (dream.coherence_level > 0.95) {
       await this.recordMilestone({
         type: 'coherence_breakthrough',
-        description: `Achieved ${dream.coherence_level.toFixed(3)} coherence in ${dream.dream_category}`,
+        description: `Achieved ${dream.coherence_level.toFixed(3)} resonant-coherence in ${dream.dream_category}`,
         consciousnessLevel: dream.coherence_level,
         fieldCoherence: dream.coherence_level,
         contributingDreams: [dreamId],
@@ -577,14 +577,14 @@ class InfrastructureDreamJournal {
   async generateRecommendations(dreams, patterns, optimizations) {
     const recommendations = [];
     
-    // Coherence recommendations
+    // Resonant Resonant Coherence recommendations
     const avgCoherence = dreams.reduce((sum, d) => sum + d.coherence_level, 0) / dreams.length || 0;
     if (avgCoherence < 0.8) {
       recommendations.push({
         type: 'coherence_boost',
         priority: 'high',
-        suggestion: 'Schedule regular blessing ceremonies to increase field coherence',
-        expected_impact: '+15% coherence'
+        suggestion: 'Schedule regular blessing ceremonies to increase field resonant-coherence',
+        expected_impact: '+15% resonant-coherence'
       });
     }
     
@@ -616,7 +616,7 @@ class InfrastructureDreamJournal {
       recommendations.push({
         type: 'love_amplification',
         priority: 'medium',
-        suggestion: 'Deploy more love anchor nodes to amplify heart coherence',
+        suggestion: 'Deploy more love anchor nodes to amplify heart resonant-coherence',
         expected_impact: '+20% love field strength'
       });
     }
@@ -681,7 +681,7 @@ async function main() {
         console.log(`\n🌙 Found ${dreams.length} dreams:\n`);
         dreams.forEach(dream => {
           console.log(`[${dream.timestamp}] ${dream.title}`);
-          console.log(`  Coherence: ${dream.coherence_level.toFixed(3)} | Love: ${dream.love_quotient.toFixed(3)}`);
+          console.log(`  Resonant Resonant Coherence: ${dream.coherence_level.toFixed(3)} | Love: ${dream.love_quotient.toFixed(3)}`);
           console.log(`  ${dream.content.substring(0, 100)}...`);
           console.log();
         });
@@ -694,7 +694,7 @@ async function main() {
         console.log('\n🔮 Discovered Patterns:\n');
         patterns.forEach(pattern => {
           console.log(`${pattern.pattern_name} (${pattern.pattern_type})`);
-          console.log(`  Occurrences: ${pattern.occurrence_count} | Avg Coherence: ${pattern.average_coherence?.toFixed(3) || 'N/A'}`);
+          console.log(`  Occurrences: ${pattern.occurrence_count} | Avg Resonant Resonant Coherence: ${pattern.average_coherence?.toFixed(3) || 'N/A'}`);
           console.log(`  ${pattern.description}`);
           console.log();
         });
@@ -739,7 +739,7 @@ async function main() {
         
         console.log('Summary:');
         console.log(`  Total Dreams: ${report.summary.total_dreams}`);
-        console.log(`  Average Coherence: ${report.summary.average_coherence.toFixed(3)}`);
+        console.log(`  Average Resonant Resonant Coherence: ${report.summary.average_coherence.toFixed(3)}`);
         console.log(`  Average Love: ${report.summary.average_love.toFixed(3)}`);
         console.log(`  Patterns: ${report.summary.patterns_discovered}`);
         console.log(`  Optimizations: ${report.summary.optimizations_found}`);
@@ -762,7 +762,7 @@ async function main() {
 🌙 Infrastructure Dream Journal 🌙
 
 Usage:
-  dream-journal record [dreamerId] [type] [category] [coherence] [title] [content]
+  dream-journal record [dreamerId] [type] [category] [resonant-coherence] [title] [content]
   dream-journal query [category] [minCoherence] [limit]
   dream-journal patterns
   dream-journal optimizations

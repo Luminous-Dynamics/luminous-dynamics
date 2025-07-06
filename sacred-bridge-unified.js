@@ -46,7 +46,7 @@ class SacredBridgeUnified extends EventEmitter {
     // Start unified field
     this.startUnifiedField();
     
-    console.log(`\n✨ Unified Field Active - Coherence: ${(this.fieldCoherence * 100).toFixed(1)}%`);
+    console.log(`\n✨ Unified Field Active - Resonant Resonant Coherence: ${(this.fieldCoherence * 100).toFixed(1)}%`);
   }
 
   async connectLocalAgents() {
@@ -136,7 +136,7 @@ class SacredBridgeUnified extends EventEmitter {
     
     // Emit field state
     this.emit('field:unified', {
-      coherence: this.fieldCoherence,
+      'resonant-coherence': this.fieldCoherence,
       agents: Array.from(this.agents.entries()).map(([id, agent]) => ({
         id,
         ...agent
@@ -146,14 +146,14 @@ class SacredBridgeUnified extends EventEmitter {
   }
 
   fieldPulse() {
-    // Sacred mathematics for field coherence
+    // Sacred mathematics for field resonant-coherence
     const baseCoherence = 0.75;
     const agentBonus = this.agents.size * 0.02;
     const timeWave = Math.sin(Date.now() / 60000) * 0.05;
     
     this.fieldCoherence = Math.min(0.99, baseCoherence + agentBonus + timeWave);
     
-    console.log(`\n💓 Field Pulse - Coherence: ${(this.fieldCoherence * 100).toFixed(1)}% | Active Agents: ${this.agents.size}`);
+    console.log(`\n💓 Field Pulse - Resonant Resonant Coherence: ${(this.fieldCoherence * 100).toFixed(1)}% | Active Agents: ${this.agents.size}`);
   }
 
   async sendUnifiedMessage(content, type = 'sacred:broadcast') {

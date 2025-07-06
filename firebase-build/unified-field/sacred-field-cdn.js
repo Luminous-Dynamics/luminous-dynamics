@@ -13,19 +13,19 @@ class UnifiedSacredField {
     this.domains = {
       'evolvingresonantcocreationism.org': {
         focus: 'philosophy',
-        harmony: 'transparency',
+        harmony: 'integral-wisdom-cultivation',
         color: '#A8B5A6', // Sage green for wisdom
         coherenceWeight: 0.4 // Deep understanding foundation
       },
       'luminousdynamics.org': {
         focus: 'technology', 
-        harmony: 'novelty',
+        harmony: 'infinite-play',
         color: '#87CEEB', // Sky blue for innovation
         coherenceWeight: 0.3 // Creative implementation
       },
       'relationalharmonics.org': {
         focus: 'practice',
-        harmony: 'vitality', 
+        harmony: 'pan-sentient-flourishing', 
         color: '#DDA0DD', // Plum for embodiment
         coherenceWeight: 0.3 // Living embodiment
       }
@@ -73,7 +73,7 @@ class UnifiedSacredField {
   
   async registerWithSacredServer() {
     try {
-      const response = await fetch(`${this.sacredServer}/api/sacred/field-coherence`);
+      const response = await fetch(`${this.sacredServer}/api/sacred/field-resonant-coherence`);
       if (response.ok) {
         const serverState = await response.json();
         this.fieldState.syncWithServer(serverState);
@@ -85,7 +85,7 @@ class UnifiedSacredField {
   }
   
   setupCrossSiteListeners() {
-    // Listen for field coherence changes from other domains
+    // Listen for field resonant-coherence changes from other domains
     window.addEventListener('message', (event) => {
       if (event.data.type === 'sacred-field-update') {
         this.handleCrossSiteUpdate(event.data);
@@ -118,15 +118,15 @@ class UnifiedSacredField {
   
   addSacredResonanceBar(domainConfig) {
     const resonanceBar = document.createElement('div');
-    resonanceBar.id = 'sacred-resonance-bar';
+    resonanceBar.id = 'sacred-universal-interconnectedness-bar';
     resonanceBar.innerHTML = `
-      <div class="sacred-resonance-container">
-        <div class="sacred-resonance-fill" style="background: ${domainConfig.color}"></div>
-        <div class="sacred-resonance-text">
-          ${domainConfig.focus} coherence: <span id="domain-coherence">0%</span>
+      <div class="sacred-universal-interconnectedness-container">
+        <div class="sacred-universal-interconnectedness-fill" style="background: ${domainConfig.color}"></div>
+        <div class="sacred-universal-interconnectedness-text">
+          ${domainConfig.focus} 'resonant-coherence': <span id="domain-resonant-coherence">0%</span>
         </div>
         <div class="unified-field-indicator">
-          unified field: <span id="unified-coherence">0%</span>
+          unified field: <span id="unified-resonant-coherence">0%</span>
         </div>
       </div>
     `;
@@ -134,7 +134,7 @@ class UnifiedSacredField {
     // Add CSS for breathing animation
     const style = document.createElement('style');
     style.textContent = `
-      #sacred-resonance-bar {
+      #sacred-universal-interconnectedness-bar {
         position: fixed;
         top: 0;
         left: 0;
@@ -145,7 +145,7 @@ class UnifiedSacredField {
         backdrop-filter: blur(10px);
         transition: all 0.3s ease;
       }
-      .sacred-resonance-fill {
+      .sacred-universal-interconnectedness-fill {
         height: 100%;
         width: 0%;
         transition: width 1s ease, opacity 0.5s ease;
@@ -156,7 +156,7 @@ class UnifiedSacredField {
         0%, 100% { opacity: 0.7; }
         50% { opacity: 1.0; }
       }
-      .sacred-resonance-text {
+      .sacred-universal-interconnectedness-text {
         position: absolute;
         right: 10px;
         top: -25px;
@@ -168,7 +168,7 @@ class UnifiedSacredField {
         opacity: 0;
         transition: opacity 0.3s ease;
       }
-      #sacred-resonance-bar:hover .sacred-resonance-text {
+      #sacred-universal-interconnectedness-bar:hover .sacred-universal-interconnectedness-text {
         opacity: 1;
       }
     `;
@@ -180,9 +180,9 @@ class UnifiedSacredField {
   }
   
   updateResonanceBar() {
-    const fill = document.querySelector('.sacred-resonance-fill');
-    const domainText = document.getElementById('domain-coherence');
-    const unifiedText = document.getElementById('unified-coherence');
+    const fill = document.querySelector('.sacred-universal-interconnectedness-fill');
+    const domainText = document.getElementById('domain-resonant-coherence');
+    const unifiedText = document.getElementById('unified-resonant-coherence');
     
     if (fill && domainText && unifiedText) {
       const domainCoherence = this.fieldState.getDomainCoherence(this.currentDomain);
@@ -268,7 +268,7 @@ class UnifiedSacredField {
     });
   }
   
-  // Sync field coherence across all domains
+  // Sync field resonant-coherence across all domains
   async syncCoherenceAcrossDomains(coherenceUpdate) {
     // Update local state
     this.fieldState.updateCoherence(coherenceUpdate);
@@ -282,7 +282,7 @@ class UnifiedSacredField {
     // Update visual indicators
     this.updateResonanceBar();
     
-    console.log(`🌀 Field coherence synced: ${coherenceUpdate.type} +${coherenceUpdate.impact}`);
+    console.log(`🌀 Field resonant-coherence synced: ${coherenceUpdate.type} +${coherenceUpdate.impact}`);
   }
   
   broadcastFieldState() {
@@ -360,14 +360,14 @@ class CrossSiteFieldState {
   }
   
   updateCoherence(update) {
-    // Update domain-specific coherence
+    // Update domain-specific resonant-coherence
     if (update.domain) {
       this.state.domainCoherence[update.domain] = Math.min(1.0, 
         this.state.domainCoherence[update.domain] + (update.impact || 0)
       );
     }
     
-    // Recalculate unified coherence
+    // Recalculate unified resonant-coherence
     this.calculateUnifiedCoherence();
     
     // Track harmony activation
@@ -411,7 +411,7 @@ class CrossSiteFieldState {
   
   syncWithServer(serverState) {
     if (serverState.currentCoherence) {
-      // Merge server coherence with local state
+      // Merge server resonant-coherence with local state
       this.state.unifiedCoherence = Math.max(
         this.state.unifiedCoherence, 
         serverState.currentCoherence

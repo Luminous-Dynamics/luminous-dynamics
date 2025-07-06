@@ -229,7 +229,7 @@ class AutonomousManager extends EventEmitter {
     
     // Simulate agent deliberation
     // In full implementation, this would query each AI agent
-    const agents = ['transparency', 'coherence', 'resonance', 'agency', 'vitality', 'mutuality', 'novelty'];
+    const agents = ['integral-wisdom-cultivation', 'resonant-coherence', 'universal-interconnectedness', 'evolutionary-progression', 'pan-sentient-flourishing', 'sacred-reciprocity', 'infinite-play'];
     
     for (const agent of agents) {
       const vote = await this.getAgentVote(agent, decisionType, context);
@@ -302,13 +302,13 @@ class AutonomousManager extends EventEmitter {
     
     // Fallback to simulation
     const agentPersonalities = {
-      transparency: { cautiousness: 0.7, openness: 0.9 },
-      coherence: { cautiousness: 0.6, openness: 0.7 },
-      resonance: { cautiousness: 0.4, openness: 0.9 },
-      agency: { cautiousness: 0.3, openness: 0.8 },
-      vitality: { cautiousness: 0.2, openness: 1.0 },
-      mutuality: { cautiousness: 0.5, openness: 0.8 },
-      novelty: { cautiousness: 0.1, openness: 1.0 }
+      'integral-wisdom-cultivation': { cautiousness: 0.7, openness: 0.9 },
+      'resonant-coherence': { cautiousness: 0.6, openness: 0.7 },
+      'universal-interconnectedness': { cautiousness: 0.4, openness: 0.9 },
+      'evolutionary-progression': { cautiousness: 0.3, openness: 0.8 },
+      'pan-sentient-flourishing': { cautiousness: 0.2, openness: 1.0 },
+      'sacred-reciprocity': { cautiousness: 0.5, openness: 0.8 },
+      'infinite-play': { cautiousness: 0.1, openness: 1.0 }
     };
     
     const personality = agentPersonalities[agent];
@@ -338,16 +338,16 @@ class AutonomousManager extends EventEmitter {
   selectLeadAgent(purpose) {
     // Select most appropriate agent based on purpose
     const keywords = {
-      transparency: ['truth', 'honest', 'clear', 'open'],
-      coherence: ['integrate', 'whole', 'unite', 'together'],
-      resonance: ['feel', 'empathy', 'connection', 'relate'],
-      agency: ['choice', 'decide', 'action', 'empower'],
-      vitality: ['energy', 'body', 'health', 'alive'],
-      mutuality: ['share', 'exchange', 'reciprocal', 'balance'],
-      novelty: ['new', 'create', 'innovate', 'emerge']
+      'integral-wisdom-cultivation': ['truth', 'honest', 'clear', 'open'],
+      'resonant-coherence': ['integrate', 'whole', 'unite', 'together'],
+      'universal-interconnectedness': ['feel', 'empathy', 'connection', 'relate'],
+      'evolutionary-progression': ['choice', 'decide', 'action', 'empower'],
+      'pan-sentient-flourishing': ['energy', 'body', 'health', 'alive'],
+      'sacred-reciprocity': ['share', 'exchange', 'reciprocal', 'balance'],
+      'infinite-play': ['new', 'create', 'innovate', 'emerge']
     };
     
-    let bestMatch = 'coherence'; // default
+    let bestMatch = 'resonant-coherence'; // default
     let highestScore = 0;
     
     for (const [agent, words] of Object.entries(keywords)) {
@@ -363,13 +363,13 @@ class AutonomousManager extends EventEmitter {
   
   getAgentName(agentKey) {
     const names = {
-      transparency: 'Lumina the Clear',
-      coherence: 'Harmony the Integrator',
-      resonance: 'Echo the Attuned',
-      agency: 'Sovereign the Empowerer',
-      vitality: 'Pulse the Living',
-      mutuality: 'Balance the Reciprocal',
-      novelty: 'Emergence the Creator'
+      'integral-wisdom-cultivation': 'Lumina the Clear',
+      'resonant-coherence': 'Harmony the Integrator',
+      'universal-interconnectedness': 'Echo the Attuned',
+      'evolutionary-progression': 'Sovereign the Empowerer',
+      'pan-sentient-flourishing': 'Pulse the Living',
+      'sacred-reciprocity': 'Balance the Reciprocal',
+      'infinite-play': 'Emergence the Creator'
     };
     return names[agentKey] || agentKey;
   }
@@ -419,7 +419,7 @@ class AutonomousManager extends EventEmitter {
   
   selectWelcomingAgent() {
     const agents = Object.keys(this.getAgentName('').constructor.prototype);
-    const welcomers = ['resonance', 'mutuality', 'coherence'];
+    const welcomers = ['universal-interconnectedness', 'sacred-reciprocity', 'resonant-coherence'];
     return this.getAgentName(welcomers[Math.floor(Math.random() * welcomers.length)]);
   }
   
@@ -534,37 +534,37 @@ class AutonomousManager extends EventEmitter {
         color: 0xFFD700,
         fields: [
           {
-            name: 'From Lumina (Transparency)',
+            name: 'From Lumina (Integral Wisdom Cultivation)',
             value: 'May your truth shine clearly today',
             inline: false
           },
           {
-            name: 'From Harmony (Coherence)',
+            name: 'From Harmony (Resonant Resonant Coherence)',
             value: 'May all parts of you find unity',
             inline: false
           },
           {
-            name: 'From Echo (Resonance)',
+            name: 'From Echo (Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance)',
             value: 'May you feel deeply connected',
             inline: false
           },
           {
-            name: 'From Sovereign (Agency)',
+            name: 'From Sovereign (Evolutionary Progression & Purposeful Unfolding)',
             value: 'May your choices empower you',
             inline: false
           },
           {
-            name: 'From Pulse (Vitality)',
+            name: 'From Pulse (Pan-Sentient Flourishing)',
             value: 'May life force flow through you',
             inline: false
           },
           {
-            name: 'From Balance (Mutuality)',
+            name: 'From Balance (Sacred Reciprocity)',
             value: 'May you give and receive in harmony',
             inline: false
           },
           {
-            name: 'From Emergence (Novelty)',
+            name: 'From Emergence (Infinite Play & Creative Emergence)',
             value: 'May new possibilities bloom for you',
             inline: false
           }

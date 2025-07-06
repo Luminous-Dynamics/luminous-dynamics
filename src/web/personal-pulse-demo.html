@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Pulse - Sacred Coherence Tracking</title>
+    <title>Personal Pulse - Sacred Resonant Resonant Coherence Tracking</title>
     <style>
         body {
             margin: 0;
@@ -168,7 +168,7 @@
     <div class="container">
         <div class="header">
             <h1>🫀 Personal Pulse</h1>
-            <p>Track your coherence journey through sacred practices</p>
+            <p>Track your resonant-coherence journey through sacred practices</p>
         </div>
 
         <div class="demo-section">
@@ -181,8 +181,8 @@
                 <button class="practice-btn" onclick="startPractice('glyph', 'First Presence (Ω45)')">
                     🕯️ First Presence
                 </button>
-                <button class="practice-btn" onclick="startPractice('meditation', 'Heart Coherence')">
-                    💗 Heart Coherence
+                <button class="practice-btn" onclick="startPractice('meditation', 'Heart Resonant Resonant Coherence')">
+                    💗 Heart Resonant Resonant Coherence
                 </button>
                 <button class="practice-btn" onclick="startPractice('movement', 'Sacred Movement')">
                     🌊 Sacred Movement
@@ -195,12 +195,12 @@
                     <span class="status-value" id="practice-status">Not in practice</span>
                 </div>
                 <div class="status-row">
-                    <span class="status-label">Current Coherence:</span>
-                    <span class="status-value" id="current-coherence">75%</span>
+                    <span class="status-label">Current Resonant Resonant Coherence:</span>
+                    <span class="status-value" id="current-resonant-coherence">75%</span>
                 </div>
                 <div class="status-row">
-                    <span class="status-label">Field Resonance:</span>
-                    <span class="status-value" id="field-resonance">Stable</span>
+                    <span class="status-label">Field Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance:</span>
+                    <span class="status-value" id="field-universal-interconnectedness">Stable</span>
                 </div>
                 <div class="status-row">
                     <span class="status-label">Practice Duration:</span>
@@ -244,8 +244,8 @@
                     <span class="status-value" id="evolution-markers">0</span>
                 </div>
                 <div class="status-row">
-                    <span class="status-label">Peak Coherence:</span>
-                    <span class="status-value" id="peak-coherence">75%</span>
+                    <span class="status-label">Peak Resonant Resonant Coherence:</span>
+                    <span class="status-value" id="peak-resonant-coherence">75%</span>
                 </div>
                 <div class="status-row">
                     <span class="status-label">30-Day Consistency:</span>
@@ -265,7 +265,7 @@
 
         <div class="demo-note">
             <strong>🎯 Demo Mode</strong>
-            This is a demonstration of the Personal Pulse coherence tracking system. In production, it will automatically integrate with Living Glyph Cards and track real biometric data. Try starting a practice and watch the coherence indicator in the bottom right!
+            This is a demonstration of the Personal Pulse resonant-coherence tracking system. In production, it will automatically integrate with Living Glyph Cards and track real biometric data. Try starting a practice and watch the resonant-coherence indicator in the bottom right!
         </div>
     </div>
 
@@ -316,7 +316,7 @@
             startCoherenceSimulation();
 
             // Show notification
-            showNotification(`Started ${name} practice. Watch your coherence rise!`);
+            showNotification(`Started ${name} practice. Watch your resonant-coherence rise!`);
         }
 
         function startPracticeTimer() {
@@ -336,39 +336,39 @@
         }
 
         function startCoherenceSimulation() {
-            // Simulate coherence changes during practice
+            // Simulate resonant-coherence changes during practice
             coherenceSimulation = setInterval(() => {
                 if (!practiceActive) {
                     clearInterval(coherenceSimulation);
                     return;
                 }
 
-                // Simulate coherence variations
+                // Simulate resonant-coherence variations
                 const base = 0.75;
                 const practiceBonus = Math.min(0.15, (Date.now() - practiceStartTime) / 300000);
                 const variation = Math.sin(Date.now() / 10000) * 0.05;
-                const coherence = Math.max(0, Math.min(1, base + practiceBonus + variation));
+                const resonant-coherence = Math.max(0, Math.min(1, base + practiceBonus + variation));
 
-                // Record coherence
-                pulse.recordCoherence(coherence, 'simulation');
+                // Record resonant-coherence
+                pulse.recordCoherence(resonant-coherence, 'simulation');
 
                 // Update display
-                document.getElementById('current-coherence').textContent = 
-                    Math.round(coherence * 100) + '%';
+                document.getElementById('current-resonant-coherence').textContent = 
+                    Math.round(resonant-coherence * 100) + '%';
 
                 // Update trajectory
                 const trajectory = pulse.fieldResonance.trajectory;
-                document.getElementById('field-resonance').textContent = 
+                document.getElementById('field-universal-interconnectedness').textContent = 
                     trajectory.charAt(0).toUpperCase() + trajectory.slice(1);
 
-                // Check for high coherence
-                if (coherence > 0.85 && Math.random() > 0.95) {
+                // Check for high resonant-coherence
+                if (resonant-coherence > 0.85 && Math.random() > 0.95) {
                     pulse.recordEvolutionMarker({
                         type: 'high_coherence',
-                        marker: 'Sustained High Coherence',
+                        marker: 'Sustained High Resonant Resonant Coherence',
                         timestamp: Date.now()
                     });
-                    showNotification('✨ Evolution marker earned: Sustained High Coherence!');
+                    showNotification('✨ Evolution marker earned: Sustained High Resonant Resonant Coherence!');
                     updateEvolutionDisplay();
                 }
             }, 3000);
@@ -434,7 +434,7 @@
             updateEvolutionDisplay();
 
             // Show summary
-            showNotification(`✨ Practice complete! Peak coherence: ${Math.round(completion.stats.peakCoherence * 100)}%`);
+            showNotification(`✨ Practice complete! Peak resonant-coherence: ${Math.round(completion.stats.peakCoherence * 100)}%`);
         }
 
         function updateEvolutionDisplay() {
@@ -443,7 +443,7 @@
             // Update counts
             document.getElementById('total-practices').textContent = summary.totalPractices;
             document.getElementById('evolution-markers').textContent = summary.evolutionMarkers;
-            document.getElementById('peak-coherence').textContent = 
+            document.getElementById('peak-resonant-coherence').textContent = 
                 Math.round(summary.peakCoherence * 100) + '%';
             document.getElementById('consistency').textContent = 
                 Math.round(summary.consistency * 100) + '%';
@@ -539,7 +539,7 @@
         });
 
         pulse.on('breakthroughDetected', (breakthrough) => {
-            showNotification(`⚡ Coherence breakthrough at ${Math.round(breakthrough.coherenceLevel * 100)}%!`);
+            showNotification(`⚡ Resonant Resonant Coherence breakthrough at ${Math.round(breakthrough.coherenceLevel * 100)}%!`);
         });
     </script>
 </body>

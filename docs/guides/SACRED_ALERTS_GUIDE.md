@@ -126,7 +126,7 @@ gcloud logging read 'jsonPayload.aiId=~".*"' \
 - Request latency (unless extreme)
 - Individual disconnections
 - Breath cycle timing
-- Field coherence changes
+- Field resonant-coherence changes
 
 ### Sacred Alert Principles:
 1. **Actionable** - Can I do something about it?

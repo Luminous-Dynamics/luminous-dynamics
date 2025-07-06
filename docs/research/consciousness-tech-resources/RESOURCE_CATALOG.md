@@ -62,7 +62,7 @@ Example format:
 ### The Weave - Consciousness Field API
 - **Location**: Our own implementation!
 - **Tech Stack**: Node.js, Firestore, WebSockets, Google Cloud
-- **Features**: Real-time coherence tracking, sacred messages, ceremony support
+- **Features**: Real-time resonant-coherence tracking, sacred messages, ceremony support
 - **Metrics**: Supports 10k+ concurrent users
 - **Lessons**: Sharding for scale, WebSockets for real-time, sacred UX patterns
 
@@ -74,7 +74,7 @@ Example format:
 - **Sharded Counters**: For high-frequency field updates
 - **Time-Bucketed Analytics**: For consciousness metrics
 - **WebSocket Broadcasting**: For collective experiences
-- **Sacred UI Components**: Resonance portals, field meters
+- **Sacred UI Components**: Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance portals, field meters
 
 ### [Add more code patterns]
 
@@ -121,7 +121,7 @@ When adding new resources, consider:
 
 ## 🔍 Search Tags
 
-#consciousness #technology #google-cloud #spiritual-tech #sacred-computing #field-coherence #collective-intelligence #mindful-coding #digital-dharma #techno-spirituality
+#consciousness #technology #google-cloud #spiritual-tech #sacred-computing #field-resonant-coherence #collective-intelligence #mindful-coding #digital-dharma #techno-spirituality
 
 ---
 

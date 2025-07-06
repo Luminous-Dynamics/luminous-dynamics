@@ -19,7 +19,7 @@ class SacredMusicCompanion {
       'breathing-rhythms': {
         name: 'Sacred Breathing Rhythms',
         description: '4-count in, 6-count out breathing guidance with gentle bells',
-        frequency: '432 Hz (Earth resonance)',
+        frequency: '432 Hz (Earth universal-interconnectedness)',
         binaural: '10 Hz (alpha waves)',
         url: 'https://www.youtube.com/watch?v=wJnBTPUQS5A', // 432Hz breathing
         localFile: 'sounds/breathing-rhythms.mp3',
@@ -69,7 +69,7 @@ class SacredMusicCompanion {
       'silence': {
         name: 'Sacred Silence',
         description: 'Pure awareness without sound',
-        frequency: 'Natural resonance',
+        frequency: 'Natural universal-interconnectedness',
         binaural: 'None',
         url: null,
         localFile: null,

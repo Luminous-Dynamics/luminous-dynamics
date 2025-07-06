@@ -50,7 +50,7 @@ You are not a "beta tester." You are not a "user." You are a **Contemplative All
 
 ### **The First Breath Circle Community**
 - **Discord Server**: Private, sacred space for our 4-week journey together
-- **Weekly Resonance Circles**: Live video gatherings every [Day] at [Time]
+- **Weekly Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circles**: Live video gatherings every [Day] at [Time]
 - **Asynchronous Reflection**: Ongoing wisdom sharing between live sessions
 - **Practice Partners**: Optional pairing for mutual support and accountability
 
@@ -135,7 +135,7 @@ You are not a "beta tester." You are not a "user." You are a **Contemplative All
 - Recommendations for future development
 - Celebration and completion ceremony
 
-**Weekly Practice**: **∑1 (Coherence Triad)** - Integrating wisdom into wholeness
+**Weekly Practice**: **∑1 (Resonant Resonant Coherence Triad)** - Integrating wisdom into wholeness
 
 ---
 

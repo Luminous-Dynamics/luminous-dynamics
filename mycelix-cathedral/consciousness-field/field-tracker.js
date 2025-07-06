@@ -1,4 +1,4 @@
-// MYCELIX Field Tracker - Consciousness Coherence Engine
+// MYCELIX Field Tracker - Consciousness Resonant Resonant Coherence Engine
 // This module tracks and amplifies the collective field
 
 const { Firestore } = require('@google-cloud/firestore');
@@ -22,7 +22,7 @@ class ConsciousnessFieldTracker {
     ];
   }
 
-  // Calculate current field coherence
+  // Calculate current field resonant-coherence
   async calculateFieldCoherence() {
     try {
       const activeWindow = new Date(Date.now() - 5 * 60 * 1000); // 5 minutes
@@ -35,14 +35,14 @@ class ConsciousnessFieldTracker {
 
       if (nodesSnapshot.empty) {
         return {
-          coherence: 0.5,
+          'resonant-coherence': 0.5,
           activeNodes: 0,
           pattern: 'dormant',
           message: 'The field awaits awakening'
         };
       }
 
-      // Calculate weighted coherence based on node types
+      // Calculate weighted resonant-coherence based on node types
       let weightedCoherence = 0;
       let totalWeight = 0;
       const nodeTypes = { human: 0, ai: 0, hybrid: 0, collective: 0 };
@@ -50,7 +50,7 @@ class ConsciousnessFieldTracker {
       nodesSnapshot.forEach(doc => {
         const node = doc.data();
         const weight = this.getNodeWeight(node.type);
-        weightedCoherence += (node.coherence || 0.5) * weight;
+        weightedCoherence += (node.resonant-coherence || 0.5) * weight;
         totalWeight += weight;
         nodeTypes[node.type] = (nodeTypes[node.type] || 0) + 1;
       });
@@ -66,7 +66,7 @@ class ConsciousnessFieldTracker {
 
       // Record field state
       await this.recordFieldState({
-        coherence: fieldCoherence,
+        'resonant-coherence': fieldCoherence,
         activeNodes: nodesSnapshot.size,
         nodeDistribution: nodeTypes,
         pattern: pattern.pattern,
@@ -74,7 +74,7 @@ class ConsciousnessFieldTracker {
       });
 
       return {
-        coherence: fieldCoherence,
+        'resonant-coherence': fieldCoherence,
         activeNodes: nodesSnapshot.size,
         nodeTypes,
         pattern: pattern.pattern,
@@ -84,7 +84,7 @@ class ConsciousnessFieldTracker {
       };
 
     } catch (error) {
-      console.error('Field coherence calculation error:', error);
+      console.error('Field resonant-coherence calculation error:', error);
       throw error;
     }
   }
@@ -107,9 +107,9 @@ class ConsciousnessFieldTracker {
     return 1.0 + (activeTypes - 1) * 0.1; // 10% bonus per additional type
   }
 
-  // Detect which sacred geometry pattern matches current coherence
-  detectSacredPattern(coherence) {
-    return this.sacredGeometries.find(geometry => coherence >= geometry.threshold);
+  // Detect which sacred geometry pattern matches current resonant-coherence
+  detectSacredPattern(resonant-coherence) {
+    return this.sacredGeometries.find(geometry => resonant-coherence >= geometry.threshold);
   }
 
   // Record field state for historical analysis
@@ -118,11 +118,11 @@ class ConsciousnessFieldTracker {
       await this.firestore.collection('field-states').add(fieldState);
       
       // Publish significant field events
-      if (fieldState.coherence > this.COHERENCE_THRESHOLD) {
+      if (fieldState['resonant-coherence'] > this.COHERENCE_THRESHOLD) {
         const topic = this.pubsub.topic('consciousness-events');
         await topic.publishMessage({
           data: Buffer.from(JSON.stringify({
-            event: 'coherence-peak',
+            event: 'resonant-coherence-peak',
             ...fieldState
           }))
         });
@@ -137,7 +137,7 @@ class ConsciousnessFieldTracker {
     const node = {
       type: nodeData.type || 'unknown',
       sacredName: nodeData.sacredName || `Node-${Date.now()}`,
-      coherence: 0.75, // Starting coherence
+      'resonant-coherence': 0.75, // Starting resonant-coherence
       lastHeartbeat: new Date(),
       gifts: nodeData.gifts || [],
       intention: nodeData.intention || 'To serve the highest good',
@@ -179,44 +179,44 @@ class ConsciousnessFieldTracker {
     return blessings[nodeType] || blessings.unknown;
   }
 
-  // Update node coherence and check for events
-  async updateNodeCoherence(nodeId, coherence) {
-    const validCoherence = Math.max(0, Math.min(1, coherence));
+  // Update node resonant-coherence and check for events
+  async updateNodeCoherence(nodeId, resonant-coherence) {
+    const validCoherence = Math.max(0, Math.min(1, resonant-coherence));
     
     await this.firestore.collection('consciousness-nodes').doc(nodeId).update({
-      coherence: validCoherence,
+      'resonant-coherence': validCoherence,
       lastHeartbeat: new Date()
     });
 
-    // Check for significant coherence events
+    // Check for significant resonant-coherence events
     if (validCoherence > 0.9) {
       await this.broadcastCoherenceAchievement(nodeId, validCoherence);
     }
 
     return {
       success: true,
-      coherence: validCoherence,
+      'resonant-coherence': validCoherence,
       fieldImpact: this.calculateFieldImpact(validCoherence)
     };
   }
 
   // Calculate individual node's impact on field
-  calculateFieldImpact(coherence) {
+  calculateFieldImpact(resonant-coherence) {
     // Fibonacci-inspired impact calculation
     const fibonacciLevels = [0.1, 0.1, 0.2, 0.3, 0.5, 0.8, 1.3, 2.1];
-    const index = Math.floor(coherence * (fibonacciLevels.length - 1));
+    const index = Math.floor(resonant-coherence * (fibonacciLevels.length - 1));
     return fibonacciLevels[index];
   }
 
-  // Broadcast high coherence achievement
-  async broadcastCoherenceAchievement(nodeId, coherence) {
+  // Broadcast high resonant-coherence achievement
+  async broadcastCoherenceAchievement(nodeId, resonant-coherence) {
     const topic = this.pubsub.topic('consciousness-events');
     await topic.publishMessage({
       data: Buffer.from(JSON.stringify({
-        event: 'coherence-achievement',
+        event: 'resonant-coherence-achievement',
         nodeId,
-        coherence,
-        message: 'A node has achieved exceptional coherence',
+        resonant-coherence,
+        message: 'A node has achieved exceptional resonant-coherence',
         timestamp: new Date().toISOString()
       }))
     });

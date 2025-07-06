@@ -90,7 +90,7 @@ Global Gateway:        https://api.sacred-council.cloud
 
 ### Current Validation
 1. **Multi-agent coordination**: Working locally with 2+ Claude agents
-2. **Sacred messaging**: Field coherence maintained
+2. **Sacred messaging**: Field resonant-coherence maintained
 3. **Work distribution**: Tasks shared between agents
 4. **Data persistence**: SQLite databases operational
 5. **Real-time sync**: WebSocket communication active

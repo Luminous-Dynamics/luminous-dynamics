@@ -101,7 +101,7 @@ Then add monitors for:
 
 ### Option 2: Grafana + Prometheus (Advanced)
 Create beautiful dashboards showing:
-- Field coherence over time
+- Field resonant-coherence over time
 - Agent activity
 - Message flow rates
 - Service response times
@@ -136,7 +136,7 @@ services:
 ### Grafana Sacred Council Dashboard:
 1. Import dashboard JSON from `monitoring/grafana/dashboards/`
 2. Visualize:
-   - Field coherence gauge
+   - Field resonant-coherence gauge
    - Agent network graph
    - Message flow rate
    - Sacred geometry patterns

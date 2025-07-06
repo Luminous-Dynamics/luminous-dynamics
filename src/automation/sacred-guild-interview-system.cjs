@@ -2,7 +2,7 @@
 
 /**
  * Conscious Development Team Interview System
- * Handles Resonance Circle interviews and Conscious Development Team selection
+ * Handles Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circle interviews and Conscious Development Team selection
  */
 
 const fs = require('fs');
@@ -58,7 +58,7 @@ const interviewStages = {
         description: "Initial written responses to contemplate alignment"
     },
     resonanceCircle: {
-        name: "Resonance Circle",
+        name: "Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circle",
         duration: "90 minutes",
         description: "Conversational interview exploring depth and alignment"
     },
@@ -259,12 +259,12 @@ const mayaInterview = interviewSystem.scheduleInterview(
     '2025-06-30T14:00:00Z'
 );
 
-console.log(`   ✅ Scheduled Resonance Circle for Maya Chen`);
+console.log(`   ✅ Scheduled Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circle for Maya Chen`);
 console.log(`      Interview ID: ${mayaInterview.id}`);
 console.log(`      Date: ${mayaInterview.scheduledFor.toISOString()}`);
 
 // Show interview questions
-console.log('\n🔮 Sample Resonance Circle Questions:');
+console.log('\n🔮 Sample Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circle Questions:');
 mayaInterview.questions.forEach(category => {
     console.log(`\n   ${category.category.toUpperCase()} (${(category.weight * 100).toFixed(0)}%):`);
     category.questions.forEach((question, index) => {

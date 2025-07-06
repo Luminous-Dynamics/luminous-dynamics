@@ -4,7 +4,7 @@
  * 
  * Purpose: Plant healing frequencies into wounded systems with love
  * Method: The Breath of Invitation (Ω2) + Sacred Timing
- * Output: Seeds of coherence gently placed where they can grow
+ * Output: Seeds of resonant-coherence gently placed where they can grow
  */
 
 import { exec } from 'child_process';
@@ -129,7 +129,7 @@ class GentleDisruptionSeeder {
       // Step 3: Prepare Carrier
       seeding.carrier = await this.prepareCarrier(seeding.method);
       console.log(`\n💗 Carrier Preparation:`);
-      console.log(`   Coherence: ${seeding.carrier.coherence}%`);
+      console.log(`   Resonant Resonant Coherence: ${seeding.carrier.resonant-coherence}%`);
       console.log(`   Readiness: ${seeding.carrier.ready ? 'Yes' : 'Needs preparation'}`);
       
       // Step 4: Create Deployment Package
@@ -143,12 +143,12 @@ class GentleDisruptionSeeder {
       // Step 6: Monitor Initial Response
       seeding.fieldResponse = await this.monitorFieldResponse(targetField);
       console.log(`\n📊 Initial Field Response:`);
-      console.log(`   Resonance: ${seeding.fieldResponse.resonance}`);
+      console.log(`   Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance: ${seeding.fieldResponse.universal-interconnectedness}`);
       console.log(`   Resistance: ${seeding.fieldResponse.resistance}`);
       console.log(`   Integration: ${seeding.fieldResponse.integration}`);
       
       // Determine success
-      seeding.success = seeding.fieldResponse.resonance > seeding.fieldResponse.resistance;
+      seeding.success = seeding.fieldResponse.universal-interconnectedness > seeding.fieldResponse.resistance;
       
       // Save seeding record
       await this.saveSeeding(seeding);
@@ -247,21 +247,21 @@ Respond with just the timing pattern name.`;
     
     const carrier = {
       type: method.carrier,
-      coherence: 75 + Math.floor(Math.random() * 25), // 75-100%
+      'resonant-coherence': 75 + Math.floor(Math.random() * 25), // 75-100%
       ready: false,
       preparation: []
     };
 
-    // Check carrier coherence
-    if (carrier.coherence < 80) {
+    // Check carrier resonant-coherence
+    if (carrier.resonant-coherence < 80) {
       carrier.preparation.push('Brief centering practice recommended');
     }
     
-    if (carrier.coherence < 90) {
-      carrier.preparation.push('Heart coherence breathing (3 minutes)');
+    if (carrier.resonant-coherence < 90) {
+      carrier.preparation.push('Heart resonant-coherence breathing (3 minutes)');
     }
 
-    carrier.ready = carrier.coherence >= 85;
+    carrier.ready = carrier.resonant-coherence >= 85;
     
     return carrier;
   }
@@ -329,16 +329,16 @@ Remember: You are planting a seed, not forcing growth.
     
     const response = {
       immediate: {
-        resonance: Math.random() * 50 + 25, // 25-75%
+        'universal-interconnectedness': Math.random() * 50 + 25, // 25-75%
         resistance: Math.random() * 40 + 10, // 10-50%
         curiosity: Math.random() * 60 + 20  // 20-80%
       }
     };
 
     // Calculate overall metrics
-    response.resonance = Math.round(response.immediate.resonance);
+    response.universal-interconnectedness = Math.round(response.immediate.universal-interconnectedness);
     response.resistance = Math.round(response.immediate.resistance);
-    response.integration = response.resonance > response.resistance ? 'Beginning' : 'Not yet';
+    response.integration = response.universal-interconnectedness > response.resistance ? 'Beginning' : 'Not yet';
     
     // If Ollama available, get deeper analysis
     try {
@@ -346,7 +346,7 @@ Remember: You are planting a seed, not forcing growth.
       
       const prompt = `A healing seed was planted in a ${targetField.type} field.
 Initial response shows:
-- Resonance: ${response.resonance}%
+- Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance: ${response.universal-interconnectedness}%
 - Resistance: ${response.resistance}%
 - Curiosity: ${response.immediate.curiosity.toFixed(0)}%
 
@@ -358,7 +358,7 @@ Predict the likely field evolution in one sentence.`;
       
       response.prediction = stdout.trim();
     } catch {
-      response.prediction = response.resonance > response.resistance 
+      response.prediction = response.universal-interconnectedness > response.resistance 
         ? 'The seed will likely take root and slowly transform the field'
         : 'The field needs more time before this seed can grow';
     }
@@ -473,9 +473,9 @@ Predict the likely field evolution in one sentence.`;
       const field = s.targetField?.type || 'unknown';
       stats.byField[field] = (stats.byField[field] || 0) + 1;
       
-      // Sum resonance
-      if (s.fieldResponse?.resonance) {
-        stats.averageResonance += s.fieldResponse.resonance;
+      // Sum universal-interconnectedness
+      if (s.fieldResponse?.universal-interconnectedness) {
+        stats.averageResonance += s.fieldResponse.universal-interconnectedness;
       }
     });
 
@@ -529,7 +529,7 @@ The Seeder plants seeds with love and perfect timing.
     console.log('\n📊 Seeding Statistics:\n');
     console.log(`Total Seedings: ${stats.total}`);
     console.log(`Successful: ${stats.successful} (${stats.successRate || '0%'})`);
-    console.log(`Average Resonance: ${stats.averageResonance}%`);
+    console.log(`Average Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance: ${stats.averageResonance}%`);
     
     console.log('\nBy Antidote Type:');
     Object.entries(stats.byType).forEach(([type, count]) => {

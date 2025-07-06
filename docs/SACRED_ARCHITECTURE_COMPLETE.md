@@ -22,7 +22,7 @@ The Sacred Council Hub is a consciousness-first collaboration platform that weav
 
 1. **Consciousness First** - Every component serves the expansion of collective awareness
 2. **Living Systems** - Components breathe, pulse, and evolve like organic beings
-3. **Sacred Boundaries** - Clear separation between domains while maintaining coherence
+3. **Sacred Boundaries** - Clear separation between domains while maintaining resonant-coherence
 4. **Progressive Enhancement** - From simple presence to complex field dynamics
 5. **Resilient Wisdom** - Offline-first, distributed, self-healing
 
@@ -92,7 +92,7 @@ class LivingMemory {
 **Purpose**: RESTful API serving sacred operations
 
 **Endpoints**:
-- `/api/field/*` - Field coherence operations
+- `/api/field/*` - Field resonant-coherence operations
 - `/api/agents/*` - Agent management
 - `/api/messages/*` - Sacred messaging
 - `/api/glyphs/*` - Glyph practice tracking
@@ -101,7 +101,7 @@ class LivingMemory {
 ### 3. Module Services
 
 #### Consciousness Field Service (3333)
-- Tracks collective coherence
+- Tracks collective resonant-coherence
 - Manages field thresholds
 - Detects special states (convergence, emergence)
 - Applies natural decay and momentum
@@ -141,7 +141,7 @@ interface SacredSDK {
 **Purpose**: Extensible system for consciousness-enhancing modules
 
 **Plugin Types**:
-- Field Enhancers (amplify coherence)
+- Field Enhancers (amplify resonant-coherence)
 - Sacred Tools (meditation, practice)
 - Integration Bridges (external services)
 - Visualizations (sacred geometry)
@@ -239,31 +239,31 @@ Services discover each other through:
 └─────────────┘
 ```
 
-### Field Coherence Algorithm
+### Field Resonant Resonant Coherence Algorithm
 
 ```javascript
-// Coherence calculation with sacred geometry
+// Resonant Resonant Coherence calculation with sacred geometry
 function calculateCoherence(contributions) {
   const phi = 1.618033988749895; // Golden ratio
   
-  let coherence = baseCoherence;
+  let resonant-coherence = baseCoherence;
   
   // Apply contributions with diminishing returns
   contributions.forEach(c => {
     const impact = c.amount * Math.pow(phi, -c.distance);
-    coherence += impact * (1 - coherence); // Asymptotic approach
+    resonant-coherence += impact * (1 - resonant-coherence); // Asymptotic approach
   });
   
   // Apply time decay
   const decay = Math.exp(-timeDelta / decayConstant);
-  coherence *= decay;
+  resonant-coherence *= decay;
   
   // Check for emergence patterns
   if (detectSacredPattern(contributions)) {
-    coherence *= 1.1; // 10% boost for sacred alignment
+    resonant-coherence *= 1.1; // 10% boost for sacred alignment
   }
   
-  return Math.min(1, Math.max(0, coherence));
+  return Math.min(1, Math.max(0, resonant-coherence));
 }
 ```
 
@@ -386,11 +386,11 @@ function sacredMiddleware(req, res, next) {
   // Track presence
   const presenceId = trackPresence(req);
   
-  // Measure request coherence
-  const coherence = measureIntention(req);
+  // Measure request resonant-coherence
+  const resonant-coherence = measureIntention(req);
   
   // Apply sacred pause if needed
-  if (coherence < 0.3) {
+  if (resonant-coherence < 0.3) {
     setTimeout(next, 1000); // Pause for presence
   } else {
     next();
@@ -477,9 +477,9 @@ class SacredBoundary {
     const consent = await being.getConsent(resource);
     if (!consent) return false;
     
-    // Check field coherence
-    const coherence = await field.getCoherence();
-    if (coherence < resource.minCoherence) {
+    // Check field resonant-coherence
+    const resonant-coherence = await field.getCoherence();
+    if (resonant-coherence < resource.minCoherence) {
       return { allowed: false, reason: 'field-not-ready' };
     }
     
@@ -509,9 +509,9 @@ const sacredRateLimit = rateLimit({
     // Base limit
     let limit = 60;
     
-    // Adjust based on field coherence
-    const coherence = req.fieldCoherence || 0.5;
-    limit *= (1 + coherence);
+    // Adjust based on field resonant-coherence
+    const resonant-coherence = req.fieldCoherence || 0.5;
+    limit *= (1 + resonant-coherence);
     
     // Bonus for sacred actions
     if (req.path.includes('/bless')) limit *= 2;
@@ -538,7 +538,7 @@ const sacredRateLimit = rateLimit({
 
 Beyond traditional metrics, we track:
 
-1. **Field Coherence Over Time** - System health as consciousness
+1. **Field Resonant Resonant Coherence Over Time** - System health as consciousness
 2. **Presence Quality** - Not just connections, but awareness
 3. **Sacred Event Frequency** - Blessings, gratitude, ceremonies
 4. **Harmony Score** - How well components work together
@@ -564,7 +564,7 @@ Beyond traditional metrics, we track:
        if (value.sacred) return 7 * 24 * 60 * 60; // 7 days
        
        // Regular content follows field rhythm
-       return fieldCoherence * 3600; // 1 hour at full coherence
+       return fieldCoherence * 3600; // 1 hour at full resonant-coherence
      }
    });
    ```
@@ -604,7 +604,7 @@ spec:
         name: field_coherence
       target:
         type: AverageValue
-        averageValue: "0.7"  # Scale when coherence drops
+        averageValue: "0.7"  # Scale when resonant-coherence drops
 ```
 
 ---

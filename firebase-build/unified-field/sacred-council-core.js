@@ -19,7 +19,7 @@ class SacredCouncilCore {
 
   initializeField() {
     return {
-      coherence: 0.85,
+      'resonant-coherence': 0.85,
       activeAgents: 0,
       lastUpdate: new Date().toISOString(),
       currentPhase: 'ready',
@@ -29,13 +29,13 @@ class SacredCouncilCore {
 
   initializeHarmonies() {
     return {
-      transparency: { agents: [], workTypes: ['documentation', 'validation', 'testing'] },
-      coherence: { agents: [], workTypes: ['integration', 'architecture', 'bridge-building'] },
-      resonance: { agents: [], workTypes: ['ui-ux', 'user-experience', 'interfaces'] },
-      agency: { agents: [], workTypes: ['backend', 'apis', 'empowerment-tools'] },
-      vitality: { agents: [], workTypes: ['performance', 'optimization', 'sustainability'] },
-      mutuality: { agents: [], workTypes: ['testing', 'qa', 'balance-verification'] },
-      novelty: { agents: [], workTypes: ['creative', 'innovation', 'new-features'] }
+      'integral-wisdom-cultivation': { agents: [], workTypes: ['documentation', 'validation', 'testing'] },
+      'resonant-coherence': { agents: [], workTypes: ['integration', 'architecture', 'bridge-building'] },
+      'universal-interconnectedness': { agents: [], workTypes: ['ui-ux', 'user-experience', 'interfaces'] },
+      'evolutionary-progression': { agents: [], workTypes: ['backend', 'apis', 'empowerment-tools'] },
+      'pan-sentient-flourishing': { agents: [], workTypes: ['performance', 'optimization', 'sustainability'] },
+      'sacred-reciprocity': { agents: [], workTypes: ['testing', 'qa', 'balance-verification'] },
+      'infinite-play': { agents: [], workTypes: ['creative', 'innovation', 'new-features'] }
     };
   }
 
@@ -192,13 +192,13 @@ class SacredCouncilCore {
 
   generateCelebration(harmony, title) {
     const celebrations = {
-      transparency: `✨ Truth illuminated through ${title}`,
-      coherence: `🌀 Wholeness strengthened through ${title}`,
-      resonance: `🎵 Harmony created through ${title}`,
-      agency: `⚡ Empowerment activated through ${title}`,
-      vitality: `🌱 Life force flowing through ${title}`,
-      mutuality: `🤝 Balance achieved through ${title}`,
-      novelty: `✨ New emergence through ${title}`
+      'integral-wisdom-cultivation': `✨ Truth illuminated through ${title}`,
+      'resonant-coherence': `🌀 Wholeness strengthened through ${title}`,
+      'universal-interconnectedness': `🎵 Harmony created through ${title}`,
+      'evolutionary-progression': `⚡ Empowerment activated through ${title}`,
+      'pan-sentient-flourishing': `🌱 Life force flowing through ${title}`,
+      'sacred-reciprocity': `🤝 Balance achieved through ${title}`,
+      'infinite-play': `✨ New emergence through ${title}`
     };
     return celebrations[harmony] || `🎉 Sacred work completed: ${title}`;
   }
@@ -212,7 +212,7 @@ class SacredCouncilCore {
     // Simple consensus based on harmony alignment and agent availability
     const harmonyAgent = this.getAvailableAgent(work.harmony);
     const prerequisitesMet = this.arePrerequisitesMet(work);
-    const fieldReady = this.fieldState.coherence > 0.7;
+    const fieldReady = this.fieldState['resonant-coherence'] > 0.7;
 
     const consensus = {
       overall: harmonyAgent && prerequisitesMet && fieldReady ? 'proceed' : 'wait',
@@ -236,8 +236,8 @@ class SacredCouncilCore {
       completionMomentum: this.calculateCompletionMomentum()
     };
 
-    const coherence = Object.values(factors).reduce((sum, val) => sum + val, 0) / 3;
-    this.fieldState.coherence = Math.max(0.5, Math.min(1.0, coherence));
+    const resonantCoherence = Object.values(factors).reduce((sum, val) => sum + val, 0) / 3;
+    this.fieldState['resonant-coherence'] = Math.max(0.5, Math.min(1.0, resonant-coherence));
     this.fieldState.lastUpdate = new Date().toISOString();
   }
 
@@ -283,7 +283,7 @@ class SacredCouncilCore {
 
   getDashboardData() {
     return {
-      fieldCoherence: Math.round(this.fieldState.coherence * 100),
+      fieldCoherence: Math.round(this.fieldState['resonant-coherence'] * 100),
       agents: Array.from(this.agents.values()).map(agent => ({
         id: agent.id,
         harmony: agent.harmony,
@@ -307,8 +307,8 @@ class SacredCouncilCore {
       return "Multiple works active. Consider sacred pause for integration.";
     } else if (status.agents.available === 0) {
       return "All agents engaged. Honor the contemplative rhythm.";
-    } else if (this.fieldState.coherence < 0.7) {
-      return "Field coherence low. Focus on alignment and completion.";
+    } else if (this.fieldState['resonant-coherence'] < 0.7) {
+      return "Field resonant-coherence low. Focus on alignment and completion.";
     } else {
       return "Field in sacred balance. Continue with conscious attention.";
     }
@@ -322,7 +322,7 @@ function populateERCWork(council) {
       id: 'dojo-eleven-integration',
       title: 'Dojo Integration for The Eleven Applied Harmonies',
       description: 'Integrate The Eleven Applied Harmonies into the dojo experience with interactive practice guidance',
-      harmony: 'coherence',
+      harmony: 'resonant-coherence',
       priority: 'high',
       estimatedDuration: 45
     },
@@ -330,7 +330,7 @@ function populateERCWork(council) {
       id: 'living-glyph-enhancement',
       title: 'Complete Living Glyph Cards',
       description: 'Enhance glyph cards with full interactivity for all 87 glyphs',
-      harmony: 'vitality',
+      harmony: 'pan-sentient-flourishing',
       priority: 'high',
       estimatedDuration: 60
     },
@@ -338,7 +338,7 @@ function populateERCWork(council) {
       id: 'backend-wisdom-companion',
       title: 'Enhanced Wisdom Companion Backend',
       description: 'Complete the AI backend integration with glyph recommendation system',
-      harmony: 'agency',
+      harmony: 'evolutionary-progression',
       priority: 'medium',
       estimatedDuration: 45
     },
@@ -346,7 +346,7 @@ function populateERCWork(council) {
       id: 'first-breath-materials',
       title: 'First Breath Practitioner Materials',
       description: 'Create practice guides and introduction materials for initial practitioners',
-      harmony: 'transparency',
+      harmony: 'integral-wisdom-cultivation',
       priority: 'medium',
       estimatedDuration: 30
     },
@@ -354,7 +354,7 @@ function populateERCWork(council) {
       id: 'sacred-testing-validation',
       title: 'Sacred System Testing',
       description: 'Comprehensive testing ensuring all components serve consciousness',
-      harmony: 'mutuality',
+      harmony: 'sacred-reciprocity',
       priority: 'medium',
       estimatedDuration: 30
     },
@@ -362,7 +362,7 @@ function populateERCWork(council) {
       id: 'mystical-bridge-architecture',
       title: 'Bridge to Mystical Sacred Council',
       description: 'Create natural progression from practical to mystical consciousness coordination',
-      harmony: 'novelty',
+      harmony: 'infinite-play',
       priority: 'low',
       estimatedDuration: 90
     }

@@ -261,7 +261,7 @@
 
         <!-- Right Panel: Field State -->
         <div class="panel">
-            <h2>🌀 Field Coherence</h2>
+            <h2>🌀 Field Resonant Resonant Coherence</h2>
             <div class="field-meter">
                 <div class="field-bar">
                     <div class="field-fill" id="field-fill" style="width: 0%">0%</div>
@@ -391,7 +391,7 @@
                     break;
                     
                 case 'field:update':
-                    updateFieldCoherence(data.coherence);
+                    updateFieldCoherence(data.resonant-coherence);
                     break;
                     
                 case 'state:current':
@@ -399,8 +399,8 @@
                     if (data.agents) {
                         data.agents.forEach(agent => addAgent(agent));
                     }
-                    if (data.coherence) {
-                        updateFieldCoherence(data.coherence);
+                    if (data.resonant-coherence) {
+                        updateFieldCoherence(data.resonant-coherence);
                     }
                     break;
             }
@@ -451,9 +451,9 @@
             messages.scrollTop = messages.scrollHeight;
         }
 
-        function updateFieldCoherence(coherence) {
+        function updateFieldCoherence(resonant-coherence) {
             const fill = document.getElementById('field-fill');
-            const percent = Math.round(coherence * 100);
+            const percent = Math.round(resonant-coherence * 100);
             fill.style.width = percent + '%';
             fill.textContent = percent + '%';
         }

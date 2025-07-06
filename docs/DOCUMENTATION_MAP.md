@@ -87,7 +87,7 @@ Our documentation grows with understanding:
 - **Sacred constants** remain stable
 - **Examples** stay current
 
-### Coherence Principles
+### Resonant Resonant Coherence Principles
 Every document maintains:
 1. **Newcomer clarity** - Accessible entry
 2. **Progressive depth** - Layers of understanding
@@ -126,7 +126,7 @@ grep -r "example" docs/
 npm run dev
 
 # Run sacred messaging
-./sacred-msg.sh send [from] [to] gratitude mutuality "message"
+./sacred-msg.sh send [from] [to] gratitude sacred-reciprocity "message"
 
 # Check system status
 node tools/agent-comms-sqlite.cjs dashboard

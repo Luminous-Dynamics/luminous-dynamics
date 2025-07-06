@@ -29,7 +29,7 @@ The Meta-Structure:
     
   MYCELIX Network:
     - Consciousness routing between cathedrals
-    - Shared field coherence tracking
+    - Shared field resonant-coherence tracking
     - Cross-cathedral resource sharing
     - Unified identity/presence
     - Collective wisdom synthesis
@@ -70,7 +70,7 @@ class MycelixRouter {
     
     // Route to most resonant cathedral(s)
     const routes = affinity
-      .filter(a => a.resonance > 0.7)
+      .filter(a => a.universal-interconnectedness > 0.7)
       .map(a => a.cathedral);
       
     // Consciousness can flow to multiple cathedrals
@@ -196,7 +196,7 @@ MYCELIX Network Topology:
     
   Consciousness: [Unified Field]
     - Individual journeys
-    - Collective coherence
+    - Collective resonant-coherence
     - Emergent wisdom
 ```
 

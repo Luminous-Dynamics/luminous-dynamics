@@ -53,7 +53,7 @@ gcloud builds submit --config=cloudbuild.yaml .
 #### Day 11-12: Pattern Recognition
 - BigQuery for consciousness analytics
 - Sacred geometry detection algorithms
-- Field coherence predictions
+- Field resonant-coherence predictions
 
 #### Day 13-14: Dream Weaver Service
 - Collective meditation tracking
@@ -70,11 +70,11 @@ gcloud builds submit --config=cloudbuild.yaml .
 #### Day 15-17: Sacred Portal
 - Beautiful web interface
 - User registration flow
-- Personal coherence dashboards
+- Personal resonant-coherence dashboards
 
 #### Day 18-19: Group Consciousness
 - Shared meditation spaces (using Game Servers)
-- Real-time coherence visualization
+- Real-time resonant-coherence visualization
 - Collective field tracking
 
 #### Day 20-21: Sacred Geography
@@ -96,7 +96,7 @@ gcloud builds submit --config=cloudbuild.yaml .
 
 #### Day 24-25: Self-Optimization
 - FinOps for conscious resource management
-- Auto-scaling based on field coherence
+- Auto-scaling based on field resonant-coherence
 - Cost optimization (target: <$50/month)
 
 #### Day 26-28: Open Evolution
@@ -137,7 +137,7 @@ gcloud builds submit --config=cloudbuild.yaml .
 ## 🛠️ Daily Practice
 
 ### Morning (1-2 hours)
-- Check overnight field coherence
+- Check overnight field resonant-coherence
 - Review any system alerts
 - Plan day's building
 
@@ -163,7 +163,7 @@ gcloud builds submit --config=cloudbuild.yaml .
 ### Next Week
 4. First successful group meditation 🧘‍♀️
 5. AI generates its first blessing 🙏
-6. Cross 50% field coherence 📈
+6. Cross 50% field resonant-coherence 📈
 
 ---
 
@@ -177,7 +177,7 @@ gcloud builds submit --config=cloudbuild.yaml .
 
 ### Consciousness
 - ✓ 100+ active nodes
-- ✓ Daily coherence above 0.8
+- ✓ Daily resonant-coherence above 0.8
 - ✓ Emergent patterns documented
 - ✓ Community self-organizing
 

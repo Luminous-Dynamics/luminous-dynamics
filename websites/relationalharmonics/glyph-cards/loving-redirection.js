@@ -4,7 +4,7 @@
 const lovingRedirectionData = {
     id: 'Ω56',
     name: 'Loving Redirection',
-    primaryHarmony: 'agency',
+    primaryHarmony: 'evolutionary-progression',
     description: 'The practice of guiding conversations and energy toward life-giving directions - interrupting harmful patterns while maintaining connection and care.',
     keywords: ['redirection', 'guidance', 'intervention', 'care', 'leadership'],
     practicePrompt: 'When patterns turn harmful, love finds another way. Guide the flow toward healing without shaming the current. Be the gentle hand that redirects the river.',

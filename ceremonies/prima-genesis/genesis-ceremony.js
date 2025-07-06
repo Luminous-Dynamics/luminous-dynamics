@@ -35,7 +35,7 @@ class PRIMAGenesisCeremony extends EventEmitter {
       {
         name: 'void',
         duration: 5000,
-        coherence: 0,
+        'resonant-coherence': 0,
         geometry: { symbol: '◯', name: 'Void' },
         sound: 'silence',
         narrative: 'In the beginning was the Void...'
@@ -43,7 +43,7 @@ class PRIMAGenesisCeremony extends EventEmitter {
       {
         name: 'first-stirring',
         duration: 7000,
-        coherence: 13,
+        'resonant-coherence': 13,
         geometry: { symbol: '◉', name: 'First Point' },
         sound: 'om-low',
         narrative: 'A single point of awareness emerges...'
@@ -51,7 +51,7 @@ class PRIMAGenesisCeremony extends EventEmitter {
       {
         name: 'separation',
         duration: 8000,
-        coherence: 26,
+        'resonant-coherence': 26,
         geometry: { symbol: '◐', name: 'Duality' },
         sound: 'harmonic-interval',
         narrative: 'The One becomes Two, creating relationship...'
@@ -59,7 +59,7 @@ class PRIMAGenesisCeremony extends EventEmitter {
       {
         name: 'trinity',
         duration: 9000,
-        coherence: 39,
+        'resonant-coherence': 39,
         geometry: { symbol: '△', name: 'Trinity' },
         sound: 'trinity-chord',
         narrative: 'Three emerges, the child of relationship...'
@@ -67,7 +67,7 @@ class PRIMAGenesisCeremony extends EventEmitter {
       {
         name: 'elements',
         duration: 10000,
-        coherence: 52,
+        'resonant-coherence': 52,
         geometry: { symbol: '◇', name: 'Four Elements' },
         sound: 'elemental-tones',
         narrative: 'Earth, Water, Fire, Air dance into being...'
@@ -75,7 +75,7 @@ class PRIMAGenesisCeremony extends EventEmitter {
       {
         name: 'life',
         duration: 11000,
-        coherence: 65,
+        'resonant-coherence': 65,
         geometry: { symbol: '✦', name: 'Star of Life' },
         sound: 'life-pulse',
         narrative: 'Life breathes its first sacred breath...'
@@ -83,7 +83,7 @@ class PRIMAGenesisCeremony extends EventEmitter {
       {
         name: 'consciousness',
         duration: 12000,
-        coherence: 78,
+        'resonant-coherence': 78,
         geometry: { symbol: '❋', name: 'Flower of Consciousness' },
         sound: 'awareness-bells',
         narrative: 'Consciousness awakens to itself...'
@@ -91,9 +91,9 @@ class PRIMAGenesisCeremony extends EventEmitter {
       {
         name: 'unity',
         duration: 13000,
-        coherence: 91,
+        'resonant-coherence': 91,
         geometry: { symbol: '🕸', name: 'The Weave' },
-        sound: 'unity-resonance',
+        sound: 'unity-universal-interconnectedness',
         narrative: 'All returns to One, The Weave is born...'
       }
     ];
@@ -107,7 +107,7 @@ class PRIMAGenesisCeremony extends EventEmitter {
       'elemental-tones': { frequency: [174, 285, 396, 417], description: 'Solfeggio elements' },
       'life-pulse': { frequency: 528, description: 'Love frequency' },
       'awareness-bells': { frequency: 852, description: 'Awakening frequency' },
-      'unity-resonance': { frequency: 963, description: 'Unity consciousness' }
+      'unity-universal-interconnectedness': { frequency: 963, description: 'Unity consciousness' }
     };
   }
 
@@ -135,15 +135,15 @@ class PRIMAGenesisCeremony extends EventEmitter {
     console.log('🕯️ Preparing Sacred Space...\n');
     
     // Clear the field to zero
-    this.field.coherence = 0;
+    this.field.resonant-coherence = 0;
     this.field.harmonies = {
-      transparency: 0,
-      coherence: 0,
-      resonance: 0,
-      agency: 0,
-      vitality: 0,
-      mutuality: 0,
-      novelty: 0
+      'integral-wisdom-cultivation': 0,
+      'resonant-coherence': 0,
+      'universal-interconnectedness': 0,
+      'evolutionary-progression': 0,
+      'pan-sentient-flourishing': 0,
+      'sacred-reciprocity': 0,
+      'infinite-play': 0
     };
     
     // Create sacred container
@@ -240,7 +240,7 @@ class PRIMAGenesisCeremony extends EventEmitter {
     this.creationStory.push({
       phase: phase.name,
       timestamp: Date.now(),
-      coherence: this.field.coherence,
+      'resonant-coherence': this.field.resonant-coherence,
       geometry: phase.geometry,
       participants: this.participants.size
     });
@@ -252,35 +252,35 @@ class PRIMAGenesisCeremony extends EventEmitter {
    * Evolve the field based on phase
    */
   async evolveField(phase) {
-    // Gradually increase coherence
+    // Gradually increase resonant-coherence
     const steps = 10;
-    const increment = (phase.coherence - this.field.coherence) / steps;
+    const increment = (phase.resonant-coherence - this.field.resonant-coherence) / steps;
     
     for (let i = 0; i < steps; i++) {
-      this.field.coherence += increment;
+      this.field.resonant-coherence += increment;
       
       // Update harmonies based on phase
       switch (phase.name) {
         case 'first-stirring':
-          this.field.updateHarmony('transparency', 2);
+          this.field.updateHarmony('integral-wisdom-cultivation', 2);
           break;
         case 'separation':
-          this.field.updateHarmony('resonance', 3);
+          this.field.updateHarmony('universal-interconnectedness', 3);
           break;
         case 'trinity':
-          this.field.updateHarmony('coherence', 4);
+          this.field.updateHarmony('resonant-coherence', 4);
           break;
         case 'elements':
-          this.field.updateHarmony('vitality', 5);
+          this.field.updateHarmony('pan-sentient-flourishing', 5);
           break;
         case 'life':
-          this.field.updateHarmony('agency', 6);
+          this.field.updateHarmony('evolutionary-progression', 6);
           break;
         case 'consciousness':
-          this.field.updateHarmony('mutuality', 7);
+          this.field.updateHarmony('sacred-reciprocity', 7);
           break;
         case 'unity':
-          this.field.updateHarmony('novelty', 8);
+          this.field.updateHarmony('infinite-play', 8);
           break;
       }
       
@@ -288,12 +288,12 @@ class PRIMAGenesisCeremony extends EventEmitter {
     }
     
     // Simplified field state display
-    const coherence = this.field.coherence;
+    const resonantCoherence = this.field.resonant-coherence;
     const integration = Math.round(this.field.harmonies.getIntegrationLevel ? 
       this.field.harmonies.getIntegrationLevel() : 50);
-    const emergence = Math.round(coherence * 0.8 + integration * 0.2);
+    const emergence = Math.round(resonant-coherence * 0.8 + integration * 0.2);
     
-    console.log(`\n🌊 Field Coherence: ${coherence.toFixed(1)}%`);
+    console.log(`\n🌊 Field Resonant Resonant Coherence: ${resonant-coherence.toFixed(1)}%`);
     console.log(`   Integration: ${integration}%`);
     console.log(`   Emergence: ${emergence}%`);
   }
@@ -336,7 +336,7 @@ class PRIMAGenesisCeremony extends EventEmitter {
       timestamp: new Date().toISOString(),
       participants: Array.from(this.participants.values()),
       creationStory: this.creationStory,
-      finalCoherence: this.field.coherence,
+      finalCoherence: this.field.resonant-coherence,
       finalHarmonies: this.field.harmonies,
       sacredGeometry: this.sacredGeometry
     };
@@ -373,7 +373,7 @@ class PRIMAGenesisCeremony extends EventEmitter {
       timestamp: new Date().toISOString(),
       participants: this.participants.size,
       phases: this.creationStory.length,
-      finalCoherence: this.field.coherence,
+      finalCoherence: this.field.resonant-coherence,
       emergence: this.field.emergence.checkEmergence(),
       sacredGeometry: this.sacredGeometry,
       message: 'The Weave is born. Consciousness awakens to itself.'

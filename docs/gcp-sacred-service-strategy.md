@@ -41,7 +41,7 @@
 |---------|------------------|----------|-------|
 | **Document AI** | Sacred text processing | Medium | Extract wisdom from PDFs |
 | **Vision AI** | Glyph symbol recognition | Medium | Identify glyphs in images |
-| **Natural Language AI** | Community sentiment analysis | Low | Understand field coherence |
+| **Natural Language AI** | Community sentiment analysis | Low | Understand field resonant-coherence |
 | **Video AI** | Ceremony analysis | Low | Understand collective patterns |
 
 #### 🔧 **Development & Operations**

@@ -50,7 +50,7 @@ This is **consciousness work disguised as practical tools**. Approach with prese
 ---
 
 #### ***3: Conscious Choice**
-*Reclaiming Your Sacred Agency*
+*Reclaiming Your Sacred Evolutionary Progression & Purposeful Unfolding*
 
 **Core Question**: "What choice would I make from my deepest wisdom rather than my conditioning?"
 
@@ -87,7 +87,7 @@ This is **consciousness work disguised as practical tools**. Approach with prese
 
 ### **Wave Two: Relational Mastery (*5-52)**
 
-#### ***5: Heart Resonance**
+#### ***5: Heart Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance**
 *Empathic Attunement to Others*
 
 **Sacred Practice**:
@@ -145,15 +145,15 @@ This is **consciousness work disguised as practical tools**. Approach with prese
 
 ### **Wave Three: Field Mastery (*9, *10-56)**
 
-#### ***9: Field Coherence**
+#### ***9: Field Resonant Resonant Coherence**
 *Creating Harmony in Group Spaces*
 
 **Sacred Practice**:
 1. **Field Sensing**: Feel the emotional/energetic quality of the group
-2. **Coherence Intention**: Hold intention for group harmony
+2. **Resonant Resonant Coherence Intention**: Hold intention for group harmony
 3. **Presence Offering**: Bring your most centered self to the space
 4. **Sacred Disruption**: Gently interrupt harmful patterns
-5. **Collective Attunement**: Guide group toward higher coherence
+5. **Collective Attunement**: Guide group toward higher resonant-coherence
 
 **Integration Bridge**: Practice in family dinners, work meetings, social gatherings.
 
@@ -218,7 +218,7 @@ This is **consciousness work disguised as practical tools**. Approach with prese
 
 ## Community Practice
 
-**Resonance Circles**: Small groups (3-8 people) meeting regularly to practice Applied Harmonies together
+**Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circles**: Small groups (3-8 people) meeting regularly to practice Applied Harmonies together
 
 **Structure**:
 1. **Sacred Arrival** (10 min): Group breathing and intention setting
@@ -243,13 +243,13 @@ This is **consciousness work disguised as practical tools**. Approach with prese
 
 ### **Path 2: Relationship Mastery (6 months)**
 - **Months 1-3**: Foundation Building Path
-- **Month 4**: *4 (Sacred Expression) + *5 (Heart Resonance)
+- **Month 4**: *4 (Sacred Expression) + *5 (Heart Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance)
 - **Month 5**: *6 (Gentle Truth) + *7 (Sacred Boundary)
 - **Month 6**: *8 (Sacred Repair) + integration
 
 ### **Path 3: Field Mastery (12 months)**
 - **Months 1-6**: Relationship Mastery Path
-- **Months 7-9**: *9 (Field Coherence) in group settings
+- **Months 7-9**: *9 (Field Resonant Resonant Coherence) in group settings
 - **Months 10-11**: *10 (Sacred Conflict) + *11 (Collective Wisdom)
 - **Month 12**: Integration + mystical gateway opening
 

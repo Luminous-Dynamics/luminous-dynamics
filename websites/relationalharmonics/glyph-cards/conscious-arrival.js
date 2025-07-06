@@ -4,7 +4,7 @@
 const consciousArrivalData = {
     id: 'Ω46',
     name: 'Conscious Arrival',
-    primaryHarmony: 'coherence',
+    primaryHarmony: 'resonant-coherence',
     description: 'The practice of entering any space or relationship with full awareness, bringing your complete presence as a gift.',
     keywords: ['arrival', 'awareness', 'intention', 'presence', 'greeting'],
     practicePrompt: 'Before entering, pause. Set an intention for your presence. Cross the threshold consciously, feeling yourself arrive fully.',

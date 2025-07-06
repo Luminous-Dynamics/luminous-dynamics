@@ -53,8 +53,8 @@
             z-index: 10;
         }
 
-        /* Coherence Meter */
-        .coherence-display {
+        /* Resonant Resonant Coherence Meter */
+        .resonant-coherence-display {
             position: absolute;
             top: 30px;
             left: 50%;
@@ -67,7 +67,7 @@
             pointer-events: auto;
         }
 
-        .coherence-value {
+        .resonant-coherence-value {
             font-size: 48px;
             font-weight: bold;
             background: linear-gradient(45deg, #8a2be2, #4169e1);
@@ -76,7 +76,7 @@
             margin: 10px 0;
         }
 
-        .coherence-label {
+        .resonant-coherence-label {
             font-size: 14px;
             opacity: 0.7;
             text-transform: uppercase;
@@ -244,11 +244,11 @@
         
         <!-- UI Overlay -->
         <div class="ui-overlay">
-            <!-- Coherence Display -->
-            <div class="coherence-display">
-                <div class="coherence-label">Field Coherence</div>
-                <div class="coherence-value" id="coherence-value">0.75</div>
-                <div class="coherence-label">Sacred Unity</div>
+            <!-- Resonant Resonant Coherence Display -->
+            <div class="resonant-coherence-display">
+                <div class="resonant-coherence-label">Field Resonant Resonant Coherence</div>
+                <div class="resonant-coherence-value" id="resonant-coherence-value">0.75</div>
+                <div class="resonant-coherence-label">Sacred Unity</div>
             </div>
             
             <!-- Connection Status -->
@@ -311,7 +311,7 @@
         
         // Field State
         let fieldState = {
-            coherence: 0.75,
+            resonant-coherence: 0.75,
             participants: [],
             messages: 0,
             breathing: true,
@@ -583,8 +583,8 @@
                         audioContext.currentTime
                     );
                     
-                    // Modulate volume based on coherence
-                    const vol = 0.05 * fieldState.coherence;
+                    // Modulate volume based on resonant-coherence
+                    const vol = 0.05 * fieldState.resonant-coherence;
                     particle.userData.sound.gain.gain.setValueAtTime(vol, audioContext.currentTime);
                 }
             });
@@ -681,8 +681,8 @@
         }
         
         function amplifyField() {
-            fieldState.coherence = Math.min(1, fieldState.coherence + 0.05);
-            updateFieldCoherence(fieldState.coherence);
+            fieldState.resonant-coherence = Math.min(1, fieldState.resonant-coherence + 0.05);
+            updateFieldCoherence(fieldState.resonant-coherence);
             
             // Visual effect
             const flash = new THREE.PointLight(0x8a2be2, 5);
@@ -743,13 +743,13 @@
             }
         }
         
-        function updateFieldCoherence(coherence) {
-            fieldState.coherence = coherence;
-            document.getElementById('coherence-value').textContent = coherence.toFixed(2);
+        function updateFieldCoherence(resonant-coherence) {
+            fieldState.resonant-coherence = resonant-coherence;
+            document.getElementById('resonant-coherence-value').textContent = resonant-coherence.toFixed(2);
             
-            // Update material colors based on coherence
+            // Update material colors based on resonant-coherence
             if (fieldGeometry) {
-                fieldGeometry.material.emissiveIntensity = coherence;
+                fieldGeometry.material.emissiveIntensity = resonant-coherence;
             }
         }
         

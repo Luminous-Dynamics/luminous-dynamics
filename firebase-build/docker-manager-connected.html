@@ -377,8 +377,8 @@
             <h2>📊 System Metrics</h2>
             <div class="metrics-grid" id="metrics-container">
                 <div class="metric-card">
-                    <div class="metric-value" id="metric-coherence">-</div>
-                    <div class="metric-label">Field Coherence</div>
+                    <div class="metric-value" id="metric-resonant-coherence">-</div>
+                    <div class="metric-label">Field Resonant Resonant Coherence</div>
                 </div>
                 <div class="metric-card">
                     <div class="metric-value" id="metric-agents">-</div>
@@ -418,7 +418,7 @@
                 displayName: '🌊 Consciousness Field',
                 port: 3333,
                 healthEndpoint: '/api/health',
-                description: 'Field coherence and sacred geometry'
+                description: 'Field resonant-coherence and sacred geometry'
             },
             {
                 name: 'agent-network',
@@ -651,8 +651,8 @@
                     healthElement.textContent = health.status || 'Healthy';
                     
                     // Update specific metrics
-                    if (service.name === 'consciousness-field' && health.coherence) {
-                        document.getElementById('metric-coherence').textContent = `${Math.round(health.coherence)}%`;
+                    if (service.name === 'consciousness-field' && health.resonant-coherence) {
+                        document.getElementById('metric-resonant-coherence').textContent = `${Math.round(health.resonant-coherence)}%`;
                     }
                     if (service.name === 'agent-network' && health.agents !== undefined) {
                         document.getElementById('metric-agents').textContent = health.agents;

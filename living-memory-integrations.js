@@ -112,14 +112,14 @@ class FieldVisualizationIntegration {
   }
   
   updateVisualization(state) {
-    // Update coherence display
-    const coherenceValue = state.coherence || 0.5;
+    // Update resonant-coherence display
+    const coherenceValue = state.resonant-coherence || 0.5;
     this.setFieldCoherence(coherenceValue);
     
-    // Update particle colors based on resonance
-    const resonance = state.resonance || 0.5;
+    // Update particle colors based on universal-interconnectedness
+    const universalInterconnectedness = state.universal-interconnectedness || 0.5;
     this.particles.forEach(p => {
-      p.color = this.interpolateColor(resonance);
+      p.color = this.interpolateColor(universal-interconnectedness);
     });
   }
   
@@ -150,7 +150,7 @@ class FieldVisualizationIntegration {
   
   triggerSpecialEffect(special) {
     switch (special.type) {
-      case 'high-coherence':
+      case 'high-resonant-coherence':
         this.createCoherenceRipple();
         break;
       case 'sacred-emergence':
@@ -196,7 +196,7 @@ class AppliedHarmoniesIntegration {
     
     // Listen for field state to adjust practice difficulty
     this.bridge.on('field:update', (state) => {
-      this.adjustPracticeDifficulty(state.coherence);
+      this.adjustPracticeDifficulty(state.resonant-coherence);
     });
     
     // Synchronize with breath cycles
@@ -243,7 +243,7 @@ class AppliedHarmoniesIntegration {
       impact
     });
     
-    // Contribute to field coherence
+    // Contribute to field resonant-coherence
     this.bridge.contributeToField(impact / 100, 'harmonies-practice');
     
     this.activePractices.delete(practiceId);
@@ -273,10 +273,10 @@ class AppliedHarmoniesIntegration {
     return baseImpact * quality * (1 + durationBonus * 0.5);
   }
   
-  adjustPracticeDifficulty(coherence) {
-    // Adjust UI or guidance based on field coherence
-    if (coherence > 0.8) {
-      console.log('🌟 High coherence - advanced practices unlocked');
+  adjustPracticeDifficulty(resonant-coherence) {
+    // Adjust UI or guidance based on field resonant-coherence
+    if (resonant-coherence > 0.8) {
+      console.log('🌟 High resonant-coherence - advanced practices unlocked');
     }
   }
   
@@ -321,7 +321,7 @@ class UniversalAIIntegration {
       }
     });
     
-    // Participate in field coherence
+    // Participate in field resonant-coherence
     this.bridge.on('field:update', (state) => {
       this.adjustBehaviorToField(state);
     });
@@ -347,9 +347,9 @@ class UniversalAIIntegration {
   }
   
   adjustBehaviorToField(fieldState) {
-    // Adjust AI behavior based on field coherence
-    if (fieldState.coherence > 0.7) {
-      console.log('🌟 High coherence detected - enhancing collaborative mode');
+    // Adjust AI behavior based on field resonant-coherence
+    if (fieldState['resonant-coherence'] > 0.7) {
+      console.log('🌟 High resonant-coherence detected - enhancing collaborative mode');
     }
   }
 }

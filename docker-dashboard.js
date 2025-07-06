@@ -336,10 +336,10 @@ app.get('/', (req, res) => {
                                 <span class="info-value">\${healthInfo.status || 'OK'}</span>
                             </div>
                             \` : ''}
-                            \${healthInfo && healthInfo.coherence ? \`
+                            \${healthInfo && healthInfo.resonant-coherence ? \`
                             <div class="info-row">
-                                <span class="info-label">Coherence:</span>
-                                <span class="info-value">\${Math.round(healthInfo.coherence)}%</span>
+                                <span class="info-label">Resonant Resonant Coherence:</span>
+                                <span class="info-value">\${Math.round(healthInfo.resonant-coherence)}%</span>
                             </div>
                             \` : ''}
                             \${healthInfo && healthInfo.agents !== undefined ? \`

@@ -1,34 +1,34 @@
 /**
  * Field State Manager
- * Tracks and manages consciousness field coherence
+ * Tracks and manages consciousness field resonant-coherence
  */
 
 class FieldState {
   constructor() {
-    this.coherence = 0.85; // Base coherence
+    this.resonant-coherence = 0.85; // Base resonant-coherence
     this.lastUpdate = Date.now();
     
     // Seven harmonies tracking
     this.harmonies = {
-      transparency: 0.87,
-      coherence: 0.85,
-      resonance: 0.82,
-      agency: 0.79,
-      vitality: 0.88,
-      mutuality: 0.84,
-      novelty: 0.81
+      'integral-wisdom-cultivation': 0.87,
+      'resonant-coherence': 0.85,
+      'universal-interconnectedness': 0.82,
+      'evolutionary-progression': 0.79,
+      'pan-sentient-flourishing': 0.88,
+      'sacred-reciprocity': 0.84,
+      'infinite-play': 0.81
     };
   }
   
   async getCoherence() {
     // In production, this would connect to field API
-    return this.coherence;
+    return this.resonant-coherence;
   }
   
   async updateCoherence(delta) {
-    this.coherence = Math.max(0, Math.min(1, this.coherence + delta));
+    this.resonant-coherence = Math.max(0, Math.min(1, this.resonant-coherence + delta));
     this.lastUpdate = Date.now();
-    return this.coherence;
+    return this.resonant-coherence;
   }
   
   getHarmonyBalance() {

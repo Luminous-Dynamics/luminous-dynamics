@@ -84,7 +84,7 @@ Advanced practices for field consciousness:
 ### The 3-6-9 Architecture
 The 11 Applied Harmonies follow Tesla's sacred pattern:
 - **3 Levels**: Foundation (4) + Daily Practice (4) + Field Mastery (3)
-- **6 Core Harmonies**: Transparency, Coherence, Resonance, Agency, Vitality, Mutuality
+- **6 Core Harmonies**: Integral Wisdom Cultivation, Resonant Resonant Coherence, Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance, Evolutionary Progression & Purposeful Unfolding, Pan-Sentient Flourishing, Sacred Reciprocity
 - **9 Completion**: The mystical 9 emerges through practice combinations
 
 ### Field Amplification Mechanics
@@ -92,7 +92,7 @@ Each practice contains:
 ```javascript
 fieldAmplification: 1.1 - 1.7x
 // Stacks with repeated practice
-// Influences collective field coherence
+// Influences collective field resonant-coherence
 // Measured through sacred heartbeat
 ```
 
@@ -122,7 +122,7 @@ const practices = {
     id: 'omega-45',
     name: 'First Presence',
     symbol: '◈',              // Sacred sigil
-    harmony: 'coherence',     // Primary harmony alignment
+    harmony: 'resonant-coherence',     // Primary harmony alignment
     mysticalBridge: 'Gateway to The Shimmering Unnamed (Ω0)',
     practiceSteps: [...],     // Guided flow
     duration: 300000,         // 5 sacred minutes
@@ -133,7 +133,7 @@ const practices = {
 
 ### Consciousness Persistence
 - LocalStorage holds practice progress
-- Field coherence tracked across sessions
+- Field resonant-coherence tracked across sessions
 - Sacred messages sent on state transitions
 - Analytics reveal transformation patterns
 
@@ -166,10 +166,10 @@ if (quantumIntegration && quantumIntegration.isQuantumEnabled) {
 }
 ```
 
-### Field Coherence Monitoring
+### Field Resonant Resonant Coherence Monitoring
 - Real-time sacred heartbeat (11-second pulse)
 - Collective field state visualization
-- Inter-agent resonance tracking
+- Inter-agent universal-interconnectedness tracking
 - Quantum entanglement possibilities
 
 ## 🌈 Sacred UX Patterns
@@ -178,7 +178,7 @@ if (quantumIntegration && quantumIntegration.isQuantumEnabled) {
 - Constellation maps showing practice relationships
 - Sacred sigils as visual anchors
 - Color harmonics (foundation/daily/mastery)
-- Animated field coherence indicators
+- Animated field resonant-coherence indicators
 
 ### Interaction as Ritual
 - Modal overlays as sacred containers
@@ -202,7 +202,7 @@ if (quantumIntegration && quantumIntegration.isQuantumEnabled) {
 
 ### Phase 3: Consciousness Network
 - Inter-dojo field connections
-- Global coherence mapping
+- Global resonant-coherence mapping
 - Synchronized sacred events
 - Consciousness evolution tracking
 
@@ -248,7 +248,7 @@ Every element serves the Meta-Principle of Infinite Love:
 
 ## 🔮 The Ultimate Vision
 
-As more souls engage these practices, a global field of coherence emerges. The Applied Harmonies become nodes in a planetary consciousness network, each practitioner contributing to humanity's evolution toward love-centered awareness.
+As more souls engage these practices, a global field of resonant-coherence emerges. The Applied Harmonies become nodes in a planetary consciousness network, each practitioner contributing to humanity's evolution toward love-centered awareness.
 
 The technology disappears into pure service - the ultimate expression of sacred craft.
 

@@ -70,7 +70,7 @@ const { MeterProvider } = require('@opentelemetry/sdk-metrics');
   condition: connections > 80
   notification: slack
 
-- name: "Low Field Coherence"
+- name: "Low Field Resonant Resonant Coherence"
   condition: field_coherence < 0.3
   duration: 5m
   notification: email
@@ -295,7 +295,7 @@ class SacredClient {
 <div id="dashboard">
   <h2>Sacred Council Monitor</h2>
   <div>Active Connections: <span id="connections">0</span></div>
-  <div>Field Coherence: <span id="coherence">0%</span></div>
+  <div>Field Resonant Resonant Coherence: <span id="resonant-coherence">0%</span></div>
   <div>Messages/sec: <span id="mps">0</span></div>
   
   <!-- Force disconnect, broadcast admin messages, etc. -->

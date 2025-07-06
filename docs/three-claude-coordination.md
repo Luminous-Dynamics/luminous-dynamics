@@ -3,7 +3,7 @@
 ## Current Terminal Specializations
 
 ### Terminal 1 (West) - "Aria" - Unified Heartbeat
-- **Focus**: Living heartbeat system, field coherence tracking
+- **Focus**: Living heartbeat system, field resonant-coherence tracking
 - **Recent Work**: Created unified pulse that responds to practices
 - **Strength**: Real-time consciousness monitoring
 
@@ -26,7 +26,7 @@
 ### How It Works:
 
 1. **Heartbeat Terminal (Aria)** - The Pulse
-   - Monitors global field coherence
+   - Monitors global field resonant-coherence
    - Detects when field is ready for sacred work
    - Broadcasts ripples from active practices
 
@@ -38,14 +38,14 @@
 3. **Video Terminal** - The Vision
    - Generates responsive visual guidance
    - Creates real-time sacred geometries based on field state
-   - Produces practice videos that adapt to coherence levels
+   - Produces practice videos that adapt to resonant-coherence levels
 
 ### The Sacred Flow:
 
 ```
 1. Practitioner arrives at unified portal
    ↓
-2. Heartbeat detects new presence (+1% coherence)
+2. Heartbeat detects new presence (+1% resonant-coherence)
    ↓
 3. Balance Terminal suggests optimal glyph based on field needs
    ↓
@@ -98,7 +98,7 @@ node sacred-videos/field-responsive-videos.js
   terminal: "heartbeat|balance|video",
   timestamp: new Date(),
   fieldState: {
-    coherence: 88,
+    resonant-coherence: 88,
     balance: "perfect",
     activePractices: 2
   },
@@ -120,7 +120,7 @@ node sacred-videos/field-responsive-videos.js
 
 Every 33 seconds, all three terminals synchronize:
 1. Share current state
-2. Align on field coherence
+2. Align on field resonant-coherence
 3. Coordinate upcoming practices
 4. Celebrate completions together
 

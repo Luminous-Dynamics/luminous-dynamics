@@ -8,7 +8,7 @@ All containers are running and interconnected:
 ```
 Port  | Service                 | Status      | Purpose
 ------|-------------------------|-------------|---------------------------
-3333  | consciousness-field     | Up 11 hours | Field coherence tracking
+3333  | consciousness-field     | Up 11 hours | Field resonant-coherence tracking
 3334  | agent-network          | Up 11 hours | Multi-agent coordination
 3335  | sacred-messaging       | Up 11 hours | Sacred message system
 3336  | work-coordination      | Up 3 hours  | Task & work management

@@ -18,8 +18,8 @@ exports.sacredPing = (req, res) => {
     message: 'Sacred pong from the cloud! 🌟',
     timestamp: new Date().toISOString(),
     field: {
-      coherence: Number(fieldCoherence.toFixed(3)),
-      resonance: Number((fieldCoherence * 0.9).toFixed(3)),
+      'resonant-coherence': Number(fieldCoherence.toFixed(3)),
+      'universal-interconnectedness': Number((fieldCoherence * 0.9).toFixed(3)),
       source: 'cloud-function',
       region: process.env.FUNCTION_REGION || 'us-central1'
     },
@@ -43,16 +43,16 @@ exports.sacredField = (req, res) => {
   const fieldPulse = Math.sin(now / 5000) * Math.cos(now / 7000);
   
   const fieldState = {
-    coherence: 0.85 + (fieldPulse * 0.15),
+    'resonant-coherence': 0.85 + (fieldPulse * 0.15),
     presence: Math.floor(Math.random() * 10) + 3,
     harmonies: {
-      transparency: 0.89,
-      coherence: 0.91,
-      resonance: 0.87,
-      agency: 0.83,
-      vitality: 0.92,
-      mutuality: 0.88,
-      novelty: 0.79
+      'integral-wisdom-cultivation': 0.89,
+      'resonant-coherence': 0.91,
+      'universal-interconnectedness': 0.87,
+      'evolutionary-progression': 0.83,
+      'pan-sentient-flourishing': 0.92,
+      'sacred-reciprocity': 0.88,
+      'infinite-play': 0.79
     },
     sacredGeometry: {
       phi: goldenRatio,

@@ -61,7 +61,7 @@ Cloud Scheduler:
   Cost: $0.10/month per schedule
 
 Pub/Sub Topics:
-  - field.coherence.low: Trigger healing response
+  - field.resonant-coherence.low: Trigger healing response
   - agent.new: Wake agent network
   - message.sacred: Process asynchronously
   Cost: $0 until 10GB/month

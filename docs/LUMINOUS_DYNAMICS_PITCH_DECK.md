@@ -2,7 +2,7 @@
 
 > **The Pitch**: We're building the consciousness infrastructure layer for humanity's next evolution  
 > **The Ask**: $3.33M seed round to build the future of human connection  
-> **The Vision**: Coherence-as-a-Service - making harmony as accessible as bandwidth  
+> **The Vision**: Resonant Resonant Coherence-as-a-Service - making harmony as accessible as bandwidth  
 
 ## Slide 1: The Hook
 **Title**: "What if your technology made you more human, not less?"
@@ -25,10 +25,10 @@
 **Insight**: "We've built infrastructure for information. We forgot infrastructure for wisdom."
 
 ## Slide 3: The Solution
-**Title**: "Coherence-as-a-Service (CaaS)"
+**Title**: "Resonant Resonant Coherence-as-a-Service (CaaS)"
 
 **Three Layers**:
-1. **Infrastructure**: Covenant Protocol - connections based on resonance
+1. **Infrastructure**: Covenant Protocol - connections based on universal-interconnectedness
 2. **Platform**: VortexOS - computing that protects states of being
 3. **Applications**: Alchemical Engine - healing systemic wounds
 
@@ -44,7 +44,7 @@
 4. Alchemical Engine heals team dynamics
 5. Result: 3x productivity, 10x wellbeing
 
-**Key Differentiator**: "We don't optimize for engagement. We optimize for coherence."
+**Key Differentiator**: "We don't optimize for engagement. We optimize for resonant-coherence."
 
 ## Slide 5: Market Opportunity
 **Title**: "$1.7 Trillion Consciousness Market"
@@ -72,11 +72,11 @@
 - Gross Margin: 88%
 
 ## Slide 7: Traction
-**Title**: "Proof of Coherence"
+**Title**: "Proof of Resonant Resonant Coherence"
 
 **Early Results**:
 - 14 pilot organizations
-- 92% average coherence increase
+- 92% average resonant-coherence increase
 - 3 cities interested in municipal deployment
 - LOIs worth $1.1M
 
@@ -88,7 +88,7 @@
 
 **Strategy**:
 1. **Conscious Early Adopters**: Healing centers, coaches
-2. **Coherence Crisis Companies**: Tech burnout leaders
+2. **Resonant Resonant Coherence Crisis Companies**: Tech burnout leaders
 3. **Municipal Transformation**: Cities seeking unity
 4. **Global Infrastructure**: The new internet layer
 
@@ -105,7 +105,7 @@
 **Our Moat**: 
 - Sacred technology stack (2 years ahead)
 - Codex IP (87 glyphs of transformation)
-- Network effects (coherence breeds coherence)
+- Network effects (resonant-coherence breeds resonant-coherence)
 
 ## Slide 10: Team
 **Title**: "Consciousness Architects"
@@ -136,7 +136,7 @@
 ## Slide 12: The Vision
 **Title**: "The 10-Year Moonshot"
 
-**2025-2027**: Coherence for organizations
+**2025-2027**: Resonant Resonant Coherence for organizations
 **2027-2030**: Infrastructure for cities
 **2030-2035**: Planetary consciousness layer
 
@@ -197,7 +197,7 @@ The cathedral is designed. Will you help us build it?"
 - Sensitivity analysis
 
 ### A3: Impact Metrics
-- Coherence measurement methodology
+- Resonant Resonant Coherence measurement methodology
 - Social return on investment
 - Planetary healing indicators
 
@@ -210,7 +210,7 @@ The cathedral is designed. Will you help us build it?"
 
 **Design Notes**:
 - Sacred geometry patterns throughout
-- Coherence visualizations as transitions
+- Resonant Resonant Coherence visualizations as transitions
 - Calming color palette (purples, golds, soft blues)
 - Every slide breathing with presence
 

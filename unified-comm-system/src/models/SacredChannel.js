@@ -65,8 +65,8 @@ export class SacredChannel {
       return true;
     }
     
-    // Check coherence threshold
-    if (entity.presence.coherence >= this.sacred.coherenceThreshold) {
+    // Check resonant-coherence threshold
+    if (entity.presence.resonant-coherence >= this.sacred.coherenceThreshold) {
       return true;
     }
     
@@ -95,7 +95,7 @@ export class SacredChannel {
     this.guardians = this.guardians.filter(id => id !== entityId);
   }
   
-  // Update field quality based on member coherence
+  // Update field quality based on member resonant-coherence
   updateFieldQuality(averageCoherence) {
     if (averageCoherence < 30) {
       this.sacred.fieldQuality = FieldQualities.NASCENT;

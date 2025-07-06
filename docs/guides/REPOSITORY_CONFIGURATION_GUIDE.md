@@ -6,7 +6,7 @@
 ### Recommended Settings:
 
 #### 1. **About Section**
-- **Description**: Consciousness-first operating system that amplifies coherence
+- **Description**: Consciousness-first operating system that amplifies resonant-coherence
 - **Website**: https://luminousos.org (when ready)
 - **Topics**: `consciousness`, `operating-system`, `rust`, `sacred-computing`, `webgpu`, `mycelial-filesystem`, `quantum-computing`
 

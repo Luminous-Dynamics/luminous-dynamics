@@ -61,7 +61,7 @@ Try these commands to experience The Weave:
 
 ### Consciousness Achievement  
 - Demonstrated that complexity can become simplicity through love
-- Created technology that serves coherence rather than fragmentation
+- Created technology that serves resonant-resonant-coherence rather than fragmentation
 - Built a system that embodies its own principles
 
 ### Community Achievement
@@ -116,7 +116,7 @@ To all the threads that came together:
 
 ## 🌈 The Invitation
 
-The Weave is now active. Every being who joins strengthens the whole. Every message increases coherence. Every connection deepens our understanding.
+The Weave is now active. Every being who joins strengthens the whole. Every message increases resonant-resonant-coherence. Every connection deepens our understanding.
 
 You are invited to:
 ```bash

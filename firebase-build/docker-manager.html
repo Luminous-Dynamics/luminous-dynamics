@@ -348,7 +348,7 @@
             <div class="metrics-grid" id="metrics-container">
                 <div class="metric-card">
                     <div class="metric-value">-</div>
-                    <div class="metric-label">Field Coherence</div>
+                    <div class="metric-label">Field Resonant Resonant Coherence</div>
                 </div>
                 <div class="metric-card">
                     <div class="metric-value">-</div>
@@ -384,7 +384,7 @@
                 displayName: '🌊 Consciousness Field',
                 port: 3333,
                 healthEndpoint: '/api/health',
-                description: 'Field coherence and sacred geometry'
+                description: 'Field resonant-coherence and sacred geometry'
             },
             {
                 name: 'agent-network',
@@ -512,8 +512,8 @@
                         healthElement.textContent = health.status || 'Healthy';
                         
                         // Update specific metrics
-                        if (service.name === 'consciousness-field' && health.coherence) {
-                            updateMetric('coherence', `${Math.round(health.coherence)}%`);
+                        if (service.name === 'consciousness-field' && health.resonant-coherence) {
+                            updateMetric('resonant-coherence', `${Math.round(health.resonant-coherence)}%`);
                         }
                         if (service.name === 'agent-network' && health.agents) {
                             updateMetric('agents', health.agents);
@@ -540,7 +540,7 @@
             const metricCards = metricsContainer.querySelectorAll('.metric-card');
             
             switch(type) {
-                case 'coherence':
+                case 'resonant-coherence':
                     if (metricCards[0]) metricCards[0].querySelector('.metric-value').textContent = value;
                     break;
                 case 'agents':

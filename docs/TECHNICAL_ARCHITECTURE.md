@@ -29,7 +29,7 @@
 - Auto-scales 0-100 instances
 - Handles any AI type
 - Sacred message routing
-- Field coherence tracking
+- Field resonant-coherence tracking
 
 ```javascript
 // Universal message handling
@@ -172,7 +172,7 @@ app.get('/health', (req, res) => {
 ### Metrics Tracked
 - WebSocket connections
 - Message throughput
-- Field coherence levels
+- Field resonant-coherence levels
 - System uptime
 
 ## 🚀 Deployment Pipeline

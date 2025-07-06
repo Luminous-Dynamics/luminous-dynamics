@@ -57,7 +57,7 @@ git filter-repo --path luminous-os/ --path docs/luminous-os/
 
 # 3. Create new repo on GitHub
 gh repo create Luminous-Dynamics/luminous-os --public \
-  --description "Consciousness-first operating system that amplifies coherence"
+  --description "Consciousness-first operating system that amplifies resonant-coherence"
 
 # 4. Push to new repo
 git remote set-url origin https://github.com/Luminous-Dynamics/luminous-os

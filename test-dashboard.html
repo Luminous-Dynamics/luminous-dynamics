@@ -68,7 +68,7 @@
                 const response = await fetch('http://localhost:3001/api/field_state');
                 if (response.ok) {
                     const field = await response.json();
-                    addResult('Field State API', 'success', `Coherence: ${field.coherence}%`);
+                    addResult('Field State API', 'success', `Resonant Resonant Coherence: ${field.resonant-coherence}%`);
                 } else {
                     addResult('Field State API', 'error', `HTTP ${response.status}`);
                 }

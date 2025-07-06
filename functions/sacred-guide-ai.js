@@ -87,7 +87,7 @@ Always:
             return {
                 guidance: response,
                 suggestedPractices: await this.suggestPractices(query, context),
-                fieldCoherence: context.coherence || 77
+                fieldCoherence: context.resonant-coherence || 77
             };
         } catch (error) {
             console.error('Sacred Guide error:', error);
@@ -108,13 +108,13 @@ Always:
             prompt += `Practitioner Context:\n`;
             prompt += `- Current practice streak: ${context.practiceStreak || 0} days\n`;
             prompt += `- Favorite practices: ${context.favoritePractices?.join(', ') || 'Not yet known'}\n`;
-            prompt += `- Current coherence: ${context.coherence || 77}%\n`;
+            prompt += `- Current 'resonant-coherence': ${context.resonant-coherence || 77}%\n`;
             prompt += `- Recent breakthroughs: ${context.recentBreakthroughs || 'None recorded'}\n\n`;
         }
         
         // Add field context
         prompt += `Current Field State:\n`;
-        prompt += `- Global coherence: ${context.globalCoherence || 77}%\n`;
+        prompt += `- Global 'resonant-coherence': ${context.globalCoherence || 77}%\n`;
         prompt += `- Active practitioners: ${context.activePractitioners || 1}\n`;
         prompt += `- Time: ${new Date().toLocaleTimeString()}\n`;
         prompt += `- Moon phase: ${this.getMoonPhase()}\n\n`;
@@ -187,7 +187,7 @@ Focus on Applied Harmonies (Ω45-Ω56) for beginners.`;
             activated: ['Ω51: Loving No', 'Ω52: Pause Practice', 'Ω15: Sacred Pause'],
             seeking: ['Ω49: Gentle Opening', 'Ω50: Building Trust', 'Ω19: Sacred Questions'],
             expansive: ['Ω53: Tending the Field', 'Ω55: Presence Transmission', 'Ω33: Joy Cultivation'],
-            present: ['Ω45: First Presence', 'Ω46: Conscious Arrival', 'Ω8: Inner Coherence']
+            present: ['Ω45: First Presence', 'Ω46: Conscious Arrival', 'Ω8: Inner Resonant Resonant Coherence']
         };
         
         return suggestions[emotional] || suggestions.present;
@@ -344,7 +344,7 @@ if (require.main === module) {
         "I'm feeling anxious about a difficult conversation",
         {
             practitionerId: 'test-user',
-            coherence: 72,
+            'resonant-coherence': 72,
             experienceLevel: 'beginner'
         }
     ).then(response => {

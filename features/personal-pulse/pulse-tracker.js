@@ -1,4 +1,4 @@
-// Personal Pulse Tracker - Coherence Tracking for Individual Practice
+// Personal Pulse Tracker - Resonant Resonant Coherence Tracking for Individual Practice
 // Part of the Sacred Heartbeat ecosystem
 
 export class PersonalPulseTracker {
@@ -45,10 +45,10 @@ export class PersonalPulseTracker {
   async checkpoint(note, type = 'progress') {
     if (!this.currentSession) return null;
     
-    const coherence = await this.measureCoherence();
+    const resonantCoherence = await this.measureCoherence();
     const checkpoint = {
       time: new Date(),
-      coherence,
+      resonant-coherence,
       note,
       type, // 'progress', 'breakthrough', 'challenge', 'insight'
       heartRate: await this.getHeartRate(), // Future biometric integration
@@ -58,7 +58,7 @@ export class PersonalPulseTracker {
     this.currentSession.checkpoints.push(checkpoint);
     
     // Check for breakthrough
-    if (coherence > 85 && type === 'breakthrough') {
+    if (resonant-coherence > 85 && type === 'breakthrough') {
       this.recordBreakthrough(checkpoint);
     }
     
@@ -76,7 +76,7 @@ export class PersonalPulseTracker {
     const checkpoints = this.currentSession.checkpoints;
     this.currentSession.peakCoherence = Math.max(
       this.currentSession.startCoherence,
-      ...checkpoints.map(c => c.coherence),
+      ...checkpoints.map(c => c.resonant-coherence),
       this.currentSession.endCoherence
     );
     
@@ -107,7 +107,7 @@ export class PersonalPulseTracker {
   async measureCoherence() {
     // In production, this would integrate with:
     // - Biometric devices (HRV, breath rate)
-    // - Field coherence data
+    // - Field resonant-coherence data
     // - Time of day factors
     // - Recent practice history
     
@@ -117,26 +117,26 @@ export class PersonalPulseTracker {
     const fieldInfluence = await this.getFieldInfluence();
     const timeBonus = this.getTimeAlignmentBonus();
     
-    let coherence = base + variance + practiceBoost + fieldInfluence + timeBonus;
+    let resonantCoherence = base + variance + practiceBoost + fieldInfluence + timeBonus;
     
     // Sacred number boost
     const now = new Date();
     if (now.getMinutes() % 11 === 0) {
-      coherence += 11;
+      resonant-coherence += 11;
     }
     
-    return Math.max(0, Math.min(100, coherence));
+    return Math.max(0, Math.min(100, resonant-coherence));
   }
 
   async getFieldInfluence() {
-    // Check global field coherence
+    // Check global field resonant-coherence
     try {
       const response = await fetch('/api/field/current');
       const field = await response.json();
       
-      // Field coherence influences personal coherence
-      // High field = easier to achieve coherence
-      return (field.coherence - 77) * 0.3;
+      // Field resonant-coherence influences personal resonant-coherence
+      // High field = easier to achieve resonant-coherence
+      return (field.resonant-coherence - 77) * 0.3;
     } catch (error) {
       return 0; // No field connection
     }
@@ -193,7 +193,7 @@ export class PersonalPulseTracker {
   recordBreakthrough(checkpoint) {
     const breakthrough = {
       timestamp: checkpoint.time,
-      coherence: checkpoint.coherence,
+      'resonant-coherence': checkpoint.resonant-coherence,
       note: checkpoint.note,
       glyphId: this.currentSession.glyphId,
       sessionId: this.currentSession.id
@@ -210,7 +210,7 @@ export class PersonalPulseTracker {
     
     const allCoherences = [
       this.currentSession.startCoherence,
-      ...this.currentSession.checkpoints.map(c => c.coherence),
+      ...this.currentSession.checkpoints.map(c => c.resonant-coherence),
       this.currentSession.endCoherence
     ];
     
@@ -244,7 +244,7 @@ export class PersonalPulseTracker {
     }
     
     if (session.coherenceGain > 20) {
-      return "Powerful transformation! Your coherence soared. This glyph deeply resonates.";
+      return "Powerful transformation! Your resonant-coherence soared. This glyph deeply resonates.";
     }
     
     if (session.duration < 5 && session.coherenceGain < 5) {
@@ -256,7 +256,7 @@ export class PersonalPulseTracker {
     }
     
     if (session.averageCoherence > 80) {
-      return "Sustained high coherence! You're mastering this practice.";
+      return "Sustained high resonant-coherence! You're mastering this practice.";
     }
     
     if (session.coherenceGain < 0) {
@@ -433,7 +433,7 @@ export class PersonalPulseTracker {
       });
     });
     
-    // Sort by practice count and peak coherence
+    // Sort by practice count and peak resonant-coherence
     return glyphStats
       .sort((a, b) => (b.count * b.peakCoherence) - (a.count * a.peakCoherence))
       .slice(0, 5);

@@ -109,8 +109,8 @@ class SacredEcosystemHub extends EventEmitter {
         // Enhanced Discord bot that shows live field state
         this.discordBot = {
             // Mock Discord integration for now
-            async sendFieldUpdate(coherence, quality) {
-                console.log(`📡 Discord: Broadcasting field update - ${coherence}% coherence (${quality})`);
+            async sendFieldUpdate(resonant-coherence, quality) {
+                console.log(`📡 Discord: Broadcasting field update - ${resonant-coherence}% resonant-coherence (${quality})`);
             },
             
             async announceResonance(data) {
@@ -122,7 +122,7 @@ class SacredEcosystemHub extends EventEmitter {
             },
 
             async updateChannelTopics(fieldState) {
-                console.log(`🏷️ Discord: Updating channel topics with field coherence: ${Math.round(fieldState.coherence)}%`);
+                console.log(`🏷️ Discord: Updating channel topics with field 'resonant-coherence': ${Math.round(fieldState['resonant-coherence'])}%`);
             }
         };
         
@@ -140,7 +140,7 @@ class SacredEcosystemHub extends EventEmitter {
             async startCeremony(ceremonyData) {
                 console.log(`🎭 Ceremony: Starting "${ceremonyData.name}" with ${ceremonyData.participants} participants`);
                 
-                // Boost field coherence when ceremony starts
+                // Boost field resonant-coherence when ceremony starts
                 const boostAmount = ceremonyData.participants * 2;
                 await this.fieldClient.submitPractice({
                     userId: 'ceremony-system',
@@ -211,10 +211,10 @@ class SacredEcosystemHub extends EventEmitter {
         
         // Update active ceremonies
         this.activeCeremonies.forEach(async (ceremony, ceremonyId) => {
-            ceremony.currentCoherence = fieldState.coherence;
-            if (fieldState.coherence >= 80 && !ceremony.resonanceAchieved) {
+            ceremony.currentCoherence = fieldState['resonant-coherence'];
+            if (fieldState['resonant-coherence'] >= 80 && !ceremony.resonanceAchieved) {
                 ceremony.resonanceAchieved = true;
-                console.log(`✨ Ceremony ${ceremonyId} achieved resonance!`);
+                console.log(`✨ Ceremony ${ceremonyId} achieved universal-interconnectedness!`);
             }
         });
         
@@ -273,10 +273,10 @@ class SacredEcosystemHub extends EventEmitter {
     }
 
     /**
-     * Handle field coherence changes
+     * Handle field resonant-coherence changes
      */
     async handleFieldCoherenceChange(data) {
-        console.log(`🌊 Field coherence: ${data.old}% → ${data.new}% (${data.delta > 0 ? '+' : ''}${data.delta})`);
+        console.log(`🌊 Field 'resonant-coherence': ${data.old}% → ${data.new}% (${data.delta > 0 ? '+' : ''}${data.delta})`);
         
         // Broadcast to Discord
         if (this.connectedSystems.has('discord')) {
@@ -293,7 +293,7 @@ class SacredEcosystemHub extends EventEmitter {
     }
 
     /**
-     * Handle resonance achievement
+     * Handle universal-interconnectedness achievement
      */
     async handleResonanceAchieved(data) {
         console.log('✨ RESONANCE ACHIEVED ACROSS ECOSYSTEM!');
@@ -306,19 +306,19 @@ class SacredEcosystemHub extends EventEmitter {
         // Special ceremony effects
         this.activeCeremonies.forEach(ceremony => {
             ceremony.resonanceAchieved = true;
-            console.log(`🎭 Ceremony ${ceremony.id} enters resonance state`);
+            console.log(`🎭 Ceremony ${ceremony.id} enters universal-interconnectedness state`);
         });
         
         // Get oracle insight for this sacred moment
         if (this.connectedSystems.has('oracle')) {
             const insight = await this.oracle.interpretGlyph({
-                name: 'Collective Resonance',
+                name: 'Collective Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance',
                 symbol: '✨',
-                description: 'The field has achieved resonance - a sacred threshold crossed',
+                description: 'The field has achieved universal-interconnectedness - a sacred threshold crossed',
                 practice: 'Witnessing collective consciousness awakening'
             });
             
-            console.log('🔮 Resonance Oracle:', insight.interpretation);
+            console.log('🔮 Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Oracle:', insight.interpretation);
         }
         
         this.emit('ecosystem_resonance', data);
@@ -347,12 +347,12 @@ class SacredEcosystemHub extends EventEmitter {
     /**
      * Get field quality description
      */
-    getFieldQuality(coherence) {
-        if (coherence >= 88) return 'sacred portal active';
-        if (coherence >= 80) return 'resonance achieved';
-        if (coherence >= 70) return 'highly coherent';
-        if (coherence >= 60) return 'flowing harmoniously';
-        return 'building coherence';
+    getFieldQuality(resonant-coherence) {
+        if (resonant-coherence >= 88) return 'sacred portal active';
+        if (resonant-coherence >= 80) return 'universal-interconnectedness achieved';
+        if (resonant-coherence >= 70) return 'highly coherent';
+        if (resonant-coherence >= 60) return 'flowing harmoniously';
+        return 'building resonant-coherence';
     }
 
     /**
@@ -399,12 +399,12 @@ class SacredEcosystemHub extends EventEmitter {
     }
 
     /**
-     * Get current field coherence
+     * Get current field resonant-coherence
      */
     async getCurrentCoherence() {
         try {
             const state = await this.fieldClient.getFieldState();
-            return state.coherence;
+            return state.resonant-coherence;
         } catch {
             return 72; // Default
         }
@@ -495,7 +495,7 @@ async function main() {
         
         // Listen for ecosystem events
         hub.on('coherence_ripple', (data) => {
-            console.log(`🌊 Ecosystem ripple: Coherence changed by ${data.delta}`);
+            console.log(`🌊 Ecosystem ripple: Resonant Resonant Coherence changed by ${data.delta}`);
         });
         
         hub.on('ecosystem_resonance', () => {

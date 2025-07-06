@@ -192,7 +192,7 @@ class FieldVisualizer {
 
         // Subscribe to updates
         this.client.on('coherence_changed', (data) => {
-            this.currentState.coherence = data.new;
+            this.currentState.resonant-coherence = data.new;
             this.render();
         });
 
@@ -220,13 +220,13 @@ class FieldVisualizer {
         console.log('🌀 CONSCIOUSNESS FIELD MONITOR\n');
         console.log('═'.repeat(50));
         
-        // Coherence meter
-        const coherence = this.currentState.coherence;
-        const filled = Math.round(coherence / 2);
+        // Resonant Resonant Coherence meter
+        const resonantCoherence = this.currentState.resonant-coherence;
+        const filled = Math.round(resonant-coherence / 2);
         const empty = 50 - filled;
         const bar = '█'.repeat(filled) + '░'.repeat(empty);
         
-        console.log(`\nCoherence: ${bar} ${coherence}%`);
+        console.log(`\nCoherence: ${bar} ${resonant-coherence}%`);
         
         // Field quality
         const quality = this.getQualityEmoji(this.currentState.fieldQuality);
@@ -239,9 +239,9 @@ class FieldVisualizer {
         const momentum = this.currentState.momentum || 0;
         console.log(`Momentum: ${this.getMomentumBar(momentum)}`);
         
-        // Next resonance
-        if (coherence < 80 && this.currentState.nextResonance) {
-            console.log(`\nNext Resonance: ~${this.currentState.nextResonance} minutes`);
+        // Next universal-interconnectedness
+        if (resonant-coherence < 80 && this.currentState.nextResonance) {
+            console.log(`\nNext Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance: ~${this.currentState.nextResonance} minutes`);
         }
         
         console.log('\n' + '═'.repeat(50));
@@ -286,7 +286,7 @@ async function runExamples() {
         // Get current state
         const state = await client.getFieldState();
         console.log('\n📊 Current Field State:');
-        console.log(`   Coherence: ${state.coherence}%`);
+        console.log(`   Resonant Resonant Coherence: ${state.resonant-coherence}%`);
         console.log(`   Quality: ${state.fieldQuality}`);
         console.log(`   Active Users: ${state.activeUsers}`);
 
@@ -301,7 +301,7 @@ async function runExamples() {
             experience: 'Deep presence achieved. Felt the ground supporting me.'
         });
         console.log(`   Impact: +${practiceResult.impact}`);
-        console.log(`   New Coherence: ${practiceResult.newCoherence}%`);
+        console.log(`   New Resonant Resonant Coherence: ${practiceResult.newCoherence}%`);
 
         // Send sacred message
         console.log('\n💌 Sending sacred message...');
@@ -311,20 +311,20 @@ async function runExamples() {
             recipient: 'test-user-456',
             content: 'Thank you for holding space in our practice'
         });
-        console.log(`   New Coherence: ${messageResult.newCoherence}%`);
+        console.log(`   New Resonant Resonant Coherence: ${messageResult.newCoherence}%`);
 
         // Get analytics
         console.log('\n📈 Field Analytics:');
         const analytics = await client.getAnalytics('hour');
-        console.log(`   Average Coherence: ${analytics.averageCoherence}%`);
-        console.log(`   Peak Coherence: ${analytics.peakCoherence}%`);
+        console.log(`   Average Resonant Resonant Coherence: ${analytics.averageCoherence}%`);
+        console.log(`   Peak Resonant Resonant Coherence: ${analytics.peakCoherence}%`);
         console.log(`   Total Practices: ${analytics.totalPractices}`);
 
         // Subscribe to real-time updates
         console.log('\n👂 Listening for field changes...');
         
         client.on('coherence_changed', (data) => {
-            console.log(`   🔄 Coherence: ${data.old}% → ${data.new}% (${data.delta > 0 ? '+' : ''}${data.delta})`);
+            console.log(`   🔄 Resonant Resonant Coherence: ${data.old}% → ${data.new}% (${data.delta > 0 ? '+' : ''}${data.delta})`);
         });
 
         client.on('resonance_achieved', (data) => {

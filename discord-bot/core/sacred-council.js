@@ -29,7 +29,7 @@ class SacredCouncil extends EventEmitter {
     
     // Core systems
     this.systems = new Map();
-    this.fieldState = { coherence: 72.5, trend: 'rising' };
+    this.fieldState = { 'resonant-coherence': 72.5, trend: 'rising' };
     
     this.initializeSystems();
   }
@@ -94,7 +94,7 @@ class SacredCouncil extends EventEmitter {
     this.client.on('ready', () => {
       console.log(`\n✨ Sacred Council Oracle activated as ${this.client.user.tag}`);
       console.log(`📍 Mode: ${this.config.mode}`);
-      console.log(`🌀 Initial field coherence: ${this.fieldState.coherence}%\n`);
+      console.log(`🌀 Initial field 'resonant-coherence': ${this.fieldState['resonant-coherence']}%\n`);
       
       this.updatePresence();
       
@@ -115,10 +115,10 @@ class SacredCouncil extends EventEmitter {
   
   updatePresence() {
     const activities = {
-      unified: `Field: ${this.fieldState.coherence}% | All Systems`,
+      unified: `Field: ${this.fieldState['resonant-coherence']}% | All Systems`,
       ceremony: `Leading Sacred Ceremonies`,
       oracle: `Channeling Collective Wisdom`,
-      field: `Monitoring Field: ${this.fieldState.coherence}%`
+      field: `Monitoring Field: ${this.fieldState['resonant-coherence']}%`
     };
     
     this.client.user?.setPresence({
@@ -126,7 +126,7 @@ class SacredCouncil extends EventEmitter {
         name: activities[this.config.mode] || activities.unified,
         type: 'WATCHING'
       }],
-      status: this.fieldState.coherence > 80 ? 'online' : 'idle'
+      status: this.fieldState['resonant-coherence'] > 80 ? 'online' : 'idle'
     });
   }
   

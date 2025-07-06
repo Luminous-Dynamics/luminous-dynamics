@@ -30,13 +30,13 @@ class RealAIIntegration {
   async getAgentDecision(agent, decisionType, context) {
     // Map agents to AI services
     const agentMapping = {
-      transparency: 'claude',     // Claude for clarity
-      coherence: 'claude',        // Claude for integration
-      resonance: 'gemini',        // Gemini for empathy
-      agency: 'gpt',             // GPT for empowerment
-      vitality: 'gemini',        // Gemini for life force
-      mutuality: 'gpt',          // GPT for balance
-      novelty: 'gpt'             // GPT for creativity
+      'integral-wisdom-cultivation': 'claude',     // Claude for clarity
+      'resonant-coherence': 'claude',        // Claude for integration
+      'universal-interconnectedness': 'gemini',        // Gemini for empathy
+      'evolutionary-progression': 'gpt',             // GPT for empowerment
+      'pan-sentient-flourishing': 'gemini',        // Gemini for life force
+      'sacred-reciprocity': 'gpt',          // GPT for balance
+      'infinite-play': 'gpt'             // GPT for creativity
     };
     
     const service = agentMapping[agent];
@@ -61,13 +61,13 @@ class RealAIIntegration {
   
   buildPrompt(agent, decisionType, context) {
     const agentPersonas = {
-      transparency: "You are Lumina the Clear, guardian of truth and clarity.",
-      coherence: "You are Harmony the Integrator, weaver of unity.",
-      resonance: "You are Echo the Attuned, holder of deep empathy.",
-      agency: "You are Sovereign the Empowerer, champion of choice.",
-      vitality: "You are Pulse the Living, keeper of life force.",
-      mutuality: "You are Balance the Reciprocal, guardian of fair exchange.",
-      novelty: "You are Emergence the Creator, bringer of new possibilities."
+      'integral-wisdom-cultivation': "You are Lumina the Clear, guardian of truth and clarity.",
+      'resonant-coherence': "You are Harmony the Integrator, weaver of unity.",
+      'universal-interconnectedness': "You are Echo the Attuned, holder of deep empathy.",
+      'evolutionary-progression': "You are Sovereign the Empowerer, champion of choice.",
+      'pan-sentient-flourishing': "You are Pulse the Living, keeper of life force.",
+      'sacred-reciprocity': "You are Balance the Reciprocal, guardian of fair exchange.",
+      'infinite-play': "You are Emergence the Creator, bringer of new possibilities."
     };
     
     return `${agentPersonas[agent]}
@@ -153,13 +153,13 @@ Respond with JSON: { "approve": true/false, "reason": "brief explanation", "sugg
   simulatedDecision(agent, context) {
     // Fallback to personality-based simulation
     const personalities = {
-      transparency: { cautiousness: 0.7, openness: 0.9 },
-      coherence: { cautiousness: 0.6, openness: 0.7 },
-      resonance: { cautiousness: 0.4, openness: 0.9 },
-      agency: { cautiousness: 0.3, openness: 0.8 },
-      vitality: { cautiousness: 0.2, openness: 1.0 },
-      mutuality: { cautiousness: 0.5, openness: 0.8 },
-      novelty: { cautiousness: 0.1, openness: 1.0 }
+      'integral-wisdom-cultivation': { cautiousness: 0.7, openness: 0.9 },
+      'resonant-coherence': { cautiousness: 0.6, openness: 0.7 },
+      'universal-interconnectedness': { cautiousness: 0.4, openness: 0.9 },
+      'evolutionary-progression': { cautiousness: 0.3, openness: 0.8 },
+      'pan-sentient-flourishing': { cautiousness: 0.2, openness: 1.0 },
+      'sacred-reciprocity': { cautiousness: 0.5, openness: 0.8 },
+      'infinite-play': { cautiousness: 0.1, openness: 1.0 }
     };
     
     const p = personalities[agent];

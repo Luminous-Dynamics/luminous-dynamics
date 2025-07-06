@@ -6,67 +6,67 @@ Sacred practice cards bringing the 87 glyphs to life for practitioners.
 
 ### ✅ Ω45: First Presence
 - **File**: (in main dojo-glyphs.js)
-- **Harmony**: Resonance
+- **Harmony**: Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance
 - **Duration**: 5 minutes
 - **Focus**: Arriving fully in this moment
 
 ### ✅ Ω46: Conscious Arrival
 - **File**: conscious-arrival.js
-- **Harmony**: Coherence  
+- **Harmony**: Resonant Resonant Coherence  
 - **Duration**: 7 minutes
 - **Focus**: Entering spaces with full awareness
 
 ### ✅ Ω47: Sacred Listening
 - **File**: sacred-listening.js
-- **Harmony**: Resonance
+- **Harmony**: Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance
 - **Duration**: 8 minutes
 - **Focus**: Listening with whole being
 
 ### ✅ Ω48: Boundary With Love
 - **File**: boundary-with-love.js
-- **Harmony**: Agency
+- **Harmony**: Evolutionary Progression & Purposeful Unfolding
 - **Duration**: 9 minutes
 - **Focus**: Clear boundaries, open heart
 
 ### ✅ Ω49: Gentle Opening
 - **File**: gentle-opening.js
-- **Harmony**: Coherence
+- **Harmony**: Resonant Resonant Coherence
 - **Duration**: 6 minutes
 - **Focus**: Creating safety through invitation
 
 ### ✅ Ω50: Building Trust  
 - **File**: building-trust.js
-- **Harmony**: Mutuality
+- **Harmony**: Sacred Reciprocity
 - **Duration**: 7 minutes
-- **Focus**: Consistent presence and transparency
+- **Focus**: Consistent presence and integral-wisdom-cultivation
 
 ### ✅ Ω51: Loving No
 - **File**: loving-no.js
-- **Harmony**: Agency
+- **Harmony**: Evolutionary Progression & Purposeful Unfolding
 - **Duration**: 7 minutes
 - **Focus**: Declining with grace and care
 
 ### ✅ Ω52: Pause Practice
 - **File**: pause-practice.js
-- **Harmony**: Coherence
+- **Harmony**: Resonant Resonant Coherence
 - **Duration**: 5 minutes
 - **Focus**: Space between stimulus and response
 
 ### ✅ Ω53: Tending the Field
 - **File**: tending-field.js
-- **Harmony**: Coherence
+- **Harmony**: Resonant Resonant Coherence
 - **Duration**: 10 minutes
 - **Focus**: Maintaining connection across distance
 
 ### ✅ Ω55: Presence Transmission
 - **File**: presence-transmission.js
-- **Harmony**: Resonance
+- **Harmony**: Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance
 - **Duration**: 8 minutes
 - **Focus**: Conscious energetic influence
 
 ### ✅ Ω56: Loving Redirection
 - **File**: loving-redirection.js
-- **Harmony**: Agency
+- **Harmony**: Evolutionary Progression & Purposeful Unfolding
 - **Duration**: 9 minutes
 - **Focus**: Guiding toward life-giving directions
 
@@ -85,7 +85,7 @@ Each living glyph card includes:
 These cards integrate with:
 - Unified heartbeat system
 - Practice tracking
-- Field coherence monitoring
+- Field resonant-coherence monitoring
 - First Breath portal
 - Facilitator materials
 

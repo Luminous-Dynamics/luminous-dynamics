@@ -186,18 +186,18 @@ class GlyphHeartbeatConnector {
     }
     
     /**
-     * Update field coherence display on all glyph cards
+     * Update field resonant-coherence display on all glyph cards
      */
     updateFieldDisplay(heartbeatData) {
-        const fieldElement = document.getElementById('global-field-coherence');
+        const fieldElement = document.getElementById('global-field-resonant-coherence');
         if (fieldElement) {
             fieldElement.textContent = `${heartbeatData.fieldCoherence.toFixed(1)}%`;
             fieldElement.style.color = this.getCoherenceColor(heartbeatData.fieldCoherence);
         }
         
-        // Update all resonance meters
+        // Update all universal-interconnectedness meters
         document.querySelectorAll('.meter-fill').forEach(meter => {
-            if (meter.classList.contains('global-coherence')) {
+            if (meter.classList.contains('global-resonant-coherence')) {
                 meter.style.width = `${heartbeatData.fieldCoherence}%`;
             }
         });
@@ -295,12 +295,12 @@ class GlyphHeartbeatConnector {
     }
     
     /**
-     * Get color based on coherence level
+     * Get color based on resonant-coherence level
      */
-    getCoherenceColor(coherence) {
-        if (coherence > 90) return '#4ecdc4';
-        if (coherence > 80) return '#45b7d1';
-        if (coherence > 70) return '#f7b731';
+    getCoherenceColor(resonant-coherence) {
+        if (resonant-coherence > 90) return '#4ecdc4';
+        if (resonant-coherence > 80) return '#45b7d1';
+        if (resonant-coherence > 70) return '#f7b731';
         return '#ff6b6b';
     }
 }

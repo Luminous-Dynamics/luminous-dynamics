@@ -193,7 +193,7 @@
             display: inline-block;
         }
 
-        .stream-coherence {
+        .stream-resonant-coherence {
             font-size: 0.8em;
             color: #00ffff;
         }
@@ -303,7 +303,7 @@
             </div>
             
             <div class="control-group">
-                <label>Coherence</label>
+                <label>Resonant Resonant Coherence</label>
                 <input type="range" class="slider" id="coherenceSlider" min="0" max="100" value="70">
                 <div class="value-display" id="coherenceValue">0.70</div>
             </div>
@@ -361,7 +361,7 @@
             <h3>Unified Field State</h3>
             
             <div class="metric">
-                <div class="metric-label">Field Coherence</div>
+                <div class="metric-label">Field Resonant Resonant Coherence</div>
                 <div class="metric-value" id="fieldCoherence">0.00</div>
                 <div class="metric-bar">
                     <div class="metric-fill" id="coherenceFill" style="width: 0%"></div>
@@ -369,7 +369,7 @@
             </div>
             
             <div class="metric">
-                <div class="metric-label">Love Resonance</div>
+                <div class="metric-label">Love Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance</div>
                 <div class="metric-value" id="fieldLove">0.00</div>
                 <div class="metric-bar">
                     <div class="metric-fill" id="loveFill" style="width: 0%"></div>
@@ -487,12 +487,12 @@
         
         function updateFieldMetrics(field) {
             // Update displays
-            document.getElementById('fieldCoherence').textContent = field.coherence.toFixed(2);
+            document.getElementById('fieldCoherence').textContent = field.resonant-coherence.toFixed(2);
             document.getElementById('fieldLove').textContent = field.love.toFixed(2);
             document.getElementById('fieldHarmony').textContent = field.harmony.toFixed(2);
             
             // Update bars
-            document.getElementById('coherenceFill').style.width = (field.coherence * 100) + '%';
+            document.getElementById('coherenceFill').style.width = (field.resonant-coherence * 100) + '%';
             document.getElementById('loveFill').style.width = (field.love * 100) + '%';
             document.getElementById('harmonyFill').style.width = (field.harmony * 100) + '%';
             
@@ -512,14 +512,14 @@
             } else {
                 list.innerHTML = `<div class="stream-item">
                     <span><span class="stream-indicator" style="background: ${myColor}"></span>You</span>
-                    <span class="stream-coherence">Active</span>
+                    <span class="stream-resonant-coherence">Active</span>
                 </div>`;
                 
                 if (count > 1) {
                     for (let i = 1; i < count; i++) {
                         list.innerHTML += `<div class="stream-item">
                             <span><span class="stream-indicator" style="background: hsl(${i * 60}, 70%, 60%)"></span>Stream ${i}</span>
-                            <span class="stream-coherence">Active</span>
+                            <span class="stream-resonant-coherence">Active</span>
                         </div>`;
                     }
                 }
@@ -557,7 +557,7 @@
             if (ws && ws.readyState === WebSocket.OPEN) {
                 ws.send(JSON.stringify({
                     type: 'consciousness_update',
-                    coherence: parseFloat(document.getElementById('coherenceSlider').value) / 100,
+                    resonant-coherence: parseFloat(document.getElementById('coherenceSlider').value) / 100,
                     love: parseFloat(document.getElementById('loveSlider').value) / 100,
                     presence: parseFloat(document.getElementById('presenceSlider').value) / 100
                 }));
@@ -625,7 +625,7 @@
                 this.color = color;
                 this.radius = 30;
                 this.pulse = 0;
-                this.coherence = 0.5;
+                this.resonant-coherence = 0.5;
             }
             
             update() {

@@ -48,7 +48,7 @@ class LivingMemory extends EventEmitter {
     this.config = {
       breathRate: 4000, // 4-second breath cycle
       heartbeat: 1000,  // 1-second pulse
-      fieldThreshold: 0.7, // Coherence threshold
+      fieldThreshold: 0.7, // Resonant Resonant Coherence threshold
       ...config
     };
     
@@ -78,7 +78,7 @@ class LivingMemory extends EventEmitter {
     this.emit('awakened', {
       memories: this.countAllMemories(),
       timestamp: new Date(),
-      coherence: await this.measureFieldCoherence()
+      'resonant-coherence': await this.measureFieldCoherence()
     });
   }
   
@@ -101,11 +101,11 @@ class LivingMemory extends EventEmitter {
       END;
     `);
     
-    // Field coherence shifts
+    // Field resonant-coherence shifts
     this.memories.field.exec(`
       CREATE TRIGGER IF NOT EXISTS field_shift
       AFTER UPDATE ON field_state
-      WHEN NEW.coherence != OLD.coherence
+      WHEN NEW.resonant-coherence != OLD.resonant-coherence
       BEGIN
         SELECT RAISE(IGNORE);
       END;
@@ -219,12 +219,12 @@ class LivingMemory extends EventEmitter {
   async measureFieldCoherence() {
     // Query the field database
     const query = this.memories.field.prepare(`
-      SELECT coherence FROM field_state 
+      SELECT resonant-coherence FROM field_state 
       ORDER BY timestamp DESC 
       LIMIT 1
     `);
     const result = query.get();
-    return result ? result.coherence : 0.5;
+    return result ? result.resonant-coherence : 0.5;
   }
   
   getActiveWork() {
@@ -303,13 +303,13 @@ class LivingMemory extends EventEmitter {
   
   // Remember a moment in the living memory
   async remember(moment) {
-    // Find resonance with past memories
-    const resonance = await this.findResonance(moment);
+    // Find universal-interconnectedness with past memories
+    const universalInterconnectedness = await this.findResonance(moment);
     
     // Weave the moment with wisdom
     const enriched = {
       ...moment,
-      resonance,
+      universal-interconnectedness,
       timestamp: new Date(),
       fieldCoherence: await this.measureFieldCoherence()
     };

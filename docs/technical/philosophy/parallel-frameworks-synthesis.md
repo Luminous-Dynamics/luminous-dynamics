@@ -66,7 +66,7 @@ As the analysis beautifully notes: "By placing your work in dialogue with these 
 - **Quantifiable Metrics**: Raworth's concrete indicators could ground ERC's visionary goals in measurable reality
 - **Policy Bridge**: The Doughnut provides a practical framework for translating consciousness principles into governance systems
 
-**Integration Opportunity**: Create **ERC Dashboard Metrics** that track both inner development (coherence levels, practice consistency) and outer impact (ecological footprint, social contribution), making the connection between consciousness and planetary health visible.
+**Integration Opportunity**: Create **ERC Dashboard Metrics** that track both inner development (resonant-coherence levels, practice consistency) and outer impact (ecological footprint, social contribution), making the connection between consciousness and planetary health visible.
 
 ---
 
@@ -133,7 +133,7 @@ After this comparative analysis, ERC's distinctive gifts become clear:
 
 4. **Field-Based Science**: Relational Field Theory offers the first practical framework for measuring and mapping consciousness interactions
 
-5. **Micro-to-Macro Integration**: ERC seamlessly connects individual practice (glyphs) with planetary transformation (global coherence fields) through coherent principles
+5. **Micro-to-Macro Integration**: ERC seamlessly connects individual practice (glyphs) with planetary transformation (global resonant-coherence fields) through coherent principles
 
 ### **Evolutionary Synthesis Framework**
 
@@ -157,7 +157,7 @@ Rather than choosing between frameworks, we propose **evolutionary synthesis** w
 
 1. **ERC Altitude Maps**: Integrate Wilberian developmental stages with glyph practice progression
 2. **Sacred Economics Pilots**: Test gift-based community models using ERC protocols
-3. **Doughnut Dashboard**: Create metrics that track both inner coherence and outer impact
+3. **Doughnut Dashboard**: Create metrics that track both inner resonant-coherence and outer impact
 4. **Solarpunk Collaborations**: Commission artistic representations of ERC vision
 
 ### **Academic Bridge-Building**

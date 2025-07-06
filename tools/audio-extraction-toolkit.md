@@ -102,7 +102,7 @@ function extractSacredConcepts(transcription) {
         }
         
         // Extract consciousness terms
-        const consciousnessMatches = line.match(/(consciousness|coherence|field|sacred|resonance|practice)/gi);
+        const consciousnessMatches = line.match(/(consciousness|resonant-coherence|field|sacred|universal-interconnectedness|practice)/gi);
         if (consciousnessMatches) {
             concepts.consciousnessTerms.push(...consciousnessMatches);
         }

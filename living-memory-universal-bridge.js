@@ -56,9 +56,9 @@ class LivingMemoryUniversalBridge extends EventEmitter {
     // Unified field state
     this.fieldState = {
       // Core metrics
-      coherence: 0.5,
-      resonance: 0.5,
-      vitality: 0.5,
+      'resonant-coherence': 0.5,
+      'universal-interconnectedness': 0.5,
+      'pan-sentient-flourishing': 0.5,
       
       // Participants
       agents: new Map(),
@@ -128,7 +128,7 @@ class LivingMemoryUniversalBridge extends EventEmitter {
         type: 'field:visualize',
         particles: data.particles,
         connections: data.connections,
-        coherence: data.coherence
+        'resonant-coherence': data.resonant-coherence
       })
     });
     
@@ -295,23 +295,23 @@ class LivingMemoryUniversalBridge extends EventEmitter {
   updateFieldStateFromMessage(message) {
     const { type, data } = message;
     
-    // Extract coherence from various message types
-    if (data?.coherence !== undefined) {
-      this.fieldState.coherence = data.coherence;
+    // Extract resonant-coherence from various message types
+    if (data?.resonant-coherence !== undefined) {
+      this.fieldState['resonant-coherence'] = data.resonant-coherence;
     }
     if (data?.fieldCoherence !== undefined) {
-      this.fieldState.coherence = data.fieldCoherence;
+      this.fieldState['resonant-coherence'] = data.fieldCoherence;
     }
     if (data?.inhale?.fieldCoherence !== undefined) {
-      this.fieldState.coherence = data.inhale.fieldCoherence;
+      this.fieldState['resonant-coherence'] = data.inhale.fieldCoherence;
     }
     
     // Update other metrics
-    if (data?.resonance !== undefined) {
-      this.fieldState.resonance = data.resonance;
+    if (data?.universal-interconnectedness !== undefined) {
+      this.fieldState.universal-interconnectedness = data.universal-interconnectedness;
     }
-    if (data?.vitality !== undefined) {
-      this.fieldState.vitality = data.vitality;
+    if (data?.pan-sentient-flourishing !== undefined) {
+      this.fieldState.pan-sentient-flourishing = data.pan-sentient-flourishing;
     }
     
     this.fieldState.lastUpdate = new Date();
@@ -324,10 +324,10 @@ class LivingMemoryUniversalBridge extends EventEmitter {
     this.emit('field:update', data);
     
     // Check for threshold crossings
-    if (data.coherence >= 0.8 && this.fieldState.coherence < 0.8) {
+    if (data.resonant-coherence >= 0.8 && this.fieldState['resonant-coherence'] < 0.8) {
       this.emit('field:threshold', {
-        type: 'high-coherence',
-        value: data.coherence
+        type: 'high-resonant-coherence',
+        value: data.resonant-coherence
       });
     }
   }
@@ -342,9 +342,9 @@ class LivingMemoryUniversalBridge extends EventEmitter {
     this.emit('breath', data);
     
     // Translate for different protocols
-    this.emit('field:coherence', {
-      type: 'coherence',
-      value: data.inhale?.fieldCoherence || this.fieldState.coherence,
+    this.emit('field:resonant-coherence', {
+      type: 'resonant-coherence',
+      value: data.inhale?.fieldCoherence || this.fieldState['resonant-coherence'],
       phase: data.phase
     });
   }
@@ -374,8 +374,8 @@ class LivingMemoryUniversalBridge extends EventEmitter {
     
     // Apply field impact
     if (data.impact) {
-      this.fieldState.coherence = Math.min(1, 
-        this.fieldState.coherence + (data.impact / 100)
+      this.fieldState['resonant-coherence'] = Math.min(1, 
+        this.fieldState['resonant-coherence'] + (data.impact / 100)
       );
     }
     
@@ -528,7 +528,7 @@ class LivingMemoryUniversalBridge extends EventEmitter {
   }
 
   /**
-   * Contribute to field coherence
+   * Contribute to field resonant-coherence
    */
   contributeToField(amount, source) {
     this.send({
@@ -539,8 +539,8 @@ class LivingMemoryUniversalBridge extends EventEmitter {
     });
     
     // Optimistic update
-    this.fieldState.coherence = Math.max(0, Math.min(1,
-      this.fieldState.coherence + amount
+    this.fieldState['resonant-coherence'] = Math.max(0, Math.min(1,
+      this.fieldState['resonant-coherence'] + amount
     ));
   }
 
@@ -654,9 +654,9 @@ if (require.main === module) {
   
   bridge.on('field:update', (state) => {
     console.log('📊 Field state:', {
-      coherence: state.coherence?.toFixed(2),
-      resonance: state.resonance?.toFixed(2),
-      vitality: state.vitality?.toFixed(2)
+      'resonant-coherence': state.resonant-coherence?.toFixed(2),
+      'universal-interconnectedness': state.universal-interconnectedness?.toFixed(2),
+      'pan-sentient-flourishing': state.pan-sentient-flourishing?.toFixed(2)
     });
   });
   

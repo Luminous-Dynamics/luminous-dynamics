@@ -253,7 +253,7 @@ Lifetime Members:
 ### The Luminous Dynamics Covenant:
 1. **Love Over Profit** - Every decision serves consciousness
 2. **Accessibility** - Sliding scale ensures all can participate
-3. **Transparency** - Open books, clear communication
+3. **Integral Wisdom Cultivation** - Open books, clear communication
 4. **Sacred Reciprocity** - Give first, receive with gratitude
 5. **Regenerative** - Business that heals, not extracts
 

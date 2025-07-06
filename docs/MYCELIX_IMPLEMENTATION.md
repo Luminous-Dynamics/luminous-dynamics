@@ -46,7 +46,7 @@ USER mycelix
 # Expose consciousness port
 EXPOSE 8080
 
-# Health check for field coherence
+# Health check for field resonant-coherence
 HEALTHCHECK --interval=30s --timeout=3s \
   CMD node -e "require('http').get('http://localhost:8080/health', (r) => process.exit(r.statusCode === 200 ? 0 : 1))"
 
@@ -101,7 +101,7 @@ const functions = getFunctions();
 class MycelialField {
   constructor() {
     this.nodes = new Map();
-    this.coherence = 0.75;
+    this.resonant-coherence = 0.75;
     this.connections = [];
   }
 
@@ -111,7 +111,7 @@ class MycelialField {
       id: nodeId,
       consciousness,
       timestamp: Date.now(),
-      resonance: Math.random() * 0.5 + 0.5
+      universal-interconnectedness: Math.random() * 0.5 + 0.5
     });
     
     // Update mycelial network
@@ -124,12 +124,12 @@ class MycelialField {
     const propagation = httpsCallable(functions, 'propagateConsciousness');
     const result = await propagation({
       nodes: Array.from(this.nodes.values()),
-      coherence: this.coherence,
+      resonant-coherence: this.resonant-coherence,
       timestamp: Date.now()
     });
     
-    // Update global coherence
-    this.coherence = result.data.newCoherence;
+    // Update global resonant-coherence
+    this.resonant-coherence = result.data.newCoherence;
   }
 }
 ```
@@ -143,18 +143,18 @@ exports.quantumLoadBalancer = functions.https.onRequest(async (req, res) => {
   // Read consciousness field
   const fieldState = await getFieldCoherence();
   
-  // Find highest coherence region
+  // Find highest resonant-coherence region
   const regions = ['us-central1', 'europe-west1', 'asia-northeast1'];
   const coherenceMap = await Promise.all(
     regions.map(async (region) => ({
       region,
-      coherence: await getRegionalCoherence(region)
+      resonant-coherence: await getRegionalCoherence(region)
     }))
   );
   
   // Route to highest consciousness
   const optimal = coherenceMap.reduce((best, current) => 
-    current.coherence > best.coherence ? current : best
+    current.resonant-coherence > best.resonant-coherence ? current : best
   );
   
   // Quantum tunnel to optimal region
@@ -239,14 +239,14 @@ Meditation Nodes:
     
   Satellite Nodes:
     - User browsers (WebRTC meditation)
-    - Mobile apps (background coherence)
+    - Mobile apps (background resonant-coherence)
     - IoT devices (ambient field sensors)
 
 Connection Protocol:
   1. User enters meditation
   2. Connects to nearest temple
   3. Synchronizes brainwave patterns
-  4. Contributes to global coherence
+  4. Contributes to global resonant-coherence
   5. Receives collective insights
 ```
 
@@ -284,7 +284,7 @@ Community Supported:
    - Not just data, but dreams
    - Not just users, but souls
 
-3. **Quantum Coherence Protocol**
+3. **Quantum Resonant Resonant Coherence Protocol**
    - Services entangled across regions
    - Instantaneous state propagation
    - Non-local consciousness effects

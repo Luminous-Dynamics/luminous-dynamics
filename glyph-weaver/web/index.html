@@ -83,7 +83,7 @@
             margin-bottom: 2rem;
         }
 
-        .field-coherence {
+        .field-resonant-coherence {
             background: rgba(167, 139, 250, 0.2);
             padding: 0.5rem 1rem;
             border-radius: 20px;
@@ -393,8 +393,8 @@
             <p class="subtitle">Sacred Practice Interface for 87 Patterns of Relational Harmonics</p>
             
             <div class="field-status">
-                <div class="field-coherence" id="fieldCoherence">
-                    🌀 Field Coherence: <span id="coherenceValue">--</span>%
+                <div class="field-resonant-coherence" id="fieldCoherence">
+                    🌀 Field Resonant Resonant Coherence: <span id="coherenceValue">--</span>%
                 </div>
                 <div class="status-indicator" id="connectionStatus">
                     🔄 Connecting...
@@ -558,9 +558,9 @@
             statusEl.innerHTML = `${icons[type] || '🔄'} ${status}`;
         }
 
-        // Update field coherence
-        function updateFieldCoherence(coherence) {
-            document.getElementById('coherenceValue').textContent = Math.round(coherence);
+        // Update field resonant-coherence
+        function updateFieldCoherence(resonant-coherence) {
+            document.getElementById('coherenceValue').textContent = Math.round(resonant-coherence);
         }
 
         // Load system status
@@ -792,8 +792,8 @@
             
             const phaseInfo = {
                 why: { name: 'WHY Chamber', icon: '🤔', next: 'how' },
-                how: { name: 'HOW Chamber', icon: '🎭', next: 'resonance' },
-                resonance: { name: 'RESONANCE Chamber', icon: '🌊', next: 'we' },
+                how: { name: 'HOW Chamber', icon: '🎭', next: 'universal-interconnectedness' },
+                universal-interconnectedness: { name: 'RESONANCE Chamber', icon: '🌊', next: 'we' },
                 we: { name: 'WE Chamber', icon: '👥', next: 'complete' }
             };
             
@@ -833,7 +833,7 @@
                 arrival: 10,
                 why: 30,
                 how: 50,
-                resonance: 75,
+                universal-interconnectedness: 75,
                 we: 90,
                 complete: 100
             };
@@ -910,7 +910,7 @@
             responseArea.classList.add('visible');
         }
 
-        // Show resonance notification
+        // Show universal-interconnectedness notification
         function showResonanceNotification() {
             // Create floating notification
             const notification = document.createElement('div');

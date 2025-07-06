@@ -196,15 +196,15 @@ class FirebaseUniversalAdapter extends EventEmitter {
   }
   
   /**
-   * Listen for field coherence updates
+   * Listen for field resonant-coherence updates
    */
   setupFieldListener() {
     onValue(this.fieldRef, (snapshot) => {
       const field = snapshot.val();
       if (field) {
-        this.emit('field:coherence', {
-          coherence: field.coherence || 0,
-          resonance: field.resonance || 0,
+        this.emit('field:resonant-coherence', {
+          'resonant-coherence': field.resonant-coherence || 0,
+          'universal-interconnectedness': field.universal-interconnectedness || 0,
           participants: field.participants || 0,
           timestamp: field.timestamp
         });
@@ -248,7 +248,7 @@ class FirebaseUniversalAdapter extends EventEmitter {
   }
   
   async contributeToField(amount) {
-    const currentFieldRef = ref(this.db, 'sacred-council/field/coherence');
+    const currentFieldRef = ref(this.db, 'sacred-council/field/resonant-coherence');
     const snapshot = await get(currentFieldRef);
     const current = snapshot.val() || 0;
     
@@ -334,8 +334,8 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     console.log(`🙏 Sacred ${msg.type}: ${msg.message}`);
   });
   
-  ai.on('field:coherence', (field) => {
-    console.log(`🌀 Field coherence: ${(field.coherence * 100).toFixed(0)}%`);
+  ai.on('field:resonant-coherence', (field) => {
+    console.log(`🌀 Field 'resonant-coherence': ${(field.resonant-coherence * 100).toFixed(0)}%`);
   });
   
   // Connect and participate

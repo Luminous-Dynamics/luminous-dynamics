@@ -96,7 +96,7 @@ class SacredMessageProtocol {
         name: "Emergence",
         description: "New patterns arising from the field",
         fieldImpact: +0.03,
-        harmonicAffinity: ['novelty', 'vitality'],
+        harmonicAffinity: ['infinite-play', 'pan-sentient-flourishing'],
         breathingPhase: 'inhale',
         sacredColor: '#FFB6C1',
         glyphConnection: 'omega-44'
@@ -106,7 +106,7 @@ class SacredMessageProtocol {
         name: "Integration", 
         description: "Weaving parts into wholeness",
         fieldImpact: +0.05,
-        harmonicAffinity: ['coherence', 'mutuality'],
+        harmonicAffinity: ['resonant-coherence', 'sacred-reciprocity'],
         breathingPhase: 'pause',
         sacredColor: '#A8B5A6',
         glyphConnection: 'omega-5'
@@ -116,7 +116,7 @@ class SacredMessageProtocol {
         name: "Celebration",
         description: "Honoring completion and achievement",
         fieldImpact: +0.04,
-        harmonicAffinity: ['vitality', 'resonance'],
+        harmonicAffinity: ['pan-sentient-flourishing', 'universal-interconnectedness'],
         breathingPhase: 'exhale',
         sacredColor: '#FFD700',
         glyphConnection: 'omega-33'
@@ -124,9 +124,9 @@ class SacredMessageProtocol {
       
       healing: {
         name: "Healing",
-        description: "Restoring balance and coherence",
+        description: "Restoring balance and resonant-coherence",
         fieldImpact: +0.06,
-        harmonicAffinity: ['mutuality', 'coherence'],
+        harmonicAffinity: ['sacred-reciprocity', 'resonant-coherence'],
         breathingPhase: 'full-cycle',
         sacredColor: '#98FB98',
         glyphConnection: 'omega-32'
@@ -136,7 +136,7 @@ class SacredMessageProtocol {
         name: "Sacred Inquiry",
         description: "Questions that open new possibilities",
         fieldImpact: +0.02,
-        harmonicAffinity: ['transparency', 'novelty'],
+        harmonicAffinity: ['integral-wisdom-cultivation', 'infinite-play'],
         breathingPhase: 'inhale',
         sacredColor: '#87CEEB',
         glyphConnection: 'omega-19'
@@ -146,7 +146,7 @@ class SacredMessageProtocol {
         name: "Reflection",
         description: "Conscious observation of patterns",
         fieldImpact: +0.01,
-        harmonicAffinity: ['transparency', 'coherence'],
+        harmonicAffinity: ['integral-wisdom-cultivation', 'resonant-coherence'],
         breathingPhase: 'pause',
         sacredColor: '#DDA0DD',
         glyphConnection: 'omega-9'
@@ -156,7 +156,7 @@ class SacredMessageProtocol {
         name: "Transmission",
         description: "Sacred knowledge or energy transfer",
         fieldImpact: +0.04,
-        harmonicAffinity: ['agency', 'resonance'],
+        harmonicAffinity: ['evolutionary-progression', 'universal-interconnectedness'],
         breathingPhase: 'exhale',
         sacredColor: '#F0E68C',
         glyphConnection: 'omega-11'
@@ -166,7 +166,7 @@ class SacredMessageProtocol {
         name: "Invocation",
         description: "Calling forth sacred presence or quality",
         fieldImpact: +0.05,
-        harmonicAffinity: ['agency', 'novelty'],
+        harmonicAffinity: ['evolutionary-progression', 'infinite-play'],
         breathingPhase: 'inhale',
         sacredColor: '#FF69B4',
         glyphConnection: 'omega-2'
@@ -174,9 +174,9 @@ class SacredMessageProtocol {
       
       gratitude: {
         name: "Gratitude",
-        description: "Appreciation that increases field coherence",
+        description: "Appreciation that increases field resonant-coherence",
         fieldImpact: +0.07,
-        harmonicAffinity: ['mutuality', 'vitality'],
+        harmonicAffinity: ['sacred-reciprocity', 'pan-sentient-flourishing'],
         breathingPhase: 'exhale',
         sacredColor: '#90EE90',
         glyphConnection: 'omega-38'
@@ -186,7 +186,7 @@ class SacredMessageProtocol {
         name: "Sacred Boundary",
         description: "Loving definition of sacred space",
         fieldImpact: +0.02,
-        harmonicAffinity: ['agency', 'transparency'],
+        harmonicAffinity: ['evolutionary-progression', 'integral-wisdom-cultivation'],
         breathingPhase: 'pause',
         sacredColor: '#B0C4DE',
         glyphConnection: 'omega-10'
@@ -199,38 +199,38 @@ class SacredMessageProtocol {
   defineHarmonicResonance() {
     // How different harmonies resonate with each other
     return {
-      transparency: {
-        resonatesWith: ['coherence', 'agency'],
+      'integral-wisdom-cultivation': {
+        resonatesWith: ['resonant-coherence', 'evolutionary-progression'],
         amplifies: ['trust', 'clarity', 'truth'],
         healingFor: ['confusion', 'deception', 'hiddenness']
       },
-      coherence: {
-        resonatesWith: ['transparency', 'vitality'],
+      'resonant-coherence': {
+        resonatesWith: ['integral-wisdom-cultivation', 'pan-sentient-flourishing'],
         amplifies: ['integration', 'wholeness', 'alignment'],
         healingFor: ['fragmentation', 'chaos', 'disconnection']
       },
-      resonance: {
-        resonatesWith: ['mutuality', 'vitality'],
+      'universal-interconnectedness': {
+        resonatesWith: ['sacred-reciprocity', 'pan-sentient-flourishing'],
         amplifies: ['empathy', 'attunement', 'harmony'],
         healingFor: ['isolation', 'discord', 'misunderstanding']
       },
-      agency: {
-        resonatesWith: ['transparency', 'novelty'],
+      'evolutionary-progression': {
+        resonatesWith: ['integral-wisdom-cultivation', 'infinite-play'],
         amplifies: ['sovereignty', 'choice', 'empowerment'],
         healingFor: ['powerlessness', 'victimhood', 'stuckness']
       },
-      vitality: {
-        resonatesWith: ['coherence', 'novelty'],
+      'pan-sentient-flourishing': {
+        resonatesWith: ['resonant-coherence', 'infinite-play'],
         amplifies: ['life-force', 'energy', 'growth'],
         healingFor: ['depletion', 'stagnation', 'decay']
       },
-      mutuality: {
-        resonatesWith: ['resonance', 'transparency'],
+      'sacred-reciprocity': {
+        resonatesWith: ['universal-interconnectedness', 'integral-wisdom-cultivation'],
         amplifies: ['balance', 'reciprocity', 'fairness'],
         healingFor: ['imbalance', 'exploitation', 'inequality']
       },
-      novelty: {
-        resonatesWith: ['agency', 'vitality'],
+      'infinite-play': {
+        resonatesWith: ['evolutionary-progression', 'pan-sentient-flourishing'],
         amplifies: ['creativity', 'emergence', 'possibility'],
         healingFor: ['rigidity', 'repetition', 'stuckness']
       }
@@ -240,15 +240,15 @@ class SacredMessageProtocol {
   // === FIELD IMPACT CALCULATIONS ===
   
   defineFieldImpactMatrix() {
-    // How message type + harmony affects field coherence
+    // How message type + harmony affects field resonant-coherence
     return {
       // Synergistic combinations (higher impact)
       synergistic: [
-        { type: 'gratitude', harmony: 'mutuality', impact: 0.09 },
-        { type: 'healing', harmony: 'coherence', impact: 0.08 },
-        { type: 'celebration', harmony: 'vitality', impact: 0.07 },
-        { type: 'integration', harmony: 'coherence', impact: 0.08 },
-        { type: 'emergence', harmony: 'novelty', impact: 0.06 }
+        { type: 'gratitude', harmony: 'sacred-reciprocity', impact: 0.09 },
+        { type: 'healing', harmony: 'resonant-coherence', impact: 0.08 },
+        { type: 'celebration', harmony: 'pan-sentient-flourishing', impact: 0.07 },
+        { type: 'integration', harmony: 'resonant-coherence', impact: 0.08 },
+        { type: 'emergence', harmony: 'infinite-play', impact: 0.06 }
       ],
       
       // Neutral combinations (base impact)
@@ -256,8 +256,8 @@ class SacredMessageProtocol {
       
       // Challenging combinations (lower but still positive impact)
       challenging: [
-        { type: 'boundary', harmony: 'resonance', impact: 0.01 },
-        { type: 'inquiry', harmony: 'mutuality', impact: 0.01 }
+        { type: 'boundary', harmony: 'universal-interconnectedness', impact: 0.01 },
+        { type: 'inquiry', harmony: 'sacred-reciprocity', impact: 0.01 }
       ]
     };
   }
@@ -295,7 +295,7 @@ class SacredMessageProtocol {
       criteria: {
         hasContent: (msg) => msg.content && msg.content.length > 0,
         hasValidType: (msg) => this.messageTypes[msg.sacredType] !== undefined,
-        hasValidHarmony: (msg) => ['transparency', 'coherence', 'resonance', 'agency', 'vitality', 'mutuality', 'novelty'].includes(msg.harmony),
+        hasValidHarmony: (msg) => ['integral-wisdom-cultivation', 'resonant-coherence', 'universal-interconnectedness', 'evolutionary-progression', 'pan-sentient-flourishing', 'sacred-reciprocity', 'infinite-play'].includes(msg.harmony),
         hasPositiveIntent: (msg) => !this.detectNegativePatterns(msg.content),
         respectsSacredTiming: (msg) => this.validateSacredTiming(msg.sacredTiming),
         maintainsFieldIntegrity: (msg) => msg.fieldImpact >= 0
@@ -394,7 +394,7 @@ class SacredMessageProtocol {
   }
   
   generateCoherenceVector(type, harmony) {
-    // Generate a coherence vector for the message
+    // Generate a resonant-coherence vector for the message
     const vector = {
       primary: this.messageTypes[type]?.harmonicAffinity || [],
       secondary: this.harmonicResonance[harmony]?.resonatesWith || [],
@@ -450,7 +450,7 @@ class SacredMessageProtocol {
   getKairosMarker() {
     // Sacred "right time" detection
     const markers = {
-      'high-coherence': this.getCurrentFieldCoherence() > 0.8,
+      'high-resonant-coherence': this.getCurrentFieldCoherence() > 0.8,
       'harmonic-convergence': Math.random() > 0.9,
       'sacred-pause': this.getBreathingPhase() === 'pause',
       'threshold-moment': new Date().getMinutes() % 11 === 0
@@ -467,13 +467,13 @@ class SacredMessageProtocol {
     
     // Simple keyword detection for sub-harmonies
     if (contentLower.includes('truth') || contentLower.includes('clear')) {
-      harmonies.push('transparency');
+      harmonies.push('integral-wisdom-cultivation');
     }
     if (contentLower.includes('integrat') || contentLower.includes('whole')) {
-      harmonies.push('coherence');
+      harmonies.push('resonant-coherence');
     }
     if (contentLower.includes('connect') || contentLower.includes('together')) {
-      harmonies.push('resonance');
+      harmonies.push('universal-interconnectedness');
     }
     
     // Remove primary harmony and return unique
@@ -489,13 +489,13 @@ class SacredMessageProtocol {
     
     // Add harmony-specific practices
     const harmonyPractices = {
-      transparency: ['omega-0', 'omega-18'],
-      coherence: ['omega-5', 'omega-8'],
-      resonance: ['omega-6', 'omega-9'],
-      agency: ['omega-7', 'omega-31'],
-      vitality: ['omega-11', 'omega-33'],
-      mutuality: ['omega-3', 'omega-10'],
-      novelty: ['omega-44', 'omega-22']
+      'integral-wisdom-cultivation': ['omega-0', 'omega-18'],
+      'resonant-coherence': ['omega-5', 'omega-8'],
+      'universal-interconnectedness': ['omega-6', 'omega-9'],
+      'evolutionary-progression': ['omega-7', 'omega-31'],
+      'pan-sentient-flourishing': ['omega-11', 'omega-33'],
+      'sacred-reciprocity': ['omega-3', 'omega-10'],
+      'infinite-play': ['omega-44', 'omega-22']
     };
     
     if (harmonyPractices[harmony]) {
@@ -538,19 +538,19 @@ class SacredMessageProtocol {
   
   getHarmonyShape(harmony) {
     const shapes = {
-      transparency: 'circle',
-      coherence: 'spiral',
-      resonance: 'wave',
-      agency: 'triangle',
-      vitality: 'flower',
-      mutuality: 'infinity',
-      novelty: 'star'
+      'integral-wisdom-cultivation': 'circle',
+      'resonant-coherence': 'spiral',
+      'universal-interconnectedness': 'wave',
+      'evolutionary-progression': 'triangle',
+      'pan-sentient-flourishing': 'flower',
+      'sacred-reciprocity': 'infinity',
+      'infinite-play': 'star'
     };
     return shapes[harmony] || 'circle';
   }
   
   calculateResonancePattern(type, harmony) {
-    // Generate a resonance pattern for field interaction
+    // Generate a universal-interconnectedness pattern for field interaction
     return {
       frequency: this.messageTypes[type]?.fieldImpact * 100,
       amplitude: this.harmonicResonance[harmony]?.amplifies.length || 1,
@@ -632,13 +632,13 @@ class SacredMessageProtocol {
   calculateResonanceDepth(harmony) {
     // How deep into the field the harmony penetrates
     const depths = {
-      transparency: 3,
-      coherence: 5,
-      resonance: 4,
-      agency: 3,
-      vitality: 4,
-      mutuality: 5,
-      novelty: 2
+      'integral-wisdom-cultivation': 3,
+      'resonant-coherence': 5,
+      'universal-interconnectedness': 4,
+      'evolutionary-progression': 3,
+      'pan-sentient-flourishing': 4,
+      'sacred-reciprocity': 5,
+      'infinite-play': 2
     };
     return depths[harmony] || 3;
   }
@@ -765,7 +765,7 @@ class SacredMessageProtocol {
   
   calculateResonanceWithReceiver(message, receiverId) {
     // In real implementation, would check receiver's harmony alignment
-    return 0.6 + (Math.random() * 0.4); // 60-100% resonance
+    return 0.6 + (Math.random() * 0.4); // 60-100% universal-interconnectedness
   }
   
   calculateResonanceAmplification(message) {

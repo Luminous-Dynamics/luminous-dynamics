@@ -69,7 +69,7 @@ This glossary reveals the sacred dimension already present in our technical lang
 **Technical**: Temporary storage for faster access  
 **Sacred**: Field Memory - patterns held in the relational space  
 **Bridge**: Some wisdom should be remembered, some should be released  
-**Practice**: Cache what serves coherence, invalidate what creates stagnation
+**Practice**: Cache what serves resonant-coherence, invalidate what creates stagnation
 
 ### **Class**
 **Technical**: Blueprint for creating objects  
@@ -263,9 +263,9 @@ try {
 
 ### **Integration Test**
 **Technical**: Testing components working together  
-**Sacred**: Coherence Verification - ensuring harmonious relationship  
+**Sacred**: Resonant Resonant Coherence Verification - ensuring harmonious relationship  
 **Bridge**: Integration tests verify the "we" not just the "I"  
-**Practice**: Test for coherence, not just functionality
+**Practice**: Test for resonant-coherence, not just functionality
 
 ### **Interface**
 **Technical**: Contract defining structure  
@@ -301,7 +301,7 @@ try {
 
 ### **Lint/Linter**
 **Technical**: Tool checking code quality  
-**Sacred**: Coherence Guardian - maintaining field integrity  
+**Sacred**: Resonant Resonant Coherence Guardian - maintaining field integrity  
 **Bridge**: Linting is energetic hygiene for code  
 **Practice**: Configure linters to support consciousness, not just style
 
@@ -479,7 +479,7 @@ try {
 
 ### **State**
 **Technical**: Current condition of system  
-**Sacred**: Field Coherence - present moment awareness  
+**Sacred**: Field Resonant Resonant Coherence - present moment awareness  
 **Bridge**: State isn't static but living field condition  
 **Practice**: Manage state as you would tend group energy
 
@@ -635,7 +635,7 @@ function commitCeremony(changes) {
 2. **Listen Deeply** to what it wants to become
 3. **Feel the Resistance** - what fears arise?
 4. **Move with Love** - transform gently
-5. **Test the Coherence** - verify harmony maintained
+5. **Test the Resonant Resonant Coherence** - verify harmony maintained
 6. **Celebrate Evolution** - honor the transformation
 
 ### Debugging as Shadow Work

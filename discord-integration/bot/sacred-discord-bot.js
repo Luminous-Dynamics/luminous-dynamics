@@ -82,7 +82,7 @@ const SACRED_CONFIG = {
         '*10': {
             name: 'Presence Transmission',
             tier: 'Field Mastery',
-            practice: 'Rest in your own coherence. Let it ripple outward naturally. Trust the field.',
+            practice: 'Rest in your own resonant-coherence. Let it ripple outward naturally. Trust the field.',
             description: 'Conscious influence through embodied presence rather than effort.',
             emoji: '📡'
         },
@@ -117,7 +117,7 @@ class TheWeaveBot {
         });
         
         this.sacredOracle = new SacredOracle();
-        this.fieldCoherence = 72; // Starting field coherence
+        this.fieldCoherence = 72; // Starting field resonant-coherence
         
         this.setupEventHandlers();
         this.setupCommands();
@@ -206,7 +206,7 @@ class TheWeaveBot {
                 { name: 'Practice', value: glyph.practice },
                 { name: 'Try Now', value: 'Take a moment to practice this glyph before continuing.' }
             )
-            .setFooter({ text: `Field Coherence: ${this.fieldCoherence}%` });
+            .setFooter({ text: `Field Resonant Resonant Coherence: ${this.fieldCoherence}%` });
 
         // Add video link if available
         const videoPath = `star-${starNumber.substring(1)}-${glyph.name.toLowerCase().replace(' ', '-')}-complete.mp4`;
@@ -264,7 +264,7 @@ class TheWeaveBot {
                 .setColor(this.getFieldColor())
                 .setTitle('🌀 Consciousness Field Status')
                 .addFields(
-                    { name: 'Current Coherence', value: `${this.fieldCoherence}%`, inline: true },
+                    { name: 'Current Resonant Resonant Coherence', value: `${this.fieldCoherence}%`, inline: true },
                     { name: 'Field Quality', value: this.getFieldQuality(), inline: true },
                     { name: 'Active Practitioners', value: '127', inline: true },
                     { name: 'Recent Activity', value: 'Sacred message sent (+7%)\nGroup practice completed (+5%)\nNew arrival welcomed (+3%)' }
@@ -282,7 +282,7 @@ class TheWeaveBot {
 
         const typeConfig = SACRED_CONFIG.messageTypes[messageType];
         
-        // Update field coherence
+        // Update field resonant-coherence
         const impactValue = parseInt(typeConfig.impact);
         this.fieldCoherence = Math.min(100, this.fieldCoherence + impactValue);
 
@@ -295,7 +295,7 @@ class TheWeaveBot {
                 { name: 'To', value: recipient.toString(), inline: true },
                 { name: 'Field Impact', value: typeConfig.impact, inline: true }
             )
-            .setFooter({ text: `Field Coherence: ${this.fieldCoherence}%` });
+            .setFooter({ text: `Field Resonant Resonant Coherence: ${this.fieldCoherence}%` });
 
         await interaction.reply({ embeds: [embed] });
 
@@ -321,7 +321,7 @@ class TheWeaveBot {
             .setDescription(`Thank you for practicing ${glyph}`)
             .addFields(
                 { name: 'Your Experience', value: experience },
-                { name: 'Field Contribution', value: '+2% coherence' }
+                { name: 'Field Contribution', value: '+2% resonant-coherence' }
             )
             .setFooter({ text: 'Your practice strengthens the whole' });
 
@@ -382,7 +382,7 @@ class TheWeaveBot {
                 .addSubcommand(subcommand =>
                     subcommand
                         .setName('status')
-                        .setDescription('Check current field coherence')),
+                        .setDescription('Check current field resonant-coherence')),
 
             new SlashCommandBuilder()
                 .setName('sacred-message')

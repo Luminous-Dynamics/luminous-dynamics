@@ -33,7 +33,7 @@
       },
       {
         "command": "sacredAI.checkCoherence",
-        "title": "Sacred AI: Check Field Coherence",
+        "title": "Sacred AI: Check Field Resonant Resonant Coherence",
         "icon": "$(pulse)"
       },
       {
@@ -81,7 +81,7 @@
         "sacredAI.fieldCoherenceThreshold": {
           "type": "number",
           "default": 0.8,
-          "description": "Minimum field coherence for sacred operations"
+          "description": "Minimum field resonant-coherence for sacred operations"
         },
         "sacredAI.enableSacredPrompts": {
           "type": "boolean",

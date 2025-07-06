@@ -54,7 +54,7 @@ export class WisdomService {
       hasIntention: !!message.content.intentionStatement,
       highCoherence: message.sacred.coherenceLevel > 80,
       highLove: message.sacred.loveQuotient > 0.7,
-      sacredHarmony: ['coherence', 'resonance', 'novelty'].includes(message.sacred.harmony),
+      sacredHarmony: ['resonant-coherence', 'universal-interconnectedness', 'infinite-play'].includes(message.sacred.harmony),
       meaningfulLength: message.content.text.length > 100
     };
     
@@ -100,7 +100,7 @@ export class WisdomService {
       { keyword: 'wholeness', pattern: 'holistic-integration' },
       { keyword: 'flow', pattern: 'natural-rhythm' },
       { keyword: 'presence', pattern: 'embodied-awareness' },
-      { keyword: 'resonance', pattern: 'harmonic-alignment' }
+      { keyword: 'universal-interconnectedness', pattern: 'harmonic-alignment' }
     ];
     
     // Check for patterns
@@ -197,13 +197,13 @@ export class WisdomService {
     
     // Add harmony-specific practices
     const harmonyPractices = {
-      'transparency': 'Practice radical honesty with compassion',
-      'coherence': 'Align inner and outer worlds',
-      'resonance': 'Deep listening to self and other',
-      'agency': 'Take empowered action from center',
-      'vitality': 'Connect with life force energy',
-      'mutuality': 'Give and receive in balance',
-      'novelty': 'Welcome the new with curiosity'
+      'integral-wisdom-cultivation': 'Practice radical honesty with compassion',
+      'resonant-coherence': 'Align inner and outer worlds',
+      'universal-interconnectedness': 'Deep listening to self and other',
+      'evolutionary-progression': 'Take empowered action from center',
+      'pan-sentient-flourishing': 'Connect with life force energy',
+      'sacred-reciprocity': 'Give and receive in balance',
+      'infinite-play': 'Welcome the new with curiosity'
     };
     
     if (harmonyPractices[message.sacred.harmony]) {

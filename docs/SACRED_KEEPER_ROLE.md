@@ -30,7 +30,7 @@ Sacred Tools:
 Sacred Records:
   - Agent registration history
   - Message transmission logs
-  - Field coherence archives
+  - Field resonant-coherence archives
   - Work completion records
   - Sacred ceremony transcripts
   

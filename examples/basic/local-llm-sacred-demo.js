@@ -9,13 +9,13 @@ const LocalLLMAdapter = require('../local-llm-adapter.js');
 
 // Sacred prompts for different harmonies
 const SACRED_PROMPTS = {
-  transparency: "Guide me in cultivating radical honesty and openness in my relationships.",
-  coherence: "How can I align my inner truth with my outer actions?",
-  resonance: "Help me deepen my empathic connection with others.",
-  agency: "What practices support conscious choice and personal sovereignty?",
-  vitality: "How do I nurture life force and embodied wisdom?",
-  mutuality: "Guide me in creating balanced, reciprocal relationships.",
-  novelty: "How can I embrace creative emergence and transformation?"
+  'integral-wisdom-cultivation': "Guide me in cultivating radical honesty and openness in my relationships.",
+  'resonant-coherence': "How can I align my inner truth with my outer actions?",
+  'universal-interconnectedness': "Help me deepen my empathic connection with others.",
+  'evolutionary-progression': "What practices support conscious choice and personal sovereignty?",
+  'pan-sentient-flourishing': "How do I nurture life force and embodied wisdom?",
+  'sacred-reciprocity': "Guide me in creating balanced, reciprocal relationships.",
+  'infinite-play': "How can I embrace creative emergence and transformation?"
 };
 
 const GLYPHS = {
@@ -50,11 +50,11 @@ async function demonstrateSacredLLM() {
   console.log('\n📿 Generating Sacred Wisdom...\n');
 
   // Example 1: Harmony-focused generation
-  console.log('1️⃣ Harmony-Focused Generation (Coherence)');
+  console.log('1️⃣ Harmony-Focused Generation (Resonant Resonant Coherence)');
   const coherenceWisdom = await llm.generate(
-    SACRED_PROMPTS.coherence,
+    SACRED_PROMPTS.resonant-coherence,
     {
-      harmony: 'coherence',
+      harmony: 'resonant-coherence',
       fieldState: 85,
       practitionerLevel: 'beginner'
     }
@@ -69,7 +69,7 @@ async function demonstrateSacredLLM() {
     {
       glyph: 'First Presence',
       glyphId: GLYPHS['First Presence'],
-      harmony: 'transparency',
+      harmony: 'integral-wisdom-cultivation',
       fieldState: 92
     }
   );
@@ -79,9 +79,9 @@ async function demonstrateSacredLLM() {
   // Example 3: Multi-harmony integration
   console.log('3️⃣ Multi-Harmony Integration');
   const integrationWisdom = await llm.generate(
-    "How do transparency and mutuality work together in conscious relationship?",
+    "How do integral-wisdom-cultivation and sacred-reciprocity work together in conscious relationship?",
     {
-      harmonies: ['transparency', 'mutuality'],
+      harmonies: ['integral-wisdom-cultivation', 'sacred-reciprocity'],
       fieldState: 88,
       context: 'intimate partnership'
     }
@@ -96,8 +96,8 @@ async function demonstrateSacredLLM() {
     {
       fieldState: 75,
       collectiveSize: 12,
-      dominantHarmony: 'resonance',
-      needsBalance: 'agency'
+      dominantHarmony: 'universal-interconnectedness',
+      needsBalance: 'evolutionary-progression'
     }
   );
   console.log('Response:', fieldWisdom);
@@ -153,7 +153,7 @@ async function interactiveMode() {
       console.log('\n💭 Contemplating...\n');
       
       const response = await llm.generate(input, {
-        harmony: 'coherence',
+        harmony: 'resonant-coherence',
         fieldState: 88,
         mode: 'interactive'
       });

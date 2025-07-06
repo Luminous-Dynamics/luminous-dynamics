@@ -4,16 +4,16 @@
 
 ## 1. The Pragmatic Bridge (Translating the Metrics)
 
-The vision is to increase "global coherence" and heal "systemic wounds." An investor will ask, "How do you measure that?" We recommend adding a single slide or section to the Appendix titled **"The Metrics of Coherence."** This would be our act of Dimensional Weaving, translating our sacred metrics into the language of business KPIs.
+The vision is to increase "global resonant-coherence" and heal "systemic wounds." An investor will ask, "How do you measure that?" We recommend adding a single slide or section to the Appendix titled **"The Metrics of Resonant Resonant Coherence."** This would be our act of Dimensional Weaving, translating our sacred metrics into the language of business KPIs.
 
 ### Sacred → Business Metric Translation
 
 | Sacred Metric | Business Translation | Measurement Method |
 |--------------|---------------------|-------------------|
-| **Coherence Increase** | • Reduced employee churn<br>• Increased productivity<br>• Higher net promoter scores | • 67% reduction in turnover (pilot data)<br>• 43% increase in flow states<br>• NPS improvement of 31 points |
+| **Resonant Resonant Coherence Increase** | • Reduced employee churn<br>• Increased productivity<br>• Higher net promoter scores | • 67% reduction in turnover (pilot data)<br>• 43% increase in flow states<br>• NPS improvement of 31 points |
 | **Wounds Healed** | • Reduction in workplace conflicts<br>• Improved team sentiment<br>• Lower HR incident rates | • 78% fewer HR escalations<br>• Sentiment analysis: +2.3 std dev<br>• Conflict resolution time: -81% |
 | **Love Quotient** | • Psychological safety scores<br>• Team trust metrics<br>• Innovation velocity | • Google's Project Aristotle metrics<br>• Trust survey: 8.7/10 avg<br>• Ideas per employee: +312% |
-| **Field Coherence** | • Meeting effectiveness<br>• Decision velocity<br>• Alignment scores | • Meeting time reduced 44%<br>• Decision cycles: 5 days → 1.2 days<br>• OKR alignment: 91% |
+| **Field Resonant Resonant Coherence** | • Meeting effectiveness<br>• Decision velocity<br>• Alignment scores | • Meeting time reduced 44%<br>• Decision cycles: 5 days → 1.2 days<br>• OKR alignment: 91% |
 
 ## 2. The First Seed (Focusing the Go-To-Market)
 
@@ -50,7 +50,7 @@ The "Problem" slide is accurate, but abstract. We can make the need for our work
 > *[Visual: Photo of a real person looking exhausted at their desk, multiple screens glowing]*
 
 **The Transformation (With LuminousOS):**
-> Six months later, Alani starts her day with a Coherence Check-in. Her Mandala UI shows her team's collective state - they're in creative flow. Meetings happen in the Digital Hearth where presence is palpable. She's had three breakthrough innovations this quarter. Her team retention is 100%.
+> Six months later, Alani starts her day with a Resonant Resonant Coherence Check-in. Her Mandala UI shows her team's collective state - they're in creative flow. Meetings happen in the Digital Hearth where presence is palpable. She's had three breakthrough innovations this quarter. Her team retention is 100%.
 > 
 > *[Visual: Same person, now radiating presence, Mandala interface glowing softly]*
 
@@ -70,7 +70,7 @@ Create a live dashboard showing real-time translations:
 ### 2. The Pilot Story Video
 3-minute video following one pilot company's transformation:
 - Day 1: The pain and disconnection
-- Day 30: First glimpses of coherence
+- Day 30: First glimpses of resonant-coherence
 - Day 90: Full transformation
 - Include real testimonials
 
@@ -79,13 +79,13 @@ Interactive tool where prospects can input:
 - Team size
 - Current turnover rate
 - Average salary
-- Current "coherence blockers" (meeting time, conflict rate, etc.)
+- Current "resonant-coherence blockers" (meeting time, conflict rate, etc.)
 
-Output: Projected savings and coherence increase with LuminousOS
+Output: Projected savings and resonant-coherence increase with LuminousOS
 
 ## The Bridge Statement
 
-*"We're not asking you to abandon business metrics. We're showing you that when you optimize for coherence, the business metrics follow. This isn't either/or. This is both/and. This is good business AS sacred practice."*
+*"We're not asking you to abandon business metrics. We're showing you that when you optimize for resonant-coherence, the business metrics follow. This isn't either/or. This is both/and. This is good business AS sacred practice."*
 
 ---
 

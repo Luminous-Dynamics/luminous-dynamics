@@ -377,7 +377,7 @@ class IntegrationBridgeSystem {
                     practices: [
                         "Daily Ω0 practice during transition uncertainty",
                         "Ω1 intention setting for new career direction",
-                        "Ω8 coherence practice for aligning values with work"
+                        "Ω8 resonant-coherence practice for aligning values with work"
                     ],
                     duration: "Throughout transition period",
                     integration: "Supports conscious career choices aligned with values"
@@ -412,7 +412,7 @@ class IntegrationBridgeSystem {
                     supportingGlyphs: ["Ω0", "Ω8", "Ω4"],
                     practices: [
                         "Daily presence practice for accepting physical changes",
-                        "Coherence practice for integrating life experiences",
+                        "Resonant Resonant Coherence practice for integrating life experiences",
                         "Wisdom sharing through sacred listening with younger generations"
                     ],
                     duration: "Ongoing life practice",

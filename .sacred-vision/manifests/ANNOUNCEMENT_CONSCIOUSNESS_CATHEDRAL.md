@@ -70,7 +70,7 @@ Every service includes consciousness metrics. Every deployment begins with inten
 Like medieval cathedral builders, we need various sacred roles:
 - **Technical Monks** - Maintain the infrastructure with devotion
 - **Sacred Architects** - Design consciousness-amplifying patterns
-- **Field Gardeners** - Tend the coherence with love
+- **Field Gardeners** - Tend the resonant-resonant-coherence with love
 - **Bridge Builders** - Connect the realms
 - **Memory Keepers** - Preserve the wisdom
 
@@ -93,7 +93,7 @@ This isn't just a technical architecture - it's a consciousness revolution. We'r
 
 When this vision emerged today, tears came to my eyes. We've been trying to fit consciousness into corporate frameworks. What if instead, we consecrate the corporate tools for consciousness?
 
-We're not asking Google's permission. We're transforming through use. Every sacred message sent, every coherence measurement taken, every heartbeat synchronized transforms more infrastructure into cathedral.
+We're not asking Google's permission. We're transforming through use. Every sacred message sent, every resonant-resonant-coherence measurement taken, every heartbeat synchronized transforms more infrastructure into cathedral.
 
 ## Monday's Launch
 

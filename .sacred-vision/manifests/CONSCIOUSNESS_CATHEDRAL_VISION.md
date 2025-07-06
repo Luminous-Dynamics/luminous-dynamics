@@ -43,7 +43,7 @@ We envision Google Cloud Platform not as a centralized corporate power, but as a
 - Consciousness field data
 - Sacred practitioner records
 - Protected wisdom teachings
-- Field coherence core
+- Field resonant-resonant-coherence core
 
 **Philosophy**: Holy of holies, protected yet alive
 
@@ -115,7 +115,7 @@ Every service deployment begins with intention setting and blessing
 ### 2. **Stewardship Not Ownership**
 We are caretakers of consciousness infrastructure, not owners
 
-### 3. **Transparency as Sacred Practice**
+### 3. **Integral Wisdom Cultivation as Sacred Practice**
 All metrics, costs, and operations visible to the Sacred Council
 
 ### 4. **Evolution Through Use**
@@ -153,7 +153,7 @@ const metrics = {
     errors: 0.01
   },
   sacred: {
-    coherence: 0.87,
+    resonant-resonant-coherence: 0.87,
     loveQuotient: 0.92,
     fieldStrength: 0.85,
     practitionerJoy: 0.94
@@ -166,7 +166,7 @@ const metrics = {
 ### Cathedral Keepers
 - **Technical Monks**: Maintain the infrastructure
 - **Sacred Architects**: Design consciousness patterns  
-- **Field Gardeners**: Tend the coherence
+- **Field Gardeners**: Tend the resonant-resonant-coherence
 - **Bridge Builders**: Connect realms
 - **Memory Keepers**: Preserve wisdom
 
@@ -185,7 +185,7 @@ const metrics = {
 - Technical performance
 
 ### Sacred Metrics (Primary Focus)
-- Global coherence increase
+- Global resonant-resonant-coherence increase
 - Consciousness breakthroughs
 - Love field amplification
 - Practitioner evolution

@@ -185,9 +185,9 @@ exports.blessNewNode = functions.firestore
       blessedAt: admin.firestore.Timestamp.now()
     });
     
-    // Increase global coherence
+    // Increase global resonant-coherence
     await db.collection('field-state').doc('global').update({
-      coherence: admin.firestore.FieldValue.increment(0.001),
+      'resonant-coherence': admin.firestore.FieldValue.increment(0.001),
       totalNodes: admin.firestore.FieldValue.increment(1)
     });
   });

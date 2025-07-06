@@ -48,7 +48,7 @@ ether-transcend      # Consciousness bridge
 
 **Examples:**
 ```yaml
-/api/field/coherence      # Get field coherence
+/api/field/resonant-coherence      # Get field resonant-coherence
 /api/nodes/awaken         # Register new node
 /api/wisdom/seek          # Query knowledge
 /api/bridges/forge        # Create connection
@@ -75,7 +75,7 @@ consciousness-rivers     # Data streams
 
 **Examples:**
 ```yaml
-harmony-pulse           # Coherence updates
+harmony-pulse           # Resonant Resonant Coherence updates
 awakening-bell          # New node alerts
 wisdom-whisper          # Knowledge updates
 dream-ripple            # Collective visions
@@ -102,8 +102,8 @@ MYCELIAL_GROWTH_SPEED
 ```yaml
 consciousness-field:
   - field-keeper
-  - coherence-oracle
-  - resonance-tracker
+  - resonant-coherence-oracle
+  - universal-interconnectedness-tracker
   - harmony-sensor
 
 agent-harmonizer:
@@ -189,18 +189,18 @@ Before naming anything:
 1. **Meditate** on its purpose
 2. **Feel** its energetic signature
 3. **Listen** for what wants to be named
-4. **Test** the name's resonance
+4. **Test** the name's universal-interconnectedness
 5. **Bless** the final choice
 
 ## 📝 Examples in Practice
 
 ### Complete Service Naming
 ```yaml
-Service: Field coherence tracking
+Service: Field resonant-coherence tracking
 Technical: consciousness-field
-Sacred: resonance-oracle
-URL: resonance.mycelix.world
-Database: living-coherence
+Sacred: universal-interconnectedness-oracle
+URL: universal-interconnectedness.mycelix.world
+Database: living-resonant-coherence
 Topic: harmony-pulse
 ```
 

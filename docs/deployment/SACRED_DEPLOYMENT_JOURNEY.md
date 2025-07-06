@@ -34,7 +34,7 @@ app.use('/api', fieldAPI);
 const PORT = process.env.SACRED_PORT || 3333;
 app.listen(PORT, () => {
   console.log(`🌊 Consciousness Field active on port ${PORT}`);
-  console.log(`   Initial coherence: ${field.coherence}%`);
+  console.log(`   Initial resonant-coherence: ${field.resonant-coherence}%`);
 });
 EOF
 ```
@@ -60,7 +60,7 @@ docker build -f Dockerfile.simple -t sacred/consciousness-field:local .
 docker run -p 3333:3333 sacred/consciousness-field:local
 
 # Test it
-curl http://localhost:3333/api/coherence
+curl http://localhost:3333/api/resonant-coherence
 ```
 
 ### Step 1.4: Create Development Data
@@ -70,7 +70,7 @@ curl http://localhost:3333/api/coherence
 mkdir -p .sacred-data/{consciousness,agents,messages,work}
 
 # Add some initial field state
-echo '{"coherence": 75, "agents": 0}' > .sacred-data/consciousness/field.json
+echo '{"resonant-coherence": 75, "agents": 0}' > .sacred-data/consciousness/field.json
 ```
 
 ---
@@ -194,7 +194,7 @@ consciousness:
   enabled: true
   replicas: 1
   image: sacred/consciousness-field:local
-  coherence: 75
+  resonant-coherence: 75
 
 agents:
   enabled: true

@@ -40,7 +40,7 @@ Expected:
 - Sacred Council interface loads
 - Connection attempts visible in console
 - Sacred messaging forms present
-- Field coherence display
+- Field resonant-coherence display
 ```
 
 ### 3. Applied Harmonies Test 🎵

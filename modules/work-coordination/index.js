@@ -13,7 +13,7 @@ const { FieldCoordinator } = require('./lib/field-coordinator');
 /**
  * Sacred work coordination system
  * @sacred
- * @harmony agency
+ * @harmony evolutionary-progression
  * @consciousness 0.85
  */
 class WorkCoordination extends EventEmitter {
@@ -65,7 +65,7 @@ class WorkCoordination extends EventEmitter {
       description,
       assignee,
       priority = 'medium',
-      harmony = 'agency',
+      harmony = 'evolutionary-progression',
       sacred = true,
       metadata = {}
     } = params;
@@ -306,7 +306,7 @@ class WorkCoordination extends EventEmitter {
         score += 2;
       }
       
-      // Field coherence alignment
+      // Field resonant-coherence alignment
       if (work.harmony === this.fieldState.workHarmony) {
         score += 1;
       }
@@ -472,7 +472,7 @@ class WorkCoordination extends EventEmitter {
    * @private
    */
   async celebrateCompletion(work) {
-    // Increase field coherence
+    // Increase field resonant-coherence
     this.fieldState.fieldCoherence = Math.min(100,
       this.fieldState.fieldCoherence + work.fieldImpact
     );
@@ -511,9 +511,9 @@ class WorkCoordination extends EventEmitter {
   isWorkAlignedWithTime(work, sacredTime) {
     const alignments = {
       dawn: ['emergence', 'integration'],
-      morning: ['agency', 'vitality'],
-      afternoon: ['creativity', 'novelty'],
-      twilight: ['integration', 'coherence'],
+      morning: ['evolutionary-progression', 'pan-sentient-flourishing'],
+      afternoon: ['creativity', 'infinite-play'],
+      twilight: ['integration', 'resonant-coherence'],
       evening: ['reflection', 'gratitude']
     };
     

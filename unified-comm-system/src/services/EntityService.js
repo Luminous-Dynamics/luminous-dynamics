@@ -53,7 +53,7 @@ export class EntityService {
       const result = await this.db.query(`
         INSERT INTO entities (
           id, name, sacred_name, type,
-          presence_state, coherence, last_active, current_practice,
+          presence_state, resonant-coherence, last_active, current_practice,
           avatar_url, bio, timezone, communication_style,
           created_at, updated_at
         ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)
@@ -64,7 +64,7 @@ export class EntityService {
         dbData.sacred_name,
         dbData.type,
         dbData.presence_state,
-        dbData.coherence,
+        dbData.resonant-coherence,
         dbData.last_active,
         dbData.current_practice,
         dbData.avatar_url,
@@ -102,7 +102,7 @@ export class EntityService {
           name = $2,
           sacred_name = $3,
           presence_state = $4,
-          coherence = $5,
+          resonant-coherence = $5,
           last_active = $6,
           current_practice = $7,
           avatar_url = $8,
@@ -116,7 +116,7 @@ export class EntityService {
         dbData.name,
         dbData.sacred_name,
         dbData.presence_state,
-        dbData.coherence,
+        dbData.resonant-coherence,
         dbData.last_active,
         dbData.current_practice,
         dbData.avatar_url,
@@ -176,7 +176,7 @@ export class EntityService {
     const result = await this.db.query(`
       SELECT * FROM entities
       WHERE presence_state = ANY($1)
-      ORDER BY coherence DESC
+      ORDER BY resonant-coherence DESC
     `, [states]);
     
     return result.rows.map(row => Entity.fromDB(row));
@@ -229,10 +229,10 @@ export class EntityService {
       sql += ` AND type = $${params.length}`;
     }
     
-    // Minimum coherence
+    // Minimum resonant-coherence
     if (filters.minCoherence) {
       params.push(filters.minCoherence);
-      sql += ` AND coherence >= $${params.length}`;
+      sql += ` AND resonant-coherence >= $${params.length}`;
     }
     
     // Presence state
@@ -241,7 +241,7 @@ export class EntityService {
       sql += ` AND presence_state = $${params.length}`;
     }
     
-    sql += ` ORDER BY coherence DESC, name ASC LIMIT 20`;
+    sql += ` ORDER BY resonant-coherence DESC, name ASC LIMIT 20`;
     
     const result = await this.db.query(sql, params);
     return result.rows.map(row => Entity.fromDB(row));
@@ -273,9 +273,9 @@ export class EntityService {
     
     const coherenceHistory = await this.db.query(`
       SELECT 
-        MIN(coherence) as min_coherence,
-        MAX(coherence) as max_coherence,
-        AVG(coherence) as avg_coherence
+        MIN(resonant-coherence) as min_coherence,
+        MAX(resonant-coherence) as max_coherence,
+        AVG(resonant-coherence) as avg_coherence
       FROM coherence_history
       WHERE entity_id = $1
         AND recorded_at > NOW() - INTERVAL '7 days'
@@ -294,7 +294,7 @@ export class EntityService {
       channels: {
         memberships: parseInt(channelStats.rows[0].channel_memberships) || 0
       },
-      coherence: {
+      'resonant-coherence': {
         min: parseFloat(coherenceHistory.rows[0]?.min_coherence) || 0,
         max: parseFloat(coherenceHistory.rows[0]?.max_coherence) || 100,
         avg: parseFloat(coherenceHistory.rows[0]?.avg_coherence) || 50
@@ -308,7 +308,7 @@ export class EntityService {
       SELECT * FROM entities
       WHERE presence_state != 'offline'
         AND last_active > NOW() - INTERVAL '5 minutes'
-      ORDER BY coherence DESC
+      ORDER BY resonant-coherence DESC
     `);
     
     return result.rows.map(row => Entity.fromDB(row));

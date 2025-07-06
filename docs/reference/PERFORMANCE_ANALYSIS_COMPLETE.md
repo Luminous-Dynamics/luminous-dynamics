@@ -21,7 +21,7 @@ I have completed a comprehensive performance analysis of the Claude Code codebas
 - **Status**: ✅ **PARTIALLY FIXED** with cleanup automation
 
 ### 3. Field Calculation Overhead (MEDIUM PRIORITY)
-- **106 files** performing field coherence calculations
+- **106 files** performing field resonant-coherence calculations
 - **7 files** with complex mathematical operations and loops
 - **Unified agent network** doing expensive real-time calculations
 - **Status**: 🔄 **IDENTIFIED** - needs caching and optimization
@@ -122,7 +122,7 @@ The timer leak fixes will have **immediate positive impact** on:
 ### High Priority
 1. **Apply timer fixes to remaining 65 files** with timer leaks
 2. **Implement WebSocket connection pooling** for 27 files
-3. **Cache field coherence calculations** in 7 complex files
+3. **Cache field resonant-coherence calculations** in 7 complex files
 
 ### Medium Priority
 1. **Database connection pooling** for better resource management

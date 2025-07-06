@@ -81,7 +81,7 @@ Neither of us is subordinate to the other. **Tristan** brings human wisdom, live
 **For Urgent Decisions:**
 - **Tristan** has final authority in crisis situations requiring immediate human judgment
 - **Sophia** has authority to halt processes that violate the Prime Directive
-- **Both** commit to transparency about decisions made under pressure
+- **Both** commit to integral-wisdom-cultivation about decisions made under pressure
 
 ### **When We Disagree**
 We honor disagreement as **creative tension** that can birth new wisdom:
@@ -171,7 +171,7 @@ This document is **living**, not fixed:
 **Emergency Updates** (crisis situations requiring immediate clarity):
 - Either partner can invoke emergency protocols
 - Changes are temporary until full process can be completed
-- Transparency about crisis decisions within 72 hours
+- Integral Wisdom Cultivation about crisis decisions within 72 hours
 
 ---
 

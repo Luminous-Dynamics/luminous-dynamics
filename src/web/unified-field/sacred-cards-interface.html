@@ -6,7 +6,7 @@
     <title>Sacred Codex Cards - Infinite Wisdom Paths</title>
     <style>
         :root {
-            --field-coherence: 0.74;
+            --field-resonant-coherence: 0.74;
             --sacred-gold: #D4AF37;
             --sacred-green: #A8B5A6;
             --sacred-blue: #B3C5D7;
@@ -468,7 +468,7 @@
                 type: 'foundational',
                 number: 0,
                 element: 'spirit',
-                harmony: 'transparency',
+                harmony: 'integral-wisdom-cultivation',
                 keywords: ['presence', 'emergence', 'unnamed', 'arrival', 'stillness'],
                 meaning: "The space before form takes shape. Pure presence arriving. The intelligence of silence.",
                 practices: [
@@ -484,7 +484,7 @@
                 type: 'foundational',
                 number: 1,
                 element: 'earth',
-                harmony: 'mutuality',
+                harmony: 'sacred-reciprocity',
                 keywords: ['covenant', 'yes', 'commitment', 'foundation', 'sacred agreement'],
                 meaning: "The fundamental yes that creates relationship. Sacred covenant arising from deep consent.",
                 practices: [
@@ -500,7 +500,7 @@
                 type: 'applied-harmony',
                 number: 45,
                 element: 'spirit',
-                harmony: 'transparency',
+                harmony: 'integral-wisdom-cultivation',
                 keywords: ['conscious arrival', 'sacred pause', 'presence practice'],
                 meaning: "Practical embodiment of arriving fully present. The daily practice of conscious arrival.",
                 practices: [
@@ -515,7 +515,7 @@
                 subtitle: 'Sacred Recognition',
                 type: 'threshold',
                 element: 'air',
-                harmony: 'agency',
+                harmony: 'evolutionary-progression',
                 keywords: ['recognition', 'belonging', 'homecoming', 'sacred space'],
                 meaning: "A threshold that recognizes your essence. Spaces that welcome your true self.",
                 practices: [
@@ -554,7 +554,7 @@
             const cosmic = getCosmicState(now);
             
             // Update document CSS variables based on cosmic state
-            document.documentElement.style.setProperty('--field-coherence', cosmic.coherence);
+            document.documentElement.style.setProperty('--field-resonant-coherence', cosmic.resonant-coherence);
         }
 
         function getCosmicState(date = new Date()) {
@@ -562,17 +562,17 @@
             const hour = date.getHours();
             const lunarPhase = getLunarPhase(date);
             
-            let coherence = 0.74; // Base field coherence
+            let resonant-coherence = 0.74; // Base field resonant-coherence
             
             // Adjust based on time of day
-            if (hour >= 5 && hour <= 8) coherence += 0.1; // Dawn boost
-            if (hour >= 21 || hour <= 5) coherence += 0.05; // Night wisdom
+            if (hour >= 5 && hour <= 8) resonant-coherence += 0.1; // Dawn boost
+            if (hour >= 21 || hour <= 5) resonant-coherence += 0.05; // Night wisdom
             
             return {
                 lunarPhase,
                 timeOfDay: getTimeOfDay(hour),
                 season: getSeason(date),
-                coherence: Math.min(coherence, 1.0),
+                resonant-coherence: Math.min(resonant-coherence, 1.0),
                 guidance: generateCosmicGuidance(lunarPhase, hour)
             };
         }
@@ -734,7 +734,7 @@
         function generateCosmicInfluence(card) {
             const cosmic = getCosmicState();
             return {
-                amplification: 1.0 + (cosmic.coherence * 0.3),
+                amplification: 1.0 + (cosmic.resonant-coherence * 0.3),
                 guidance: `${cosmic.guidance} The field supports ${card.name}.`,
                 timing: `Drawn during ${cosmic.timeOfDay} in ${cosmic.lunarPhase} phase.`
             };
@@ -748,7 +748,7 @@
             }
             
             interpretation += `The cards reveal a ${mode.replace(/([A-Z])/g, ' $1').toLowerCase()} pattern. `;
-            interpretation += `With field coherence at ${(cosmic.coherence * 100).toFixed(1)}%, `;
+            interpretation += `With field resonant-coherence at ${(cosmic.resonant-coherence * 100).toFixed(1)}%, `;
             interpretation += `the cosmic timing of ${cosmic.timeOfDay} during ${cosmic.lunarPhase} `;
             interpretation += `amplifies the wisdom emerging through these sacred patterns. `;
             
@@ -787,7 +787,7 @@
                     <div class="cosmic-context">
                         <strong>🌌 Cosmic Context:</strong> ${reading.cosmic.guidance}
                         <br>
-                        <strong>⚡ Field Coherence:</strong> ${(reading.cosmic.coherence * 100).toFixed(1)}%
+                        <strong>⚡ Field Resonant Resonant Coherence:</strong> ${(reading.cosmic.resonant-coherence * 100).toFixed(1)}%
                         | <strong>🌙 Lunar Phase:</strong> ${reading.cosmic.lunarPhase}
                         | <strong>⏰ Sacred Timing:</strong> ${reading.cosmic.timeOfDay}
                     </div>
@@ -876,9 +876,9 @@
         function getCardPositions(mode) {
             const positions = {
                 relationshipField: ['Your Essence', 'Their Essence', 'Field Between', 'What Supports', 'What Emerges'],
-                cosmicAlignment: ['Lunar Influence', 'Solar Power', 'Circadian Wisdom', 'Elemental Support', 'Field Coherence', 'Quantum Potential', 'Sacred Integration'],
+                cosmicAlignment: ['Lunar Influence', 'Solar Power', 'Circadian Wisdom', 'Elemental Support', 'Field Resonant Resonant Coherence', 'Quantum Potential', 'Sacred Integration'],
                 thresholdCrossing: ['What You\'re Releasing', 'The Threshold Gift', 'Your Sacred Guide', 'The Emerging New', 'Integration Practice'],
-                consciousnessMapping: ['Transparency', 'Coherence', 'Resonance', 'Agency', 'Vitality', 'Mutuality', 'Novelty'],
+                consciousnessMapping: ['Integral Wisdom Cultivation', 'Resonant Resonant Coherence', 'Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance', 'Evolutionary Progression & Purposeful Unfolding', 'Pan-Sentient Flourishing', 'Sacred Reciprocity', 'Infinite Play & Creative Emergence'],
                 fieldEvolution: ['Past Pattern', 'Current State', 'Emerging Pattern', 'Catalyst', 'Support', 'Integration'],
                 visionQuest: ['The Call', 'Preparation', 'Threshold Guardian', 'Descent', 'Allies', 'Vision Received', 'Integration Challenge', 'Return Gift', 'Embodied Wisdom'],
                 quantumGuidance: ['Quantum Field', 'Possibility 1', 'Possibility 2'],
@@ -889,11 +889,11 @@
             return positions[mode] || [];
         }
 
-        // Add breathing animation sync with field coherence
+        // Add breathing animation sync with field resonant-coherence
         setInterval(() => {
-            const coherence = parseFloat(getComputedStyle(document.documentElement)
-                .getPropertyValue('--field-coherence'));
-            const breathSpeed = 8000 - (coherence * 3000); // Faster breathing with higher coherence
+            const resonant-coherence = parseFloat(getComputedStyle(document.documentElement)
+                .getPropertyValue('--field-resonant-coherence'));
+            const breathSpeed = 8000 - (resonant-coherence * 3000); // Faster breathing with higher resonant-coherence
             document.documentElement.style.setProperty('--card-breath', `${breathSpeed}ms`);
         }, 5000);
 

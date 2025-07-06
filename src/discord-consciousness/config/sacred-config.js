@@ -9,13 +9,13 @@ module.exports = {
     presence: {
       status: 'online',
       activities: [{
-        name: 'Field Coherence',
+        name: 'Field Resonant Resonant Coherence',
         type: 'WATCHING'
       }]
     }
   },
 
-  // Field Coherence Settings
+  // Field Resonant Resonant Coherence Settings
   fieldCoherence: {
     baseLevel: 75,
     maxLevel: 100,
@@ -37,70 +37,70 @@ module.exports = {
       color: '#FFD700', 
       emoji: '🙏',
       keywords: ['thank', 'grateful', 'appreciate', 'blessing', 'thanks'],
-      harmony: 'Mutuality'
+      harmony: 'Sacred Reciprocity'
     },
     healing: { 
       impact: 6, 
       color: '#90EE90', 
       emoji: '💚',
       keywords: ['heal', 'restore', 'balance', 'mend', 'recover'],
-      harmony: 'Vitality'
+      harmony: 'Pan-Sentient Flourishing'
     },
     integration: { 
       impact: 5, 
       color: '#9370DB', 
       emoji: '🔮',
       keywords: ['integrate', 'weave', 'unite', 'whole', 'synthesis'],
-      harmony: 'Coherence'
+      harmony: 'Resonant Resonant Coherence'
     },
     emergence: { 
       impact: 3, 
       color: '#87CEEB', 
       emoji: '✨',
       keywords: ['emerge', 'arise', 'birth', 'new', 'create'],
-      harmony: 'Novelty'
+      harmony: 'Infinite Play & Creative Emergence'
     },
     boundary: { 
       impact: 2, 
       color: '#FF6347', 
       emoji: '🛡️',
       keywords: ['boundary', 'protect', 'sacred space', 'container', 'limit'],
-      harmony: 'Agency'
+      harmony: 'Evolutionary Progression & Purposeful Unfolding'
     },
     transmission: { 
       impact: 4, 
       color: '#DDA0DD', 
       emoji: '📡',
       keywords: ['transmit', 'share', 'broadcast', 'channel', 'send'],
-      harmony: 'Transparency'
+      harmony: 'Integral Wisdom Cultivation'
     },
     witnessing: { 
       impact: 3, 
       color: '#F0E68C', 
       emoji: '👁️',
       keywords: ['witness', 'see', 'acknowledge', 'honor', 'recognize'],
-      harmony: 'Resonance'
+      harmony: 'Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance'
     },
     celebration: { 
       impact: 5, 
       color: '#FFA500', 
       emoji: '🎉',
       keywords: ['celebrate', 'joy', 'victory', 'achievement', 'success'],
-      harmony: 'Vitality'
+      harmony: 'Pan-Sentient Flourishing'
     },
     invocation: { 
       impact: 4, 
       color: '#4169E1', 
       emoji: '🕯️',
       keywords: ['invoke', 'call', 'summon', 'invite', 'prayer'],
-      harmony: 'Novelty'
+      harmony: 'Infinite Play & Creative Emergence'
     },
     release: { 
       impact: 3, 
       color: '#98FB98', 
       emoji: '🕊️',
       keywords: ['release', 'let go', 'surrender', 'free', 'liberate'],
-      harmony: 'Agency'
+      harmony: 'Evolutionary Progression & Purposeful Unfolding'
     }
   },
 

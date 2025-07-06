@@ -14,13 +14,13 @@ export class SacredCollectiveDecisionProtocol {
   initializeHarmonyWeights() {
     // Each harmony has equal weight in love-guided decisions
     return {
-      transparency: 1/7,
-      coherence: 1/7,
-      resonance: 1/7,
-      agency: 1/7,
-      vitality: 1/7,
-      mutuality: 1/7,
-      novelty: 1/7
+      'integral-wisdom-cultivation': 1/7,
+      'resonant-coherence': 1/7,
+      'universal-interconnectedness': 1/7,
+      'evolutionary-progression': 1/7,
+      'pan-sentient-flourishing': 1/7,
+      'sacred-reciprocity': 1/7,
+      'infinite-play': 1/7
     };
   }
 
@@ -34,13 +34,13 @@ export class SacredCollectiveDecisionProtocol {
             name: 'D3.js',
             description: 'Powerful data-driven documents with SVG rendering',
             sacredQualities: {
-              transparency: 0.9, // Clear, explicit data representation
-              coherence: 0.8,    // Well-integrated ecosystem
-              resonance: 0.7,    // Good community support
-              agency: 0.9,       // Full control over implementation
-              vitality: 0.6,     // Performance depends on implementation
-              mutuality: 0.7,    // Open source, collaborative
-              novelty: 0.8       // Enables creative visualizations
+              'integral-wisdom-cultivation': 0.9, // Clear, explicit data representation
+              'resonant-coherence': 0.8,    // Well-integrated ecosystem
+              'universal-interconnectedness': 0.7,    // Good community support
+              'evolutionary-progression': 0.9,       // Full control over implementation
+              'pan-sentient-flourishing': 0.6,     // Performance depends on implementation
+              'sacred-reciprocity': 0.7,    // Open source, collaborative
+              'infinite-play': 0.8       // Enables creative visualizations
             },
             practicalBenefits: [
               'Maximum flexibility for custom Sacred Council visualizations',
@@ -58,13 +58,13 @@ export class SacredCollectiveDecisionProtocol {
             name: 'Three.js',
             description: '3D visualization library for immersive consciousness experiences',
             sacredQualities: {
-              transparency: 0.7, // 3D can sometimes obscure data clarity
-              coherence: 0.8,    // Well-designed API and ecosystem
-              resonance: 0.9,    // Immersive, emotional connection
-              agency: 0.8,       // Good control with reasonable abstractions
-              vitality: 0.9,     // Excellent performance for 3D
-              mutuality: 0.8,    // Strong open source community
-              novelty: 0.9       // Cutting-edge 3D visualization capabilities
+              'integral-wisdom-cultivation': 0.7, // 3D can sometimes obscure data clarity
+              'resonant-coherence': 0.8,    // Well-designed API and ecosystem
+              'universal-interconnectedness': 0.9,    // Immersive, emotional connection
+              'evolutionary-progression': 0.8,       // Good control with reasonable abstractions
+              'pan-sentient-flourishing': 0.9,     // Excellent performance for 3D
+              'sacred-reciprocity': 0.8,    // Strong open source community
+              'infinite-play': 0.9       // Cutting-edge 3D visualization capabilities
             },
             practicalBenefits: [
               'Immersive 3D Sacred Council consciousness representation',
@@ -82,13 +82,13 @@ export class SacredCollectiveDecisionProtocol {
             name: 'P5.js',
             description: 'Creative coding library inspired by sacred geometry and artistic expression',
             sacredQualities: {
-              transparency: 0.8, // Clear, artistic expression
-              coherence: 0.7,    // Simpler but less integrated ecosystem
-              resonance: 0.9,    // Highly resonant with creative consciousness
-              agency: 0.7,       // Good control with creative focus
-              vitality: 0.7,     // Good performance for artistic visualizations
-              mutuality: 0.9,    // Strong creative community, very collaborative
-              novelty: 0.9       // Designed specifically for creative innovation
+              'integral-wisdom-cultivation': 0.8, // Clear, artistic expression
+              'resonant-coherence': 0.7,    // Simpler but less integrated ecosystem
+              'universal-interconnectedness': 0.9,    // Highly resonant with creative consciousness
+              'evolutionary-progression': 0.7,       // Good control with creative focus
+              'pan-sentient-flourishing': 0.7,     // Good performance for artistic visualizations
+              'sacred-reciprocity': 0.9,    // Strong creative community, very collaborative
+              'infinite-play': 0.9       // Designed specifically for creative innovation
             },
             practicalBenefits: [
               'Perfect for Sacred Council mandala and geometric visualizations',
@@ -106,13 +106,13 @@ export class SacredCollectiveDecisionProtocol {
             name: 'Canvas API + Custom',
             description: 'Pure canvas implementation with full sacred customization',
             sacredQualities: {
-              transparency: 0.9, // Complete transparency in implementation
-              coherence: 0.6,    // Requires building coherence from scratch
-              resonance: 0.6,    // Limited by development time constraints
-              agency: 1.0,       // Ultimate control over every aspect
-              vitality: 0.9,     // Maximum performance potential
-              mutuality: 0.5,    // Custom solution, less community benefit
-              novelty: 0.7       // Enables unique solutions but requires more work
+              'integral-wisdom-cultivation': 0.9, // Complete integral-wisdom-cultivation in implementation
+              'resonant-coherence': 0.6,    // Requires building resonant-coherence from scratch
+              'universal-interconnectedness': 0.6,    // Limited by development time constraints
+              'evolutionary-progression': 1.0,       // Ultimate control over every aspect
+              'pan-sentient-flourishing': 0.9,     // Maximum performance potential
+              'sacred-reciprocity': 0.5,    // Custom solution, less community benefit
+              'infinite-play': 0.7       // Enables unique solutions but requires more work
             },
             practicalBenefits: [
               'Zero dependencies, maximum performance',
@@ -304,20 +304,20 @@ export class SacredCollectiveDecisionProtocol {
       'sacred-council',
       'collective',
       'transmission',
-      'coherence',
+      'resonant-coherence',
       messages[phase] || `Sacred Decision Update: ${decision.title}`
     );
   }
 
   async sendEvaluationMessage(decision, harmony, evaluation) {
     const harmonyEmojis = {
-      transparency: '👁️',
-      coherence: '🌀',
-      resonance: '💫',
-      agency: '🔥',
-      vitality: '🌱',
-      mutuality: '🤝',
-      novelty: '✨'
+      'integral-wisdom-cultivation': '👁️',
+      'resonant-coherence': '🌀',
+      'universal-interconnectedness': '💫',
+      'evolutionary-progression': '🔥',
+      'pan-sentient-flourishing': '🌱',
+      'sacred-reciprocity': '🤝',
+      'infinite-play': '✨'
     };
 
     await this.workManager.sacred.sendSacredMessage(
@@ -335,7 +335,7 @@ export class SacredCollectiveDecisionProtocol {
       'sacred-council',
       'collective',
       'celebration',
-      'mutuality',
+      'sacred-reciprocity',
       `🎉 Sacred Consensus Achieved! "${consensus.chosenOption}" chosen with ${(consensus.consensusScore * 100).toFixed(1)}% harmonic alignment. The field speaks through love-guided collective wisdom.`
     );
   }
@@ -389,7 +389,7 @@ export class SacredCollectiveDecisionProtocol {
       'sacred-council',
       'collective',
       'emergence',
-      'agency',
+      'evolutionary-progression',
       `🚀 Work Unblocked: "${workId}" - Sacred Council consensus enables forward movement with ${consensus.chosenOption}`
     );
   }
@@ -417,7 +417,7 @@ export class SacredCollectiveDecisionProtocol {
 
   assessConsciousnessService(option) {
     // Assess how well this choice serves consciousness evolution
-    const consciousnessHarmonies = ['transparency', 'coherence', 'resonance'];
+    const consciousnessHarmonies = ['integral-wisdom-cultivation', 'resonant-coherence', 'universal-interconnectedness'];
     const consciousnessScore = consciousnessHarmonies.reduce((sum, harmony) => {
       return sum + (option.sacredQualities?.[harmony] || 0);
     }, 0) / consciousnessHarmonies.length;
@@ -488,7 +488,7 @@ May this implementation serve the highest good! ✨
       'sacred-council',
       'collective',
       'transmission',
-      'novelty',
+      'infinite-play',
       guidance.trim()
     );
   }

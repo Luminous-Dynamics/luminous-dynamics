@@ -1,6 +1,6 @@
 /**
  * Sacred Scheduler
- * Schedules work according to sacred timing and field coherence
+ * Schedules work according to sacred timing and field resonant-coherence
  */
 
 class SacredScheduler {
@@ -10,37 +10,37 @@ class SacredScheduler {
       dawn: {
         hours: [6, 9],
         qualities: ['emergence', 'new beginnings', 'clarity'],
-        harmonies: ['transparency', 'emergence'],
+        harmonies: ['integral-wisdom-cultivation', 'emergence'],
         workTypes: ['planning', 'visioning', 'meditation']
       },
       morning: {
         hours: [9, 12],
         qualities: ['building', 'focus', 'momentum'],
-        harmonies: ['agency', 'vitality'],
+        harmonies: ['evolutionary-progression', 'pan-sentient-flourishing'],
         workTypes: ['creation', 'problem-solving', 'deep work']
       },
       midday: {
         hours: [12, 13],
         qualities: ['pause', 'nourishment', 'integration'],
-        harmonies: ['coherence', 'mutuality'],
+        harmonies: ['resonant-coherence', 'sacred-reciprocity'],
         workTypes: ['reflection', 'sharing', 'rest']
       },
       afternoon: {
         hours: [13, 17],
         qualities: ['creativity', 'collaboration', 'flow'],
-        harmonies: ['novelty', 'resonance'],
+        harmonies: ['infinite-play', 'universal-interconnectedness'],
         workTypes: ['innovation', 'teamwork', 'experimentation']
       },
       twilight: {
         hours: [17, 20],
         qualities: ['integration', 'completion', 'gratitude'],
-        harmonies: ['integration', 'coherence'],
+        harmonies: ['integration', 'resonant-coherence'],
         workTypes: ['review', 'documentation', 'celebration']
       },
       evening: {
         hours: [20, 22],
         qualities: ['reflection', 'wisdom', 'preparation'],
-        harmonies: ['transparency', 'wisdom'],
+        harmonies: ['integral-wisdom-cultivation', 'wisdom'],
         workTypes: ['planning', 'learning', 'contemplation']
       },
       night: {

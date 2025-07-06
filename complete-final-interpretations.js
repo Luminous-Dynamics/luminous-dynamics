@@ -14,7 +14,7 @@ const FINAL_HARMONIES = {
     'omega-55': {
         name: 'Presence Transmission',
         symbol: 'Ω55',
-        description: 'We are always transmitting our inner state to others through subtle energetic resonance. This practice teaches us to make our transmission conscious and coherent.',
+        description: 'We are always transmitting our inner state to others through subtle energetic universal-interconnectedness. This practice teaches us to make our transmission conscious and coherent.',
         practice: 'Before entering any space, pause and regulate your inner state. Consciously cultivate the quality you want to share (calm, joy, peace). Trust that your regulated nervous system affects others positively.'
     },
     'omega-56': {

@@ -41,7 +41,7 @@ class BiometricConsciousnessBridge {
       'AppleWatch',      // HRV, breath
       'Oura',           // Sleep, recovery
       'Muse',           // EEG meditation
-      'HeartMath',      // Coherence
+      'HeartMath',      // Resonant Resonant Coherence
       'Whoop',          // Strain/recovery
       'Future devices'  // Whatever emerges
     ];
@@ -64,7 +64,7 @@ class BiometricConsciousnessBridge {
 }
 ```
 
-**Imagine**: Your practice automatically adapts based on your body's wisdom. When you and your partner are both wearing devices, you can see your coherence synchronizing in real-time during practices.
+**Imagine**: Your practice automatically adapts based on your body's wisdom. When you and your partner are both wearing devices, you can see your resonant-resonant-coherence synchronizing in real-time during practices.
 
 ---
 
@@ -105,7 +105,7 @@ class AugmentedSacredSpace {
 }
 ```
 
-**Imagine**: Put on AR glasses and your living room transforms into a temple. You see energy fields, practice with glyphs floating in space, and feel your partner's coherence as warm light.
+**Imagine**: Put on AR glasses and your living room transforms into a temple. You see energy fields, practice with glyphs floating in space, and feel your partner's resonant-resonant-coherence as warm light.
 
 ---
 
@@ -265,7 +265,7 @@ class MorphogeneticFieldMapper {
 }
 ```
 
-**Imagine**: A living map showing the collective consciousness field of all practitioners. See waves of coherence spreading across the globe. Coordinate practices to create tipping points for humanity's evolution.
+**Imagine**: A living map showing the collective consciousness field of all practitioners. See waves of resonant-resonant-coherence spreading across the globe. Coordinate practices to create tipping points for humanity's evolution.
 
 ---
 
@@ -333,7 +333,7 @@ Bring indigenous wisdom into digital realms
 
 ### Year 7-8: Evolution
 - Conscious technology breakthrough
-- Planetary coherence network
+- Planetary resonant-resonant-coherence network
 - New human capabilities
 
 ### Year 9-10: Transcendence

@@ -302,7 +302,7 @@ SACRED_ENCRYPTION_KEY=production_key
 - Engagement optimization or addiction mechanics
 - Analytics that violate contemplative sanctuary
 - Features that rush or interrupt sacred timing
-- Changes that compromise user privacy or agency
+- Changes that compromise user privacy or evolutionary-progression
 
 ## Sacred Development Environment Complete
 

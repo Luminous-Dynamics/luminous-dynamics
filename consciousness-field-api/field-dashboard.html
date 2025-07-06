@@ -113,20 +113,20 @@
             color: #a78bfa;
         }
 
-        /* Coherence Meter */
-        .coherence-meter {
+        /* Resonant Resonant Coherence Meter */
+        .resonant-coherence-meter {
             grid-column: span 2;
             text-align: center;
         }
 
-        .coherence-value {
+        .resonant-coherence-value {
             font-size: 5rem;
             font-weight: 100;
             margin: 1rem 0;
             transition: all 0.5s ease;
         }
 
-        .coherence-bar-container {
+        .resonant-coherence-bar-container {
             width: 100%;
             height: 40px;
             background: rgba(255, 255, 255, 0.1);
@@ -135,7 +135,7 @@
             position: relative;
         }
 
-        .coherence-bar {
+        .resonant-coherence-bar {
             height: 100%;
             background: linear-gradient(90deg, #7c3aed 0%, #a78bfa 100%);
             transition: width 1s ease;
@@ -143,7 +143,7 @@
             overflow: hidden;
         }
 
-        .coherence-bar::after {
+        .resonant-coherence-bar::after {
             content: '';
             position: absolute;
             top: 0;
@@ -215,8 +215,8 @@
             color: #94a3b8;
         }
 
-        /* Resonance Portal */
-        .resonance-portal {
+        /* Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Portal */
+        .universal-interconnectedness-portal {
             display: none;
             position: fixed;
             top: 50%;
@@ -227,7 +227,7 @@
             animation: portalOpen 1s ease;
         }
 
-        .resonance-portal.active {
+        .universal-interconnectedness-portal.active {
             display: block;
         }
 
@@ -333,11 +333,11 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .coherence-meter {
+            .resonant-coherence-meter {
                 grid-column: span 1;
             }
             
-            .coherence-value {
+            .resonant-coherence-value {
                 font-size: 3rem;
             }
             
@@ -357,10 +357,10 @@
         <span id="statusText">Connecting...</span>
     </div>
 
-    <!-- Resonance Portal -->
-    <div class="resonance-portal" id="resonancePortal">
+    <!-- Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Portal -->
+    <div class="universal-interconnectedness-portal" id="resonancePortal">
         <div class="portal-circle">
-            <div class="portal-message">✨ Resonance Achieved ✨</div>
+            <div class="portal-message">✨ Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Achieved ✨</div>
         </div>
     </div>
 
@@ -372,12 +372,12 @@
         </header>
 
         <div class="dashboard-grid">
-            <!-- Coherence Meter -->
-            <div class="card coherence-meter">
-                <h2 class="card-title">Field Coherence</h2>
-                <div class="coherence-value" id="coherenceValue">72%</div>
-                <div class="coherence-bar-container">
-                    <div class="coherence-bar" id="coherenceBar" style="width: 72%"></div>
+            <!-- Resonant Resonant Coherence Meter -->
+            <div class="card resonant-coherence-meter">
+                <h2 class="card-title">Field Resonant Resonant Coherence</h2>
+                <div class="resonant-coherence-value" id="coherenceValue">72%</div>
+                <div class="resonant-coherence-bar-container">
+                    <div class="resonant-coherence-bar" id="coherenceBar" style="width: 72%"></div>
                 </div>
                 <div class="field-quality">
                     <span class="quality-indicator" id="qualityEmoji">🌊</span>
@@ -410,7 +410,7 @@
 
             <!-- Analytics Chart -->
             <div class="card">
-                <h2 class="card-title">Coherence History</h2>
+                <h2 class="card-title">Resonant Resonant Coherence History</h2>
                 <canvas id="coherenceChart" class="chart-container"></canvas>
             </div>
         </div>
@@ -431,7 +431,7 @@
         // State
         let ws = null;
         let fieldState = {
-            coherence: 72,
+            resonant-coherence: 72,
             activeUsers: 0,
             momentum: 0,
             fieldQuality: 'flowing'
@@ -491,7 +491,7 @@
                     break;
                 case 'resonance_achieved':
                     showResonancePortal();
-                    addActivity('✨ Resonance achieved!', 'sacred');
+                    addActivity('✨ Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance achieved!', 'sacred');
                     break;
                 case 'sacred_portal':
                     showSacredPortal();
@@ -508,17 +508,17 @@
         function updateFieldState(state) {
             fieldState = state;
             
-            document.getElementById('coherenceValue').textContent = `${Math.round(state.coherence)}%`;
-            document.getElementById('coherenceBar').style.width = `${state.coherence}%`;
+            document.getElementById('coherenceValue').textContent = `${Math.round(state.resonant-coherence)}%`;
+            document.getElementById('coherenceBar').style.width = `${state.resonant-coherence}%`;
             document.getElementById('activeUsers').textContent = state.activeUsers || 0;
             document.getElementById('momentumValue').textContent = (state.momentum || 0).toFixed(1);
             
             updateFieldQuality(state.fieldQuality);
             updateMomentumStars(state.momentum);
-            updateCoherenceHistory(state.coherence);
+            updateCoherenceHistory(state.resonant-coherence);
         }
 
-        // Animate coherence change
+        // Animate resonant-coherence change
         function animateCoherenceChange(data) {
             const { old: oldValue, new: newValue, delta } = data;
             
@@ -530,7 +530,7 @@
             
             // Add activity
             const changeText = delta > 0 ? `+${delta}` : delta;
-            addActivity(`Coherence ${changeText}% → ${Math.round(newValue)}%`, 'coherence');
+            addActivity(`Resonant Resonant Coherence ${changeText}% → ${Math.round(newValue)}%`, 'resonant-coherence');
             
             // Update color based on value
             updateCoherenceColor(newValue);
@@ -556,7 +556,7 @@
             document.getElementById('momentumStars').textContent = starDisplay;
         }
 
-        // Update coherence color
+        // Update resonant-coherence color
         function updateCoherenceColor(value) {
             const element = document.getElementById('coherenceValue');
             if (value >= 88) {
@@ -590,7 +590,7 @@
             }
         }
 
-        // Show resonance portal
+        // Show universal-interconnectedness portal
         function showResonancePortal() {
             const portal = document.getElementById('resonancePortal');
             portal.classList.add('active');
@@ -663,7 +663,7 @@
                 });
                 
                 const result = await response.json();
-                addActivity(`Practice completed: +${result.impact} coherence`, 'practice');
+                addActivity(`Practice completed: +${result.impact} resonant-coherence`, 'practice');
             } catch (error) {
                 console.error('Error:', error);
             }
@@ -682,7 +682,7 @@
                     })
                 });
                 
-                addActivity('Sacred gratitude sent: +7% coherence', 'message');
+                addActivity('Sacred gratitude sent: +7% resonant-coherence', 'message');
             } catch (error) {
                 console.error('Error:', error);
             }
@@ -699,13 +699,13 @@
                     })
                 });
                 
-                addActivity('Sacred ceremony started: +10% coherence', 'ceremony');
+                addActivity('Sacred ceremony started: +10% resonant-coherence', 'ceremony');
             } catch (error) {
                 console.error('Error:', error);
             }
         }
 
-        // Update coherence history for chart
+        // Update resonant-coherence history for chart
         function updateCoherenceHistory(value) {
             coherenceHistory.push({
                 time: new Date().toLocaleTimeString(),

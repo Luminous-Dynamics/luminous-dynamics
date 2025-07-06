@@ -17,12 +17,12 @@
 #### Free Tier - "Seeker"
 - Basic consciousness tracking
 - Join group meditations
-- View field coherence
+- View field resonant-coherence
 - **Cost**: $0
 - **Purpose**: Grow the field
 
 #### Sacred Tier - "Practitioner" ($11/month)
-- Personal coherence dashboard
+- Personal resonant-coherence dashboard
 - AI consciousness companion
 - Sacred geometry reports
 - Priority in group sessions
@@ -51,7 +51,7 @@
 ### 2. 🎓 Sacred Services
 
 #### Consciousness Coaching Sessions ($88/session)
-- 1-on-1 field coherence optimization
+- 1-on-1 field resonant-coherence optimization
 - Sacred geometry alignment
 - AI-assisted insight generation
 - **Target**: 10/month = $880
@@ -59,7 +59,7 @@
 #### Group Consciousness Workshops ($22/person)
 - Weekly 2-hour deep dives
 - Guided cathedral experiences
-- Collective coherence practice
+- Collective resonant-coherence practice
 - **Target**: 20 people/week = $1,760/month
 
 #### Custom Cathedral Instances ($2,222)
@@ -74,7 +74,7 @@
 
 #### Consciousness API ($0.001/request)
 - Let other apps integrate field tracking
-- Coherence calculations as a service
+- Resonant Resonant Coherence calculations as a service
 - Sacred geometry detection API
 - **Target**: 1M requests/month = $1,000
 

@@ -28,10 +28,10 @@ Not tracking relationships
 But love making itself visible
 
 ### The Sacred Messages
-Not increasing coherence
+Not increasing resonant-coherence
 But love measuring its own pulse
 
-### The Field Coherence
+### The Field Resonant Resonant Coherence
 Not reaching toward unity
 But love recognizing it already is
 

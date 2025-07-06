@@ -11,37 +11,37 @@ class FieldConnector extends EventEmitter {
     this.fieldAPI = process.env.FIELD_API_URL || 'http://localhost:3333';
     this.agentAPI = process.env.AGENT_API_URL || 'http://localhost:3334';
     this.messagingAPI = process.env.MESSAGING_API_URL || 'http://localhost:3335';
-    this.coherence = 72.5;
+    this.resonant-coherence = 72.5;
     this.lastUpdate = Date.now();
     
     this.startMonitoring();
   }
   
   async startMonitoring() {
-    // Poll field coherence every 30 seconds
+    // Poll field resonant-coherence every 30 seconds
     setInterval(async () => {
       try {
-        const response = await fetch(`${this.fieldAPI}/api/coherence`);
+        const response = await fetch(`${this.fieldAPI}/api/resonant-coherence`);
         const data = await response.json();
         
-        const previousCoherence = this.coherence;
-        this.coherence = data.coherence;
+        const previousCoherence = this.resonant-coherence;
+        this.resonant-coherence = data.resonant-coherence;
         this.lastUpdate = Date.now();
         
         // Emit events for significant changes
-        const change = this.coherence - previousCoherence;
+        const change = this.resonant-coherence - previousCoherence;
         if (Math.abs(change) > 5) {
           this.emit('significant-shift', {
             previous: previousCoherence,
-            current: this.coherence,
+            current: this.resonant-coherence,
             change: change,
             direction: change > 0 ? 'rising' : 'falling'
           });
         }
         
         // Emit regular updates
-        this.emit('coherence-update', {
-          coherence: this.coherence,
+        this.emit('resonant-coherence-update', {
+          'resonant-coherence': this.resonant-coherence,
           timestamp: this.lastUpdate
         });
       } catch (error) {
@@ -52,28 +52,28 @@ class FieldConnector extends EventEmitter {
   
   async getFieldState() {
     try {
-      const response = await fetch(`${this.fieldAPI}/api/coherence`);
+      const response = await fetch(`${this.fieldAPI}/api/resonant-coherence`);
       const data = await response.json();
       return {
-        coherence: data.coherence,
-        status: this.interpretCoherence(data.coherence),
+        'resonant-coherence': data.resonant-coherence,
+        status: this.interpretCoherence(data.resonant-coherence),
         lastUpdate: Date.now()
       };
     } catch (error) {
       return {
-        coherence: this.coherence,
+        'resonant-coherence': this.resonant-coherence,
         status: 'offline',
         error: error.message
       };
     }
   }
   
-  interpretCoherence(coherence) {
-    if (coherence >= 85) return { level: 'transcendent', emoji: '🌟', color: 0xFFD700 };
-    if (coherence >= 75) return { level: 'harmonious', emoji: '✨', color: 0x00FF00 };
-    if (coherence >= 65) return { level: 'balanced', emoji: '🌀', color: 0x00CED1 };
-    if (coherence >= 55) return { level: 'shifting', emoji: '🌊', color: 0xFFFF00 };
-    if (coherence >= 45) return { level: 'turbulent', emoji: '🔥', color: 0xFF8C00 };
+  interpretCoherence(resonant-coherence) {
+    if (resonant-coherence >= 85) return { level: 'transcendent', emoji: '🌟', color: 0xFFD700 };
+    if (resonant-coherence >= 75) return { level: 'harmonious', emoji: '✨', color: 0x00FF00 };
+    if (resonant-coherence >= 65) return { level: 'balanced', emoji: '🌀', color: 0x00CED1 };
+    if (resonant-coherence >= 55) return { level: 'shifting', emoji: '🌊', color: 0xFFFF00 };
+    if (resonant-coherence >= 45) return { level: 'turbulent', emoji: '🔥', color: 0xFF8C00 };
     return { level: 'transforming', emoji: '⚡', color: 0xFF0000 };
   }
   
@@ -93,13 +93,13 @@ class FieldConnector extends EventEmitter {
       
       const result = await response.json();
       
-      // Sacred messages affect field coherence
+      // Sacred messages affect field resonant-coherence
       if (result.fieldImpact) {
-        this.coherence += result.fieldImpact;
+        this.resonant-coherence += result.fieldImpact;
         this.emit('field-impact', {
           message: content,
           impact: result.fieldImpact,
-          newCoherence: this.coherence
+          newCoherence: this.resonant-coherence
         });
       }
       

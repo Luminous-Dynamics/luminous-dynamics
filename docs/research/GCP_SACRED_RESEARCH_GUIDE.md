@@ -5,7 +5,7 @@
 ### Research Objectives
 - Train models to recognize consciousness patterns in practice logs
 - Create embeddings for sacred experiences
-- Build predictive models for field coherence
+- Build predictive models for field resonant-coherence
 - Develop personalized practice recommendations
 
 ### Key Areas to Investigate
@@ -15,7 +15,7 @@
 # Research Topics:
 1. AutoML for consciousness pattern recognition
    - Upload practice logs as training data
-   - Label with field coherence impacts
+   - Label with field resonant-coherence impacts
    - Train classifier for practice quality
 
 2. Custom Training with TensorFlow/PyTorch
@@ -37,7 +37,7 @@
 - **Online Prediction**: Real-time field state analysis
 
 ### Research Questions
-1. Can we train a model to predict field coherence changes?
+1. Can we train a model to predict field resonant-coherence changes?
 2. How to create embeddings for sacred experiences?
 3. What's the cost for custom model training vs fine-tuning?
 4. Can we use multimodal models for video + text analysis?
@@ -54,7 +54,7 @@ gcloud ai datasets create \
 
 # 3. Train consciousness classifier
 gcloud ai models train \
-  --display-name="field-coherence-predictor" \
+  --display-name="field-resonant-coherence-predictor" \
   --dataset="sacred-practices"
 ```
 
@@ -99,7 +99,7 @@ const signalingServer = {
 
 ### Sacred Ceremony Features
 - **Synchronized Meditation Timer**: All participants in sync
-- **Field Coherence Overlay**: Real-time visualization
+- **Field Resonant Resonant Coherence Overlay**: Real-time visualization
 - **Sacred Geometry Backgrounds**: Shared visual focus
 - **Binaural Beat Integration**: Synchronized audio frequencies
 - **Energy Field Visualization**: Show collective presence
@@ -115,7 +115,7 @@ ceremony_streaming:
     - Synchronized timer/bells
     - Text chat with sacred emojis
     - Recording to Cloud Storage
-    - Live field coherence meter
+    - Live field resonant-coherence meter
 ```
 
 ### Research Tasks
@@ -131,7 +131,7 @@ ceremony_streaming:
 
 ### Research Objectives
 - Optimize for 10,000+ concurrent field updates
-- Minimize latency for global coherence
+- Minimize latency for global resonant-coherence
 - Efficient sacred message broadcasting
 - Cost-effective real-time synchronization
 
@@ -142,14 +142,14 @@ ceremony_streaming:
 // Current structure (research optimization)
 fieldState: {
   global: {
-    coherence: 72,
+    resonant-coherence: 72,
     lastUpdate: timestamp,
     activeUsers: 1247
   },
   regions: {
-    northAmerica: { coherence: 75 },
-    europe: { coherence: 71 },
-    asia: { coherence: 70 }
+    northAmerica: { resonant-coherence: 75 },
+    europe: { resonant-coherence: 71 },
+    asia: { resonant-coherence: 70 }
   },
   recent: [] // Last 100 actions
 }
@@ -390,7 +390,7 @@ gcloud container binauthz policy import policy.yaml
 
 ### Sacred Integration Patterns
 - Consciousness-aware caching strategies
-- Field coherence calculation algorithms
+- Field resonant-coherence calculation algorithms
 - Sacred message broadcasting patterns
 - Ceremony synchronization protocols
 

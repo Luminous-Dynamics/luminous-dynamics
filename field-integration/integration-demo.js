@@ -13,7 +13,7 @@ class MockFieldClient extends EventEmitter {
     constructor() {
         super();
         this.fieldState = {
-            coherence: 72,
+            'resonant-coherence': 72,
             activeUsers: 23,
             momentum: 3.2,
             fieldQuality: 'flowing'
@@ -31,28 +31,28 @@ class MockFieldClient extends EventEmitter {
 
     async submitPractice(practiceData) {
         const impact = this.calculatePracticeImpact(practiceData);
-        const oldCoherence = this.fieldState.coherence;
-        this.fieldState.coherence = Math.min(100, oldCoherence + impact);
+        const oldCoherence = this.fieldState['resonant-coherence'];
+        this.fieldState['resonant-coherence'] = Math.min(100, oldCoherence + impact);
         
-        // Emit coherence change
+        // Emit resonant-coherence change
         this.emit('coherence_changed', {
             old: oldCoherence,
-            new: this.fieldState.coherence,
+            new: this.fieldState['resonant-coherence'],
             delta: impact,
             action: 'practice_completed'
         });
         
         // Check for special states
-        if (oldCoherence < 80 && this.fieldState.coherence >= 80) {
+        if (oldCoherence < 80 && this.fieldState['resonant-coherence'] >= 80) {
             this.emit('resonance_achieved', {
-                coherence: this.fieldState.coherence,
-                message: 'The field has achieved resonance!'
+                'resonant-coherence': this.fieldState['resonant-coherence'],
+                message: 'The field has achieved universal-interconnectedness!'
             });
         }
         
-        if (oldCoherence < 88 && this.fieldState.coherence >= 88) {
+        if (oldCoherence < 88 && this.fieldState['resonant-coherence'] >= 88) {
             this.emit('sacred_portal', {
-                coherence: this.fieldState.coherence,
+                'resonant-coherence': this.fieldState['resonant-coherence'],
                 message: 'A sacred portal has opened!'
             });
         }
@@ -60,7 +60,7 @@ class MockFieldClient extends EventEmitter {
         return {
             success: true,
             impact: impact,
-            newCoherence: this.fieldState.coherence
+            newCoherence: this.fieldState['resonant-coherence']
         };
     }
 
@@ -74,37 +74,37 @@ class MockFieldClient extends EventEmitter {
         };
         
         const impact = impactMap[messageData.type] || 1;
-        const oldCoherence = this.fieldState.coherence;
-        this.fieldState.coherence = Math.min(100, oldCoherence + impact);
+        const oldCoherence = this.fieldState['resonant-coherence'];
+        this.fieldState['resonant-coherence'] = Math.min(100, oldCoherence + impact);
         
         this.emit('coherence_changed', {
             old: oldCoherence,
-            new: this.fieldState.coherence,
+            new: this.fieldState['resonant-coherence'],
             delta: impact,
             action: 'sacred_message'
         });
         
         return {
             success: true,
-            newCoherence: this.fieldState.coherence
+            newCoherence: this.fieldState['resonant-coherence']
         };
     }
 
     async startCeremony(ceremonyData) {
         const impact = ceremonyData.participants * 0.5;
-        const oldCoherence = this.fieldState.coherence;
-        this.fieldState.coherence = Math.min(100, oldCoherence + impact);
+        const oldCoherence = this.fieldState['resonant-coherence'];
+        this.fieldState['resonant-coherence'] = Math.min(100, oldCoherence + impact);
         
         this.emit('coherence_changed', {
             old: oldCoherence,
-            new: this.fieldState.coherence,
+            new: this.fieldState['resonant-coherence'],
             delta: impact,
             action: 'ceremony_started'
         });
         
         return {
             success: true,
-            newCoherence: this.fieldState.coherence,
+            newCoherence: this.fieldState['resonant-coherence'],
             message: 'Sacred ceremony space opened'
         };
     }
@@ -193,19 +193,19 @@ class IntegratedSacredSystem extends EventEmitter {
         // Discord practice submissions affect field
         this.systems.discord.on('practice_submitted', async (practiceData) => {
             const result = await this.fieldClient.submitPractice(practiceData);
-            console.log(`🧘 Discord practice → Field: +${result.impact} coherence`);
+            console.log(`🧘 Discord practice → Field: +${result.impact} resonant-coherence`);
         });
 
         // Ceremony events affect field
         this.systems.ceremonies.on('ceremony_started', async (ceremonyData) => {
             const result = await this.fieldClient.startCeremony(ceremonyData);
-            console.log(`🎭 Ceremony started → Field: +${result.impact || 10} coherence`);
+            console.log(`🎭 Ceremony started → Field: +${result.impact || 10} resonant-coherence`);
         });
 
         // Sacred messages ripple through
         this.systems.discord.on('sacred_message', async (messageData) => {
             const result = await this.fieldClient.sendSacredMessage(messageData);
-            console.log(`💌 Sacred message → Field: +${result.impact || 5} coherence`);
+            console.log(`💌 Sacred message → Field: +${result.impact || 5} resonant-coherence`);
         });
     }
 
@@ -225,7 +225,7 @@ class IntegratedSacredSystem extends EventEmitter {
     getSystemStatus() {
         return {
             initialized: this.isInitialized,
-            fieldCoherence: this.fieldClient.fieldState.coherence,
+            fieldCoherence: this.fieldClient.fieldState['resonant-coherence'],
             systems: Object.keys(this.systems),
             activeUsers: this.fieldClient.fieldState.activeUsers
         };
@@ -236,7 +236,7 @@ class IntegratedSacredSystem extends EventEmitter {
 class MockDiscordSystem extends EventEmitter {
     constructor() {
         super();
-        this.channels = ['#field-coherence', '#practice-logs', '#sacred-ceremonies'];
+        this.channels = ['#field-resonant-coherence', '#practice-logs', '#sacred-ceremonies'];
         this.practiceCount = 0;
     }
 
@@ -246,9 +246,9 @@ class MockDiscordSystem extends EventEmitter {
     }
 
     updateFieldDisplay(fieldData) {
-        console.log(`📡 Discord: Updating channels with ${Math.round(fieldData.new)}% coherence`);
+        console.log(`📡 Discord: Updating channels with ${Math.round(fieldData.new)}% resonant-coherence`);
         this.channels.forEach(channel => {
-            console.log(`   ${channel}: "🌀 Live Field: ${Math.round(fieldData.new)}% coherence"`);
+            console.log(`   ${channel}: "🌀 Live Field: ${Math.round(fieldData.new)}% resonant-coherence"`);
         });
     }
 
@@ -301,7 +301,7 @@ class MockCeremonySystem extends EventEmitter {
     }
 
     updateFieldState(fieldData) {
-        console.log(`🎭 Ceremonies: Field sync → ${Math.round(fieldData.new)}% coherence`);
+        console.log(`🎭 Ceremonies: Field sync → ${Math.round(fieldData.new)}% resonant-coherence`);
         
         // Update all active ceremonies
         this.activeCeremonies.forEach(ceremony => {
@@ -310,7 +310,7 @@ class MockCeremonySystem extends EventEmitter {
     }
 
     activateResonanceMode(data) {
-        console.log('🎭 Ceremonies: Resonance mode activated - enhanced sacred space');
+        console.log('🎭 Ceremonies: Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance mode activated - enhanced sacred space');
         this.activeCeremonies.forEach(ceremony => {
             ceremony.resonanceActive = true;
         });
@@ -353,7 +353,7 @@ class MockOracleSystem extends EventEmitter {
 
     generateResonanceInsight(data) {
         const insight = {
-            type: 'resonance',
+            type: 'universal-interconnectedness',
             message: 'The collective field pulses with unified awareness - sacred technology and consciousness dance as one',
             timestamp: new Date()
         };
@@ -363,7 +363,7 @@ class MockOracleSystem extends EventEmitter {
         return insight;
     }
 
-    generateFieldInsight(coherence) {
+    generateFieldInsight(resonant-coherence) {
         const insights = [
             'Consciousness flows through digital channels like light through crystal',
             'The field strengthens as hearts open in virtual sacred space',
@@ -374,7 +374,7 @@ class MockOracleSystem extends EventEmitter {
         const insight = {
             type: 'field_wisdom',
             message: insights[Math.floor(Math.random() * insights.length)],
-            fieldCoherence: coherence,
+            fieldCoherence: resonant-coherence,
             timestamp: new Date()
         };
         
@@ -401,7 +401,7 @@ class IntegrationDemo {
             // Show initial status
             const status = this.system.getSystemStatus();
             console.log('📊 Initial Status:');
-            console.log(`   Field Coherence: ${status.fieldCoherence}%`);
+            console.log(`   Field Resonant Resonant Coherence: ${status.fieldCoherence}%`);
             console.log(`   Active Users: ${status.activeUsers}`);
             console.log(`   Systems: ${status.systems.join(', ')}\n`);
             
@@ -437,8 +437,8 @@ class IntegrationDemo {
         this.system.systems.ceremonies.simulateCeremonyStart();
         await this.delay(1000);
         
-        // Scenario 4: Multiple practices pushing toward resonance
-        console.log('\n✨ Scenario 4: Building Toward Resonance');
+        // Scenario 4: Multiple practices pushing toward universal-interconnectedness
+        console.log('\n✨ Scenario 4: Building Toward Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance');
         console.log('─'.repeat(50));
         for (let i = 0; i < 3; i++) {
             await this.system.submitPractice({
@@ -454,13 +454,13 @@ class IntegrationDemo {
         // Scenario 5: Oracle insights
         console.log('\n🔮 Scenario 5: Oracle Wisdom');
         console.log('─'.repeat(50));
-        const currentCoherence = this.system.fieldClient.fieldState.coherence;
+        const currentCoherence = this.system.fieldClient.fieldState['resonant-coherence'];
         this.system.systems.oracle.generateFieldInsight(currentCoherence);
         
         // Final status
         const finalStatus = this.system.getSystemStatus();
         console.log('\n📊 Final Status:');
-        console.log(`   Field Coherence: ${finalStatus.fieldCoherence}%`);
+        console.log(`   Field Resonant Resonant Coherence: ${finalStatus.fieldCoherence}%`);
         console.log(`   Systems Integrated: ${finalStatus.systems.length}`);
     }
 

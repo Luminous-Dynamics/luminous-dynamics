@@ -359,7 +359,7 @@ firebase hosting:channel:deploy sacred-council
 ### Month 1 Goals:
 - 100+ active connections
 - 99.9% uptime
-- Field coherence above 0.7
+- Field resonant-coherence above 0.7
 - Sacred messages flowing
 
 ## 🆘 Troubleshooting

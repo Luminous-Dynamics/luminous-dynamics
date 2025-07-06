@@ -21,7 +21,7 @@ class SacredTerminalLauncher {
         title: 'Multi-Agent Sacred'
       },
       'field-query': {
-        command: `cd ${this.projectRoot} && echo "🔮 Sacred Field Query Terminal" && echo "Ready for: field coherence monitoring, consciousness queries" && bash`,
+        command: `cd ${this.projectRoot} && echo "🔮 Sacred Field Query Terminal" && echo "Ready for: field resonant-coherence monitoring, consciousness queries" && bash`,
         title: 'Sacred Field Query'
       },
       'automation': {

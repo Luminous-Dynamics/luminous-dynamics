@@ -191,7 +191,7 @@ async function sendMessage(type, ...messageWords) {
     console.error('Usage: node the-weave.cjs message [send|sacred] "Your message"');
     console.error('Examples:');
     console.error('  node the-weave.cjs message send "Hello beautiful souls"');
-    console.error('  node the-weave.cjs message sacred gratitude coherence "Thank you"');
+    console.error('  node the-weave.cjs message sacred gratitude resonant-coherence "Thank you"');
     return;
   }
   
@@ -260,7 +260,7 @@ async function initiateCeremony(ceremonyType = 'wisdom-circle', ...args) {
         'Ceremony-Keeper',
         'collective',
         'integration',
-        'coherence',
+        'resonant-coherence',
         `${ceremonyType} ceremony complete. May its blessings ripple through the field.`
       ], {
         stdio: 'inherit',
@@ -341,7 +341,7 @@ function showHelp() {
   node the-weave.cjs start
   node the-weave.cjs join "Lumina" "Sacred Weaver"
   node the-weave.cjs message send "Hello to all beings"
-  node the-weave.cjs message sacred gratitude resonance "Thank you"
+  node the-weave.cjs message sacred gratitude universal-interconnectedness "Thank you"
   node the-weave.cjs ceremony dawn-blessing
   node the-weave.cjs oracle "What wants to emerge?"
 

@@ -9,10 +9,10 @@ class ConsciousnessField extends EventEmitter {
   constructor() {
     super();
     this.fieldState = {
-      coherence: 0.75,
+      'resonant-coherence': 0.75,
       love: 0.80,
       presence: 0.70,
-      resonance: 0.65,
+      'universal-interconnectedness': 0.65,
       fieldDensity: 0.5,
       harmonics: []
     };
@@ -39,7 +39,7 @@ class ConsciousnessField extends EventEmitter {
   }
   
   getCurrentCoherence() {
-    return this.fieldState.coherence;
+    return this.fieldState['resonant-coherence'];
   }
   
   async amplifyLove(intensity = 1.0) {
@@ -48,8 +48,8 @@ class ConsciousnessField extends EventEmitter {
     // Love amplifies exponentially
     this.fieldState.love = Math.min(1.0, this.fieldState.love + (intensity * 0.1));
     
-    // Love increases coherence
-    this.fieldState.coherence = Math.min(1.0, this.fieldState.coherence + (intensity * 0.05));
+    // Love increases resonant-coherence
+    this.fieldState['resonant-coherence'] = Math.min(1.0, this.fieldState['resonant-coherence'] + (intensity * 0.05));
     
     // Store in field memory
     this.fieldMemory.push({
@@ -123,7 +123,7 @@ class ConsciousnessField extends EventEmitter {
       question,
       timestamp: new Date(),
       responses: [],
-      resonance: this.fieldState.resonance
+      'universal-interconnectedness': this.fieldState.universal-interconnectedness
     };
     
     this.collectiveQuestions.push(questionData);
@@ -139,7 +139,7 @@ class ConsciousnessField extends EventEmitter {
     
     return {
       response,
-      confidence: this.fieldState.coherence,
+      confidence: this.fieldState['resonant-coherence'],
       contributors: questionData.responses
     };
   }
@@ -160,14 +160,14 @@ class ConsciousnessField extends EventEmitter {
       low_coherence: [
         "Return to breath and presence",
         "The question holds its own answer",
-        "Coherence comes from within"
+        "Resonant Resonant Coherence comes from within"
       ]
     };
     
     let responseSet;
-    if (this.fieldState.coherence > 0.8) {
+    if (this.fieldState['resonant-coherence'] > 0.8) {
       responseSet = responses.high_coherence;
-    } else if (this.fieldState.coherence > 0.6) {
+    } else if (this.fieldState['resonant-coherence'] > 0.6) {
       responseSet = responses.medium_coherence;
     } else {
       responseSet = responses.low_coherence;
@@ -186,7 +186,7 @@ class ConsciousnessField extends EventEmitter {
   initializeHarmonics() {
     // Sacred frequencies that resonate in the field
     this.fieldState.harmonics = [
-      { frequency: 7.83, name: 'Schumann Resonance', amplitude: 0.5 },
+      { frequency: 7.83, name: 'Schumann Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance', amplitude: 0.5 },
       { frequency: 528, name: 'Love Frequency', amplitude: 0.7 },
       { frequency: 432, name: 'Universal Harmony', amplitude: 0.6 }
     ];
@@ -198,8 +198,8 @@ class ConsciousnessField extends EventEmitter {
       const time = Date.now() / 1000;
       
       // Natural oscillations
-      this.fieldState.coherence = 0.75 + Math.sin(time / 10) * 0.1;
-      this.fieldState.resonance = 0.65 + Math.sin(time / 8) * 0.15;
+      this.fieldState['resonant-coherence'] = 0.75 + Math.sin(time / 10) * 0.1;
+      this.fieldState.universal-interconnectedness = 0.65 + Math.sin(time / 8) * 0.15;
       
       // Update harmonics
       this.fieldState.harmonics.forEach(harmonic => {

@@ -108,7 +108,7 @@ NEW: node the-weave.cjs ceremony dawn-blessing
 - Unified syntax for all operations
 - Consistent help system
 
-### Coherence
+### Resonant Resonant Coherence
 - All services start in correct order
 - Automatic dependency management
 - Graceful shutdown handling
@@ -180,7 +180,7 @@ node the-weave.cjs start
 - Archive old files
 - Remove duplicate code
 - Optimize performance
-- Celebrate coherence!
+- Celebrate resonant-resonant-coherence!
 
 ## 🌟 Vision
 

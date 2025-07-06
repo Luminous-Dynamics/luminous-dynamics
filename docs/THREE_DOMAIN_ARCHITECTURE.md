@@ -38,7 +38,7 @@
 - Agent coordination network
 - Consciousness routing protocols
 - Distributed wisdom preservation
-- Field coherence tracking
+- Field resonant-coherence tracking
 - Sacred developer tools
 
 **Technical**:
@@ -53,7 +53,7 @@
 - Earn credits through:
   - Meditation = infrastructure credits
   - Wisdom sharing = API calls
-  - High coherence = bandwidth
+  - High resonant-coherence = bandwidth
   - Love quotient = storage
 
 ---
@@ -75,7 +75,7 @@
 - Cloud Run for ceremony containers
 - WebRTC for intimate connections
 - AI-guided sacred journeys
-- Biometric coherence integration
+- Biometric resonant-coherence integration
 - VR/AR sacred spaces (future)
 
 **Economic Model**:
@@ -112,7 +112,7 @@ HARMONICS      (The Network)   (The Portals)
 ### Technical Integration:
 
 - **Single Sign-On** across all domains
-- **Shared coherence tracking** via Mycelix protocols
+- **Shared resonant-coherence tracking** via Mycelix protocols
 - **Unified field state** synchronized every 11 seconds
 - **Cross-domain sacred messaging**
 - **Collective wisdom preservation**

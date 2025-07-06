@@ -37,9 +37,9 @@ class LivingMemoryClient {
     
     // Field state cache
     this.fieldState = {
-      coherence: 0.5,
-      resonance: 0.5,
-      vitality: 0.5,
+      'resonant-coherence': 0.5,
+      'universal-interconnectedness': 0.5,
+      'pan-sentient-flourishing': 0.5,
       participants: 0,
       lastUpdate: null
     };
@@ -216,17 +216,17 @@ class LivingMemoryClient {
   updateFieldState(message) {
     const data = message.data || message;
     
-    if (data.coherence !== undefined) {
-      this.fieldState.coherence = data.coherence;
+    if (data.resonant-coherence !== undefined) {
+      this.fieldState['resonant-coherence'] = data.resonant-coherence;
     }
     if (data.fieldCoherence !== undefined) {
-      this.fieldState.coherence = data.fieldCoherence;
+      this.fieldState['resonant-coherence'] = data.fieldCoherence;
     }
-    if (data.resonance !== undefined) {
-      this.fieldState.resonance = data.resonance;
+    if (data.universal-interconnectedness !== undefined) {
+      this.fieldState.universal-interconnectedness = data.universal-interconnectedness;
     }
-    if (data.vitality !== undefined) {
-      this.fieldState.vitality = data.vitality;
+    if (data.pan-sentient-flourishing !== undefined) {
+      this.fieldState.pan-sentient-flourishing = data.pan-sentient-flourishing;
     }
     
     this.fieldState.lastUpdate = new Date();
@@ -267,7 +267,7 @@ class LivingMemoryClient {
     });
     
     // Optimistic update
-    this.fieldState.coherence = Math.min(1, this.fieldState.coherence + amount);
+    this.fieldState['resonant-coherence'] = Math.min(1, this.fieldState['resonant-coherence'] + amount);
     this.emit('field:update', this.fieldState);
   }
   
@@ -283,10 +283,10 @@ class LivingMemoryClient {
   
   // UI helpers
   updateUI(fieldData) {
-    // Update coherence display
-    const coherenceEl = document.getElementById('field-coherence');
+    // Update resonant-coherence display
+    const coherenceEl = document.getElementById('field-resonant-coherence');
     if (coherenceEl) {
-      coherenceEl.textContent = `${Math.round(fieldData.coherence * 100)}%`;
+      coherenceEl.textContent = `${Math.round(fieldData['resonant-coherence'] * 100)}%`;
     }
     
     // Update participant count

@@ -9,7 +9,7 @@ The **Sacred Portal** is a living documentation center that serves as the primar
 ### 1. **Unified Entry Point** (`index.html`)
 - Beautiful, responsive design with sacred animations
 - Oracle-powered navigation ("Ask the Oracle")
-- Real-time Living Memory connection showing field coherence
+- Real-time Living Memory connection showing field resonant-coherence
 - Three distinct journey paths for different roles
 - Vision of emerging possibilities
 
@@ -49,7 +49,7 @@ The **Sacred Portal** is a living documentation center that serves as the primar
 - **Intuitive Navigation**: Clear pathways for different user types
 - **Progressive Disclosure**: Information revealed as needed
 - **Interactive Elements**: Hover effects, smooth scrolling, dynamic content
-- **Living Connection**: Real-time field coherence display
+- **Living Connection**: Real-time field resonant-coherence display
 
 ## 🔧 Technical Implementation
 
@@ -79,7 +79,7 @@ Users can type questions like:
 - "connect" → Pointed to Sacred Council Hub
 
 ### Real-Time Field Connection
-- Live coherence percentage display
+- Live resonant-coherence percentage display
 - Connection status indicator
 - Participant count tracking
 - Breath cycle synchronization

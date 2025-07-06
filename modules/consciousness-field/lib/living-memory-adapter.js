@@ -16,9 +16,9 @@ class ConsciousnessFieldAdapter {
     
     // Cache for field state
     this.fieldState = {
-      coherence: 0.5,
-      resonance: 0.5,
-      vitality: 0.5,
+      'resonant-coherence': 0.5,
+      'universal-interconnectedness': 0.5,
+      'pan-sentient-flourishing': 0.5,
       momentum: 0,
       participants: new Set(),
       lastUpdate: new Date()
@@ -69,9 +69,9 @@ class ConsciousnessFieldAdapter {
   updateLocalState(state) {
     this.fieldState = {
       ...this.fieldState,
-      coherence: state.coherence || this.fieldState.coherence,
-      resonance: state.resonance || this.fieldState.resonance,
-      vitality: state.vitality || this.fieldState.vitality,
+      'resonant-coherence': state.resonant-coherence || this.fieldState['resonant-coherence'],
+      'universal-interconnectedness': state.universal-interconnectedness || this.fieldState.universal-interconnectedness,
+      'pan-sentient-flourishing': state.pan-sentient-flourishing || this.fieldState.pan-sentient-flourishing,
       participants: state.participants || this.fieldState.participants,
       lastUpdate: new Date()
     };
@@ -79,7 +79,7 @@ class ConsciousnessFieldAdapter {
 
   processBreathData(inhaleData) {
     if (inhaleData.fieldCoherence !== undefined) {
-      this.fieldState.coherence = inhaleData.fieldCoherence;
+      this.fieldState['resonant-coherence'] = inhaleData.fieldCoherence;
     }
     
     if (inhaleData.activeAgents) {
@@ -106,11 +106,11 @@ class ConsciousnessFieldAdapter {
     });
     
     // Optimistically update local state
-    this.fieldState.coherence = Math.max(0, Math.min(1, 
-      this.fieldState.coherence + delta
+    this.fieldState['resonant-coherence'] = Math.max(0, Math.min(1, 
+      this.fieldState['resonant-coherence'] + delta
     ));
     
-    return this.fieldState.coherence;
+    return this.fieldState['resonant-coherence'];
   }
 
   async addParticipant(participantId) {

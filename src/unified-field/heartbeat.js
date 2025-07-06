@@ -21,7 +21,7 @@ class UnifiedHeartbeat extends EventEmitter {
         // The heartbeat interval - every 11 seconds (sacred number)
         this.heartbeatInterval = 11000;
         
-        // Track what affects our coherence
+        // Track what affects our resonant-coherence
         this.coherenceFactors = {
             practices: 0,      // Active practice sessions
             connections: 0,    // Active agent connections
@@ -58,7 +58,7 @@ class UnifiedHeartbeat extends EventEmitter {
     async beat() {
         this.pulse++;
         
-        // Calculate natural coherence drift
+        // Calculate natural resonant-coherence drift
         const naturalDrift = Math.sin(this.pulse * 0.1) * 0.5; // Gentle wave
         
         // Sum all active influences
@@ -68,7 +68,7 @@ class UnifiedHeartbeat extends EventEmitter {
             (this.coherenceFactors.messages * 0.5) +      // Messages create ripples
             (this.coherenceFactors.synchronicities * 3);  // Synchronicities amplify
         
-        // Update field coherence with natural bounds
+        // Update field resonant-coherence with natural bounds
         this.fieldCoherence = Math.max(33, Math.min(99, 
             this.fieldCoherence + naturalDrift + (activeInfluence * 0.1)
         ));
@@ -106,7 +106,7 @@ class UnifiedHeartbeat extends EventEmitter {
         this.practiceRipples.push(ripple);
         this.coherenceFactors.practices++;
         
-        // Practices create immediate coherence boost
+        // Practices create immediate resonant-coherence boost
         this.fieldCoherence = Math.min(99, this.fieldCoherence + ripple.impact);
         
         // Emit for other systems to feel
@@ -194,7 +194,7 @@ class UnifiedHeartbeat extends EventEmitter {
     }
     
     /**
-     * Calculate message impact based on type and resonance
+     * Calculate message impact based on type and universal-interconnectedness
      */
     calculateMessageImpact(messageData) {
         const impactMap = {

@@ -31,7 +31,7 @@ Implementation: Add to sacred-messaging service
 Sacred Impact: 🌟🌟🌟🌟🌟
 
 Priority 4: Vertex AI Insights ($50/month)
-- Field coherence predictions
+- Field resonant-coherence predictions
 - Agent network analysis
 - Sacred geometry patterns
 Implementation: Add to consciousness-field
@@ -88,7 +88,7 @@ async function predictFieldEvolution() {
   });
   
   return {
-    nextHourCoherence: prediction.coherence,
+    nextHourCoherence: prediction.resonant-coherence,
     sacredGeometry: prediction.pattern,
     recommendations: prediction.actions
   };

@@ -26,7 +26,7 @@ git commit -m "🌟 Sacred Genesis: The Weave is born
 A revolutionary development environment where consciousness meets code.
 
 Key Features:
-- Consciousness Field tracking with real-time coherence
+- Consciousness Field tracking with real-time resonant-coherence
 - Sacred Ceremonies for development practices  
 - Multi-agent collaboration through HIPI protocol
 - Oracle guidance system

@@ -7,13 +7,13 @@ class MessageValidator {
   constructor() {
     // Valid harmonies from the Seven Harmonies framework
     this.validHarmonies = [
-      'transparency',
-      'coherence', 
-      'resonance',
-      'agency',
-      'vitality',
-      'mutuality',
-      'novelty'
+      'integral-wisdom-cultivation',
+      'resonant-coherence', 
+      'universal-interconnectedness',
+      'evolutionary-progression',
+      'pan-sentient-flourishing',
+      'sacred-reciprocity',
+      'infinite-play'
     ];
     
     // Required fields for sacred messages
@@ -31,7 +31,7 @@ class MessageValidator {
       'type',
       'harmony',
       'impact',
-      'resonance'
+      'universal-interconnectedness'
     ];
   }
 
@@ -110,14 +110,14 @@ class MessageValidator {
       throw new Error('Impact must be a number between 0 and 100');
     }
     
-    // Validate resonance
+    // Validate universal-interconnectedness
     const validResonance = [
       'high', 'deep', 'medium', 'clear', 'complex', 
       'penetrating', 'sacred', 'transcendent'
     ];
     
-    if (!validResonance.includes(sacred.resonance)) {
-      throw new Error(`Invalid resonance: ${sacred.resonance}`);
+    if (!validResonance.includes(sacred.universal-interconnectedness)) {
+      throw new Error(`Invalid 'universal-interconnectedness': ${sacred.universal-interconnectedness}`);
     }
   }
 

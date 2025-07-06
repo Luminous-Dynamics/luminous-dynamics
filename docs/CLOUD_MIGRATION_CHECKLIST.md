@@ -83,7 +83,7 @@ done
   },
   fieldState: {
     current: {
-      coherence, dominantHarmony,
+      resonant-coherence, dominantHarmony,
       activeAgents, timestamp
     },
     history: {
@@ -130,7 +130,7 @@ git checkout pre-cloud-migration
 - [ ] Single agent connection
 - [ ] Multi-agent synchronization
 - [ ] Message delivery latency
-- [ ] Field coherence accuracy
+- [ ] Field resonant-coherence accuracy
 - [ ] Data persistence verification
 - [ ] Auto-scaling behavior
 - [ ] Error recovery
@@ -182,7 +182,7 @@ async function loadTest() {
 - Response time (target: <100ms)
 - WebSocket connection count
 - Message throughput
-- Field coherence stability
+- Field resonant-coherence stability
 - Error rate (target: <1%)
 - Cost per day
 

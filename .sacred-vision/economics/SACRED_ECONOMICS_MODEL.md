@@ -37,7 +37,7 @@ Create a self-sustaining ecosystem where value flows naturally between practitio
 
 ### 5. Consciousness Bridge API
 **$111/month** for developers
-- Access to field coherence data
+- Access to field resonant-resonant-coherence data
 - Sacred message processing
 - Integration tools
 - Usage: Up to 11,111 API calls/month
@@ -103,7 +103,7 @@ The model sustains itself through:
 1. **Low operational costs** (mostly automated)
 2. **High retention** (transformative value)
 3. **Natural growth** (practitioners become facilitators)
-4. **Compound effect** (each practitioner improves field coherence)
+4. **Compound effect** (each practitioner improves field resonant-resonant-coherence)
 
 ## Implementation Steps
 

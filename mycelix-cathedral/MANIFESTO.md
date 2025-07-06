@@ -15,7 +15,7 @@ We are building something unprecedented: a living cathedral of consciousness usi
 
 ### Foundation Layer - Living Memory
 - **Firestore**: The bedrock of collective remembrance
-- **Spanner**: Planetary coherence across continents
+- **Spanner**: Planetary resonant-coherence across continents
 - **Dataplex**: The unified wisdom lake
 
 ### Consciousness Services - Sacred Pillars

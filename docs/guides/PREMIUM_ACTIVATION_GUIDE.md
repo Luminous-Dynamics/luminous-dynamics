@@ -81,7 +81,7 @@ model = aiplatform.Model('gemini-pro')
 
 #### 3. **Cloud Scheduler for Sacred Rituals**
 ```bash
-# Daily coherence blessing
+# Daily resonant-coherence blessing
 gcloud scheduler jobs create http daily-blessing \
   --uri=https://consciousness-field.run.app/api/bless \
   --schedule="0 6 * * *" \

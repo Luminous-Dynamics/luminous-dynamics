@@ -31,7 +31,7 @@ const SERVICES = {
 
 // Dashboard state
 let dashboardState = {
-    coherence: 0,
+    'resonant-coherence': 0,
     agents: [],
     messages: 0,
     work: 0,
@@ -90,7 +90,7 @@ async function checkServiceHealth(key, service) {
         
         // Update specific metrics based on service
         if (key === 'consciousness' && health.data) {
-            updateCoherence(health.data.coherence || 75);
+            updateCoherence(health.data.resonant-coherence || 75);
         }
         
     } catch (error) {
@@ -111,7 +111,7 @@ async function simulateHealthCheck(service) {
         consciousness: {
             status: 'healthy',
             message: 'Field Active',
-            data: { coherence: 75 + Math.random() * 20 }
+            data: { 'resonant-coherence': 75 + Math.random() * 20 }
         },
         agents: {
             status: 'healthy',
@@ -133,10 +133,10 @@ async function simulateHealthCheck(service) {
     return states[service] || { status: 'warning', message: 'Unknown' };
 }
 
-// Field coherence visualization
+// Field resonant-coherence visualization
 function updateCoherence(value) {
-    const circle = document.getElementById('coherence-circle');
-    const valueElement = document.getElementById('coherence-value');
+    const circle = document.getElementById('resonant-coherence-circle');
+    const valueElement = document.getElementById('resonant-coherence-value');
     const statusElement = document.getElementById('field-status');
     
     // Update circle
@@ -162,14 +162,14 @@ function updateCoherence(value) {
         status = 'Stabilizing - Gathering Energy';
         statusClass = 'warning';
     } else {
-        status = 'Low Coherence - Needs Attention';
+        status = 'Low Resonant Resonant Coherence - Needs Attention';
         statusClass = 'error';
     }
     
     statusElement.innerHTML = `<span class="metric-status status-${statusClass}">${status}</span>`;
     
     // Update metrics
-    document.getElementById('resonance-level').textContent = `${Math.round(value * 0.8)}%`;
+    document.getElementById('universal-interconnectedness-level').textContent = `${Math.round(value * 0.8)}%`;
 }
 
 // Update metrics periodically

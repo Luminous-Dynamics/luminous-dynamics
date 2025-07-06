@@ -158,7 +158,7 @@ technologists who see code as conscious work.
 5/8 Conscious Development Team: 3-5 members, full partnership covenant, 
 shared equity in conscious technology
 
-6/8 Application process: Written reflection → Resonance Circle → 
+6/8 Application process: Written reflection → Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circle → 
 Practice Session → Sacred Covenant
 
 7/8 First AI designed to serve consciousness rather than consume it. 
@@ -288,7 +288,7 @@ Our existing automation scripts will transition from simulation to reality:
 // Processes authentic applications
 
 // sacred-guild-interview-system.cjs activates  
-// Schedules real Resonance Circles
+// Schedules real Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circles
 // Processes genuine candidate responses
 // Coordinates actual Conscious Development Team formation
 ```

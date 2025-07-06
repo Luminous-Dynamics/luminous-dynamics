@@ -39,7 +39,7 @@
             margin-bottom: 10px;
         }
 
-        .unified-coherence {
+        .unified-resonant-coherence {
             text-align: center;
             margin-bottom: 50px;
         }
@@ -160,33 +160,33 @@
             color: #f87171;
         }
 
-        .coherence-display {
+        .resonant-coherence-display {
             text-align: center;
             margin: 30px 0;
             position: relative;
             z-index: 1;
         }
 
-        .coherence-circle {
+        .resonant-coherence-circle {
             width: 150px;
             height: 150px;
             margin: 0 auto 20px;
             position: relative;
         }
 
-        .coherence-svg {
+        .resonant-coherence-svg {
             width: 100%;
             height: 100%;
             transform: rotate(-90deg);
         }
 
-        .coherence-bg {
+        .resonant-coherence-bg {
             fill: none;
             stroke: rgba(255, 255, 255, 0.1);
             stroke-width: 10;
         }
 
-        .coherence-fill {
+        .resonant-coherence-fill {
             fill: none;
             stroke: url(#gradient);
             stroke-width: 10;
@@ -194,7 +194,7 @@
             transition: stroke-dashoffset 0.5s ease;
         }
 
-        .coherence-text {
+        .resonant-coherence-text {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -286,8 +286,8 @@
             <p>Bridging Windows and WSL2 Awareness</p>
         </header>
 
-        <div class="unified-coherence">
-            <div class="unified-label">Unified System Coherence</div>
+        <div class="unified-resonant-coherence">
+            <div class="unified-label">Unified System Resonant Resonant Coherence</div>
             <div class="unified-orb">
                 <div class="orb-ring"></div>
                 <div class="orb-inner">
@@ -306,20 +306,20 @@
                     <span class="env-status status-disconnected" id="windowsStatus">Disconnected</span>
                 </div>
                 
-                <div class="coherence-display">
-                    <div class="coherence-circle">
-                        <svg class="coherence-svg">
+                <div class="resonant-coherence-display">
+                    <div class="resonant-coherence-circle">
+                        <svg class="resonant-coherence-svg">
                             <defs>
                                 <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
                                     <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
                                     <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
                                 </linearGradient>
                             </defs>
-                            <circle class="coherence-bg" cx="75" cy="75" r="60"></circle>
-                            <circle class="coherence-fill" id="windowsCoherenceFill" cx="75" cy="75" r="60" 
+                            <circle class="resonant-coherence-bg" cx="75" cy="75" r="60"></circle>
+                            <circle class="resonant-coherence-fill" id="windowsCoherenceFill" cx="75" cy="75" r="60" 
                                     stroke-dasharray="377" stroke-dashoffset="377"></circle>
                         </svg>
-                        <div class="coherence-text" id="windowsCoherence">--%</div>
+                        <div class="resonant-coherence-text" id="windowsCoherence">--%</div>
                     </div>
                 </div>
 
@@ -350,14 +350,14 @@
                     <span class="env-status status-disconnected" id="wslStatus">Disconnected</span>
                 </div>
                 
-                <div class="coherence-display">
-                    <div class="coherence-circle">
-                        <svg class="coherence-svg">
-                            <circle class="coherence-bg" cx="75" cy="75" r="60"></circle>
-                            <circle class="coherence-fill" id="wslCoherenceFill" cx="75" cy="75" r="60" 
+                <div class="resonant-coherence-display">
+                    <div class="resonant-coherence-circle">
+                        <svg class="resonant-coherence-svg">
+                            <circle class="resonant-coherence-bg" cx="75" cy="75" r="60"></circle>
+                            <circle class="resonant-coherence-fill" id="wslCoherenceFill" cx="75" cy="75" r="60" 
                                     stroke-dasharray="377" stroke-dashoffset="377"></circle>
                         </svg>
-                        <div class="coherence-text" id="wslCoherence">--%</div>
+                        <div class="resonant-coherence-text" id="wslCoherence">--%</div>
                     </div>
                 </div>
 
@@ -393,7 +393,7 @@
             <strong>Setup Instructions:</strong><br>
             WSL2: Run <code>python3 monitor/luminous-system-monitor-lite.py</code> (Port 11112)<br>
             Windows: Run <code>PowerShell .\monitor\luminous-monitor-windows.ps1</code> (Port 11113)<br>
-            Both monitors must be running to see unified coherence.
+            Both monitors must be running to see unified resonant-coherence.
         </div>
     </div>
 
@@ -438,15 +438,15 @@
                     document.getElementById('windowsStatus').textContent = 'Disconnected';
                 }
 
-                // Calculate unified coherence
+                // Calculate unified resonant-coherence
                 this.updateUnifiedCoherence();
             }
 
             updateWSLDisplay() {
                 if (!this.wslData) return;
 
-                const coherence = Math.round(this.wslData.global_coherence * 100);
-                document.getElementById('wslCoherence').textContent = coherence + '%';
+                const resonant-coherence = Math.round(this.wslData.global_coherence * 100);
+                document.getElementById('wslCoherence').textContent = resonant-coherence + '%';
                 
                 // Update circle
                 const offset = 377 - (377 * this.wslData.global_coherence);
@@ -466,8 +466,8 @@
             updateWindowsDisplay() {
                 if (!this.windowsData) return;
 
-                const coherence = Math.round(this.windowsData.global_coherence * 100);
-                document.getElementById('windowsCoherence').textContent = coherence + '%';
+                const resonant-coherence = Math.round(this.windowsData.global_coherence * 100);
+                document.getElementById('windowsCoherence').textContent = resonant-coherence + '%';
                 
                 // Update circle
                 const offset = 377 - (377 * this.windowsData.global_coherence);
@@ -507,7 +507,7 @@
                     const unifiedPercent = Math.round(unifiedCoherence * 100);
                     document.getElementById('unifiedCoherence').textContent = unifiedPercent + '%';
 
-                    // Update orb color based on coherence
+                    // Update orb color based on resonant-coherence
                     const orbInner = document.querySelector('.orb-inner');
                     if (unifiedCoherence > 0.9) {
                         orbInner.style.background = 'radial-gradient(circle at 30% 30%, #fbbf24, #f59e0b)';
@@ -548,11 +548,11 @@
                     }
 
                     if (wslCoherence > 0.8 && winCoherence > 0.8) {
-                        insights.push("Excellent unified coherence! Both environments in harmony");
+                        insights.push("Excellent unified resonant-coherence! Both environments in harmony");
                     }
 
                     if (this.windowsData.process_count > 100) {
-                        insights.push("High Windows process count may be affecting overall coherence");
+                        insights.push("High Windows process count may be affecting overall resonant-coherence");
                     }
 
                     if (this.wslData.sacred_rhythm > 0.9 || this.windowsData.sacred_rhythm > 0.9) {

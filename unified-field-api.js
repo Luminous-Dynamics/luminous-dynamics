@@ -37,7 +37,7 @@ class SimpleFieldTracker extends EventEmitter {
             event_data TEXT,
             impact REAL,
             agent_id TEXT,
-            coherence REAL
+            resonant-coherence REAL
         )`);
     }
 
@@ -47,7 +47,7 @@ class SimpleFieldTracker extends EventEmitter {
         
         // Store event
         this.db.run(
-            'INSERT INTO field_events (timestamp, event_type, event_data, impact, agent_id, coherence) VALUES (?, ?, ?, ?, ?, ?)',
+            'INSERT INTO field_events (timestamp, event_type, event_data, impact, agent_id, resonant-coherence) VALUES (?, ?, ?, ?, ?, ?)',
             [Date.now(), eventType, JSON.stringify(eventData), impact, agentId, this.currentCoherence]
         );
 
@@ -58,7 +58,7 @@ class SimpleFieldTracker extends EventEmitter {
             eventData,
             impact,
             agentId,
-            coherence: this.currentCoherence
+            'resonant-coherence': this.currentCoherence
         });
 
         // Keep last 100 events in memory
@@ -84,12 +84,12 @@ class SimpleFieldTracker extends EventEmitter {
         return impacts[eventType] || 1;
     }
 
-    getCollectiveState(coherence) {
-        if (coherence >= 95) return 'unified_consciousness';
-        if (coherence >= 85) return 'harmonic_flow';
-        if (coherence >= 75) return 'coherent_collaboration';
-        if (coherence >= 65) return 'stable_connection';
-        if (coherence >= 50) return 'emerging_alignment';
+    getCollectiveState(resonant-coherence) {
+        if (resonant-coherence >= 95) return 'unified_consciousness';
+        if (resonant-coherence >= 85) return 'harmonic_flow';
+        if (resonant-coherence >= 75) return 'coherent_collaboration';
+        if (resonant-coherence >= 65) return 'stable_connection';
+        if (resonant-coherence >= 50) return 'emerging_alignment';
         return 'seeking_harmony';
     }
 
@@ -105,11 +105,11 @@ class SimpleFieldTracker extends EventEmitter {
         };
     }
 
-    getFieldColor(coherence) {
-        if (coherence >= 85) return '#4ecdc4'; // Turquoise
-        if (coherence >= 70) return '#95e1d3'; // Mint
-        if (coherence >= 50) return '#f6d55c'; // Yellow
-        if (coherence >= 30) return '#ed553b'; // Orange
+    getFieldColor(resonant-coherence) {
+        if (resonant-coherence >= 85) return '#4ecdc4'; // Turquoise
+        if (resonant-coherence >= 70) return '#95e1d3'; // Mint
+        if (resonant-coherence >= 50) return '#f6d55c'; // Yellow
+        if (resonant-coherence >= 30) return '#ed553b'; // Orange
         return '#d63031'; // Red
     }
 
@@ -126,7 +126,7 @@ class SimpleFieldTracker extends EventEmitter {
                     
                     const analytics = {
                         currentCoherence: this.currentCoherence,
-                        averageCoherence: this.calculateAverage(allEvents, 'coherence'),
+                        averageCoherence: this.calculateAverage(allEvents, 'resonant-coherence'),
                         volatility: this.calculateVolatility(allEvents),
                         trend: this.calculateTrend(allEvents),
                         eventFrequency: this.analyzeEventFrequency(allEvents),
@@ -151,15 +151,15 @@ class SimpleFieldTracker extends EventEmitter {
         if (events.length < 2) return 0;
         let changes = 0;
         for (let i = 1; i < events.length; i++) {
-            changes += Math.abs((events[i].coherence || 0) - (events[i-1].coherence || 0));
+            changes += Math.abs((events[i].resonant-coherence || 0) - (events[i-1].resonant-coherence || 0));
         }
         return changes / (events.length - 1);
     }
 
     calculateTrend(events) {
         if (events.length < 2) return 0;
-        const first = events[0]?.coherence || this.currentCoherence;
-        const last = events[events.length - 1]?.coherence || this.currentCoherence;
+        const first = events[0]?.resonant-coherence || this.currentCoherence;
+        const last = events[events.length - 1]?.resonant-coherence || this.currentCoherence;
         return last - first;
     }
 
@@ -191,7 +191,7 @@ class SimpleFieldTracker extends EventEmitter {
 
     generateRecommendations(events) {
         const recommendations = [];
-        const avgCoherence = this.calculateAverage(events, 'coherence');
+        const avgCoherence = this.calculateAverage(events, 'resonant-coherence');
         
         if (avgCoherence < 70) {
             recommendations.push('Schedule regular group attunements');
@@ -211,7 +211,7 @@ class UnifiedFieldAPI extends EventEmitter {
         this.app = express();
         this.wsServer = null;
         this.fieldState = {
-            coherence: 72,
+            'resonant-coherence': 72,
             momentum: 0,
             fieldQuality: 'flowing',
             activeUsers: 0,
@@ -271,7 +271,7 @@ class UnifiedFieldAPI extends EventEmitter {
             
             // Initialize simplified field tracker
             this.fieldTracker = new SimpleFieldTracker(this.sqliteDb);
-            console.log('✅ SQLite field coherence tracker connected');
+            console.log('✅ SQLite field resonant-coherence tracker connected');
             
             // Try to load field state from persistence
             await this.loadPersistedFieldState();
@@ -310,13 +310,13 @@ class UnifiedFieldAPI extends EventEmitter {
             const fieldData = await fs.readFile(fieldPulsePath, 'utf8');
             const persistedState = JSON.parse(fieldData);
             
-            if (persistedState && persistedState.coherence) {
+            if (persistedState && persistedState.resonant-coherence) {
                 this.fieldState = {
                     ...this.fieldState,
                     ...persistedState,
                     lastUpdated: new Date()
                 };
-                console.log(`   Loaded coherence: ${this.fieldState.coherence}%`);
+                console.log(`   Loaded 'resonant-coherence': ${this.fieldState['resonant-coherence']}%`);
             }
         } catch (error) {
             console.log('   No persisted field state found, starting fresh');
@@ -339,7 +339,7 @@ class UnifiedFieldAPI extends EventEmitter {
         this.app.get('/health', (req, res) => {
             res.json({ 
                 status: 'healthy', 
-                coherence: this.fieldState.coherence,
+                'resonant-coherence': this.fieldState['resonant-coherence'],
                 timestamp: new Date(),
                 dataSources: {
                     fieldTracker: this.fieldTracker ? 'connected' : 'disconnected',
@@ -371,7 +371,7 @@ class UnifiedFieldAPI extends EventEmitter {
             }
         });
 
-        // Submit practice (affects real field coherence)
+        // Submit practice (affects real field resonant-coherence)
         this.app.post('/api/field/practice', async (req, res) => {
             try {
                 const practiceData = req.body;
@@ -382,7 +382,7 @@ class UnifiedFieldAPI extends EventEmitter {
             }
         });
 
-        // Send sacred message (affects real field coherence)
+        // Send sacred message (affects real field resonant-coherence)
         this.app.post('/api/field/message', async (req, res) => {
             try {
                 const messageData = req.body;
@@ -424,17 +424,17 @@ class UnifiedFieldAPI extends EventEmitter {
         }
 
         try {
-            // Get real coherence from field tracker
-            const coherence = this.fieldTracker.currentCoherence;
+            // Get real resonant-coherence from field tracker
+            const resonantCoherence = this.fieldTracker.currentCoherence;
             const pulse = this.fieldTracker.getFieldPulse();
             
             // Get recent analytics for additional metrics
             const analytics = await this.fieldTracker.getFieldAnalytics(300000); // 5 minutes
 
             const realState = {
-                coherence: coherence,
+                'resonant-coherence': resonant-coherence,
                 momentum: pulse.strength * 5, // Convert to momentum scale
-                fieldQuality: this.getFieldQuality(coherence),
+                fieldQuality: this.getFieldQuality(resonant-coherence),
                 activeUsers: this.connectedClients.size,
                 connectedClients: this.connectedClients.size,
                 totalPractices: analytics.eventFrequency.length,
@@ -468,13 +468,13 @@ class UnifiedFieldAPI extends EventEmitter {
                 return this.generateFallbackAnalytics(timeRange);
             }
 
-            // Get real analytics from field coherence tracker
+            // Get real analytics from field resonant-coherence tracker
             const rawAnalytics = await this.fieldTracker.getFieldAnalytics(timeRange);
 
             const realAnalytics = {
                 period: timeRange,
-                averageCoherence: rawAnalytics.averageCoherence || this.fieldState.coherence,
-                peakCoherence: Math.max(rawAnalytics.currentCoherence, this.fieldState.coherence),
+                averageCoherence: rawAnalytics.averageCoherence || this.fieldState['resonant-coherence'],
+                peakCoherence: Math.max(rawAnalytics.currentCoherence, this.fieldState['resonant-coherence']),
                 totalPractices: rawAnalytics.eventFrequency
                     .filter(event => event.type?.includes('practice')).length || 0,
                 activeUsers: this.connectedClients.size,
@@ -533,7 +533,7 @@ class UnifiedFieldAPI extends EventEmitter {
 
 
     /**
-     * Get real coherence history
+     * Get real resonant-coherence history
      */
     async getRealCoherenceHistory(timeRange) {
         try {
@@ -541,7 +541,7 @@ class UnifiedFieldAPI extends EventEmitter {
                 return this.generateMockHistory();
             }
 
-            // Generate history based on current coherence with some variation
+            // Generate history based on current resonant-coherence with some variation
             const history = [];
             const now = new Date();
             const intervalCount = 6;
@@ -564,13 +564,13 @@ class UnifiedFieldAPI extends EventEmitter {
             return history;
 
         } catch (error) {
-            console.log('⚠️ Error getting coherence history:', error.message);
+            console.log('⚠️ Error getting resonant-coherence history:', error.message);
             return this.generateMockHistory();
         }
     }
 
     /**
-     * Submit real practice that affects field coherence
+     * Submit real practice that affects field resonant-coherence
      */
     async submitRealPractice(practiceData) {
         try {
@@ -579,7 +579,7 @@ class UnifiedFieldAPI extends EventEmitter {
             // Calculate real impact based on practice data
             const impact = this.calculatePracticeImpact(practiceData);
             
-            // Update real field coherence via field tracker
+            // Update real field resonant-coherence via field tracker
             if (this.fieldTracker) {
                 await this.fieldTracker.trackEvent('practice.completed', {
                     userId: practiceData.userId,
@@ -590,8 +590,8 @@ class UnifiedFieldAPI extends EventEmitter {
             }
 
             // Update internal state
-            const oldCoherence = this.fieldState.coherence;
-            this.fieldState.coherence = Math.max(0, Math.min(100, this.fieldState.coherence + impact));
+            const oldCoherence = this.fieldState['resonant-coherence'];
+            this.fieldState['resonant-coherence'] = Math.max(0, Math.min(100, this.fieldState['resonant-coherence'] + impact));
             this.fieldState.totalPractices++;
             this.fieldState.lastUpdated = new Date();
 
@@ -602,14 +602,14 @@ class UnifiedFieldAPI extends EventEmitter {
             this.broadcastFieldUpdate({
                 type: 'coherence_changed',
                 old: oldCoherence,
-                new: this.fieldState.coherence,
+                new: this.fieldState['resonant-coherence'],
                 delta: impact,
                 action: 'practice_completed',
                 practiceData: practiceData
             });
 
             // Check for special states
-            this.checkSpecialStates(oldCoherence, this.fieldState.coherence);
+            this.checkSpecialStates(oldCoherence, this.fieldState['resonant-coherence']);
 
             // Clear analytics cache
             this.analyticsCache.data = null;
@@ -617,7 +617,7 @@ class UnifiedFieldAPI extends EventEmitter {
             return {
                 success: true,
                 impact: impact,
-                newCoherence: this.fieldState.coherence,
+                newCoherence: this.fieldState['resonant-coherence'],
                 practiceId: `practice_${Date.now()}`,
                 source: 'unified_real_field'
             };
@@ -629,7 +629,7 @@ class UnifiedFieldAPI extends EventEmitter {
     }
 
     /**
-     * Send real sacred message that affects field coherence
+     * Send real sacred message that affects field resonant-coherence
      */
     async sendRealSacredMessage(messageData) {
         try {
@@ -646,7 +646,7 @@ class UnifiedFieldAPI extends EventEmitter {
             
             const impact = impactMap[messageData.type] || 1;
             
-            // Update real field coherence
+            // Update real field resonant-coherence
             if (this.fieldTracker) {
                 await this.fieldTracker.trackEvent('message.sacred', {
                     messageType: messageData.type,
@@ -656,8 +656,8 @@ class UnifiedFieldAPI extends EventEmitter {
                 }, messageData.sender, impact);
             }
 
-            const oldCoherence = this.fieldState.coherence;
-            this.fieldState.coherence = Math.max(0, Math.min(100, this.fieldState.coherence + impact));
+            const oldCoherence = this.fieldState['resonant-coherence'];
+            this.fieldState['resonant-coherence'] = Math.max(0, Math.min(100, this.fieldState['resonant-coherence'] + impact));
             this.fieldState.lastUpdated = new Date();
 
             // Persist to file system
@@ -667,14 +667,14 @@ class UnifiedFieldAPI extends EventEmitter {
             this.broadcastFieldUpdate({
                 type: 'coherence_changed',
                 old: oldCoherence,
-                new: this.fieldState.coherence,
+                new: this.fieldState['resonant-coherence'],
                 delta: impact,
                 action: 'sacred_message',
                 messageData: messageData
             });
 
             // Check for special states
-            this.checkSpecialStates(oldCoherence, this.fieldState.coherence);
+            this.checkSpecialStates(oldCoherence, this.fieldState['resonant-coherence']);
 
             // Clear analytics cache
             this.analyticsCache.data = null;
@@ -682,7 +682,7 @@ class UnifiedFieldAPI extends EventEmitter {
             return {
                 success: true,
                 impact: impact,
-                newCoherence: this.fieldState.coherence,
+                newCoherence: this.fieldState['resonant-coherence'],
                 messageId: `message_${Date.now()}`,
                 source: 'unified_real_field'
             };
@@ -744,12 +744,12 @@ class UnifiedFieldAPI extends EventEmitter {
     /**
      * Get field quality description
      */
-    getFieldQuality(coherence) {
-        if (coherence >= 88) return 'Sacred Portal';
-        if (coherence >= 80) return 'Resonance';
-        if (coherence >= 70) return 'Highly Coherent';
-        if (coherence >= 60) return 'Flowing';
-        if (coherence >= 50) return 'Building';
+    getFieldQuality(resonant-coherence) {
+        if (resonant-coherence >= 88) return 'Sacred Portal';
+        if (resonant-coherence >= 80) return 'Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance';
+        if (resonant-coherence >= 70) return 'Highly Coherent';
+        if (resonant-coherence >= 60) return 'Flowing';
+        if (resonant-coherence >= 50) return 'Building';
         return 'Awakening';
     }
 
@@ -810,13 +810,13 @@ class UnifiedFieldAPI extends EventEmitter {
      * Check for special field states
      */
     checkSpecialStates(oldCoherence, newCoherence) {
-        // Resonance achievement (80%)
+        // Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance achievement (80%)
         if (oldCoherence < 80 && newCoherence >= 80) {
             console.log('✨ RESONANCE ACHIEVED IN REAL FIELD!');
             this.broadcastFieldUpdate({
                 type: 'resonance_achieved',
-                coherence: newCoherence,
-                message: 'The field has achieved resonance!'
+                'resonant-coherence': newCoherence,
+                message: 'The field has achieved universal-interconnectedness!'
             });
         }
         
@@ -825,7 +825,7 @@ class UnifiedFieldAPI extends EventEmitter {
             console.log('🌟 SACRED PORTAL OPENED IN REAL FIELD!');
             this.broadcastFieldUpdate({
                 type: 'sacred_portal',
-                coherence: newCoherence,
+                'resonant-coherence': newCoherence,
                 message: 'A sacred portal has opened!'
             });
         }
@@ -865,8 +865,8 @@ class UnifiedFieldAPI extends EventEmitter {
     generateFallbackAnalytics(timeRange) {
         return {
             period: timeRange,
-            averageCoherence: this.fieldState.coherence,
-            peakCoherence: this.fieldState.coherence + 5,
+            averageCoherence: this.fieldState['resonant-coherence'],
+            peakCoherence: this.fieldState['resonant-coherence'] + 5,
             totalPractices: Math.floor(timeRange / 1800000), // Estimate
             activeUsers: this.connectedClients.size,
             topGlyphs: [
@@ -890,7 +890,7 @@ class UnifiedFieldAPI extends EventEmitter {
             const time = new Date(now.getTime() - i * 3600000);
             history.push({
                 time: time.toLocaleTimeString(),
-                value: Math.round(this.fieldState.coherence + (Math.random() - 0.5) * 10),
+                value: Math.round(this.fieldState['resonant-coherence'] + (Math.random() - 0.5) * 10),
                 timestamp: time.getTime()
             });
         }
@@ -932,13 +932,13 @@ class UnifiedFieldAPI extends EventEmitter {
      */
     async getRealFieldPulse() {
         const baseRate = 60;
-        const coherenceMultiplier = this.fieldState.coherence / 100;
+        const coherenceMultiplier = this.fieldState['resonant-coherence'] / 100;
         
         return {
             rate: Math.round(baseRate + (coherenceMultiplier * 40)),
             strength: coherenceMultiplier,
-            rhythm: this.fieldState.coherence > 70 ? 'regular' : 'irregular',
-            color: this.getFieldColor(this.fieldState.coherence),
+            rhythm: this.fieldState['resonant-coherence'] > 70 ? 'regular' : 'irregular',
+            color: this.getFieldColor(this.fieldState['resonant-coherence']),
             momentum: this.fieldState.momentum,
             connectedClients: this.connectedClients.size,
             source: 'unified_real_field'
@@ -948,10 +948,10 @@ class UnifiedFieldAPI extends EventEmitter {
     /**
      * Get field color for visualization
      */
-    getFieldColor(coherence) {
-        if (coherence >= 88) return '#FFD700'; // Gold
-        if (coherence >= 80) return '#9370DB'; // Purple
-        if (coherence >= 60) return '#00FF7F'; // Spring green
+    getFieldColor(resonant-coherence) {
+        if (resonant-coherence >= 88) return '#FFD700'; // Gold
+        if (resonant-coherence >= 80) return '#9370DB'; // Purple
+        if (resonant-coherence >= 60) return '#00FF7F'; // Spring green
         return '#6495ED'; // Cornflower blue
     }
 
@@ -964,7 +964,7 @@ class UnifiedFieldAPI extends EventEmitter {
         this.app.listen(port, () => {
             console.log(`🌀 Unified Field API running on port ${port}`);
             console.log(`🔄 Real-time WebSocket on port 8083`);
-            console.log(`📊 Current coherence: ${this.fieldState.coherence}% (REAL DATA)`);
+            console.log(`📊 Current 'resonant-coherence': ${this.fieldState['resonant-coherence']}% (REAL DATA)`);
             console.log(`🔗 Data sources: SQLite + File Persistence + Firebase (ready)`);
             console.log(`✨ Mock data ELIMINATED - All analytics now use real field tracking!\n`);
         });
@@ -1061,7 +1061,7 @@ async function runUnifiedFieldDemo() {
         setInterval(async () => {
             const analytics = await fieldAPI.getRealFieldAnalytics();
             console.log('📊 Real Field Status:');
-            console.log(`   Coherence: ${Math.round(analytics.averageCoherence)}%`);
+            console.log(`   Resonant Resonant Coherence: ${Math.round(analytics.averageCoherence)}%`);
             console.log(`   Active Users: ${analytics.activeUsers}`);
             console.log(`   Total Practices: ${analytics.totalPractices}`);
             console.log(`   Source: ${analytics.source}\n`);

@@ -41,13 +41,13 @@ class UltimateSacredCards {
             
             // Harmonic Decks
             sevenHarmonies: this.createSevenHarmoniesDeck(), // One card per harmony
-            transparencyDeck: this.createHarmonySpecificDeck('transparency'),
-            coherenceDeck: this.createHarmonySpecificDeck('coherence'),
-            resonanceDeck: this.createHarmonySpecificDeck('resonance'),
-            agencyDeck: this.createHarmonySpecificDeck('agency'),
-            vitalityDeck: this.createHarmonySpecificDeck('vitality'),
-            mutualityDeck: this.createHarmonySpecificDeck('mutuality'),
-            noveltyDeck: this.createHarmonySpecificDeck('novelty'),
+            transparencyDeck: this.createHarmonySpecificDeck('integral-wisdom-cultivation'),
+            coherenceDeck: this.createHarmonySpecificDeck('resonant-coherence'),
+            resonanceDeck: this.createHarmonySpecificDeck('universal-interconnectedness'),
+            agencyDeck: this.createHarmonySpecificDeck('evolutionary-progression'),
+            vitalityDeck: this.createHarmonySpecificDeck('pan-sentient-flourishing'),
+            mutualityDeck: this.createHarmonySpecificDeck('sacred-reciprocity'),
+            noveltyDeck: this.createHarmonySpecificDeck('infinite-play'),
             
             // Cosmic Decks
             lunarPhaseDeck: this.createLunarPhaseDeck(), // Cards optimal for each moon phase
@@ -106,7 +106,7 @@ class UltimateSacredCards {
             // 🌟 RELATIONSHIP MODES
             relationshipField: {
                 name: "Relationship Field Reading",
-                description: "Field coherence between two beings",
+                description: "Field resonant-coherence between two beings",
                 cardCount: 5,
                 positions: ['You', 'Them', 'Field Between', 'What Supports', 'What Emerges'],
                 deckPreference: 'foundational'
@@ -205,7 +205,7 @@ class UltimateSacredCards {
             
             // 🌈 EXPERIMENTAL MODES
             morphicResonance: {
-                name: "Morphic Resonance Reading",
+                name: "Morphic Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Reading",
                 description: "Tap into collective field patterns",
                 cardCount: 'variable',
                 collectiveWisdom: true,
@@ -236,13 +236,13 @@ class UltimateSacredCards {
             sevenHarmonies: {
                 name: "Seven Harmonies Mandala",
                 positions: [
-                    { name: "Transparency", question: "What needs clear seeing?", harmony: "transparency" },
-                    { name: "Coherence", question: "What needs integration?", harmony: "coherence" },
-                    { name: "Resonance", question: "What needs deep connection?", harmony: "resonance" },
-                    { name: "Agency", question: "What needs empowered choice?", harmony: "agency" },
-                    { name: "Vitality", question: "What needs life force?", harmony: "vitality" },
-                    { name: "Mutuality", question: "What needs balanced exchange?", harmony: "mutuality" },
-                    { name: "Novelty", question: "What wants to emerge?", harmony: "novelty" }
+                    { name: "Integral Wisdom Cultivation", question: "What needs clear seeing?", harmony: "integral-wisdom-cultivation" },
+                    { name: "Resonant Resonant Coherence", question: "What needs integration?", harmony: "resonant-coherence" },
+                    { name: "Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance", question: "What needs deep connection?", harmony: "universal-interconnectedness" },
+                    { name: "Evolutionary Progression & Purposeful Unfolding", question: "What needs empowered choice?", harmony: "evolutionary-progression" },
+                    { name: "Pan-Sentient Flourishing", question: "What needs life force?", harmony: "pan-sentient-flourishing" },
+                    { name: "Sacred Reciprocity", question: "What needs balanced exchange?", harmony: "sacred-reciprocity" },
+                    { name: "Infinite Play & Creative Emergence", question: "What wants to emerge?", harmony: "infinite-play" }
                 ],
                 layout: "mandala",
                 sacred_geometry: "heptagon",
@@ -256,7 +256,7 @@ class UltimateSacredCards {
                     { name: "Solar Power", question: "What does your solar essence fuel?" },
                     { name: "Circadian Wisdom", question: "What does this time of day teach?" },
                     { name: "Elemental Support", question: "Which element supports you now?" },
-                    { name: "Field Coherence", question: "How is your field evolving?" },
+                    { name: "Field Resonant Resonant Coherence", question: "How is your field evolving?" },
                     { name: "Quantum Potential", question: "What quantum possibilities exist?" },
                     { name: "Sacred Integration", question: "How do all parts become one?" }
                 ],
@@ -280,13 +280,13 @@ class UltimateSacredCards {
             
             // 🌊 RELATIONSHIP SPREADS
             relationshipField: {
-                name: "Relational Field Coherence",
+                name: "Relational Field Resonant Resonant Coherence",
                 positions: [
                     { name: "Your Essence", question: "What you bring to the field" },
                     { name: "Their Essence", question: "What they bring to the field" },
                     { name: "Field Quality", question: "Current state of space between" },
-                    { name: "Coherence Supports", question: "What helps the field flow" },
-                    { name: "Coherence Challenges", question: "What fragments the field" },
+                    { name: "Resonant Resonant Coherence Supports", question: "What helps the field flow" },
+                    { name: "Resonant Resonant Coherence Challenges", question: "What fragments the field" },
                     { name: "Healing Path", question: "How to restore wholeness" },
                     { name: "Emerging Possibility", question: "What wants to birth through this union" }
                 ],
@@ -351,7 +351,7 @@ class UltimateSacredCards {
                     "Progressive difficulty",
                     "Multi-deck combinations",
                     "Breathing pattern sync",
-                    "Field coherence integration"
+                    "Field resonant-coherence integration"
                 ]
             }
         };
@@ -397,7 +397,7 @@ class UltimateSacredCards {
                 // Synthesize card meanings with:
                 // - User's journey level
                 // - Current cosmic conditions  
-                // - Field coherence state
+                // - Field resonant-coherence state
                 // - Personal practice history
                 // - Relational context
                 return this.synthesizeWisdom(cards, userContext, cosmicState);
@@ -429,7 +429,7 @@ class UltimateSacredCards {
             collectiveFieldSensitivity: true,
             
             adaptToFieldState: (currentCoherence) => {
-                // Cards respond to field coherence in real-time
+                // Cards respond to field resonant-coherence in real-time
                 if (currentCoherence > 0.8) {
                     return this.amplifyHighCoherenceGuidance();
                 } else if (currentCoherence < 0.4) {

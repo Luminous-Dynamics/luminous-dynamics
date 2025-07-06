@@ -63,7 +63,7 @@ The sacred geometry of the 18 practices has been revealed through two complement
 ### With Sacred Council:
 - Could pull real completion data
 - Track collective progress
-- Show field coherence for each star
+- Show field resonant-coherence for each star
 
 ### With Quantum Systems:
 - Display quantum amplification levels
@@ -122,7 +122,7 @@ The maps reveal sacred patterns:
 ### Data Integration:
 - Pull real progress from localStorage/database
 - Show collective practice statistics
-- Display field coherence heat map
+- Display field resonant-coherence heat map
 
 ### Visual Enhancements:
 - 3D constellation view

@@ -158,7 +158,7 @@ Create `.vscode/launch.json`:
    Create custom snippets for common patterns:
    - Sacred message templates
    - Harmony calculations
-   - Field coherence checks
+   - Field resonant-resonant-coherence checks
 
 3. **Workspace Trust**
    Mark the project as trusted to enable all features

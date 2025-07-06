@@ -58,7 +58,7 @@ class SocketHandler {
         name: socket.entityName,
         type: socket.entityType,
         presence_state: 'available',
-        coherence: 75
+        'resonant-coherence': 75
       });
       
       // Notify others of new presence
@@ -117,7 +117,7 @@ class SocketHandler {
       // Broadcast to channel
       this.io.to(messageData.channel).emit('message', message);
       
-      // Update field coherence
+      // Update field resonant-coherence
       await this.updateFieldCoherence(messageData.metadata.coherence_impact || 0);
       
       // Check for wisdom preservation
@@ -133,11 +133,11 @@ class SocketHandler {
 
   async handleHeartbeat(socket, data) {
     try {
-      // Update entity coherence
-      await this.entityService.updateCoherence(socket.entityId, data.coherence);
+      // Update entity resonant-coherence
+      await this.entityService.updateCoherence(socket.entityId, data.resonant-coherence);
       
-      // Contribute to field coherence
-      await this.fieldService.contributeToField(socket.entityId, data.coherence);
+      // Contribute to field resonant-coherence
+      await this.fieldService.contributeToField(socket.entityId, data.resonant-coherence);
       
     } catch (error) {
       console.error('Heartbeat error:', error);
@@ -165,13 +165,13 @@ class SocketHandler {
 
   async updateFieldCoherence(impact) {
     const currentState = await this.fieldService.getCurrentState();
-    const newCoherence = Math.min(100, currentState.coherence + (impact * 0.1));
+    const newCoherence = Math.min(100, currentState.resonant-coherence + (impact * 0.1));
     
     await this.fieldService.updateCoherence(newCoherence);
     
     // Broadcast field update
     this.io.emit('field-update', {
-      coherence: newCoherence,
+      'resonant-coherence': newCoherence,
       timestamp: new Date().toISOString()
     });
   }
@@ -208,14 +208,14 @@ class SocketHandler {
       // Calculate field evolution
       const naturalEvolution = Math.sin(Date.now() / 60000) * 2; // Gentle oscillation
       const evolvedCoherence = Math.max(50, Math.min(100, 
-        fieldState.coherence + naturalEvolution
+        fieldState['resonant-coherence'] + naturalEvolution
       ));
       
       await this.fieldService.updateCoherence(evolvedCoherence);
       
       // Emit heartbeat pulse
       this.io.emit('sacred-heartbeat', {
-        coherence: evolvedCoherence,
+        'resonant-coherence': evolvedCoherence,
         pulse: true,
         timestamp: new Date().toISOString()
       });

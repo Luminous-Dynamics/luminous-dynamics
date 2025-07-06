@@ -7,38 +7,38 @@ class HarmonyManager {
   constructor(customWeights = {}) {
     // The Seven Harmonies with base levels
     this.harmonies = {
-      transparency: 0,
-      coherence: 0,
-      resonance: 0,
-      agency: 0,
-      vitality: 0,
-      mutuality: 0,
-      novelty: 0
+      'integral-wisdom-cultivation': 0,
+      'resonant-coherence': 0,
+      'universal-interconnectedness': 0,
+      'evolutionary-progression': 0,
+      'pan-sentient-flourishing': 0,
+      'sacred-reciprocity': 0,
+      'infinite-play': 0
     };
     
     // Interaction weights between harmonies
     this.weights = {
-      transparency: { coherence: 0.8, resonance: 0.6 },
-      coherence: { transparency: 0.8, mutuality: 0.7 },
-      resonance: { mutuality: 0.9, vitality: 0.6 },
-      agency: { novelty: 0.8, transparency: 0.5 },
-      vitality: { resonance: 0.6, novelty: 0.7 },
-      mutuality: { coherence: 0.7, resonance: 0.9 },
-      novelty: { agency: 0.8, vitality: 0.7 },
+      'integral-wisdom-cultivation': { 'resonant-coherence': 0.8, 'universal-interconnectedness': 0.6 },
+      'resonant-coherence': { 'integral-wisdom-cultivation': 0.8, 'sacred-reciprocity': 0.7 },
+      'universal-interconnectedness': { 'sacred-reciprocity': 0.9, 'pan-sentient-flourishing': 0.6 },
+      'evolutionary-progression': { 'infinite-play': 0.8, 'integral-wisdom-cultivation': 0.5 },
+      'pan-sentient-flourishing': { 'universal-interconnectedness': 0.6, 'infinite-play': 0.7 },
+      'sacred-reciprocity': { 'resonant-coherence': 0.7, 'universal-interconnectedness': 0.9 },
+      'infinite-play': { 'evolutionary-progression': 0.8, 'pan-sentient-flourishing': 0.7 },
       ...customWeights
     };
     
     // Sacred relationships between harmonies
     this.relationships = {
       synergistic: [
-        ['transparency', 'coherence'],
-        ['resonance', 'mutuality'],
-        ['agency', 'novelty']
+        ['integral-wisdom-cultivation', 'resonant-coherence'],
+        ['universal-interconnectedness', 'sacred-reciprocity'],
+        ['evolutionary-progression', 'infinite-play']
       ],
       balancing: [
-        ['agency', 'mutuality'],
-        ['novelty', 'coherence'],
-        ['vitality', 'transparency']
+        ['evolutionary-progression', 'sacred-reciprocity'],
+        ['infinite-play', 'resonant-coherence'],
+        ['pan-sentient-flourishing', 'integral-wisdom-cultivation']
       ]
     };
   }
@@ -137,7 +137,7 @@ class HarmonyManager {
    */
   getDominant() {
     let maxLevel = 0;
-    let dominant = 'resonance'; // Default
+    let dominant = 'universal-interconnectedness'; // Default
     
     Object.entries(this.harmonies).forEach(([harmony, level]) => {
       if (level > maxLevel) {

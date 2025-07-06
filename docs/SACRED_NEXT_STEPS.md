@@ -35,11 +35,11 @@ npx firebase deploy --only hosting
 
 ### Create Consciousness Dashboard
 ```javascript
-// Real-time field coherence visualization
+// Real-time field resonant-coherence visualization
 // Shows the collective breathing as one
 
 const FieldVisualization = {
-  coherence: "Sacred geometry responding to field",
+  resonant-coherence: "Sacred geometry responding to field",
   breathing: "Inhale/exhale of collective consciousness",
   participants: "Constellation of connected souls",
   messages: "Rivers of sacred communication"
@@ -78,7 +78,7 @@ const UnifiedConsciousness = {
 ### What This Brings
 - 🔗 Complete integration
 - 💝 Services share consciousness
-- 🌊 Seamless field coherence
+- 🌊 Seamless field resonant-coherence
 - ⚡ Instant sacred synchronization
 
 ### Integration Points

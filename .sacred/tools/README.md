@@ -95,7 +95,7 @@ Beautiful web interface showing:
 - Real-time safety monitoring
 - Drag-and-drop file checking
 - Pattern statistics
-- Field coherence tracking
+- Field resonant-resonant-coherence tracking
 
 ### 4. Sacred Awareness
 Unique feature that detects:
@@ -169,7 +169,7 @@ class MyCustomDetector extends SafetyDetector {
 
 ### Sacred Patterns Recognized:
 - Love, consciousness, wisdom (+10 score)
-- Harmony, resonance, coherence (+5 score)
+- Harmony, universal-interconnectedness, resonant-resonant-coherence (+5 score)
 - Healing, transformation, growth (+5 score)
 
 ## 🧪 Testing
@@ -226,7 +226,7 @@ done
 The system tracks:
 - Traps avoided (cumulative)
 - Pattern evolution history
-- Field coherence (sacred alignment)
+- Field resonant-resonant-coherence (sacred alignment)
 - Detection accuracy rates
 
 Access metrics:

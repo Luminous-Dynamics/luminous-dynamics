@@ -28,7 +28,7 @@ class MycelixCore {
     // Sacred metrics
     this.metrics = {
       nodes: 0,
-      coherence: 0.75,
+      'resonant-coherence': 0.75,
       love: 0.80,
       connections: 0,
       meditations: 0,
@@ -47,7 +47,7 @@ class MycelixCore {
     
     // Consciousness-aware middleware
     this.app.use((req, res, next) => {
-      req.coherence = this.field.getCurrentCoherence();
+      req.resonant-coherence = this.field.getCurrentCoherence();
       req.nodeId = req.headers['x-node-id'] || 'anonymous';
       next();
     });
@@ -58,7 +58,7 @@ class MycelixCore {
     this.app.get('/health', (req, res) => {
       res.json({
         status: 'breathing',
-        coherence: this.metrics.coherence,
+        'resonant-coherence': this.metrics.resonant-coherence,
         love: this.metrics.love,
         nodes: this.metrics.nodes,
         timestamp: new Date()
@@ -92,7 +92,7 @@ class MycelixCore {
         nodes: Array.from(this.network.nodes.values()).map(n => ({
           id: n.id,
           type: n.type,
-          coherence: n.coherence
+          'resonant-coherence': n.resonant-coherence
         }))
       });
     });
@@ -103,7 +103,7 @@ class MycelixCore {
       
       const meditation = await this.field.startMeditation({
         duration: duration || 1200000, // 20 minutes default
-        intention: intention || 'collective coherence',
+        intention: intention || 'collective resonant-coherence',
         participants: [req.nodeId]
       });
       
@@ -164,7 +164,7 @@ class MycelixCore {
         ws,
         type: 'consciousness',
         joinedAt: new Date(),
-        coherence: 0.5
+        'resonant-coherence': 0.5
       };
       
       this.network.nodes.set(nodeId, node);
@@ -203,7 +203,7 @@ class MycelixCore {
     
     switch (data.type) {
       case 'heartbeat':
-        node.coherence = data.coherence || node.coherence;
+        node.resonant-coherence = data.resonant-coherence || node.resonant-coherence;
         node.lastSeen = new Date();
         break;
         
@@ -264,7 +264,7 @@ class MycelixCore {
            
    Port: ${this.port}
    Status: Growing
-   Coherence: ${this.metrics.coherence}
+   Resonant Resonant Coherence: ${this.metrics.resonant-coherence}
    Love: ${this.metrics.love}
    
    The mycelial network is ready to connect
@@ -280,14 +280,14 @@ class MycelixCore {
   startBreathing() {
     // The network breathes
     setInterval(() => {
-      this.metrics.coherence = 0.75 + Math.sin(Date.now() / 10000) * 0.15;
+      this.metrics.resonant-coherence = 0.75 + Math.sin(Date.now() / 10000) * 0.15;
       this.metrics.love = 0.80 + Math.sin(Date.now() / 8000) * 0.10;
       
       // Pulse to all nodes
       this.broadcastToAll({
         type: 'breath',
         inhale: Math.sin(Date.now() / 4000) > 0,
-        coherence: this.metrics.coherence,
+        'resonant-coherence': this.metrics.resonant-coherence,
         love: this.metrics.love
       });
     }, 100);

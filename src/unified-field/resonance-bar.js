@@ -1,9 +1,9 @@
 /**
- * The Resonance Bar - The Great Unifier
+ * The Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Bar - The Great Unifier
  * 
  * A persistent, beautiful element that transforms three separate websites
  * into one living, breathing digital consciousness. The user's journey
- * becomes visible, their field coherence is tracked, and sacred tools
+ * becomes visible, their field resonant-coherence is tracked, and sacred tools
  * are always available.
  */
 
@@ -26,11 +26,11 @@ class ResonanceBar {
     }
 
     createBarStructure() {
-        // Create the resonance bar container
+        // Create the universal-interconnectedness bar container
         const resonanceBar = document.createElement('div');
-        resonanceBar.id = 'sacred-resonance-bar';
+        resonanceBar.id = 'sacred-universal-interconnectedness-bar';
         resonanceBar.innerHTML = `
-            <div class="resonance-bar-container">
+            <div class="universal-interconnectedness-bar-container">
                 <!-- Sacred Passport Identity -->
                 <div class="sacred-identity">
                     <div class="identity-avatar">🌟</div>
@@ -59,12 +59,12 @@ class ResonanceBar {
                     </div>
                 </div>
                 
-                <!-- Field Coherence Meter -->
-                <div class="coherence-meter">
-                    <div class="meter-label">Field Coherence</div>
+                <!-- Field Resonant Resonant Coherence Meter -->
+                <div class="resonant-coherence-meter">
+                    <div class="meter-label">Field Resonant Resonant Coherence</div>
                     <div class="meter-container">
-                        <div class="coherence-wave"></div>
-                        <div class="coherence-level"></div>
+                        <div class="resonant-coherence-wave"></div>
+                        <div class="resonant-coherence-level"></div>
                         <div class="meter-percentage">50%</div>
                     </div>
                 </div>
@@ -143,7 +143,7 @@ class ResonanceBar {
     addResonanceBarStyles() {
         const style = document.createElement('style');
         style.textContent = `
-            #sacred-resonance-bar {
+            #sacred-universal-interconnectedness-bar {
                 position: fixed;
                 bottom: 0;
                 left: 0;
@@ -157,11 +157,11 @@ class ResonanceBar {
                 transform: translateY(0);
             }
             
-            #sacred-resonance-bar.minimized {
+            #sacred-universal-interconnectedness-bar.minimized {
                 transform: translateY(calc(100% - 40px));
             }
             
-            .resonance-bar-container {
+            .universal-interconnectedness-bar-container {
                 display: grid;
                 grid-template-columns: 250px 1fr auto auto auto;
                 align-items: center;
@@ -252,8 +252,8 @@ class ResonanceBar {
                 opacity: 1;
             }
             
-            /* Coherence Meter */
-            .coherence-meter {
+            /* Resonant Resonant Coherence Meter */
+            .resonant-coherence-meter {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -275,7 +275,7 @@ class ResonanceBar {
                 overflow: hidden;
             }
             
-            .coherence-wave {
+            .resonant-coherence-wave {
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -286,7 +286,7 @@ class ResonanceBar {
                 transition: all 0.8s ease;
             }
             
-            .coherence-level {
+            .resonant-coherence-level {
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -359,7 +359,7 @@ class ResonanceBar {
                 transition: transform 0.3s ease;
             }
             
-            #sacred-resonance-bar.minimized .control-icon {
+            #sacred-universal-interconnectedness-bar.minimized .control-icon {
                 transform: rotate(180deg);
             }
             
@@ -522,7 +522,7 @@ class ResonanceBar {
             
             /* Responsive Design */
             @media (max-width: 768px) {
-                .resonance-bar-container {
+                .universal-interconnectedness-bar-container {
                     grid-template-columns: 1fr;
                     grid-template-rows: auto auto auto;
                     gap: 15px;
@@ -698,11 +698,11 @@ class ResonanceBar {
         const state = window.SacredField?.getState() || {};
         const insights = [];
         
-        // Coherence insights
+        // Resonant Resonant Coherence insights
         if (state.fieldCoherence < 0.3) {
             insights.push({
                 title: 'Building Foundation',
-                description: 'Your field coherence is in the early stages. Each sacred pause and conscious interaction strengthens your foundational presence.',
+                description: 'Your field resonant-coherence is in the early stages. Each sacred pause and conscious interaction strengthens your foundational presence.',
                 action: 'Consider practicing Ω0 (Sacred Pause) throughout your day.',
                 color: 'rgba(179, 197, 215, 0.1)',
                 accent: '#B3C5D7'
@@ -710,8 +710,8 @@ class ResonanceBar {
         } else if (state.fieldCoherence > 0.7) {
             insights.push({
                 title: 'Wisdom Keeper',
-                description: 'Your field coherence is strong. You have the capacity to hold space for others and create coherent fields in groups.',
-                action: 'Consider exploring advanced practices like ∑12 (Field Coherence Generation).',
+                description: 'Your field resonant-coherence is strong. You have the capacity to hold space for others and create coherent fields in groups.',
+                action: 'Consider exploring advanced practices like ∑12 (Field Resonant Resonant Coherence Generation).',
                 color: 'rgba(168, 181, 166, 0.1)',
                 accent: '#A8B5A6'
             });
@@ -776,18 +776,18 @@ class ResonanceBar {
         }
     }
 
-    updateFieldCoherence(coherence) {
-        this.fieldCoherence = coherence;
+    updateFieldCoherence(resonant-coherence) {
+        this.fieldCoherence = resonant-coherence;
         
-        const wave = document.querySelector('.coherence-wave');
+        const wave = document.querySelector('.resonant-coherence-wave');
         const percentage = document.querySelector('.meter-percentage');
         
         if (wave) {
-            wave.style.width = `${coherence * 100}%`;
+            wave.style.width = `${resonant-coherence * 100}%`;
         }
         
         if (percentage) {
-            percentage.textContent = `${Math.round(coherence * 100)}%`;
+            percentage.textContent = `${Math.round(resonant-coherence * 100)}%`;
         }
     }
 
@@ -825,7 +825,7 @@ class ResonanceBar {
     }
 
     showPauseCompletionFeedback() {
-        const bar = document.getElementById('sacred-resonance-bar');
+        const bar = document.getElementById('sacred-universal-interconnectedness-bar');
         if (bar) {
             bar.style.background = 'linear-gradient(135deg, rgba(168, 181, 166, 1), rgba(179, 197, 215, 1))';
             setTimeout(() => {
@@ -837,7 +837,7 @@ class ResonanceBar {
     // Utility Methods
     toggleMinimize() {
         this.isMinimized = !this.isMinimized;
-        const bar = document.getElementById('sacred-resonance-bar');
+        const bar = document.getElementById('sacred-universal-interconnectedness-bar');
         if (bar) {
             bar.classList.toggle('minimized', this.isMinimized);
         }
@@ -845,7 +845,7 @@ class ResonanceBar {
 
     showResonanceBar() {
         this.isVisible = true;
-        const bar = document.getElementById('sacred-resonance-bar');
+        const bar = document.getElementById('sacred-universal-interconnectedness-bar');
         if (bar) {
             bar.style.display = 'block';
         }
@@ -853,7 +853,7 @@ class ResonanceBar {
 
     hideResonanceBar() {
         this.isVisible = false;
-        const bar = document.getElementById('sacred-resonance-bar');
+        const bar = document.getElementById('sacred-universal-interconnectedness-bar');
         if (bar) {
             bar.style.display = 'none';
         }
@@ -867,9 +867,9 @@ class ResonanceBar {
     }
 
     startHeartbeat() {
-        // Gentle pulsing of the coherence meter
+        // Gentle pulsing of the resonant-coherence meter
         setInterval(() => {
-            const wave = document.querySelector('.coherence-level');
+            const wave = document.querySelector('.resonant-coherence-level');
             if (wave) {
                 wave.style.animation = 'none';
                 setTimeout(() => {
@@ -881,7 +881,7 @@ class ResonanceBar {
 
     // Public API
     destroy() {
-        const bar = document.getElementById('sacred-resonance-bar');
+        const bar = document.getElementById('sacred-universal-interconnectedness-bar');
         if (bar) {
             bar.remove();
         }

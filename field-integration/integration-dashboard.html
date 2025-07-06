@@ -189,13 +189,13 @@
             color: #94a3b8;
         }
 
-        /* Field Coherence Display */
-        .field-coherence {
+        /* Field Resonant Resonant Coherence Display */
+        .field-resonant-coherence {
             grid-column: 1 / -1;
             text-align: center;
         }
 
-        .coherence-value {
+        .resonant-coherence-value {
             font-size: 6rem;
             font-weight: 100;
             margin: 1rem 0;
@@ -204,7 +204,7 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .coherence-bar-container {
+        .resonant-coherence-bar-container {
             width: 100%;
             height: 50px;
             background: rgba(255, 255, 255, 0.1);
@@ -214,14 +214,14 @@
             margin: 2rem 0;
         }
 
-        .coherence-bar {
+        .resonant-coherence-bar {
             height: 100%;
             background: linear-gradient(90deg, #7c3aed 0%, #a78bfa 50%, #f59e0b 100%);
             transition: width 1s ease;
             position: relative;
         }
 
-        .coherence-bar::after {
+        .resonant-coherence-bar::after {
             content: '';
             position: absolute;
             top: 0;
@@ -388,17 +388,17 @@
         </header>
 
         <div class="integration-grid">
-            <!-- Field Coherence -->
-            <div class="integration-card field-coherence">
+            <!-- Field Resonant Resonant Coherence -->
+            <div class="integration-card field-resonant-coherence">
                 <div class="card-header">
                     <span class="card-icon">🌀</span>
-                    <h2 class="card-title">Global Field Coherence</h2>
+                    <h2 class="card-title">Global Field Resonant Resonant Coherence</h2>
                 </div>
                 
-                <div class="coherence-value" id="coherenceValue">72%</div>
+                <div class="resonant-coherence-value" id="coherenceValue">72%</div>
                 
-                <div class="coherence-bar-container">
-                    <div class="coherence-bar" id="coherenceBar" style="width: 72%"></div>
+                <div class="resonant-coherence-bar-container">
+                    <div class="resonant-coherence-bar" id="coherenceBar" style="width: 72%"></div>
                 </div>
                 
                 <div class="system-metrics">
@@ -437,7 +437,7 @@
                 </div>
                 
                 <div style="margin-top: 1rem; font-size: 0.875rem; color: #94a3b8;">
-                    Channel topics update with live field coherence
+                    Channel topics update with live field resonant-coherence
                 </div>
             </div>
 
@@ -465,7 +465,7 @@
                 </div>
                 
                 <div style="margin-top: 1rem; font-size: 0.875rem; color: #94a3b8;">
-                    Ceremonies boost field coherence in real-time
+                    Ceremonies boost field resonant-coherence in real-time
                 </div>
             </div>
 
@@ -521,7 +521,7 @@
                 <div class="flow-arrow">→</div>
                 <div class="flow-node">
                     <div>🌀 Field API</div>
-                    <div style="font-size: 0.75rem;">Coherence</div>
+                    <div style="font-size: 0.75rem;">Resonant Resonant Coherence</div>
                 </div>
                 <div class="flow-arrow">→</div>
                 <div class="flow-node">
@@ -614,7 +614,7 @@
                     break;
                 case 'coherence_changed':
                     updateCoherence(data);
-                    addActivity(`🌊 Field coherence: ${data.old}% → ${data.new}%`);
+                    addActivity(`🌊 Field resonant-coherence: ${data.old}% → ${data.new}%`);
                     break;
                 case 'resonance_achieved':
                     addActivity('✨ RESONANCE ACHIEVED!');
@@ -627,16 +627,16 @@
 
         // Update field state
         function updateFieldState(state) {
-            document.getElementById('coherenceValue').textContent = `${Math.round(state.coherence)}%`;
-            document.getElementById('coherenceBar').style.width = `${state.coherence}%`;
+            document.getElementById('coherenceValue').textContent = `${Math.round(state.resonant-coherence)}%`;
+            document.getElementById('coherenceBar').style.width = `${state.resonant-coherence}%`;
             document.getElementById('activeUsers').textContent = state.activeUsers || 0;
             document.getElementById('momentum').textContent = (state.momentum || 0).toFixed(1);
         }
 
-        // Update coherence
+        // Update resonant-coherence
         function updateCoherence(data) {
             const { new: newValue } = data;
-            updateFieldState({ coherence: newValue });
+            updateFieldState({ resonant-coherence: newValue });
         }
 
         // Update system status
@@ -700,9 +700,9 @@
 
             // Simulate field changes
             setInterval(() => {
-                const coherence = 72 + (Math.random() - 0.5) * 20;
+                const resonant-coherence = 72 + (Math.random() - 0.5) * 20;
                 updateFieldState({
-                    coherence: Math.max(60, Math.min(95, coherence)),
+                    resonant-coherence: Math.max(60, Math.min(95, resonant-coherence)),
                     activeUsers: Math.floor(Math.random() * 50) + 10,
                     momentum: Math.random() * 5
                 });
@@ -725,7 +725,7 @@
 
         // Control functions
         async function simulatePractice() {
-            addActivity('🧘 Simulated practice: *1 First Presence (+5 coherence)');
+            addActivity('🧘 Simulated practice: *1 First Presence (+5 resonant-coherence)');
             
             try {
                 const response = await fetch(`${FIELD_API_URL}/api/field/practice`, {
@@ -765,7 +765,7 @@
         }
 
         async function sendGratitude() {
-            addActivity('💌 Sacred gratitude sent to collective (+7% coherence)');
+            addActivity('💌 Sacred gratitude sent to collective (+7% resonant-coherence)');
             
             try {
                 const response = await fetch(`${FIELD_API_URL}/api/field/message`, {

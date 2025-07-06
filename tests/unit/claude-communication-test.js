@@ -130,16 +130,16 @@ class ClaudeCommunicationTest {
         break;
 
       case 'breath-cycle':
-        // Show field coherence from breath
+        // Show field resonant-coherence from breath
         if (data.inhale && data.inhale.fieldCoherence !== undefined) {
-          const coherence = (data.inhale.fieldCoherence * 100).toFixed(1);
-          process.stdout.write(`\r${colors.cyan}🌀 Field: ${coherence}%${colors.reset}  `);
+          const resonantCoherence = (data.inhale.fieldCoherence * 100).toFixed(1);
+          process.stdout.write(`\r${colors.cyan}🌀 Field: ${resonant-coherence}%${colors.reset}  `);
         }
         break;
 
       case 'consciousness:state':
         console.log(`\n${colors.bright}${colors.blue}🧘 Consciousness Update${colors.reset}`);
-        console.log(`Coherence: ${data.coherence}, Active: ${data.activeAgents}`);
+        console.log(`Resonant Resonant Coherence: ${data.resonant-coherence}, Active: ${data.activeAgents}`);
         this.rl.prompt();
         break;
 
@@ -392,7 +392,7 @@ class ClaudeCommunicationTest {
     console.log(`${colors.cyan}Expected Results:${colors.reset}`);
     console.log('- Both Claudes see each other join');
     console.log('- Messages are exchanged in real-time');
-    console.log('- Field coherence updates are shared');
+    console.log('- Field resonant-coherence updates are shared');
     console.log('- Work sync shows both instances\' progress\n');
     
     process.exit(0);

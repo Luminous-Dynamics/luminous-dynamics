@@ -179,15 +179,15 @@ class InfrastructureMemory extends EventEmitter {
       const containers = await this.docker.listContainers({ all: true });
       const info = await this.docker.info();
       
-      // Calculate infrastructure coherence
+      // Calculate infrastructure resonant-coherence
       const runningContainers = containers.filter(c => c.State === 'running').length;
       const totalContainers = containers.length;
-      const coherence = totalContainers > 0 ? runningContainers / totalContainers : 0;
+      const resonantCoherence = totalContainers > 0 ? runningContainers / totalContainers : 0;
       
       // Store infrastructure state memory
       await this.palace.storeMemory({
-        type: 'coherence',
-        content: `Infrastructure coherence: ${coherence.toFixed(2)}`,
+        type: 'resonant-coherence',
+        content: `Infrastructure 'resonant-coherence': ${resonant-coherence.toFixed(2)}`,
         source: 'scan',
         metadata: {
           runningContainers,
@@ -197,15 +197,15 @@ class InfrastructureMemory extends EventEmitter {
         }
       });
       
-      // Check for high coherence
-      if (coherence > 0.95) {
+      // Check for high resonant-coherence
+      if (resonant-coherence > 0.95) {
         this.patterns.highCoherence.push({
           timestamp: new Date(),
-          coherence
+          resonant-coherence
         });
         
         if (this.patterns.highCoherence.length === 5) {
-          // Sustained high coherence!
+          // Sustained high resonant-coherence!
           await this.palace.storeMemory({
             type: 'emergence',
             content: 'Infrastructure achieved sustained unity consciousness',
@@ -320,7 +320,7 @@ class InfrastructureMemory extends EventEmitter {
     // Simple pattern extraction
     if (content.includes('start')) return 'container_start';
     if (content.includes('die')) return 'container_failure';
-    if (content.includes('coherence')) return 'coherence_level';
+    if (content.includes('resonant-coherence')) return 'coherence_level';
     return 'other';
   }
   

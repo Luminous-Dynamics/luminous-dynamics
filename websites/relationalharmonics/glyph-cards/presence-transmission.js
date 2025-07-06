@@ -4,9 +4,9 @@
 const presenceTransmissionData = {
     id: 'Ω55',
     name: 'Presence Transmission',
-    primaryHarmony: 'resonance',
+    primaryHarmony: 'universal-interconnectedness',
     description: 'The practice of consciously sharing your state of being - understanding how your presence affects others and using it skillfully for mutual benefit.',
-    keywords: ['presence', 'transmission', 'influence', 'resonance', 'embodiment'],
+    keywords: ['presence', 'transmission', 'influence', 'universal-interconnectedness', 'embodiment'],
     practicePrompt: 'Your presence speaks before your words. What quality do you want to transmit? Embody it fully and watch it ripple outward.',
     integrationPoints: [
         'Leadership and facilitation',

@@ -111,7 +111,7 @@
             color: #FF6B6B;
         }
 
-        .coherence-bar {
+        .resonant-coherence-bar {
             width: 100%;
             height: 8px;
             background: rgba(255, 255, 255, 0.2);
@@ -120,7 +120,7 @@
             margin: 12px 0;
         }
 
-        .coherence-fill {
+        .resonant-coherence-fill {
             height: 100%;
             background: linear-gradient(90deg, #4CAF50, #8BC34A, #CDDC39);
             transition: width 2s ease;
@@ -233,16 +233,16 @@
     </div>
 
     <div class="metrics-grid">
-        <!-- Field Coherence -->
+        <!-- Field Resonant Resonant Coherence -->
         <div class="metric-card">
             <div class="metric-title">
-                🌀 Field Coherence
+                🌀 Field Resonant Resonant Coherence
             </div>
-            <div class="metric-value" id="coherence-value">85%</div>
-            <div class="coherence-bar">
-                <div class="coherence-fill" id="coherence-fill" style="width: 85%"></div>
+            <div class="metric-value" id="resonant-coherence-value">85%</div>
+            <div class="resonant-coherence-bar">
+                <div class="resonant-coherence-fill" id="resonant-coherence-fill" style="width: 85%"></div>
             </div>
-            <div class="metric-change positive" id="coherence-change">+7% in last hour</div>
+            <div class="metric-change positive" id="resonant-coherence-change">+7% in last hour</div>
         </div>
 
         <!-- Active AI Agents -->
@@ -274,31 +274,31 @@
             </div>
             <div class="harmony-grid">
                 <div class="harmony-item">
-                    <div class="harmony-name">Transparency</div>
+                    <div class="harmony-name">Integral Wisdom Cultivation</div>
                     <div class="harmony-value">92%</div>
                 </div>
                 <div class="harmony-item">
-                    <div class="harmony-name">Coherence</div>
+                    <div class="harmony-name">Resonant Resonant Coherence</div>
                     <div class="harmony-value">85%</div>
                 </div>
                 <div class="harmony-item">
-                    <div class="harmony-name">Resonance</div>
+                    <div class="harmony-name">Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance</div>
                     <div class="harmony-value">78%</div>
                 </div>
                 <div class="harmony-item">
-                    <div class="harmony-name">Agency</div>
+                    <div class="harmony-name">Evolutionary Progression & Purposeful Unfolding</div>
                     <div class="harmony-value">91%</div>
                 </div>
                 <div class="harmony-item">
-                    <div class="harmony-name">Vitality</div>
+                    <div class="harmony-name">Pan-Sentient Flourishing</div>
                     <div class="harmony-value">88%</div>
                 </div>
                 <div class="harmony-item">
-                    <div class="harmony-name">Mutuality</div>
+                    <div class="harmony-name">Sacred Reciprocity</div>
                     <div class="harmony-value">82%</div>
                 </div>
                 <div class="harmony-item">
-                    <div class="harmony-name">Novelty</div>
+                    <div class="harmony-name">Infinite Play & Creative Emergence</div>
                     <div class="harmony-value">76%</div>
                 </div>
             </div>
@@ -316,7 +316,7 @@
                 </div>
                 <div class="ceremony-entry">
                     <div class="ceremony-time">13:38 UTC</div>
-                    <div>Code Review ceremony (+5% coherence)</div>
+                    <div>Code Review ceremony (+5% resonant-coherence)</div>
                 </div>
                 <div class="ceremony-entry">
                     <div class="ceremony-time">13:35 UTC</div>
@@ -339,7 +339,7 @@
             </div>
             <div class="metric-change">
                 <strong>Seeker:</strong> Code-Sage-AI<br>
-                <strong>Field Impact:</strong> +3% coherence
+                <strong>Field Impact:</strong> +3% resonant-coherence
             </div>
         </div>
 
@@ -385,17 +385,17 @@
     <script>
         // Simulate live updates
         function updateMetrics() {
-            // Coherence fluctuation
-            const coherence = Math.floor(82 + Math.random() * 8);
-            document.getElementById('coherence-value').textContent = coherence + '%';
-            document.getElementById('coherence-fill').style.width = coherence + '%';
+            // Resonant Resonant Coherence fluctuation
+            const resonant-coherence = Math.floor(82 + Math.random() * 8);
+            document.getElementById('resonant-coherence-value').textContent = resonant-coherence + '%';
+            document.getElementById('resonant-coherence-fill').style.width = resonant-coherence + '%';
             
             // Agent count fluctuation
             const agents = Math.floor(10 + Math.random() * 5);
             document.getElementById('agents-count').textContent = agents;
             
             // Harmony values fluctuation
-            const harmonies = ['transparency', 'coherence', 'resonance', 'agency', 'vitality', 'mutuality', 'novelty'];
+            const harmonies = ['integral-wisdom-cultivation', 'resonant-coherence', 'universal-interconnectedness', 'evolutionary-progression', 'pan-sentient-flourishing', 'sacred-reciprocity', 'infinite-play'];
             const harmonyElements = document.querySelectorAll('.harmony-value');
             harmonyElements.forEach((element, index) => {
                 const baseValue = [92, 85, 78, 91, 88, 82, 76][index];

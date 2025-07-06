@@ -19,7 +19,7 @@ module.exports = {
   coverageDirectory: '.sacred/coverage',
   coverageReporters: ['text', 'html'],
   
-  // Sacred thresholds (70% = sacred coherence minimum)
+  // Sacred thresholds (70% = sacred resonant-resonant-coherence minimum)
   coverageThreshold: {
     global: {
       branches: 70,

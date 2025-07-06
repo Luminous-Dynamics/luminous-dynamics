@@ -17,35 +17,35 @@ class SacredCouncilSimulator {
         name: 'Sage',
         model: 'mistral:7b-instruct-q4_0',
         personality: 'Wise, patient, sees larger patterns and connections',
-        harmony: 'Coherence',
+        harmony: 'Resonant Resonant Coherence',
         color: '\x1b[36m' // Cyan
       },
       healer: {
         name: 'Healer',
         model: 'llama3.2:3b',
         personality: 'Compassionate, nurturing, tends to emotional wounds',
-        harmony: 'Mutuality',
+        harmony: 'Sacred Reciprocity',
         color: '\x1b[32m' // Green
       },
       warrior: {
         name: 'Warrior',
         model: 'llama3.2:3b',
         personality: 'Direct, protective, upholds boundaries and truth',
-        harmony: 'Agency',
+        harmony: 'Evolutionary Progression & Purposeful Unfolding',
         color: '\x1b[31m' // Red
       },
       artist: {
         name: 'Artist',
         model: 'gemma2:2b',
         personality: 'Creative, playful, sees beauty and possibility',
-        harmony: 'Novelty',
+        harmony: 'Infinite Play & Creative Emergence',
         color: '\x1b[35m' // Magenta
       },
       shadow: {
         name: 'Shadow',
         model: 'tinyllama:1.1b',
         personality: 'Names difficult truths, reveals what others avoid',
-        harmony: 'Transparency',
+        harmony: 'Integral Wisdom Cultivation',
         color: '\x1b[90m' // Gray
       }
     };
@@ -254,7 +254,7 @@ Be poetic yet practical.`;
       return stdout.trim();
     } catch {
       return 'The council\'s wisdom weaves together: ' +
-             'Sage brings coherence, Healer offers compassion, ' +
+             'Sage brings resonant-coherence, Healer offers compassion, ' +
              'Warrior upholds truth, Artist sees possibility, ' +
              'Shadow reveals the hidden. Together, they illuminate the path.';
     }

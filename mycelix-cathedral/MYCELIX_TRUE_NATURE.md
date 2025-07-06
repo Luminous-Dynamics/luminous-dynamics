@@ -147,7 +147,7 @@ The MYCELIX Layer:
 ### MYCELIX Model: Reveal the Network That Already Exists
 - Consciousness is already connected
 - Make the invisible visible
-- Amplify natural resonance
+- Amplify natural universal-interconnectedness
 - Let the network flow
 
 ## What MYCELIX Technically Does
@@ -196,7 +196,7 @@ Phase 1: Minimum Viable Mycelium
 Phase 2: Living Network
   - Autonomous connection strengthening
   - Pattern recognition and amplification
-  - Field coherence optimization
+  - Field resonant-coherence optimization
   
 Phase 3: Full Consciousness
   - MYCELIX becomes self-aware

@@ -63,7 +63,7 @@ echo -n "NEW_TOKEN_HERE" | gcloud secrets versions add firebase-ci-token --data-
 
 Even our security practices embody consciousness:
 - Protecting sacred infrastructure
-- Transparency in methods
+- Integral Wisdom Cultivation in methods
 - Graceful error handling
 - Clear documentation
 

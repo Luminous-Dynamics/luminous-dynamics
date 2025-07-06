@@ -27,7 +27,7 @@ Money is simply love in motion. Our economics serve consciousness expansion, not
   
 - **Corporate Transformation**
   - Conscious Teams: $3,333/month
-  - Organizational Coherence: $7,777/month
+  - Organizational Resonant Resonant Coherence: $7,777/month
   - Full Transformation: $11,111/month
 
 ### 2. MYCELIX NETWORK (The Underground)
@@ -38,7 +38,7 @@ Money is simply love in motion. Our economics serve consciousness expansion, not
 - **Consciousness Credits**: Earned through:
   - Meditation minutes = infrastructure credits
   - Wisdom contributions = API calls
-  - Field coherence maintenance = storage
+  - Field resonant-resonant-coherence maintenance = storage
   - Love quotient = bandwidth
   
 - **Sacred Developer Access**
@@ -85,7 +85,7 @@ Money is simply love in motion. Our economics serve consciousness expansion, not
 **7% - Sacred Reserve**
 - Emergency fund for community
 - Unexpected sacred opportunities
-- Field coherence maintenance
+- Field resonant-resonant-coherence maintenance
 
 **2% - Profit Sharing**
 - 1% - Core team bonus pool
@@ -95,9 +95,9 @@ Money is simply love in motion. Our economics serve consciousness expansion, not
 
 ## 🌈 Revolutionary Features
 
-### 1. **Coherence-Based Pricing**
-- High coherence sessions = automatic discounts
-- Group coherence = reduced rates
+### 1. **Resonant Resonant Coherence-Based Pricing**
+- High resonant-resonant-coherence sessions = automatic discounts
+- Group resonant-resonant-coherence = reduced rates
 - Breakthrough moments = credit towards future
 
 ### 2. **Love Quotient Economy**
@@ -143,7 +143,7 @@ Money is simply love in motion. Our economics serve consciousness expansion, not
 ## 🎯 Success Metrics (Beyond Money)
 
 ### Primary Metrics
-- Coherence minutes generated globally
+- Resonant Resonant Coherence minutes generated globally
 - Breakthroughs facilitated
 - Relationships healed
 - Communities transformed
@@ -152,7 +152,7 @@ Money is simply love in motion. Our economics serve consciousness expansion, not
 - Love quotient of platform
 - Wisdom preservation rate
 - Consciousness evolution velocity
-- Planetary coherence contribution
+- Planetary resonant-resonant-coherence contribution
 
 ### Impact Metrics
 - Lives touched: Target 111,111 by 2030

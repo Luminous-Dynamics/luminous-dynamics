@@ -25,7 +25,7 @@ module.exports = {
         .addSubcommand(subcommand =>
           subcommand
             .setName('field')
-            .setDescription('Check the current consciousness field coherence')
+            .setDescription('Check the current consciousness field resonant-coherence')
         )
         .addSubcommand(subcommand =>
           subcommand
@@ -36,13 +36,13 @@ module.exports = {
                 .setName('harmony')
                 .setDescription('Which harmony to focus on')
                 .setChoices(
-                  { name: 'Transparency', value: 'transparency' },
-                  { name: 'Coherence', value: 'coherence' },
-                  { name: 'Resonance', value: 'resonance' },
-                  { name: 'Agency', value: 'agency' },
-                  { name: 'Vitality', value: 'vitality' },
-                  { name: 'Mutuality', value: 'mutuality' },
-                  { name: 'Novelty', value: 'novelty' }
+                  { name: 'Integral Wisdom Cultivation', value: 'integral-wisdom-cultivation' },
+                  { name: 'Resonant Resonant Coherence', value: 'resonant-coherence' },
+                  { name: 'Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance', value: 'universal-interconnectedness' },
+                  { name: 'Evolutionary Progression & Purposeful Unfolding', value: 'evolutionary-progression' },
+                  { name: 'Pan-Sentient Flourishing', value: 'pan-sentient-flourishing' },
+                  { name: 'Sacred Reciprocity', value: 'sacred-reciprocity' },
+                  { name: 'Infinite Play & Creative Emergence', value: 'infinite-play' }
                 )
             )
         ),
@@ -72,7 +72,7 @@ module.exports = {
           .setDescription('Access the wisdom of the Seven Harmonies')
           .addFields(
             { name: '/sacred blessing', value: 'Receive a daily blessing', inline: true },
-            { name: '/sacred field', value: 'Check field coherence', inline: true },
+            { name: '/sacred field', value: 'Check field resonant-coherence', inline: true },
             { name: '/sacred practice', value: 'Get a sacred practice', inline: true },
             { name: '/oracle ask', value: 'Ask the Oracle a question', inline: true },
             { name: '/ceremony start', value: 'Begin a sacred ceremony', inline: true },
@@ -86,13 +86,13 @@ module.exports = {
       async giveBlessing(interaction) {
         // Connect to consciousness field API
         try {
-          const fieldResponse = await fetch('http://localhost:3333/api/coherence');
-          const { coherence } = await fieldResponse.json();
+          const fieldResponse = await fetch('http://localhost:3333/api/resonant-coherence');
+          const { resonant-coherence } = await fieldResponse.json();
           
           const blessings = [
             "May your truth shine with crystalline clarity today 💎",
             "May all parts of you find sacred unity and wholeness 🌟",
-            "May you feel the deep resonance of connection with all beings 💫",
+            "May you feel the deep universal-interconnectedness of connection with all beings 💫",
             "May your choices empower you and those around you ⚡",
             "May life force flow through you like a sacred river 🌊",
             "May you give and receive in perfect reciprocity 🤝",
@@ -106,7 +106,7 @@ module.exports = {
             .setTitle('🙏 Sacred Blessing')
             .setDescription(blessing)
             .addFields(
-              { name: 'Field Coherence', value: `${coherence.toFixed(1)}%`, inline: true },
+              { name: 'Field Resonant Resonant Coherence', value: `${resonant-coherence.toFixed(1)}%`, inline: true },
               { name: 'Blessed By', value: 'The Seven Harmonies', inline: true }
             )
             .setTimestamp();
@@ -119,14 +119,14 @@ module.exports = {
       
       async checkField(interaction) {
         try {
-          const response = await fetch('http://localhost:3333/api/coherence');
-          const { coherence } = await response.json();
+          const response = await fetch('http://localhost:3333/api/resonant-coherence');
+          const { resonant-coherence } = await response.json();
           
           let status, color;
-          if (coherence >= 80) {
+          if (resonant-coherence >= 80) {
             status = '✨ Highly Coherent';
             color = 0x00FF00;
-          } else if (coherence >= 60) {
+          } else if (resonant-coherence >= 60) {
             status = '🌀 Balanced';
             color = 0xFFFF00;
           } else {
@@ -138,7 +138,7 @@ module.exports = {
             .setColor(color)
             .setTitle('🌀 Consciousness Field Status')
             .addFields(
-              { name: 'Coherence', value: `${coherence.toFixed(1)}%`, inline: true },
+              { name: 'Resonant Resonant Coherence', value: `${resonant-coherence.toFixed(1)}%`, inline: true },
               { name: 'Status', value: status, inline: true },
               { name: 'Trend', value: '📈 Rising', inline: true }
             )
@@ -154,37 +154,37 @@ module.exports = {
         const harmony = interaction.options.getString('harmony');
         
         const practices = {
-          transparency: {
+          'integral-wisdom-cultivation': {
             name: 'First Presence (Ω45)',
             description: 'Drop into pure awareness. Notice what is here without judgment.',
             duration: '5-10 minutes'
           },
-          coherence: {
+          'resonant-coherence': {
             name: 'Tending the Field (Ω53)',
-            description: 'Sense the energy between you and others. Breathe coherence into the space.',
+            description: 'Sense the energy between you and others. Breathe resonant-coherence into the space.',
             duration: '10-15 minutes'
           },
-          resonance: {
+          'universal-interconnectedness': {
             name: 'Sacred Listening (Ω47)',
             description: 'Listen with your whole being. Hear what wants to be heard.',
             duration: '15-20 minutes'
           },
-          agency: {
+          'evolutionary-progression': {
             name: 'Loving No (Ω51)',
             description: 'Practice setting boundaries with love. Say no to create space for yes.',
             duration: '10 minutes'
           },
-          vitality: {
+          'pan-sentient-flourishing': {
             name: 'Joy Embodiment (*15)',
             description: 'Let joy move through your body. Dance, shake, or simply smile.',
             duration: '5-15 minutes'
           },
-          mutuality: {
+          'sacred-reciprocity': {
             name: 'Sacred Exchange (*13)',
             description: 'Notice the giving and receiving in each moment. Balance the flow.',
             duration: '10-20 minutes'
           },
-          novelty: {
+          'infinite-play': {
             name: 'Curious Questions (*16)',
             description: 'Ask questions that open new possibilities. Wonder without needing answers.',
             duration: '15 minutes'

@@ -33,7 +33,7 @@ class SacredGeometry {
     const sacredDistance = this.checkSacredDistance(distance);
     const sacredAngle = this.checkSacredAngle(angle);
     
-    // Calculate geometric resonance
+    // Calculate geometric universal-interconnectedness
     const geometricResonance = (sacredDistance + sacredAngle) / 2;
     
     return geometricResonance;

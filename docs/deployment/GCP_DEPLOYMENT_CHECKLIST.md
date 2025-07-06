@@ -56,13 +56,13 @@
 - [ ] **Metrics to Track**
   - Active WebSocket connections
   - Message throughput
-  - Field coherence levels
+  - Field resonant-coherence levels
   - Error rates
 
 - [ ] **Alerts Needed**
   - Connection spike alerts
   - Error rate threshold
-  - Coherence drop alerts
+  - Resonant Resonant Coherence drop alerts
   - Cost budget alerts
 
 ### 4. 🔄 High Availability
@@ -149,7 +149,7 @@
   - Connection spike handling
   - Memory leak detection
   - Stuck breath cycles
-  - Field coherence anomalies
+  - Field resonant-coherence anomalies
 
 - [ ] **Emergency Procedures**
   - Who to contact?

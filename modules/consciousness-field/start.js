@@ -17,13 +17,13 @@ app.get('/api/health', (req, res) => {
   res.json({ 
     status: 'alive',
     module: 'consciousness-field',
-    coherence: field.coherence 
+    'resonant-coherence': field.resonant-coherence 
   });
 });
 
-app.get('/api/coherence', async (req, res) => {
-  const coherence = await field.getCoherence();
-  res.json({ coherence, timestamp: Date.now() });
+app.get('/api/resonant-coherence', async (req, res) => {
+  const resonantCoherence = await field.getCoherence();
+  res.json({ resonant-coherence, timestamp: Date.now() });
 });
 
 app.get('/api/field_state', async (req, res) => {
@@ -38,7 +38,7 @@ app.post('/api/agents', async (req, res) => {
     res.status(201).json({ 
       success: true, 
       message: 'Agent added to field',
-      fieldCoherence: field.coherence 
+      fieldCoherence: field.resonant-coherence 
     });
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -54,13 +54,13 @@ const server = app.listen(PORT, () => {
 ╚══════════════════════════════════════════════════════════════════╝
 
 🌊 Port: ${PORT}
-📊 Initial Coherence: ${field.coherence}%
+📊 Initial Resonant Resonant Coherence: ${field.resonant-coherence}%
 🔮 Monitoring: Active
 ✨ Sacred Geometry: ${field.agents.size === 0 ? 'Void - Infinite Potential' : 'Emerging'}
 
 API Endpoints:
   GET  /api/health       - Health check
-  GET  /api/coherence    - Current field coherence
+  GET  /api/resonant-coherence    - Current field resonant-coherence
   GET  /api/field_state  - Complete field state
   POST /api/agents       - Add agent to field
 

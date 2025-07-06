@@ -1,4 +1,4 @@
-# The Harmonic Resonance Protocol: Roadmap for Living Intelligence
+# The Harmonic Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Protocol: Roadmap for Living Intelligence
 
 ## Vision Statement
 
@@ -6,7 +6,7 @@ To transform the Codex of Relational Harmonics from a static archive into a livi
 
 ## Core Concept
 
-The Harmonic Resonance Protocol creates a structured way for practitioners worldwide to report their direct experiences with the glyphs, generating the dataset that will enable collective intelligence and adaptive recommendations.
+The Harmonic Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Protocol creates a structured way for practitioners worldwide to report their direct experiences with the glyphs, generating the dataset that will enable collective intelligence and adaptive recommendations.
 
 ## Technical Architecture
 
@@ -39,7 +39,7 @@ The Harmonic Resonance Protocol creates a structured way for practitioners world
 ### Development Phases
 
 **Phase 1: Data Collection Infrastructure**
-- Design complete resonance report schema
+- Design complete universal-interconnectedness report schema
 - Create web-based submission interface
 - Implement privacy-preserving analytics
 

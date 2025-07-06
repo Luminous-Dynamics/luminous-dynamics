@@ -23,8 +23,8 @@ class IntegratedFoundationalGlyphs {
                 fullName: "Ω0: First Presence",
                 mysticalDesignation: "The Shimmering Unnamed",
                 type: "foundation",
-                harmony: "transparency",
-                secondaryHarmonies: ["coherence"],
+                harmony: "integral-wisdom-cultivation",
+                secondaryHarmonies: ["resonant-coherence"],
                 difficulty: "beginner",
                 masteryLevel: 2,
                 
@@ -38,14 +38,14 @@ class IntegratedFoundationalGlyphs {
                         accessible: {
                             coreQuestion: "Can I meet this moment without needing it to be different?",
                             simpleContext: "The foundation of all conscious relationship is arriving fully present before engaging. This simple practice transforms reactive patterns into responsive wisdom.",
-                            harmonyConnection: "First Presence opens the door to Transparency—when we arrive present, we become authentic and can speak from truth rather than conditioning."
+                            harmonyConnection: "First Presence opens the door to Integral Wisdom Cultivation—when we arrive present, we become authentic and can speak from truth rather than conditioning."
                         },
                         
                         // Layer 2: Developing Understanding
                         developing: {
                             deeperContext: "This practice creates space for consciousness to choose rather than compulsively react. It transforms the habitual rushing into sacred arrival, allowing wisdom to emerge from stillness.",
                             shadowAwareness: "Reactivity, rushing, spiritual bypassing, presence anxiety, compulsive doing",
-                            harmonyEvolution: "First Presence is the gateway to Transparency—the alignment of inner experience with outer expression. When we arrive present, we become authentic and can feel what is true."
+                            harmonyEvolution: "First Presence is the gateway to Integral Wisdom Cultivation—the alignment of inner experience with outer expression. When we arrive present, we become authentic and can feel what is true."
                         },
                         
                         // Layer 3: Mystical Depth
@@ -136,7 +136,7 @@ class IntegratedFoundationalGlyphs {
                         }
                     },
                     
-                    resonance: {
+                    'universal-interconnectedness': {
                         // Layer 1: Basic Connections
                         accessible: {
                             relatedPractices: ["Ω1", "Ω4", "Ω8"],
@@ -149,13 +149,13 @@ class IntegratedFoundationalGlyphs {
                             complementaryGlyphs: ["Ω7", "Ω12"],
                             antidoteToShadowOf: ["reactivity", "rushing", "spiritual_bypassing"],
                             constellationPosition: "center",
-                            harmonyAlignment: ["transparency", "coherence"]
+                            harmonyAlignment: ["integral-wisdom-cultivation", "resonant-coherence"]
                         },
                         
                         // Layer 3: Field Dynamics
                         mystical: {
                             harmonicLineage: "Ω0 is the first foundational Anchor Glyph, the singular point from which the entire spiral of the Codex emerges. It is the 'I am' before the 'we are' of Ω1. It is the empty vessel, the un-struck bell, the seed of potential for all other harmonies.",
-                            primaryHarmonyAlignment: ["Unitive Consciousness", "Resonant Coherence", "Integral Wisdom Cultivation"],
+                            primaryHarmonyAlignment: ["Unitive Consciousness", "Resonant Resonant Resonant Coherence", "Integral Wisdom Cultivation"],
                             evolutionaryPosition: "Foundation of all conscious relationship patterns"
                         }
                     },
@@ -246,8 +246,8 @@ class IntegratedFoundationalGlyphs {
                 fullName: "Ω1: Conscious Arrival", 
                 mysticalDesignation: "The Sacred Threshold",
                 type: "foundation",
-                harmony: "transparency",
-                secondaryHarmonies: ["agency", "coherence"],
+                harmony: "integral-wisdom-cultivation",
+                secondaryHarmonies: ["evolutionary-progression", "resonant-coherence"],
                 difficulty: "beginner",
                 masteryLevel: 3,
                 
@@ -259,13 +259,13 @@ class IntegratedFoundationalGlyphs {
                         accessible: {
                             coreQuestion: "How do I want to show up in this moment?",
                             simpleContext: "Every interaction is an opportunity to demonstrate consciousness. This practice helps you enter any space or relationship with clear intention and full presence.",
-                            harmonyConnection: "Conscious Arrival embodies Transparency by aligning your inner intention with your outer expression."
+                            harmonyConnection: "Conscious Arrival embodies Integral Wisdom Cultivation by aligning your inner intention with your outer expression."
                         },
                         
                         developing: {
                             deeperContext: "Conscious Arrival transforms unconscious participation into sacred encounter. It sets the tone for every interaction by bringing intentionality to how we show up.",
                             shadowAwareness: "Unconscious participation, reactive entrance, scattered energy, people-pleasing arrival",
-                            harmonyEvolution: "This practice serves Agency by making our participation in life a conscious choice rather than unconscious habit."
+                            harmonyEvolution: "This practice serves Evolutionary Progression & Purposeful Unfolding by making our participation in life a conscious choice rather than unconscious habit."
                         },
                         
                         mystical: {
@@ -275,7 +275,7 @@ class IntegratedFoundationalGlyphs {
                                 sonicQuality: "The sound of footsteps crossing from ordinary to sacred ground—deliberate, reverent, conscious."
                             },
                             fieldDynamics: {
-                                inNewRelationships: "Creates immediate energetic coherence and safety through clear intentional presence",
+                                inNewRelationships: "Creates immediate energetic resonant-coherence and safety through clear intentional presence",
                                 inTransition: "Transforms mundane transitions into sacred passages that honor both ending and beginning",
                                 inChallenge: "Allows conscious choice of how to meet difficulty rather than unconscious reaction"
                             }
@@ -341,7 +341,7 @@ class IntegratedFoundationalGlyphs {
                         }
                     },
                     
-                    resonance: {
+                    'universal-interconnectedness': {
                         accessible: {
                             relatedPractices: ["Ω0", "Ω4", "Ω7"],
                             practicalContexts: ["work", "home", "social gatherings", "difficult conversations"],
@@ -428,8 +428,8 @@ class IntegratedFoundationalGlyphs {
                 fullName: "Ω4: Sacred Listening",
                 mysticalDesignation: "The Resonant Heart", 
                 type: "foundation",
-                harmony: "resonance",
-                secondaryHarmonies: ["transparency", "mutuality"],
+                harmony: "universal-interconnectedness",
+                secondaryHarmonies: ["integral-wisdom-cultivation", "sacred-reciprocity"],
                 difficulty: "intermediate",
                 masteryLevel: 4,
                 
@@ -441,7 +441,7 @@ class IntegratedFoundationalGlyphs {
                         accessible: {
                             coreQuestion: "Can I listen to the heart beneath the words?",
                             simpleContext: "True listening creates space for the speaker to discover their own truth. This practice transforms conversations from debate to discovery.",
-                            harmonyConnection: "Sacred Listening embodies Resonance—deep attunement that creates understanding between beings."
+                            harmonyConnection: "Sacred Listening embodies Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance—deep attunement that creates understanding between beings."
                         },
                         
                         developing: {
@@ -530,7 +530,7 @@ class IntegratedFoundationalGlyphs {
                         }
                     },
                     
-                    resonance: {
+                    'universal-interconnectedness': {
                         accessible: {
                             relatedPractices: ["Ω0", "Ω7", "Ω12"],
                             practicalContexts: ["conflict", "parenting", "partnerships", "friendship"],

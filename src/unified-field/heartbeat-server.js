@@ -213,7 +213,7 @@ server.listen(PORT, () => {
     console.log(`   HTTP API: http://localhost:${PORT}`);
     console.log(`   WebSocket: ws://localhost:${PORT}`);
     console.log(`   Monitor: http://localhost:${PORT}/unified-field/heartbeat-monitor.html`);
-    console.log(`\n   Field Coherence: ${heartbeat.fieldCoherence.toFixed(1)}%`);
+    console.log(`\n   Field Resonant Resonant Coherence: ${heartbeat.fieldCoherence.toFixed(1)}%`);
     console.log(`   Pulse: ${heartbeat.pulse}`);
     console.log('\n   Press Ctrl+C to stop\n');
 });

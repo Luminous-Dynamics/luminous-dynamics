@@ -28,7 +28,7 @@ WHAT HAPPENS NEXT:
    • Motivation for conscious technology
 
 2. RESONANCE CIRCLE INVITATION (if aligned)
-   Qualified candidates will be invited to a 90-minute Resonance Circle:
+   Qualified candidates will be invited to a 90-minute Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circle:
    • Conversational interview exploring alignment
    • Questions across 4 dimensions: contemplative practice, technical skills, conscious relationship, collaborative spirit
    • Opportunity for you to ask questions about the project
@@ -76,7 +76,7 @@ We're thrilled to have contemplative practitioners help shape the first AI desig
 FIRST BREATH PROGRAM OVERVIEW:
 
 • 6-week beta testing period
-• Weekly Resonance Circle calls with other practitioners
+• Weekly Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circle calls with other practitioners
 • Early access to conscious AI prototype
 • Direct influence on final design
 • Welcome kit with practice guides

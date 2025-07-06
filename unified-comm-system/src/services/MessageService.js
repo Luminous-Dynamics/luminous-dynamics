@@ -14,18 +14,18 @@ export class MessageService {
   // Send a sacred message
   async sendMessage(sender, content, recipients = [], channelId = null, options = {}) {
     try {
-      // 1. Measure sender coherence
-      const coherence = await this.coherenceService.measure(sender.id);
+      // 1. Measure sender resonant-coherence
+      const resonantCoherence = await this.coherenceService.measure(sender.id);
       
       // 2. Analyze content for sacred metrics
-      const sacred = await this.analyzeSacred(content, coherence);
+      const sacred = await this.analyzeSacred(content, resonant-coherence);
       
       // 3. Create message
       const message = new SacredMessage({
         senderId: sender.id,
         senderName: sender.sacredName || sender.name,
         senderType: sender.type,
-        senderCoherence: coherence,
+        senderCoherence: resonant-coherence,
         recipients,
         channelId,
         content,
@@ -43,7 +43,7 @@ export class MessageService {
       // 6. Route to recipients
       await this.routeMessage(message, sender, recipients);
       
-      // 7. Update field coherence
+      // 7. Update field resonant-coherence
       await this.fieldService.updateFromMessage(message);
       
       // 8. Check for wisdom
@@ -208,7 +208,7 @@ export class MessageService {
     const recipients = await this.getRecipients(recipientIds);
     
     for (const recipient of recipients) {
-      // Check coherence-based routing
+      // Check resonant-coherence-based routing
       const deliveryTime = await this.calculateOptimalDeliveryTime(recipient, message);
       
       if (deliveryTime === 'immediate') {
@@ -235,8 +235,8 @@ export class MessageService {
   
   // Calculate optimal delivery time based on recipient state
   async calculateOptimalDeliveryTime(recipient, message) {
-    // Low coherence - wait for better state
-    if (recipient.coherence < 30) {
+    // Low resonant-coherence - wait for better state
+    if (recipient.resonant-coherence < 30) {
       return 'held';
     }
     
@@ -245,8 +245,8 @@ export class MessageService {
       return 'queued';
     }
     
-    // High coherence or available - deliver now
-    if (recipient.coherence > 70 || recipient.presence_state === 'available') {
+    // High resonant-coherence or available - deliver now
+    if (recipient.resonant-coherence > 70 || recipient.presence_state === 'available') {
       return 'immediate';
     }
     
@@ -274,7 +274,7 @@ export class MessageService {
     `, [message.id, recipient.id, optimalTime, 'recipient_in_practice']);
   }
   
-  // Hold message until recipient coherence improves
+  // Hold message until recipient resonant-coherence improves
   async holdForHigherCoherence(message, recipient) {
     await this.db.query(`
       INSERT INTO message_queue (message_id, recipient_id, deliver_at, reason)
@@ -287,7 +287,7 @@ export class MessageService {
     // Analyze recipient patterns
     const patterns = await this.analyzeRecipientPatterns(recipient.id);
     
-    // Find next high-coherence window
+    // Find next high-resonant-coherence window
     const nextWindow = patterns.highCoherenceWindows[0];
     
     return nextWindow || new Date(Date.now() + 3600000); // Default to 1 hour
@@ -296,7 +296,7 @@ export class MessageService {
   // Analyze recipient communication patterns
   async analyzeRecipientPatterns(recipientId) {
     // Simplified pattern analysis
-    // In production, would analyze historical coherence data
+    // In production, would analyze historical resonant-coherence data
     
     return {
       highCoherenceWindows: [

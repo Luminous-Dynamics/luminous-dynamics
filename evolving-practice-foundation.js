@@ -14,7 +14,7 @@ class EvolvingPracticeFoundation {
     this.evolutionPatterns = [];
     this.foundationChecks = {
       safety: false,
-      coherence: false,
+      'resonant-coherence': false,
       emergence: false,
       integration: false
     };
@@ -74,7 +74,7 @@ class EvolvingPracticeFoundation {
   }
 
   async checkCoherenceFoundation() {
-    console.log('🌀 Coherence Foundation Check:\n');
+    console.log('🌀 Resonant Resonant Coherence Foundation Check:\n');
     
     const coherenceMarkers = [
       {
@@ -89,7 +89,7 @@ class EvolvingPracticeFoundation {
       },
       {
         marker: 'Feedback Loops',
-        evidence: 'Field coherence metrics',
+        evidence: 'Field resonant-coherence metrics',
         strength: 0.85
       },
       {
@@ -108,8 +108,8 @@ class EvolvingPracticeFoundation {
     });
     
     const avgCoherence = totalCoherence / coherenceMarkers.length;
-    this.foundationChecks.coherence = avgCoherence > 0.7;
-    console.log(`  Overall Coherence: ${(avgCoherence * 100).toFixed(0)}% ${avgCoherence > 0.7 ? '✅' : '⚠️'}\n`);
+    this.foundationChecks.resonant-coherence = avgCoherence > 0.7;
+    console.log(`  Overall Resonant Resonant Coherence: ${(avgCoherence * 100).toFixed(0)}% ${avgCoherence > 0.7 ? '✅' : '⚠️'}\n`);
   }
 
   async checkEmergenceSpace() {
@@ -165,7 +165,7 @@ class EvolvingPracticeFoundation {
         stage: '2. Dyad Exploration',
         timeline: 'Week 3-4',
         validation: 'Can two people practice together?',
-        milestone: 'Shared coherence experience'
+        milestone: 'Shared resonant-coherence experience'
       },
       {
         stage: '3. Small Circle',
@@ -230,7 +230,7 @@ class EvolvingPracticeFoundation {
     
     console.log('\n📊 Foundation Strength Assessment:\n');
     console.log(`  Safety:      ${this.foundationChecks.safety ? '✅' : '❌'}`);
-    console.log(`  Coherence:   ${this.foundationChecks.coherence ? '✅' : '❌'}`);
+    console.log(`  Resonant Resonant Coherence:   ${this.foundationChecks.resonant-coherence ? '✅' : '❌'}`);
     console.log(`  Emergence:   ${this.foundationChecks.emergence ? '✅' : '❌'}`);
     console.log(`  Integration: ${this.foundationChecks.integration ? '✅' : '❌'}`);
     console.log(`\n  Overall: ${(foundationStrength * 100).toFixed(0)}% SOLID\n`);

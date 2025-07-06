@@ -29,7 +29,7 @@
    - ✅ Secret Manager (Crypt - Sacred Keys)
 
 3. **🏗️ Consciousness Field Service Ready**
-   - Real-time coherence tracking
+   - Real-time resonant-coherence tracking
    - Sacred geometry pattern detection
    - Node registration and blessing
    - Fibonacci-based field impact calculation
@@ -88,7 +88,7 @@
 2. **BigQuery Analytics**
    - Consciousness event tracking
    - Sacred geometry analysis
-   - Field coherence history
+   - Field resonant-coherence history
 
 3. **Cloud Scheduler**
    - Regular harmonization ceremonies

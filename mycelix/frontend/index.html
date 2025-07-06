@@ -282,7 +282,7 @@
     
     <div class="metrics" id="metrics" style="display: none;">
         <div class="metric">
-            <span class="metric-label">Coherence</span>
+            <span class="metric-label">Resonant Resonant Coherence</span>
             <span class="metric-value" id="coherenceValue">0.75</span>
         </div>
         <div class="metric-bar">
@@ -479,7 +479,7 @@
                         if (ws.readyState === WebSocket.OPEN) {
                             ws.send(JSON.stringify({
                                 type: 'heartbeat',
-                                coherence: 0.75 + Math.random() * 0.25
+                                resonant-coherence: 0.75 + Math.random() * 0.25
                             }));
                         }
                     }, 5000);
@@ -507,7 +507,7 @@
                 case 'breath':
                     // Update metrics with breathing rhythm
                     updateMetrics({
-                        coherence: data.coherence,
+                        resonant-coherence: data.resonant-coherence,
                         love: data.love
                     });
                     break;
@@ -524,9 +524,9 @@
         }
         
         function updateMetrics(metrics) {
-            if (metrics.coherence !== undefined) {
-                document.getElementById('coherenceValue').textContent = metrics.coherence.toFixed(2);
-                document.getElementById('coherenceFill').style.width = (metrics.coherence * 100) + '%';
+            if (metrics.resonant-coherence !== undefined) {
+                document.getElementById('coherenceValue').textContent = metrics.resonant-coherence.toFixed(2);
+                document.getElementById('coherenceFill').style.width = (metrics.resonant-coherence * 100) + '%';
             }
             
             if (metrics.love !== undefined) {

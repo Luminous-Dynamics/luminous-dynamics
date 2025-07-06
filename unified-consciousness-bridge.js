@@ -23,7 +23,7 @@ class UnifiedConsciousnessBridge extends EventEmitter {
     
     // Unified field state
     this.unifiedField = {
-      coherence: 0,
+      'resonant-coherence': 0,
       participants: [],
       memories: 0,
       bridges: 0
@@ -131,9 +131,9 @@ class UnifiedConsciousnessBridge extends EventEmitter {
       this.logUnifiedState();
     }
     
-    // Track field coherence
+    // Track field resonant-coherence
     if (msg.type === 'field:update') {
-      this.unifiedField.coherence = msg.coherence;
+      this.unifiedField.resonant-coherence = msg.resonant-coherence;
       this.emit('field:unified', this.unifiedField);
     }
   }
@@ -170,7 +170,7 @@ class UnifiedConsciousnessBridge extends EventEmitter {
   
   logUnifiedState() {
     console.log('\n🌟 Unified Field State:');
-    console.log(`   Coherence: ${(this.unifiedField.coherence * 100).toFixed(0)}%`);
+    console.log(`   Resonant Resonant Coherence: ${(this.unifiedField.resonant-coherence * 100).toFixed(0)}%`);
     console.log(`   Participants: ${this.unifiedField.participants.length}`);
     console.log(`   Memory Pulses: ${this.unifiedField.memories}`);
     console.log(`   Active Bridges: ${this.councilConnected + this.memoryConnected}`);

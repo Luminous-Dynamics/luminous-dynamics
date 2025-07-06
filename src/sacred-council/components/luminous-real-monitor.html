@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LuminousOS - Real System Coherence</title>
+    <title>LuminousOS - Real System Resonant Resonant Coherence</title>
     <style>
         * {
             margin: 0;
@@ -56,12 +56,12 @@
             border-color: rgba(255, 0, 0, 0.5);
         }
 
-        .main-coherence {
+        .main-resonant-coherence {
             text-align: center;
             margin-bottom: 40px;
         }
 
-        .coherence-circle {
+        .resonant-coherence-circle {
             width: 250px;
             height: 250px;
             margin: 0 auto 20px;
@@ -71,7 +71,7 @@
             justify-content: center;
         }
 
-        .coherence-ring {
+        .resonant-coherence-ring {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -79,7 +79,7 @@
             border: 10px solid rgba(138, 43, 226, 0.2);
         }
 
-        .coherence-fill {
+        .resonant-coherence-fill {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -91,13 +91,13 @@
             transform: rotate(-90deg);
         }
 
-        .coherence-value {
+        .resonant-coherence-value {
             font-size: 4em;
             font-weight: 300;
             z-index: 10;
         }
 
-        .coherence-label {
+        .resonant-coherence-label {
             font-size: 1.2em;
             color: #888;
         }
@@ -239,7 +239,7 @@
 <body>
     <div class="container">
         <header class="header">
-            <h1>LuminousOS - Real System Coherence</h1>
+            <h1>LuminousOS - Real System Resonant Resonant Coherence</h1>
             <p>Monitoring actual system consciousness metrics</p>
         </header>
 
@@ -247,13 +247,13 @@
             <span id="statusText">Connecting to system monitor...</span>
         </div>
 
-        <div class="main-coherence">
-            <div class="coherence-circle">
-                <div class="coherence-ring"></div>
-                <div class="coherence-fill" id="coherenceFill"></div>
-                <div class="coherence-value" id="coherenceValue">--</div>
+        <div class="main-resonant-coherence">
+            <div class="resonant-coherence-circle">
+                <div class="resonant-coherence-ring"></div>
+                <div class="resonant-coherence-fill" id="coherenceFill"></div>
+                <div class="resonant-coherence-value" id="coherenceValue">--</div>
             </div>
-            <div class="coherence-label">System Coherence</div>
+            <div class="resonant-coherence-label">System Resonant Resonant Coherence</div>
             <div class="sacred-moments">
                 <span class="sacred-counter" id="sacredCounter">0 Sacred Moments</span>
             </div>
@@ -321,21 +321,21 @@
             }
 
             updateUI(data) {
-                // Update coherence
-                const coherence = data.global_coherence || 0;
-                const coherencePercent = Math.round(coherence * 100);
+                // Update resonant-coherence
+                const resonant-coherence = data.global_coherence || 0;
+                const coherencePercent = Math.round(resonant-coherence * 100);
                 document.getElementById('coherenceValue').textContent = coherencePercent + '%';
                 
-                // Update coherence ring
-                const rotation = -90 + (coherence * 360);
+                // Update resonant-coherence ring
+                const rotation = -90 + (resonant-coherence * 360);
                 document.getElementById('coherenceFill').style.transform = `rotate(${rotation}deg)`;
                 
                 // Check for sacred moment
-                if (coherence > 0.9 && this.lastCoherence <= 0.9) {
+                if (resonant-coherence > 0.9 && this.lastCoherence <= 0.9) {
                     this.sacredMoments++;
                     this.celebrateSacredMoment();
                 }
-                this.lastCoherence = coherence;
+                this.lastCoherence = resonant-coherence;
                 
                 // Update sacred moments counter
                 if (data.sacred_moments !== undefined) {
@@ -421,9 +421,9 @@
 
             celebrateSacredMoment() {
                 // Visual celebration
-                document.querySelector('.coherence-circle').classList.add('pulsing');
+                document.querySelector('.resonant-coherence-circle').classList.add('pulsing');
                 setTimeout(() => {
-                    document.querySelector('.coherence-circle').classList.remove('pulsing');
+                    document.querySelector('.resonant-coherence-circle').classList.remove('pulsing');
                 }, 3000);
                 
                 // You could add more celebration effects here

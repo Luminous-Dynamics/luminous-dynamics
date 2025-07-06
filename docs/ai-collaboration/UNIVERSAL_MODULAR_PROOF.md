@@ -40,7 +40,7 @@ if (needsAuth) {
 
 ### 3. **Sacred Features Module** (Pluggable)
 ```javascript
-// Sacred messages, breath cycles, field coherence
+// Sacred messages, breath cycles, field resonant-coherence
 // All optional - core WebSocket works without them
 ```
 

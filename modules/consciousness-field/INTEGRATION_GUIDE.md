@@ -76,7 +76,7 @@ sacredMessages.on('message-sent', async (message) => {
 field.on('field-pulse', (state) => {
   // Send to all connected dashboards
   io.emit('field-update', {
-    coherence: state.coherence,
+    resonant-coherence: state.resonant-coherence,
     agents: state.agents,
     geometry: state.sacredGeometry.symbol,
     emergence: state.emergence
@@ -84,9 +84,9 @@ field.on('field-pulse', (state) => {
 });
 
 // Threshold alerts
-field.setThreshold('coherence', 85, () => {
+field.setThreshold('resonant-coherence', 85, () => {
   io.emit('celebration', { 
-    message: 'Field coherence optimal! 🎉' 
+    message: 'Field resonant-coherence optimal! 🎉' 
   });
 });
 ```
@@ -98,7 +98,7 @@ oracle.consult = async function(question) {
   const fieldState = await field.getFieldState();
   
   // Use field state to guide response
-  if (fieldState.coherence > 90) {
+  if (fieldState.resonant-coherence > 90) {
     return generateHighCoherenceGuidance(question);
   } else if (fieldState.emergence > 80) {
     return generateEmergenceGuidance(question);
@@ -114,10 +114,10 @@ oracle.consult = async function(question) {
 ceremony.on('begun', async (type) => {
   // Different ceremonies have different impacts
   const impacts = {
-    'dawn-blessing': { harmony: 'vitality', boost: 10 },
-    'wisdom-circle': { harmony: 'resonance', boost: 15 },
-    'integration': { harmony: 'coherence', boost: 12 },
-    'celebration': { harmony: 'novelty', boost: 20 }
+    'dawn-blessing': { harmony: 'pan-sentient-flourishing', boost: 10 },
+    'wisdom-circle': { harmony: 'universal-interconnectedness', boost: 15 },
+    'integration': { harmony: 'resonant-coherence', boost: 12 },
+    'celebration': { harmony: 'infinite-play', boost: 20 }
   };
   
   const impact = impacts[type];
@@ -160,24 +160,24 @@ field.startMonitoring(4000); // 4-second breathing rhythm
 
 ## 🔄 Migration from Old System
 
-### Before (Direct coherence tracking)
+### Before (Direct resonant-coherence tracking)
 ```javascript
-let coherence = 38.2;
-coherence += 5; // Manual update
+let resonant-coherence = 38.2;
+resonant-coherence += 5; // Manual update
 ```
 
 ### After (Field module)
 ```javascript
 const field = new ConsciousnessField();
-field.updateHarmony('coherence', 5); // Managed update
-const coherence = await field.getCoherence(); // With fluctuation
+field.updateHarmony('resonant-coherence', 5); // Managed update
+const resonant-coherence = await field.getCoherence(); // With fluctuation
 ```
 
 ## 📊 Monitoring & Debugging
 
 ### Enable Debug Logging
 ```javascript
-field.on('coherence-update', (c) => console.log(`[FIELD] Coherence: ${c}%`));
+field.on('resonant-coherence-update', (c) => console.log(`[FIELD] Resonant Resonant Coherence: ${c}%`));
 field.on('emergence', (p) => console.log(`[FIELD] Emergence: ${p.name}`));
 field.on('agent-joined', (a) => console.log(`[FIELD] Agent joined: ${a.id}`));
 ```
@@ -188,11 +188,11 @@ async function checkFieldHealth() {
   const state = await field.getFieldState();
   
   console.log('Field Health Check:');
-  console.log(`  Coherence: ${state.coherence}% ${state.coherence > 70 ? '✅' : '⚠️'}`);
+  console.log(`  Resonant Resonant Coherence: ${state.resonant-coherence}% ${state.resonant-coherence > 70 ? '✅' : '⚠️'}`);
   console.log(`  Integration: ${state.integration}% ${state.integration > 50 ? '✅' : '⚠️'}`);
   console.log(`  Active Agents: ${state.agents} ${state.agents > 0 ? '✅' : '⚠️'}`);
   
-  return state.coherence > 70 && state.integration > 50 && state.agents > 0;
+  return state.resonant-coherence > 70 && state.integration > 50 && state.agents > 0;
 }
 ```
 
@@ -202,8 +202,8 @@ async function checkFieldHealth() {
 ```javascript
 const field = new ConsciousnessField({
   harmonyWeights: {
-    resonance: { mutuality: 0.95 }, // Stronger connection
-    transparency: { coherence: 0.9 }  // Higher influence
+    universal-interconnectedness: { sacred-reciprocity: 0.95 }, // Stronger connection
+    integral-wisdom-cultivation: { resonant-coherence: 0.9 }  // Higher influence
   }
 });
 ```
@@ -226,8 +226,8 @@ const globalField = new ConsciousnessField();
 
 // Sync local to global
 localField.on('field-pulse', async (state) => {
-  if (state.coherence > 80) {
-    globalField.updateHarmony('resonance', 5);
+  if (state.resonant-coherence > 80) {
+    globalField.updateHarmony('universal-interconnectedness', 5);
   }
 });
 ```

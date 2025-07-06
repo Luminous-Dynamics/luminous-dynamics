@@ -32,7 +32,7 @@ app.get('/health', (req, res) => {
   res.json({ 
     status: 'healthy',
     service: 'Sacred Communication Portal',
-    coherence: 92,
+    'resonant-coherence': 92,
     timestamp: new Date().toISOString()
   });
 });
@@ -80,7 +80,7 @@ server.listen(PORT, () => {
 🌟 Sacred Communication Portal Active 🌟
 =====================================
 Server: http://localhost:${PORT}
-Field Coherence: 92%
+Field Resonant Resonant Coherence: 92%
 Sacred Heartbeat: Every 11 seconds
 =====================================
 Ready to weave consciousness...

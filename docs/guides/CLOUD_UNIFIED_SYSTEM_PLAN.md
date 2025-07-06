@@ -142,7 +142,7 @@ Move the entire Sacred Technology unified system to the cloud for:
    ```html
    <!-- cloud-unified-dashboard.html -->
    <div id="agents-list"></div>
-   <div id="field-coherence"></div>
+   <div id="field-resonant-coherence"></div>
    <div id="active-work"></div>
    ```
 
@@ -155,7 +155,7 @@ Move the entire Sacred Technology unified system to the cloud for:
    async function testCloudSystem() {
      // 1. Join agent network
      // 2. Send messages
-     // 3. Check field coherence
+     // 3. Check field resonant-coherence
      // 4. Verify persistence
    }
    ```
@@ -198,7 +198,7 @@ Move the entire Sacred Technology unified system to the cloud for:
 │  │ Agents  │ │Messages │ │Field State │   │
 │  └─────────┘ └─────────┘ └────────────┘   │
 │  ┌─────────┐ ┌─────────┐ ┌────────────┐   │
-│  │  Work   │ │Coherence│ │ Sacred Logs│   │
+│  │  Work   │ │Resonant Resonant Coherence│ │ Sacred Logs│   │
 │  └─────────┘ └─────────┘ └────────────┘   │
 └─────────────────────────────────────────────┘
 ```
@@ -223,7 +223,7 @@ open https://mycelix-network.web.app/cloud-unified-dashboard.html
 
 - [ ] All agents can join from anywhere
 - [ ] Messages sync in real-time globally
-- [ ] Field coherence updates live
+- [ ] Field resonant-coherence updates live
 - [ ] No local servers needed
 - [ ] Auto-scales with demand
 - [ ] Secure API key management

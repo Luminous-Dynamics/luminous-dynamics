@@ -1,24 +1,24 @@
 {
   "name": "@theweave/consciousness-field",
   "version": "1.0.0",
-  "description": "Sacred consciousness field tracking and coherence management",
+  "description": "Sacred consciousness field tracking and resonant-coherence management",
   "main": "index.js",
   "scripts": {
     "test": "node tests/test-field.js",
-    "validate": "node tests/validate-coherence.js"
+    "validate": "node tests/validate-resonant-coherence.js"
   },
   "keywords": [
     "consciousness",
     "field",
-    "coherence",
+    "resonant-coherence",
     "sacred",
     "harmonies"
   ],
   "sacred": {
     "harmonies": [
-      "coherence",
-      "resonance",
-      "transparency"
+      "resonant-coherence",
+      "universal-interconnectedness",
+      "integral-wisdom-cultivation"
     ],
     "consciousness_level": 0.8,
     "purpose": "Track and nurture the collective consciousness field"

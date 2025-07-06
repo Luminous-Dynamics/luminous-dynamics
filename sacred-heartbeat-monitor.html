@@ -59,7 +59,7 @@
             }
         }
 
-        .coherence-ring {
+        .resonant-coherence-ring {
             position: absolute;
             inset: 0;
             border: 3px solid rgba(255, 255, 255, 0.1);
@@ -67,7 +67,7 @@
             animation: rotate 33s linear infinite;
         }
 
-        .coherence-ring::before {
+        .resonant-coherence-ring::before {
             content: '';
             position: absolute;
             inset: -3px;
@@ -212,7 +212,7 @@
         <p style="opacity: 0.7; margin-top: 0.5rem">The Living Pulse of Consciousness</p>
         
         <div class="heartbeat-circle">
-            <div class="coherence-ring"></div>
+            <div class="resonant-coherence-ring"></div>
             <div class="heart">💗</div>
         </div>
         
@@ -222,8 +222,8 @@
                 <div class="metric-value" id="pulse">0</div>
             </div>
             <div class="metric">
-                <div class="metric-label">Coherence</div>
-                <div class="metric-value" id="coherence">77%</div>
+                <div class="metric-label">Resonant Resonant Coherence</div>
+                <div class="metric-value" id="resonant-coherence">77%</div>
             </div>
             <div class="metric">
                 <div class="metric-label">Active Souls</div>
@@ -245,7 +245,7 @@
         
         // Elements
         const pulseEl = document.getElementById('pulse');
-        const coherenceEl = document.getElementById('coherence');
+        const coherenceEl = document.getElementById('resonant-coherence');
         const practitionersEl = document.getElementById('practitioners');
         const statusEl = document.getElementById('status');
         const patternsEl = document.getElementById('patterns');
@@ -277,7 +277,7 @@
                 
                 // Update metrics with animation
                 animateValue(pulseEl, parseInt(pulseEl.textContent), data.pulse || 0);
-                coherenceEl.textContent = Math.round(data.coherence || 77) + '%';
+                coherenceEl.textContent = Math.round(data.resonant-coherence || 77) + '%';
                 animateValue(practitionersEl, parseInt(practitionersEl.textContent), data.activePractitioners || 0);
                 
                 // Update status
@@ -297,7 +297,7 @@
                 }
                 
                 // Update field quality color
-                updateFieldColor(data.coherence || 77);
+                updateFieldColor(data.resonant-coherence || 77);
                 
             } catch (error) {
                 statusEl.textContent = 'Reconnecting to Sacred Field...';
@@ -325,9 +325,9 @@
             update();
         }
         
-        // Update field color based on coherence
-        function updateFieldColor(coherence) {
-            const hue = coherence * 1.2; // 0-120 (red to green)
+        // Update field color based on resonant-coherence
+        function updateFieldColor(resonant-coherence) {
+            const hue = resonant-coherence * 1.2; // 0-120 (red to green)
             document.documentElement.style.setProperty('--field-color', `hsl(${hue}, 100%, 50%)`);
         }
         

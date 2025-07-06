@@ -301,7 +301,7 @@ class FirestoreBenchmark {
         
         console.log('\n📈 OPTIMIZATION RECOMMENDATIONS\n');
         console.log('1. **Sharded Counters**: Best for high-frequency counter updates');
-        console.log('   - Use 10-20 shards for field coherence tracking');
+        console.log('   - Use 10-20 shards for field resonant-coherence tracking');
         console.log('   - Distribute writes randomly across shards');
         console.log('   - Aggregate on read for total value\n');
         
@@ -331,8 +331,8 @@ class FirestoreBenchmark {
         console.log('```javascript');
         console.log('// Hybrid approach for The Weave');
         console.log('fieldState: {');
-        console.log('  // Sharded counters for real-time coherence');
-        console.log('  global/shards/[0-9]: { coherence: increment(n) },');
+        console.log('  // Sharded counters for real-time resonant-coherence');
+        console.log('  global/shards/[0-9]: { 'resonant-coherence': increment(n) },');
         console.log('  ');
         console.log('  // Time-bucketed for analytics');
         console.log('  metrics/2025-01-02-14-30: { updates: 147, avgCoherence: 76 },');

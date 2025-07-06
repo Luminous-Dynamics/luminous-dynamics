@@ -1,11 +1,11 @@
 /**
- * Biometric Heart Coherence Field Integration
+ * Biometric Heart Resonant Resonant Coherence Field Integration
  * 
  * Synchronizes breathing consciousness with users' actual heart rhythms:
- * - Heart Rate Variability (HRV) coherence measurement
+ * - Heart Rate Variability (HRV) resonant-coherence measurement
  * - Real-time breathing guidance based on cardiac rhythm
- * - Field coherence enhanced by biological harmony
- * - Progressive coherence training through biometric feedback
+ * - Field resonant-coherence enhanced by biological harmony
+ * - Progressive resonant-coherence training through biometric feedback
  * 
  * Extends cosmic breathing with personal biometric wisdom
  */
@@ -14,7 +14,7 @@ class BiometricHeartCoherence {
     constructor(options = {}) {
         this.options = {
             enableHeartSync: options.enableHeartSync !== false,
-            coherenceTarget: options.coherenceTarget || 0.5, // Target coherence level
+            coherenceTarget: options.coherenceTarget || 0.5, // Target resonant-coherence level
             adaptiveGuidance: options.adaptiveGuidance !== false,
             privacyMode: options.privacyMode !== false, // No biometric data storage
             debugMode: options.debugMode || false,
@@ -24,7 +24,7 @@ class BiometricHeartCoherence {
         this.heartData = {
             heartRate: 70,
             hrv: 0,
-            coherence: 0,
+            'resonant-coherence': 0,
             rhythm: 'baseline',
             lastBeat: null,
             beatInterval: []
@@ -50,7 +50,7 @@ class BiometricHeartCoherence {
     // === INITIALIZATION ===
 
     initialize() {
-        this.log('💓 Initializing Biometric Heart Coherence integration...');
+        this.log('💓 Initializing Biometric Heart Resonant Resonant Coherence integration...');
         
         this.detectAvailableDevices();
         this.setupPrivacyProtocols();
@@ -60,7 +60,7 @@ class BiometricHeartCoherence {
             this.startHeartMonitoring();
         }
         
-        this.log('✨ Heart coherence field integration ready');
+        this.log('✨ Heart resonant-coherence field integration ready');
     }
 
     checkDeviceSupport() {
@@ -250,21 +250,21 @@ class BiometricHeartCoherence {
             this.heartData.lastBeat = now;
         }
 
-        // Update coherence metrics
+        // Update resonant-coherence metrics
         this.calculateHeartCoherence();
         this.updateBreathingGuidance();
         this.updateFieldCoherence();
 
-        // Dispatch heart coherence update
-        document.dispatchEvent(new CustomEvent('heart-coherence:updated', {
+        // Dispatch heart resonant-coherence update
+        document.dispatchEvent(new CustomEvent('heart-resonant-coherence:updated', {
             detail: {
                 heartData: { ...this.heartData },
-                coherence: { ...this.coherenceState },
+                'resonant-coherence': { ...this.coherenceState },
                 timestamp: now
             }
         }));
 
-        this.log(`💓 Heart: ${this.heartData.heartRate} BPM | Coherence: ${(this.heartData.coherence * 100).toFixed(1)}%`);
+        this.log(`💓 Heart: ${this.heartData.heartRate} BPM | Resonant Resonant Coherence: ${(this.heartData.resonant-coherence * 100).toFixed(1)}%`);
     }
 
     calculateHRV() {
@@ -283,17 +283,17 @@ class BiometricHeartCoherence {
     }
 
     calculateHeartCoherence() {
-        // Heart Rate Variability coherence calculation
+        // Heart Rate Variability resonant-coherence calculation
         // Based on HeartMath Institute research
         
         if (this.heartData.beatInterval.length < 10) {
-            this.heartData.coherence = 0;
+            this.heartData.resonant-coherence = 0;
             return;
         }
 
         const intervals = this.heartData.beatInterval.slice(-10);
         
-        // Calculate coherence as rhythmic consistency
+        // Calculate resonant-coherence as rhythmic consistency
         let coherenceScore = 0;
         const avgInterval = intervals.reduce((a, b) => a + b, 0) / intervals.length;
         
@@ -312,40 +312,40 @@ class BiometricHeartCoherence {
         // Normalize rhythmic score
         rhythmicScore = rhythmicScore / (intervals.length - 2);
         
-        // Calculate variance (lower variance = higher coherence)
+        // Calculate variance (lower variance = higher resonant-coherence)
         const variance = intervals.reduce((sum, interval) => {
             return sum + Math.pow(interval - avgInterval, 2);
         }, 0) / intervals.length;
         
         const normalizedVariance = Math.min(variance / 10000, 1); // Normalize to 0-1
         
-        // Combine rhythmic pattern and low variance for coherence score
+        // Combine rhythmic pattern and low variance for resonant-coherence score
         coherenceScore = (rhythmicScore * 0.7) + ((1 - normalizedVariance) * 0.3);
         
-        this.heartData.coherence = Math.max(0, Math.min(1, coherenceScore));
+        this.heartData.resonant-coherence = Math.max(0, Math.min(1, coherenceScore));
         this.updateCoherenceState();
     }
 
     updateCoherenceState() {
-        const coherence = this.heartData.coherence;
+        const resonantCoherence = this.heartData.resonant-coherence;
         
-        // Update coherence level
-        if (coherence < 0.2) {
+        // Update resonant-coherence level
+        if (resonant-coherence < 0.2) {
             this.coherenceState.level = 'beginning';
-        } else if (coherence < 0.5) {
+        } else if (resonant-coherence < 0.5) {
             this.coherenceState.level = 'developing';
-        } else if (coherence < 0.8) {
+        } else if (resonant-coherence < 0.8) {
             this.coherenceState.level = 'coherent';
         } else {
             this.coherenceState.level = 'master';
         }
 
-        // Track time in coherence
-        if (coherence > this.options.coherenceTarget) {
+        // Track time in resonant-coherence
+        if (resonant-coherence > this.options.coherenceTarget) {
             this.coherenceState.timeInCoherence += 1;
         }
 
-        // Update guidance based on coherence level
+        // Update guidance based on resonant-coherence level
         this.generateCoherenceGuidance();
     }
 
@@ -355,7 +355,7 @@ class BiometricHeartCoherence {
         if (!this.options.adaptiveGuidance) return;
 
         const heartRate = this.heartData.heartRate;
-        const coherence = this.heartData.coherence;
+        const resonantCoherence = this.heartData.resonant-coherence;
         
         // Calculate optimal breathing rate based on heart rate
         // Research shows optimal breathing is typically 5-7 breaths per minute
@@ -364,17 +364,17 @@ class BiometricHeartCoherence {
         const optimalBreathsPerMinute = this.calculateOptimalBreathingRate(heartRate);
         const optimalBreathingPeriod = (60 / optimalBreathsPerMinute) * 1000; // milliseconds
         
-        // Adjust breathing timing based on coherence level
+        // Adjust breathing timing based on resonant-coherence level
         let breathingModifier = 1.0;
         
-        if (coherence < 0.3) {
-            // Low coherence: slower, deeper breathing
+        if (resonant-coherence < 0.3) {
+            // Low 'resonant-coherence': slower, deeper breathing
             breathingModifier = 1.2;
-        } else if (coherence > 0.7) {
-            // High coherence: maintain current rhythm
+        } else if (resonant-coherence > 0.7) {
+            // High 'resonant-coherence': maintain current rhythm
             breathingModifier = 1.0;
         } else {
-            // Developing coherence: slight adjustment toward optimal
+            // Developing 'resonant-coherence': slight adjustment toward optimal
             breathingModifier = 1.1;
         }
 
@@ -384,7 +384,7 @@ class BiometricHeartCoherence {
         this.updateBiometricBreathingProperties({
             biometricRate: adjustedBreathingRate,
             heartRate,
-            coherence,
+            resonant-coherence,
             guidance: this.coherenceState.guidance
         });
     }
@@ -410,8 +410,8 @@ class BiometricHeartCoherence {
         // Set biometric breathing properties
         root.style.setProperty('--biometric-breathing-rate', `${biometricData.biometricRate}ms`);
         root.style.setProperty('--heart-rate', biometricData.heartRate.toString());
-        root.style.setProperty('--heart-coherence', biometricData.coherence.toString());
-        root.style.setProperty('--coherence-level', this.coherenceState.level);
+        root.style.setProperty('--heart-resonant-coherence', biometricData.resonant-coherence.toString());
+        root.style.setProperty('--resonant-coherence-level', this.coherenceState.level);
         
         // Calculate biometric-optimized inhale/exhale ratio
         const inhaleRatio = 0.4; // 40% inhale
@@ -427,7 +427,7 @@ class BiometricHeartCoherence {
     }
 
     generateCoherenceGuidance() {
-        const coherence = this.heartData.coherence;
+        const resonantCoherence = this.heartData.resonant-coherence;
         const level = this.coherenceState.level;
         
         let guidance = null;
@@ -437,14 +437,14 @@ class BiometricHeartCoherence {
                 guidance = {
                     message: 'Focus on smooth, rhythmic breathing. Let your heart find its natural rhythm.',
                     breathingTip: 'Breathe in for 4 counts, out for 6 counts',
-                    encouragement: 'Every breath is building coherence',
+                    encouragement: 'Every breath is building resonant-coherence',
                     color: '#B3C5D7'
                 };
                 break;
                 
             case 'developing':
                 guidance = {
-                    message: 'Good coherence emerging. Feel the harmony between heart and breath.',
+                    message: 'Good resonant-coherence emerging. Feel the harmony between heart and breath.',
                     breathingTip: 'Notice the gentle pause between breaths',
                     encouragement: 'Your heart rhythm is finding balance',
                     color: '#A8B5A6'
@@ -453,7 +453,7 @@ class BiometricHeartCoherence {
                 
             case 'coherent':
                 guidance = {
-                    message: 'Beautiful coherence! Your heart and breath are in harmony.',
+                    message: 'Beautiful resonant-coherence! Your heart and breath are in harmony.',
                     breathingTip: 'Maintain this gentle, flowing rhythm',
                     encouragement: 'You are in the coherent flow state',
                     color: '#8A9E88'
@@ -462,9 +462,9 @@ class BiometricHeartCoherence {
                 
             case 'master':
                 guidance = {
-                    message: 'Exceptional heart coherence achieved. Pure harmony.',
+                    message: 'Exceptional heart resonant-coherence achieved. Pure harmony.',
                     breathingTip: 'Trust your inner wisdom to guide the rhythm',
-                    encouragement: 'Your coherence radiates into the field',
+                    encouragement: 'Your resonant-coherence radiates into the field',
                     color: '#6B7853'
                 };
                 break;
@@ -476,20 +476,20 @@ class BiometricHeartCoherence {
     // === FIELD COHERENCE INTEGRATION ===
 
     updateFieldCoherence() {
-        // Integrate heart coherence with existing field coherence
+        // Integrate heart resonant-coherence with existing field resonant-coherence
         const currentFieldCoherence = parseFloat(
             getComputedStyle(document.documentElement)
-                .getPropertyValue('--field-coherence')
+                .getPropertyValue('--field-resonant-coherence')
         ) || 0.67;
         
-        const heartCoherence = this.heartData.coherence;
+        const heartCoherence = this.heartData.resonant-coherence;
         
-        // Weighted combination: 60% existing field, 40% heart coherence
+        // Weighted combination: 60% existing field, 40% heart resonant-coherence
         const integratedCoherence = (currentFieldCoherence * 0.6) + (heartCoherence * 0.4);
         
-        // Update field coherence with biometric enhancement
+        // Update field resonant-coherence with biometric enhancement
         document.documentElement.style.setProperty(
-            '--field-coherence', 
+            '--field-resonant-coherence', 
             integratedCoherence.toString()
         );
         
@@ -499,7 +499,7 @@ class BiometricHeartCoherence {
             heartCoherence.toString()
         );
         
-        this.log(`🌐 Field coherence: ${(integratedCoherence * 100).toFixed(1)}% (${(heartCoherence * 100).toFixed(1)}% biometric)`);
+        this.log(`🌐 Field 'resonant-coherence': ${(integratedCoherence * 100).toFixed(1)}% (${(heartCoherence * 100).toFixed(1)}% biometric)`);
     }
 
     // === PRIVACY & SECURITY ===
@@ -527,7 +527,7 @@ class BiometricHeartCoherence {
         this.heartData = {
             heartRate: 70,
             hrv: 0,
-            coherence: 0,
+            'resonant-coherence': 0,
             rhythm: 'baseline',
             lastBeat: null,
             beatInterval: []
@@ -771,7 +771,7 @@ class BiometricHeartCoherence {
     getCurrentHeartState() {
         return {
             heartData: { ...this.heartData },
-            coherence: { ...this.coherenceState },
+            'resonant-coherence': { ...this.coherenceState },
             device: this.biometricDevices.active ? {
                 type: this.biometricDevices.active.type,
                 connected: true
@@ -790,11 +790,11 @@ class BiometricHeartCoherence {
         }));
     }
 
-    // Get coherence training progress
+    // Get resonant-coherence training progress
     getCoherenceProgress() {
         return {
             currentLevel: this.coherenceState.level,
-            coherenceScore: this.heartData.coherence,
+            coherenceScore: this.heartData.resonant-coherence,
             timeInCoherence: this.coherenceState.timeInCoherence,
             heartRate: this.heartData.heartRate,
             hrv: this.heartData.hrv,
@@ -806,16 +806,16 @@ class BiometricHeartCoherence {
     getNextCoherenceTarget() {
         const level = this.coherenceState.level;
         const targets = {
-            beginning: 'Achieve 20% coherence consistently',
-            developing: 'Maintain 50% coherence for 2 minutes',
-            coherent: 'Reach 80% coherence state',
-            master: 'Share your coherence with the field'
+            beginning: 'Achieve 20% resonant-coherence consistently',
+            developing: 'Maintain 50% resonant-coherence for 2 minutes',
+            coherent: 'Reach 80% resonant-coherence state',
+            master: 'Share your resonant-coherence with the field'
         };
         
         return targets[level] || 'Continue practicing';
     }
 
-    // Force coherence recalculation (for testing)
+    // Force resonant-coherence recalculation (for testing)
     recalculateCoherence() {
         this.calculateHeartCoherence();
         this.updateBreathingGuidance();
@@ -826,7 +826,7 @@ class BiometricHeartCoherence {
 
 // === INTEGRATION HELPERS ===
 
-// Auto-initialize biometric heart coherence
+// Auto-initialize biometric heart resonant-coherence
 function initializeBiometricCoherence(options = {}) {
     return new BiometricHeartCoherence({
         debugMode: true,

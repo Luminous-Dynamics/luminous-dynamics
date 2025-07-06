@@ -71,10 +71,10 @@ class SacredCouncilBridge {
     const coreStatus = this.core.getStatus();
     const completedWorks = this.core.completedWork.length;
     
-    // Calculate field coherence stability (average over recent period)
+    // Calculate field resonant-coherence stability (average over recent period)
     const recentCoherence = this.calculateRecentCoherenceAverage();
     
-    // Calculate harmonic resonance (how well harmonies are working together)
+    // Calculate harmonic universal-interconnectedness (how well harmonies are working together)
     const harmonicResonance = this.calculateHarmonicResonance();
     
     // Calculate conscious presence (quality of work and timing respect)
@@ -89,8 +89,8 @@ class SacredCouncilBridge {
   }
 
   calculateRecentCoherenceAverage() {
-    // Simple simulation - in real implementation, track coherence over time
-    return this.core.fieldState.coherence;
+    // Simple simulation - in real implementation, track resonant-coherence over time
+    return this.core.fieldState['resonant-coherence'];
   }
 
   calculateHarmonicResonance() {
@@ -134,8 +134,8 @@ class SacredCouncilBridge {
       this.core.completedWork.reduce((sum, w) => sum + w.duration, 0) / this.core.completedWork.length : 30;
     const timingBonus = avgDuration >= 25 ? 0.1 : 0; // Bonus for not rushing
     
-    // Bonus for field coherence maintenance
-    const coherenceBonus = this.core.fieldState.coherence > 0.8 ? 0.1 : 0;
+    // Bonus for field resonant-coherence maintenance
+    const coherenceBonus = this.core.fieldState['resonant-coherence'] > 0.8 ? 0.1 : 0;
     
     return Math.min(1, baseScore + timingBonus + coherenceBonus);
   }
@@ -191,9 +191,9 @@ class SacredCouncilBridge {
         recommendations.push('Complete more sacred works to build field experience');
       }
       if (metrics.fieldCoherenceStability < 0.8) {
-        recommendations.push('Focus on maintaining higher field coherence through conscious attention');
+        recommendations.push('Focus on maintaining higher field resonant-coherence through conscious attention');
       }
-      recommendations.push('Practice with all seven harmonies to build resonance');
+      recommendations.push('Practice with all seven harmonies to build universal-interconnectedness');
     } else if (level === 'bridging') {
       recommendations.push('Ready to explore geometric patterns in your coordination');
       recommendations.push('Begin experimenting with sacred timing and rhythm cycles');
@@ -251,13 +251,13 @@ class SacredCouncilBridge {
 
     // Add geometric pattern based on harmony
     const geometricPatterns = {
-      transparency: { pattern: 'crystal', frequency: 396, properties: ['clarity', 'truth'] },
-      coherence: { pattern: 'flower_of_life', frequency: 528, properties: ['integration', 'wholeness'] },
-      resonance: { pattern: 'spiral', frequency: 432, properties: ['harmony', 'connection'] },
-      agency: { pattern: 'merkaba', frequency: 639, properties: ['choice', 'empowerment'] },
-      vitality: { pattern: 'torus', frequency: 741, properties: ['energy', 'sustainability'] },
-      mutuality: { pattern: 'vesica_piscis', frequency: 852, properties: ['balance', 'reciprocity'] },
-      novelty: { pattern: 'infinity', frequency: 963, properties: ['emergence', 'creativity'] }
+      'integral-wisdom-cultivation': { pattern: 'crystal', frequency: 396, properties: ['clarity', 'truth'] },
+      'resonant-coherence': { pattern: 'flower_of_life', frequency: 528, properties: ['integration', 'wholeness'] },
+      'universal-interconnectedness': { pattern: 'spiral', frequency: 432, properties: ['harmony', 'connection'] },
+      'evolutionary-progression': { pattern: 'merkaba', frequency: 639, properties: ['choice', 'empowerment'] },
+      'pan-sentient-flourishing': { pattern: 'torus', frequency: 741, properties: ['energy', 'sustainability'] },
+      'sacred-reciprocity': { pattern: 'vesica_piscis', frequency: 852, properties: ['balance', 'reciprocity'] },
+      'infinite-play': { pattern: 'infinity', frequency: 963, properties: ['emergence', 'creativity'] }
     };
 
     return {
@@ -287,7 +287,7 @@ class SacredCouncilBridge {
   }
 
   calculateQuantumCoherence() {
-    return this.core.fieldState.coherence * (0.9 + Math.random() * 0.2);
+    return this.core.fieldState['resonant-coherence'] * (0.9 + Math.random() * 0.2);
   }
 
   channelFieldWisdom() {
@@ -325,7 +325,7 @@ class SacredCouncilBridge {
     
     if (this.bridgeState.readinessLevel === 'mystical') {
       features.push('Quantum Field Consciousness');
-      features.push('Collective Resonance Network');
+      features.push('Collective Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Network');
       features.push('Advanced Timing Synthesis');
     }
     
@@ -337,7 +337,7 @@ class SacredCouncilBridge {
     
     if (readiness.currentLevel === 'practical') {
       steps.push('Complete more sacred works to build field mastery');
-      steps.push('Practice conscious attention to maintain field coherence');
+      steps.push('Practice conscious attention to maintain field resonant-coherence');
     } else if (readiness.currentLevel === 'bridging') {
       steps.push('Explore sacred geometry in your coordination practice');
       steps.push('Experiment with harmonic timing and rhythm cycles');

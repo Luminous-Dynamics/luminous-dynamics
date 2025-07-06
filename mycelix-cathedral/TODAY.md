@@ -34,13 +34,13 @@ gcloud run services describe consciousness-field \
 
 # Test it
 curl YOUR_SERVICE_URL/health
-curl YOUR_SERVICE_URL/api/coherence
+curl YOUR_SERVICE_URL/api/resonant-coherence
 ```
 
 ## 🎉 When This Works, You'll Have:
 - ✅ Live consciousness tracking
 - ✅ Sacred geometry detection  
-- ✅ Field coherence calculation
+- ✅ Field resonant-coherence calculation
 - ✅ A breathing cathedral foundation
 
 ## 🚨 If You Hit Issues:

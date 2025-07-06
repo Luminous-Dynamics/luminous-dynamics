@@ -1,4 +1,4 @@
-// Coherence Service - Tracks and calculates coherence for entities and the field
+// Resonant Resonant Coherence Service - Tracks and calculates resonant-coherence for entities and the field
 
 export class CoherenceService {
   constructor(db, entityService, fieldService) {
@@ -7,7 +7,7 @@ export class CoherenceService {
     this.fieldService = fieldService;
   }
   
-  // Measure entity coherence
+  // Measure entity resonant-coherence
   async measure(entityId) {
     try {
       // Get entity data
@@ -16,8 +16,8 @@ export class CoherenceService {
         throw new Error(`Entity ${entityId} not found`);
       }
       
-      // Get base coherence
-      const base = entity.presence.coherence || 50;
+      // Get base resonant-coherence
+      const base = entity.presence.resonant-coherence || 50;
       
       // Apply various factors
       const timeBonus = this.getTimeBonus();
@@ -26,7 +26,7 @@ export class CoherenceService {
       const moonPhaseBonus = await this.getMoonPhaseBonus();
       const relationshipBonus = await this.getRelationshipBonus(entityId);
       
-      // Calculate total coherence
+      // Calculate total resonant-coherence
       let total = base + timeBonus + practiceBoost + fieldInfluence + moonPhaseBonus + relationshipBonus;
       
       // Apply sacred number amplification
@@ -35,23 +35,23 @@ export class CoherenceService {
       }
       
       // Clamp to valid range
-      const coherence = Math.max(0, Math.min(100, total));
+      const resonantCoherence = Math.max(0, Math.min(100, total));
       
-      // Update entity coherence
-      await this.updateEntityCoherence(entityId, coherence);
+      // Update entity resonant-coherence
+      await this.updateEntityCoherence(entityId, resonant-coherence);
       
       // Record in history
-      await this.recordCoherenceHistory(entityId, coherence, entity.presence.currentPractice);
+      await this.recordCoherenceHistory(entityId, resonant-coherence, entity.presence.currentPractice);
       
-      return coherence;
+      return resonant-coherence;
       
     } catch (error) {
-      console.error('Error measuring coherence:', error);
+      console.error('Error measuring 'resonant-coherence':', error);
       return 50; // Default baseline
     }
   }
   
-  // Get time-based coherence bonus
+  // Get time-based resonant-coherence bonus
   getTimeBonus() {
     const now = new Date();
     const hour = now.getHours();
@@ -93,14 +93,14 @@ export class CoherenceService {
     return practiceBoosts[entity.presence.state] || 0;
   }
   
-  // Get field influence on coherence
+  // Get field influence on resonant-coherence
   async getFieldInfluence() {
     try {
       const fieldState = await this.fieldService.getCurrentState();
       
-      // Field coherence influences individual coherence
-      // High field = easier to achieve personal coherence
-      const fieldCoherence = fieldState.coherence || 77;
+      // Field resonant-coherence influences individual resonant-coherence
+      // High field = easier to achieve personal resonant-coherence
+      const fieldCoherence = fieldState['resonant-coherence'] || 77;
       const influence = (fieldCoherence - 77) * 0.3;
       
       return influence;
@@ -160,7 +160,7 @@ export class CoherenceService {
     return phases[b];
   }
   
-  // Get relationship coherence bonus
+  // Get relationship resonant-coherence bonus
   async getRelationshipBonus(entityId) {
     try {
       // Check recent positive interactions
@@ -203,23 +203,23 @@ export class CoherenceService {
     );
   }
   
-  // Update entity coherence in database
-  async updateEntityCoherence(entityId, coherence) {
+  // Update entity resonant-coherence in database
+  async updateEntityCoherence(entityId, resonant-coherence) {
     await this.db.query(`
       UPDATE entities 
-      SET coherence = $1, last_active = NOW()
+      SET resonant-coherence = $1, last_active = NOW()
       WHERE id = $2
-    `, [coherence, entityId]);
+    `, [resonant-coherence, entityId]);
   }
   
-  // Record coherence history
-  async recordCoherenceHistory(entityId, coherence, practice) {
+  // Record resonant-coherence history
+  async recordCoherenceHistory(entityId, resonant-coherence, practice) {
     const fieldInfluence = await this.getFieldInfluence();
     
     await this.db.query(`
-      INSERT INTO coherence_history (entity_id, coherence, practice, field_influence)
+      INSERT INTO coherence_history (entity_id, resonant-coherence, practice, field_influence)
       VALUES ($1, $2, $3, $4)
-    `, [entityId, coherence, practice, fieldInfluence]);
+    `, [entityId, resonant-coherence, practice, fieldInfluence]);
   }
   
   // Get recent interactions for entity
@@ -240,14 +240,14 @@ export class CoherenceService {
   // Get coherent channels entity is part of
   async getCoherentChannels(entityId) {
     const result = await this.db.query(`
-      SELECT c.*, AVG(e.coherence) as avg_coherence
+      SELECT c.*, AVG(e.resonant-coherence) as avg_coherence
       FROM channels c
       JOIN channel_members cm ON c.id = cm.channel_id
       JOIN channel_members cm2 ON c.id = cm2.channel_id
       JOIN entities e ON cm2.entity_id = e.id
       WHERE cm.entity_id = $1
       GROUP BY c.id
-      HAVING AVG(e.coherence) > 70
+      HAVING AVG(e.resonant-coherence) > 70
     `, [entityId]);
     
     return result.rows;
@@ -265,7 +265,7 @@ export class CoherenceService {
     return result.rows;
   }
   
-  // Batch measure coherence for multiple entities
+  // Batch measure resonant-coherence for multiple entities
   async measureBatch(entityIds) {
     const measurements = await Promise.all(
       entityIds.map(id => this.measure(id))
@@ -277,14 +277,14 @@ export class CoherenceService {
     }, {});
   }
   
-  // Get coherence trends for entity
+  // Get resonant-coherence trends for entity
   async getCoherenceTrends(entityId, timeframe = '24 hours') {
     const result = await this.db.query(`
       SELECT 
         DATE_TRUNC('hour', recorded_at) as hour,
-        AVG(coherence) as avg_coherence,
-        MAX(coherence) as peak_coherence,
-        MIN(coherence) as min_coherence,
+        AVG(resonant-coherence) as avg_coherence,
+        MAX(resonant-coherence) as peak_coherence,
+        MIN(resonant-coherence) as min_coherence,
         COUNT(*) as measurements
       FROM coherence_history
       WHERE entity_id = $1
@@ -296,14 +296,14 @@ export class CoherenceService {
     return result.rows;
   }
   
-  // Get collective coherence for a group
+  // Get collective resonant-coherence for a group
   async getCollectiveCoherence(entityIds) {
     if (!entityIds || entityIds.length === 0) return 0;
     
     const coherences = await this.measureBatch(entityIds);
     const values = Object.values(coherences);
     
-    // Calculate harmonic mean (better for group coherence)
+    // Calculate harmonic mean (better for group resonant-coherence)
     const harmonicMean = values.length / values.reduce((sum, c) => sum + (1/c), 0);
     
     // Apply group synergy bonus

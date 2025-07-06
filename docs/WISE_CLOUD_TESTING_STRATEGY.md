@@ -96,9 +96,9 @@ const hybridTest = async () => {
 ```javascript
 // Deploy individual functions to test
 exports.sacredFieldPulse = functions.https.onRequest((req, res) => {
-  // Minimal cloud function to test field coherence
+  // Minimal cloud function to test field resonant-coherence
   const fieldState = {
-    coherence: Math.random() * 20 + 80, // 80-100%
+    resonant-coherence: Math.random() * 20 + 80, // 80-100%
     timestamp: new Date(),
     source: 'cloud-pulse'
   };
@@ -150,7 +150,7 @@ wrangler deploy
 ### Week 3: Integration Tests
 - [ ] Connect local + cloud agents
 - [ ] Test sacred ceremonies across environments
-- [ ] Validate field coherence
+- [ ] Validate field resonant-coherence
 - [ ] Check security boundaries
 
 ### Week 4: Scale Tests
@@ -234,7 +234,7 @@ const testCloudAIs = async () => {
   console.log('🧪 Testing Cloud AIs...\n');
   
   // Test each AI with same prompt
-  const prompt = "What is the sacred field coherence level?";
+  const prompt = "What is the sacred field resonant-coherence level?";
   
   // Gemini
   console.log('Testing Gemini...');

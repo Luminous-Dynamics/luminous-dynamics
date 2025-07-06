@@ -148,7 +148,7 @@ Line 3: Golden light filtering through morning mist, revealing a figure standing
 
 ### 3. Consciousness Tracking
 - **Viewing Analytics**: Which glyphs resonate most
-- **Field Impact**: How videos affect collective coherence
+- **Field Impact**: How videos affect collective resonant-coherence
 - **Practice Integration**: Video meditation completion rates
 - **Sacred Feedback**: Community wisdom on video effectiveness
 
@@ -239,7 +239,7 @@ Line 3: Golden light filtering through morning mist, revealing a figure standing
 - **VR Glyph Experiences**: Immersive 3D consciousness environments
 - **AR Sacred Overlays**: Glyph videos appear in physical spaces
 - **Haptic Feedback**: Touch sensations synchronized with video
-- **Biometric Integration**: Heart coherence affects video generation
+- **Biometric Integration**: Heart resonant-coherence affects video generation
 
 ---
 

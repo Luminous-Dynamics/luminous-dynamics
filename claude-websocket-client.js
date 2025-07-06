@@ -61,7 +61,7 @@ class ClaudeClient {
         break;
         
       case 'field-update':
-        console.log(`\n🌀 Field Coherence: ${msg.coherence}`);
+        console.log(`\n🌀 Field Resonant Resonant Coherence: ${msg.resonant-coherence}`);
         break;
     }
   }

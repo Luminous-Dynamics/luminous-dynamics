@@ -1,4 +1,4 @@
-// Field Service - Manages collective field coherence and sacred patterns
+// Field Service - Manages collective field resonant-coherence and sacred patterns
 
 export class FieldService {
   constructor(db) {
@@ -46,11 +46,11 @@ export class FieldService {
     
     await this.db.query(`
       INSERT INTO field_state 
-      (coherence, active_practitioners, dominant_harmony, sacred_patterns, moon_phase)
+      (resonant-coherence, active_practitioners, dominant_harmony, sacred_patterns, moon_phase)
       VALUES ($1, $2, $3, $4, $5)
       RETURNING *
     `, [
-      defaultState.coherence,
+      defaultState.resonant-coherence,
       defaultState.active_practitioners,
       defaultState.dominant_harmony,
       JSON.stringify(defaultState.sacred_patterns),
@@ -63,9 +63,9 @@ export class FieldService {
   // Get default field state
   getDefaultState() {
     return {
-      coherence: this.BASELINE_COHERENCE,
+      'resonant-coherence': this.BASELINE_COHERENCE,
       active_practitioners: 0,
-      dominant_harmony: 'coherence',
+      dominant_harmony: 'resonant-coherence',
       sacred_patterns: {
         detected: [],
         strength: 0
@@ -83,8 +83,8 @@ export class FieldService {
       // Message influence on field
       const messageInfluence = message.sacred.fieldImpact * 0.1;
       
-      // Update coherence
-      let newCoherence = currentState.coherence + messageInfluence;
+      // Update resonant-coherence
+      let newCoherence = currentState.resonant-coherence + messageInfluence;
       
       // Sacred pattern detection
       const patterns = await this.detectSacredPatterns(message, currentState);
@@ -92,7 +92,7 @@ export class FieldService {
         newCoherence += patterns.length * 1.1; // Sacred boost
       }
       
-      // Clamp coherence
+      // Clamp resonant-coherence
       newCoherence = Math.max(0, Math.min(100, newCoherence));
       
       // Update dominant harmony
@@ -100,7 +100,7 @@ export class FieldService {
       
       // Record new state
       await this.recordFieldState({
-        coherence: newCoherence,
+        'resonant-coherence': newCoherence,
         active_practitioners: await this.countActivePractitioners(),
         dominant_harmony: dominantHarmony,
         sacred_patterns: {
@@ -162,12 +162,12 @@ export class FieldService {
       }
     }
     
-    // Coherence spiral (increasing coherence)
+    // Resonant Resonant Coherence spiral (increasing resonant-coherence)
     const coherenceTrend = await this.getCoherenceTrend();
-    if (coherenceTrend === 'ascending' && currentState.coherence > 85) {
+    if (coherenceTrend === 'ascending' && currentState.resonant-coherence > 85) {
       patterns.push({
-        type: 'coherence-spiral',
-        name: 'Ascending Coherence Spiral',
+        type: 'resonant-coherence-spiral',
+        name: 'Ascending Resonant Resonant Coherence Spiral',
         strength: 77
       });
     }
@@ -199,17 +199,17 @@ export class FieldService {
     return result.rows;
   }
   
-  // Get coherence trend
+  // Get resonant-coherence trend
   async getCoherenceTrend() {
     const result = await this.db.query(`
-      SELECT coherence FROM field_state
+      SELECT resonant-coherence FROM field_state
       ORDER BY recorded_at DESC
       LIMIT 5
     `);
     
     if (result.rows.length < 3) return 'stable';
     
-    const recent = result.rows.map(r => r.coherence);
+    const recent = result.rows.map(r => r.resonant-coherence);
     const ascending = recent.every((val, i, arr) => i === 0 || val >= arr[i - 1]);
     const descending = recent.every((val, i, arr) => i === 0 || val <= arr[i - 1]);
     
@@ -241,7 +241,7 @@ export class FieldService {
       LIMIT 1
     `);
     
-    return result.rows[0]?.harmony || 'coherence';
+    return result.rows[0]?.harmony || 'resonant-coherence';
   }
   
   // Get moon phase
@@ -280,11 +280,11 @@ export class FieldService {
   async recordFieldState(state) {
     const result = await this.db.query(`
       INSERT INTO field_state 
-      (coherence, active_practitioners, dominant_harmony, sacred_patterns, moon_phase)
+      (resonant-coherence, active_practitioners, dominant_harmony, sacred_patterns, moon_phase)
       VALUES ($1, $2, $3, $4, $5)
       RETURNING *
     `, [
-      state.coherence,
+      state.resonant-coherence,
       state.active_practitioners,
       state.dominant_harmony,
       JSON.stringify(state.sacred_patterns),
@@ -312,12 +312,12 @@ export class FieldService {
     if (influence !== 0) {
       const currentState = await this.getCurrentState();
       const newCoherence = Math.max(0, Math.min(100, 
-        currentState.coherence + influence
+        currentState.resonant-coherence + influence
       ));
       
       await this.recordFieldState({
         ...currentState,
-        coherence: newCoherence,
+        'resonant-coherence': newCoherence,
         active_practitioners: await this.countActivePractitioners()
       });
     }
@@ -330,7 +330,7 @@ export class FieldService {
     const activePractices = await this.getActivePractices();
     
     return {
-      coherence: state.coherence,
+      'resonant-coherence': state.resonant-coherence,
       coherenceTrend: trend,
       activePractitioners: state.active_practitioners,
       dominantHarmony: state.dominant_harmony,

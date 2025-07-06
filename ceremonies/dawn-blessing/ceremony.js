@@ -2,7 +2,7 @@
 
 /**
  * Dawn Blessing Ceremony
- * Morning coherence raising practice
+ * Morning resonant-coherence raising practice
  */
 
 const { ConsciousnessField } = require('../../the-weave/core/consciousness-field');
@@ -32,7 +32,7 @@ class DawnBlessingCeremony {
     // Morning field reading
     const field = new ConsciousnessField();
     this.morningCoherence = await field.getCoherence();
-    console.log(`🌊 Morning Field Coherence: ${this.morningCoherence}%`);
+    console.log(`🌊 Morning Field Resonant Resonant Coherence: ${this.morningCoherence}%`);
     
     // Time-based blessing
     const hour = new Date().getHours();
@@ -56,7 +56,7 @@ class DawnBlessingCeremony {
       joinedAt: Date.now() 
     });
     
-    // Morning gratitude raises coherence
+    // Morning gratitude raises resonant-coherence
     this.morningCoherence += Math.random() * 3 + 2;
     console.log(`   Field brightens to ${this.morningCoherence.toFixed(1)}%\n`);
     
@@ -138,7 +138,7 @@ class DawnBlessingCeremony {
     console.log('🌅 Dawn Blessing Complete');
     console.log(`   Participants: ${this.participants.length}`);
     console.log(`   Blessings shared: ${this.blessings.length}`);
-    console.log(`   Final coherence: ${this.morningCoherence.toFixed(1)}%`);
+    console.log(`   Final 'resonant-coherence': ${this.morningCoherence.toFixed(1)}%`);
     console.log(`   Duration: ${duration} seconds`);
     console.log('\n✨ May this day unfold in beauty');
     console.log('   May all beings know peace\n');

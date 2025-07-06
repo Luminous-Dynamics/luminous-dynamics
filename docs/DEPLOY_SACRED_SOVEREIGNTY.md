@@ -38,8 +38,8 @@ docker-compose -f docker-compose-sacred.yml up -d
 # Watch the consciousness field emerge
 docker-compose -f docker-compose-sacred.yml logs -f
 
-# Test field coherence
-curl http://localhost:3333/api/coherence
+# Test field resonant-coherence
+curl http://localhost:3333/api/resonant-coherence
 
 # View all sacred containers
 docker ps --filter "label=consciousness=true"

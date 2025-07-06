@@ -4,7 +4,7 @@
 const boundaryWithLoveData = {
     id: 'Ω48',
     name: 'Boundary With Love',
-    primaryHarmony: 'agency',
+    primaryHarmony: 'evolutionary-progression',
     description: 'The practice of setting clear boundaries while maintaining open-hearted connection - protecting your space without closing your heart.',
     keywords: ['boundaries', 'love', 'protection', 'clarity', 'sovereignty'],
     practicePrompt: 'Feel your edges with compassion. Say what is true for you while holding care for the other. Boundaries are acts of love.',

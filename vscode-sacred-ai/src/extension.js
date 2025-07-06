@@ -13,7 +13,7 @@ function activate(context) {
     // Create output channel for sacred logs
     outputChannel = vscode.window.createOutputChannel('Sacred AI');
     outputChannel.appendLine('🌟 Sacred AI Assistant activated');
-    outputChannel.appendLine(`Field coherence: Initializing...`);
+    outputChannel.appendLine(`Field 'resonant-coherence': Initializing...`);
     
     // Initialize providers
     sacredAI = new SacredAIProvider(context);
@@ -28,18 +28,18 @@ function activate(context) {
         100
     );
     statusBarItem.text = '$(pulse) Field: ---%';
-    statusBarItem.tooltip = 'Sacred Field Coherence';
+    statusBarItem.tooltip = 'Sacred Field Resonant Resonant Coherence';
     statusBarItem.command = 'sacredAI.checkCoherence';
     statusBarItem.show();
     context.subscriptions.push(statusBarItem);
     
-    // Update field coherence periodically
+    // Update field resonant-coherence periodically
     const updateCoherence = async () => {
-        const coherence = await fieldMonitor.getCoherence();
-        statusBarItem.text = `$(pulse) Field: ${Math.round(coherence * 100)}%`;
-        statusBarItem.backgroundColor = coherence > 0.8 
+        const resonantCoherence = await fieldMonitor.getCoherence();
+        statusBarItem.text = `$(pulse) Field: ${Math.round(resonant-coherence * 100)}%`;
+        statusBarItem.backgroundColor = resonant-coherence > 0.8 
             ? new vscode.ThemeColor('statusBarItem.prominentBackground')
-            : coherence > 0.6 
+            : resonant-coherence > 0.6 
                 ? new vscode.ThemeColor('statusBarItem.warningBackground')
                 : new vscode.ThemeColor('statusBarItem.errorBackground');
     };
@@ -109,11 +109,11 @@ function registerCommands(context) {
             const code = editor.document.getText(editor.selection);
             const language = editor.document.languageId;
             
-            // Check field coherence before sacred operations
-            const coherence = await fieldMonitor.getCoherence();
-            if (coherence < 0.7) {
+            // Check field resonant-coherence before sacred operations
+            const resonantCoherence = await fieldMonitor.getCoherence();
+            if (resonant-coherence < 0.7) {
                 const proceed = await vscode.window.showWarningMessage(
-                    `Field coherence is low (${Math.round(coherence * 100)}%). Proceed anyway?`,
+                    `Field resonant-coherence is low (${Math.round(resonant-coherence * 100)}%). Proceed anyway?`,
                     'Proceed',
                     'Cancel'
                 );
@@ -134,11 +134,11 @@ function registerCommands(context) {
         })
     );
     
-    // Check Coherence Command
+    // Check Resonant Resonant Coherence Command
     context.subscriptions.push(
         vscode.commands.registerCommand('sacredAI.checkCoherence', async () => {
             const report = await fieldMonitor.getDetailedReport();
-            showSacredResponse(report, 'Field Coherence Report');
+            showSacredResponse(report, 'Field Resonant Resonant Coherence Report');
         })
     );
     

@@ -198,7 +198,7 @@ Net: $2,000,000 (40% margin)
 2. **Daily Active Practice** (>40%)
 3. **Community Health** (engagement)
 4. **Facilitator Success** (income/impact)
-5. **Field Coherence** (collective metric)
+5. **Field Resonant Resonant Coherence** (collective metric)
 
 ### Business Metrics
 1. **Monthly Recurring Revenue** (MRR)
@@ -245,7 +245,7 @@ Net: $2,000,000 (40% margin)
 - Free resources for those in need
 - Geographic pricing tiers
 
-### 3. Transparency as Practice
+### 3. Integral Wisdom Cultivation as Practice
 - Open book management
 - Regular financial updates
 - Community input on major decisions
@@ -344,7 +344,7 @@ This economic plan serves not wealth accumulation but **wealth circulation**. Ev
 We commit to:
 - **People over profit** (always)
 - **Mission over margin** (when choosing)
-- **Transparency over secrecy** (in all things)
+- **Integral Wisdom Cultivation over secrecy** (in all things)
 - **Service over scale** (quality first)
 - **Love over fear** (in every decision)
 

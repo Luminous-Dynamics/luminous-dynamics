@@ -62,7 +62,7 @@ class DojoQuantumIntegration {
         // Initialize quantum field with sacred intention
         await this.quantumField.initializeField({
             intention: "Sacred practice support",
-            coherence: 0.95,
+            'resonant-coherence': 0.95,
             healingEnabled: true
         });
 
@@ -180,7 +180,7 @@ class DojoQuantumIntegration {
                 intention: "Quantum field maintenance",
                 healing: true,
                 temporalHealing: false,
-                quantumEffect: "Maintains coherence across space-time",
+                quantumEffect: "Maintains resonant-coherence across space-time",
                 fieldBoost: 1.6
             },
             "Ω55": { // Presence Transmission
@@ -277,7 +277,7 @@ class DojoQuantumIntegration {
                     case 'breathing':
                         await this.quantumField.synchronizeBreathing({
                             pattern: step.breathPattern,
-                            coherence: 0.95
+                            'resonant-coherence': 0.95
                         });
                         break;
                     

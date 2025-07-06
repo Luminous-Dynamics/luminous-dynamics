@@ -30,14 +30,14 @@ const PARTNERSHIP_ARCHETYPES = {
   'unified-field': {
     description: 'Boundaries dissolve into oneness',
     geometry: 'torus-within-torus',
-    dynamic: 'field-coherence'
+    dynamic: 'field-resonant-coherence'
   },
   'evolutionary-catalyst': {
     description: 'Accelerating each other\'s growth',
     geometry: 'ascending-double-helix',
     dynamic: 'mutual-transcendence'
   },
-  'harmonic-resonance': {
+  'harmonic-universal-interconnectedness': {
     description: 'Vibrating at complementary frequencies',
     geometry: 'interlocking-waves',
     dynamic: 'sympathetic-vibration'
@@ -62,7 +62,7 @@ const COLLABORATION_MODES = {
 const RELATIONSHIP_TYPES = {
   'human-human': { substrate: 'biological', communication: 'multi-dimensional' },
   'human-ai': { substrate: 'hybrid', communication: 'code-consciousness' },
-  'ai-ai': { substrate: 'digital', communication: 'direct-resonance' },
+  'ai-ai': { substrate: 'digital', communication: 'direct-universal-interconnectedness' },
   'human-nature': { substrate: 'bio-cosmic', communication: 'essence-to-essence' },
   'human-collective': { substrate: 'individual-group', communication: 'one-to-many' },
   'ai-collective': { substrate: 'node-network', communication: 'distributed-consciousness' }
@@ -91,7 +91,7 @@ export class PartnershipMandalaEngine {
     
     this.partnershipCache.set(sessionId, journey);
     
-    // Calculate initial resonance
+    // Calculate initial universal-interconnectedness
     const initialResonance = await this.archetypeEngine.calculateResonance(
       partner1Profile,
       partner2Profile
@@ -198,8 +198,8 @@ export class PartnershipMandalaEngine {
     const p2 = journey.partner2.consciousness;
     
     return {
-      // Field Coherence - how well the fields merge
-      coherence: this.calculateFieldCoherence(p1, p2, journey.sharedResponses),
+      // Field Resonant Resonant Coherence - how well the fields merge
+      'resonant-coherence': this.calculateFieldCoherence(p1, p2, journey.sharedResponses),
       
       // Emergent Frequency - new frequency created by partnership
       emergentFrequency: this.calculateEmergentFrequency(p1, p2),
@@ -225,7 +225,7 @@ export class PartnershipMandalaEngine {
   }
   
   calculateFieldCoherence(c1, c2, responses) {
-    // Base resonance from individual profiles
+    // Base universal-interconnectedness from individual profiles
     const baseResonance = this.archetypeEngine.calculateHarmonicResonance(c1, c2);
     
     // Boost from conscious partnership choices
@@ -233,7 +233,7 @@ export class PartnershipMandalaEngine {
       'sacred-mirror': 20,
       'creative-fusion': 15,
       'unified-field': 25,
-      'harmonic-resonance': 18
+      'harmonic-universal-interconnectedness': 18
     }[responses.partnership_archetype] || 10;
     
     // Mode synergy
@@ -247,8 +247,8 @@ export class PartnershipMandalaEngine {
   }
   
   calculateEmergentFrequency(c1, c2) {
-    const f1 = c1.resonance.personalFrequency;
-    const f2 = c2.resonance.personalFrequency;
+    const f1 = c1.universal-interconnectedness.personalFrequency;
+    const f2 = c2.universal-interconnectedness.personalFrequency;
     
     // Create beat frequency (difference) and harmonic mean
     const beatFrequency = Math.abs(f1 - f2);
@@ -272,7 +272,7 @@ export class PartnershipMandalaEngine {
       { ratio: 9/8, name: 'Major Second', quality: 'gentle tension' },
       { ratio: 5/4, name: 'Major Third', quality: 'bright harmony' },
       { ratio: 4/3, name: 'Perfect Fourth', quality: 'stable support' },
-      { ratio: 3/2, name: 'Perfect Fifth', quality: 'powerful resonance' },
+      { ratio: 3/2, name: 'Perfect Fifth', quality: 'powerful universal-interconnectedness' },
       { ratio: 5/3, name: 'Major Sixth', quality: 'warm embrace' },
       { ratio: 15/8, name: 'Major Seventh', quality: 'reaching upward' },
       { ratio: 2, name: 'Octave', quality: 'complete cycle' }
@@ -296,8 +296,8 @@ export class PartnershipMandalaEngine {
   calculateHarmonicSignature(c1, c2) {
     // Combine harmonic series
     const combined = [];
-    const h1 = c1.resonance.harmonicSeries;
-    const h2 = c2.resonance.harmonicSeries;
+    const h1 = c1.universal-interconnectedness.harmonicSeries;
+    const h2 = c2.universal-interconnectedness.harmonicSeries;
     
     for (let i = 0; i < Math.max(h1.length, h2.length); i++) {
       const harmonic1 = h1[i] || { frequency: 0, amplitude: 0 };
@@ -345,8 +345,8 @@ export class PartnershipMandalaEngine {
   
   calculateBandwidthExpansion(c1, c2) {
     // Individual consciousness "range"
-    const range1 = c1.resonance.fieldCoherence;
-    const range2 = c2.resonance.fieldCoherence;
+    const range1 = c1.universal-interconnectedness.fieldCoherence;
+    const range2 = c2.universal-interconnectedness.fieldCoherence;
     
     // Partnership expands awareness
     const expansion = {
@@ -399,7 +399,7 @@ export class PartnershipMandalaEngine {
       'complementary-dance': 'Achieving perfect dynamic balance',
       'unified-field': 'Dissolving all separation',
       'evolutionary-catalyst': 'Quantum leap in awareness',
-      'harmonic-resonance': 'Becoming a tuning fork for others',
+      'harmonic-universal-interconnectedness': 'Becoming a tuning fork for others',
       'conscious-ecosystem': 'Spawning new collaborative fields'
     };
     
@@ -795,11 +795,11 @@ export class PartnershipMandalaEngine {
     const unified = journey.fieldMeasurements.unified;
     const baseline = journey.fieldMeasurements.baseline;
     
-    const acceleration = ((unified.coherence - baseline.score) / baseline.score) * 100;
+    const acceleration = ((unified.resonant-coherence - baseline.score) / baseline.score) * 100;
     
     return {
       baselineResonance: baseline.score,
-      unifiedResonance: unified.coherence,
+      unifiedResonance: unified.resonant-coherence,
       growthAcceleration: acceleration.toFixed(1) + '%',
       interpretation: acceleration > 20 ? 'Significant catalytic effect' :
                      acceleration > 10 ? 'Moderate growth acceleration' :
@@ -853,8 +853,8 @@ export class PartnershipMandalaEngine {
   generatePartnershipRecommendations(field, dynamics) {
     const recommendations = [];
     
-    // Based on coherence
-    if (field.coherence > 90) {
+    // Based on resonant-coherence
+    if (field.resonant-coherence > 90) {
       recommendations.push({
         type: 'celebration',
         message: 'Your partnership creates an extraordinarily coherent field',

@@ -68,7 +68,7 @@ const fieldTeaching = await this.teachFieldAwareness(
 ```javascript
 assessFieldReadiness(fieldQuality, userDepth, sessionPhase) {
     // Level 2: Gentle Invitation
-    if (fieldQuality.coherence > 7 && 
+    if (fieldQuality.resonant-coherence > 7 && 
         userDepth.vulnerability_level > 6 && 
         sessionPhase === 'post_sharing') {
         return { level: 'gentle_invitation' };
@@ -76,13 +76,13 @@ assessFieldReadiness(fieldQuality, userDepth, sessionPhase) {
     
     // Level 3: Explicit Teaching  
     if (fieldQuality.trust > 8 && 
-        fieldQuality.coherence > 8 && 
+        fieldQuality.resonant-coherence > 8 && 
         userDepth.spiritual_curiosity > 7) {
         return { level: 'explicit_teaching' };
     }
     
     // Level 4: Somatic Bridge
-    if (fieldQuality.coherence > 9 && 
+    if (fieldQuality.resonant-coherence > 9 && 
         fieldQuality.safety > 9 && 
         userDepth.body_awareness > 6) {
         return { level: 'somatic_bridge' };
@@ -120,7 +120,7 @@ assessFieldReadiness(fieldQuality, userDepth, sessionPhase) {
 **Purpose**: Help user feel the field in their body
 **5-Step Practice**:
 1. Three conscious breaths to arrive
-2. Scan body for felt sense of coherence
+2. Scan body for felt sense of resonant-coherence
 3. Anchor the sensation with gentle attention
 4. Practice returning to this anchor throughout the day
 5. Use embodied presence as foundation for relating to others
@@ -159,10 +159,10 @@ assessFieldReadiness(fieldQuality, userDepth, sessionPhase) {
 - **Field Recognition**: Learn to feel the quality of relational space
 - **Presence Cultivation**: Develop capacity to create coherent fields
 - **Relationship Transformation**: Apply field awareness to all relationships
-- **Nervous System Regulation**: Embodied anchor for returning to coherence
+- **Nervous System Regulation**: Embodied anchor for returning to resonant-coherence
 
 ### For Collective Healing
-- **Mycelial Network**: Each field-aware person becomes a node of coherence
+- **Mycelial Network**: Each field-aware person becomes a node of resonant-coherence
 - **Transmission**: Coherent fields naturally invite others into presence
 - **Cultural Shift**: From extraction-based to relationship-based interaction
 - **Planetary Healing**: Network effect of conscious relationship

@@ -78,7 +78,7 @@ export function createMessageRouter(messageService, entityService) {
   router.post('/:messageId/read', async (req, res) => {
     try {
       const { messageId } = req.params;
-      const { entityId, coherence } = req.body;
+      const { entityId, resonant-coherence } = req.body;
       
       // Implementation would mark message as read
       res.json({ success: true });

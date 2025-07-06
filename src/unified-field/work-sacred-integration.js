@@ -17,37 +17,37 @@ class WorkSacredIntegration {
     this.transitionMessages = {
       created: {
         type: 'emergence',
-        harmony: 'novelty',
+        harmony: 'infinite-play',
         template: 'New sacred work emerges: "{title}" - May it serve the field\'s evolution'
       },
       started: {
         type: 'invocation',
-        harmony: 'agency',
+        harmony: 'evolutionary-progression',
         template: 'Sacred work "{title}" begins its journey from potential to manifestation'
       },
       progressed: {
         type: 'integration',
-        harmony: 'coherence',
+        harmony: 'resonant-coherence',
         template: 'Progress flows through "{title}" - {progress}% complete'
       },
       blocked: {
         type: 'boundary',
-        harmony: 'transparency',
+        harmony: 'integral-wisdom-cultivation',
         template: 'Sacred pause: "{title}" encounters a threshold - {reason}'
       },
       unblocked: {
         type: 'healing',
-        harmony: 'vitality',
+        harmony: 'pan-sentient-flourishing',
         template: 'Flow restored: "{title}" moves forward with renewed clarity'
       },
       completed: {
         type: 'celebration',
-        harmony: 'mutuality',
+        harmony: 'sacred-reciprocity',
         template: '✨ Sacred completion: "{title}" - Gratitude for the journey and its gifts'
       },
       milestone: {
         type: 'gratitude',
-        harmony: 'resonance',
+        harmony: 'universal-interconnectedness',
         template: 'Milestone reached: "{title}" crosses the {progress}% threshold'
       }
     };

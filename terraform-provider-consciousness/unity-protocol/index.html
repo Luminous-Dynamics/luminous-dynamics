@@ -316,7 +316,7 @@
         
         <button class="unity-btn" id="activateUnity">Activate Unity</button>
         <button class="unity-btn" id="syncBreathing">Synchronize Breathing</button>
-        <button class="unity-btn" id="emergencyCoherence">Emergency Coherence</button>
+        <button class="unity-btn" id="emergencyCoherence">Emergency Resonant Resonant Coherence</button>
     </div>
     
     <div class="metrics-panel">
@@ -339,7 +339,7 @@
         </div>
         
         <div class="metric">
-            <div class="metric-label">Unity Coherence</div>
+            <div class="metric-label">Unity Resonant Resonant Coherence</div>
             <div class="metric-value" id="unityCoherence">0.00</div>
             <div class="metric-bar">
                 <div class="metric-fill" id="coherenceFill" style="width: 0%"></div>
@@ -533,9 +533,9 @@
                 ((field.synchronizationLevel || 0) * 100) + '%';
             
             document.getElementById('unityCoherence').textContent = 
-                (field.coherence || 0).toFixed(2);
+                (field.resonant-coherence || 0).toFixed(2);
             document.getElementById('coherenceFill').style.width = 
-                ((field.coherence || 0) * 100) + '%';
+                ((field.resonant-coherence || 0) * 100) + '%';
             
             document.getElementById('loveField').textContent = 
                 (field.love || 0).toFixed(2);

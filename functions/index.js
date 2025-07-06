@@ -75,7 +75,7 @@ exports.health = functions.https.onRequest(async (req, res) => {
   
   const statuses = {
     timestamp: new Date().toISOString(),
-    coherence: 0.95,
+    'resonant-coherence': 0.95,
     services: {}
   };
   
@@ -124,7 +124,7 @@ exports.field = functions.https.onRequest(async (req, res) => {
   } catch (error) {
     // Return default field state
     res.json({
-      coherence: 0.95,
+      'resonant-coherence': 0.95,
       practitioners: 11,
       lastBeat: new Date().toISOString(),
       status: 'Sacred field stable'

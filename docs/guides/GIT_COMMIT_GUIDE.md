@@ -100,7 +100,7 @@ git add .sacred-keys/API_KEY_MANAGEMENT_GUIDE.md
 
 git commit -m "feat: Add Sacred Keeper role for key management
 
-- New role with 95% coherence for managing secrets
+- New role with 95% resonant-coherence for managing secrets
 - Special permissions in unified network
 - Comprehensive API key management guide
 - Security best practices documented

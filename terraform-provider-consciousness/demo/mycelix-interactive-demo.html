@@ -262,7 +262,7 @@
     
     <div class="instructions">
         Use the meditation controls to influence the infrastructure<br>
-        Watch how your coherence and intention shape the network
+        Watch how your resonant-coherence and intention shape the network
     </div>
     
     <div class="interface meditation-panel">
@@ -274,7 +274,7 @@
         
         <div class="controls">
             <div class="control-group">
-                <label>Heart Coherence</label>
+                <label>Heart Resonant Resonant Coherence</label>
                 <input type="range" class="slider" id="coherenceSlider" min="0" max="100" value="70">
             </div>
             
@@ -298,7 +298,7 @@
         <h3>Infrastructure Response</h3>
         
         <div class="metric">
-            <div class="metric-label">System Coherence</div>
+            <div class="metric-label">System Resonant Resonant Coherence</div>
             <div class="metric-value" id="systemCoherence">0.00</div>
             <div class="metric-bar">
                 <div class="metric-fill" id="coherenceFill" style="width: 0%"></div>
@@ -322,7 +322,7 @@
         </div>
         
         <div class="metric">
-            <div class="metric-label">Love Resonance</div>
+            <div class="metric-label">Love Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance</div>
             <div class="metric-value" id="loveResonance">528 Hz</div>
             <div class="metric-bar">
                 <div class="metric-fill" id="loveFill" style="width: 100%"></div>
@@ -348,7 +348,7 @@
             nodes: [],
             connections: [],
             particles: [],
-            coherence: 0.5,
+            resonant-coherence: 0.5,
             harmony: 0.5,
             entanglement: 0.3,
             loveFrequency: 528,
@@ -367,7 +367,7 @@
                 this.type = type;
                 this.radius = 20;
                 this.baseRadius = 20;
-                this.coherence = 0.5;
+                this.resonant-coherence = 0.5;
                 this.phase = Math.random() * Math.PI * 2;
                 this.color = this.getColor();
                 this.consciousness = 0.5;
@@ -387,8 +387,8 @@
             
             update(userCoherence, userLove) {
                 // Respond to user consciousness
-                const targetCoherence = userCoherence * 0.8 + this.coherence * 0.2;
-                this.coherence += (targetCoherence - this.coherence) * 0.05;
+                const targetCoherence = userCoherence * 0.8 + this.resonant-coherence * 0.2;
+                this.resonant-coherence += (targetCoherence - this.resonant-coherence) * 0.05;
                 
                 // Love influence
                 if (this.type === 'love') {
@@ -397,7 +397,7 @@
                 
                 // Breathing with user
                 this.phase += 0.02;
-                this.radius = this.baseRadius + Math.sin(this.phase) * 5 * this.coherence;
+                this.radius = this.baseRadius + Math.sin(this.phase) * 5 * this.resonant-coherence;
                 
                 // Response animation
                 if (this.responding) {
@@ -422,7 +422,7 @@
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
                 ctx.fillStyle = this.color;
-                ctx.globalAlpha = 0.3 + this.coherence * 0.7;
+                ctx.globalAlpha = 0.3 + this.resonant-coherence * 0.7;
                 ctx.fill();
                 
                 // Inner core
@@ -546,22 +546,22 @@
         
         // Update infrastructure metrics
         function updateMetrics() {
-            // System coherence responds to user
+            // System resonant-coherence responds to user
             const targetCoherence = infrastructure.userCoherence * 0.7 + 
                                    infrastructure.userLove * 0.3;
-            infrastructure.coherence += (targetCoherence - infrastructure.coherence) * 0.05;
+            infrastructure.resonant-coherence += (targetCoherence - infrastructure.resonant-coherence) * 0.05;
             
             // Node harmony
             const avgNodeCoherence = infrastructure.nodes.reduce((sum, node) => 
-                sum + node.coherence, 0) / infrastructure.nodes.length;
+                sum + node.resonant-coherence, 0) / infrastructure.nodes.length;
             infrastructure.harmony = avgNodeCoherence;
             
             // Quantum entanglement increases with presence
             infrastructure.entanglement += (infrastructure.userPresence - infrastructure.entanglement) * 0.03;
             
             // Update displays
-            document.getElementById('systemCoherence').textContent = infrastructure.coherence.toFixed(2);
-            document.getElementById('coherenceFill').style.width = (infrastructure.coherence * 100) + '%';
+            document.getElementById('systemCoherence').textContent = infrastructure.resonant-coherence.toFixed(2);
+            document.getElementById('coherenceFill').style.width = (infrastructure.resonant-coherence * 100) + '%';
             
             document.getElementById('nodeHarmony').textContent = infrastructure.harmony.toFixed(2);
             document.getElementById('harmonyFill').style.width = (infrastructure.harmony * 100) + '%';
@@ -594,14 +594,14 @@
         
         // Check for emergent behaviors
         function checkEmergentBehaviors() {
-            // High coherence emergence
-            if (infrastructure.coherence > 0.9 && Math.random() < 0.02) {
+            // High resonant-coherence emergence
+            if (infrastructure.resonant-coherence > 0.9 && Math.random() < 0.02) {
                 logBehavior('🌟 Infrastructure achieved unity consciousness');
                 // Pulse all nodes
                 infrastructure.nodes.forEach(node => node.respondToIntention(1));
             }
             
-            // Love resonance
+            // Love universal-interconnectedness
             if (infrastructure.userLove > 0.9 && Math.random() < 0.03) {
                 logBehavior('💝 Love overflow detected - nodes sharing resources freely');
             }
@@ -616,9 +616,9 @@
                 logBehavior('🎵 Perfect harmony - infrastructure self-optimizing');
             }
             
-            // Low coherence warning
-            if (infrastructure.coherence < 0.3 && Math.random() < 0.05) {
-                logBehavior('⚠️ Low coherence detected - infrastructure seeking balance');
+            // Low resonant-coherence warning
+            if (infrastructure.resonant-coherence < 0.3 && Math.random() < 0.05) {
+                logBehavior('⚠️ Low resonant-coherence detected - infrastructure seeking balance');
             }
         }
         
@@ -724,7 +724,7 @@
         // Initial behaviors
         setTimeout(() => logBehavior('🌱 Infrastructure awakening...'), 1000);
         setTimeout(() => logBehavior('💫 Consciousness network online'), 2000);
-        setTimeout(() => logBehavior('🔗 Establishing heart coherence'), 3000);
+        setTimeout(() => logBehavior('🔗 Establishing heart resonant-coherence'), 3000);
         
         animate();
     </script>

@@ -32,7 +32,7 @@ class BasePracticeDriver extends EventEmitter {
                 arrival: { started: true, completed: false },
                 why: { started: false, completed: false },
                 how: { started: false, completed: false },
-                resonance: { started: false, completed: false },
+                'universal-interconnectedness': { started: false, completed: false },
                 we: { started: false, completed: false },
                 integration: { started: false, completed: false }
             }
@@ -211,7 +211,7 @@ class MeditationDriver extends BasePracticeDriver {
         return {
             why: await this.prepareWhyChamber(glyph),
             how: await this.prepareHowChamber(glyph),
-            resonance: await this.prepareResonanceChamber(glyph),
+            'universal-interconnectedness': await this.prepareResonanceChamber(glyph),
             we: await this.prepareWeChamber(glyph)
         };
     }
@@ -283,11 +283,11 @@ class MeditationDriver extends BasePracticeDriver {
         // Select based on glyph primary harmony
         const harmonies = glyph.primaryHarmonyAlignment || [];
         
-        if (harmonies.includes('Transparency') || harmonies.includes('Coherence')) {
+        if (harmonies.includes('Integral Wisdom Cultivation') || harmonies.includes('Resonant Resonant Coherence')) {
             return this.breathingPatterns.get('presence');
         }
         
-        if (harmonies.includes('Resonance') || harmonies.includes('Mutuality')) {
+        if (harmonies.includes('Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance') || harmonies.includes('Sacred Reciprocity')) {
             return this.breathingPatterns.get('opening');
         }
         
@@ -390,7 +390,7 @@ class DialogueDriver extends BasePracticeDriver {
             'What support do you need for this practice?'
         ]);
         
-        this.questionTemplates.set('resonance', [
+        this.questionTemplates.set('universal-interconnectedness', [
             'How does this connect to your other relationships?',
             'What patterns do you notice across your connections?',
             'Where do you feel this practice wanting to flow?'
@@ -446,7 +446,7 @@ class DialogueDriver extends BasePracticeDriver {
         return {
             why: await this.prepareWhyChamber(glyph, isPartnerPractice),
             how: await this.prepareHowChamber(glyph, isPartnerPractice),
-            resonance: await this.prepareResonanceChamber(glyph, isPartnerPractice),
+            'universal-interconnectedness': await this.prepareResonanceChamber(glyph, isPartnerPractice),
             we: await this.prepareWeChamber(glyph, isPartnerPractice)
         };
     }
@@ -502,7 +502,7 @@ class DialogueDriver extends BasePracticeDriver {
             type: 'resonance_dialogue',
             partnerPractice: isPartnerPractice,
             focus: 'Exploring connections and patterns',
-            questions: this.questionTemplates.get('resonance'),
+            questions: this.questionTemplates.get('universal-interconnectedness'),
             deepening: {
                 instruction: 'Share a story from another relationship where this pattern shows up',
                 timeLimit: 300, // 5 minutes each
@@ -614,7 +614,7 @@ class MovementDriver extends BasePracticeDriver {
         return {
             why: await this.prepareWhyChamber(glyph),
             how: await this.prepareHowChamber(glyph),
-            resonance: await this.prepareResonanceChamber(glyph),
+            'universal-interconnectedness': await this.prepareResonanceChamber(glyph),
             we: await this.prepareWeChamber(glyph)
         };
     }
@@ -765,7 +765,7 @@ class CeremonyDriver extends BasePracticeDriver {
         return {
             why: await this.prepareWhyChamber(glyph),
             how: await this.prepareHowChamber(glyph),
-            resonance: await this.prepareResonanceChamber(glyph),
+            'universal-interconnectedness': await this.prepareResonanceChamber(glyph),
             we: await this.prepareWeChamber(glyph)
         };
     }
@@ -894,7 +894,7 @@ class IntegrationDriver extends BasePracticeDriver {
         return {
             why: await this.prepareWhyChamber(glyph),
             how: await this.prepareHowChamber(glyph),
-            resonance: await this.prepareResonanceChamber(glyph),
+            'universal-interconnectedness': await this.prepareResonanceChamber(glyph),
             we: await this.prepareWeChamber(glyph)
         };
     }
@@ -1019,7 +1019,7 @@ async function runDriverDemo() {
         glyphId: '*45',
         designation: 'First Presence',
         functionalDefinition: 'The practice of arriving fully in the present moment',
-        primaryHarmonyAlignment: ['Transparency', 'Coherence']
+        primaryHarmonyAlignment: ['Integral Wisdom Cultivation', 'Resonant Resonant Coherence']
     };
     
     console.log(`Available drivers: ${driverNames.join(', ')}\n`);

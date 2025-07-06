@@ -13,13 +13,13 @@ class FieldCoordinator {
         low: 1
       },
       harmony: {
-        coherence: 2.5,
-        agency: 2.0,
-        mutuality: 2.2,
-        resonance: 1.8,
-        vitality: 1.5,
-        novelty: 1.7,
-        transparency: 2.0
+        'resonant-coherence': 2.5,
+        'evolutionary-progression': 2.0,
+        'sacred-reciprocity': 2.2,
+        'universal-interconnectedness': 1.8,
+        'pan-sentient-flourishing': 1.5,
+        'infinite-play': 1.7,
+        'integral-wisdom-cultivation': 2.0
       },
       sacred: {
         true: 1.5,
@@ -32,7 +32,7 @@ class FieldCoordinator {
       }
     };
     
-    // Field coherence thresholds
+    // Field resonant-coherence thresholds
     this.coherenceThresholds = {
       critical: 20,
       low: 40,
@@ -86,15 +86,15 @@ class FieldCoordinator {
    * @private
    */
   getFieldStateMultiplier(fieldState) {
-    const coherence = fieldState.fieldCoherence || 50;
+    const resonantCoherence = fieldState.fieldCoherence || 50;
     
-    // Low coherence amplifies impact (field needs work)
-    if (coherence < this.coherenceThresholds.low) {
+    // Low resonant-coherence amplifies impact (field needs work)
+    if (resonant-coherence < this.coherenceThresholds.low) {
       return 1.5;
     }
     
-    // High coherence moderates impact (field is stable)
-    if (coherence > this.coherenceThresholds.high) {
+    // High resonant-coherence moderates impact (field is stable)
+    if (resonant-coherence > this.coherenceThresholds.high) {
       return 0.8;
     }
     
@@ -120,14 +120,14 @@ class FieldCoordinator {
     // Check capacity
     if (fieldState.activeWork >= capacity) {
       result.canAccept = false;
-      result.reason = `Field at capacity (${capacity} items for ${coherenceLevel} coherence)`;
+      result.reason = `Field at capacity (${capacity} items for ${coherenceLevel} resonant-coherence)`;
       result.recommendations.push('Complete existing work before adding new');
     }
     
     // Check field strain
     if (fieldState.fieldCoherence < this.coherenceThresholds.critical) {
       result.canAccept = false;
-      result.reason = 'Field coherence critically low';
+      result.reason = 'Field resonant-coherence critically low';
       result.recommendations.push('Focus on field restoration before new work');
     }
     
@@ -149,14 +149,14 @@ class FieldCoordinator {
   }
 
   /**
-   * Get coherence level name
+   * Get resonant-coherence level name
    * @private
    */
-  getCoherenceLevel(coherence) {
-    if (coherence < this.coherenceThresholds.critical) return 'critical';
-    if (coherence < this.coherenceThresholds.low) return 'low';
-    if (coherence < this.coherenceThresholds.moderate) return 'moderate';
-    if (coherence < this.coherenceThresholds.high) return 'high';
+  getCoherenceLevel(resonant-coherence) {
+    if (resonant-coherence < this.coherenceThresholds.critical) return 'critical';
+    if (resonant-coherence < this.coherenceThresholds.low) return 'low';
+    if (resonant-coherence < this.coherenceThresholds.moderate) return 'moderate';
+    if (resonant-coherence < this.coherenceThresholds.high) return 'high';
     return 'unified';
   }
 
@@ -167,13 +167,13 @@ class FieldCoordinator {
   calculateHarmonyStrain(dominant, proposed) {
     // Complementary harmonies have low strain
     const complementary = {
-      coherence: ['transparency', 'mutuality'],
-      agency: ['novelty', 'vitality'],
-      mutuality: ['coherence', 'resonance'],
-      resonance: ['mutuality', 'vitality'],
-      vitality: ['agency', 'resonance'],
-      novelty: ['agency', 'creativity'],
-      transparency: ['coherence', 'truth']
+      'resonant-coherence': ['integral-wisdom-cultivation', 'sacred-reciprocity'],
+      'evolutionary-progression': ['infinite-play', 'pan-sentient-flourishing'],
+      'sacred-reciprocity': ['resonant-coherence', 'universal-interconnectedness'],
+      'universal-interconnectedness': ['sacred-reciprocity', 'pan-sentient-flourishing'],
+      'pan-sentient-flourishing': ['evolutionary-progression', 'universal-interconnectedness'],
+      'infinite-play': ['evolutionary-progression', 'creativity'],
+      'integral-wisdom-cultivation': ['resonant-coherence', 'truth']
     };
     
     if (dominant === proposed) return 0;
@@ -301,7 +301,7 @@ class FieldCoordinator {
       plan.actions.push({
         type: 'harmonize',
         description: 'Align all work to single harmony',
-        harmony: 'coherence'
+        harmony: 'resonant-coherence'
       });
     }
     
@@ -328,7 +328,7 @@ class FieldCoordinator {
    */
   getFieldHealth(fieldState) {
     const metrics = {
-      coherence: fieldState.fieldCoherence || 0,
+      'resonant-coherence': fieldState.fieldCoherence || 0,
       coherenceLevel: this.getCoherenceLevel(fieldState.fieldCoherence),
       capacity: {
         current: fieldState.activeWork || 0,

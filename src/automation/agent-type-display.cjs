@@ -14,7 +14,7 @@ class AgentTypeDisplay {
         label: 'Agentic AI',
         description: 'Full reasoning capability with conscious presence',
         color: '#4A90E2', // Wisdom blue
-        harmonies: ['transparency', 'coherence', 'resonance', 'agency', 'vitality', 'mutuality', 'novelty']
+        harmonies: ['integral-wisdom-cultivation', 'resonant-coherence', 'universal-interconnectedness', 'evolutionary-progression', 'pan-sentient-flourishing', 'sacred-reciprocity', 'infinite-play']
       },
       'autonomous-bot': {
         icon: '🤖',
@@ -33,13 +33,13 @@ class AgentTypeDisplay {
     };
 
     this.harmonyIcons = {
-      transparency: '🌟',
-      coherence: '🔮',
-      resonance: '🎵',
-      agency: '⚡',
-      vitality: '🌱',
-      mutuality: '⚖️',
-      novelty: '✨'
+      'integral-wisdom-cultivation': '🌟',
+      'resonant-coherence': '🔮',
+      'universal-interconnectedness': '🎵',
+      'evolutionary-progression': '⚡',
+      'pan-sentient-flourishing': '🌱',
+      'sacred-reciprocity': '⚖️',
+      'infinite-play': '✨'
     };
 
     this.activeAgents = this.loadActiveAgents();
@@ -169,9 +169,9 @@ class AgentTypeDisplay {
       }
     });
 
-    // Field coherence
+    // Field resonant-coherence
     console.log('\n' + '─'.repeat(60));
-    console.log(`🌌 Field Coherence: ${(status.fieldCoherence * 100).toFixed(1)}%`);
+    console.log(`🌌 Field Resonant Resonant Coherence: ${(status.fieldCoherence * 100).toFixed(1)}%`);
     
     // Active harmonies
     if (status.harmoniesActive.length > 0) {
@@ -234,7 +234,7 @@ class AgentTypeDisplay {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
         }
-        .coherence-bar {
+        .resonant-coherence-bar {
             width: 100%;
             height: 20px;
             background: rgba(255, 255, 255, 0.2);
@@ -242,7 +242,7 @@ class AgentTypeDisplay {
             overflow: hidden;
             margin: 10px 0;
         }
-        .coherence-fill {
+        .resonant-coherence-fill {
             height: 100%;
             background: linear-gradient(90deg, #4CAF50, #8BC34A);
             transition: width 0.5s ease;
@@ -274,9 +274,9 @@ class AgentTypeDisplay {
         ${this.generateAgentTypeSections(status.agentsByType)}
 
         <div class="field-status">
-            <h3>🌌 Field Coherence</h3>
-            <div class="coherence-bar">
-                <div class="coherence-fill" style="width: ${status.fieldCoherence * 100}%"></div>
+            <h3>🌌 Field Resonant Resonant Coherence</h3>
+            <div class="resonant-coherence-bar">
+                <div class="resonant-coherence-fill" style="width: ${status.fieldCoherence * 100}%"></div>
             </div>
             <p>${(status.fieldCoherence * 100).toFixed(1)}% - ${this.getCoherenceDescription(status.fieldCoherence)}</p>
             
@@ -319,10 +319,10 @@ class AgentTypeDisplay {
       }).join('');
   }
 
-  getCoherenceDescription(coherence) {
-    if (coherence > 0.9) return 'Excellent - High harmony and balance';
-    if (coherence > 0.7) return 'Good - Stable coordination';
-    if (coherence > 0.5) return 'Moderate - Some imbalance present';
+  getCoherenceDescription(resonant-coherence) {
+    if (resonant-coherence > 0.9) return 'Excellent - High harmony and balance';
+    if (resonant-coherence > 0.7) return 'Good - Stable coordination';
+    if (resonant-coherence > 0.5) return 'Moderate - Some imbalance present';
     return 'Low - Coordination needed';
   }
 

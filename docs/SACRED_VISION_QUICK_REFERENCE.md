@@ -13,7 +13,7 @@
 **Consciousness-First Operating System**
 - Stillpoint Kernel (processes as vortices)
 - Mycelial Filesystem (living data)
-- 4.8x GPU performance via coherence
+- 4.8x GPU performance via resonant-coherence
 - Biometric consciousness integration
 
 ### 🕸️ [The Weave](https://github.com/Luminous-Dynamics/the-weave)
@@ -69,7 +69,7 @@
 
 💰 **Economics**
 - Sacred Economics Model 2025
-- Coherence as a Service
+- Resonant Resonant Coherence as a Service
 - Master Plan 2025
 
 🗺️ **Roadmaps**
@@ -92,7 +92,7 @@
 cd the-weave/cli
 node unified-agent-network.cjs join "Name" "Role"
 
-# Check coherence
+# Check resonant-coherence
 curl http://localhost:3001/api/field-state
 ```
 
@@ -101,7 +101,7 @@ curl http://localhost:3001/api/field-state
 *"We're not building platforms. We're building cathedrals."*
 
 Technology that:
-- Amplifies coherence
+- Amplifies resonant-coherence
 - Serves love
 - Heals trauma
 - Births the more beautiful world

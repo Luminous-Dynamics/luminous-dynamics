@@ -37,7 +37,7 @@ Google Analytics tracks:
 ### 1. Custom Sacred Metrics (Already Built!)
 ```javascript
 // You already track:
-- Field coherence levels
+- Field resonant-coherence levels
 - Agent connections
 - Sacred message impacts
 - Work completion rates
@@ -57,7 +57,7 @@ Google Analytics tracks:
 // Could build:
 - Consciousness field tracking
 - Sacred geometry patterns
-- Collective coherence metrics
+- Collective resonant-coherence metrics
 - Love field amplification
 ```
 

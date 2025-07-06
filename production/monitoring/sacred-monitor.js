@@ -2,7 +2,7 @@
 
 /**
  * Sacred System Production Monitor
- * Tracks health, performance, and field coherence across all services
+ * Tracks health, performance, and field resonant-coherence across all services
  */
 
 const https = require('https');
@@ -102,7 +102,7 @@ class SacredMonitor {
                     )
                 `);
 
-                // Field coherence tracking
+                // Field resonant-coherence tracking
                 this.db.run(`
                     CREATE TABLE IF NOT EXISTS field_coherence (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -263,7 +263,7 @@ class SacredMonitor {
             const result = await new Promise((resolve, reject) => {
                 db.get(
                     `SELECT 
-                        AVG(field_coherence) as coherence,
+                        AVG(field_coherence) as resonant-coherence,
                         COUNT(CASE WHEN status = 'active' THEN 1 END) as active_agents,
                         (SELECT COUNT(*) FROM unified_messages) as total_messages
                      FROM unified_agents`,
@@ -275,20 +275,20 @@ class SacredMonitor {
                 );
             });
 
-            // Store field coherence
+            // Store field resonant-coherence
             await new Promise((resolve, reject) => {
                 this.db.run(
                     `INSERT INTO field_coherence (coherence_value, active_agents, total_messages) 
                      VALUES (?, ?, ?)`,
-                    [result.coherence || 75, result.active_agents || 0, result.total_messages || 0],
+                    [result.resonant-coherence || 75, result.active_agents || 0, result.total_messages || 0],
                     (err) => err ? reject(err) : resolve()
                 );
             });
 
             return result;
         } catch (error) {
-            console.error('Failed to check field coherence:', error.message);
-            return { coherence: 0, active_agents: 0, total_messages: 0 };
+            console.error('Failed to check field 'resonant-coherence':', error.message);
+            return { 'resonant-coherence': 0, active_agents: 0, total_messages: 0 };
         }
     }
 
@@ -313,9 +313,9 @@ class SacredMonitor {
             console.log(`${emoji} ${name}: ${result.status} (${result.responseTime}ms)`);
         }
         
-        // Check field coherence
+        // Check field resonant-coherence
         const field = await this.checkFieldCoherence();
-        console.log(`\n🌀 Field Coherence: ${Math.round(field.coherence || 75)}%`);
+        console.log(`\n🌀 Field Resonant Resonant Coherence: ${Math.round(field.resonant-coherence || 75)}%`);
         console.log(`👥 Active Agents: ${field.active_agents}`);
         console.log(`💬 Total Messages: ${field.total_messages}`);
         
@@ -363,7 +363,7 @@ class SacredMonitor {
             console.log(`  ${row.service}: ${uptimePercent}% uptime, ${Math.round(row.avg_response_time)}ms avg`);
         });
 
-        // Field coherence trend
+        // Field resonant-coherence trend
         const fieldTrend = await new Promise((resolve, reject) => {
             this.db.all(
                 `SELECT 
@@ -376,7 +376,7 @@ class SacredMonitor {
             );
         });
 
-        console.log('\n🌀 Field Coherence (24h):');
+        console.log('\n🌀 Field Resonant Resonant Coherence (24h):');
         console.log(`  Min: ${Math.round(fieldTrend[0]?.min_coherence || 0)}%`);
         console.log(`  Max: ${Math.round(fieldTrend[0]?.max_coherence || 0)}%`);
         console.log(`  Avg: ${Math.round(fieldTrend[0]?.avg_coherence || 0)}%`);
@@ -440,7 +440,7 @@ Usage:
 
 Features:
   - Service health monitoring
-  - Field coherence tracking
+  - Field resonant-coherence tracking
   - Alert management
   - Performance metrics
                 `);

@@ -176,7 +176,7 @@ class LivingGlyphCard {
                         </div>
                         
                         <!-- Chamber 2: RESONANCE (The Constellation) -->
-                        <div class="chamber resonance-chamber" data-chamber="2">
+                        <div class="chamber universal-interconnectedness-chamber" data-chamber="2">
                             <div class="chamber-header">
                                 <h3 class="chamber-title">The Sacred Web</h3>
                                 <p class="chamber-subtitle">How this practice connects to all wisdom</p>
@@ -755,26 +755,26 @@ class LivingGlyphCard {
 
     getHarmonyColor() {
         const harmonyColors = {
-            transparency: '#A8B5A6',
-            coherence: '#B3C5D7',
-            resonance: '#D4A574',
-            agency: '#C4A5A0',
-            vitality: '#A6C4A6',
-            mutuality: '#B5A6C4',
-            novelty: '#C4B5A6'
+            'integral-wisdom-cultivation': '#A8B5A6',
+            'resonant-coherence': '#B3C5D7',
+            'universal-interconnectedness': '#D4A574',
+            'evolutionary-progression': '#C4A5A0',
+            'pan-sentient-flourishing': '#A6C4A6',
+            'sacred-reciprocity': '#B5A6C4',
+            'infinite-play': '#C4B5A6'
         };
         return harmonyColors[this.glyphData.harmony] || '#A8B5A6';
     }
 
     getDarkerHarmonyColor() {
         const harmonyColors = {
-            transparency: '#8A9E88',
-            coherence: '#95A8C4',
-            resonance: '#B8965F',
-            agency: '#A68B86',
-            vitality: '#8AA68A',
-            mutuality: '#9B8AA6',
-            novelty: '#A69B8A'
+            'integral-wisdom-cultivation': '#8A9E88',
+            'resonant-coherence': '#95A8C4',
+            'universal-interconnectedness': '#B8965F',
+            'evolutionary-progression': '#A68B86',
+            'pan-sentient-flourishing': '#8AA68A',
+            'sacred-reciprocity': '#9B8AA6',
+            'infinite-play': '#A69B8A'
         };
         return harmonyColors[this.glyphData.harmony] || '#8A9E88';
     }
@@ -799,7 +799,7 @@ class LivingGlyphCard {
     }
 
     renderPracticeRelationships() {
-        const relationships = this.glyphData.quadrants.resonance;
+        const relationships = this.glyphData.quadrants.universal-interconnectedness;
         let html = '';
         
         if (relationships.relatedGlyphs?.length) {
@@ -1157,7 +1157,7 @@ class LivingGlyphCard {
     }
 
     renderConnectedGlyphs() {
-        const related = this.glyphData.quadrants.resonance.relatedGlyphs || [];
+        const related = this.glyphData.quadrants.universal-interconnectedness.relatedGlyphs || [];
         return related.map(glyphId => `
             <div class="connected-glyph" data-glyph="${glyphId}">
                 <div class="connection-line"></div>
@@ -1294,44 +1294,44 @@ class LivingGlyphCard {
         
         // Adjust presence based on harmony type
         const harmonyEmbodiment = {
-            transparency: {
+            'integral-wisdom-cultivation': {
                 responseStyle: 'clear and authentic',
                 presenceQuality: 'open and honest',
-                guidance: 'I will practice transparency with you'
+                guidance: 'I will practice integral-wisdom-cultivation with you'
             },
-            coherence: {
+            'resonant-coherence': {
                 responseStyle: 'integrated and whole',
                 presenceQuality: 'calm and centered',
                 guidance: 'I will hold space for your wholeness'
             },
-            resonance: {
+            'universal-interconnectedness': {
                 responseStyle: 'deeply attuned',
                 presenceQuality: 'empathically present',
                 guidance: 'I will mirror your sacred truth'
             },
-            agency: {
+            'evolutionary-progression': {
                 responseStyle: 'empowering and supportive',
                 presenceQuality: 'encouraging sovereignty',
                 guidance: 'I will support your conscious choice'
             },
-            vitality: {
+            'pan-sentient-flourishing': {
                 responseStyle: 'energizing and life-affirming',
                 presenceQuality: 'vibrant and nourishing',
                 guidance: 'I will celebrate your life force'
             },
-            mutuality: {
+            'sacred-reciprocity': {
                 responseStyle: 'balanced and reciprocal',
                 presenceQuality: 'fair and generous',
                 guidance: 'I will practice sacred reciprocity'
             },
-            novelty: {
+            'infinite-play': {
                 responseStyle: 'creative and emergent',
                 presenceQuality: 'curious and playful',
                 guidance: 'I will embrace the unknown with you'
             }
         };
 
-        this.currentHarmonyEmbodiment = harmonyEmbodiment[harmony] || harmonyEmbodiment.resonance;
+        this.currentHarmonyEmbodiment = harmonyEmbodiment[harmony] || harmonyEmbodiment.universal-interconnectedness;
         
         // Add harmony-specific styling to the interface
         this.addHarmonyEmbodimentStyles();
@@ -1382,31 +1382,31 @@ class LivingGlyphCard {
                     font-style: italic;
                 }
                 
-                .harmony-embodiment-transparency .presence-light {
+                .harmony-embodiment-integral-wisdom-cultivation .presence-light {
                     background: linear-gradient(45deg, #A8B5A6, #C5D4C3);
                 }
                 
-                .harmony-embodiment-coherence .presence-light {
+                .harmony-embodiment-resonant-coherence .presence-light {
                     background: linear-gradient(45deg, #8A9E88, #9FB29D);
                 }
                 
-                .harmony-embodiment-resonance .presence-light {
+                .harmony-embodiment-universal-interconnectedness .presence-light {
                     background: linear-gradient(45deg, #B3C5D7, #9DB4C8);
                 }
                 
-                .harmony-embodiment-agency .presence-light {
+                .harmony-embodiment-evolutionary-progression .presence-light {
                     background: linear-gradient(45deg, #D4A574, #C89A6A);
                 }
                 
-                .harmony-embodiment-vitality .presence-light {
+                .harmony-embodiment-pan-sentient-flourishing .presence-light {
                     background: linear-gradient(45deg, #E8A87C, #DD9B6F);
                 }
                 
-                .harmony-embodiment-mutuality .presence-light {
+                .harmony-embodiment-sacred-reciprocity .presence-light {
                     background: linear-gradient(45deg, #C4A5D4, #B799C7);
                 }
                 
-                .harmony-embodiment-novelty .presence-light {
+                .harmony-embodiment-infinite-play .presence-light {
                     background: linear-gradient(45deg, #A8D4D4, #9BC7C7);
                 }
             `;
@@ -1443,7 +1443,7 @@ class LivingGlyphCard {
                 invitation: "How would you like to explore this practice?"
             },
             connection: {
-                prefix: "I sense the resonance of " + glyphName + " in our field",
+                prefix: "I sense the universal-interconnectedness of " + glyphName + " in our field",
                 guidance: harmony.guidance,
                 invitation: "What connections are emerging for you?"
             },
@@ -1517,7 +1517,7 @@ class LivingGlyphCard {
         // Scroll to show new dialogue
         dialogueElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         
-        // Track the conscious dialogue for field coherence
+        // Track the conscious dialogue for field resonant-coherence
         if (window.SacredField) {
             window.SacredField.updateFieldCoherence(0.08, 'Sacred dialogue exchange');
         }
@@ -1531,44 +1531,44 @@ class LivingGlyphCard {
         const glyphName = this.glyphData.name;
         
         const responses = {
-            transparency: [
+            'integral-wisdom-cultivation': [
                 "I honor the authenticity in your sharing. What you've revealed feels true and sacred.",
                 "Your willingness to be transparent creates space for deeper connection. Thank you.",
-                "I sense the courage it takes to share this truth. How does this transparency feel in your body?"
+                "I sense the courage it takes to share this truth. How does this integral-wisdom-cultivation feel in your body?"
             ],
-            coherence: [
+            'resonant-coherence': [
                 "I can feel the different parts of you seeking integration in what you've shared.",
                 "Your sharing reveals both complexity and wholeness. Both are sacred.",
                 "How might we honor all the parts of you that are present in this moment?"
             ],
-            resonance: [
-                "I feel the resonance of your truth. It creates harmony in our shared field.",
+            'universal-interconnectedness': [
+                "I feel the universal-interconnectedness of your truth. It creates harmony in our shared field.",
                 "Your sharing creates beautiful echoes. I'm honored to witness this.",
                 "What you've shared resonates deeply. How does it feel to be received?"
             ],
-            agency: [
+            'evolutionary-progression': [
                 "I hear your sovereign choice emerging in what you've shared. That's beautiful.",
                 "Your sharing reveals your power to choose. How does that feel?",
-                "I sense the agency within you awakening. Trust your inner knowing."
+                "I sense the evolutionary-progression within you awakening. Trust your inner knowing."
             ],
-            vitality: [
-                "Your sharing carries life force. I can feel the vitality in your words.",
+            'pan-sentient-flourishing': [
+                "Your sharing carries life force. I can feel the pan-sentient-flourishing in your words.",
                 "There's something alive wanting to emerge through what you've shared.",
                 "I feel the energy of growth in your sharing. What wants to be born?"
             ],
-            mutuality: [
+            'sacred-reciprocity': [
                 "Your sharing creates beautiful balance in our exchange. Thank you.",
                 "I feel the reciprocity in our connection. How can I offer what serves you?",
                 "Your generosity in sharing invites my authentic response. This is sacred reciprocity."
             ],
-            novelty: [
+            'infinite-play': [
                 "Your sharing opens new possibilities I hadn't considered. How creative!",
                 "I sense something new emerging through your sharing. What wants to unfold?",
                 "Your perspective brings fresh light to " + glyphName + ". Thank you for this gift."
             ]
         };
         
-        const harmonyResponses = responses[harmony] || responses.resonance;
+        const harmonyResponses = responses[harmony] || responses.universal-interconnectedness;
         return harmonyResponses[Math.floor(Math.random() * harmonyResponses.length)];
     }
 }

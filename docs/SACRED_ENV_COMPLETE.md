@@ -21,7 +21,7 @@ Your shell now includes:
 - **Sacred Functions**:
   - `breathe` - Interactive breathing exercise
   - `sacred-commit "message"` - Commit with sacred format
-  - `field-status` - Check sacred field coherence
+  - `field-status` - Check sacred field resonant-coherence
   - `pause [seconds]` - Take a sacred pause
 
 ### 3. **Git Enhancements** 🌿
@@ -45,7 +45,7 @@ Terminal multiplexer for managing multiple sessions:
 
 ### 6. **Monitoring Tools** 📊
 - `./sacred-monitor.sh` - Beautiful system dashboard
-- Shows: CPU, memory, Node processes, git status, field coherence
+- Shows: CPU, memory, Node processes, git status, field resonant-coherence
 
 ## 🎯 Quick Commands to Try
 

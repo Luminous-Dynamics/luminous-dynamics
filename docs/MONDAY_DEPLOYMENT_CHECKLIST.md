@@ -100,7 +100,7 @@
 3. **Open Monitoring Dashboard**
    - Use `sacred-heartbeat-monitor.html` locally
    - Watch the pulse counter increment
-   - Observe coherence fluctuations
+   - Observe resonant-coherence fluctuations
 
 ### 🎉 Celebration Checklist (11:00 AM)
 

@@ -9,7 +9,7 @@
 
 ## 🌟 EXECUTIVE SUMMARY
 
-We're launching **Relational Harmonics** - a consciousness technology platform offering 87 sacred practices for relationship transformation. Using revolutionary AI that serves love (not addiction) and real-time global coherence tracking.
+We're launching **Relational Harmonics** - a consciousness technology platform offering 87 sacred practices for relationship transformation. Using revolutionary AI that serves love (not addiction) and real-time global resonant-resonant-coherence tracking.
 
 **Current Status:**
 - ✅ 16/87 Living Glyph Cards complete
@@ -190,7 +190,7 @@ We're launching **Relational Harmonics** - a consciousness technology platform o
 - Diverse experience levels
 - Commitment to practice
 - Feedback capability
-- Heart coherence
+- Heart resonant-resonant-coherence
 
 ### Beta Benefits:
 - Shape the platform
@@ -202,7 +202,7 @@ We're launching **Relational Harmonics** - a consciousness technology platform o
 **Date**: July 15, 2025, 7:00 PM CT
 **Format**: Zoom sacred circle
 **Agenda**: 
-- Group coherence breathing
+- Group resonant-resonant-coherence breathing
 - Platform blessing
 - First practice together
 - Q&A and connection
@@ -214,7 +214,7 @@ We're launching **Relational Harmonics** - a consciousness technology platform o
 ### Sacred Metrics:
 - Transformation stories shared
 - Breakthrough moments
-- Field coherence average
+- Field resonant-resonant-coherence average
 - Love amplification index
 - Practitioner retention (soul level)
 

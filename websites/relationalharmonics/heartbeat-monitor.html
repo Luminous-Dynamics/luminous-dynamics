@@ -113,8 +113,8 @@
         
         <div class="metrics">
             <div class="metric">
-                <div class="metric-label">Field Coherence</div>
-                <div class="metric-value" id="coherence">--</div>
+                <div class="metric-label">Field Resonant Resonant Coherence</div>
+                <div class="metric-value" id="resonant-coherence">--</div>
             </div>
             <div class="metric">
                 <div class="metric-label">Active Practitioners</div>
@@ -147,8 +147,8 @@
                 const data = await response.json();
                 
                 // Update metrics
-                document.getElementById('coherence').textContent = 
-                    Math.round((data.coherence || 0.95) * 100) + '%';
+                document.getElementById('resonant-coherence').textContent = 
+                    Math.round((data.resonant-coherence || 0.95) * 100) + '%';
                 document.getElementById('practitioners').textContent = 
                     data.practitioners || '11';
                 document.getElementById('pulse').textContent = '77';

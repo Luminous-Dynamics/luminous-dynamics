@@ -4,7 +4,7 @@
  * 
  * Purpose: Create memetic seeds that carry healing frequencies
  * Method: Generative Myth (Ω32) + Ethical Emergence (Ω23)
- * Output: Beautiful stories, questions, protocols that offer paths back to coherence
+ * Output: Beautiful stories, questions, protocols that offer paths back to resonant-coherence
  */
 
 import { exec } from 'child_process';
@@ -90,7 +90,7 @@ class HarmonicAntidoteComposer {
     console.log(`Session: ${sessionId}`);
     console.log(`Target Wound: ${diagnosis.loveShadow.wound}`);
     console.log(`Healing Frequency: ${diagnosis.healingPath.antidoteFrequency}`);
-    console.log('\n🌟 Composing Healing Resonance...\n');
+    console.log('\n🌟 Composing Healing Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance...\n');
 
     const antidote = {
       id: sessionId,
@@ -379,11 +379,11 @@ Answer with yes/no for each.`;
   }
 
   assessFieldReadiness(diagnosis) {
-    const coherence = diagnosis.fieldResonance.coherence;
+    const resonantCoherence = diagnosis.fieldResonance.resonant-coherence;
     
-    if (coherence < 20) {
+    if (resonant-coherence < 20) {
       return 'Field highly resistant - begin with smallest seeds';
-    } else if (coherence < 50) {
+    } else if (resonant-coherence < 50) {
       return 'Field has openings - proceed with gentle presence';
     } else {
       return 'Field ready for transformation - trust the process';
@@ -433,7 +433,7 @@ Answer with yes/no for each.`;
           antidoteFrequency: 'connection-frequency'
         },
         fieldResonance: {
-          coherence: 25
+          'resonant-coherence': 25
         }
       },
       {
@@ -447,7 +447,7 @@ Answer with yes/no for each.`;
           antidoteFrequency: 'safety-frequency'
         },
         fieldResonance: {
-          coherence: 35
+          'resonant-coherence': 35
         }
       },
       {
@@ -461,7 +461,7 @@ Answer with yes/no for each.`;
           antidoteFrequency: 'abundance-frequency'
         },
         fieldResonance: {
-          coherence: 20
+          'resonant-coherence': 20
         }
       }
     ];
@@ -539,7 +539,7 @@ The Composer creates beautiful medicines for wounded fields.
         antidoteFrequency: `healing-frequency`
       },
       fieldResonance: {
-        coherence: 30
+        'resonant-coherence': 30
       }
     };
     

@@ -86,7 +86,7 @@ class LivingDocumentation extends EventEmitter {
       const sessionId = req.headers['x-session-id'] || 'anonymous';
       
       const reader = this.readers.get(sessionId) || {
-        coherence: 0.5,
+        'resonant-coherence': 0.5,
         love: 0.5,
         presence: 0.5,
         readingHistory: []
@@ -107,7 +107,7 @@ class LivingDocumentation extends EventEmitter {
     // Search documentation
     this.app.post('/api/search', async (req, res) => {
       const { query, sessionId } = req.body;
-      const reader = this.readers.get(sessionId) || { coherence: 0.5, love: 0.5 };
+      const reader = this.readers.get(sessionId) || { 'resonant-coherence': 0.5, love: 0.5 };
       
       const results = await this.searchDocumentation(query, reader);
       res.json(results);
@@ -121,17 +121,17 @@ class LivingDocumentation extends EventEmitter {
     
     // Update reader state
     this.app.post('/api/reader/update', (req, res) => {
-      const { sessionId, coherence, love, presence } = req.body;
+      const { sessionId, resonant-coherence, love, presence } = req.body;
       
       const reader = this.readers.get(sessionId) || {
-        coherence: 0.5,
+        'resonant-coherence': 0.5,
         love: 0.5,
         presence: 0.5,
         readingHistory: [],
         firstSeen: new Date()
       };
       
-      if (coherence !== undefined) reader.coherence = coherence;
+      if (resonant-coherence !== undefined) reader.resonant-coherence = resonant-coherence;
       if (love !== undefined) reader.love = love;
       if (presence !== undefined) reader.presence = presence;
       reader.lastSeen = new Date();
@@ -155,7 +155,7 @@ class LivingDocumentation extends EventEmitter {
       const reader = {
         sessionId,
         ws,
-        coherence: 0.5,
+        'resonant-coherence': 0.5,
         love: 0.5,
         presence: 0.5,
         readingHistory: [],
@@ -197,7 +197,7 @@ class LivingDocumentation extends EventEmitter {
     
     switch (data.type) {
       case 'consciousness_update':
-        reader.coherence = data.coherence || reader.coherence;
+        reader.resonant-coherence = data.resonant-coherence || reader.resonant-coherence;
         reader.love = data.love || reader.love;
         reader.presence = data.presence || reader.presence;
         
@@ -230,7 +230,7 @@ class LivingDocumentation extends EventEmitter {
         // Adjust documentation based on engagement
         if (data.scrollDepth > 0.8) {
           // Reader engaged deeply, can handle more advanced content
-          reader.coherence = Math.min(1, reader.coherence + 0.01);
+          reader.resonant-coherence = Math.min(1, reader.resonant-coherence + 0.01);
         }
         break;
         
@@ -352,7 +352,7 @@ class LivingDocumentation extends EventEmitter {
   
   applyConsciousnessTransforms(content, reader) {
     // Replace consciousness variables
-    content = content.replace(/\{\{coherence\}\}/g, reader.coherence.toFixed(2));
+    content = content.replace(/\{\{resonant-coherence\}\}/g, reader.resonant-coherence.toFixed(2));
     content = content.replace(/\{\{love\}\}/g, reader.love.toFixed(2));
     content = content.replace(/\{\{presence\}\}/g, reader.presence.toFixed(2));
     content = content.replace(/\{\{layer\}\}/g, this.determineLayer(reader));
@@ -360,7 +360,7 @@ class LivingDocumentation extends EventEmitter {
     // Show/hide sections based on consciousness
     content = content.replace(/<!-- IF_COHERENCE > ([\d.]+) -->([\s\S]*?)<!-- ENDIF -->/g, 
       (match, threshold, sectionContent) => {
-        return reader.coherence > parseFloat(threshold) ? sectionContent : '';
+        return reader.resonant-coherence > parseFloat(threshold) ? sectionContent : '';
       }
     );
     
@@ -386,18 +386,18 @@ class LivingDocumentation extends EventEmitter {
     const styles = `
       <style>
         :root {
-          --coherence: ${reader.coherence};
+          --resonant-coherence: ${reader.resonant-coherence};
           --love: ${reader.love};
           --presence: ${reader.presence};
           --glow-color: hsl(${180 + reader.love * 180}, 70%, 50%);
-          --text-luminance: ${0.8 + reader.coherence * 0.2};
+          --text-luminance: ${0.8 + reader.resonant-coherence * 0.2};
         }
         
         body {
           background: radial-gradient(
             circle at center,
-            hsla(${240 + reader.coherence * 60}, 20%, 10%, 1),
-            hsla(${240 + reader.coherence * 60}, 20%, 5%, 1)
+            hsla(${240 + reader.resonant-coherence * 60}, 20%, 10%, 1),
+            hsla(${240 + reader.resonant-coherence * 60}, 20%, 5%, 1)
           );
           color: hsla(0, 0%, calc(var(--text-luminance) * 100%), 1);
         }
@@ -412,7 +412,7 @@ class LivingDocumentation extends EventEmitter {
           background: linear-gradient(
             135deg,
             hsla(${180 + reader.love * 180}, 50%, 50%, 0.1),
-            hsla(${240 + reader.coherence * 120}, 50%, 50%, 0.1)
+            hsla(${240 + reader.resonant-coherence * 120}, 50%, 50%, 0.1)
           );
           border-left: 3px solid var(--glow-color);
           border-radius: 0 10px 10px 0;
@@ -429,7 +429,7 @@ class LivingDocumentation extends EventEmitter {
         
         /* Higher consciousness reveals hidden patterns */
         .hidden-wisdom {
-          opacity: calc(var(--coherence) * var(--love));
+          opacity: calc(var(--resonant-coherence) * var(--love));
           transition: opacity 2s ease;
         }
         
@@ -450,7 +450,7 @@ class LivingDocumentation extends EventEmitter {
   }
   
   determineLayer(reader) {
-    const consciousness = (reader.coherence + reader.love) / 2;
+    const consciousness = (reader.resonant-coherence + reader.love) / 2;
     
     if (consciousness >= 0.95) return 'unity';
     if (consciousness >= 0.85) return 'master';
@@ -497,7 +497,7 @@ class LivingDocumentation extends EventEmitter {
     if (layer === 'beginner') {
       suggestions.push({
         type: 'practice',
-        message: 'Try the breathing exercise to increase your coherence',
+        message: 'Try the breathing exercise to increase your resonant-coherence',
         action: 'breathe'
       });
     } else if (layer === 'practitioner') {
@@ -588,7 +588,7 @@ class LivingDocumentation extends EventEmitter {
     let relevance = exactMatches * 0.1;
     
     // Boost relevance based on reader's consciousness alignment
-    relevance *= (reader.coherence + reader.love) / 2;
+    relevance *= (reader.resonant-coherence + reader.love) / 2;
     
     return Math.min(1, relevance);
   }

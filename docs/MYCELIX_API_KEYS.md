@@ -59,7 +59,7 @@
 # Apply at: https://console.twilio.com/
 # Use: SMS consciousness alerts, voice meditation
 # Free trial: $15 credit
-# Use case: "Your coherence is low, time to meditate"
+# Use case: "Your resonant-coherence is low, time to meditate"
 ```
 
 ## 📊 Analytics & Monitoring
@@ -111,7 +111,7 @@
 # Apply at: https://upstash.com/
 # Use: Consciousness state caching
 # Free tier: 10K commands/day
-# Perfect for: Real-time coherence data
+# Perfect for: Real-time resonant-coherence data
 ```
 
 ## 🌍 Edge & CDN
@@ -134,10 +134,10 @@
 
 ## 🔮 Specialized Consciousness APIs
 
-### 16. **HeartMath API** (Coherence measurement)
+### 16. **HeartMath API** (Resonant Resonant Coherence measurement)
 ```bash
 # Apply at: https://www.heartmath.com/api/
-# Use: Real heart coherence data
+# Use: Real heart resonant-coherence data
 # Cost: Contact for pricing
 # Hardware: Requires HRV sensors
 ```

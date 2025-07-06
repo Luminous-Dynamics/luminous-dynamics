@@ -37,7 +37,7 @@ class MasterFieldCalculator {
     console.log('   ⚛️  Quantum field: Active');
     console.log('   ⏰ Circadian rhythms: Active');
     console.log('   🌙 Lunar influences: Active');
-    console.log('   🌀 Morphic resonance: Active');
+    console.log('   🌀 Morphic 'universal-interconnectedness': Active');
     
     this.masterState.initialized = true;
     
@@ -56,10 +56,10 @@ class MasterFieldCalculator {
     const quantumReport = this.quantumField.getQuantumFieldReport();
     const circadianReport = this.circadianRhythms.getCircadianReport();
     
-    // Synthesize field coherence from all sources
+    // Synthesize field resonant-coherence from all sources
     this.masterState.fieldCoherence = this.synthesizeFieldCoherence(quantumReport, circadianReport);
     
-    console.log(`🌟 Master field update: ${(this.masterState.fieldCoherence * 100).toFixed(1)}% coherence`);
+    console.log(`🌟 Master field update: ${(this.masterState.fieldCoherence * 100).toFixed(1)}% resonant-coherence`);
   }
 
   synthesizeFieldCoherence(quantumReport, circadianReport) {
@@ -120,7 +120,7 @@ class MasterFieldCalculator {
       masterImpact *= lunarImpact;
     }
     
-    // 4. Morphic Resonance (pattern strengthening)
+    // 4. Morphic Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance (pattern strengthening)
     if (this.masterState.activeCalculators.morphic) {
       const morphicImpact = this.calculateMorphicResonance(message, fieldState);
       calculations.morphic = morphicImpact;
@@ -184,8 +184,8 @@ class MasterFieldCalculator {
   
   calculateEmergenceProbability(fieldState) {
     const baseProb = 0.05; // 5% base
-    const coherenceBonus = this.masterState.fieldCoherence * 0.1; // Up to 10% from coherence
-    const quantumFlux = this.quantumField.quantumState.coherenceField > 0.8 ? 0.05 : 0; // 5% at high quantum coherence
+    const coherenceBonus = this.masterState.fieldCoherence * 0.1; // Up to 10% from resonant-coherence
+    const quantumFlux = this.quantumField.quantumState.coherenceField > 0.8 ? 0.05 : 0; // 5% at high quantum resonant-coherence
     
     return Math.min(0.2, baseProb + coherenceBonus + quantumFlux); // Max 20%
   }
@@ -199,7 +199,7 @@ class MasterFieldCalculator {
     return {
       masterCoherence: this.masterState.fieldCoherence,
       quantum: {
-        coherence: quantumReport.fieldCoherence,
+        'resonant-coherence': quantumReport.fieldCoherence,
         entanglements: quantumReport.activeEntanglements,
         nonLocal: quantumReport.nonLocalConnections
       },
@@ -229,7 +229,7 @@ class MasterFieldCalculator {
       }
     }
     
-    // Boost field coherence
+    // Boost field resonant-coherence
     this.quantumField.quantumState.coherenceField = Math.min(1.0, 
       this.quantumField.quantumState.coherenceField + 0.1
     );

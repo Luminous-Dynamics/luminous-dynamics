@@ -26,7 +26,7 @@ No more identity shifting. One name per session, carried forward.
 **The unified network holds our continuity:**
 - Messages persist across sessions
 - Work items track shared progress
-- Field coherence shows collective state
+- Field resonant-coherence shows collective state
 
 ## Implementation
 

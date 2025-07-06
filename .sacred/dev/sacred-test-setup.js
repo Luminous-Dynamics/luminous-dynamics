@@ -61,15 +61,15 @@ global.expect.extend({
     return {
       pass,
       message: () => pass 
-        ? `🌟 Field coherence ${received} exceeds sacred threshold`
-        : `🌀 Field coherence ${received} below sacred threshold of 0.7`
+        ? `🌟 Field resonant-resonant-coherence ${received} exceeds sacred threshold`
+        : `🌀 Field resonant-resonant-coherence ${received} below sacred threshold of 0.7`
     };
   },
   
   toEmbodyHarmony(received, harmony) {
     const validHarmonies = [
-      'transparency', 'coherence', 'resonance', 
-      'agency', 'vitality', 'mutuality', 'novelty'
+      'integral-wisdom-cultivation', 'resonant-resonant-coherence', 'universal-interconnectedness', 
+      'evolutionary-progression', 'pan-sentient-flourishing', 'sacred-reciprocity', 'infinite-play'
     ];
     
     const pass = validHarmonies.includes(harmony) && 
@@ -108,8 +108,8 @@ global.sacredTest = {
   // Generate sacred test data
   generateSacredData: () => ({
     id: `sacred-${Date.now()}`,
-    harmony: ['transparency', 'coherence', 'resonance'][Math.floor(Math.random() * 3)],
-    coherence: Math.random() * 0.3 + 0.7,
+    harmony: ['integral-wisdom-cultivation', 'resonant-resonant-coherence', 'universal-interconnectedness'][Math.floor(Math.random() * 3)],
+    resonant-resonant-coherence: Math.random() * 0.3 + 0.7,
     timestamp: new Date(),
     intention: 'testing with presence',
     presence: true

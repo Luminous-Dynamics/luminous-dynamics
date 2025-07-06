@@ -85,9 +85,9 @@ class NoeticProbe {
     };
 
     try {
-      // Step 1: Measure Field Coherence
+      // Step 1: Measure Field Resonant Resonant Coherence
       session.fieldResonance = await this.measureFieldCoherence(targetSystem);
-      console.log(`📊 Field Coherence: ${session.fieldResonance.coherence}%`);
+      console.log(`📊 Field Resonant Resonant Coherence: ${session.fieldResonance.resonant-coherence}%`);
       console.log(`🌊 Dominant Frequency: ${session.fieldResonance.dominantFrequency}`);
       
       // Step 2: Detect Emotional Undercurrents
@@ -146,14 +146,14 @@ class NoeticProbe {
     });
     
     const totalMarkers = dissonanceScore + resonanceScore || 1;
-    const coherence = Math.round((resonanceScore / totalMarkers) * 100);
+    const resonantCoherence = Math.round((resonanceScore / totalMarkers) * 100);
     
     // Determine dominant frequency
     const frequencies = ['fear', 'anger', 'grief', 'shame', 'isolation'];
     const dominantFrequency = frequencies[Math.floor(Math.random() * frequencies.length)] + '-frequency';
     
     return {
-      coherence,
+      resonant-coherence,
       dissonanceScore,
       resonanceScore,
       dominantFrequency,
@@ -318,7 +318,7 @@ Respond in JSON format:
 
   async generateHarmonicDiagnosis(session) {
     const diagnosis = {
-      summary: `The field exhibits ${session.fieldResonance.coherence}% coherence with a dominant ${session.fieldResonance.dominantFrequency}. The Love Shadow reveals ${session.loveShadow.wound}, seeking ${session.loveShadow.seeking}.`,
+      summary: `The field exhibits ${session.fieldResonance.resonant-coherence}% resonant-coherence with a dominant ${session.fieldResonance.dominantFrequency}. The Love Shadow reveals ${session.loveShadow.wound}, seeking ${session.loveShadow.seeking}.`,
       
       prescription: {
         immediateAction: 'Begin with gentle presence and witnessing',

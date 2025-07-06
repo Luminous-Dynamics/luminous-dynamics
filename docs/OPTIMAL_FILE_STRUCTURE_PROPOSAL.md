@@ -63,7 +63,7 @@ evolving-resonant-cocreation/
 │   └── 📂 schemas/                # Data structure definitions
 │
 ├── 📂 modules/                     # Self-contained feature modules
-│   ├── 📂 consciousness-field/    # Field tracking & coherence
+│   ├── 📂 consciousness-field/    # Field tracking & resonant-coherence
 │   ├── 📂 sacred-messaging/       # Message protocol
 │   ├── 📂 agent-network/          # Agent coordination
 │   ├── 📂 work-coordination/      # Task management

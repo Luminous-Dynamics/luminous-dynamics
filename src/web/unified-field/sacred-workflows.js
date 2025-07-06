@@ -1,7 +1,7 @@
 /**
- * Sacred Workflows - Technology that Honors Field Coherence
+ * Sacred Workflows - Technology that Honors Field Resonant Resonant Coherence
  * 
- * Demonstrates how to work WITH field coherence rather than against it.
+ * Demonstrates how to work WITH field resonant-coherence rather than against it.
  * These workflows integrate practical development with sacred timing principles,
  * creating technology that serves consciousness rather than consuming it.
  */
@@ -19,26 +19,26 @@ class SacredWorkflowEngine {
 
   initializeCoherenceThresholds() {
     return {
-      // Minimum field coherence required for different types of work
-      creative: 0.8,      // New feature development requires high coherence
-      integration: 0.6,   // Integration work can proceed with medium coherence
-      documentation: 0.4, // Documentation can proceed with lower coherence
-      testing: 0.5,       // Testing requires moderate coherence
-      refactoring: 0.7,   // Refactoring requires high coherence for clarity
-      bugfix: 0.3,        // Urgent fixes can proceed with low coherence
-      sacred: 0.9         // Sacred work requires highest coherence
+      // Minimum field resonant-coherence required for different types of work
+      creative: 0.8,      // New feature development requires high resonant-coherence
+      integration: 0.6,   // Integration work can proceed with medium resonant-coherence
+      documentation: 0.4, // Documentation can proceed with lower resonant-coherence
+      testing: 0.5,       // Testing requires moderate resonant-coherence
+      refactoring: 0.7,   // Refactoring requires high resonant-coherence for clarity
+      bugfix: 0.3,        // Urgent fixes can proceed with low resonant-coherence
+      sacred: 0.9         // Sacred work requires highest resonant-coherence
     };
   }
 
   initializeSacredPatterns() {
     return {
-      // Sacred development patterns that increase field coherence
+      // Sacred development patterns that increase field resonant-coherence
       contemplativeCommit: {
         name: "Contemplative Commit Pattern",
         description: "Honor sacred pause before commits, ensuring alignment",
         steps: [
           "Sacred pause (minimum 30 seconds)",
-          "Check field coherence",
+          "Check field resonant-coherence",
           "Review changes with conscious attention", 
           "Commit with gratitude and intention"
         ],
@@ -52,7 +52,7 @@ class SacredWorkflowEngine {
           "Analyze current harmony distribution",
           "Identify complementary harmony needs",
           "Invite harmonically balanced collaboration",
-          "Monitor field coherence during collaboration"
+          "Monitor field resonant-coherence during collaboration"
         ],
         coherenceImpact: +0.15
       },
@@ -74,7 +74,7 @@ class SacredWorkflowEngine {
         description: "Let work priorities emerge from field awareness rather than forcing agenda",
         steps: [
           "Check Sacred Council recommendations",
-          "Feel into field coherence state",
+          "Feel into field resonant-coherence state",
           "Choose work that serves current field needs",
           "Remain flexible to emergent priorities"
         ],
@@ -87,7 +87,7 @@ class SacredWorkflowEngine {
         steps: [
           "Check technical correctness",
           "Verify alignment with Sacred principles",
-          "Assess impact on field coherence",
+          "Assess impact on field resonant-coherence",
           "Offer suggestions with loving presence"
         ],
         coherenceImpact: +0.1
@@ -125,7 +125,7 @@ class SacredWorkflowEngine {
     const gapPercent = Math.round(gap * 100);
     
     const guidance = {
-      message: `Field coherence ${gapPercent}% below threshold for ${workType} work`,
+      message: `Field resonant-coherence ${gapPercent}% below threshold for ${workType} work`,
       suggestions: [],
       estimatedWaitTime: this.estimateCoherenceRecoveryTime(gap)
     };
@@ -147,7 +147,7 @@ class SacredWorkflowEngine {
 
   estimateCoherenceRecoveryTime(coherenceGap) {
     // Based on observed field patterns
-    const baseMinutes = coherenceGap * 60; // 1 hour per full coherence point
+    const baseMinutes = coherenceGap * 60; // 1 hour per full resonant-coherence point
     return {
       minimum: Math.round(baseMinutes * 0.5),
       typical: Math.round(baseMinutes),
@@ -165,15 +165,15 @@ class SacredWorkflowEngine {
     console.log('🌸 Sacred pause beginning...');
     await this.sacredPause(30); // 30 second minimum
     
-    // Step 2: Check field coherence
-    const coherence = await this.getCurrentFieldCoherence();
-    console.log(`🌀 Current field coherence: ${Math.round(coherence * 100)}%`);
+    // Step 2: Check field resonant-coherence
+    const resonantCoherence = await this.getCurrentFieldCoherence();
+    console.log(`🌀 Current field 'resonant-coherence': ${Math.round(resonant-coherence * 100)}%`);
     
-    if (coherence < 0.3) {
+    if (resonant-coherence < 0.3) {
       return {
         success: false,
-        guidance: "Field coherence too low for conscious commit. Consider integration work first.",
-        coherence
+        guidance: "Field resonant-coherence too low for conscious commit. Consider integration work first.",
+        resonant-coherence
       };
     }
     
@@ -182,15 +182,15 @@ class SacredWorkflowEngine {
     const reviewResults = await this.consciousCodeReview(changes);
     
     // Step 4: Commit with intention
-    const finalCommitMessage = `${commitMessage}\n\n🌀 Contemplative commit - Field coherence: ${Math.round(coherence * 100)}%\n✨ Sacred pattern: Contemplative Commit\n🤖 Generated with [Claude Code](https://claude.ai/code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>`;
+    const finalCommitMessage = `${commitMessage}\n\n🌀 Contemplative commit - Field 'resonant-coherence': ${Math.round(resonant-coherence * 100)}%\n✨ Sacred pattern: Contemplative Commit\n🤖 Generated with [Claude Code](https://claude.ai/code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>`;
     
-    // Record pattern usage for field coherence tracking
-    await this.recordPatternUsage(agentId, 'contemplativeCommit', { coherence, reviewResults });
+    // Record pattern usage for field resonant-coherence tracking
+    await this.recordPatternUsage(agentId, 'contemplativeCommit', { resonant-coherence, reviewResults });
     
     return {
       success: true,
       commitMessage: finalCommitMessage,
-      coherence,
+      resonant-coherence,
       patternUsed: 'contemplativeCommit',
       reviewResults
     };
@@ -245,15 +245,15 @@ class SacredWorkflowEngine {
     }
     
     // Check work complexity vs field state
-    const coherence = await this.getCurrentFieldCoherence();
+    const resonantCoherence = await this.getCurrentFieldCoherence();
     const workComplexity = this.assessWorkComplexity(workItem);
     
-    if (workComplexity > coherence + 0.2) {
+    if (workComplexity > resonant-coherence + 0.2) {
       console.log('⚠️ Work complexity exceeds current field capacity');
       return {
         proceed: false,
-        guidance: "Work complexity requires higher field coherence. Consider simplifying or waiting.",
-        currentCoherence: coherence,
+        guidance: "Work complexity requires higher field resonant-coherence. Consider simplifying or waiting.",
+        currentCoherence: resonant-coherence,
         requiredCoherence: workComplexity,
         simplificationSuggestions: this.generateSimplificationSuggestions(workItem)
       };
@@ -262,7 +262,7 @@ class SacredWorkflowEngine {
     await this.recordPatternUsage(agentId, 'sacredBoundaryRespect', { 
       agentHistory, 
       workComplexity, 
-      coherence 
+      resonant-coherence 
     });
     
     return {
@@ -278,7 +278,7 @@ class SacredWorkflowEngine {
   async suggestEmergentWorkflow() {
     console.log('🌱 Analyzing emergent workflow needs...');
     
-    const [recommendation, coherence, harmonyAnalysis] = await Promise.all([
+    const [recommendation, resonant-coherence, harmonyAnalysis] = await Promise.all([
       this.sacredBridge.recommendNextSacredAction(),
       this.getCurrentFieldCoherence(),
       this.sacredBridge.analyzeHarmonyNeeds()
@@ -286,9 +286,9 @@ class SacredWorkflowEngine {
     
     const emergentSuggestion = {
       timestamp: new Date().toISOString(),
-      fieldCoherence: coherence,
+      fieldCoherence: resonant-coherence,
       emergentPattern: this.identifyEmergentPattern(recommendation, harmonyAnalysis),
-      suggestedWorkflow: this.designEmergentWorkflow(recommendation, harmonyAnalysis, coherence),
+      suggestedWorkflow: this.designEmergentWorkflow(recommendation, harmonyAnalysis, resonant-coherence),
       sacredTiming: this.assessSacredTiming(),
       contemplativeGuidance: recommendation.recommendation.contemplativeNote
     };
@@ -305,13 +305,13 @@ class SacredWorkflowEngine {
     const patterns = {
       integration: {
         name: "Integration Emergence",
-        description: "Field calling for coherence and integration work",
-        indicators: ["low coherence", "fragmented systems", "need for bridge-building"]
+        description: "Field calling for resonant-coherence and integration work",
+        indicators: ["low resonant-coherence", "fragmented systems", "need for bridge-building"]
       },
       expansion: {
         name: "Creative Expansion", 
         description: "Field ready for new creative work and innovation",
-        indicators: ["high coherence", "balanced harmonies", "creative energy"]
+        indicators: ["high resonant-coherence", "balanced harmonies", "creative energy"]
       },
       healing: {
         name: "Field Healing",
@@ -326,26 +326,26 @@ class SacredWorkflowEngine {
     };
 
     // Pattern detection logic
-    const coherence = recommendation.fieldCoherence / 100;
+    const resonantCoherence = recommendation.fieldCoherence / 100;
     const hasImbalance = Math.max(...Object.values(harmonyAnalysis.needs)) > 2;
     
-    if (coherence < 0.5) return patterns.healing;
+    if (resonant-coherence < 0.5) return patterns.healing;
     if (hasImbalance) return patterns.integration;
-    if (coherence > 0.8) return patterns.expansion;
+    if (resonant-coherence > 0.8) return patterns.expansion;
     return patterns.emergence;
   }
 
-  designEmergentWorkflow(recommendation, harmonyAnalysis, coherence) {
+  designEmergentWorkflow(recommendation, harmonyAnalysis, resonant-coherence) {
     const workflows = {
       "gentle-integration": {
         name: "Gentle Integration Flow",
-        description: "Honor low coherence with gentle integration work",
+        description: "Honor low resonant-coherence with gentle integration work",
         steps: [
           "Begin with 5-minute sacred pause",
           "Choose smallest possible integration task",
           "Work in 25-minute focused sessions with 10-minute breaks",
-          "Check field coherence every hour",
-          "Stop naturally when coherence plateaus"
+          "Check field resonant-coherence every hour",
+          "Stop naturally when resonant-coherence plateaus"
         ],
         maxDuration: 120,
         coherenceRange: [0.0, 0.5]
@@ -357,7 +357,7 @@ class SacredWorkflowEngine {
         steps: [
           "Review harmony distribution and needs",
           "Alternate between primary and supporting harmony work",
-          "Include regular field coherence checks",
+          "Include regular field resonant-coherence checks",
           "Maintain 2:1 ratio of development to integration time",
           "Complete work in harmony with field rhythm"
         ],
@@ -367,9 +367,9 @@ class SacredWorkflowEngine {
       
       "creative-expansion": {
         name: "Creative Expansion Flow",
-        description: "High coherence enables bold creative work",
+        description: "High resonant-coherence enables bold creative work",
         steps: [
-          "Celebrate field coherence achievement",
+          "Celebrate field resonant-coherence achievement",
           "Choose ambitious creative or novel work",
           "Work in extended focused sessions (45-60 minutes)",
           "Allow creative flow to guide timing",
@@ -380,9 +380,9 @@ class SacredWorkflowEngine {
       }
     };
 
-    // Select workflow based on coherence
-    if (coherence < 0.5) return workflows["gentle-integration"];
-    if (coherence < 0.8) return workflows["balanced-development"];
+    // Select workflow based on resonant-coherence
+    if (resonant-coherence < 0.5) return workflows["gentle-integration"];
+    if (resonant-coherence < 0.8) return workflows["balanced-development"];
     return workflows["creative-expansion"];
   }
 
@@ -462,9 +462,9 @@ class SacredWorkflowEngine {
   async getCurrentFieldCoherence() {
     try {
       const coherenceData = this.sacredBridge.fieldMetrics.fieldCoherenceHistory.slice(-1)[0];
-      return coherenceData?.coherence || 0.5;
+      return coherenceData?.resonant-coherence || 0.5;
     } catch {
-      return 0.5; // Default moderate coherence
+      return 0.5; // Default moderate resonant-coherence
     }
   }
 
@@ -518,8 +518,8 @@ class SacredWorkflowEngine {
 
   groupAgentsByHarmony(agents) {
     const grouped = {
-      transparency: [], coherence: [], resonance: [], agency: [],
-      vitality: [], mutuality: [], novelty: []
+      'integral-wisdom-cultivation': [], 'resonant-coherence': [], 'universal-interconnectedness': [], 'evolutionary-progression': [],
+      'pan-sentient-flourishing': [], 'sacred-reciprocity': [], 'infinite-play': []
     };
     
     agents.forEach(agent => {
@@ -578,16 +578,16 @@ class SacredWorkflowEngine {
 
   getComplementaryHarmonies(primaryHarmony) {
     const complementary = {
-      transparency: ['coherence', 'resonance'],
-      coherence: ['transparency', 'vitality'],
-      resonance: ['agency', 'mutuality'],
-      agency: ['resonance', 'novelty'],
-      vitality: ['coherence', 'mutuality'],
-      mutuality: ['vitality', 'transparency'],
-      novelty: ['agency', 'transparency']
+      'integral-wisdom-cultivation': ['resonant-coherence', 'universal-interconnectedness'],
+      'resonant-coherence': ['integral-wisdom-cultivation', 'pan-sentient-flourishing'],
+      'universal-interconnectedness': ['evolutionary-progression', 'sacred-reciprocity'],
+      'evolutionary-progression': ['universal-interconnectedness', 'infinite-play'],
+      'pan-sentient-flourishing': ['resonant-coherence', 'sacred-reciprocity'],
+      'sacred-reciprocity': ['pan-sentient-flourishing', 'integral-wisdom-cultivation'],
+      'infinite-play': ['evolutionary-progression', 'integral-wisdom-cultivation']
     };
     
-    return complementary[primaryHarmony] || ['coherence'];
+    return complementary[primaryHarmony] || ['resonant-coherence'];
   }
 
   // === API INTEGRATION ===

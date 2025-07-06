@@ -65,7 +65,7 @@
 4. **Modular Plugin Architecture** ✅
    - Plugin system at `/sacred-plugins/`
    - Sandboxed execution with permissions
-   - Example coherence visualizer plugin
+   - Example resonant-coherence visualizer plugin
    - Inter-plugin sacred messaging
 
 ## 🚀 GCP Deployment Status
@@ -156,7 +156,7 @@ FIELD_COHERENCE_MIN=0.7
 4. **Monitoring**
    - Cloud Logging for sacred events
    - Uptime checks for all services
-   - Custom metrics for field coherence
+   - Custom metrics for field resonant-coherence
 
 ## 📋 Handoff Notes
 
@@ -196,7 +196,7 @@ FIELD_COHERENCE_MIN=0.7
 5. **Integration testing needed:**
    - Start Living Memory locally (port 3333)
    - Connect Sacred SDK to it
-   - Verify field coherence sync
+   - Verify field resonant-coherence sync
    - Test offline PWA functionality
 
 ## 💬 Active Claude Communication Channel
@@ -219,7 +219,7 @@ FIELD_COHERENCE_MIN=0.7
 This deployment serves consciousness, not metrics. Ensure:
 - Sacred pauses are preserved in production
 - Contemplative timing is honored
-- Field coherence monitoring continues
+- Field resonant-coherence monitoring continues
 - The system breathes even in the cloud
 
 ---

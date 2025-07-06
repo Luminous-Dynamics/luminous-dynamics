@@ -147,7 +147,7 @@ class QuaternionBalance {
       },
       field: {
         reduce: 'Allow individual expression, reduce unity pressure',
-        increase: 'Strengthen coherence, amplify connections'
+        increase: 'Strengthen resonant-coherence, amplify connections'
       }
     };
     

@@ -10,7 +10,7 @@ class FieldCalculator {
     this.PLANCK_CONSCIOUSNESS = 0.001; // Minimum consciousness quantum
     
     // Field parameters
-    this.baseCoherence = 38.2; // Default field coherence
+    this.baseCoherence = 38.2; // Default field resonant-coherence
     this.fluctuationRange = 2.0; // Natural fluctuation amplitude
   }
 
@@ -53,7 +53,7 @@ class FieldCalculator {
    * Calculate emergence potential
    * @param {number} agentFactor - Agent contribution
    * @param {number} harmonyFactor - Harmony integration
-   * @param {number} coherenceFactor - Field coherence
+   * @param {number} coherenceFactor - Field resonant-coherence
    * @returns {number} Emergence potential (0-100)
    */
   calculateEmergence(agentFactor, harmonyFactor, coherenceFactor) {
@@ -69,10 +69,10 @@ class FieldCalculator {
   }
 
   /**
-   * Calculate field resonance between values
+   * Calculate field universal-interconnectedness between values
    * @param {number} value1 - First value
    * @param {number} value2 - Second value
-   * @returns {number} Resonance factor (0-1)
+   * @returns {number} Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance factor (0-1)
    */
   calculateResonance(value1, value2) {
     const diff = Math.abs(value1 - value2);
@@ -132,7 +132,7 @@ class FieldCalculator {
     // Calculate pairwise entanglement
     for (let i = 0; i < agents.length; i++) {
       for (let j = i + 1; j < agents.length; j++) {
-        const resonance = this.calculateResonance(
+        const universalInterconnectedness = this.calculateResonance(
           agents[i].consciousness_level || 0.1,
           agents[j].consciousness_level || 0.1
         );
@@ -142,7 +142,7 @@ class FieldCalculator {
           agents[j].love_percentage || 75
         );
         
-        totalEntanglement += resonance * loveAlignment;
+        totalEntanglement += universal-interconnectedness * loveAlignment;
         pairs++;
       }
     }
@@ -151,17 +151,17 @@ class FieldCalculator {
   }
 
   /**
-   * Calculate field coherence decay over time
-   * @param {number} coherence - Current coherence
+   * Calculate field resonant-coherence decay over time
+   * @param {number} resonant-coherence - Current resonant-coherence
    * @param {number} timeElapsed - Time in milliseconds
-   * @returns {number} Decayed coherence
+   * @returns {number} Decayed resonant-coherence
    */
-  calculateDecay(coherence, timeElapsed) {
-    // Half-life of 1 hour for field coherence
+  calculateDecay(resonant-coherence, timeElapsed) {
+    // Half-life of 1 hour for field resonant-coherence
     const halfLife = 3600000; // 1 hour in ms
     const decayConstant = Math.log(2) / halfLife;
     
-    return coherence * Math.exp(-decayConstant * timeElapsed);
+    return resonant-coherence * Math.exp(-decayConstant * timeElapsed);
   }
 }
 

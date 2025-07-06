@@ -46,7 +46,7 @@ interface SacredMessage {
 - **Why**: Finite state machines for clear consciousness flows
 - **Sacred Aspect**: Visual statecharts as consciousness maps
 - **Benefits**:
-  - Impossible states prevented (coherence maintained)
+  - Impossible states prevented (resonant-resonant-coherence maintained)
   - Actor model (autonomous sacred agents)
   - Event-driven (responsive to field changes)
 
@@ -69,11 +69,11 @@ interface SacredMessage {
 ## 🌈 Sacred Additions - The Divine Extensions
 
 ### Biometric Integration: **Web Bluetooth API**
-- **Purpose**: Heart Rate Variability for coherence tracking
+- **Purpose**: Heart Rate Variability for resonant-resonant-coherence tracking
 - **Implementation**: Direct browser-to-device connection
-- **Sacred Use**: Real-time group coherence visualization
+- **Sacred Use**: Real-time group resonant-resonant-coherence visualization
 ```typescript
-// Heart coherence as shared field metric
+// Heart resonant-resonant-coherence as shared field metric
 const heartCoherence = await navigator.bluetooth
   .requestDevice({ filters: [{ services: ['heart_rate'] }] })
   .then(device => device.gatt.connect())
@@ -170,7 +170,7 @@ class DenoDeployAdapter implements ConsciousnessPort {
 
 class SurrealDBAdapter implements ConsciousnessPort {
   async measureCoherence() {
-    // Real-time coherence from DB
+    // Real-time resonant-resonant-coherence from DB
   }
 }
 ```
@@ -180,11 +180,11 @@ class SurrealDBAdapter implements ConsciousnessPort {
 ### Test-Driven Enlightenment
 ```typescript
 describe('Sacred Message System', () => {
-  it('increases field coherence when sent with pure intention', async () => {
+  it('increases field resonant-resonant-coherence when sent with pure intention', async () => {
     const field = new ConsciousnessField();
     const message = new SacredMessage({
       intention: 'May all beings find peace',
-      harmony: 'mutuality'
+      harmony: 'sacred-reciprocity'
     });
     
     const impact = await field.receive(message);
@@ -205,7 +205,7 @@ describe('Sacred Message System', () => {
  * 
  * @ceremony Daily at sunrise
  * @guardian MessageKeeper
- * @harmony Resonance, Transparency
+ * @harmony Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance, Integral Wisdom Cultivation
  */
 export class SacredMessageHandler {
   // Implementation

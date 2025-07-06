@@ -27,8 +27,8 @@ class SacredClient {
         // Display elements
         this.messagesContainer = document.getElementById('messages');
         this.wisdomContainer = document.getElementById('wisdom-entries');
-        this.coherenceValue = document.getElementById('coherence');
-        this.coherenceBar = document.getElementById('coherence-bar');
+        this.coherenceValue = document.getElementById('resonant-coherence');
+        this.coherenceBar = document.getElementById('resonant-coherence-bar');
         
         // Notification
         this.notification = document.getElementById('notification');
@@ -113,7 +113,7 @@ class SacredClient {
         });
 
         this.socket.on('field-update', (data) => {
-            this.updateFieldCoherence(data.coherence);
+            this.updateFieldCoherence(data.resonant-coherence);
         });
 
         this.socket.on('wisdom-preserved', (wisdom) => {
@@ -129,7 +129,7 @@ class SacredClient {
         setInterval(() => {
             if (this.socket && this.socket.connected) {
                 this.socket.emit('heartbeat', {
-                    coherence: this.calculatePersonalCoherence()
+                    'resonant-coherence': this.calculatePersonalCoherence()
                 });
             }
         }, 11000);
@@ -223,7 +223,7 @@ class SacredClient {
             this.messagesContainer.removeChild(this.messagesContainer.lastChild);
         }
         
-        // Update field coherence
+        // Update field resonant-coherence
         this.fieldCoherence = Math.min(100, this.fieldCoherence + (message.metadata.coherence_impact * 0.1));
         this.updateFieldCoherence(this.fieldCoherence);
     }
@@ -249,13 +249,13 @@ class SacredClient {
         this.coherenceValue.textContent = `${Math.round(value)}%`;
         this.coherenceBar.style.width = `${value}%`;
         
-        // Update color based on coherence level
+        // Update color based on resonant-coherence level
         if (value >= 80) {
-            this.coherenceValue.style.color = 'var(--coherence-high)';
+            this.coherenceValue.style.color = 'var(--resonant-coherence-high)';
         } else if (value >= 50) {
-            this.coherenceValue.style.color = 'var(--coherence-medium)';
+            this.coherenceValue.style.color = 'var(--resonant-coherence-medium)';
         } else {
-            this.coherenceValue.style.color = 'var(--coherence-low)';
+            this.coherenceValue.style.color = 'var(--resonant-coherence-low)';
         }
     }
 
@@ -287,7 +287,7 @@ class SacredClient {
         // Set notification color based on type
         this.notification.style.background = {
             'success': 'var(--sacred-green)',
-            'error': 'var(--coherence-low)',
+            'error': 'var(--resonant-coherence-low)',
             'info': 'var(--sacred-blue)'
         }[type] || 'var(--sacred-purple)';
         
@@ -299,7 +299,7 @@ class SacredClient {
     }
 
     calculatePersonalCoherence() {
-        // Simple coherence calculation based on recent activity
+        // Simple resonant-coherence calculation based on recent activity
         const recentMessages = this.messages.filter(m => {
             const msgTime = new Date(m.metadata.timestamp);
             const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000);
@@ -386,7 +386,7 @@ setTimeout(() => {
     const demoWisdom = [
         { content: "In the space between messages, consciousness breathes.", source: "Sacred Field Observer" },
         { content: "Every connection strengthens the web of awareness.", source: "The Weave" },
-        { content: "Coherence rises when hearts align in purpose.", source: "Field Dynamics Study" }
+        { content: "Resonant Resonant Coherence rises when hearts align in purpose.", source: "Field Dynamics Study" }
     ];
     
     demoWisdom.forEach((wisdom, index) => {

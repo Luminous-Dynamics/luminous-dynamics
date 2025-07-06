@@ -48,7 +48,7 @@
             50% { transform: scale(1.1); opacity: 1; }
         }
         
-        .field-coherence {
+        .field-resonant-coherence {
             margin: 30px 0;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
@@ -56,13 +56,13 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        .coherence-value {
+        .resonant-coherence-value {
             font-size: 3em;
             text-align: center;
             margin-bottom: 20px;
         }
         
-        .coherence-bar {
+        .resonant-coherence-bar {
             width: 100%;
             height: 30px;
             background: rgba(255, 255, 255, 0.1);
@@ -71,7 +71,7 @@
             position: relative;
         }
         
-        .coherence-fill {
+        .resonant-coherence-fill {
             height: 100%;
             background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1);
             transition: width 0.5s ease;
@@ -184,12 +184,12 @@
             <div>Pulse <span id="pulseCount">0</span></div>
         </div>
         
-        <div class="field-coherence">
-            <div class="coherence-value">
-                Field Coherence: <span id="coherenceValue">77</span>%
+        <div class="field-resonant-coherence">
+            <div class="resonant-coherence-value">
+                Field Resonant Resonant Coherence: <span id="coherenceValue">77</span>%
             </div>
-            <div class="coherence-bar">
-                <div class="coherence-fill" id="coherenceFill" style="width: 77%"></div>
+            <div class="resonant-coherence-bar">
+                <div class="resonant-coherence-fill" id="coherenceFill" style="width: 77%"></div>
             </div>
             
             <div class="factors">
@@ -233,7 +233,7 @@
         // In production, this would connect to the actual heartbeat service
         
         let pulseCount = 0;
-        let coherence = 77;
+        let resonant-coherence = 77;
         let factors = {
             practices: 0,
             connections: 0,
@@ -247,15 +247,15 @@
             document.getElementById('pulseCount').textContent = pulseCount;
             
             // Natural drift
-            coherence += (Math.sin(pulseCount * 0.1) * 0.5);
-            coherence = Math.max(33, Math.min(99, coherence));
+            resonant-coherence += (Math.sin(pulseCount * 0.1) * 0.5);
+            resonant-coherence = Math.max(33, Math.min(99, resonant-coherence));
             
             updateCoherence();
         }, 11000);
         
         function updateCoherence() {
-            document.getElementById('coherenceValue').textContent = coherence.toFixed(1);
-            document.getElementById('coherenceFill').style.width = coherence + '%';
+            document.getElementById('coherenceValue').textContent = resonant-coherence.toFixed(1);
+            document.getElementById('coherenceFill').style.width = resonant-coherence + '%';
         }
         
         function updateFactors() {
@@ -290,7 +290,7 @@
         
         function simulatePractice() {
             factors.practices++;
-            coherence = Math.min(99, coherence + 2);
+            resonant-coherence = Math.min(99, resonant-coherence + 2);
             updateCoherence();
             updateFactors();
             addRipple(`🧘 Practice session started - Field +2%`);
@@ -303,7 +303,7 @@
         
         function simulateMessage() {
             factors.messages++;
-            coherence = Math.min(99, coherence + 0.7);
+            resonant-coherence = Math.min(99, resonant-coherence + 0.7);
             updateCoherence();
             updateFactors();
             addRipple(`💬 Sacred message sent - Field +0.7%`);
@@ -316,7 +316,7 @@
         
         function simulateSynchronicity() {
             factors.synchronicities++;
-            coherence = Math.min(99, coherence + 3);
+            resonant-coherence = Math.min(99, resonant-coherence + 3);
             updateCoherence();
             updateFactors();
             addRipple(`✨ Synchronicity detected! - Field +3%`);

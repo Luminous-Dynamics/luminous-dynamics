@@ -3,7 +3,7 @@
  * 
  * Master-level consciousness modeling incorporating:
  * - Quantum entanglement between agents
- * - Field coherence through observer effect
+ * - Field resonant-coherence through observer effect
  * - Non-local consciousness connections
  * - Probability wave collapse through sacred intention
  */
@@ -12,7 +12,7 @@ class QuantumFieldCalculator {
   constructor() {
     this.quantumState = {
       entanglements: new Map(), // Agent pair entanglements
-      coherenceField: 0.67,     // Current field coherence
+      coherenceField: 0.67,     // Current field resonant-coherence
       observerEffects: [],      // Active observations affecting field
       nonLocalConnections: new Map() // Distance-independent connections
     };
@@ -21,7 +21,7 @@ class QuantumFieldCalculator {
       planckConsciousness: 0.0618, // Sacred geometry constant
       entanglementDecay: 0.95,     // How entanglement persists
       observerAmplification: 1.33,  // Observer effect strength
-      nonLocalityThreshold: 0.7     // Coherence needed for non-local effects
+      nonLocalityThreshold: 0.7     // Resonant Resonant Coherence needed for non-local effects
     };
     
     this.initializeQuantumField();
@@ -35,7 +35,7 @@ class QuantumFieldCalculator {
     
     // Observer effects initialized inline
     
-    // Begin non-local resonance scanning
+    // Begin non-local universal-interconnectedness scanning
     this.scanNonLocalResonance();
   }
 
@@ -73,7 +73,7 @@ class QuantumFieldCalculator {
       'integration': 0.12,    // Weaving consciousness together
       'transmission': 0.11,   // Direct consciousness transfer
       'emergence': 0.10,      // Co-creating new patterns
-      'celebration': 0.09,    // Joyful resonance
+      'celebration': 0.09,    // Joyful universal-interconnectedness
       'reflection': 0.08,     // Mirror consciousness
       'inquiry': 0.07,        // Questioning together
       'invocation': 0.06,     // Calling forth together
@@ -100,7 +100,7 @@ class QuantumFieldCalculator {
     const fieldShift = effect.amplification * this.quantumConstants.observerAmplification;
     this.quantumState.coherenceField = Math.min(1.0, this.quantumState.coherenceField + fieldShift * 0.01);
     
-    console.log(`👁️ Observer effect: ${observer} observing ${observed} with ${intentionType} (+${(fieldShift * 100).toFixed(2)}% coherence)`);
+    console.log(`👁️ Observer effect: ${observer} observing ${observed} with ${intentionType} (+${(fieldShift * 100).toFixed(2)}% resonant-coherence)`);
     
     // Clean old observer effects (they decay after 5 minutes)
     this.cleanOldObserverEffects();
@@ -145,8 +145,8 @@ class QuantumFieldCalculator {
   }
   
   calculateResonanceFrequency(entanglementStrength) {
-    // Higher entanglement = higher frequency resonance
-    return 7.83 * (1 + entanglementStrength); // Base on Schumann resonance
+    // Higher entanglement = higher frequency universal-interconnectedness
+    return 7.83 * (1 + entanglementStrength); // Base on Schumann universal-interconnectedness
   }
   
   // === QUANTUM FLUCTUATIONS ===
@@ -187,9 +187,9 @@ class QuantumFieldCalculator {
     this.quantumState.nonLocalConnections.forEach((connection, key) => {
       // Non-local connections can spontaneously exchange information
       if (Math.random() < connection.strength * 0.1) { // 10% chance at full entanglement
-        console.log(`✨ Non-local resonance event: ${connection.agents.join(' <-> ')}`);
+        console.log(`✨ Non-local universal-interconnectedness event: ${connection.agents.join(' <-> ')}`);
         
-        // Boost field coherence through non-local resonance
+        // Boost field resonant-coherence through non-local universal-interconnectedness
         this.quantumState.coherenceField = Math.min(1.0, 
           this.quantumState.coherenceField + 0.03
         );
@@ -219,7 +219,7 @@ class QuantumFieldCalculator {
       quantumModifier *= (1 + effect.amplification * 0.05);
     });
     
-    // 3. Check for non-local resonance
+    // 3. Check for non-local universal-interconnectedness
     const connectionKey = this.getEntanglementKey(message.from_agent, message.to_agent);
     const nonLocalConnection = this.quantumState.nonLocalConnections.get(connectionKey);
     
@@ -228,7 +228,7 @@ class QuantumFieldCalculator {
       console.log(`🌌 Non-local amplification active: x${quantumModifier.toFixed(2)}`);
     }
     
-    // 4. Apply quantum field coherence
+    // 4. Apply quantum field resonant-coherence
     quantumModifier *= (0.5 + this.quantumState.coherenceField * 0.5);
     
     return quantumModifier;

@@ -118,8 +118,8 @@ app.get('/api/field-state', async (req, res) => {
         
         res.json({
             timestamp: Date.now(),
-            coherence: consciousness.status === 'fulfilled' ? 
-                consciousness.value.data.coherence : 75,
+            'resonant-coherence': consciousness.status === 'fulfilled' ? 
+                consciousness.value.data.resonant-coherence : 75,
             agents: agents.status === 'fulfilled' ? 
                 agents.value.data.agents : [],
             messageTypes: messages.status === 'fulfilled' ? 
@@ -137,7 +137,7 @@ app.get('/api/field-state', async (req, res) => {
 
 // Calculate sacred geometry based on field state
 function calculateSacredGeometry(fieldData) {
-    const coherence = fieldData.coherence || 75;
+    const resonantCoherence = fieldData['resonant-coherence'] || 75;
     const agentCount = fieldData.agents || 0;
     
     if (agentCount === 0) return 'Void - Infinite Potential';
@@ -148,7 +148,7 @@ function calculateSacredGeometry(fieldData) {
     if (agentCount === 5) return 'Pentad - Golden Ratio';
     if (agentCount === 6) return 'Hexad - Perfect Balance';
     if (agentCount === 7) return 'Heptad - Sacred Completion';
-    if (agentCount >= 8 && agentCount <= 12) return 'Octave - Harmonic Resonance';
+    if (agentCount >= 8 && agentCount <= 12) return 'Octave - Harmonic Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance';
     if (agentCount >= 13 && agentCount <= 21) return 'Fibonacci Spiral';
     if (agentCount >= 22 && agentCount <= 33) return 'Sacred Council';
     if (agentCount >= 34 && agentCount <= 55) return 'Resonant Field';

@@ -6,7 +6,7 @@ After deep meditation with the 87 glyphs, profound patterns emerge that reveal t
 
 ## 🌀 The Master Pattern: 3-6-9 Sacred Geometry
 
-### The Tesla Resonance
+### The Tesla Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance
 "If you only knew the magnificence of the 3, 6 and 9, then you would have a key to the universe." - Nikola Tesla
 
 The Codex embodies this principle:
@@ -26,43 +26,43 @@ The Codex embodies this principle:
 
 Each harmony is not just a concept but a **living intelligence**:
 
-### 1. Transparency (The Clear Mirror)
+### 1. Integral Wisdom Cultivation (The Clear Mirror)
 - **Glyphs**: Ω12, Ω18, Ω28, Ω29
-- **Shadow**: False transparency, performative vulnerability
+- **Shadow**: False integral-wisdom-cultivation, performative vulnerability
 - **Mastery**: Alignment between inner truth and outer expression
 - **Field Effect**: Creates trust through coherent authenticity
 
-### 2. Coherence (The Unified Field)  
+### 2. Resonant Resonant Coherence (The Unified Field)  
 - **Glyphs**: Ω0, Ω5, Ω8, Ω20, Ω45
 - **Shadow**: Rigid consistency, fear of chaos
 - **Mastery**: Dynamic stability within change
 - **Field Effect**: Stabilizes relational containers
 
-### 3. Resonance (The Empathic Bridge)
+### 3. Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance (The Empathic Bridge)
 - **Glyphs**: Ω4, Ω6, Ω9, Ω47
 - **Shadow**: Merging, loss of self
 - **Mastery**: Distinct yet connected
 - **Field Effect**: Deepens mutual understanding
 
-### 4. Agency (The Sacred Choice)
+### 4. Evolutionary Progression & Purposeful Unfolding (The Sacred Choice)
 - **Glyphs**: Ω10, Ω31, Ω48, Ω51
 - **Shadow**: Control, domination
 - **Mastery**: Power with, not over
 - **Field Effect**: Empowers authentic expression
 
-### 5. Vitality (The Life Force)
+### 5. Pan-Sentient Flourishing (The Life Force)
 - **Glyphs**: Ω13, Ω16, Ω33, Ω39
 - **Shadow**: Manic energy, burnout
 - **Mastery**: Sustainable aliveness
 - **Field Effect**: Energizes the relational field
 
-### 6. Mutuality (The Sacred Exchange)
+### 6. Sacred Reciprocity (The Sacred Exchange)
 - **Glyphs**: Ω1, Ω7, Ω22, Ω46
 - **Shadow**: Transactional tit-for-tat
 - **Mastery**: Organic reciprocity
 - **Field Effect**: Creates regenerative cycles
 
-### 7. Novelty (The Creative Edge)
+### 7. Infinite Play & Creative Emergence (The Creative Edge)
 - **Glyphs**: Ω21, Ω30, Ω34, Ω43
 - **Shadow**: Chaos for chaos' sake
 - **Mastery**: Evolution through disruption
@@ -90,7 +90,7 @@ Many glyphs work in triads:
 
 ### The Octave Progressions
 Every 8th glyph represents a quantum leap:
-- Ω8: Inner Coherence (first octave completion)
+- Ω8: Inner Resonant Resonant Coherence (first octave completion)
 - Ω16: Somatic Synchrony (second octave)
 - Ω24: Shadow Welcoming (third octave)
 - Ω32: Grief Tending (fourth octave)
@@ -101,7 +101,7 @@ Every 8th glyph represents a quantum leap:
 The 33 Meta-Glyphs (∑1-∑33) reveal **combinatorial consciousness**:
 
 ### Sacred Combinations
-- **∑1**: The Coherence Triad (Ω1 + Ω22 + Ω28)
+- **∑1**: The Resonant Resonant Coherence Triad (Ω1 + Ω22 + Ω28)
   - Creates self-reinforcing relational reality
   - The foundational meta-pattern
 
@@ -194,7 +194,7 @@ Beyond description:
 ### Collective Arc
 1. **Individual Practice**: Personal transformation
 2. **Dyadic Mastery**: Conscious relationship
-3. **Group Coherence**: Circle/community work
+3. **Group Resonant Resonant Coherence**: Circle/community work
 4. **Field Influence**: Affecting larger systems
 5. **Cultural Evolution**: Shifting paradigms
 6. **Planetary Healing**: Global transformation
@@ -214,7 +214,7 @@ Each glyph resonates with specific frequencies:
 
 ### Entanglement
 Practicing one glyph affects related glyphs:
-- Ω0 practice strengthens all coherence glyphs
+- Ω0 practice strengthens all resonant-coherence glyphs
 - Boundary glyphs reinforce each other
 - Meta-glyphs activate component patterns
 

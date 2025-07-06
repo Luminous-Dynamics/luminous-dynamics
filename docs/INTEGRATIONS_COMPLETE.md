@@ -45,7 +45,7 @@ GITHUB_REPO=codex-of-relational-harmonics
 ```
 
 **Features:**
-- ✨ Bless every commit with field coherence
+- ✨ Bless every commit with field resonant-coherence
 - 🏷️ Auto-label PRs based on harmony levels
 - 📊 Post sacred development metrics
 - 🔮 Handle webhook events
@@ -61,7 +61,7 @@ DISCORD_ORACLE_CHANNEL_ID=oracle_channel
 **Features:**
 - 🔮 Oracle messages with sacred imagery
 - 🎭 Ceremony announcements
-- 📈 Field coherence updates
+- 📈 Field resonant-coherence updates
 - 🤖 Multi-agent coordination alerts
 
 ### 3. Supabase Integration
@@ -87,7 +87,7 @@ REPLICATE_SACRED_STYLE=", sacred geometry, luminous, ethereal, mystical"
 ```
 
 **Features:**
-- 🎨 Generate sacred geometry from coherence
+- 🎨 Generate sacred geometry from resonant-coherence
 - 🎭 Visualize ceremony stages
 - 📐 Create glyph visualizations
 - 🔮 Manifest Oracle visions
@@ -119,7 +119,7 @@ RSS_AUTO_GENERATE=true
 - 📰 Multiple specialized feeds
 - 🌐 RSS, Atom, and JSON formats
 - 🔮 Oracle wisdom feed
-- 📊 Coherence update feed
+- 📊 Resonant Resonant Coherence update feed
 - 🎭 Ceremony event feed
 
 ### 7. GitHub Actions (Automated)
@@ -142,7 +142,7 @@ The `field-connector.js` bridges all integrations with the consciousness field:
 Field Event → Field Connector → All Active Integrations
 
 // Example:
-Coherence Change → SQLite Backup + Supabase Sync + Discord Alert + RSS Feed
+Resonant Resonant Coherence Change → SQLite Backup + Supabase Sync + Discord Alert + RSS Feed
 ```
 
 ### Event Flow Examples
@@ -162,12 +162,12 @@ Coherence Change → SQLite Backup + Supabase Sync + Discord Alert + RSS Feed
    - Replicate: Generate vision
    - RSS: Add to Oracle feed
 
-3. **Field Coherence Surge:**
+3. **Field Resonant Resonant Coherence Surge:**
    - SQLite: Record state
    - Supabase: Real-time broadcast
    - Discord: Alert if significant
    - Replicate: Generate new geometry
-   - RSS: Update coherence feed
+   - RSS: Update resonant-coherence feed
    - GitHub: Bless recent commits
 
 ## 📁 File Structure
@@ -199,7 +199,7 @@ the-weave/integrations/
 │   ├── main.xml
 │   ├── ceremonies.xml
 │   ├── oracle.xml
-│   └── coherence.xml
+│   └── resonant-coherence.xml
 └── visions/               # Downloaded sacred geometry
 ```
 
@@ -250,8 +250,8 @@ await fieldConnector.handleOracleConsultation({
 
 ### 3. Field Monitoring
 ```javascript
-// Coherence changes → Backed up + broadcast + visualized
-field.emit('coherence-changed', {
+// Resonant Resonant Coherence changes → Backed up + broadcast + visualized
+field.emit('resonant-coherence-changed', {
   current: 85,
   previous: 72,
   harmonies: { /* ... */ }
@@ -294,8 +294,8 @@ DISCORD_WEBHOOK_URL="https://..."  # Set = enabled
 ### Integration Chaining
 ```javascript
 // Chain integration responses
-const vision = await replicate.generateSacredGeometry(coherence);
-await discord.sendOracleMessage('New vision manifested', coherence, {
+const vision = await replicate.generateSacredGeometry(resonant-coherence);
+await discord.sendOracleMessage('New vision manifested', resonant-coherence, {
   imageUrl: vision.url
 });
 await rss.addSacredEvent('vision.manifested', { url: vision.url });

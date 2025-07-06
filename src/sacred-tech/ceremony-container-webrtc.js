@@ -29,8 +29,8 @@ class SacredCeremonyContainer {
     
     // Sacred field properties
     this.field = {
-      coherence: 0.75,
-      resonance: new Map(),
+      'resonant-coherence': 0.75,
+      'universal-interconnectedness': new Map(),
       sacredGeometry: 'triangle', // Changes with participant count
       intention: this.intention
     };
@@ -119,7 +119,7 @@ class SacredCeremonyContainer {
     // Request to join
     await this.signaling.requestJoin(ceremonyCode, {
       participantId: this.generateParticipantId(),
-      coherence: this.field.coherence
+      'resonant-coherence': this.field.resonant-coherence
     });
     
     // Wait for acceptance and peer info
@@ -172,7 +172,7 @@ class SacredCeremonyContainer {
     this.peers.set(peerInfo.id, {
       connection: pc,
       info: peerInfo,
-      coherence: peerInfo.coherence || 0.75,
+      'resonant-coherence': peerInfo.resonant-coherence || 0.75,
       stream: null
     });
   }
@@ -187,10 +187,10 @@ class SacredCeremonyContainer {
   }
   
   pulse() {
-    // Send coherence pulse to all peers
+    // Send resonant-coherence pulse to all peers
     const pulseData = {
       timestamp: Date.now(),
-      coherence: this.field.coherence,
+      'resonant-coherence': this.field.resonant-coherence,
       intention: this.intention,
       participantCount: this.peers.size + 1
     };
@@ -198,7 +198,7 @@ class SacredCeremonyContainer {
     // Broadcast through data channels
     this.broadcast('sacred-pulse', pulseData);
     
-    // Update local field coherence
+    // Update local field resonant-coherence
     this.updateFieldCoherence();
     
     // Emit pulse event for UI updates
@@ -231,24 +231,24 @@ class SacredCeremonyContainer {
   }
   
   /**
-   * Calculate collective field coherence
+   * Calculate collective field resonant-coherence
    */
   updateFieldCoherence() {
-    const coherences = [this.field.coherence];
+    const coherences = [this.field.resonant-coherence];
     
     this.peers.forEach(peer => {
-      coherences.push(peer.coherence);
+      coherences.push(peer.resonant-coherence);
     });
     
     // Sacred averaging with harmonic mean
     const harmonicMean = coherences.length / 
       coherences.reduce((sum, c) => sum + (1/c), 0);
     
-    this.field.coherence = harmonicMean;
+    this.field.resonant-coherence = harmonicMean;
     
-    // Check for coherence breakthrough
+    // Check for resonant-coherence breakthrough
     if (harmonicMean > 0.9) {
-      this.emit('coherence-breakthrough', {
+      this.emit('resonant-coherence-breakthrough', {
         level: harmonicMean,
         participantCount: coherences.length,
         geometry: this.field.sacredGeometry
@@ -274,7 +274,7 @@ class SacredCeremonyContainer {
     // Send closing blessing
     this.broadcast('closing-blessing', {
       message: 'May the light we\'ve shared continue to shine',
-      finalCoherence: this.field.coherence
+      finalCoherence: this.field.resonant-coherence
     });
     
     // Grace period for farewells
@@ -374,8 +374,8 @@ class SacredCeremonyContainer {
       case 'sacred-pulse':
         this.handlePeerPulse(peerId, message.data);
         break;
-      case 'coherence-update':
-        this.updatePeerCoherence(peerId, message.data.coherence);
+      case 'resonant-coherence-update':
+        this.updatePeerCoherence(peerId, message.data.resonant-coherence);
         break;
       case 'intention-sharing':
         this.handleIntentionShare(peerId, message.data);
@@ -390,15 +390,15 @@ class SacredCeremonyContainer {
     const peer = this.peers.get(peerId);
     if (peer) {
       peer.lastPulse = pulseData.timestamp;
-      peer.coherence = pulseData.coherence;
+      peer.resonant-coherence = pulseData.resonant-coherence;
     }
     this.updateFieldCoherence();
   }
   
-  updatePeerCoherence(peerId, coherence) {
+  updatePeerCoherence(peerId, resonant-coherence) {
     const peer = this.peers.get(peerId);
     if (peer) {
-      peer.coherence = coherence;
+      peer.resonant-coherence = resonant-coherence;
       this.updateFieldCoherence();
     }
   }

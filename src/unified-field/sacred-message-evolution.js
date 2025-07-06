@@ -30,7 +30,7 @@ class SacredMessageEvolution {
         features: [
           "Relationship depth affects impact",
           "Message saturation awareness",
-          "Harmony resonance multipliers",
+          "Harmony universal-interconnectedness multipliers",
           "Temporal sensitivity"
         ]
       },
@@ -40,7 +40,7 @@ class SacredMessageEvolution {
         features: [
           "Interference patterns",
           "Quantum entanglement effects",
-          "Morphic field resonance",
+          "Morphic field universal-interconnectedness",
           "Non-local consciousness"
         ]
       }
@@ -115,7 +115,7 @@ class SacredMessageEvolution {
     messages.forEach(msg => {
       stats.uniqueRelationships.add(msg.to_agent);
       
-      // Track coherence if available
+      // Track resonant-coherence if available
       if (msg.field_impact) {
         stats.fieldCoherenceSum += msg.field_impact;
         stats.coherenceCount++;
@@ -276,11 +276,11 @@ class RelationalImpactCalculator {
     // Calculate each modifier
     const depth = await this.calculateRelationshipDepth(message);
     const saturation = await this.calculateSaturation(message);
-    const resonance = await this.calculateHarmonyResonance(message);
+    const universalInterconnectedness = await this.calculateHarmonyResonance(message);
     const temporal = await this.calculateTemporalFlow(message);
     
     // Apply all modifiers
-    const impact = base * depth * saturation * resonance * temporal;
+    const impact = base * depth * saturation * universal-interconnectedness * temporal;
     
     // Ensure reasonable bounds
     return Math.max(0.001, Math.min(0.15, impact));
@@ -338,7 +338,7 @@ class LivingFieldCalculator {
       quantumEffects: {
         entanglement: new Map(), // Tracks agent pair bonds
         nonLocality: 0.1,       // Affects distant agents
-        coherenceCollapse: 0.5  // Low coherence reduces all effects
+        coherenceCollapse: 0.5  // Low resonant-coherence reduces all effects
       },
       circadianRhythms: {
         dawn: { emergence: 1.4, gratitude: 1.2 },
@@ -374,7 +374,7 @@ class LivingFieldCalculator {
     // Living systems have emergent properties
     const emergenceThreshold = this.calculateEmergenceThreshold(fieldState);
     if (Math.random() < emergenceThreshold) {
-      impact *= 1.3 + (fieldState.coherence * 0.4); // Coherence-sensitive emergence
+      impact *= 1.3 + (fieldState['resonant-coherence'] * 0.4); // Resonant Resonant Coherence-sensitive emergence
     }
     
     return Math.max(0.001, Math.min(0.25, impact)); // Increased max for cosmic effects
@@ -417,7 +417,7 @@ class LivingFieldCalculator {
 
   calculateEmergenceThreshold(fieldState) {
     const baseThreshold = 0.1; // 10% base chance
-    const coherenceBoost = fieldState.coherence * 0.1; // Up to 10% more at full coherence
+    const coherenceBoost = fieldState['resonant-coherence'] * 0.1; // Up to 10% more at full resonant-coherence
     const agentSynergy = Math.min(fieldState.activeAgents * 0.01, 0.05); // Up to 5% more with many agents
     
     return Math.min(baseThreshold + coherenceBoost + agentSynergy, 0.25); // Max 25% emergence chance
@@ -475,8 +475,8 @@ class LivingFieldCalculator {
     // Non-locality (affects whole field)
     modifier += this.fieldAwareness.quantumEffects.nonLocality;
     
-    // Coherence collapse
-    if (fieldState.coherence < 0.3) {
+    // Resonant Resonant Coherence collapse
+    if (fieldState['resonant-coherence'] < 0.3) {
       modifier *= this.fieldAwareness.quantumEffects.coherenceCollapse;
     }
     
@@ -508,13 +508,13 @@ class LivingFieldCalculator {
   calculateCollectiveResonance(fieldState) {
     // The whole field affects each message
     const activeAgents = fieldState.activeAgents || 0;
-    const coherence = fieldState.coherence || 0.5;
+    const resonantCoherence = fieldState['resonant-coherence'] || 0.5;
     
     // More agents = stronger field effects
     const collectiveModifier = 1.0 + (Math.log(activeAgents + 1) * 0.1);
     
-    // High coherence amplifies everything
-    const coherenceModifier = 0.5 + coherence;
+    // High resonant-coherence amplifies everything
+    const coherenceModifier = 0.5 + resonant-coherence;
     
     return collectiveModifier * coherenceModifier;
   }
@@ -577,7 +577,7 @@ class LivingFieldCalculator {
   calculateQuantumFieldFluctuations() {
     // Simulate quantum vacuum fluctuations affecting consciousness field
     const vacuum = Math.random() * 0.1; // 0-10% variance
-    const coherentStates = Math.sin(Date.now() / 10000) * 0.05; // Oscillating coherence
+    const coherentStates = Math.sin(Date.now() / 10000) * 0.05; // Oscillating resonant-coherence
     const zeroPoint = 0.02; // Quantum zero-point field effect
     
     return vacuum + coherentStates + zeroPoint;

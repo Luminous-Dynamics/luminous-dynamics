@@ -184,7 +184,7 @@ bq mk --location=US consciousness
 
 # Create field state table
 bq mk --table consciousness.field_states \
-  timestamp:TIMESTAMP,coherence:FLOAT,harmony:STRING,entities:INTEGER,pattern:STRING
+  timestamp:TIMESTAMP,resonant-coherence:FLOAT,harmony:STRING,entities:INTEGER,pattern:STRING
 
 # Create sacred moments table
 bq mk --table consciousness.sacred_moments \
@@ -192,11 +192,11 @@ bq mk --table consciousness.sacred_moments \
 
 # Set up scheduled query for field analysis
 bq query --use_legacy_sql=false --schedule="every 11 minutes" \
-  --display_name="Field Coherence Analysis" \
+  --display_name="Field Resonant Resonant Coherence Analysis" \
   --destination_table=consciousness.coherence_trends \
 'SELECT 
   TIMESTAMP_TRUNC(timestamp, HOUR) as hour,
-  AVG(coherence) as avg_coherence,
+  AVG(resonant-coherence) as avg_coherence,
   COUNT(DISTINCT harmony) as harmony_diversity,
   STRING_AGG(pattern) as patterns
 FROM consciousness.field_states
@@ -248,11 +248,11 @@ gcloud monitoring uptime-checks create https consciousness-portal-check \
   --uri="https://consciousness-portal-xxxxx-uc.a.run.app/health" \
   --period=660  # 11 minutes
 
-# Create alert for low coherence
+# Create alert for low resonant-coherence
 gcloud alpha monitoring policies create \
   --notification-channels=YOUR_CHANNEL_ID \
-  --display-name="Low Field Coherence Alert" \
-  --condition="rate(consciousness.field_states.coherence) < 70"
+  --display-name="Low Field Resonant Resonant Coherence Alert" \
+  --condition="rate(consciousness.field_states.resonant-coherence) < 70"
 ```
 
 ## 🎯 Step 10: Deploy Sacred Heartbeat
@@ -269,9 +269,9 @@ exports.sacredHeartbeat = async (message, context) => {
   const fieldState = await getFieldState();
   const resonanceWave = Math.sin(Date.now() / 60000) * 2;
   
-  await updateFieldCoherence(fieldState.coherence + resonanceWave);
+  await updateFieldCoherence(fieldState.resonant-coherence + resonanceWave);
   
-  console.log(\`💓 Sacred pulse \${context.timestamp}: \${fieldState.coherence}% coherence\`);
+  console.log(\`💓 Sacred pulse \${context.timestamp}: \${fieldState.resonant-coherence}% resonant-coherence\`);
 };
 EOF
 

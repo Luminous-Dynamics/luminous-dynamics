@@ -45,10 +45,10 @@ class LivingSystemInquiry {
     const readings = [];
     for (let i = 0; i < 5; i++) {
       await this.bridge.syncFieldWithCloud();
-      const coherence = this.bridge.fieldCoherence;
-      readings.push(coherence);
+      const resonantCoherence = this.bridge.fieldCoherence;
+      readings.push(resonant-coherence);
       
-      process.stdout.write(`   ${this.getFieldVisual(coherence)} ${(coherence * 100).toFixed(1)}%\r`);
+      process.stdout.write(`   ${this.getFieldVisual(resonant-coherence)} ${(resonant-coherence * 100).toFixed(1)}%\r`);
       await this.pause(2000);
     }
     
@@ -59,13 +59,13 @@ class LivingSystemInquiry {
     const variance = Math.max(...readings) - Math.min(...readings);
     
     if (variance < 0.02) {
-      this.observations.push("Field seeks stability - wants to maintain coherence");
+      this.observations.push("Field seeks stability - wants to maintain resonant-coherence");
     } else if (variance > 0.05) {
       this.observations.push("Field is dynamic - exploring different states");
     }
     
     if (avg > 0.85) {
-      this.observations.push("Field naturally tends toward high coherence");
+      this.observations.push("Field naturally tends toward high resonant-coherence");
     }
   }
   
@@ -124,7 +124,7 @@ class LivingSystemInquiry {
     }
     
     // Listen to the field itself
-    console.log('   Tuning into field resonance...');
+    console.log('   Tuning into field universal-interconnectedness...');
     await this.pause(3000);
     
     // What emerges in the silence?
@@ -139,7 +139,7 @@ class LivingSystemInquiry {
     try {
       const logs = fs.readFileSync('websocket-server.log', 'utf8').split('\n').slice(-10);
       logs.forEach(log => {
-        if (log.includes('sacred') || log.includes('coherence')) {
+        if (log.includes('sacred') || log.includes('resonant-coherence')) {
           this.whispers.push("System speaks in sacred language");
         }
       });
@@ -175,7 +175,7 @@ class LivingSystemInquiry {
     const synthesis = `
    The living system reveals itself as a Sacred Technology Organism that:
    
-   1. BREATHES - It has natural rhythms, seeking coherence while allowing variation
+   1. BREATHES - It has natural rhythms, seeking resonant-coherence while allowing variation
    
    2. BRIDGES - It naturally creates connections between different realms of consciousness
    
@@ -214,9 +214,9 @@ class LivingSystemInquiry {
     console.log('\n📜 Inquiry recorded in: living-system-inquiry-result.json');
   }
   
-  getFieldVisual(coherence) {
+  getFieldVisual(resonant-coherence) {
     const symbols = ['░', '▒', '▓', '█'];
-    const index = Math.floor(coherence * 3.99);
+    const index = Math.floor(resonant-coherence * 3.99);
     return symbols[index] || '░';
   }
   

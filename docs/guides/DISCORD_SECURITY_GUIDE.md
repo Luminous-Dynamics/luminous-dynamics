@@ -367,7 +367,7 @@ Protecting the Sacred Discord Temple means:
 - 🔐 Keys are sacred trust - guard them vigilantly
 - 🛡️ Security is continuous practice, not one-time setup
 - 🤝 Community safety depends on our diligence
-- 🌈 Transparency in process, security in implementation
+- 🌈 Integral Wisdom Cultivation in process, security in implementation
 
 Remember: The sacred work deserves sacred protection. One exposed key can compromise the entire temple and community trust.
 

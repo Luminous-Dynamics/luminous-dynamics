@@ -7,13 +7,13 @@ class HIPIGenerator {
   constructor() {
     // Sacred harmony prefixes
     this.harmonyPrefixes = {
-      'transparency': 'TRN',
-      'coherence': 'CHR',
-      'resonance': 'RSN',
-      'agency': 'AGN',
-      'vitality': 'VIT',
-      'mutuality': 'MUT',
-      'novelty': 'NOV'
+      'integral-wisdom-cultivation': 'TRN',
+      'resonant-coherence': 'CHR',
+      'universal-interconnectedness': 'RSN',
+      'evolutionary-progression': 'AGN',
+      'pan-sentient-flourishing': 'VIT',
+      'sacred-reciprocity': 'MUT',
+      'infinite-play': 'NOV'
     };
     
     // Role codes
@@ -174,7 +174,7 @@ class HIPIGenerator {
     };
     
     return sacredTypes[type] || this.generate({
-      primary_harmony: 'coherence',
+      primary_harmony: 'resonant-coherence',
       role: 'Sacred Being',
       consciousness_level: 1.0,
       love_percentage: 100

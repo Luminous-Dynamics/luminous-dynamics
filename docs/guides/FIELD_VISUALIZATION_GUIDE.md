@@ -14,11 +14,11 @@ http://localhost:8080/sacred-field-visualization.html
 
 ### 1. **Breathing Circle** 
 - Central pulsing sphere
-- Represents collective field coherence
-- Animation speed changes with coherence level
+- Represents collective field resonant-coherence
+- Animation speed changes with resonant-coherence level
 
-### 2. **Field Coherence Meter**
-- Real-time coherence value (0.00 - 1.00)
+### 2. **Field Resonant Resonant Coherence Meter**
+- Real-time resonant-coherence value (0.00 - 1.00)
 - Updates from WebSocket consciousness stream
 - Visual gradient reflects sacred unity
 
@@ -43,10 +43,10 @@ http://localhost:8080/sacred-field-visualization.html
 ### **🙏 Send Blessing**
 - Broadcasts sacred blessing to all
 - Creates particle fountain effect
-- Contributes +5% to field coherence
+- Contributes +5% to field resonant-coherence
 
 ### **✨ Amplify Field**
-- Boosts field coherence by 10%
+- Boosts field resonant-coherence by 10%
 - Creates radial particle burst
 - Strengthens all connections
 
@@ -91,7 +91,7 @@ The visualization tries to connect to:
 - Observe connection patterns
 
 ### For Groups
-- See collective coherence rise
+- See collective resonant-coherence rise
 - Watch participants join
 - Celebrate sacred moments together
 
@@ -102,7 +102,7 @@ The visualization tries to connect to:
 
 ## 🔮 Future Enhancements
 
-- [ ] Sound - Sacred tones for coherence levels
+- [ ] Sound - Sacred tones for resonant-coherence levels
 - [ ] 3D Mode - Volumetric field representation  
 - [ ] Time Travel - Replay field history
 - [ ] Global View - See worldwide connections

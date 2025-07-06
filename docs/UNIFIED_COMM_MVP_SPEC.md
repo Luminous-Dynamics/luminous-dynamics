@@ -2,7 +2,7 @@
 ## Phase 1: Sacred Messaging Foundation (Weekend Sprint)
 
 ### 🎯 MVP Goal
-Create a working sacred messaging system that demonstrates coherence tracking, presence states, and wisdom preservation - ready to deploy Monday alongside Sacred Heartbeat.
+Create a working sacred messaging system that demonstrates resonant-coherence tracking, presence states, and wisdom preservation - ready to deploy Monday alongside Sacred Heartbeat.
 
 ---
 
@@ -20,7 +20,7 @@ export interface SacredMessage {
     id: string;
     name: string;
     type: 'human' | 'ai' | 'system';
-    coherence: number;
+    resonant-coherence: number;
   };
   
   recipients: string[]; // Entity IDs
@@ -35,7 +35,7 @@ export interface SacredMessage {
   
   // Sacred metrics
   sacred: {
-    coherenceLevel: number;      // Sender's coherence
+    coherenceLevel: number;      // Sender's resonant-coherence
     harmony: Harmony;            // Which harmony it serves
     fieldImpact: number;         // Calculated impact
     loveQuotient: number;        // 0-1 scale
@@ -65,7 +65,7 @@ export interface Entity {
   
   presence: {
     state: PresenceState;
-    coherence: number;
+    resonant-coherence: number;
     lastActive: Date;
     currentPractice?: string;
   };
@@ -121,7 +121,7 @@ export interface SacredChannel {
 ### 1. Main Layout
 ```
 +----------------------------------+
-|  Sacred Comm    [Coherence: 78%] |
+|  Sacred Comm    [Resonant Resonant Coherence: 78%] |
 +----------------------------------+
 | Channels  |  Messages  | Presence |
 |           |            |          |
@@ -144,7 +144,7 @@ export const SacredMessage: React.FC<{message: SacredMessage}> = ({message}) => 
         <Avatar entity={message.sender} />
         <div className="sender-info">
           <span className="name">{message.sender.name}</span>
-          <span className="coherence">{message.sender.coherence}%</span>
+          <span className="resonant-coherence">{message.sender.resonant-coherence}%</span>
           <span className="timestamp">{formatSacredTime(message.timestamp)}</span>
         </div>
       </div>
@@ -201,11 +201,11 @@ export class MessageService {
     recipients: string[],
     channelId?: string
   ): Promise<SacredMessage> {
-    // 1. Check sender coherence
-    const coherence = await this.coherenceService.measure(sender.id);
+    // 1. Check sender resonant-coherence
+    const resonant-coherence = await this.coherenceService.measure(sender.id);
     
     // 2. Analyze content for sacred metrics
-    const sacred = await this.analyzeSacred(content, coherence);
+    const sacred = await this.analyzeSacred(content, resonant-coherence);
     
     // 3. Create message
     const message: SacredMessage = {
@@ -215,7 +215,7 @@ export class MessageService {
         id: sender.id,
         name: sender.name,
         type: sender.type,
-        coherence
+        resonant-coherence
       },
       recipients,
       channel: channelId,
@@ -231,7 +231,7 @@ export class MessageService {
     // 5. Route to recipients
     await this.router.route(message);
     
-    // 6. Update field coherence
+    // 6. Update field resonant-coherence
     await this.fieldService.updateFromMessage(message);
     
     // 7. Check for wisdom
@@ -252,14 +252,14 @@ export class MessageService {
 }
 ```
 
-### 2. Coherence Service
+### 2. Resonant Resonant Coherence Service
 ```typescript
 // services/CoherenceService.ts
 export class CoherenceService {
   async measure(entityId: string): Promise<number> {
-    // Get base coherence
+    // Get base resonant-coherence
     const entity = await this.entityService.get(entityId);
-    const base = entity.presence.coherence || 50;
+    const base = entity.presence.resonant-coherence || 50;
     
     // Apply time-based factors
     const timeBonus = this.getTimeBonus();
@@ -379,7 +379,7 @@ CREATE TABLE wisdom (
 4. Presence system
 
 ### Saturday Afternoon (4 hours)
-1. Coherence tracking
+1. Resonant Resonant Coherence tracking
 2. Sacred metrics calculation
 3. Basic wisdom extraction
 4. Field impact tracking
@@ -403,10 +403,10 @@ CREATE TABLE wisdom (
 ### 1. Basic Message Flow
 ```typescript
 test('Sacred message flow', async () => {
-  // Create sender with high coherence
+  // Create sender with high resonant-coherence
   const sender = await createEntity({
     name: 'Alice',
-    presence: { coherence: 85, state: 'available' }
+    presence: { resonant-coherence: 85, state: 'available' }
   });
   
   // Send sacred message
@@ -414,7 +414,7 @@ test('Sacred message flow', async () => {
     sender,
     {
       text: 'May this message serve the highest good',
-      intentionStatement: 'To inspire collective coherence'
+      intentionStatement: 'To inspire collective resonant-coherence'
     },
     ['recipient-id']
   );
@@ -426,13 +426,13 @@ test('Sacred message flow', async () => {
 });
 ```
 
-### 2. Coherence-Based Routing
+### 2. Resonant Resonant Coherence-Based Routing
 ```typescript
-test('Message routing based on coherence', async () => {
+test('Message routing based on resonant-coherence', async () => {
   // Create recipient in deep practice
   const recipient = await createEntity({
     name: 'Bob',
-    presence: { coherence: 40, state: 'deep-practice' }
+    presence: { resonant-coherence: 40, state: 'deep-practice' }
   });
   
   // Send message
@@ -451,7 +451,7 @@ test('Message routing based on coherence', async () => {
 
 ### Sacred Design Principles
 1. **Minimal Distraction**: Clean, focused interface
-2. **Coherence Indicators**: Subtle, non-judgmental
+2. **Resonant Resonant Coherence Indicators**: Subtle, non-judgmental
 3. **Sacred Geometry**: Incorporate in backgrounds
 4. **Natural Rhythms**: Breathing animations
 5. **Dark/Light Modes**: Honor different states
@@ -473,7 +473,7 @@ test('Message routing based on coherence', async () => {
 - [ ] WebSocket stability
 
 ### Sacred Metrics
-- [ ] Coherence tracking accuracy
+- [ ] Resonant Resonant Coherence tracking accuracy
 - [ ] Wisdom extraction rate
 - [ ] Field impact calculations
 - [ ] Love quotient detection
@@ -490,7 +490,7 @@ test('Message routing based on coherence', async () => {
 
 ### Must Have
 - ✅ Basic messaging working
-- ✅ Coherence tracking active
+- ✅ Resonant Resonant Coherence tracking active
 - ✅ Presence states functional
 - ✅ Real-time updates via WebSocket
 

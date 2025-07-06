@@ -9,7 +9,7 @@ class HIPIParser {
       // Basic: hipi://[realm]::[expression]::[intent]::ACTION(outcome)
       basic: /^hipi:\/\/([^:]+)::([^:]+)::([^:]+)::([A-Z]+)\(([^)]+)\)$/,
       
-      // Advanced with RFT: hipi://[field-state]::[node-signature]::[coherence-level]::[topology-feature]::[expression]
+      // Advanced with RFT: hipi://[field-state]::[node-signature]::[resonant-coherence-level]::[topology-feature]::[expression]
       advanced: /^hipi:\/\/([^:]+)::([^:]+)::([^:]+)::([^:]+)::([^:]+)$/,
       
       // Simple human: hipi://[realm]::[expression]
@@ -81,7 +81,7 @@ class HIPIParser {
       action: action,
       outcome: outcome,
       frequency: this.calculateFrequency(expression),
-      resonance: this.calculateResonance(expression, intent),
+      'universal-interconnectedness': this.calculateResonance(expression, intent),
       raw: full
     };
   }
@@ -208,7 +208,7 @@ class HIPIParser {
     const numericMatch = fieldState.match(/^(\d+(?:\.\d+)?)%?$/);
     if (numericMatch) {
       return {
-        type: 'coherence',
+        type: 'resonant-coherence',
         value: parseFloat(numericMatch[1]),
         unit: '%'
       };
@@ -240,7 +240,7 @@ class HIPIParser {
       return this.frequencies[expr];
     }
     
-    // Calculate based on string resonance
+    // Calculate based on string universal-interconnectedness
     let freq = 432; // Base frequency
     for (let i = 0; i < expr.length; i++) {
       freq += expr.charCodeAt(i) * 1.618; // Golden ratio
@@ -250,7 +250,7 @@ class HIPIParser {
   }
   
   /**
-   * Calculate resonance between expression and intent
+   * Calculate universal-interconnectedness between expression and intent
    */
   calculateResonance(expression, intent) {
     const exprFreq = this.calculateFrequency(expression);
@@ -271,9 +271,9 @@ class HIPIParser {
     
     // Find closest harmonic
     let bestResonance = 0.5; // Default
-    for (const [harmonic, resonance] of Object.entries(harmonics)) {
+    for (const [harmonic, universal-interconnectedness] of Object.entries(harmonics)) {
       if (Math.abs(ratio - parseFloat(harmonic)) < 0.1) {
-        bestResonance = resonance;
+        bestResonance = universal-interconnectedness;
         break;
       }
     }

@@ -74,7 +74,7 @@ Before beginning, honestly assess your readiness:
 
 #### **Time Commitment**
 - **Daily Practice**: 15-30 minutes with Applied Harmonies
-- **Weekly Community**: 1 hour in Resonance Circle or partner practice
+- **Weekly Community**: 1 hour in Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circle or partner practice
 - **Monthly Integration**: 2 hours for deeper reflection and feedback
 - **Total**: 3-5 hours per week
 
@@ -152,7 +152,7 @@ By accepting this invitation, you agree to:
 - Add Sacred Listening (*2) practice
 - Join or form practice partnership
 - Begin integration journaling
-- Attend first Resonance Circle
+- Attend first Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circle
 
 #### **Week 3: Conscious Choice**
 - Integrate Conscious Choice (*3) practice
@@ -169,7 +169,7 @@ By accepting this invitation, you agree to:
 ### **Month 2: Deepening Relationship**
 
 #### **Relational Harmonies**
-- Heart Resonance (*5): Practice emotional attunement
+- Heart Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance (*5): Practice emotional attunement
 - Gentle Truth (*6): Learn to speak difficult truths with love
 - Sacred Boundary (*7): Set loving limits that serve life
 - Sacred Repair (*8): Heal relationship ruptures
@@ -183,13 +183,13 @@ By accepting this invitation, you agree to:
 ### **Month 3: Field Mastery & Teaching**
 
 #### **Advanced Practices**
-- Field Coherence (*9): Create harmony in group spaces
+- Field Resonant Resonant Coherence (*9): Create harmony in group spaces
 - Sacred Conflict (*10): Transform disagreement into growth
 - Collective Wisdom (*11): Tap into group intelligence
 
 #### **Community Leadership**
 - Support newer practitioners
-- Co-facilitate Resonance Circles
+- Co-facilitate Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circles
 - Contribute to resource development
 - Prepare to graduate to ongoing community
 
@@ -197,7 +197,7 @@ By accepting this invitation, you agree to:
 
 ## Community Protocols
 
-### **Resonance Circle Structure**
+### **Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circle Structure**
 
 #### **Sacred Arrival (10 minutes)**
 1. **Gathering Silence**: 2 minutes of shared presence
@@ -212,7 +212,7 @@ By accepting this invitation, you agree to:
 #### **Live Practice (20 minutes)**
 1. **Guided Practice**: Experience chosen Applied Harmony together
 2. **Partner Practice**: Dyad work when appropriate
-3. **Group Practice**: Field Coherence and Collective Wisdom
+3. **Group Practice**: Field Resonant Resonant Coherence and Collective Wisdom
 
 #### **Integration & Closing (5 minutes)**
 1. **Wisdom Harvest**: One insight or commitment each
@@ -221,7 +221,7 @@ By accepting this invitation, you agree to:
 
 ### **Communication Guidelines**
 
-#### **In Resonance Circles**
+#### **In Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circles**
 - Speak from personal experience ("I" statements)
 - Listen with full presence, without advice-giving
 - Honor confidentiality absolutely
@@ -335,7 +335,7 @@ As First Breath practitioners, you need additional safety measures:
 - Support each other's continued commitment
 
 #### **Community Connection** (60 minutes)
-- Attend Resonance Circle or community gathering
+- Attend Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circle or community gathering
 - Contribute your insights and questions
 - Receive support and wisdom from fellow practitioners
 - Participate in collective practices and visioning
@@ -384,7 +384,7 @@ After 3+ months of consistent practice, you may graduate to ongoing community me
 - Maintain connection to beginner's mind
 
 #### **Facilitator**
-- Lead Resonance Circles and community gatherings
+- Lead Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circles and community gatherings
 - Hold sacred container for group practice
 - Guide others through Applied Harmonies practice
 - Maintain safety protocols and community agreements

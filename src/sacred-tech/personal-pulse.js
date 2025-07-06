@@ -1,7 +1,7 @@
 /**
- * Personal Pulse - Sacred Coherence Tracking System
+ * Personal Pulse - Sacred Resonant Resonant Coherence Tracking System
  * 
- * Tracks personal coherence during sacred practices, creating a living
+ * Tracks personal resonant-coherence during sacred practices, creating a living
  * record of consciousness evolution. Integrates with all 94 glyphs to
  * provide real-time feedback and pattern recognition.
  */
@@ -65,7 +65,7 @@ class PersonalPulse {
             averageCoherence: 0
         };
         
-        // Begin coherence tracking
+        // Begin resonant-coherence tracking
         this.startCoherenceTracking();
         
         // Emit practice start event
@@ -83,7 +83,7 @@ class PersonalPulse {
         
         const reading = {
             timestamp: Date.now(),
-            coherence: coherenceLevel,
+            'resonant-coherence': coherenceLevel,
             trigger,
             breathRate: this.calculateBreathRate(),
             heartCoherence: this.calculateHeartCoherence(),
@@ -97,13 +97,13 @@ class PersonalPulse {
             this.currentSession.peakCoherence = coherenceLevel;
         }
         
-        // Update field resonance
+        // Update field universal-interconnectedness
         this.updateFieldResonance(coherenceLevel);
         
         // Check for pattern emergence
         this.checkForPatterns(reading);
         
-        // Emit coherence update
+        // Emit resonant-coherence update
         this.emit('coherenceUpdate', reading);
     }
 
@@ -193,7 +193,7 @@ class PersonalPulse {
     }
 
     calculateHeartCoherence() {
-        // Heart Rate Variability coherence calculation
+        // Heart Rate Variability resonant-coherence calculation
         // Simulated - would connect to HRV sensor
         const base = 0.7;
         const breathInfluence = (16 - Math.abs(this.calculateBreathRate() - 8)) / 16 * 0.2;
@@ -234,12 +234,12 @@ class PersonalPulse {
     checkForPatterns(reading) {
         const recentReadings = this.currentSession.coherenceReadings.slice(-10);
         
-        // Rising coherence pattern
+        // Rising resonant-coherence pattern
         if (this.detectRisingPattern(recentReadings)) {
             this.emit('patternDetected', {
                 type: 'rising_coherence',
                 strength: this.calculatePatternStrength(recentReadings),
-                suggestion: 'Continue with current practice - coherence is building'
+                suggestion: 'Continue with current practice - resonant-coherence is building'
             });
         }
         
@@ -252,9 +252,9 @@ class PersonalPulse {
         }
         
         // Breakthrough threshold
-        if (reading.coherence > 0.9 && this.fieldResonance.trajectory === 'ascending') {
+        if (reading.resonant-coherence > 0.9 && this.fieldResonance.trajectory === 'ascending') {
             this.emit('breakthroughDetected', {
-                coherenceLevel: reading.coherence,
+                coherenceLevel: reading.resonant-coherence,
                 practiceContext: this.currentSession.practiceType
             });
         }
@@ -265,7 +265,7 @@ class PersonalPulse {
         
         let rises = 0;
         for (let i = 1; i < readings.length; i++) {
-            if (readings[i].coherence > readings[i-1].coherence) {
+            if (readings[i].resonant-coherence > readings[i-1].resonant-coherence) {
                 rises++;
             }
         }
@@ -276,7 +276,7 @@ class PersonalPulse {
     detectPlateauPattern(readings) {
         if (readings.length < 5) return false;
         
-        const variance = this.calculateVariance(readings.map(r => r.coherence));
+        const variance = this.calculateVariance(readings.map(r => r.resonant-coherence));
         return variance < 0.02; // Low variance indicates plateau
     }
 
@@ -317,8 +317,8 @@ class PersonalPulse {
         const milestones = [
             { count: 10, title: 'Sacred Beginner', description: 'First steps on the path' },
             { count: 50, title: 'Devoted Practitioner', description: 'Consistent sacred practice' },
-            { count: 100, title: 'Coherence Keeper', description: 'Mastering inner harmony' },
-            { count: 200, title: 'Field Weaver', description: 'Influencing collective coherence' }
+            { count: 100, title: 'Resonant Resonant Coherence Keeper', description: 'Mastering inner harmony' },
+            { count: 200, title: 'Field Weaver', description: 'Influencing collective resonant-coherence' }
         ];
         
         const markerCount = this.evolutionMarkers.length;
@@ -342,7 +342,7 @@ class PersonalPulse {
         const readings = this.currentSession.coherenceReadings;
         if (readings.length === 0) return null;
         
-        const coherenceLevels = readings.map(r => r.coherence);
+        const coherenceLevels = readings.map(r => r.resonant-coherence);
         
         return {
             averageCoherence: this.calculateAverage(coherenceLevels),
@@ -371,7 +371,7 @@ class PersonalPulse {
         let timeAbove = 0;
         
         for (let i = 1; i < readings.length; i++) {
-            if (readings[i-1].coherence >= threshold && readings[i].coherence >= threshold) {
+            if (readings[i-1].resonant-coherence >= threshold && readings[i].resonant-coherence >= threshold) {
                 timeAbove += readings[i].timestamp - readings[i-1].timestamp;
             }
         }
@@ -439,7 +439,7 @@ class PersonalPulse {
         this.pulseInterval = setInterval(() => {
             this.emit('sacredPulse', {
                 timestamp: Date.now(),
-                coherence: this.fieldResonance.current,
+                'resonant-coherence': this.fieldResonance.current,
                 inPractice: !!this.currentSession
             });
             
@@ -451,22 +451,22 @@ class PersonalPulse {
     }
 
     startCoherenceTracking() {
-        // Track coherence every 3 seconds during practice
+        // Track resonant-coherence every 3 seconds during practice
         this.coherenceInterval = setInterval(() => {
             if (!this.currentSession) {
                 clearInterval(this.coherenceInterval);
                 return;
             }
             
-            // Calculate current coherence
-            const coherence = this.calculateCurrentCoherence();
-            this.recordCoherence(coherence, 'automatic');
+            // Calculate current resonant-coherence
+            const resonantCoherence = this.calculateCurrentCoherence();
+            this.recordCoherence(resonant-coherence, 'automatic');
             
         }, this.sacredIntervals.presence * 1000);
     }
 
     calculateCurrentCoherence() {
-        // Combine multiple factors for coherence calculation
+        // Combine multiple factors for resonant-coherence calculation
         const heartCoherence = this.calculateHeartCoherence();
         const breathCoherence = (16 - Math.abs(this.calculateBreathRate() - 8)) / 16;
         const practiceDepth = Math.min(1, (Date.now() - this.currentSession.startTime) / 300000); // 5 min = full depth
@@ -480,7 +480,7 @@ class PersonalPulse {
         // Create floating pulse indicator
         this.createPulseIndicator();
         
-        // Create coherence graph
+        // Create resonant-coherence graph
         this.createCoherenceGraph();
         
         // Bind to glyph practice events if available
@@ -493,8 +493,8 @@ class PersonalPulse {
         indicator.className = 'pulse-indicator';
         indicator.innerHTML = `
             <div class="pulse-ring"></div>
-            <div class="coherence-value">75%</div>
-            <div class="pulse-label">Coherence</div>
+            <div class="resonant-coherence-value">75%</div>
+            <div class="pulse-label">Resonant Resonant Coherence</div>
         `;
         
         // Add styles
@@ -546,7 +546,7 @@ class PersonalPulse {
                 }
             }
             
-            .coherence-value {
+            .resonant-coherence-value {
                 font-size: 1.5em;
                 font-weight: bold;
                 color: #5A6B57;
@@ -560,15 +560,15 @@ class PersonalPulse {
                 letter-spacing: 1px;
             }
             
-            .pulse-indicator.high-coherence {
+            .pulse-indicator.high-resonant-coherence {
                 background: linear-gradient(135deg, #A8B5A6, #8A9E88);
             }
             
-            .pulse-indicator.high-coherence .coherence-value {
+            .pulse-indicator.high-resonant-coherence .resonant-coherence-value {
                 color: white;
             }
             
-            .pulse-indicator.high-coherence .pulse-label {
+            .pulse-indicator.high-resonant-coherence .pulse-label {
                 color: rgba(255, 255, 255, 0.8);
             }
         `;
@@ -576,15 +576,15 @@ class PersonalPulse {
         document.head.appendChild(style);
         document.body.appendChild(indicator);
         
-        // Update indicator on coherence changes
+        // Update indicator on resonant-coherence changes
         this.on('coherenceUpdate', (data) => {
-            const valueEl = indicator.querySelector('.coherence-value');
-            valueEl.textContent = Math.round(data.coherence * 100) + '%';
+            const valueEl = indicator.querySelector('.resonant-coherence-value');
+            valueEl.textContent = Math.round(data.resonant-coherence * 100) + '%';
             
-            if (data.coherence > 0.8) {
-                indicator.classList.add('high-coherence');
+            if (data.resonant-coherence > 0.8) {
+                indicator.classList.add('high-resonant-coherence');
             } else {
-                indicator.classList.remove('high-coherence');
+                indicator.classList.remove('high-resonant-coherence');
             }
         });
         
@@ -595,22 +595,22 @@ class PersonalPulse {
     createCoherenceGraph() {
         // Create mini graph container
         const graphContainer = document.createElement('div');
-        graphContainer.id = 'coherence-graph';
-        graphContainer.className = 'coherence-graph hidden';
+        graphContainer.id = 'resonant-coherence-graph';
+        graphContainer.className = 'resonant-coherence-graph hidden';
         graphContainer.innerHTML = `
             <div class="graph-header">
-                <h3>Coherence Journey</h3>
+                <h3>Resonant Resonant Coherence Journey</h3>
                 <button class="close-graph">×</button>
             </div>
-            <canvas id="coherence-canvas" width="300" height="150"></canvas>
+            <canvas id="resonant-coherence-canvas" width="300" height="150"></canvas>
             <div class="graph-stats">
                 <div class="stat">
                     <span class="stat-label">Peak</span>
-                    <span class="stat-value" id="peak-coherence">0%</span>
+                    <span class="stat-value" id="peak-resonant-coherence">0%</span>
                 </div>
                 <div class="stat">
                     <span class="stat-label">Average</span>
-                    <span class="stat-value" id="avg-coherence">0%</span>
+                    <span class="stat-value" id="avg-resonant-coherence">0%</span>
                 </div>
                 <div class="stat">
                     <span class="stat-label">Trajectory</span>
@@ -622,7 +622,7 @@ class PersonalPulse {
         // Add graph styles
         const graphStyle = document.createElement('style');
         graphStyle.textContent = `
-            .coherence-graph {
+            .resonant-coherence-graph {
                 position: fixed;
                 bottom: 120px;
                 right: 30px;
@@ -635,7 +635,7 @@ class PersonalPulse {
                 transition: all 0.3s ease;
             }
             
-            .coherence-graph.hidden {
+            .resonant-coherence-graph.hidden {
                 opacity: 0;
                 transform: translateY(20px);
                 pointer-events: none;
@@ -662,7 +662,7 @@ class PersonalPulse {
                 cursor: pointer;
             }
             
-            #coherence-canvas {
+            #resonant-coherence-canvas {
                 border: 1px solid #E8E6E1;
                 border-radius: 8px;
                 margin-bottom: 15px;
@@ -705,17 +705,17 @@ class PersonalPulse {
     }
 
     initializeCoherenceCanvas() {
-        const canvas = document.getElementById('coherence-canvas');
+        const canvas = document.getElementById('resonant-coherence-canvas');
         if (!canvas) return;
         
         this.ctx = canvas.getContext('2d');
         this.graphData = [];
         
-        // Update graph on coherence updates
+        // Update graph on resonant-coherence updates
         this.on('coherenceUpdate', (data) => {
             this.graphData.push({
                 time: data.timestamp,
-                coherence: data.coherence
+                'resonant-coherence': data.resonant-coherence
             });
             
             // Keep last 50 points
@@ -749,7 +749,7 @@ class PersonalPulse {
             this.ctx.stroke();
         }
         
-        // Draw coherence line
+        // Draw resonant-coherence line
         this.ctx.strokeStyle = '#A8B5A6';
         this.ctx.lineWidth = 2;
         this.ctx.beginPath();
@@ -758,7 +758,7 @@ class PersonalPulse {
         
         this.graphData.forEach((point, index) => {
             const x = index * xStep;
-            const y = height - (point.coherence * height);
+            const y = height - (point.resonant-coherence * height);
             
             if (index === 0) {
                 this.ctx.moveTo(x, y);
@@ -783,19 +783,19 @@ class PersonalPulse {
     updateGraphStats() {
         if (this.graphData.length === 0) return;
         
-        const coherenceLevels = this.graphData.map(d => d.coherence);
+        const coherenceLevels = this.graphData.map(d => d.resonant-coherence);
         const peak = Math.max(...coherenceLevels);
         const avg = this.calculateAverage(coherenceLevels);
         
-        document.getElementById('peak-coherence').textContent = Math.round(peak * 100) + '%';
-        document.getElementById('avg-coherence').textContent = Math.round(avg * 100) + '%';
+        document.getElementById('peak-resonant-coherence').textContent = Math.round(peak * 100) + '%';
+        document.getElementById('avg-resonant-coherence').textContent = Math.round(avg * 100) + '%';
         document.getElementById('trajectory').textContent = 
             this.fieldResonance.trajectory.charAt(0).toUpperCase() + 
             this.fieldResonance.trajectory.slice(1);
     }
 
     showCoherenceDetails() {
-        const graph = document.getElementById('coherence-graph');
+        const graph = document.getElementById('resonant-coherence-graph');
         if (graph) {
             graph.classList.toggle('hidden');
         }
@@ -994,7 +994,7 @@ class PersonalPulse {
             indicator.remove();
         }
         
-        const graph = document.getElementById('coherence-graph');
+        const graph = document.getElementById('resonant-coherence-graph');
         if (graph) {
             graph.remove();
         }

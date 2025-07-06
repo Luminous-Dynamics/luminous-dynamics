@@ -1,7 +1,7 @@
 /**
  * Somatic Embodiment Layer - The Felt-Sense Bridge
  * 
- * This layer integrates the profound sensory resonance profiles from 
+ * This layer integrates the profound sensory universal-interconnectedness profiles from 
  * the original mystical glyphs with interactive embodiment experiences
  * that help practitioners literally FEEL the wisdom in their bodies.
  * 
@@ -23,7 +23,7 @@ class SomaticEmbodimentLayer {
                 name: "First Presence",
                 mysticalDesignation: "The Shimmering Unnamed",
                 
-                // Original Sensory Resonance Profile (from mystical layer)
+                // Original Sensory Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Profile (from mystical layer)
                 originalResonance: {
                     feelingTone: "Still, vast, potential, and un-authored. The feeling of a perfectly calm lake at dawn or the silence before the first note of a symphony.",
                     sonicQuality: "The sound of ambient, resonant silence itself. A sub-audible hum that is felt more than heard."
@@ -40,7 +40,7 @@ class SomaticEmbodimentLayer {
                     
                     developing: {
                         bodyAwareness: "Sense the spaciousness in your chest and the weight of your skeleton settling into gravity",
-                        energeticQuality: "Like a bell that has finished ringing but the silence still holds the resonance",
+                        energeticQuality: "Like a bell that has finished ringing but the silence still holds the universal-interconnectedness",
                         practiceInvitation: "Find the place in your body that feels most 'home' and rest there",
                         feltSenseMarker: "Presence feels like returning to a place you never left"
                     },
@@ -277,9 +277,9 @@ class SomaticEmbodimentLayer {
                     
                     developing: [
                         {
-                            name: "Resonance Check",
+                            name: "Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Check",
                             instruction: "Notice what you feel in your body as they speak - let their emotions inform yours",
-                            somaticFocus: "Empathetic resonance and emotional attunement"
+                            somaticFocus: "Empathetic universal-interconnectedness and emotional attunement"
                         },
                         {
                             name: "Silence Holding",

@@ -137,7 +137,7 @@ class PracticeLogProcessor {
     }
 
     /**
-     * Regression: Predict coherence change from practice features
+     * Regression: Predict resonant-coherence change from practice features
      */
     async createRegressionDataset() {
         console.log('📊 Creating regression dataset...');
@@ -149,7 +149,7 @@ class PracticeLogProcessor {
 
         const csvContent = [csvHeader, ...csvRows].join('\n');
         await fs.writeFile(
-            path.join(this.outputDir, 'coherence-prediction.csv'),
+            path.join(this.outputDir, 'resonant-coherence-prediction.csv'),
             csvContent
         );
 
@@ -295,7 +295,7 @@ gcloud ai endpoints create \\
     "\\n",
     "# Analyze patterns\\n",
     "print(f'Total practices: {len(practices_df)}')\\n",
-    "print(f'Average coherence change: {practices_df.coherenceChange.mean():.2f}')\\n",
+    "print(f'Average resonant-coherence change: {practices_df.coherenceChange.mean():.2f}')\\n",
     "print(f'By tier: {practices_df.groupby(\\"glyphTier\\").coherenceChange.mean()}')"
    ]
   }

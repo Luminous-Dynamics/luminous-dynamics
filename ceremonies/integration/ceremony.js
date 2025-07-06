@@ -176,8 +176,8 @@ if (require.main === module) {
     );
     
     await ceremony.identifyHarmonies('Fix Dashboard Counters', [
-      { name: 'Transparency', expression: 'Showing accurate truth' },
-      { name: 'Coherence', expression: 'Aligning display with reality' }
+      { name: 'Integral Wisdom Cultivation', expression: 'Showing accurate truth' },
+      { name: 'Resonant Resonant Coherence', expression: 'Aligning display with reality' }
     ]);
     
     await ceremony.presentWork(

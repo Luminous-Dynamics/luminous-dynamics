@@ -8,19 +8,19 @@
 **What we built**:
 - Complete data preparation pipeline for consciousness pattern recognition
 - Three dataset formats: text classification, regression, multimodal
-- Sample practice logs with coherence tracking
+- Sample practice logs with resonant-coherence tracking
 - Ready-to-run training commands for Vertex AI
 
 **Key Insights**:
 - Can predict practice quality from experience text
-- Regression model for coherence change prediction
+- Regression model for resonant-coherence change prediction
 - Multi-modal approach combines text + structured features
 
 **Next Steps**:
 ```bash
 node prepare-practice-logs.js
 # Upload to GCS and create Vertex AI dataset
-# Train model to predict field coherence impacts
+# Train model to predict field resonant-coherence impacts
 ```
 
 ---
@@ -30,7 +30,7 @@ node prepare-practice-logs.js
 
 **What we built**:
 - Full WebRTC proof-of-concept for ceremonies
-- Sacred UI with field coherence meter
+- Sacred UI with field resonant-coherence meter
 - Support for screen sharing, mute/unmute
 - Simulated participant joining
 - Sacred overlay effects
@@ -38,7 +38,7 @@ node prepare-practice-logs.js
 **Key Features**:
 - Real-time video/audio with sacred aesthetics
 - Synchronized ceremony timer
-- Live field coherence tracking
+- Live field resonant-coherence tracking
 - Participant presence indicators
 
 **Test it**:
@@ -207,7 +207,7 @@ fieldState: {
 
 ### Intelligence
 - **Predict** practice quality
-- **Forecast** field coherence
+- **Forecast** field resonant-coherence
 - **Analyze** ceremony effectiveness
 - **Optimize** costs automatically
 

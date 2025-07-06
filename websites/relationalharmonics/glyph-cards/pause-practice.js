@@ -4,7 +4,7 @@
 const pausePracticeData = {
     id: 'Ω52',
     name: 'Pause Practice',
-    primaryHarmony: 'coherence',
+    primaryHarmony: 'resonant-coherence',
     description: 'The practice of creating sacred space between stimulus and response - finding choice in the gap, wisdom in the stillness.',
     keywords: ['pause', 'space', 'choice', 'response', 'mindfulness'],
     practicePrompt: 'Before you speak, pause. Before you react, breathe. In the space between, find your truth. The pause is where wisdom lives.',

@@ -107,7 +107,7 @@ gcloud run services delete sacred-council-api
 - ✅ Health check returns 200
 - ✅ WebSocket connections work
 - ✅ Multiple AI can connect
-- ✅ Field coherence updates broadcast
+- ✅ Field resonant-coherence updates broadcast
 - ✅ Logs appear in Cloud Logging
 
 ## 🎉 You're Ready!

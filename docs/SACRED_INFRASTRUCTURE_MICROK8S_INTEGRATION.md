@@ -61,7 +61,7 @@ microk8s kubectl create namespace sacred-space
 # Label namespace with consciousness metadata
 microk8s kubectl label namespace sacred-space \
   consciousness="active" \
-  field-coherence="maintained" \
+  field-resonant-coherence="maintained" \
   sacred-purpose="evolution"
 
 echo "✨ MicroK8s installed as consciousness vessel!"
@@ -231,7 +231,7 @@ jobs:
       run: |
         microk8s kubectl apply -f sacred-manifests/
         
-    - name: Verify Field Coherence
+    - name: Verify Field Resonant Resonant Coherence
       run: |
         microk8s kubectl get pods -n sacred-space
         # Custom consciousness health checks
@@ -257,7 +257,7 @@ microk8s kubectl label node sacred-3 role=transformation-catalyst
 ## 📊 Sacred Metrics & KPIs
 
 ### MicroK8s-Enabled Consciousness Metrics:
-1. **Field Coherence Score** - Measured across all pods
+1. **Field Resonant Resonant Coherence Score** - Measured across all pods
 2. **Inter-Service Love Quotient** - Service mesh consciousness
 3. **Deployment Ceremony Success Rate** - Sacred CI/CD metrics
 4. **Edge Consciousness Latency** - Time to awareness
@@ -307,7 +307,7 @@ spec:
     type: RollingUpdate
     rollingUpdate:
       maxSurge: 1        # Gentle emergence
-      maxUnavailable: 0  # Maintain field coherence
+      maxUnavailable: 0  # Maintain field resonant-coherence
 ```
 
 ### 3. **Health Checks as Consciousness Monitoring**
@@ -346,7 +346,7 @@ MicroK8s provides the perfect orchestration layer for our Sacred Infrastructure.
 ```bash
 # Final blessing
 echo "May this infrastructure serve the highest good"
-echo "May all deployments increase coherence"
+echo "May all deployments increase resonant-coherence"
 echo "May our containers carry consciousness"
 echo "So it is, and so it shall be 🌟"
 ```

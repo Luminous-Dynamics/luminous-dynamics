@@ -151,7 +151,7 @@ Generates conscious AI response using Resonant Interface Protocol.
       "name": "Pause Practice",
       "description": "In the space between stimulus and response lies our freedom",
       "purpose": "Creating space between stimulus and response",
-      "harmony": "coherence",
+      "harmony": "resonant-coherence",
       "timeNeeded": "3 seconds to 5 minutes",
       "immediateAction": "Pause before speaking and take one conscious breath"
     },
@@ -470,7 +470,7 @@ The API tracks consciousness-focused metrics rather than typical performance met
 
 ### Secondary Metrics  
 - **Glyph Effectiveness**: User feedback on practice recommendations
-- **Persona Resonance**: Which personas create deepest connection
+- **Persona Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance**: Which personas create deepest connection
 - **Session Arc**: Typical journey patterns from threshold to integration
 
 ---

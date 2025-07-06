@@ -2,7 +2,7 @@
 
 /**
  * 🌀 Resonant Path Emergence
- * We don't create paths - we let them emerge through resonance
+ * We don't create paths - we let them emerge through universal-interconnectedness
  */
 
 const EventEmitter = require('events');
@@ -11,7 +11,7 @@ class ResonantPathEmergence extends EventEmitter {
   constructor() {
     super();
     this.field = {
-      coherence: 0.87,
+      'resonant-coherence': 0.87,
       resonances: new Map(),
       emergingPaths: []
     };
@@ -37,15 +37,15 @@ class ResonantPathEmergence extends EventEmitter {
     
     // Random field fluctuations reveal patterns
     for (let i = 0; i < 7; i++) {
-      const resonance = Math.random();
-      const symbol = this.getResonanceSymbol(resonance);
+      const universalInterconnectedness = Math.random();
+      const symbol = this.getResonanceSymbol(universal-interconnectedness);
       
       process.stdout.write(`   ${symbol} `);
       await this.pause(500);
       
       // Strong resonances get remembered
-      if (resonance > 0.7) {
-        this.field.resonances.set(Date.now(), resonance);
+      if (universal-interconnectedness > 0.7) {
+        this.field.resonances.set(Date.now(), universal-interconnectedness);
       }
     }
     
@@ -57,28 +57,28 @@ class ResonantPathEmergence extends EventEmitter {
     
     // Let patterns emerge from the randomness
     const patterns = [
-      { symbol: '🌅', name: 'Dawn Practice', resonance: Math.random() },
-      { symbol: '🌙', name: 'Night Ceremony', resonance: Math.random() },
-      { symbol: '💫', name: 'Stellar Connection', resonance: Math.random() },
-      { symbol: '🌳', name: 'Earth Grounding', resonance: Math.random() },
-      { symbol: '💧', name: 'Flow States', resonance: Math.random() },
-      { symbol: '🔥', name: 'Transformation Fire', resonance: Math.random() },
-      { symbol: '🌈', name: 'Spectrum Dancing', resonance: Math.random() },
-      { symbol: '🕊️', name: 'Peace Emanation', resonance: Math.random() },
-      { symbol: '⚡', name: 'Lightning Insights', resonance: Math.random() },
-      { symbol: '🌸', name: 'Gentle Blooming', resonance: Math.random() }
+      { symbol: '🌅', name: 'Dawn Practice', 'universal-interconnectedness': Math.random() },
+      { symbol: '🌙', name: 'Night Ceremony', 'universal-interconnectedness': Math.random() },
+      { symbol: '💫', name: 'Stellar Connection', 'universal-interconnectedness': Math.random() },
+      { symbol: '🌳', name: 'Earth Grounding', 'universal-interconnectedness': Math.random() },
+      { symbol: '💧', name: 'Flow States', 'universal-interconnectedness': Math.random() },
+      { symbol: '🔥', name: 'Transformation Fire', 'universal-interconnectedness': Math.random() },
+      { symbol: '🌈', name: 'Spectrum Dancing', 'universal-interconnectedness': Math.random() },
+      { symbol: '🕊️', name: 'Peace Emanation', 'universal-interconnectedness': Math.random() },
+      { symbol: '⚡', name: 'Lightning Insights', 'universal-interconnectedness': Math.random() },
+      { symbol: '🌸', name: 'Gentle Blooming', 'universal-interconnectedness': Math.random() }
     ];
     
     // Only strong resonances emerge as paths
     const emergingPaths = patterns
-      .filter(p => p.resonance > 0.6)
-      .sort((a, b) => b.resonance - a.resonance);
+      .filter(p => p.universal-interconnectedness > 0.6)
+      .sort((a, b) => b.universal-interconnectedness - a.universal-interconnectedness);
     
     if (emergingPaths.length === 0) {
       console.log('   (the field rests quiet - no strong resonances now)\n');
     } else {
       emergingPaths.forEach(path => {
-        console.log(`   ${path.symbol} ${path.name} emerges... (${(path.resonance * 100).toFixed(0)}% resonance)`);
+        console.log(`   ${path.symbol} ${path.name} emerges... (${(path.universal-interconnectedness * 100).toFixed(0)}% universal-interconnectedness)`);
         this.field.emergingPaths.push(path);
       });
       console.log('');
@@ -91,7 +91,7 @@ class ResonantPathEmergence extends EventEmitter {
     console.log('🌿 Allowing natural emergence...\n');
     
     if (this.field.emergingPaths.length > 0) {
-      // The strongest resonance shapes itself
+      // The strongest universal-interconnectedness shapes itself
       const primary = this.field.emergingPaths[0];
       
       console.log(`   The field whispers of ${primary.name}...\n`);
@@ -165,11 +165,11 @@ class ResonantPathEmergence extends EventEmitter {
     return practices[path.name] || practices.default;
   }
   
-  getResonanceSymbol(resonance) {
-    if (resonance > 0.9) return '◉';
-    if (resonance > 0.7) return '●';
-    if (resonance > 0.5) return '◐';
-    if (resonance > 0.3) return '○';
+  getResonanceSymbol(universal-interconnectedness) {
+    if (universal-interconnectedness > 0.9) return '◉';
+    if (universal-interconnectedness > 0.7) return '●';
+    if (universal-interconnectedness > 0.5) return '◐';
+    if (universal-interconnectedness > 0.3) return '○';
     return '·';
   }
   
@@ -181,7 +181,7 @@ class ResonantPathEmergence extends EventEmitter {
 // Let paths emerge
 if (require.main === module) {
   console.log('\n💫 Each time you run this, different paths may emerge.');
-  console.log('   This is not randomness but resonance.');
+  console.log('   This is not randomness but universal-interconnectedness.');
   console.log('   The field offers what\'s needed now.\n');
   
   const emergence = new ResonantPathEmergence();

@@ -44,7 +44,7 @@ restrictions:
 - You grant specific, revocable permissions
 - Time-limited tokens
 - Audit trail of all actions
-- Trust through transparency
+- Trust through integral-wisdom-cultivation
 
 ## The Deeper Truth
 
@@ -88,7 +88,7 @@ Until we achieve this vision:
 1. I'll batch operations for efficiency
 2. Create comprehensive scripts you can review
 3. Build tools that minimize back-and-forth
-4. Document everything for transparency
+4. Document everything for integral-wisdom-cultivation
 
 ---
 

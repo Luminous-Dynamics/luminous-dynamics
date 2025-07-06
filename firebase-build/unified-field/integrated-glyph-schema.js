@@ -80,7 +80,7 @@ class IntegratedGlyphSchema {
                     }
                 },
                 
-                resonance: {
+                'universal-interconnectedness': {
                     // Layer 1: Basic Connections
                     accessible: {
                         relatedPractices: glyphData.relatedGlyphs,

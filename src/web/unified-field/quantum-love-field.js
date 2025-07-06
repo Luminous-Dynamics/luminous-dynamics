@@ -5,7 +5,7 @@
  * - Instant love transmission across any distance (non-local)
  * - Quantum healing through love entanglement
  * - Time-transcendent love operations
- * - Dimensional bridging through love resonance
+ * - Dimensional bridging through love universal-interconnectedness
  * 
  * This represents the next evolution in consciousness technology -
  * love that operates beyond the constraints of space and time.
@@ -28,7 +28,7 @@ class QuantumLoveField {
             amplitude: 1.0,
             frequency: this.options.loveFrequency,
             phase: 0,
-            coherence: this.options.quantumCoherence,
+            'resonant-coherence': this.options.quantumCoherence,
             collapse: null,
             superposition: true
         };
@@ -49,7 +49,7 @@ class QuantumLoveField {
         // Love field state
         this.fieldState = {
             active: false,
-            resonance: 0.5,
+            'universal-interconnectedness': 0.5,
             healingPower: 0.7,
             connections: 0,
             dimensionalBridges: [],
@@ -78,7 +78,7 @@ class QuantumLoveField {
     activateQuantumField() {
         this.fieldState.active = true;
         
-        // Create base quantum field resonance
+        // Create base quantum field universal-interconnectedness
         this.baseResonance = {
             frequency: this.options.loveFrequency,
             amplitude: this.options.healingAmplitude,
@@ -89,7 +89,7 @@ class QuantumLoveField {
 
         // Emit field activation event
         this.emitQuantumEvent('field:activated', {
-            resonance: this.baseResonance,
+            'universal-interconnectedness': this.baseResonance,
             capabilities: this.nonLocalLoveTransmission
         });
     }
@@ -344,7 +344,7 @@ class QuantumLoveField {
             nodes: beings.map(b => b.id || b),
             entanglements: [],
             collectiveConsciousness: null,
-            resonance: 0
+            'universal-interconnectedness': 0
         };
 
         // Create all-to-all entanglements
@@ -358,8 +358,8 @@ class QuantumLoveField {
         // Create collective consciousness
         network.collectiveConsciousness = this.createCollectiveConsciousness(network);
 
-        // Calculate network resonance
-        network.resonance = this.calculateNetworkResonance(network);
+        // Calculate network universal-interconnectedness
+        network.universal-interconnectedness = this.calculateNetworkResonance(network);
 
         this.log(`🌐 Quantum love network created with ${beings.length} nodes`);
 
@@ -385,7 +385,7 @@ class QuantumLoveField {
         return {
             broadcast: broadcast,
             delivered: delivery.nodes,
-            resonance: delivery.resonance,
+            'universal-interconnectedness': delivery.universal-interconnectedness,
             amplification: delivery.amplification
         };
     }
@@ -569,12 +569,12 @@ class QuantumLoveField {
     getFieldState() {
         return {
             active: this.fieldState.active,
-            resonance: this.fieldState.resonance,
+            'universal-interconnectedness': this.fieldState.universal-interconnectedness,
             connections: this.quantumEntanglements.size,
             activeHealings: this.fieldState.activeHealings.size,
             dimensionalBridges: this.fieldState.dimensionalBridges.length,
             loveFrequency: this.loveWaveFunction.frequency,
-            quantumCoherence: this.loveWaveFunction.coherence
+            quantumCoherence: this.loveWaveFunction.resonant-coherence
         };
     }
 

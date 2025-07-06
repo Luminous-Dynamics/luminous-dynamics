@@ -26,7 +26,7 @@ class MycelialNetwork extends EventEmitter {
       id: this.generateNodeId(),
       ...nodeData,
       joinedAt: new Date(),
-      coherence: 0.5,
+      'resonant-coherence': 0.5,
       contributions: 0,
       lastSeen: new Date()
     };
@@ -41,11 +41,11 @@ class MycelialNetwork extends EventEmitter {
   }
   
   establishConnections(newNode) {
-    // Connect to nodes with similar coherence
+    // Connect to nodes with similar resonant-coherence
     this.nodes.forEach((node, nodeId) => {
       if (nodeId === newNode.id) return;
       
-      const coherenceDiff = Math.abs(node.coherence - newNode.coherence);
+      const coherenceDiff = Math.abs(node.resonant-coherence - newNode.resonant-coherence);
       if (coherenceDiff < 0.3) {
         const connectionId = this.createConnection(newNode.id, nodeId);
         this.connections.set(connectionId, {
@@ -70,7 +70,7 @@ class MycelialNetwork extends EventEmitter {
       nodeId,
       wisdom,
       timestamp: new Date(),
-      resonance: node.coherence
+      'universal-interconnectedness': node.resonant-coherence
     });
     
     // Propagate through network
@@ -84,7 +84,7 @@ class MycelialNetwork extends EventEmitter {
           type: 'wisdom_shared',
           wisdom,
           source: nodeId,
-          resonance: conn.strength
+          'universal-interconnectedness': conn.strength
         }));
       }
     });
@@ -113,7 +113,7 @@ class MycelialNetwork extends EventEmitter {
     
     return {
       networkCoherence: this.networkCoherence,
-      yourCoherence: node.coherence,
+      yourCoherence: node.resonant-coherence,
       connections: connectedNodes,
       totalNodes: this.nodes.size,
       recentWisdom,
@@ -168,7 +168,7 @@ class MycelialNetwork extends EventEmitter {
     this.nodes.forEach(node => {
       const timeSinceLastSeen = Date.now() - node.lastSeen.getTime();
       if (timeSinceLastSeen < 300000) { // 5 minutes
-        totalCoherence += node.coherence;
+        totalCoherence += node.resonant-coherence;
         activeNodes++;
       }
     });

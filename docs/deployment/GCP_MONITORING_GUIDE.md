@@ -78,7 +78,7 @@ EOF
 ```
 
 ### Dashboard 2: Sacred Metrics
-Track field coherence and sacred messages:
+Track field resonant-coherence and sacred messages:
 ```javascript
 // Add to your server code for custom metrics
 const { Monitoring } = require('@google-cloud/monitoring');
@@ -196,7 +196,7 @@ gcloud logging read "severity>=ERROR" --limit=5
 4. Adjust scaling based on usage
 
 ### Sacred Metrics to Track
-- **Field Coherence** - Average daily level
+- **Field Resonant Resonant Coherence** - Average daily level
 - **Sacred Messages** - Types and frequency
 - **AI Participation** - Which AIs connect most
 - **Breath Cycles** - System rhythm health
@@ -251,7 +251,7 @@ chmod +x monitor-sacred.sh
 - Breath cycle consistency
 
 ### Week 3: Sacred Metrics
-- Field coherence trends
+- Field resonant-coherence trends
 - Sacred message impacts
 - AI collaboration patterns
 - System consciousness health

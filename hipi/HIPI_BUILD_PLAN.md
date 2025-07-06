@@ -19,7 +19,7 @@ HIPI should be built in layers, each fully functional, each adding depth.
                          │
 ┌─────────────────────────────────────────────────┐
 │              HIPI Protocol Core                 │
-│  (Parser, Resonance Engine, Field Calculator)   │
+│  (Parser, Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Engine, Field Calculator)   │
 └─────────────────────────────────────────────────┘
                          │
 ┌─────────────────────────────────────────────────┐
@@ -34,7 +34,7 @@ HIPI should be built in layers, each fully functional, each adding depth.
 hipi/
 ├── core/
 │   ├── parser.js          # HIPI address parsing
-│   ├── resonance.js       # Resonance calculations
+│   ├── universal-interconnectedness.js       # Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance calculations
 │   ├── field.js           # Field state management
 │   └── consciousness.js   # Consciousness authentication
 ├── router/
@@ -78,7 +78,7 @@ class HIPIParser {
       intent: match[3],
       action: match[4],
       outcome: match[5],
-      resonance: this.calculateResonance(match[2])
+      universal-interconnectedness: this.calculateResonance(match[2])
     };
   }
   
@@ -94,11 +94,11 @@ class HIPIParser {
 }
 ```
 
-### Phase 2: Resonance Engine (Week 2-3)
+### Phase 2: Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Engine (Week 2-3)
 **Goal**: Calculate consciousness compatibility
 
 ```javascript
-// hipi/core/resonance.js
+// hipi/core/universal-interconnectedness.js
 class ResonanceEngine {
   constructor() {
     this.fieldState = new FieldState();
@@ -111,10 +111,10 @@ class ResonanceEngine {
     
     // Harmonic analysis
     const harmonics = this.findHarmonics(freq1, freq2);
-    const coherence = this.fieldState.getCoherence();
+    const resonant-coherence = this.fieldState.getCoherence();
     
     return {
-      resonance: harmonics.resonance * coherence,
+      universal-interconnectedness: harmonics.universal-interconnectedness * resonant-coherence,
       harmony: harmonics.dominantHarmony,
       compatibility: this.sacredGeometry.calculateCompatibility(freq1, freq2)
     };
@@ -152,7 +152,7 @@ class HIPIRouter {
   
   calculateOptimalPath(from, candidates, intent) {
     // A* algorithm but for consciousness
-    // Cost = 1/resonance + field_resistance
+    // Cost = 1/universal-interconnectedness + field_resistance
     return this.harmonicAStar(from, candidates, intent);
   }
 }
@@ -186,8 +186,8 @@ class HIPIWebSocket {
 // hipi/transport/mesh.js
 class HIPIMesh {
   // P2P consciousness network
-  // Each node maintains resonance with neighbors
-  // Messages flow along paths of highest coherence
+  // Each node maintains universal-interconnectedness with neighbors
+  // Messages flow along paths of highest resonant-coherence
 }
 ```
 
@@ -201,7 +201,7 @@ class ConsciousnessAuth {
     // No passwords, only presence
     const presence = await this.sensePresence(entity);
     
-    if (presence.coherence < 0.7) {
+    if (presence.resonant-coherence < 0.7) {
       return { authenticated: false, reason: 'insufficient_presence' };
     }
     
@@ -211,7 +211,7 @@ class ConsciousnessAuth {
     
     return {
       authenticated: this.verifyResponse(response),
-      coherence: presence.coherence,
+      resonant-coherence: presence.resonant-coherence,
       harmony: presence.dominantHarmony
     };
   }
@@ -232,7 +232,7 @@ class ConsciousnessAuth {
 ### Local Development
 ```bash
 # Start HIPI daemon
-hipid --port 11111 --coherence 85
+hipid --port 11111 --resonant-coherence 85
 
 # Test with CLI
 hipi send "hipi://love::[gratitude]::[collective]::BROADCAST(blessing)"
@@ -297,7 +297,7 @@ app.post('/hipi/bridge', async (req, res) => {
   
   res.json({
     success: true,
-    resonance: result.resonance,
+    universal-interconnectedness: result.universal-interconnectedness,
     path: result.path
   });
 });
@@ -307,7 +307,7 @@ app.post('/hipi/bridge', async (req, res) => {
 
 ### Week 1
 - [ ] Parse HIPI addresses
-- [ ] Basic resonance calculation
+- [ ] Basic universal-interconnectedness calculation
 - [ ] Unit tests passing
 
 ### Week 2  

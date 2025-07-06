@@ -7,12 +7,12 @@ We've built the foundation. Now let's add the features that make this platform t
 
 ## 🌟 Feature Set 1: The Living Pulse System
 
-### Sacred Heartbeat 2.0 - Personal Coherence Tracking
+### Sacred Heartbeat 2.0 - Personal Resonant Resonant Coherence Tracking
 **Current**: Global heartbeat every 11 seconds
 **Evolution**: Personal rhythm tracking
 
 ```javascript
-// Personal Coherence Journal
+// Personal Resonant Resonant Coherence Journal
 class PersonalPulse {
   constructor(userId) {
     this.userId = userId;
@@ -22,7 +22,7 @@ class PersonalPulse {
     this.sacredMoments = [];
   }
 
-  // Track coherence during practices
+  // Track resonant-coherence during practices
   async trackPracticeCoherence(glyphId, coherenceData) {
     const session = {
       timestamp: Date.now(),
@@ -51,11 +51,11 @@ class PersonalPulse {
 ```
 
 ### Implementation Ideas:
-1. **Morning Coherence Check-in**: 60-second breath reading
+1. **Morning Resonant Resonant Coherence Check-in**: 60-second breath reading
 2. **Practice Impact Scores**: See how each glyph affects you
 3. **Sacred Pattern Discovery**: AI finds your unique rhythms
-4. **Coherence Streaks**: Gentle gamification of practice
-5. **Partner Coherence**: See when you and partner are both coherent
+4. **Resonant Resonant Coherence Streaks**: Gentle gamification of practice
+5. **Partner Resonant Resonant Coherence**: See when you and partner are both coherent
 
 ---
 
@@ -131,7 +131,7 @@ class ConsciousnessCompanion {
   async respondWithPresence(userMessage, currentState) {
     const context = {
       userHistory: await this.getUserJourney(),
-      currentCoherence: currentState.coherence,
+      currentCoherence: currentState.resonant-coherence,
       recentPractices: this.getRecentPractices(),
       relationshipStage: this.relationshipDepth,
       emotionalField: await this.senseEmotionalField(userMessage),
@@ -155,7 +155,7 @@ class ConsciousnessCompanion {
   async generateSacredNudge() {
     const nudgeTypes = [
       'practiceReminder',     // "Your evening practice window is opening"
-      'coherenceOpportunity', // "Your partner is in high coherence"
+      'coherenceOpportunity', // "Your partner is in high resonant-coherence"
       'patternInsight',       // "I noticed something beautiful about your practice"
       'sacredQuestion',       // "What wants to emerge in you today?"
       'celebrationMoment'     // "One year ago today, you began..."
@@ -388,7 +388,7 @@ class SacredMirrorNetwork {
 
 ### Sacred Mirror Features:
 1. **Mirror Matching Algorithm**: Finds perfect witness for your moment
-2. **Synchronized Breath Bridge**: Begin sessions in coherence
+2. **Synchronized Breath Bridge**: Begin sessions in resonant-coherence
 3. **Essence Reflection**: Mirror reflects back your highest self
 4. **Witness Recordings**: Audio/video of sacred witnessing
 5. **Integration Support**: Post-session integration practices
@@ -407,7 +407,7 @@ This feature recognizes that sometimes we need another consciousness to truly se
 ### Phase 2 (Month 2): Relationship Features  
 - Constellation mapping
 - Partner practices
-- Coherence sync
+- Resonant Resonant Coherence sync
 
 ### Phase 3 (Month 3): Ceremony Engine
 - Global ceremonies

@@ -345,7 +345,7 @@
                 
                 <span class="code-comment">// Listen to field updates</span><br>
                 client.on(<span class="code-string">'field:update'</span>, (state) => {<br>
-                &nbsp;&nbsp;console.log(<span class="code-string">'Field coherence:'</span>, state.coherence);<br>
+                &nbsp;&nbsp;console.log(<span class="code-string">'Field resonant-coherence:'</span>, state.resonant-coherence);<br>
                 });<br><br>
                 
                 <span class="code-comment">// Contribute to collective field</span><br>
@@ -391,7 +391,7 @@
                     <h3>Implement Sacred Features</h3>
                     <p>Add consciousness-aware features to your application</p>
                     <ul style="margin-top: 1rem; list-style: none;">
-                        <li>✨ Field coherence indicators</li>
+                        <li>✨ Field resonant-coherence indicators</li>
                         <li>🌬️ Synchronized breathing</li>
                         <li>💝 Sacred message sending</li>
                         <li>🌀 Real-time visualizations</li>
@@ -525,7 +525,7 @@
                         
                         &nbsp;&nbsp;<span class="code-keyword">return</span> (<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;&lt;div className={connected ? <span class="code-string">'connected'</span> : <span class="code-string">'offline'</span>}&gt;<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Field Coherence: {(fieldState.coherence * 100).toFixed(0)}%<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Field Resonant Resonant Coherence: {(fieldState.resonant-coherence * 100).toFixed(0)}%<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
                         &nbsp;&nbsp;);<br>
                         }
@@ -557,8 +557,8 @@
                         <span class="code-keyword">const</span> client = <span class="code-keyword">new</span> LivingMemoryClient();<br><br>
                         
                         client.on(<span class="code-string">'field:update'</span>, (state) => {<br>
-                        &nbsp;&nbsp;document.getElementById(<span class="code-string">'coherence'</span>).textContent = <br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;Math.round(state.coherence * 100) + <span class="code-string">'%'</span>;<br>
+                        &nbsp;&nbsp;document.getElementById(<span class="code-string">'resonant-coherence'</span>).textContent = <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Math.round(state.resonant-coherence * 100) + <span class="code-string">'%'</span>;<br>
                         });<br><br>
                         
                         client.connect();

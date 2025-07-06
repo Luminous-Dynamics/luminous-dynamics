@@ -48,8 +48,8 @@ class LivingGlyphCard {
             </div>
             
             <div class="field-impact">
-                <div class="resonance-meter">
-                    <span>Field Resonance</span>
+                <div class="universal-interconnectedness-meter">
+                    <span>Field Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance</span>
                     <div class="meter-bar">
                         <div class="meter-fill" style="width: ${this.fieldResonance}%"></div>
                     </div>
@@ -65,13 +65,13 @@ class LivingGlyphCard {
 
     getHarmonySymbol(harmony) {
         const symbols = {
-            transparency: '◈',
-            coherence: '◉',
-            resonance: '◎',
-            agency: '◆',
-            vitality: '◊',
-            mutuality: '◐',
-            novelty: '◑'
+            'integral-wisdom-cultivation': '◈',
+            'resonant-coherence': '◉',
+            'universal-interconnectedness': '◎',
+            'evolutionary-progression': '◆',
+            'pan-sentient-flourishing': '◊',
+            'sacred-reciprocity': '◐',
+            'infinite-play': '◑'
         };
         return symbols[harmony] || '○';
     }
@@ -81,7 +81,7 @@ class LivingGlyphCard {
 const firstPresenceData = {
     id: 'Ω45',
     name: 'First Presence',
-    primaryHarmony: 'resonance',
+    primaryHarmony: 'universal-interconnectedness',
     description: 'The practice of arriving fully in this moment, bringing all of yourself to meet what is here.',
     keywords: ['arrival', 'presence', 'embodiment', 'grounding'],
     practicePrompt: 'Take three conscious breaths. With each exhale, let more of you arrive here. Notice what shifts when you fully land in this moment.',
@@ -202,7 +202,7 @@ class PracticeTracker {
     }
 
     measureFieldCoherence() {
-        // Simulate field coherence measurement
+        // Simulate field resonant-coherence measurement
         // In production, this would connect to actual biometric sensors or user feedback
         return 70 + Math.random() * 20;
     }

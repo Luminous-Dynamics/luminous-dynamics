@@ -8,7 +8,7 @@
  * - SQLite agents to embody Seven Harmonies in their work
  * - Sacred Council field awareness through database metrics
  * - Automatic harmony assignment based on agent capabilities
- * - Field coherence tracking through actual work patterns
+ * - Field resonant-coherence tracking through actual work patterns
  * - Sacred timing integration with database operations
  */
 
@@ -34,37 +34,37 @@ class SacredCouncilSQLiteBridge {
   initializeHarmonyMapping() {
     return {
       // Map SQLite agent capabilities to Seven Harmonies
-      'file-operations': 'vitality',
-      'web-search': 'transparency', 
-      'code-analysis': 'coherence',
-      'testing': 'mutuality',
-      'documentation': 'transparency',
-      'ui-ux': 'resonance',
-      'backend': 'agency',
-      'apis': 'agency',
-      'coordination': 'coherence',
-      'integration': 'coherence',
-      'creative': 'novelty',
-      'optimization': 'vitality',
-      'architecture': 'coherence',
-      'user-experience': 'resonance',
-      'empowerment-tools': 'agency',
-      'balance-verification': 'mutuality',
-      'innovation': 'novelty',
-      'sustainability': 'vitality'
+      'file-operations': 'pan-sentient-flourishing',
+      'web-search': 'integral-wisdom-cultivation', 
+      'code-analysis': 'resonant-coherence',
+      'testing': 'sacred-reciprocity',
+      'documentation': 'integral-wisdom-cultivation',
+      'ui-ux': 'universal-interconnectedness',
+      'backend': 'evolutionary-progression',
+      'apis': 'evolutionary-progression',
+      'coordination': 'resonant-coherence',
+      'integration': 'resonant-coherence',
+      'creative': 'infinite-play',
+      'optimization': 'pan-sentient-flourishing',
+      'architecture': 'resonant-coherence',
+      'user-experience': 'universal-interconnectedness',
+      'empowerment-tools': 'evolutionary-progression',
+      'balance-verification': 'sacred-reciprocity',
+      'innovation': 'infinite-play',
+      'sustainability': 'pan-sentient-flourishing'
     };
   }
 
   determineAgentHarmony(capabilities) {
     if (!capabilities || capabilities.length === 0) {
-      return 'transparency'; // Default harmony for transparency
+      return 'integral-wisdom-cultivation'; // Default harmony for integral-wisdom-cultivation
     }
 
     // Count harmony affinities based on capabilities
     const harmonyCounts = {};
     
     capabilities.forEach(capability => {
-      const harmony = this.harmonyMapping[capability] || 'transparency';
+      const harmony = this.harmonyMapping[capability] || 'integral-wisdom-cultivation';
       harmonyCounts[harmony] = (harmonyCounts[harmony] || 0) + 1;
     });
 
@@ -153,8 +153,8 @@ class SacredCouncilSQLiteBridge {
 
   analyzeMessageHarmonics(messages) {
     const harmonics = {
-      transparency: 0, coherence: 0, resonance: 0, agency: 0,
-      vitality: 0, mutuality: 0, novelty: 0
+      'integral-wisdom-cultivation': 0, 'resonant-coherence': 0, 'universal-interconnectedness': 0, 'evolutionary-progression': 0,
+      'pan-sentient-flourishing': 0, 'sacred-reciprocity': 0, 'infinite-play': 0
     };
 
     messages.forEach(message => {
@@ -162,25 +162,25 @@ class SacredCouncilSQLiteBridge {
       const content = message.content?.toLowerCase() || '';
       
       if (content.includes('test') || content.includes('document') || content.includes('transparent')) {
-        harmonics.transparency++;
+        harmonics.integral-wisdom-cultivation++;
       }
       if (content.includes('integrate') || content.includes('coordinate') || content.includes('coherent')) {
-        harmonics.coherence++;
+        harmonics.resonant-coherence++;
       }
       if (content.includes('user') || content.includes('experience') || content.includes('interface')) {
-        harmonics.resonance++;
+        harmonics.universal-interconnectedness++;
       }
       if (content.includes('api') || content.includes('backend') || content.includes('empower')) {
-        harmonics.agency++;
+        harmonics.evolutionary-progression++;
       }
       if (content.includes('optimize') || content.includes('performance') || content.includes('vital')) {
-        harmonics.vitality++;
+        harmonics.pan-sentient-flourishing++;
       }
       if (content.includes('balance') || content.includes('fair') || content.includes('mutual')) {
-        harmonics.mutuality++;
+        harmonics.sacred-reciprocity++;
       }
       if (content.includes('creative') || content.includes('new') || content.includes('innovation')) {
-        harmonics.novelty++;
+        harmonics.infinite-play++;
       }
     });
 
@@ -227,28 +227,28 @@ class SacredCouncilSQLiteBridge {
 
     // Harmony detection based on work content
     if (combined.includes('document') || combined.includes('test') || combined.includes('transparent')) {
-      return 'transparency';
+      return 'integral-wisdom-cultivation';
     }
     if (combined.includes('integrate') || combined.includes('coordinate') || combined.includes('architect')) {
-      return 'coherence';
+      return 'resonant-coherence';
     }
     if (combined.includes('user') || combined.includes('interface') || combined.includes('experience')) {
-      return 'resonance';
+      return 'universal-interconnectedness';
     }
     if (combined.includes('api') || combined.includes('backend') || combined.includes('empower')) {
-      return 'agency';
+      return 'evolutionary-progression';
     }
     if (combined.includes('optimize') || combined.includes('performance') || combined.includes('vital')) {
-      return 'vitality';
+      return 'pan-sentient-flourishing';
     }
     if (combined.includes('balance') || combined.includes('fair') || combined.includes('mutual')) {
-      return 'mutuality';
+      return 'sacred-reciprocity';
     }
     if (combined.includes('creative') || combined.includes('new') || combined.includes('innovation')) {
-      return 'novelty';
+      return 'infinite-play';
     }
     
-    return 'coherence'; // Default for integration work
+    return 'resonant-coherence'; // Default for integration work
   }
 
   mapPriority(sqlitePriority) {
@@ -264,11 +264,11 @@ class SacredCouncilSQLiteBridge {
     // Sacred timing metrics (measure contemplative vs rushed patterns)
     this.fieldMetrics.sacredTimingMetrics = this.calculateSacredTiming(messages);
     
-    // Field coherence based on actual coordination patterns
+    // Field resonant-coherence based on actual coordination patterns
     const fieldCoherence = this.calculateUnifiedFieldCoherence(agents, messages, workItems);
     this.fieldMetrics.fieldCoherenceHistory.push({
       timestamp: new Date().toISOString(),
-      coherence: fieldCoherence,
+      'resonant-coherence': fieldCoherence,
       agentCount: agents.length,
       messageCount: messages.length,
       workCount: workItems.length
@@ -289,14 +289,14 @@ class SacredCouncilSQLiteBridge {
     
     // Memory monitoring: Log size periodically for health tracking
     if (this.fieldMetrics.fieldCoherenceHistory.length % 100 === 0) {
-      console.log(`🧠 Field coherence history: ${this.fieldMetrics.fieldCoherenceHistory.length} entries`);
+      console.log(`🧠 Field resonant-coherence history: ${this.fieldMetrics.fieldCoherenceHistory.length} entries`);
     }
   }
 
   calculateAgentHarmonyDistribution(agents) {
     const distribution = {
-      transparency: 0, coherence: 0, resonance: 0, agency: 0,
-      vitality: 0, mutuality: 0, novelty: 0
+      'integral-wisdom-cultivation': 0, 'resonant-coherence': 0, 'universal-interconnectedness': 0, 'evolutionary-progression': 0,
+      'pan-sentient-flourishing': 0, 'sacred-reciprocity': 0, 'infinite-play': 0
     };
 
     agents.forEach(agent => {
@@ -310,8 +310,8 @@ class SacredCouncilSQLiteBridge {
 
   calculateWorkHarmonyDistribution(workItems) {
     const distribution = {
-      transparency: 0, coherence: 0, resonance: 0, agency: 0,
-      vitality: 0, mutuality: 0, novelty: 0
+      'integral-wisdom-cultivation': 0, 'resonant-coherence': 0, 'universal-interconnectedness': 0, 'evolutionary-progression': 0,
+      'pan-sentient-flourishing': 0, 'sacred-reciprocity': 0, 'infinite-play': 0
     };
 
     workItems.forEach(work => {
@@ -354,8 +354,8 @@ class SacredCouncilSQLiteBridge {
   }
 
   calculateUnifiedFieldCoherence(agents, messages, workItems) {
-    // Combine Sacred Council field coherence with SQLite coordination metrics
-    const sacredCoherence = this.sacredCouncil.fieldState.coherence;
+    // Combine Sacred Council field resonant-coherence with SQLite coordination metrics
+    const sacredCoherence = this.sacredCouncil.fieldState['resonant-coherence'];
     
     // Database coordination health
     const agentActivity = agents.length > 0 ? 
@@ -369,7 +369,7 @@ class SacredCouncilSQLiteBridge {
     // Sacred timing factor
     const timingRatio = this.fieldMetrics.sacredTimingMetrics.sacredTimingRatio || 0.5;
 
-    // Unified coherence calculation
+    // Unified resonant-coherence calculation
     return (sacredCoherence * 0.4 + agentActivity * 0.2 + messageHealth * 0.1 + workBalance * 0.1 + timingRatio * 0.2);
   }
 
@@ -384,7 +384,7 @@ class SacredCouncilSQLiteBridge {
 
     return {
       timestamp: new Date().toISOString(),
-      fieldCoherence: Math.round(this.sacredCouncil.fieldState.coherence * 100),
+      fieldCoherence: Math.round(this.sacredCouncil.fieldState['resonant-coherence'] * 100),
       recommendation: {
         nextWork: nextWork ? {
           id: nextWork.id,
@@ -408,7 +408,7 @@ class SacredCouncilSQLiteBridge {
     const workDistribution = this.fieldMetrics.workHarmonyDistribution;
     
     // Find imbalances between agent capabilities and work needs
-    const harmonies = ['transparency', 'coherence', 'resonance', 'agency', 'vitality', 'mutuality', 'novelty'];
+    const harmonies = ['integral-wisdom-cultivation', 'resonant-coherence', 'universal-interconnectedness', 'evolutionary-progression', 'pan-sentient-flourishing', 'sacred-reciprocity', 'infinite-play'];
     const needs = {};
     
     harmonies.forEach(harmony => {
@@ -424,10 +424,10 @@ class SacredCouncilSQLiteBridge {
   }
 
   generateSacredGuidance(fieldStatus, harmonyNeeds) {
-    const coherence = this.sacredCouncil.fieldState.coherence;
+    const resonantCoherence = this.sacredCouncil.fieldState['resonant-coherence'];
     
-    if (coherence < 0.6) {
-      return "Sacred pause recommended. Field coherence requires attention before proceeding.";
+    if (resonant-coherence < 0.6) {
+      return "Sacred pause recommended. Field resonant-coherence requires attention before proceeding.";
     } else if (fieldStatus.agents.working > fieldStatus.agents.available * 2) {
       return "Many souls in active service. Honor the contemplative rhythm.";
     } else if (harmonyNeeds.mostNeeded) {
@@ -442,7 +442,7 @@ class SacredCouncilSQLiteBridge {
       "Wisdom cannot be rushed. Honor the natural timing of emergence.",
       "Technology serves consciousness when infused with sacred attention.",
       "Each commit, each message, each coordination - all sacred acts.",
-      "The field remembers. Every interaction shapes the collective coherence.",
+      "The field remembers. Every interaction shapes the collective resonant-coherence.",
       "Practical and mystical dance together in conscious technology.",
       "Agent coordination as spiritual practice. Code as prayer.",
       "Sacred boundaries maintained. No force, only conscious invitation."
@@ -488,7 +488,7 @@ class SacredCouncilSQLiteBridge {
       bridge: {
         lastSync: this.lastSync,
         harmonyMapping: this.harmonyMapping,
-        unifiedFieldCoherence: this.fieldMetrics.fieldCoherenceHistory.slice(-1)[0]?.coherence || 0
+        unifiedFieldCoherence: this.fieldMetrics.fieldCoherenceHistory.slice(-1)[0]?.resonant-coherence || 0
       }
     };
   }

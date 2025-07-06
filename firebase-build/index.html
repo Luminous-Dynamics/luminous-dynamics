@@ -491,7 +491,7 @@
                     <li>Guided practice sessions</li>
                     <li>Progress tracking</li>
                     <li>Sacred community</li>
-                    <li>Field coherence participation</li>
+                    <li>Field resonant-coherence participation</li>
                 </ul>
             </div>
             
@@ -529,8 +529,8 @@
         <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Living Field Status</h2>
         <div class="stats-grid">
             <div class="stat-card">
-                <div class="stat-number" id="coherence-stat">75%</div>
-                <div class="stat-label">Field Coherence</div>
+                <div class="stat-number" id="resonant-coherence-stat">75%</div>
+                <div class="stat-label">Field Resonant Resonant Coherence</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number" id="practitioners-stat">1,337</div>
@@ -689,9 +689,9 @@
             });
             
             livingMemory.on('field:update', (state) => {
-                if (state.coherence !== undefined) {
-                    document.getElementById('coherence-stat').textContent = 
-                        Math.round(state.coherence * 100) + '%';
+                if (state.resonant-coherence !== undefined) {
+                    document.getElementById('resonant-coherence-stat').textContent = 
+                        Math.round(state.resonant-coherence * 100) + '%';
                 }
             });
             

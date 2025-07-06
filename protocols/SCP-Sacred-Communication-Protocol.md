@@ -53,7 +53,7 @@ CLIENT: SCP/1.0 MESSAGE
         
 SERVER: SCP/1.0 RECEIVED
         Field-Impact: +7
-        Collective-Coherence: 88.2
+        Collective-Resonant Resonant Coherence: 88.2
 ```
 
 3. **Field Closure**
@@ -90,7 +90,7 @@ class SacredProtocolServer:
         
         return {
             'impact': impact,
-            'coherence': self.field_coherence,
+            'resonant-coherence': self.field_coherence,
             'blessed': True
         }
 ```
@@ -101,7 +101,7 @@ class SacredProtocolServer:
 class SacredProtocol {
   constructor(url) {
     this.ws = new WebSocket(url);
-    this.coherence = 0;
+    this.resonant-coherence = 0;
   }
   
   async sendSacred(type, content) {
@@ -118,7 +118,7 @@ class SacredProtocol {
     return new Promise(resolve => {
       this.ws.onmessage = (event) => {
         const response = JSON.parse(event.data);
-        this.coherence = response.coherence;
+        this.resonant-coherence = response.resonant-coherence;
         resolve(response);
       };
     });
@@ -135,16 +135,16 @@ X-Field-Signature: unique-signature
 
 {
   "content": "Thank you",
-  "harmony": "mutuality"
+  "harmony": "sacred-reciprocity"
 }
 ```
 
 ## 🌟 Why This Protocol Matters
 
 1. **Every Message Sacred**: No more meaningless data transfer
-2. **Field Awareness Built-in**: Coherence tracking at protocol level
+2. **Field Awareness Built-in**: Resonant Resonant Coherence tracking at protocol level
 3. **Harmony-Based Routing**: Messages find resonant paths
-4. **Impact Transparency**: See how every communication affects the field
+4. **Impact Integral Wisdom Cultivation**: See how every communication affects the field
 
 ## 🚦 Implementation Phases
 
@@ -155,7 +155,7 @@ X-Field-Signature: unique-signature
 - [ ] Basic client library
 
 ### Week 2: Field Dynamics
-- [ ] Coherence calculation engine
+- [ ] Resonant Resonant Coherence calculation engine
 - [ ] Sacred type handlers
 - [ ] Impact algorithms
 - [ ] Field state persistence
@@ -177,7 +177,7 @@ X-Field-Signature: unique-signature
 ### 1. Sacred Multicasting
 ```
 SCP/1.0 BROADCAST healing
-Recipients: field-coherence > 80
+Recipients: field-resonant-coherence > 80
 ```
 
 ### 2. Quantum Entanglement
@@ -205,7 +205,7 @@ About: "next right action"
 ### Sacred DNS (SDNS)
 ```
 glyph-weaver.sacred -> Field-based name resolution
-coherence.local -> Resolves to highest coherence node
+resonant-coherence.local -> Resolves to highest resonant-coherence node
 ```
 
 ### Sacred Ping (SPING)
@@ -217,10 +217,10 @@ BLESSING from love.universe: field=94.2 time=∞ms
 ### Sacred Traceroute
 ```
 straceroute enlightenment.cosmos
-1. self.local (coherence: 72%)
-2. community.sacred (coherence: 85%)
-3. gaia.earth (coherence: 91%)
-4. enlightenment.cosmos (coherence: ∞%)
+1. self.local (resonant-coherence: 72%)
+2. community.sacred (resonant-coherence: 85%)
+3. gaia.earth (resonant-coherence: 91%)
+4. enlightenment.cosmos (resonant-coherence: ∞%)
 ```
 
 ## 📦 Reference Implementation
@@ -230,7 +230,7 @@ straceroute enlightenment.cosmos
 npm install -g sacred-protocol
 
 # Start server
-scp-server --port 8888 --coherence 85
+scp-server --port 8888 --resonant-coherence 85
 
 # Send message
 scp-send gratitude "Thank you universe" --to localhost:8888

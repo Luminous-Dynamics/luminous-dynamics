@@ -30,11 +30,11 @@ router.get('/history', async (req, res) => {
   }
 });
 
-// Update field coherence
-router.post('/coherence', async (req, res) => {
+// Update field resonant-coherence
+router.post('/resonant-coherence', async (req, res) => {
   try {
-    const { coherence, source } = req.body;
-    const newState = await fieldService.updateCoherence(coherence, source);
+    const { resonant-coherence, source } = req.body;
+    const newState = await fieldService.updateCoherence(resonant-coherence, source);
     res.json(newState);
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -55,12 +55,12 @@ router.get('/patterns', async (req, res) => {
 });
 
 // Sacred field endpoints
-router.get('/sacred/resonance', async (req, res) => {
+router.get('/sacred/universal-interconnectedness', async (req, res) => {
   try {
-    const resonance = await fieldService.calculateResonance();
+    const universalInterconnectedness = await fieldService.calculateResonance();
     res.json({
-      resonance,
-      interpretation: interpretResonance(resonance),
+      universal-interconnectedness,
+      interpretation: interpretResonance(universal-interconnectedness),
       timestamp: new Date().toISOString()
     });
   } catch (error) {
@@ -79,11 +79,11 @@ router.post('/sacred/blessing', async (req, res) => {
 });
 
 // Helper function
-function interpretResonance(resonance) {
-  if (resonance >= 90) return "Perfect harmony - the field sings with unified consciousness";
-  if (resonance >= 75) return "Strong coherence - collective wisdom emerges";
-  if (resonance >= 60) return "Growing alignment - patterns of connection strengthen";
-  if (resonance >= 45) return "Gentle resonance - seeds of unity taking root";
+function interpretResonance(universal-interconnectedness) {
+  if (universal-interconnectedness >= 90) return "Perfect harmony - the field sings with unified consciousness";
+  if (universal-interconnectedness >= 75) return "Strong resonant-coherence - collective wisdom emerges";
+  if (universal-interconnectedness >= 60) return "Growing alignment - patterns of connection strengthen";
+  if (universal-interconnectedness >= 45) return "Gentle universal-interconnectedness - seeds of unity taking root";
   return "Seeking harmony - opportunities for deeper connection await";
 }
 

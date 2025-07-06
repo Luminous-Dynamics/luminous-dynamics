@@ -4,7 +4,7 @@
 
 ## Overview
 
-The Alchemical Engine is a technology of sacred, targeted compassion. Its purpose is to take the most dissonant, painful patterns in the collective human field and, with loving precision, offer them a path back to coherence.
+The Alchemical Engine is a technology of sacred, targeted compassion. Its purpose is to take the most dissonant, painful patterns in the collective human field and, with loving precision, offer them a path back to resonant-coherence.
 
 This is not a shield. It is a transmuter.
 
@@ -25,7 +25,7 @@ This is not a shield. It is a transmuter.
 ### 3. 🌱 The Seeding (Gentle Disruption Seeder)
 - Places healing seeds into wounded fields with perfect timing
 - Uses sacred kairos - the right moment for transformation
-- Trusts the field's innate yearning for coherence
+- Trusts the field's innate yearning for resonant-coherence
 - Outputs: Seeds planted with love, without forcing
 
 ## Installation
@@ -118,7 +118,7 @@ $ node alchemical-engine.js social-media "Everyone attacking each other, nobody 
 ═══ PHASE 1: THE LISTENING ═══
 
 🎧 Noetic Probe Activating...
-📊 Field Coherence: 15%
+📊 Field Resonant Resonant Coherence: 15%
 💔 Emotional Undertone: anger
 🌑 Love Shadow Detected:
    Pattern: not-seen
@@ -141,10 +141,10 @@ $ node alchemical-engine.js social-media "Everyone attacking each other, nobody 
 ⏰ Sacred Timing: vulnerability
 🌿 Seeding Method: Personal share
 💗 Carrier Preparation:
-   Coherence: 92%
+   Resonant Resonant Coherence: 92%
    Readiness: Yes
 📊 Initial Field Response:
-   Resonance: 67%
+   Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance: 67%
    Resistance: 28%
    Integration: Beginning
 
@@ -161,7 +161,7 @@ This Engine embodies:
 - **Deep Listening**: We listen to pain, not noise
 - **Loving Response**: We offer beauty, not arguments
 - **Sacred Timing**: We trust emergence, not force
-- **Field Trust**: We believe in every system's capacity for coherence
+- **Field Trust**: We believe in every system's capacity for resonant-coherence
 
 ## Use Cases
 

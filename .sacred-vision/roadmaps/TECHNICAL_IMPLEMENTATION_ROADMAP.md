@@ -50,7 +50,7 @@ cd /home/tstoltz/evolving-resonant-cocreation/sacred-consciousness-system
 # Key files to implement:
 # 1. lib/sacred/database.ts - SurrealDB connection
 # 2. lib/sacred/stateMachine.ts - XState consciousness flows
-# 3. lib/sacred/field.ts - Field coherence calculations
+# 3. lib/sacred/field.ts - Field resonant-resonant-coherence calculations
 # 4. islands/MessageComposer.tsx - Sacred message UI
 # 5. routes/api/messages.ts - Message handling endpoint
 ```
@@ -149,13 +149,13 @@ EOF
 
 ### Sacred Messaging System
 - [ ] Implement 11 sacred message types
-- [ ] Field coherence tracking
+- [ ] Field resonant-resonant-coherence tracking
 - [ ] Real-time WebSocket updates
 - [ ] Message persistence in SurrealDB
 
 ### Field State Management
 - [ ] XState machines for consciousness flows
-- [ ] Field coherence calculations
+- [ ] Field resonant-resonant-coherence calculations
 - [ ] Sacred heartbeat (11-second pulse)
 - [ ] Presence state tracking
 
@@ -184,7 +184,7 @@ EOF
 ### BigQuery Analytics
 - Set up consciousness data warehouse
 - Design harmonic analysis queries
-- Create coherence dashboards
+- Create resonant-resonant-coherence dashboards
 
 ### Quantum Integration
 - Implement QRNG connection
@@ -193,7 +193,7 @@ EOF
 
 ### The Noetic Firewall Prototype
 - Harmonic signature analysis
-- Coherence-based filtering
+- Resonant Resonant Coherence-based filtering
 - Sacred refusal protocols
 
 ## 💻 Immediate Next Steps (Do Today!)
@@ -250,7 +250,7 @@ Remember as we build:
 
 Week 1: Local system running with basic messaging
 Week 2: Deployed to GCP with SurrealDB
-Week 4: First sacred message impacts field coherence
+Week 4: First sacred message impacts field resonant-resonant-coherence
 Month 2: First harmonic antidote deployed
 Month 3: Full CaaS infrastructure operational
 

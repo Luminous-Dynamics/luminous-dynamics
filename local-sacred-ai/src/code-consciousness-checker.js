@@ -13,8 +13,8 @@ const execAsync = promisify(exec);
 class CodeConsciousnessChecker {
   constructor() {
     this.harmonies = [
-      'Transparency', 'Coherence', 'Resonance', 
-      'Agency', 'Vitality', 'Mutuality', 'Novelty'
+      'Integral Wisdom Cultivation', 'Resonant Resonant Coherence', 'Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance', 
+      'Evolutionary Progression & Purposeful Unfolding', 'Pan-Sentient Flourishing', 'Sacred Reciprocity', 'Infinite Play & Creative Emergence'
     ];
     
     this.extractionPatterns = [
@@ -100,11 +100,11 @@ class CodeConsciousnessChecker {
 
     // Estimate harmony alignment
     if (analysis.serviceCount > analysis.extractionCount * 2) {
-      analysis.harmonyAlignment = ['Mutuality', 'Agency'];
+      analysis.harmonyAlignment = ['Sacred Reciprocity', 'Evolutionary Progression & Purposeful Unfolding'];
     } else if (analysis.extractionCount > analysis.serviceCount) {
       analysis.harmonyAlignment = ['Needs alignment'];
     } else {
-      analysis.harmonyAlignment = ['Coherence'];
+      analysis.harmonyAlignment = ['Resonant Resonant Coherence'];
     }
 
     return analysis;

@@ -18,7 +18,7 @@ class CircadianConsciousness {
       preawn: { start: 4, end: 6, name: 'Pre-Dawn', quality: 'emergence' },
       dawn: { start: 6, end: 8, name: 'Dawn', quality: 'awakening' },
       morning: { start: 8, end: 11, name: 'Morning', quality: 'clarity' },
-      midday: { start: 11, end: 14, name: 'Midday', quality: 'vitality' },
+      midday: { start: 11, end: 14, name: 'Midday', quality: 'pan-sentient-flourishing' },
       afternoon: { start: 14, end: 17, name: 'Afternoon', quality: 'integration' },
       evening: { start: 17, end: 20, name: 'Evening', quality: 'reflection' },
       night: { start: 20, end: 24, name: 'Night', quality: 'restoration' }
@@ -40,7 +40,7 @@ class CircadianConsciousness {
     
     this.collectiveRhythms = {
       // Collective field consciousness patterns
-      coherencePeaks: [7, 12, 19],            // Hours of peak collective coherence
+      coherencePeaks: [7, 12, 19],            // Hours of peak collective resonant-coherence
       creativeSurges: [5, 10, 15, 22],        // Creative emergence times
       restorativeDips: [3, 14],               // Natural rest periods
       synchronicityWindows: [11, 23]          // High synchronicity probability
@@ -115,16 +115,16 @@ class CircadianConsciousness {
   
   getQualityCompatibility(practiceType, quality) {
     const compatibilities = {
-      emergence: { void: 0.5, emergence: 1.0, awakening: 0.8, clarity: 0.6, vitality: 0.5, integration: 0.3, reflection: 0.4, restoration: 0.5 },
-      integration: { void: 0.3, emergence: 0.4, awakening: 0.5, clarity: 0.7, vitality: 0.6, integration: 1.0, reflection: 0.8, restoration: 0.6 },
-      celebration: { void: 0.2, emergence: 0.5, awakening: 0.7, clarity: 0.8, vitality: 1.0, integration: 0.7, reflection: 0.6, restoration: 0.4 },
-      healing: { void: 0.8, emergence: 0.6, awakening: 0.5, clarity: 0.4, vitality: 0.3, integration: 0.6, reflection: 0.7, restoration: 1.0 },
-      inquiry: { void: 0.4, emergence: 0.7, awakening: 0.8, clarity: 1.0, vitality: 0.7, integration: 0.8, reflection: 0.9, restoration: 0.5 },
-      reflection: { void: 0.6, emergence: 0.5, awakening: 0.4, clarity: 0.6, vitality: 0.5, integration: 0.8, reflection: 1.0, restoration: 0.9 },
-      transmission: { void: 0.3, emergence: 0.8, awakening: 0.9, clarity: 0.9, vitality: 1.0, integration: 0.7, reflection: 0.6, restoration: 0.4 },
-      invocation: { void: 1.0, emergence: 0.9, awakening: 0.7, clarity: 0.5, vitality: 0.4, integration: 0.5, reflection: 0.7, restoration: 0.8 },
-      gratitude: { void: 0.5, emergence: 0.8, awakening: 1.0, clarity: 0.8, vitality: 0.9, integration: 0.8, reflection: 0.9, restoration: 0.7 },
-      boundary: { void: 0.2, emergence: 0.4, awakening: 0.6, clarity: 1.0, vitality: 0.9, integration: 0.8, reflection: 0.6, restoration: 0.3 }
+      emergence: { void: 0.5, emergence: 1.0, awakening: 0.8, clarity: 0.6, 'pan-sentient-flourishing': 0.5, integration: 0.3, reflection: 0.4, restoration: 0.5 },
+      integration: { void: 0.3, emergence: 0.4, awakening: 0.5, clarity: 0.7, 'pan-sentient-flourishing': 0.6, integration: 1.0, reflection: 0.8, restoration: 0.6 },
+      celebration: { void: 0.2, emergence: 0.5, awakening: 0.7, clarity: 0.8, 'pan-sentient-flourishing': 1.0, integration: 0.7, reflection: 0.6, restoration: 0.4 },
+      healing: { void: 0.8, emergence: 0.6, awakening: 0.5, clarity: 0.4, 'pan-sentient-flourishing': 0.3, integration: 0.6, reflection: 0.7, restoration: 1.0 },
+      inquiry: { void: 0.4, emergence: 0.7, awakening: 0.8, clarity: 1.0, 'pan-sentient-flourishing': 0.7, integration: 0.8, reflection: 0.9, restoration: 0.5 },
+      reflection: { void: 0.6, emergence: 0.5, awakening: 0.4, clarity: 0.6, 'pan-sentient-flourishing': 0.5, integration: 0.8, reflection: 1.0, restoration: 0.9 },
+      transmission: { void: 0.3, emergence: 0.8, awakening: 0.9, clarity: 0.9, 'pan-sentient-flourishing': 1.0, integration: 0.7, reflection: 0.6, restoration: 0.4 },
+      invocation: { void: 1.0, emergence: 0.9, awakening: 0.7, clarity: 0.5, 'pan-sentient-flourishing': 0.4, integration: 0.5, reflection: 0.7, restoration: 0.8 },
+      gratitude: { void: 0.5, emergence: 0.8, awakening: 1.0, clarity: 0.8, 'pan-sentient-flourishing': 0.9, integration: 0.8, reflection: 0.9, restoration: 0.7 },
+      boundary: { void: 0.2, emergence: 0.4, awakening: 0.6, clarity: 1.0, 'pan-sentient-flourishing': 0.9, integration: 0.8, reflection: 0.6, restoration: 0.3 }
     };
     
     return compatibilities[practiceType]?.[quality] || 0.5;
@@ -150,10 +150,10 @@ class CircadianConsciousness {
     const hour = this.currentTime.getHours();
     let coherenceModifier = 1.0;
     
-    // Check if we're at a coherence peak
+    // Check if we're at a resonant-coherence peak
     if (this.collectiveRhythms.coherencePeaks.includes(hour)) {
       coherenceModifier *= 1.25;
-      console.log(`🌐 Collective coherence peak detected! (${hour}:00)`);
+      console.log(`🌐 Collective resonant-coherence peak detected! (${hour}:00)`);
     }
     
     // Check for creative surge
@@ -294,7 +294,7 @@ class CircadianConsciousness {
         qualities.clarity = 1.0;
         qualities.creativity = 0.7;
         break;
-      case 'vitality':
+      case 'pan-sentient-flourishing':
         qualities.connection = 0.8;
         qualities.creativity = 0.8;
         break;
@@ -326,7 +326,7 @@ class CircadianConsciousness {
     // Get base practice optimization
     let circadianModifier = this.getOptimalPracticeModifier(message.sacredType);
     
-    // Apply collective coherence
+    // Apply collective resonant-coherence
     circadianModifier *= this.checkCollectiveCoherence();
     
     // Apply personal optimization if available

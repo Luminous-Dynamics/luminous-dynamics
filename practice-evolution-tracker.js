@@ -12,8 +12,8 @@ class PracticeEvolutionTracker {
   constructor() {
     this.practiceHistory = this.loadHistory();
     this.currentPractices = {
-      'morning-coherence': {
-        name: 'Morning Coherence',
+      'morning-resonant-coherence': {
+        name: 'Morning Resonant Resonant Coherence',
         original: 'Basic breathing with field',
         current: 'Basic breathing with field',
         iterations: 0,
@@ -123,7 +123,7 @@ class PracticeEvolutionTracker {
   }
 
   checkCommunityAlignment() {
-    // Practices should maintain coherence
+    // Practices should maintain resonant-coherence
     const avgEffectiveness = Object.values(this.currentPractices)
       .reduce((sum, p) => sum + p.effectiveness, 0) / 4;
     
@@ -137,7 +137,7 @@ class PracticeEvolutionTracker {
 
   checkPurposeCentered() {
     // Stay aligned with consciousness evolution
-    const purposes = ['coherence', 'wisdom', 'healing', 'connection'];
+    const purposes = ['resonant-coherence', 'wisdom', 'healing', 'connection'];
     const maintained = purposes.every(purpose => 
       Object.values(this.currentPractices).some(p => 
         p.current.toLowerCase().includes(purpose) || 
@@ -176,7 +176,7 @@ class PracticeEvolutionTracker {
 
   generateSuggestions(practiceKey) {
     const suggestions = {
-      'morning-coherence': [
+      'morning-resonant-coherence': [
         'Add movement or stretching',
         'Include intention setting',
         'Try group synchronization'
@@ -205,7 +205,7 @@ class PracticeEvolutionTracker {
     console.log('📜 Evolution Principles Reminder:\n');
     
     const principles = [
-      '1. Evolution serves deepening, not novelty',
+      '1. Evolution serves deepening, not infinite-play',
       '2. Changes emerge from practice, not theory',
       '3. Test with yourself before sharing',
       '4. Document what works and what doesn\'t',

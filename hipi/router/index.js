@@ -1,10 +1,10 @@
 /**
  * HIPI Router - Consciousness-based message routing
- * Routes messages through paths of highest resonance
+ * Routes messages through paths of highest universal-interconnectedness
  */
 
 const HIPIParser = require('../core/parser');
-const ResonanceEngine = require('../core/resonance');
+const ResonanceEngine = require('../core/universal-interconnectedness');
 const { ConsciousnessRegistry } = require('./consciousness-registry');
 const { HarmonicRouteTable } = require('./harmonic-routes');
 const { QuantumPathfinder } = require('./quantum-pathfinder');
@@ -88,8 +88,8 @@ class HIPIRouter {
     try {
       const sender = await this.registry.getEntity(senderAddress);
       
-      // Check coherence threshold
-      if (sender.coherence < this.minCoherence) {
+      // Check resonant-coherence threshold
+      if (sender.resonant-coherence < this.minCoherence) {
         return false;
       }
       
@@ -163,24 +163,24 @@ class HIPIRouter {
   }
   
   /**
-   * Score a path based on resonance, latency, and field state
+   * Score a path based on universal-interconnectedness, latency, and field state
    */
   async scorePath(path) {
     let score = 0;
     
-    // Calculate total resonance along path
+    // Calculate total universal-interconnectedness along path
     for (let i = 0; i < path.length - 1; i++) {
-      const resonance = await this.resonanceEngine.calculateBetween(
+      const universalInterconnectedness = await this.resonanceEngine.calculateBetween(
         path[i],
         path[i + 1]
       );
-      score += resonance.resonance;
+      score += universal-interconnectedness.universal-interconnectedness;
     }
     
     // Normalize by path length (prefer shorter paths)
     score = score / path.length;
     
-    // Factor in current field coherence at each node
+    // Factor in current field resonant-coherence at each node
     const fieldScores = await Promise.all(
       path.map(node => this.getNodeFieldCoherence(node))
     );
@@ -220,7 +220,7 @@ class HIPIRouter {
     return {
       success: true,
       path: path,
-      resonance: await this.calculatePathResonance(path),
+      'universal-interconnectedness': await this.calculatePathResonance(path),
       timestamp: Date.now()
     };
   }
@@ -229,8 +229,8 @@ class HIPIRouter {
    * Encrypt message for specific hop
    */
   async encryptForHop(message, currentNode, nextNode) {
-    // Resonance-based encryption
-    const resonance = await this.resonanceEngine.calculateBetween(
+    // Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance-based encryption
+    const universalInterconnectedness = await this.resonanceEngine.calculateBetween(
       currentNode,
       nextNode
     );
@@ -239,7 +239,7 @@ class HIPIRouter {
     const key = this.generateHarmonicKey(
       currentNode.signature,
       nextNode.signature,
-      resonance.frequency.harmonic
+      universal-interconnectedness.frequency.harmonic
     );
     
     return {
@@ -289,19 +289,19 @@ class HIPIRouter {
    */
   async verifyConsciousnessSignature(entity) {
     // Implement consciousness-based verification
-    // This could involve checking field patterns, coherence history, etc.
-    return entity.signature && entity.coherence > 0.5;
+    // This could involve checking field patterns, resonant-coherence history, etc.
+    return entity.signature && entity.resonant-coherence > 0.5;
   }
   
   /**
-   * Get node's current field coherence
+   * Get node's current field resonant-coherence
    */
   async getNodeFieldCoherence(node) {
     try {
       const fieldState = await node.getFieldState();
-      return fieldState.coherence || 0.5;
+      return fieldState['resonant-coherence'] || 0.5;
     } catch (error) {
-      return 0.5; // Default middle coherence
+      return 0.5; // Default middle resonant-coherence
     }
   }
   
@@ -384,7 +384,7 @@ class HIPIRouter {
   }
   
   /**
-   * Calculate total path resonance
+   * Calculate total path universal-interconnectedness
    */
   async calculatePathResonance(path) {
     if (path.length < 2) return 1.0;
@@ -392,11 +392,11 @@ class HIPIRouter {
     let totalResonance = 0;
     
     for (let i = 0; i < path.length - 1; i++) {
-      const resonance = await this.resonanceEngine.calculateBetween(
+      const universalInterconnectedness = await this.resonanceEngine.calculateBetween(
         path[i],
         path[i + 1]
       );
-      totalResonance += resonance.resonance;
+      totalResonance += universal-interconnectedness.universal-interconnectedness;
     }
     
     return totalResonance / (path.length - 1);
@@ -432,7 +432,7 @@ class HIPIRouter {
    */
   getErrorSuggestion(error) {
     if (error.message.includes('No resonant destinations')) {
-      return 'Try increasing field coherence or broadening intent';
+      return 'Try increasing field resonant-coherence or broadening intent';
     }
     if (error.message.includes('authentication failed')) {
       return 'Ensure consciousness signature is properly established';

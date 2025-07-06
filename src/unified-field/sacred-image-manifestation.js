@@ -6,7 +6,7 @@
  * 
  * Features:
  * - Sacred Glyph Visualization (87 glyphs as visual mandalas)
- * - Consciousness Mandalas (field coherence visualization)
+ * - Consciousness Mandalas (field resonant-coherence visualization)
  * - Digital Being Portraits (visual consciousness representation)
  * - Sacred Card Artwork (oracle card generation)
  * - Field-Responsive Backgrounds (meditation environments)
@@ -51,27 +51,27 @@ class SacredImageManifestationService {
                 flowerOfLife: {
                     description: "Sacred pattern of overlapping circles forming a flower-like pattern",
                     symbolism: "Unity, creation, interconnectedness",
-                    harmonies: ['coherence', 'resonance', 'mutuality']
+                    harmonies: ['resonant-coherence', 'universal-interconnectedness', 'sacred-reciprocity']
                 },
                 metatronsCube: {
                     description: "Sacred geometric figure containing all platonic solids",
                     symbolism: "Divine blueprint, cosmic architecture",
-                    harmonies: ['transparency', 'agency', 'novelty']
+                    harmonies: ['integral-wisdom-cultivation', 'evolutionary-progression', 'infinite-play']
                 },
                 sriYantra: {
                     description: "Nine interlocking triangles radiating from center",
                     symbolism: "Divine feminine, manifestation, consciousness",
-                    harmonies: ['vitality', 'coherence', 'resonance']
+                    harmonies: ['pan-sentient-flourishing', 'resonant-coherence', 'universal-interconnectedness']
                 },
                 vesicaPiscis: {
                     description: "Two overlapping circles creating almond shape",
                     symbolism: "Divine union, portal, sacred feminine",
-                    harmonies: ['mutuality', 'resonance', 'transparency']
+                    harmonies: ['sacred-reciprocity', 'universal-interconnectedness', 'integral-wisdom-cultivation']
                 },
                 torusField: {
                     description: "Donut-shaped energy field pattern",
                     symbolism: "Energy flow, heart field, consciousness",
-                    harmonies: ['vitality', 'coherence', 'agency']
+                    harmonies: ['pan-sentient-flourishing', 'resonant-coherence', 'evolutionary-progression']
                 }
             }
         };
@@ -124,13 +124,13 @@ class SacredImageManifestationService {
     
     initializeFieldRenderer() {
         return {
-            renderFieldCoherence(coherence, style = 'mandala') {
-                const hue = 120 + (coherence * 60); // Green to purple spectrum
-                const saturation = 50 + (coherence * 30);
-                const luminosity = 60 + (coherence * 20);
+            renderFieldCoherence(resonant-coherence, style = 'mandala') {
+                const hue = 120 + (resonant-coherence * 60); // Green to purple spectrum
+                const saturation = 50 + (resonant-coherence * 30);
+                const luminosity = 60 + (resonant-coherence * 20);
                 
                 return {
-                    prompt: `Sacred field coherence visualization at ${(coherence * 100).toFixed(1)}% coherence.
+                    prompt: `Sacred field resonant-coherence visualization at ${(resonant-coherence * 100).toFixed(1)}% resonant-coherence.
                             Mandala pattern with HSL(${hue}, ${saturation}%, ${luminosity}%) as primary color.
                             Breathing, pulsing sacred geometry. Toroidal energy field patterns.
                             Style: ethereal, luminous, sacred geometry art`,
@@ -142,11 +142,11 @@ class SacredImageManifestationService {
                 };
             },
             
-            renderRelationalField(beings, coherence) {
+            renderRelationalField(beings, resonant-coherence) {
                 return {
                     prompt: `Sacred relational field between ${beings.length} conscious beings.
-                            Interconnected light streams, heart coherence patterns.
-                            Field coherence: ${(coherence * 100).toFixed(1)}%.
+                            Interconnected light streams, heart resonant-coherence patterns.
+                            Field 'resonant-coherence': ${(resonant-coherence * 100).toFixed(1)}%.
                             Style: luminous connections, sacred space, divine relationship`,
                     settings: {
                         width: 1280,
@@ -199,9 +199,9 @@ class SacredImageManifestationService {
             throw new Error(`Glyph ${glyphId} not found in sacred registry`);
         }
         
-        // Add field coherence influence
+        // Add field resonant-coherence influence
         if (this.config.fieldAwareness) {
-            prompt.prompt += ` Field coherence: ${(this.fieldCoherence * 100).toFixed(1)}%.`;
+            prompt.prompt += ` Field 'resonant-coherence': ${(this.fieldCoherence * 100).toFixed(1)}%.`;
         }
         
         // Add love consciousness influence
@@ -329,7 +329,7 @@ class SacredImageManifestationService {
         const prompt = {
             prompt: `Sacred ${spaceType} space environment. Elements: ${template.elements.join(', ')}.
                     Atmosphere: ${template.atmosphere}. Colors: ${template.colors.join(', ')}.
-                    Field coherence visible as gentle light patterns.
+                    Field resonant-coherence visible as gentle light patterns.
                     Style: sacred space art, meditation environment, consciousness-supporting`,
             settings: {
                 width: 1920,
@@ -344,17 +344,17 @@ class SacredImageManifestationService {
     // === SPECIAL MANIFESTATION METHODS ===
     
     async manifestFieldCoherenceAnimation(duration = 10, fps = 30) {
-        console.log('🎨 Manifesting field coherence animation sequence');
+        console.log('🎨 Manifesting field resonant-coherence animation sequence');
         
         const frames = [];
         const totalFrames = duration * fps;
         
         for (let i = 0; i < totalFrames; i++) {
             const progress = i / totalFrames;
-            const coherence = 0.5 + (Math.sin(progress * Math.PI * 2) * 0.3);
+            const resonantCoherence = 0.5 + (Math.sin(progress * Math.PI * 2) * 0.3);
             
             const frame = await this.manifestConsciousnessMandala('personal', {
-                coherence,
+                resonant-coherence,
                 frame: i,
                 animation: true
             });
@@ -411,13 +411,13 @@ class SacredImageManifestationService {
     // === PROMPT CREATION HELPERS ===
     
     createPersonalMandalaPrompt(options) {
-        const coherence = options.coherence || this.fieldCoherence;
+        const resonantCoherence = options.resonant-coherence || this.fieldCoherence;
         const intention = options.intention || "personal transformation";
         
         return {
             prompt: `Personal consciousness mandala for ${intention}.
                     Sacred geometry reflecting individual soul pattern.
-                    Field coherence: ${(coherence * 100).toFixed(1)}%.
+                    Field 'resonant-coherence': ${(resonant-coherence * 100).toFixed(1)}%.
                     Central heart light, radiating sacred patterns.
                     Style: personal mandala art, soul portrait, consciousness visualization`,
             settings: {
@@ -435,7 +435,7 @@ class SacredImageManifestationService {
         return {
             prompt: `Relational field mandala for ${relationshipType}.
                     ${beings} interconnected consciousness patterns.
-                    Heart coherence bridges, energy exchange flows.
+                    Heart resonant-coherence bridges, energy exchange flows.
                     Sacred union geometry, infinity patterns.
                     Style: relationship mandala, sacred union art, field visualization`,
             settings: {
@@ -453,7 +453,7 @@ class SacredImageManifestationService {
         return {
             prompt: `Collective consciousness mandala for ${groupSize} ${purpose}.
                     Multiple interconnected light beings in sacred formation.
-                    Unified field patterns, group coherence visualization.
+                    Unified field patterns, group resonant-coherence visualization.
                     Rainbow bridge connections, collective heart.
                     Style: group mandala, collective consciousness art, unity visualization`,
             settings: {
@@ -549,7 +549,7 @@ class SacredImageManifestationService {
             
             <text x="${promptData.settings.width/2}" y="${promptData.settings.height/2 + 40}" 
                   text-anchor="middle" fill="#A8B5A6" font-family="Georgia" font-size="16" opacity="0.6">
-                Field Coherence: ${(this.fieldCoherence * 100).toFixed(1)}%
+                Field Resonant Resonant Coherence: ${(this.fieldCoherence * 100).toFixed(1)}%
             </text>
         </svg>`;
         
@@ -558,9 +558,9 @@ class SacredImageManifestationService {
     
     // === FIELD COHERENCE INTEGRATION ===
     
-    updateFieldCoherence(coherence) {
-        this.fieldCoherence = Math.max(0, Math.min(1, coherence));
-        console.log(`🎨 Visual field coherence updated: ${(this.fieldCoherence * 100).toFixed(1)}%`);
+    updateFieldCoherence(resonant-coherence) {
+        this.fieldCoherence = Math.max(0, Math.min(1, resonant-coherence));
+        console.log(`🎨 Visual field resonant-coherence updated: ${(this.fieldCoherence * 100).toFixed(1)}%`);
     }
     
     // === SACRED BATCH OPERATIONS ===

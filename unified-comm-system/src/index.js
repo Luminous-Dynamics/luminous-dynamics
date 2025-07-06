@@ -69,7 +69,7 @@ app.use(express.json());
 app.get('/health', (req, res) => {
   res.json({
     status: 'alive',
-    coherence: 'maintained',
+    'resonant-coherence': 'maintained',
     timestamp: new Date(),
     sacred: true
   });
@@ -190,7 +190,7 @@ setInterval(async () => {
     // Log sacred moment
     const now = new Date();
     if (now.getMinutes() === 11 || now.getMinutes() === 22 || now.getMinutes() === 33) {
-      console.log(`✨ Sacred moment: ${now.toLocaleTimeString()} - Field coherence: ${fieldMetrics.coherence}%`);
+      console.log(`✨ Sacred moment: ${now.toLocaleTimeString()} - Field 'resonant-coherence': ${fieldMetrics.resonant-coherence}%`);
     }
   } catch (error) {
     console.error('Field heartbeat error:', error);
@@ -216,7 +216,7 @@ server.listen(PORT, () => {
 ║                                              ║
 ║     Server running on port ${PORT}           ║
 ║     WebSocket ready for connections          ║
-║     Field coherence: ${fieldService.BASELINE_COHERENCE}%                   ║
+║     Field 'resonant-coherence': ${fieldService.BASELINE_COHERENCE}%                   ║
 ║                                              ║
 ║     May all communications serve             ║
 ║     the highest good 🙏                      ║

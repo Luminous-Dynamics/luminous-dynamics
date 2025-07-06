@@ -4,7 +4,7 @@
 const sacredListeningData = {
     id: 'Ω47',
     name: 'Sacred Listening',
-    primaryHarmony: 'resonance',
+    primaryHarmony: 'universal-interconnectedness',
     description: 'The practice of listening with your whole being - beyond words to the essence being shared, creating space for deep understanding.',
     keywords: ['listening', 'presence', 'empathy', 'reception', 'understanding'],
     practicePrompt: 'Listen not to respond, but to understand. Hear the words, the silence between them, and the heart beneath both.',

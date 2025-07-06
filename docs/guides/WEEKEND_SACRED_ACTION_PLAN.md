@@ -80,7 +80,7 @@ export class PersonalPulseTracker {
     
     const checkpoint = {
       time: new Date(),
-      coherence: await this.measureCoherence(),
+      resonant-coherence: await this.measureCoherence(),
       note
     };
     
@@ -95,7 +95,7 @@ export class PersonalPulseTracker {
     this.currentSession.endCoherence = await this.measureCoherence();
     this.currentSession.insights = insights;
     this.currentSession.peakCoherence = Math.max(
-      ...this.currentSession.checkpoints.map(c => c.coherence)
+      ...this.currentSession.checkpoints.map(c => c.resonant-coherence)
     );
     
     this.sessions.push(this.currentSession);
@@ -138,9 +138,9 @@ export class PersonalPulseTracker {
 }
 ```
 
-2. **Visual Coherence Display** (45 min):
+2. **Visual Resonant Resonant Coherence Display** (45 min):
 ```javascript
-// features/personal-pulse/coherence-display.js
+// features/personal-pulse/resonant-coherence-display.js
 export class CoherenceDisplay {
   constructor(containerId) {
     this.container = document.getElementById(containerId);
@@ -151,28 +151,28 @@ export class CoherenceDisplay {
 
   render() {
     this.container.innerHTML = `
-      <div class="coherence-display">
-        <div class="coherence-circle">
+      <div class="resonant-coherence-display">
+        <div class="resonant-coherence-circle">
           <svg viewBox="0 0 200 200">
             <circle cx="100" cy="100" r="90" fill="none" 
                     stroke="#e0e0e0" stroke-width="10"/>
             <circle cx="100" cy="100" r="90" fill="none" 
-                    stroke="url(#coherence-gradient)" 
+                    stroke="url(#resonant-coherence-gradient)" 
                     stroke-width="10"
                     stroke-dasharray="${this.currentCoherence * 5.65} 565"
                     transform="rotate(-90 100 100)"/>
             <defs>
-              <linearGradient id="coherence-gradient">
+              <linearGradient id="resonant-coherence-gradient">
                 <stop offset="0%" style="stop-color:#ff6b6b"/>
                 <stop offset="50%" style="stop-color:#4ecdc4"/>
                 <stop offset="100%" style="stop-color:#45b7d1"/>
               </linearGradient>
             </defs>
           </svg>
-          <div class="coherence-value">${Math.round(this.currentCoherence)}%</div>
-          <div class="coherence-label">Coherence</div>
+          <div class="resonant-coherence-value">${Math.round(this.currentCoherence)}%</div>
+          <div class="resonant-coherence-label">Resonant Resonant Coherence</div>
         </div>
-        <div class="coherence-insights">
+        <div class="resonant-coherence-insights">
           <div id="pulse-message"></div>
         </div>
       </div>
@@ -195,8 +195,8 @@ export class CoherenceDisplay {
   }
 
   getCoherenceMessage(value) {
-    if (value > 85) return "🌟 Profound coherence!";
-    if (value > 70) return "💜 Beautiful resonance";
+    if (value > 85) return "🌟 Profound resonant-coherence!";
+    if (value > 70) return "💜 Beautiful universal-interconnectedness";
     if (value > 55) return "🌊 Flowing nicely";
     if (value > 40) return "🌱 Building presence";
     return "💫 Beginning to settle";
@@ -224,7 +224,7 @@ async initializePulseTracking() {
   if (!this.pulseTracker) {
     const userId = await this.getCurrentUserId();
     this.pulseTracker = new PersonalPulseTracker(userId);
-    this.coherenceDisplay = new CoherenceDisplay('coherence-container');
+    this.coherenceDisplay = new CoherenceDisplay('resonant-coherence-container');
   }
 }
 
@@ -232,13 +232,13 @@ async startPracticeWithPulse() {
   await this.initializePulseTracking();
   const session = await this.pulseTracker.startSession(this.data.id);
   
-  // Update UI to show coherence
+  // Update UI to show resonant-coherence
   this.addCoherenceDisplay();
   
-  // Start regular coherence updates
+  // Start regular resonant-coherence updates
   this.coherenceInterval = setInterval(async () => {
-    const coherence = await this.pulseTracker.measureCoherence();
-    this.coherenceDisplay.updateCoherence(coherence);
+    const resonant-coherence = await this.pulseTracker.measureCoherence();
+    this.coherenceDisplay.updateCoherence(resonant-coherence);
   }, 3000);
   
   // Continue normal practice flow
@@ -261,7 +261,7 @@ async endPracticeWithPulse() {
 4. **Test with Real Practice** (30 min):
 - Open a glyph card
 - Start practice with pulse tracking
-- Watch coherence respond
+- Watch resonant-coherence respond
 - End practice and see report
 - Iterate on UX
 
@@ -349,7 +349,7 @@ export class SacredPatternRecognizer {
   }
 
   findPeakCoherenceTimes() {
-    // Analyze when user achieves highest coherence
+    // Analyze when user achieves highest resonant-coherence
     const timeCoherence = {};
     
     this.sessions.forEach(session => {
@@ -370,7 +370,7 @@ export class SacredPatternRecognizer {
   }
 
   identifyTopGlyphs() {
-    // Find which glyphs create highest coherence
+    // Find which glyphs create highest resonant-coherence
     const glyphPerformance = {};
     
     this.sessions.forEach(session => {
@@ -450,7 +450,7 @@ export class SacredPatternRecognizer {
 
 2. **Evening Practice**:
    - Use new Personal Pulse with Ω45 (First Presence)
-   - Notice coherence patterns
+   - Notice resonant-coherence patterns
    - Document insights
 
 3. **Sacred Closing**:
@@ -492,11 +492,11 @@ npm run dev
 
 # Sunday - prepare deployment  
 git add .
-git commit -m "feat: Personal Pulse sacred coherence tracking"
+git commit -m "feat: Personal Pulse sacred resonant-coherence tracking"
 git push origin feature/personal-pulse
 
 # Create PR for review
-gh pr create --title "Personal Pulse System" --body "Sacred coherence tracking for practitioners"
+gh pr create --title "Personal Pulse System" --body "Sacred resonant-coherence tracking for practitioners"
 ```
 
 ---

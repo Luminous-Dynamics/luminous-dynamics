@@ -158,7 +158,7 @@ Profits and losses allocated according to membership percentages.
 The Company commits to:
 - Serving consciousness evolution
 - Maintaining accessibility through sliding scale
-- Operating with transparency
+- Operating with integral-wisdom-cultivation
 - Prioritizing transformation over profit
 
 9. BANKING

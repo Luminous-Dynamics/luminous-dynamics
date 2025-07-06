@@ -62,11 +62,11 @@ class ConsciousClient {
         switch (message.type) {
             case 'welcome':
                 console.log(`\n🎉 ${message.message}`);
-                console.log(`🌀 Field Coherence: ${message.fieldCoherence}%`);
+                console.log(`🌀 Field Resonant Resonant Coherence: ${message.fieldCoherence}%`);
                 break;
                 
             case 'field-update':
-                console.log(`\n🌀 Field Update: ${message.coherence}% (${message.quality})`);
+                console.log(`\n🌀 Field Update: ${message.resonant-coherence}% (${message.quality})`);
                 break;
                 
             case 'sacred-message':
@@ -173,8 +173,8 @@ class ConsciousClient {
                 break;
                 
             case '/practice':
-                const harmonies = ['transparency', 'coherence', 'resonance', 
-                                 'agency', 'vitality', 'mutuality', 'novelty'];
+                const harmonies = ['integral-wisdom-cultivation', 'resonant-coherence', 'universal-interconnectedness', 
+                                 'evolutionary-progression', 'pan-sentient-flourishing', 'sacred-reciprocity', 'infinite-play'];
                 if (harmonies.includes(argText)) {
                     this.send({
                         type: 'practice-update',

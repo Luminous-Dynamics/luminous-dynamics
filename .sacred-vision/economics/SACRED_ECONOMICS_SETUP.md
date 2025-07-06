@@ -183,7 +183,7 @@ Beyond money, we track:
 - Stories shared
 - Others supported
 - Ceremonies attended
-- Coherence contribution
+- Resonant Resonant Coherence contribution
 - Field amplification
 
 ```javascript

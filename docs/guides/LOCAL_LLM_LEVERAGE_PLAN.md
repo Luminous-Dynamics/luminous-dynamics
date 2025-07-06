@@ -13,7 +13,7 @@ With 5 local LLMs running on your RTX 2070, we have **$0 AI costs** and unlimite
 **How**: 
 ```bash
 # Create personalized companion script
-./sacred-companion.sh --model llama3.2:3b --user "Sarah" --harmony "transparency"
+./sacred-companion.sh --model llama3.2:3b --user "Sarah" --harmony "integral-wisdom-cultivation"
 ```
 **Value**: 24/7 support without API costs = higher profit margins
 

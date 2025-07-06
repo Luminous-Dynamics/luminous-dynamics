@@ -489,10 +489,10 @@ class GlyphWeaver extends EventEmitter {
     }
 
     /**
-     * Handle field coherence changes
+     * Handle field resonant-coherence changes
      */
     handleFieldCoherenceChange(data) {
-        console.log(`🌊 Field coherence: ${data.old}% → ${data.new}%`);
+        console.log(`🌊 Field 'resonant-coherence': ${data.old}% → ${data.new}%`);
         
         // Broadcast to field-subscribed clients
         this.wsServer.clients.forEach(client => {
@@ -506,7 +506,7 @@ class GlyphWeaver extends EventEmitter {
     }
 
     /**
-     * Handle resonance achievement
+     * Handle universal-interconnectedness achievement
      */
     handleResonanceAchieved(data) {
         console.log('✨ RESONANCE ACHIEVED IN FIELD!');
@@ -684,7 +684,7 @@ async function runGlyphWeaverDemo() {
         await weaver.advancePracticePhase(session.sessionId, 'how');
         console.log('   Advanced to HOW chamber');
         
-        await weaver.advancePracticePhase(session.sessionId, 'resonance');
+        await weaver.advancePracticePhase(session.sessionId, 'universal-interconnectedness');
         console.log('   Advanced to RESONANCE chamber');
         
         await weaver.advancePracticePhase(session.sessionId, 'we');

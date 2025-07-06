@@ -43,7 +43,7 @@ const llm = new LocalLLMAdapter({
 });
 
 const wisdom = await llm.generate('What is consciousness?', {
-  harmony: 'coherence'
+  harmony: 'resonant-coherence'
 });
 ```
 

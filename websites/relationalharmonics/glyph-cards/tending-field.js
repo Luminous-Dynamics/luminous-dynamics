@@ -4,13 +4,13 @@
 const tendingFieldData = {
     id: 'Ω53',
     name: 'Tending the Field',
-    primaryHarmony: 'coherence',
+    primaryHarmony: 'resonant-coherence',
     description: 'The practice of maintaining energetic connection across time and distance - keeping the relational field alive through conscious attention.',
     keywords: ['field', 'connection', 'maintenance', 'energy', 'distance'],
     practicePrompt: 'Relationships are living fields that need tending. Send love through the threads that connect you. Water the garden of connection even when apart.',
     integrationPoints: [
         'Essential for long-distance relationships',
-        'Maintains team coherence between meetings',
+        'Maintains team resonant-coherence between meetings',
         'Keeps family bonds strong',
         'Supports healing work between sessions'
     ],
@@ -75,7 +75,7 @@ const tendingFieldData = {
             },
             {
                 time: 450,
-                instruction: 'This is advanced practice - maintaining coherence across space.',
+                instruction: 'This is advanced practice - maintaining resonant-coherence across space.',
                 duration: 50
             },
             {
@@ -152,7 +152,7 @@ const tendingActions = {
     ]
 };
 
-// Field coherence indicators
+// Field resonant-coherence indicators
 const fieldCoherence = {
     high: {
         signs: 'Easy flow, natural synchronicities, mutual support',

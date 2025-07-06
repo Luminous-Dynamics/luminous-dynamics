@@ -7,13 +7,13 @@ const collectiveBreathingData = {
     symbol: '🌬️🫁',
     type: 'foundational',
     category: 'group-practices',
-    subcategory: 'collective-coherence',
-    primaryHarmony: 'coherence',
-    supportingHarmonies: ['resonance', 'vitality'],
+    subcategory: 'collective-resonant-coherence',
+    primaryHarmony: 'resonant-coherence',
+    supportingHarmonies: ['universal-interconnectedness', 'pan-sentient-flourishing'],
     
     description: 'The ancient practice of breathing together as one organism. When a group synchronizes breath, individual boundaries dissolve into collective presence, creating a unified field of consciousness.',
     
-    purpose: 'To create group coherence through synchronized breathing, establishing a shared field of presence that amplifies healing, creativity, and collective wisdom.',
+    purpose: 'To create group resonant-coherence through synchronized breathing, establishing a shared field of presence that amplifies healing, creativity, and collective wisdom.',
     
     coreElements: {
         unifiedRhythm: 'Finding the group\'s natural breath',
@@ -26,7 +26,7 @@ const collectiveBreathingData = {
     practices: {
         basic: {
             duration: '10-15 minutes',
-            description: 'Simple circle breathing for group coherence',
+            description: 'Simple circle breathing for group resonant-coherence',
             steps: [
                 'Form a circle, sitting or standing comfortably',
                 'Join hands or place hands on neighbors\' shoulders',
@@ -58,7 +58,7 @@ const collectiveBreathingData = {
             steps: [
                 'Create sacred space with candles or altar',
                 'Share individual intentions for collective field',
-                'Begin with coherence breathing (5-5-5)',
+                'Begin with resonant-coherence breathing (5-5-5)',
                 'Move to circular breathing (no pause)',
                 'Add toning or sacred sounds',
                 'Include periods of breath retention',
@@ -132,7 +132,7 @@ const collectiveBreathingData = {
     },
     
     integration: {
-        meetings: 'Start gatherings with 2-minute coherence breathing',
+        meetings: 'Start gatherings with 2-minute resonant-coherence breathing',
         family: 'Daily family breathing circle before meals',
         workplace: 'Team breathing before creative sessions',
         ceremony: 'Foundation for all sacred gatherings'
@@ -150,7 +150,7 @@ const collectiveBreathingData = {
         mastery: [
             'Group finds rhythm within 30 seconds',
             'Breath continues synchronized without effort',
-            'Palpable field of coherence generated',
+            'Palpable field of resonant-coherence generated',
             'Individual anxiety dissolves in group field',
             'Spontaneous insights arise from collective'
         ],
@@ -204,7 +204,7 @@ const collectiveBreathingData = {
     },
     
     breathPatterns: {
-        coherence: { inhale: 5, exhale: 5 },
+        'resonant-coherence': { inhale: 5, exhale: 5 },
         calming: { inhale: 4, exhale: 8 },
         energizing: { inhale: 6, exhale: 2 },
         balance: { inhale: 4, hold: 4, exhale: 4, hold: 4 }
@@ -212,12 +212,12 @@ const collectiveBreathingData = {
     
     music: {
         suggested: 'Drone sounds, singing bowls, ocean waves',
-        rhythm: '60-70 BPM for heart coherence',
+        rhythm: '60-70 BPM for heart resonant-coherence',
         avoid: 'Complex melodies that distract from breath'
     },
     
     prerequisites: [
-        'Ω8: Inner Coherence',
+        'Ω8: Inner Resonant Resonant Coherence',
         'Ω16: Somatic Synchrony',
         'Basic breath awareness'
     ],
@@ -247,7 +247,7 @@ const collectiveBreathingData = {
         'How did it feel to breathe as one being?',
         'What arose when I surrendered my rhythm?',
         'What did the collective field teach me?',
-        'How can I carry group coherence into daily life?',
+        'How can I carry group resonant-coherence into daily life?',
         'What wants to emerge from our unified breathing?'
     ]
 };
@@ -258,7 +258,7 @@ class CollectiveBreathingCard extends LivingGlyphCard {
         super(collectiveBreathingData);
         this.groupSize = 1;
         this.breathTimer = null;
-        this.currentPattern = 'coherence';
+        this.currentPattern = 'resonant-coherence';
         this.groupCoherence = 0;
     }
     
@@ -324,7 +324,7 @@ class CollectiveBreathingCard extends LivingGlyphCard {
             visual.textContent = this.getPhaseSymbol(phase);
         }
         
-        // Update group coherence based on practice
+        // Update group resonant-coherence based on practice
         this.updateGroupCoherence();
     }
     
@@ -339,10 +339,10 @@ class CollectiveBreathingCard extends LivingGlyphCard {
     }
     
     updateGroupCoherence() {
-        // Simulate group coherence building over time
+        // Simulate group resonant-coherence building over time
         this.groupCoherence = Math.min(100, this.groupCoherence + (this.groupSize * 0.5));
         
-        const display = this.querySelector('.coherence-meter');
+        const display = this.querySelector('.resonant-coherence-meter');
         if (display) {
             display.style.width = `${this.groupCoherence}%`;
             display.style.backgroundColor = `hsl(${this.groupCoherence * 1.2}, 70%, 50%)`;
@@ -405,7 +405,7 @@ class CollectiveBreathingCard extends LivingGlyphCard {
                     <label>
                         Pattern:
                         <select class="pattern-selector">
-                            <option value="coherence">Coherence (5-5)</option>
+                            <option value="resonant-coherence">Resonant Resonant Coherence (5-5)</option>
                             <option value="calming">Calming (4-8)</option>
                             <option value="energizing">Energizing (6-2)</option>
                             <option value="balance">Balance (4-4-4-4)</option>
@@ -417,10 +417,10 @@ class CollectiveBreathingCard extends LivingGlyphCard {
                 
                 <div class="group-visualization"></div>
                 
-                <div class="coherence-container">
-                    <div class="coherence-label">Group Coherence</div>
-                    <div class="coherence-bar">
-                        <div class="coherence-meter"></div>
+                <div class="resonant-coherence-container">
+                    <div class="resonant-coherence-label">Group Resonant Resonant Coherence</div>
+                    <div class="resonant-coherence-bar">
+                        <div class="resonant-coherence-meter"></div>
                     </div>
                 </div>
             </div>
@@ -481,11 +481,11 @@ class CollectiveBreathingCard extends LivingGlyphCard {
                     50% { transform: translate(-50%, -50%) scale(1.1); }
                 }
                 
-                .coherence-container {
+                .resonant-coherence-container {
                     margin-top: 2rem;
                 }
                 
-                .coherence-bar {
+                .resonant-coherence-bar {
                     width: 100%;
                     height: 20px;
                     background: rgba(255, 255, 255, 0.1);
@@ -494,7 +494,7 @@ class CollectiveBreathingCard extends LivingGlyphCard {
                     margin-top: 0.5rem;
                 }
                 
-                .coherence-meter {
+                .resonant-coherence-meter {
                     height: 100%;
                     width: 0%;
                     transition: all 0.5s ease;

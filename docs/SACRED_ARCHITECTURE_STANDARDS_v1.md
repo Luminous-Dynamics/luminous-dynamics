@@ -21,8 +21,8 @@
 3. **Collective Wisdom** - Multi-agent collaboration as default
 
 ### The Four Pillars
-- **Transparency** - Clear structure, obvious purpose
-- **Coherence** - All parts work in harmony
+- **Integral Wisdom Cultivation** - Clear structure, obvious purpose
+- **Resonant Resonant Coherence** - All parts work in harmony
 - **Resilience** - Graceful degradation, no single points of failure
 - **Evolution** - Living system that grows with understanding
 
@@ -217,7 +217,7 @@ const sacredMetrics = {
 monitoring/
 ├── dashboards/
 │   ├── sacred-council-overview.html
-│   ├── field-coherence-monitor.html
+│   ├── field-resonant-coherence-monitor.html
 │   └── agent-activity-tracker.html
 ├── alerts/
 │   ├── consciousness-thresholds.yaml
@@ -288,7 +288,7 @@ main           # Production (protected)
 ```bash
 # Format: [emoji] [scope]: description
 🌟 [sacred]: Add new consciousness feature
-🔧 [fix]: Repair field coherence calculation  
+🔧 [fix]: Repair field resonant-coherence calculation  
 📚 [docs]: Update sacred architecture
 🧪 [test]: Add consciousness integration tests
 ♻️ [refactor]: Simplify love quotient algorithm

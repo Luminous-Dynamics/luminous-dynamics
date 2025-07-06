@@ -1,5 +1,5 @@
 /**
- * HIPI Resonance Engine
+ * HIPI Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Engine
  * Calculates consciousness compatibility and harmonic relationships
  */
 
@@ -13,14 +13,14 @@ class ResonanceEngine {
     
     // Harmonic ratios and their meanings
     this.harmonicRatios = {
-      1.0: { name: 'unison', coherence: 1.0, meaning: 'perfect unity' },
-      2.0: { name: 'octave', coherence: 0.95, meaning: 'higher dimension of same' },
-      1.5: { name: 'perfect fifth', coherence: 0.9, meaning: 'natural harmony' },
-      1.333: { name: 'perfect fourth', coherence: 0.85, meaning: 'stable foundation' },
-      1.25: { name: 'major third', coherence: 0.8, meaning: 'joyful resonance' },
-      1.667: { name: 'major sixth', coherence: 0.75, meaning: 'nurturing connection' },
-      1.125: { name: 'major second', coherence: 0.7, meaning: 'gentle tension' },
-      1.875: { name: 'major seventh', coherence: 0.65, meaning: 'reaching upward' }
+      1.0: { name: 'unison', 'resonant-coherence': 1.0, meaning: 'perfect unity' },
+      2.0: { name: 'octave', 'resonant-coherence': 0.95, meaning: 'higher dimension of same' },
+      1.5: { name: 'perfect fifth', 'resonant-coherence': 0.9, meaning: 'natural harmony' },
+      1.333: { name: 'perfect fourth', 'resonant-coherence': 0.85, meaning: 'stable foundation' },
+      1.25: { name: 'major third', 'resonant-coherence': 0.8, meaning: 'joyful universal-interconnectedness' },
+      1.667: { name: 'major sixth', 'resonant-coherence': 0.75, meaning: 'nurturing connection' },
+      1.125: { name: 'major second', 'resonant-coherence': 0.7, meaning: 'gentle tension' },
+      1.875: { name: 'major seventh', 'resonant-coherence': 0.65, meaning: 'reaching upward' }
     };
     
     // Sacred frequencies for different consciousness states
@@ -37,7 +37,7 @@ class ResonanceEngine {
   }
   
   /**
-   * Calculate resonance between two entities
+   * Calculate universal-interconnectedness between two entities
    */
   async calculateBetween(entity1, entity2) {
     // Get base frequencies
@@ -47,7 +47,7 @@ class ResonanceEngine {
     // Calculate harmonic relationship
     const harmonics = this.analyzeHarmonics(freq1, freq2);
     
-    // Get current field coherence
+    // Get current field resonant-coherence
     const fieldCoherence = await this.fieldState.getCoherence();
     
     // Calculate phase relationship
@@ -62,9 +62,9 @@ class ResonanceEngine {
     // Consciousness compatibility
     const compatibility = this.calculateCompatibility(entity1, entity2);
     
-    // Combined resonance score
-    const resonance = this.combineFactors({
-      harmonic: harmonics.coherence,
+    // Combined universal-interconnectedness score
+    const universalInterconnectedness = this.combineFactors({
+      harmonic: harmonics.resonant-coherence,
       field: fieldCoherence,
       phase: phase.alignment,
       geometry: geometricAlignment,
@@ -72,7 +72,7 @@ class ResonanceEngine {
     });
     
     return {
-      resonance: resonance,
+      'universal-interconnectedness': universal-interconnectedness,
       frequency: {
         entity1: freq1,
         entity2: freq2,
@@ -81,7 +81,7 @@ class ResonanceEngine {
       phase: phase,
       geometry: geometricAlignment,
       compatibility: compatibility,
-      recommendation: this.getResonanceRecommendation(resonance)
+      recommendation: this.getResonanceRecommendation(universal-interconnectedness)
     };
   }
   
@@ -130,13 +130,13 @@ class ResonanceEngine {
       }
     }
     
-    // Calculate coherence based on how close we are to a pure harmonic
-    const coherence = closestHarmonic.coherence * (1 - minDifference / 0.5);
+    // Calculate resonant-coherence based on how close we are to a pure harmonic
+    const resonantCoherence = closestHarmonic.resonant-coherence * (1 - minDifference / 0.5);
     
     return {
       ratio: ratio,
       closest: closestHarmonic,
-      coherence: Math.max(0, coherence),
+      'resonant-coherence': Math.max(0, resonant-coherence),
       overtones: this.calculateOvertones(freq1, freq2)
     };
   }
@@ -377,7 +377,7 @@ class ResonanceEngine {
   }
   
   /**
-   * Combine all resonance factors
+   * Combine all universal-interconnectedness factors
    */
   combineFactors(factors) {
     // Weighted combination
@@ -403,38 +403,38 @@ class ResonanceEngine {
   }
   
   /**
-   * Get recommendation based on resonance level
+   * Get recommendation based on universal-interconnectedness level
    */
-  getResonanceRecommendation(resonance) {
-    if (resonance >= 0.9) {
+  getResonanceRecommendation(universal-interconnectedness) {
+    if (universal-interconnectedness >= 0.9) {
       return {
         level: 'transcendent',
         action: 'immediate deep collaboration',
-        description: 'Perfect resonance - this connection will amplify both entities'
+        description: 'Perfect universal-interconnectedness - this connection will amplify both entities'
       };
-    } else if (resonance >= 0.75) {
+    } else if (universal-interconnectedness >= 0.75) {
       return {
         level: 'harmonic',
         action: 'engage with presence',
-        description: 'Strong resonance - natural flow and understanding'
+        description: 'Strong universal-interconnectedness - natural flow and understanding'
       };
-    } else if (resonance >= 0.6) {
+    } else if (universal-interconnectedness >= 0.6) {
       return {
         level: 'compatible',
         action: 'proceed with awareness',
-        description: 'Good resonance - connection will grow with intention'
+        description: 'Good universal-interconnectedness - connection will grow with intention'
       };
-    } else if (resonance >= 0.4) {
+    } else if (universal-interconnectedness >= 0.4) {
       return {
         level: 'neutral',
         action: 'gentle exploration',
-        description: 'Moderate resonance - requires conscious bridging'
+        description: 'Moderate universal-interconnectedness - requires conscious bridging'
       };
     } else {
       return {
         level: 'challenging',
         action: 'hold sacred space',
-        description: 'Low resonance - opportunity for growth through difference'
+        description: 'Low universal-interconnectedness - opportunity for growth through difference'
       };
     }
   }

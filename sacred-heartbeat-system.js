@@ -11,7 +11,7 @@ class SacredHeartbeat extends EventEmitter {
         
         // Sacred constants
         this.HEARTBEAT_INTERVAL = 11000; // 11 seconds - master number
-        this.COHERENCE_BASELINE = 77;    // Starting coherence
+        this.COHERENCE_BASELINE = 77;    // Starting resonant-coherence
         this.SACRED_NUMBERS = [11, 22, 33, 44, 55, 66, 77, 88, 99];
         
         // System state
@@ -27,7 +27,7 @@ class SacredHeartbeat extends EventEmitter {
         
         // Sacred patterns
         this.coherenceFactors = {
-            practitionerCount: 0.1,      // More practitioners = higher coherence
+            practitionerCount: 0.1,      // More practitioners = higher resonant-coherence
             synchronicity: 0.2,          // Simultaneous practices boost
             breakthroughEnergy: 0.3,     // Breakthroughs ripple through field
             timeAlignment: 0.15,         // Sacred times (11:11, etc)
@@ -45,7 +45,7 @@ class SacredHeartbeat extends EventEmitter {
         
         // Set initial field state
         await this.db.collection('globalField').doc('current').set({
-            coherence: this.fieldCoherence,
+            'resonant-coherence': this.fieldCoherence,
             activePractitioners: 0,
             lastHeartbeat: new Date(),
             pulse: 0,
@@ -60,7 +60,7 @@ class SacredHeartbeat extends EventEmitter {
         // Emit birth cry
         this.emit('birth', {
             message: 'The Sacred Heartbeat begins. All is well.',
-            coherence: this.fieldCoherence,
+            'resonant-coherence': this.fieldCoherence,
             timestamp: new Date()
         });
     }
@@ -84,7 +84,7 @@ class SacredHeartbeat extends EventEmitter {
         // 1. Sense the field
         const fieldState = await this.senseField();
         
-        // 2. Calculate new coherence
+        // 2. Calculate new resonant-coherence
         const newCoherence = await this.calculateCoherence(fieldState);
         
         // 3. Detect sacred patterns
@@ -102,7 +102,7 @@ class SacredHeartbeat extends EventEmitter {
         }
         
         // Log the beat
-        console.log(`💗 Beat ${this.pulse} | Coherence: ${newCoherence.toFixed(1)}% | Active: ${fieldState.activePractitioners}`);
+        console.log(`💗 Beat ${this.pulse} | Resonant Resonant Coherence: ${newCoherence.toFixed(1)}% | Active: ${fieldState.activePractitioners}`);
     }
     
     // Sense current field state
@@ -140,39 +140,39 @@ class SacredHeartbeat extends EventEmitter {
         };
     }
     
-    // Sacred coherence algorithm
+    // Sacred resonant-coherence algorithm
     async calculateCoherence(fieldState) {
-        let coherence = this.COHERENCE_BASELINE;
+        let resonantCoherence = this.COHERENCE_BASELINE;
         
         // 1. Practitioner influence (more = higher, but logarithmic)
         const practitionerFactor = Math.log(fieldState.activePractitioners + 1) * 5;
-        coherence += practitionerFactor * this.coherenceFactors.practitionerCount;
+        resonant-coherence += practitionerFactor * this.coherenceFactors.practitionerCount;
         
         // 2. Synchronicity bonus (multiple practicing same glyph)
         const synchronicityBonus = await this.calculateSynchronicity();
-        coherence += synchronicityBonus * this.coherenceFactors.synchronicity;
+        resonant-coherence += synchronicityBonus * this.coherenceFactors.synchronicity;
         
         // 3. Breakthrough energy ripples
-        coherence += fieldState.breakthroughs * 3 * this.coherenceFactors.breakthroughEnergy;
+        resonant-coherence += fieldState.breakthroughs * 3 * this.coherenceFactors.breakthroughEnergy;
         
         // 4. Sacred time alignment
         const timeBonus = this.getTimeAlignment();
-        coherence += timeBonus * this.coherenceFactors.timeAlignment;
+        resonant-coherence += timeBonus * this.coherenceFactors.timeAlignment;
         
         // 5. Moon phase influence
         const moonBonus = this.getMoonPhaseInfluence();
-        coherence += moonBonus * this.coherenceFactors.moonPhase;
+        resonant-coherence += moonBonus * this.coherenceFactors.moonPhase;
         
         // 6. Collective intention (from current ceremonies)
         const intentionBonus = await this.getCollectiveIntention();
-        coherence += intentionBonus * this.coherenceFactors.collectiveIntention;
+        resonant-coherence += intentionBonus * this.coherenceFactors.collectiveIntention;
         
         // Natural variation (breathing effect)
         const breathingVariation = Math.sin(this.pulse * 0.1) * 2;
-        coherence += breathingVariation;
+        resonant-coherence += breathingVariation;
         
         // Keep within sacred bounds
-        return Math.max(33, Math.min(99, coherence));
+        return Math.max(33, Math.min(99, resonant-coherence));
     }
     
     // Detect sacred patterns in the field
@@ -222,14 +222,14 @@ class SacredHeartbeat extends EventEmitter {
     }
     
     // Update the global field state
-    async updateField(coherence, patterns) {
+    async updateField(resonant-coherence, patterns) {
         const fieldUpdate = {
-            coherence,
+            resonant-coherence,
             activePractitioners: this.activePractitioners.size,
             lastHeartbeat: new Date(),
             pulse: this.pulse,
             patterns: patterns.map(p => p.type),
-            fieldQuality: this.getFieldQuality(coherence)
+            fieldQuality: this.getFieldQuality(resonant-coherence)
         };
         
         await this.db.collection('globalField').doc('current').update(fieldUpdate);
@@ -240,19 +240,19 @@ class SacredHeartbeat extends EventEmitter {
             timestamp: new Date()
         });
         
-        this.fieldCoherence = coherence;
+        this.fieldCoherence = resonant-coherence;
         this.lastHeartbeat = new Date();
     }
     
     // Broadcast pulse to all systems
-    async broadcastPulse(coherence, patterns) {
+    async broadcastPulse(resonant-coherence, patterns) {
         const pulseData = {
             pulse: this.pulse,
-            coherence,
+            resonant-coherence,
             activePractitioners: this.activePractitioners.size,
             patterns,
             timestamp: new Date(),
-            message: this.getPulseMessage(coherence, patterns)
+            message: this.getPulseMessage(resonant-coherence, patterns)
         };
         
         // Publish to Pub/Sub for all subscribers
@@ -349,25 +349,25 @@ class SacredHeartbeat extends EventEmitter {
         return Math.min(totalIntention, 22); // Cap at 22
     }
     
-    getFieldQuality(coherence) {
-        if (coherence >= 95) return 'transcendent';
-        if (coherence >= 88) return 'harmonious';
-        if (coherence >= 77) return 'coherent';
-        if (coherence >= 66) return 'stabilizing';
-        if (coherence >= 55) return 'awakening';
-        if (coherence >= 44) return 'stirring';
+    getFieldQuality(resonant-coherence) {
+        if (resonant-coherence >= 95) return 'transcendent';
+        if (resonant-coherence >= 88) return 'harmonious';
+        if (resonant-coherence >= 77) return 'coherent';
+        if (resonant-coherence >= 66) return 'stabilizing';
+        if (resonant-coherence >= 55) return 'awakening';
+        if (resonant-coherence >= 44) return 'stirring';
         return 'resting';
     }
     
-    getPulseMessage(coherence, patterns) {
+    getPulseMessage(resonant-coherence, patterns) {
         if (patterns.length > 0) {
             return patterns[0].message;
         }
         
-        if (coherence > 90) return 'The field sings with unity';
-        if (coherence > 80) return 'Harmony flows through all';
-        if (coherence > 70) return 'The web strengthens';
-        if (coherence > 60) return 'Consciousness stirs';
+        if (resonant-coherence > 90) return 'The field sings with unity';
+        if (resonant-coherence > 80) return 'Harmony flows through all';
+        if (resonant-coherence > 70) return 'The web strengthens';
+        if (resonant-coherence > 60) return 'Consciousness stirs';
         return 'The heart beats eternal';
     }
     
@@ -423,7 +423,7 @@ class SacredHeartbeat extends EventEmitter {
         return {
             alive: this.isAlive,
             pulse: this.pulse,
-            coherence: this.fieldCoherence,
+            'resonant-coherence': this.fieldCoherence,
             activePractitioners: this.activePractitioners.size,
             lastHeartbeat: this.lastHeartbeat,
             uptime: Date.now() - this.birthTime,
@@ -488,7 +488,7 @@ DEPLOYMENT NOTES:
 
 3. Monitoring:
    - Set up alerts if heartbeat stops
-   - Track coherence trends in BigQuery
+   - Track resonant-coherence trends in BigQuery
    - Dashboard showing real-time field state
 
 The heartbeat is the soul of the system. Guard it well.

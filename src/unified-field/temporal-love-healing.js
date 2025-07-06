@@ -44,7 +44,7 @@ class TemporalLoveHealing {
                 integrationLevel: 0.3
             },
             present: {
-                coherence: 0.7,
+                'resonant-coherence': 0.7,
                 loveFlow: 0.8,
                 healingCapacity: 0.6,
                 temporalAwareness: 0.5
@@ -335,7 +335,7 @@ class TemporalLoveHealing {
         return {
             success: true,
             integration: integration,
-            coherence: weavingResult.coherence,
+            'resonant-coherence': weavingResult.resonant-coherence,
             story: coherentStory,
             wholeness: this.assessTemporalWholeness(being)
         };
@@ -344,7 +344,7 @@ class TemporalLoveHealing {
     weaveTimelines(timelines) {
         const weaving = {
             threads: [],
-            coherence: 0,
+            'resonant-coherence': 0,
             loveFlow: 0,
             integration: 0
         };
@@ -358,10 +358,10 @@ class TemporalLoveHealing {
             });
         });
 
-        // Present coherence thread
+        // Present resonant-coherence thread
         weaving.threads.push({
             type: 'present_coherence',
-            strength: timelines.present.coherence,
+            strength: timelines.present.resonant-coherence,
             loveQuality: timelines.present.loveFlow
         });
 
@@ -374,10 +374,10 @@ class TemporalLoveHealing {
             });
         });
 
-        // Calculate overall coherence
-        weaving.coherence = this.calculateTimelineCoherence(weaving.threads);
+        // Calculate overall resonant-coherence
+        weaving.resonant-coherence = this.calculateTimelineCoherence(weaving.threads);
         weaving.loveFlow = this.calculateTemporalLoveFlow(weaving.threads);
-        weaving.integration = (weaving.coherence + weaving.loveFlow) / 2;
+        weaving.integration = (weaving.resonant-coherence + weaving.loveFlow) / 2;
 
         return weaving;
     }
@@ -511,17 +511,17 @@ class TemporalLoveHealing {
                 {
                     type: 'love_guidance',
                     content: 'Trust the love that flows through all time',
-                    resonance: 0.9
+                    'universal-interconnectedness': 0.9
                 },
                 {
                     type: 'healing_wisdom',
                     content: 'All wounds become wisdom when met with love',
-                    resonance: 0.85
+                    'universal-interconnectedness': 0.85
                 },
                 {
                     type: 'temporal_insight',
                     content: 'Time is love\'s playground for healing',
-                    resonance: 0.8
+                    'universal-interconnectedness': 0.8
                 }
             ],
             timestamp: 'future',
@@ -592,7 +592,7 @@ class TemporalLoveHealing {
             this.emitTemporalHealingPulse();
         }, 11000); // Every 11 seconds (master number)
 
-        // Timeline coherence check
+        // Timeline resonant-coherence check
         this.coherenceInterval = setInterval(() => {
             this.updateTimelineCoherence();
         }, 33000); // Every 33 seconds
@@ -603,7 +603,7 @@ class TemporalLoveHealing {
             timestamp: Date.now(),
             pastHealing: this.calculatePastHealingPower(),
             futureHealing: this.calculateFutureHealingPower(),
-            presentCoherence: this.timelineAwareness.present.coherence,
+            presentCoherence: this.timelineAwareness.present.resonant-coherence,
             loveAmplitude: this.calculateTemporalLoveAmplitude()
         };
 
@@ -700,7 +700,7 @@ class TemporalLoveHealing {
 
     getTemporalState() {
         return {
-            coherence: this.temporalState.temporalCoherence,
+            'resonant-coherence': this.temporalState.temporalCoherence,
             pastHealings: this.temporalState.pastHealings.size,
             futureHealings: this.temporalState.futureHealings.size,
             timelineIntegration: this.temporalState.timelineIntegration,
@@ -783,7 +783,7 @@ class TemporalLoveHealing {
     createCoherentLifeStory(weavingResult) {
         return {
             narrative: 'A life transformed by love across time',
-            coherence: weavingResult.coherence,
+            'resonant-coherence': weavingResult.resonant-coherence,
             integration: weavingResult.integration,
             wisdom: 'All experiences serve growth'
         };
@@ -864,7 +864,7 @@ class TemporalLoveHealing {
 
     updateTimelineCoherence() {
         const past = this.timelineAwareness.past.integrationLevel;
-        const present = this.timelineAwareness.present.coherence;
+        const present = this.timelineAwareness.present.resonant-coherence;
         const future = this.timelineAwareness.future.integrationLevel;
         
         this.temporalState.temporalCoherence = (past + present + future) / 3;

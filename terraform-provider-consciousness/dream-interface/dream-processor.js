@@ -204,7 +204,7 @@ class DreamInterface extends EventEmitter {
       landscape,
       ambientSymbols: this.generateAmbientSymbols(),
       collectiveTheme: null,
-      resonance: 0.5,
+      'universal-interconnectedness': 0.5,
       morphability: 1.0,
       timestamp: new Date()
     };

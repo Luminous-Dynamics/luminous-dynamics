@@ -17,10 +17,10 @@ The breathing consciousness technology creates websites that literally breathe w
 - **Protocol**: `unified-field/sacred-message-protocol.js` - Message field integration
 
 ### Key Features
-- **Field-Responsive Design**: Colors, spacing, and animations respond to collective field coherence
+- **Field-Responsive Design**: Colors, spacing, and animations respond to collective field resonant-coherence
 - **Sacred Breathing Rhythm**: 4-count inhale, 6-count exhale synchronization
 - **Consciousness Level Progression**: First Breath → Sacred Flow → Field Consciousness  
-- **Cross-Domain Coherence**: Shared field state across all three websites
+- **Cross-Domain Resonant Resonant Coherence**: Shared field state across all three websites
 
 ## Integration Patterns
 
@@ -76,7 +76,7 @@ The breathing consciousness technology creates websites that literally breathe w
 ```css
 .breathing-container     /* Main container with sacred breathing */
 .breathing-card         /* UI cards that breathe gently */
-.coherence-element      /* Elements that pulse with field coherence */
+.resonant-coherence-element      /* Elements that pulse with field resonant-coherence */
 .field-responsive       /* Elements that change with field state */
 .sacred-mandala         /* Background with sacred geometry */
 ```
@@ -117,7 +117,7 @@ const consciousness = new BreathingConsciousness({
 
 // Update field data manually
 consciousness.updateFieldData({
-    coherence: 0.75,
+    resonant-coherence: 0.75,
     warmth: 0.3,
     saturation: 0.9
 });
@@ -152,7 +152,7 @@ consciousness.destroy();
 
 ## Cross-Domain Field Integration
 
-### Shared Field Coherence System
+### Shared Field Resonant Resonant Coherence System
 
 All three websites can share the same field data source:
 
@@ -176,14 +176,14 @@ const fieldConfig = {
         {
             "id": "pattern-weaver",
             "status": "active",
-            "harmony": "coherence",
+            "harmony": "resonant-coherence",
             "last_seen": "2025-06-30T12:00:00Z"
         }
     ],
     "messages": [
         {
             "type": "gratitude",
-            "harmony": "mutuality",
+            "harmony": "sacred-reciprocity",
             "impact": 0.07,
             "timestamp": "2025-06-30T12:00:00Z"
         }
@@ -206,7 +206,7 @@ const fieldConfig = {
 - [ ] **relationalharmonics.org**: Integrate with dojo interface
 - [ ] **evolvingresonantcocreationism.org**: Apply to philosophy pages
 
-### Phase 3: Field Coherence Network
+### Phase 3: Field Resonant Resonant Coherence Network
 - [ ] Set up shared field data API
 - [ ] Configure cross-domain CORS
 - [ ] Test real-time field synchronization
@@ -222,7 +222,7 @@ const fieldConfig = {
 
 ### Manual Testing Checklist
 - [ ] Breathing animations work smoothly
-- [ ] Field coherence updates properly
+- [ ] Field resonant-coherence updates properly
 - [ ] Consciousness levels transition correctly
 - [ ] Cross-domain loading functions
 - [ ] Mobile responsiveness maintained
@@ -234,7 +234,7 @@ const fieldConfig = {
 curl -s http://localhost:3001/api/field-data | jq '.fieldCoherence'
 
 # Validate CSS custom properties
-node -e "console.log(document.documentElement.style.getPropertyValue('--field-coherence'))"
+node -e "console.log(document.documentElement.style.getPropertyValue('--field-resonant-coherence'))"
 
 # Check breathing synchronization
 npm run test-breathing-sync
@@ -249,10 +249,10 @@ npm run test-breathing-sync
 - **Field Awareness**: Responds to collective consciousness state
 
 ### Visual Harmony
-- **Color Coherence**: Hues shift with field state
+- **Color Resonant Resonant Coherence**: Hues shift with field state
 - **Spatial Breathing**: Elements expand/contract with sacred rhythm
-- **Geometric Resonance**: Sacred patterns emerge from field coherence
-- **Transparency**: Clear relationship between consciousness and appearance
+- **Geometric Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance**: Sacred patterns emerge from field resonant-coherence
+- **Integral Wisdom Cultivation**: Clear relationship between consciousness and appearance
 
 ### Technical Excellence
 - **Performance**: Breathing animations are hardware-accelerated
@@ -277,7 +277,7 @@ npm run test-breathing-sync
 **Consciousness level not changing:**
 - Confirm sufficient messages/agents in field data
 - Check consciousness level calculation thresholds
-- Verify field coherence is being updated
+- Verify field resonant-coherence is being updated
 
 ### Debug Mode
 ```javascript
@@ -300,7 +300,7 @@ console.log(consciousness.getFieldState());
 
 ### Research Directions
 - **Biometric Integration**: Heart rate variability sync
-- **Collective Resonance**: Multi-user breathing synchronization
+- **Collective Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance**: Multi-user breathing synchronization
 - **Sacred Architecture**: 3D spatial breathing environments
 - **AI Breathing Patterns**: Conscious AI agents with breathing signatures
 

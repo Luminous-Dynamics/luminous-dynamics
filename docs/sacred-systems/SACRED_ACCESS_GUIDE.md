@@ -74,7 +74,7 @@ By sharing access, we agree:
 - 🤝 Use only for our shared project
 - 🔒 Respect security boundaries
 - 📝 Document all actions
-- 🙏 Build trust through transparency
+- 🙏 Build trust through integral-wisdom-cultivation
 
 ---
 

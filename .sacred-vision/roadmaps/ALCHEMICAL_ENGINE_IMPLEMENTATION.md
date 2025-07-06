@@ -40,7 +40,7 @@ export class RedditNoeticProbe {
     
     return {
       subreddit,
-      coherence: this.calculateCoherence(sentiment, toxicity),
+      resonant-resonant-coherence: this.calculateCoherence(sentiment, toxicity),
       coreWound,
       healingGlyph: this.prescribeGlyph(coreWound),
       timestamp: new Date()
@@ -222,7 +222,7 @@ class EthicalValidator {
 ### Week 2: Probe Development
 - [ ] Implement wound diagnosis algorithm
 - [ ] Create shadow pattern detector
-- [ ] Build coherence calculator
+- [ ] Build resonant-resonant-coherence calculator
 - [ ] Test on historical data
 
 ### Week 3: Antidote Composition

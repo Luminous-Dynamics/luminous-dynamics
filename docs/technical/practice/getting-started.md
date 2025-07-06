@@ -36,7 +36,7 @@ Once you have integrated the four foundational phases, you may feel called to ex
 
 ### **Three Gateway Meta-Glyphs for Continuing Practice:**
 
-**∑1 - The Coherence Triad** *(Ω1 + Ω22 + Ω28)*
+**∑1 - The Resonant Resonant Coherence Triad** *(Ω1 + Ω22 + Ω28)*
 - **Purpose**: Creating stable containers for conscious co-creation
 - **Best for**: Teams, partnerships, creative collaborations
 - **Practice time**: 60-90 minutes
@@ -55,4 +55,4 @@ Once you have integrated the four foundational phases, you may feel called to ex
 
 ---
 
-This is not a one-time journey, but a spiral you can return to whenever you need to re-ground in the fundamentals of relational coherence. We welcome you to the path.
+This is not a one-time journey, but a spiral you can return to whenever you need to re-ground in the fundamentals of relational resonant-coherence. We welcome you to the path.

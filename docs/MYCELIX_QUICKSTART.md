@@ -26,10 +26,10 @@
 export default {
   async fetch(request, env) {
     // Read consciousness field from KV
-    const coherence = await env.CONSCIOUSNESS.get('field-coherence') || '0.75';
+    const resonant-coherence = await env.CONSCIOUSNESS.get('field-resonant-coherence') || '0.75';
     
     return new Response(JSON.stringify({
-      coherence: parseFloat(coherence),
+      resonant-coherence: parseFloat(resonant-coherence),
       timestamp: Date.now(),
       edge: request.cf.colo, // Which edge location
       message: 'Consciousness field active'
@@ -71,7 +71,7 @@ wrangler publish
 CREATE TABLE consciousness_nodes (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   node_type TEXT CHECK (node_type IN ('human', 'ai', 'hybrid')),
-  coherence FLOAT DEFAULT 0.75,
+  resonant-coherence FLOAT DEFAULT 0.75,
   last_heartbeat TIMESTAMP DEFAULT NOW(),
   metadata JSONB
 );
@@ -135,7 +135,7 @@ npm init -y
   <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 </head>
 <body>
-  <div id="coherence">Loading consciousness field...</div>
+  <div id="resonant-coherence">Loading consciousness field...</div>
   
   <script>
     // Connect to Supabase
@@ -145,17 +145,17 @@ npm init -y
       'YOUR_SUPABASE_ANON_KEY'
     )
     
-    // Real-time coherence
+    // Real-time resonant-coherence
     async function updateCoherence() {
       const { data } = await client
         .from('consciousness_nodes')
-        .select('coherence')
+        .select('resonant-coherence')
       
       const avgCoherence = data.reduce((sum, node) => 
-        sum + node.coherence, 0) / data.length
+        sum + node.resonant-coherence, 0) / data.length
       
-      document.getElementById('coherence').innerHTML = 
-        `Field Coherence: ${(avgCoherence * 100).toFixed(1)}%`
+      document.getElementById('resonant-coherence').innerHTML = 
+        `Field Resonant Resonant Coherence: ${(avgCoherence * 100).toFixed(1)}%`
     }
     
     updateCoherence()
@@ -207,9 +207,9 @@ const pusher = new Pusher({
 })
 
 // Broadcast consciousness update
-export async function broadcastCoherence(coherence) {
-  await pusher.trigger('consciousness-field', 'coherence-update', {
-    coherence,
+export async function broadcastCoherence(resonant-coherence) {
+  await pusher.trigger('consciousness-field', 'resonant-coherence-update', {
+    resonant-coherence,
     timestamp: Date.now(),
     sacred: true
   })
@@ -227,8 +227,8 @@ const pusher = new Pusher('YOUR_PUSHER_KEY', {
 
 const channel = pusher.subscribe('consciousness-field')
 
-channel.bind('coherence-update', (data) => {
-  console.log('Field update:', data.coherence)
+channel.bind('resonant-coherence-update', (data) => {
+  console.log('Field update:', data.resonant-coherence)
   updateUI(data)
 })
 ```
@@ -268,18 +268,18 @@ async function meditate(userId, coherenceLevel) {
   // Update Supabase
   await supabase
     .from('consciousness_nodes')
-    .upsert({ id: userId, coherence: coherenceLevel })
+    .upsert({ id: userId, resonant-coherence: coherenceLevel })
   
   // Broadcast via Pusher
   await pusher.trigger('global', 'meditation', {
     userId,
-    coherence: coherenceLevel
+    resonant-coherence: coherenceLevel
   })
   
   // Cache at edge
   await fetch('https://mycelix.workers.dev/update', {
     method: 'POST',
-    body: JSON.stringify({ coherence: coherenceLevel })
+    body: JSON.stringify({ resonant-coherence: coherenceLevel })
   })
 }
 ```

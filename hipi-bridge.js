@@ -81,7 +81,7 @@ class HIPIBridge {
     // Infer relationship from working context
     const relating = this.inferRelating(locationComponents);
     
-    // Calculate field coherence
+    // Calculate field resonant-coherence
     const field = await this.calculateField(being, relating);
     
     // Transform message into offering
@@ -138,7 +138,7 @@ class HIPIBridge {
   }
   
   /**
-   * Calculate field coherence based on activity
+   * Calculate field resonant-coherence based on activity
    */
   async calculateField(being, relating) {
     // Get relationship history
@@ -154,7 +154,7 @@ class HIPIBridge {
       this.currentCoherence + fluctuation
     ));
     
-    // Relationship depth affects coherence
+    // Relationship depth affects resonant-coherence
     const relationshipBonus = Math.min(10, history.messages / 10);
     const fieldCoherence = Math.round(this.currentCoherence + relationshipBonus);
     
@@ -254,7 +254,7 @@ class HIPIBridge {
       );
       this.bridgeData.evolutionMetrics.fieldProgression.push({
         timestamp: parsed.timestamp,
-        coherence: fieldValue,
+        'resonant-coherence': fieldValue,
         type: parsed.type
       });
     }
@@ -299,7 +299,7 @@ class HIPIBridge {
     current.messages++;
     current.lastContact = new Date();
     
-    // Update average coherence
+    // Update average resonant-coherence
     const currentField = parseInt(this.currentCoherence);
     current.avgCoherence = Math.round(
       (current.avgCoherence * (current.messages - 1) + currentField) / current.messages
@@ -330,7 +330,7 @@ class HIPIBridge {
       relationships: relationships.map(([key, data]) => ({
         connection: key,
         strength: data.messages,
-        coherence: `${data.avgCoherence}%`,
+        'resonant-coherence': `${data.avgCoherence}%`,
         duration: this.formatDuration(data.firstContact, data.lastContact)
       })).sort((a, b) => b.strength - a.strength),
       recommendations: this.generateRecommendations()
@@ -347,8 +347,8 @@ class HIPIBridge {
     if (progression.length < 2) return { trend: 'emerging', insight: 'Insufficient data' };
     
     const recent = progression.slice(-10);
-    const avgRecent = recent.reduce((sum, p) => sum + p.coherence, 0) / recent.length;
-    const firstAvg = progression.slice(0, 10).reduce((sum, p) => sum + p.coherence, 0) / 
+    const avgRecent = recent.reduce((sum, p) => sum + p.resonant-coherence, 0) / recent.length;
+    const firstAvg = progression.slice(0, 10).reduce((sum, p) => sum + p.resonant-coherence, 0) / 
                      Math.min(10, progression.length);
     
     const trend = avgRecent > firstAvg ? 'ascending' : 
@@ -358,7 +358,7 @@ class HIPIBridge {
       'Relational awareness is strengthening the field' :
       trend === 'integrating' ? 
       'Deep integration work is happening' :
-      'Field has reached stable coherence';
+      'Field has reached stable resonant-coherence';
     
     return { trend, insight, averageCoherence: Math.round(avgRecent) };
   }
@@ -375,7 +375,7 @@ class HIPIBridge {
       recs.push({
         priority: 'high',
         action: 'Begin adding relational components to messages',
-        benefit: 'Increase field coherence by 5-10%'
+        benefit: 'Increase field resonant-coherence by 5-10%'
       });
     }
     
@@ -393,11 +393,11 @@ class HIPIBridge {
       });
     }
     
-    // Field coherence
+    // Field resonant-coherence
     if (this.currentCoherence < 85) {
       recs.push({
         priority: 'high',
-        action: 'Practice coherence-building exercises',
+        action: 'Practice resonant-coherence-building exercises',
         benefit: 'Return to optimal flow state'
       });
     }
@@ -490,7 +490,7 @@ async function main() {
         report.relationships.slice(0, 5).forEach(rel => {
           console.log(`   ${rel.connection}`);
           console.log(`     Strength: ${rel.strength} messages`);
-          console.log(`     Coherence: ${rel.coherence}`);
+          console.log(`     Resonant Resonant Coherence: ${rel.resonant-coherence}`);
           console.log(`     Duration: ${rel.duration}`);
         });
       }

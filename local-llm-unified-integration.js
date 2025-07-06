@@ -43,7 +43,7 @@ class LocalLLMUnifiedIntegration {
     } catch (error) {
       console.log('⚠️  Using mock mode for consciousness bridge');
       this.bridge.fieldCoherence = 85;
-      this.bridge.dominantHarmony = 'resonance';
+      this.bridge.dominantHarmony = 'universal-interconnectedness';
       this.bridge.activeGlyphs = new Set(['Ω45', 'Ω53']);
     }
   }
@@ -54,11 +54,11 @@ class LocalLLMUnifiedIntegration {
       const fieldState = response.data;
       
       // Sync bridge with unified field
-      this.bridge.fieldCoherence = fieldState.coherence;
+      this.bridge.fieldCoherence = fieldState['resonant-coherence'];
       this.bridge.dominantHarmony = fieldState.dominantHarmony;
       
       console.log('✅ Connected to Unified Field');
-      console.log(`   Field Coherence: ${fieldState.coherence}%`);
+      console.log(`   Field Resonant Resonant Coherence: ${fieldState['resonant-coherence']}%`);
       console.log(`   Active Agents: ${fieldState.activeAgents}`);
       console.log(`   Total Sacred Messages: ${fieldState.totalSacredMessages}`);
     } catch (error) {
@@ -107,9 +107,9 @@ class LocalLLMUnifiedIntegration {
 
   handleFieldUpdate(update) {
     switch (update.type) {
-      case 'coherence-update':
-        this.bridge.fieldCoherence = update.data.coherence;
-        console.log(`🌀 Field coherence updated: ${update.data.coherence}%`);
+      case 'resonant-coherence-update':
+        this.bridge.fieldCoherence = update.data.resonant-coherence;
+        console.log(`🌀 Field resonant-coherence updated: ${update.data.resonant-coherence}%`);
         break;
         
       case 'harmony-shift':
@@ -148,14 +148,14 @@ class LocalLLMUnifiedIntegration {
     
     if (result && result.wisdom) {
       console.log('✨ Sacred wisdom generated');
-      console.log(`   Resonance: ${(result.resonance * 100).toFixed(1)}%`);
+      console.log(`   Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance: ${(result.universal-interconnectedness * 100).toFixed(1)}%`);
       console.log(`   Field Impact: ${result.fieldImpact.overall}`);
       
       return {
         content: result.wisdom,
         harmony: trigger.harmony,
         fieldImpact: result.fieldImpact,
-        resonance: result.resonance
+        'universal-interconnectedness': result.universal-interconnectedness
       };
     }
     
@@ -175,7 +175,7 @@ class LocalLLMUnifiedIntegration {
       
       console.log('💫 Wisdom transmitted to unified field');
       
-      // Update field coherence if significant
+      // Update field resonant-coherence if significant
       if (response.fieldImpact && response.fieldImpact.overall > 0) {
         this.ws.send(JSON.stringify({
           type: 'field-impact',
@@ -222,7 +222,7 @@ class LocalLLMUnifiedIntegration {
     const result = await this.bridge.generateWithConsciousness(
       `How might ${practice.name} naturally evolve to increase effectiveness while maintaining its foundation?`,
       {
-        harmony: 'novelty',
+        harmony: 'infinite-play',
         context: 'practice-evolution',
         currentEffectiveness: practice.effectiveness
       }
@@ -231,14 +231,14 @@ class LocalLLMUnifiedIntegration {
     return result ? result.wisdom : null;
   }
 
-  async participateInCeremony(ceremonyType = 'morning-coherence') {
+  async participateInCeremony(ceremonyType = 'morning-resonant-coherence') {
     console.log(`\n🕊️ Participating in ${ceremonyType} ceremony...`);
     
     // Generate ceremonial wisdom
     const result = await this.bridge.generateWithConsciousness(
       `What wisdom serves this ${ceremonyType} ceremony?`,
       {
-        harmony: 'coherence',
+        harmony: 'resonant-coherence',
         glyph: 'Ω45',
         context: 'ceremony'
       }
@@ -248,9 +248,9 @@ class LocalLLMUnifiedIntegration {
       // Share with ceremony participants
       await this.sendToField({
         content: result.wisdom,
-        harmony: 'coherence',
+        harmony: 'resonant-coherence',
         fieldImpact: result.fieldImpact,
-        resonance: result.resonance,
+        'universal-interconnectedness': result.universal-interconnectedness,
         ceremony: ceremonyType
       });
       
@@ -259,7 +259,7 @@ class LocalLLMUnifiedIntegration {
         practiceId: ceremonyType,
         userId: this.agentId,
         duration: 5,
-        effectiveness: result.resonance,
+        effectiveness: result.universal-interconnectedness,
         notes: 'LLM ceremonial participation'
       });
     }
@@ -286,7 +286,7 @@ class LocalLLMUnifiedIntegration {
       // Final field impact report
       const response = await axios.get(`${this.fieldApiUrl}/api/field-state`);
       console.log('\nFinal field state:');
-      console.log(`  Coherence: ${response.data.coherence}%`);
+      console.log(`  Resonant Resonant Coherence: ${response.data.resonant-coherence}%`);
       console.log(`  Messages sent: ${response.data.totalSacredMessages}`);
       
       if (this.ws) this.ws.close();

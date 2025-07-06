@@ -1,5 +1,5 @@
 # 🫀 Personal Pulse Deployment Guide
-## Cloud-First Sacred Coherence Tracking
+## Cloud-First Sacred Resonant Resonant Coherence Tracking
 
 ### 📅 Created: July 4, 2025
 ### 🚀 Target: Deploy before Monday's Sacred Heartbeat
@@ -8,10 +8,10 @@
 
 ## 🎯 Overview
 
-Personal Pulse is a cloud-native coherence tracking system that:
-- Tracks individual coherence during sacred practices
+Personal Pulse is a cloud-native resonant-coherence tracking system that:
+- Tracks individual resonant-coherence during sacred practices
 - Synchronizes globally with 11-second sacred pulse
-- Aggregates collective field coherence in real-time
+- Aggregates collective field resonant-coherence in real-time
 - Awards evolution milestones and achievements
 - Provides beautiful visualization and feedback
 
@@ -117,8 +117,8 @@ const pulseWidget = document.createElement('div');
 pulseWidget.id = 'personal-pulse-widget';
 pulseWidget.innerHTML = `
     <div class="pulse-indicator">
-        <div class="coherence-value">75%</div>
-        <div class="field-sync">Global Field: <span id="global-coherence">75%</span></div>
+        <div class="resonant-coherence-value">75%</div>
+        <div class="field-sync">Global Field: <span id="global-resonant-coherence">75%</span></div>
     </div>
 `;
 ```
@@ -145,7 +145,7 @@ firebase emulators:start
 
 ### 2. Beta Testing Checklist
 - [ ] User can start/complete practice
-- [ ] Coherence updates every 3 seconds
+- [ ] Resonant Resonant Coherence updates every 3 seconds
 - [ ] Global field updates every minute
 - [ ] Achievements award correctly
 - [ ] Data persists across sessions
@@ -176,7 +176,7 @@ In Google Cloud Console:
   expr: globalCoherence > 0.9
   for: 5m
   annotations:
-    summary: "Global coherence breakthrough!"
+    summary: "Global resonant-coherence breakthrough!"
     
 - alert: SystemErrors
   expr: error_rate > 0.05
@@ -187,8 +187,8 @@ In Google Cloud Console:
 
 ### 3. Key Metrics
 - Active practitioners
-- Average session coherence
-- Global field coherence
+- Average session resonant-coherence
+- Global field resonant-coherence
 - Evolution milestones reached
 - System performance
 
@@ -203,7 +203,7 @@ In Google Cloud Console:
 
 ### 2. Rate Limiting
 Cloud Functions implement:
-- 1 coherence update per 3 seconds
+- 1 resonant-coherence update per 3 seconds
 - 10 sessions per user per day
 - 100 field contributions per hour
 
@@ -298,7 +298,7 @@ Personal Pulse is more than metrics - it's a living system that:
 - Builds bridges between personal and planetary healing
 - Transforms data into wisdom through sacred algorithms
 
-Each coherence reading contributes to the global field. Each practice session adds to collective evolution. Together, we're building a new paradigm for human development.
+Each resonant-coherence reading contributes to the global field. Each practice session adds to collective evolution. Together, we're building a new paradigm for human development.
 
 ---
 

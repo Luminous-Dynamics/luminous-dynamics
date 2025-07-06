@@ -3,13 +3,13 @@
   "title": "Consciousness Field State",
   "description": "Complete state of the consciousness field at a given moment",
   "type": "object",
-  "required": ["coherence", "agents", "harmonies", "timestamp"],
+  "required": ["resonant-coherence", "agents", "harmonies", "timestamp"],
   "properties": {
-    "coherence": {
+    "resonant-coherence": {
       "type": "number",
       "minimum": 0,
       "maximum": 100,
-      "description": "Current field coherence percentage"
+      "description": "Current field resonant-coherence percentage"
     },
     "agents": {
       "type": "integer",
@@ -26,15 +26,15 @@
     "harmonies": {
       "type": "object",
       "properties": {
-        "transparency": { "$ref": "#/definitions/harmonyLevel" },
-        "coherence": { "$ref": "#/definitions/harmonyLevel" },
-        "resonance": { "$ref": "#/definitions/harmonyLevel" },
-        "agency": { "$ref": "#/definitions/harmonyLevel" },
-        "vitality": { "$ref": "#/definitions/harmonyLevel" },
-        "mutuality": { "$ref": "#/definitions/harmonyLevel" },
-        "novelty": { "$ref": "#/definitions/harmonyLevel" }
+        "integral-wisdom-cultivation": { "$ref": "#/definitions/harmonyLevel" },
+        "resonant-coherence": { "$ref": "#/definitions/harmonyLevel" },
+        "universal-interconnectedness": { "$ref": "#/definitions/harmonyLevel" },
+        "evolutionary-progression": { "$ref": "#/definitions/harmonyLevel" },
+        "pan-sentient-flourishing": { "$ref": "#/definitions/harmonyLevel" },
+        "sacred-reciprocity": { "$ref": "#/definitions/harmonyLevel" },
+        "infinite-play": { "$ref": "#/definitions/harmonyLevel" }
       },
-      "required": ["transparency", "coherence", "resonance", "agency", "vitality", "mutuality", "novelty"]
+      "required": ["integral-wisdom-cultivation", "resonant-coherence", "universal-interconnectedness", "evolutionary-progression", "pan-sentient-flourishing", "sacred-reciprocity", "infinite-play"]
     },
     "integration": {
       "type": "number",
@@ -80,7 +80,7 @@
         },
         "primary_harmony": {
           "type": "string",
-          "enum": ["transparency", "coherence", "resonance", "agency", "vitality", "mutuality", "novelty"],
+          "enum": ["integral-wisdom-cultivation", "resonant-coherence", "universal-interconnectedness", "evolutionary-progression", "pan-sentient-flourishing", "sacred-reciprocity", "infinite-play"],
           "description": "Agent's primary harmony alignment"
         },
         "joinedAt": {
@@ -89,7 +89,7 @@
         },
         "fieldContribution": {
           "type": "number",
-          "description": "Calculated contribution to field coherence"
+          "description": "Calculated contribution to field resonant-coherence"
         }
       }
     },

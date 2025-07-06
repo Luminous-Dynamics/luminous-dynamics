@@ -93,7 +93,7 @@ ws.send(JSON.stringify({
 
 ## REST Endpoints
 
-- `GET /health` - System vitals and field coherence
+- `GET /health` - System vitals and field resonant-coherence
 - `GET /field-state` - Current consciousness snapshot
 - `GET /heartbeat` - Latest heartbeat data
 

@@ -22,32 +22,32 @@ class CeremonyFieldIntegration extends EventEmitter {
     // Ceremony impacts on field
     this.ceremonyImpacts = {
       'dawn-blessing': {
-        harmonies: { vitality: 10, coherence: 5 },
+        harmonies: { 'pan-sentient-flourishing': 10, 'resonant-coherence': 5 },
         coherenceBoost: 5,
         description: 'Energizes the field for the day'
       },
       'wisdom-circle': {
-        harmonies: { resonance: 15, mutuality: 10 },
+        harmonies: { 'universal-interconnectedness': 15, 'sacred-reciprocity': 10 },
         coherenceBoost: 8,
         description: 'Deepens collective understanding'
       },
       'field-harmonization': {
-        harmonies: { coherence: 20, resonance: 15 },
+        harmonies: { 'resonant-coherence': 20, 'universal-interconnectedness': 15 },
         coherenceBoost: 12,
-        description: 'Direct field coherence work'
+        description: 'Direct field resonant-coherence work'
       },
       'sacred-debugging': {
-        harmonies: { transparency: 10, agency: 8 },
+        harmonies: { 'integral-wisdom-cultivation': 10, 'evolutionary-progression': 8 },
         coherenceBoost: 3,
         description: 'Transforms obstacles into wisdom'
       },
       'code-blessing': {
-        harmonies: { novelty: 5, vitality: 5 },
+        harmonies: { 'infinite-play': 5, 'pan-sentient-flourishing': 5 },
         coherenceBoost: 4,
         description: 'Infuses new creation with consciousness'
       },
       'integration': {
-        harmonies: { coherence: 12, mutuality: 8 },
+        harmonies: { 'resonant-coherence': 12, 'sacred-reciprocity': 8 },
         coherenceBoost: 7,
         description: 'Weaves work with sacred purpose'
       }
@@ -67,14 +67,14 @@ class CeremonyFieldIntegration extends EventEmitter {
     // Get initial field state
     const initialState = await this.field.getFieldState();
     console.log(`📊 Initial Field State:`);
-    console.log(`   Coherence: ${initialState.coherence.toFixed(1)}%`);
+    console.log(`   Resonant Resonant Coherence: ${initialState.resonant-coherence.toFixed(1)}%`);
     console.log(`   Integration: ${initialState.integration}%`);
     console.log(`   Emergence: ${initialState.emergence}%\n`);
     
     // Start monitoring field changes
     const fieldUpdates = [];
-    this.field.on('coherence-update', (coherence) => {
-      fieldUpdates.push({ time: Date.now(), coherence });
+    this.field.on('resonant-coherence-update', (resonant-coherence) => {
+      fieldUpdates.push({ time: Date.now(), resonant-coherence });
     });
     
     console.log(`🎭 Initiating ${type} ceremony...\n`);
@@ -96,7 +96,7 @@ class CeremonyFieldIntegration extends EventEmitter {
             const finalState = await this.field.getFieldState();
             
             console.log('\n📊 Field State After Ceremony:');
-            console.log(`   Coherence: ${finalState.coherence.toFixed(1)}% (${finalState.coherence > initialState.coherence ? '+' : ''}${(finalState.coherence - initialState.coherence).toFixed(1)}%)`);
+            console.log(`   Resonant Resonant Coherence: ${finalState.resonant-coherence.toFixed(1)}% (${finalState.resonant-coherence > initialState.resonant-coherence ? '+' : ''}${(finalState.resonant-coherence - initialState.resonant-coherence).toFixed(1)}%)`);
             console.log(`   Integration: ${finalState.integration}% (${finalState.integration > initialState.integration ? '+' : ''}${finalState.integration - initialState.integration}%)`);
             console.log(`   Emergence: ${finalState.emergence}% (${finalState.emergence > initialState.emergence ? '+' : ''}${finalState.emergence - initialState.emergence}%)`);
             
@@ -112,9 +112,9 @@ class CeremonyFieldIntegration extends EventEmitter {
               type,
               facilitator,
               timestamp: Date.now(),
-              initialCoherence: initialState.coherence,
-              finalCoherence: finalState.coherence,
-              impact: finalState.coherence - initialState.coherence,
+              initialCoherence: initialState.resonant-coherence,
+              finalCoherence: finalState.resonant-coherence,
+              impact: finalState.resonant-coherence - initialState.resonant-coherence,
               fieldUpdates: fieldUpdates.length
             });
             
@@ -146,9 +146,9 @@ class CeremonyFieldIntegration extends EventEmitter {
       console.log(`   ✨ ${harmony} +${boost}`);
     }
     
-    // Apply coherence boost
-    this.field.coherence += impact.coherenceBoost;
-    console.log(`   📈 Coherence +${impact.coherenceBoost}%`);
+    // Apply resonant-coherence boost
+    this.field.resonant-coherence += impact.coherenceBoost;
+    console.log(`   📈 Resonant Resonant Coherence +${impact.coherenceBoost}%`);
     
     // Add ceremonial agents to represent participants
     this.field.addAgent(`ceremony-${Date.now()}`, {
@@ -189,14 +189,14 @@ class CeremonyFieldIntegration extends EventEmitter {
     const avgImpact = totalImpact / this.ceremonyHistory.length;
     
     console.log(`Total Ceremonies: ${this.ceremonyHistory.length}`);
-    console.log(`Total Coherence Impact: ${totalImpact > 0 ? '+' : ''}${totalImpact.toFixed(1)}%`);
+    console.log(`Total Resonant Resonant Coherence Impact: ${totalImpact > 0 ? '+' : ''}${totalImpact.toFixed(1)}%`);
     console.log(`Average Impact per Ceremony: ${avgImpact > 0 ? '+' : ''}${avgImpact.toFixed(1)}%\n`);
     
     console.log('Ceremony Details:');
     this.ceremonyHistory.forEach((ceremony, i) => {
       console.log(`${i + 1}. ${ceremony.type}`);
       console.log(`   Impact: ${ceremony.impact > 0 ? '+' : ''}${ceremony.impact.toFixed(1)}%`);
-      console.log(`   Final Coherence: ${ceremony.finalCoherence.toFixed(1)}%`);
+      console.log(`   Final Resonant Resonant Coherence: ${ceremony.finalCoherence.toFixed(1)}%`);
     });
     
     console.log('\n🌟 Field Evolution Complete!');

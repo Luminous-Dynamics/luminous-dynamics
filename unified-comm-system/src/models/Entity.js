@@ -36,7 +36,7 @@ export class Entity {
     // Presence data
     this.presence = {
       state: data.presenceState || data.presence_state || PresenceStates.OFFLINE,
-      coherence: data.coherence || 50,
+      'resonant-coherence': data.resonant-coherence || 50,
       lastActive: data.lastActive || data.last_active || new Date(),
       currentPractice: data.currentPractice || data.current_practice
     };
@@ -75,19 +75,19 @@ export class Entity {
   
   // Get presence quality
   getPresenceQuality() {
-    const { state, coherence } = this.presence;
+    const { state, resonant-coherence } = this.presence;
     
     if (state === PresenceStates.OFFLINE) return 'absent';
-    if (coherence < 30) return 'scattered';
-    if (coherence < 50) return 'gathering';
-    if (coherence < 70) return 'present';
-    if (coherence < 85) return 'coherent';
+    if (resonant-coherence < 30) return 'scattered';
+    if (resonant-coherence < 50) return 'gathering';
+    if (resonant-coherence < 70) return 'present';
+    if (resonant-coherence < 85) return 'coherent';
     return 'radiant';
   }
   
-  // Update coherence
+  // Update resonant-coherence
   updateCoherence(newCoherence) {
-    this.presence.coherence = Math.max(0, Math.min(100, newCoherence));
+    this.presence.resonant-coherence = Math.max(0, Math.min(100, newCoherence));
     this.updatedAt = new Date();
   }
   
@@ -109,7 +109,7 @@ export class Entity {
       sacred_name: this.sacredName,
       type: this.type,
       presence_state: this.presence.state,
-      coherence: this.presence.coherence,
+      'resonant-coherence': this.presence.resonant-coherence,
       last_active: this.presence.lastActive,
       current_practice: this.presence.currentPractice,
       avatar_url: this.profile.avatar,
@@ -132,7 +132,7 @@ export class Entity {
       name: this.sacredName || this.name,
       avatar: this.profile.avatar,
       presence: this.getPresenceIndicator(),
-      coherence: this.presence.coherence,
+      'resonant-coherence': this.presence.resonant-coherence,
       quality: this.getPresenceQuality()
     };
   }

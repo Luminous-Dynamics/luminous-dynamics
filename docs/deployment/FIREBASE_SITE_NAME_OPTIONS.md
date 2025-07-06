@@ -7,8 +7,8 @@
 - Clear purpose, matches your main interface
 - Professional and memorable
 
-### Option 2: **evolving-resonance**
-- URL: https://evolving-resonance.web.app
+### Option 2: **evolving-universal-interconnectedness**
+- URL: https://evolving-universal-interconnectedness.web.app
 - Reflects the project name
 - Unique and meaningful
 

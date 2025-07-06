@@ -52,7 +52,7 @@ The Nave  Transept  Sanctuary
 
 **The Sanctuary** - Protected sacred data
 - Practitioner records
-- Field coherence core
+- Field resonant-coherence core
 - Sacred geometries
 
 **The Crypt** - Honoring our ancestors

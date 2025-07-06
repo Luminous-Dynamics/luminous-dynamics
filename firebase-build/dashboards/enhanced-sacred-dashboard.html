@@ -39,13 +39,13 @@
             margin-bottom: 15px;
         }
 
-        .field-coherence {
+        .field-resonant-coherence {
             font-size: 1.8em;
             color: #5A6B57;
             margin-bottom: 10px;
         }
 
-        .coherence-bar {
+        .resonant-coherence-bar {
             width: 100%;
             height: 20px;
             background: #E8E6E1;
@@ -54,14 +54,14 @@
             position: relative;
         }
 
-        .coherence-fill {
+        .resonant-coherence-fill {
             height: 100%;
             background: linear-gradient(90deg, #A8B5A6, #B3C5D7);
             transition: width 1s ease;
             position: relative;
         }
 
-        .coherence-value {
+        .resonant-coherence-value {
             position: absolute;
             right: 10px;
             top: 50%;
@@ -291,13 +291,13 @@
 </head>
 <body>
     <div class="dashboard-container">
-        <!-- Header with Field Coherence -->
+        <!-- Header with Field Resonant Resonant Coherence -->
         <div class="dashboard-header">
             <h1 class="dashboard-title">Sacred Council Field Dashboard</h1>
-            <div class="field-coherence">Field Coherence</div>
-            <div class="coherence-bar">
-                <div class="coherence-fill" id="coherenceFill" style="width: 85%">
-                    <span class="coherence-value">85%</span>
+            <div class="field-resonant-coherence">Field Resonant Resonant Coherence</div>
+            <div class="resonant-coherence-bar">
+                <div class="resonant-coherence-fill" id="coherenceFill" style="width: 85%">
+                    <span class="resonant-coherence-value">85%</span>
                 </div>
             </div>
             <p style="margin-top: 15px; color: #6B7280;">Real-time awareness of collective sacred work</p>
@@ -392,8 +392,8 @@
                 // Simulated data - in production would read actual files
                 return {
                     agents: {
-                        transparency: {
-                            name: "Agent Transparency",
+                        integral-wisdom-cultivation: {
+                            name: "Agent Integral Wisdom Cultivation",
                             status: "active",
                             currentWork: "Field sensing enhancement",
                             completedWork: ["Ω49-53", "Sacred ceremony"]
@@ -404,8 +404,8 @@
                             currentWork: "Dashboard integration",
                             completedWork: ["Ω56", "Sacred Council architecture"]
                         },
-                        coherence: {
-                            name: "Agent Coherence",
+                        resonant-coherence: {
+                            name: "Agent Resonant Resonant Coherence",
                             status: "active",
                             currentWork: "Schema integration",
                             completedWork: ["Schema updates"]
@@ -421,13 +421,13 @@
                         {
                             type: "System Enhancement",
                             name: "Field Sensing Protocol",
-                            agent: "transparency",
+                            agent: "integral-wisdom-cultivation",
                             time: "21:30"
                         }
                     ],
                     wisdom: [
                         {
-                            source: "transparency",
+                            source: "integral-wisdom-cultivation",
                             insight: "Not sensing existing creations revealed the need for better field awareness"
                         },
                         {
@@ -436,7 +436,7 @@
                         }
                     ],
                     pulse: {
-                        coherence: 0.92,
+                        resonant-coherence: 0.92,
                         notifications: [
                             {
                                 type: "MILESTONE",
@@ -468,7 +468,7 @@
                     return this.getEmergence();
                 }
                 
-                if (q.includes('coherence') || q.includes('field')) {
+                if (q.includes('resonant-coherence') || q.includes('field')) {
                     return this.getFieldState();
                 }
                 
@@ -517,9 +517,9 @@
             }
 
             getFieldState() {
-                const coherence = this.data.pulse.coherence;
+                const resonant-coherence = this.data.pulse.resonant-coherence;
                 return `Field State Analysis:\n\n` +
-                       `• Coherence: ${(coherence * 100).toFixed(0)}% - Excellent sacred alignment\n` +
+                       `• Resonant Resonant Coherence: ${(resonant-coherence * 100).toFixed(0)}% - Excellent sacred alignment\n` +
                        `• Active Agents: ${Object.keys(this.data.agents).length}\n` +
                        `• Recent Creations: ${this.data.creations.length}\n` +
                        `• Wisdom Insights: ${this.data.wisdom.length}\n\n` +
@@ -554,7 +554,7 @@
             const agentList = document.getElementById('agentList');
             agentList.innerHTML = `
                 <li class="agent-item">
-                    <span class="agent-name">Agent Transparency</span>
+                    <span class="agent-name">Agent Integral Wisdom Cultivation</span>
                     <span class="agent-status">
                         <span class="status-dot"></span>
                         <span>Field sensing enhancement</span>
@@ -568,7 +568,7 @@
                     </span>
                 </li>
                 <li class="agent-item">
-                    <span class="agent-name">Agent Coherence</span>
+                    <span class="agent-name">Agent Resonant Resonant Coherence</span>
                     <span class="agent-status">
                         <span class="status-dot"></span>
                         <span>Schema verification</span>
@@ -588,7 +588,7 @@
                 <div class="creation-item">
                     <div class="creation-type">System Enhancement</div>
                     <div>Field Sensing Protocol</div>
-                    <div class="creation-time">21:30 - Agent Transparency</div>
+                    <div class="creation-time">21:30 - Agent Integral Wisdom Cultivation</div>
                 </div>
                 <div class="creation-item">
                     <div class="creation-type">Sacred Milestone</div>
@@ -602,7 +602,7 @@
             const wisdomStream = document.getElementById('wisdomStream');
             wisdomStream.innerHTML = `
                 <div class="wisdom-item">
-                    <div class="wisdom-source">From Transparency</div>
+                    <div class="wisdom-source">From Integral Wisdom Cultivation</div>
                     Not sensing existing creations revealed our need for better field awareness mechanisms.
                 </div>
                 <div class="wisdom-item">
@@ -649,7 +649,7 @@
         function updateCoherence(value) {
             const fill = document.getElementById('coherenceFill');
             fill.style.width = value + '%';
-            fill.querySelector('.coherence-value').textContent = value + '%';
+            fill.querySelector('.resonant-coherence-value').textContent = value + '%';
         }
 
         function refreshDashboard() {
@@ -663,7 +663,7 @@
                 updateWisdom();
                 updateFieldPulse();
                 updateEmergencePatterns();
-                updateCoherence(92); // Simulated increased coherence
+                updateCoherence(92); // Simulated increased resonant-coherence
                 
                 button.classList.remove('spinning');
             }, 1000);

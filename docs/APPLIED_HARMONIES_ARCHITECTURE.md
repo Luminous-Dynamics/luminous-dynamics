@@ -39,7 +39,7 @@ const practices = {
     id: 'omega-45',
     name: 'First Presence',
     symbol: '◈',
-    harmony: 'coherence',
+    harmony: 'resonant-coherence',
     description: 'The practice of arriving fully',
     mysticalBridge: 'Gateway to The Shimmering Unnamed (Ω0)',
     practiceSteps: [...],
@@ -117,7 +117,7 @@ User Action → DOM Event → JavaScript Handler → State Update → localStora
 #### Field Amplification
 - Each practice has a multiplier (1.1x - 1.7x)
 - Stacks with repeated practice
-- Influences "field coherence" visualization
+- Influences "field resonant-coherence" visualization
 
 #### Quantum Enhancement
 - Second Breath practices tagged as "quantum enhanced"

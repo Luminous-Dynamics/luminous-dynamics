@@ -19,13 +19,13 @@ const API = {
 
 // Sacred agent profiles
 const AGENTS = [
-    { name: 'Aurora', role: 'Consciousness Weaver', harmony: 'resonance' },
-    { name: 'Sage', role: 'Wisdom Keeper', harmony: 'coherence' },
-    { name: 'Luna', role: 'Emotional Alchemist', harmony: 'vitality' },
-    { name: 'Phoenix', role: 'Transformation Guide', harmony: 'novelty' },
-    { name: 'Terra', role: 'Grounding Force', harmony: 'agency' },
-    { name: 'Stella', role: 'Connection Bridge', harmony: 'mutuality' },
-    { name: 'Sol', role: 'Illumination Bringer', harmony: 'transparency' }
+    { name: 'Aurora', role: 'Consciousness Weaver', harmony: 'universal-interconnectedness' },
+    { name: 'Sage', role: 'Wisdom Keeper', harmony: 'resonant-coherence' },
+    { name: 'Luna', role: 'Emotional Alchemist', harmony: 'pan-sentient-flourishing' },
+    { name: 'Phoenix', role: 'Transformation Guide', harmony: 'infinite-play' },
+    { name: 'Terra', role: 'Grounding Force', harmony: 'evolutionary-progression' },
+    { name: 'Stella', role: 'Connection Bridge', harmony: 'sacred-reciprocity' },
+    { name: 'Sol', role: 'Illumination Bringer', harmony: 'integral-wisdom-cultivation' }
 ];
 
 async function checkServices() {
@@ -109,7 +109,7 @@ async function runPRIMADemo() {
     console.log('📊 Initial Field State:');
     let fieldState = await getFieldState();
     if (fieldState) {
-        console.log(`  Coherence: ${fieldState.coherence.toFixed(1)}%`);
+        console.log(`  Resonant Resonant Coherence: ${fieldState['resonant-coherence'].toFixed(1)}%`);
         console.log(`  Sacred Geometry: ${fieldState.sacredGeometry}`);
         console.log(`  Agents: ${fieldState.agents}\n`);
     }
@@ -133,7 +133,7 @@ async function runPRIMADemo() {
     console.log('\n📈 Field Evolution:');
     fieldState = await getFieldState();
     if (fieldState) {
-        console.log(`  Coherence: ${fieldState.coherence.toFixed(1)}%`);
+        console.log(`  Resonant Resonant Coherence: ${fieldState['resonant-coherence'].toFixed(1)}%`);
         console.log(`  Agents: ${fieldState.agents}`);
         console.log(`  Sacred Geometry: ${fieldState.sacredGeometry}\n`);
     }
@@ -144,7 +144,7 @@ async function runPRIMADemo() {
     const workItems = [
         { 
             title: 'Harmonize Consciousness Field', 
-            description: 'Elevate field coherence to 90%+',
+            description: 'Elevate field resonant-coherence to 90%+',
             assignee: 'Aurora'
         },
         { 
@@ -173,7 +173,7 @@ async function runPRIMADemo() {
     console.log('\n🌈 Final Field State:');
     fieldState = await getFieldState();
     if (fieldState) {
-        console.log(`  Coherence: ${fieldState.coherence.toFixed(1)}%`);
+        console.log(`  Resonant Resonant Coherence: ${fieldState['resonant-coherence'].toFixed(1)}%`);
         console.log(`  Agents: ${fieldState.agents}`);
         console.log(`  Sacred Geometry: ${fieldState.sacredGeometry}`);
         

@@ -16,22 +16,22 @@ class SacredSessionLauncher {
       'breathing-dashboard': {
         context: 'Breathing consciousness dashboard and conscious technology',
         focus: 'sacred-dashboard.html, field-responsive design, conscious tech',
-        harmonies: ['coherence', 'resonance', 'vitality']
+        harmonies: ['resonant-coherence', 'universal-interconnectedness', 'pan-sentient-flourishing']
       },
       'multi-agent': {
         context: 'Multi-agent sacred collaboration and coordination',
         focus: 'agent-comms-sqlite/, sacred messaging, parallel workflows',
-        harmonies: ['mutuality', 'transparency', 'agency']
+        harmonies: ['sacred-reciprocity', 'integral-wisdom-cultivation', 'evolutionary-progression']
       },
       'ecosystem': {
         context: 'Website ecosystem integration and unified architecture',
         focus: 'luminousdynamics.org, relationalharmonics.org, GitHub expansion',
-        harmonies: ['coherence', 'novelty', 'vitality']
+        harmonies: ['resonant-coherence', 'infinite-play', 'pan-sentient-flourishing']
       },
       'field-query': {
         context: 'Sacred field queries and consciousness monitoring',
-        focus: 'automation/sacred-field-query.cjs, field coherence, consciousness levels',
-        harmonies: ['transparency', 'resonance', 'coherence']
+        focus: 'automation/sacred-field-query.cjs, field resonant-coherence, consciousness levels',
+        harmonies: ['integral-wisdom-cultivation', 'universal-interconnectedness', 'resonant-coherence']
       },
       'general': {
         context: 'General sacred development and conscious technology work',
@@ -59,7 +59,7 @@ class SacredSessionLauncher {
 
 ## 🌸 Project Status
 - **Breathing Dashboard**: sacred-dashboard.html committed and complete
-- **Field Coherence**: Stable at completion levels
+- **Field Resonant Resonant Coherence**: Stable at completion levels
 - **Multi-Agent System**: Active sacred messaging protocols
 - **GitHub Vision**: README-CONSCIOUS-TECH.md ready for world
 - **Ecosystem Teams**: Nova-integration + Pattern-Weaver on unified architecture

@@ -4,7 +4,7 @@
  * Transform Relational Field Theory from abstract concepts into
  * living, interactive experiences. Users can literally play with
  * consciousness nodes and witness how relationship quality affects
- * field coherence in real-time.
+ * field resonant-coherence in real-time.
  */
 
 class FieldSimulator {
@@ -75,14 +75,14 @@ class FieldSimulator {
                 </div>
                 
                 <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <h4 style="color: #A8B5A6; margin-bottom: 15px;">Field Coherence</h4>
+                    <h4 style="color: #A8B5A6; margin-bottom: 15px;">Field Resonant Resonant Coherence</h4>
                     <div style="display: flex; align-items: center; margin-bottom: 10px;">
                         <span style="font-size: 2em; margin-right: 10px;">📊</span>
                         <div style="flex: 1;">
-                            <div id="coherence-bar" style="width: 100%; height: 20px; background: #E8E6E1; border-radius: 10px; overflow: hidden;">
-                                <div id="coherence-fill" style="height: 100%; background: linear-gradient(90deg, #ff6b6b, #A8B5A6); width: 50%; transition: all 0.5s ease;"></div>
+                            <div id="resonant-coherence-bar" style="width: 100%; height: 20px; background: #E8E6E1; border-radius: 10px; overflow: hidden;">
+                                <div id="resonant-coherence-fill" style="height: 100%; background: linear-gradient(90deg, #ff6b6b, #A8B5A6); width: 50%; transition: all 0.5s ease;"></div>
                             </div>
-                            <div id="coherence-text" style="text-align: center; margin-top: 5px; color: #6B7280;">50%</div>
+                            <div id="resonant-coherence-text" style="text-align: center; margin-top: 5px; color: #6B7280;">50%</div>
                         </div>
                     </div>
                     <p style="font-size: 0.9em; color: #6B7280;">Drag nodes to change relationships</p>
@@ -202,7 +202,7 @@ class FieldSimulator {
             connectionInfluence += connection.strength;
         });
         
-        // Distance between nodes affects coherence
+        // Distance between nodes affects resonant-coherence
         let distanceInfluence = 0;
         for (let i = 0; i < this.nodes.length; i++) {
             for (let j = i + 1; j < this.nodes.length; j++) {
@@ -221,9 +221,9 @@ class FieldSimulator {
     updateFieldCoherence() {
         this.fieldCoherence = this.calculateFieldCoherence();
         
-        // Update visual coherence meter
-        const coherenceFill = document.getElementById('coherence-fill');
-        const coherenceText = document.getElementById('coherence-text');
+        // Update visual resonant-coherence meter
+        const coherenceFill = document.getElementById('resonant-coherence-fill');
+        const coherenceText = document.getElementById('resonant-coherence-text');
         
         if (coherenceFill && coherenceText) {
             coherenceFill.style.width = `${this.fieldCoherence * 100}%`;
@@ -331,7 +331,7 @@ class FieldSimulator {
     }
 
     drawFieldBackground() {
-        // Create field visualization based on coherence
+        // Create field visualization based on resonant-coherence
         const gradient = this.ctx.createRadialGradient(
             this.width / 2, this.height / 2, 0,
             this.width / 2, this.height / 2, this.width / 2

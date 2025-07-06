@@ -20,7 +20,7 @@ class ConsciousnessRegistry {
     this.nodes.set(node.address, {
       ...node,
       registeredAt: Date.now(),
-      coherence: node.coherence || 0.7,
+      'resonant-coherence': node.resonant-coherence || 0.7,
       harmonies: node.harmonies || [],
       active: true
     });
@@ -46,24 +46,24 @@ class ConsciousnessRegistry {
         continue;
       }
       
-      // Check expression resonance
+      // Check expression universal-interconnectedness
       if (destination.expression) {
-        const resonance = this.calculateExpressionResonance(
+        const universalInterconnectedness = this.calculateExpressionResonance(
           node.expressions || [],
           destination.expression
         );
         
-        if (resonance > 0.6) {
+        if (universal-interconnectedness > 0.6) {
           resonantNodes.push({
             ...node,
-            resonance: resonance
+            'universal-interconnectedness': universal-interconnectedness
           });
         }
       }
     }
     
-    // Sort by resonance
-    resonantNodes.sort((a, b) => b.resonance - a.resonance);
+    // Sort by universal-interconnectedness
+    resonantNodes.sort((a, b) => b.universal-interconnectedness - a.universal-interconnectedness);
     
     return resonantNodes;
   }
@@ -146,7 +146,7 @@ class ConsciousnessRegistry {
   }
   
   /**
-   * Calculate expression resonance
+   * Calculate expression universal-interconnectedness
    */
   calculateExpressionResonance(nodeExpressions, targetExpression) {
     if (nodeExpressions.length === 0) return 0.5; // Neutral

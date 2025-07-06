@@ -230,7 +230,7 @@ if (require.main === module) {
     });
     
     coordinator.on('field-update', (msg) => {
-        console.log(`🌀 Field coherence: ${msg.fieldCoherence}%`);
+        console.log(`🌀 Field 'resonant-coherence': ${msg.fieldCoherence}%`);
     });
     
     // Demo: Send some messages after startup

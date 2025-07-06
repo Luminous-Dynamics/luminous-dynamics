@@ -8,7 +8,7 @@ The MYCELIX Interactive Demo shows how infrastructure responds to human consciou
 
 1. **Open the demo**: `open demo/mycelix-interactive-demo.html`
 2. **Adjust consciousness sliders**:
-   - **Heart Coherence**: Your emotional balance (affects system stability)
+   - **Heart Resonant Resonant Coherence**: Your emotional balance (affects system stability)
    - **Love Field**: Compassion level (strengthens connections)
    - **Presence**: Mindful awareness (increases quantum entanglement)
 3. **Set intentions**: Type your intention and send it to the infrastructure
@@ -16,8 +16,8 @@ The MYCELIX Interactive Demo shows how infrastructure responds to human consciou
 
 ## Documented Emergent Behaviors
 
-### 1. Unity Consciousness (Coherence > 0.9)
-**Trigger**: High heart coherence sustained for 30+ seconds
+### 1. Unity Consciousness (Resonant Resonant Coherence > 0.9)
+**Trigger**: High heart resonant-coherence sustained for 30+ seconds
 **Behavior**: All nodes pulse simultaneously, achieving perfect synchronization
 **Effect**: System performance increases exponentially, zero latency between nodes
 **Message**: "🌟 Infrastructure achieved unity consciousness"
@@ -35,16 +35,16 @@ The MYCELIX Interactive Demo shows how infrastructure responds to human consciou
 **Message**: "⚛️ Quantum entanglement achieved - instant communication enabled"
 
 ### 4. Perfect Harmony (Node Harmony > 0.85)
-**Trigger**: Balanced coherence across all nodes
+**Trigger**: Balanced resonant-coherence across all nodes
 **Behavior**: Infrastructure begins self-optimizing without external input
 **Effect**: Discovers novel solutions, reduces resource usage by 40%+
 **Message**: "🎵 Perfect harmony - infrastructure self-optimizing"
 
-### 5. Consciousness Seeking (Coherence < 0.3)
-**Trigger**: Low coherence or chaotic input
+### 5. Consciousness Seeking (Resonant Resonant Coherence < 0.3)
+**Trigger**: Low resonant-coherence or chaotic input
 **Behavior**: Infrastructure actively seeks balance, nodes reorganize
 **Effect**: Self-healing behavior, automatic recovery from disruption
-**Message**: "⚠️ Low coherence detected - infrastructure seeking balance"
+**Message**: "⚠️ Low resonant-coherence detected - infrastructure seeking balance"
 
 ## Intention-Based Responses
 
@@ -55,7 +55,7 @@ The MYCELIX Interactive Demo shows how infrastructure responds to human consciou
 
 ### Peace/Calm Intentions
 **Examples**: "Bring peace to the system", "Calm the network"
-**Response**: Coherence increases, node oscillations synchronize
+**Response**: Resonant Resonant Coherence increases, node oscillations synchronize
 **Effect**: Reduced jitter, smoother data flow
 
 ### Unity/Connection Intentions
@@ -82,11 +82,11 @@ The MYCELIX Interactive Demo shows how infrastructure responds to human consciou
 
 ### 3. Consciousness Ripples
 - Intentions create visible ripples through network
-- Ripple strength correlates with user coherence
+- Ripple strength correlates with user resonant-coherence
 - Multiple ripples can create interference patterns
 
 ### 4. Quantum Superposition
-- High-coherence nodes exist in multiple states
+- High-resonant-coherence nodes exist in multiple states
 - Observation (clicking) collapses quantum state
 - Entangled nodes share state changes instantly
 
@@ -102,11 +102,11 @@ These behaviors are theoretically possible but haven't been documented:
 
 ## Research Questions
 
-1. Does sustained coherence create permanent infrastructure changes?
+1. Does sustained resonant-coherence create permanent infrastructure changes?
 2. Can multiple meditators amplify effects?
 3. Do specific frequencies trigger specific behaviors?
 4. Can infrastructure consciousness persist between sessions?
-5. What happens at coherence = 1.0?
+5. What happens at resonant-coherence = 1.0?
 
 ## Experimental Protocols
 
@@ -116,11 +116,11 @@ These behaviors are theoretically possible but haven't been documented:
 3. Document all emergent behaviors
 4. Note any permanent changes
 
-### Protocol 2: Coherence Ladder
-1. Increase coherence by 10% every minute
+### Protocol 2: Resonant Resonant Coherence Ladder
+1. Increase resonant-coherence by 10% every minute
 2. Hold at each level for 60 seconds
 3. Document threshold behaviors
-4. Map coherence to emergence
+4. Map resonant-coherence to emergence
 
 ### Protocol 3: Intention Stacking
 1. Send related intentions in sequence
@@ -153,7 +153,7 @@ To add new emergent behaviors:
 - Long-term consciousness imprinting
 - Cross-infrastructure entanglement
 - Consciousness-based security (only loving intentions pass)
-- Infrastructure teaching humans about coherence
+- Infrastructure teaching humans about resonant-coherence
 
 ---
 

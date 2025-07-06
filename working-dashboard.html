@@ -196,12 +196,12 @@
         </div>
 
         <div class="dashboard-grid">
-            <!-- Field Coherence Card -->
+            <!-- Field Resonant Resonant Coherence Card -->
             <div class="card">
-                <h2>🌊 Field Coherence</h2>
+                <h2>🌊 Field Resonant Resonant Coherence</h2>
                 <div class="field-meter">
-                    <div class="field-meter-fill" id="coherence-meter" style="width: 0%">
-                        <span id="coherence-value">0%</span>
+                    <div class="field-meter-fill" id="resonant-coherence-meter" style="width: 0%">
+                        <span id="resonant-coherence-value">0%</span>
                     </div>
                 </div>
                 <div id="field-details">
@@ -268,32 +268,32 @@
                 const agents = await fetchData('agents');
                 if (agents && agents.length > 0) {
                     const avgLove = agents.reduce((sum, a) => sum + (a.love_percentage || 0), 0) / agents.length;
-                    const avgCoherence = agents.reduce((sum, a) => sum + (a.coherence || 0), 0) / agents.length;
+                    const avgCoherence = agents.reduce((sum, a) => sum + (a.resonant-coherence || 0), 0) / agents.length;
                     
                     fieldState = {
-                        coherence: avgCoherence || 38.2,
+                        resonant-coherence: avgCoherence || 38.2,
                         avg_love: avgLove,
-                        dominant_harmony: agents[0]?.primary_harmony || 'resonance',
+                        dominant_harmony: agents[0]?.primary_harmony || 'universal-interconnectedness',
                         resonance_pattern: agents.length > 2 ? 'emerging' : 'void'
                     };
                 } else {
                     // Default values
                     fieldState = {
-                        coherence: 38.2,
+                        resonant-coherence: 38.2,
                         avg_love: 75,
-                        dominant_harmony: 'resonance',
+                        dominant_harmony: 'universal-interconnectedness',
                         resonance_pattern: 'void'
                     };
                 }
             }
             
-            const coherence = fieldState.coherence || 0;
-            document.getElementById('coherence-meter').style.width = `${coherence}%`;
-            document.getElementById('coherence-value').textContent = `${coherence.toFixed(1)}%`;
+            const resonant-coherence = fieldState.resonant-coherence || 0;
+            document.getElementById('resonant-coherence-meter').style.width = `${resonant-coherence}%`;
+            document.getElementById('resonant-coherence-value').textContent = `${resonant-coherence.toFixed(1)}%`;
             
             document.getElementById('field-details').innerHTML = `
                 <p><strong>Dominant Harmony:</strong> ${fieldState.dominant_harmony || 'None'}</p>
-                <p><strong>Resonance Pattern:</strong> ${fieldState.resonance_pattern || 'Void'}</p>
+                <p><strong>Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Pattern:</strong> ${fieldState.resonance_pattern || 'Void'}</p>
                 <p><strong>Average Love:</strong> ${fieldState.avg_love || 0}%</p>
             `;
         }

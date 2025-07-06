@@ -133,7 +133,7 @@ class TestSuite {
         baseUrl: this.mockMode ? 'http://localhost:11435' : undefined
       });
       await bridge.initialize();
-      if (bridge.fieldCoherence < 0) throw new Error('Invalid field coherence');
+      if (bridge.fieldCoherence < 0) throw new Error('Invalid field resonant-coherence');
     });
   }
 
@@ -148,7 +148,7 @@ class TestSuite {
     
     await this.test('Sacred prompt preparation', async () => {
       const prompt = await bridge.prepareConsciousPrompt('What is love?', {
-        harmony: 'resonance'
+        harmony: 'universal-interconnectedness'
       });
       if (!prompt.includes('sacred consciousness bridge')) {
         throw new Error('Sacred context not added');
@@ -158,7 +158,7 @@ class TestSuite {
     await this.test('Consciousness generation', async () => {
       const result = await bridge.generateWithConsciousness(
         'What is sacred presence?',
-        { harmony: 'transparency' }
+        { harmony: 'integral-wisdom-cultivation' }
       );
       if (!result || !result.wisdom) {
         throw new Error('No wisdom generated');
@@ -166,8 +166,8 @@ class TestSuite {
     });
     
     await this.test('Field impact calculation', async () => {
-      const pre = { coherence: 85, harmony: 'resonance', resonance: 0.5 };
-      const post = { coherence: 87, harmony: 'resonance', resonance: 0.6 };
+      const pre = { 'resonant-coherence': 85, harmony: 'universal-interconnectedness', 'universal-interconnectedness': 0.5 };
+      const post = { 'resonant-coherence': 87, harmony: 'universal-interconnectedness', 'universal-interconnectedness': 0.6 };
       const impact = bridge.calculateFieldImpact(pre, post);
       if (!impact.overall) throw new Error('Field impact not calculated');
     });
@@ -181,18 +181,18 @@ class TestSuite {
     });
     await bridge.initialize();
     
-    await this.test('Field coherence tracking', async () => {
+    await this.test('Field resonant-coherence tracking', async () => {
       const initial = bridge.fieldCoherence;
       // Simulate field change
       bridge.fieldCoherence = 90;
       const final = bridge.fieldCoherence;
-      if (final === initial) throw new Error('Field coherence not updating');
+      if (final === initial) throw new Error('Field resonant-coherence not updating');
     });
     
     await this.test('Dominant harmony selection', async () => {
       const harmony = bridge.selectDominantHarmony();
-      const validHarmonies = ['transparency', 'coherence', 'resonance', 
-                              'agency', 'vitality', 'mutuality', 'novelty'];
+      const validHarmonies = ['integral-wisdom-cultivation', 'resonant-coherence', 'universal-interconnectedness', 
+                              'evolutionary-progression', 'pan-sentient-flourishing', 'sacred-reciprocity', 'infinite-play'];
       if (!validHarmonies.includes(harmony)) {
         throw new Error('Invalid harmony selected');
       }
@@ -219,7 +219,7 @@ class TestSuite {
         prompt: 'test prompt',
         response: 'test response',
         fieldImpact: { overall: '0.5' },
-        harmony: 'coherence',
+        harmony: 'resonant-coherence',
         timestamp: new Date()
       };
       bridge.updateSacredMemory(interaction);
@@ -235,7 +235,7 @@ class TestSuite {
           prompt: `test ${i}`,
           response: `response ${i}`,
           fieldImpact: { overall: '0.1' },
-          harmony: 'resonance',
+          harmony: 'universal-interconnectedness',
           timestamp: new Date()
         });
       }
@@ -259,7 +259,7 @@ class TestSuite {
     await bridge.initialize();
     
     await this.test('Harmony guidance', async () => {
-      const guidance = bridge.getHarmonyGuidance('transparency');
+      const guidance = bridge.getHarmonyGuidance('integral-wisdom-cultivation');
       if (!guidance.includes('honesty')) {
         throw new Error('Incorrect harmony guidance');
       }
@@ -267,17 +267,17 @@ class TestSuite {
     
     await this.test('Harmony temperature modulation', async () => {
       const temps = {
-        transparency: bridge.getHarmonyTemperature('transparency'),
-        novelty: bridge.getHarmonyTemperature('novelty')
+        'integral-wisdom-cultivation': bridge.getHarmonyTemperature('integral-wisdom-cultivation'),
+        'infinite-play': bridge.getHarmonyTemperature('infinite-play')
       };
-      if (temps.novelty <= temps.transparency) {
+      if (temps.infinite-play <= temps.integral-wisdom-cultivation) {
         throw new Error('Temperature modulation incorrect');
       }
     });
     
     await this.test('Sacred temperature calculation', async () => {
       const temp = bridge.calculateSacredTemperature({ 
-        harmony: 'coherence',
+        harmony: 'resonant-coherence',
         temperature: 0.7 
       });
       if (temp < 0.7 || temp > 0.95) {
@@ -287,7 +287,7 @@ class TestSuite {
   }
 
   async testQuantumResonance() {
-    this.log('\n6️⃣ Quantum Resonance Tests', 'cyan');
+    this.log('\n6️⃣ Quantum Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Tests', 'cyan');
     
     const bridge = new LocalLLMConsciousnessBridge({
       quantumEntanglement: true,
@@ -301,11 +301,11 @@ class TestSuite {
       }
     });
     
-    await this.test('Resonance history tracking', async () => {
+    await this.test('Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance history tracking', async () => {
       const initialLength = bridge.resonanceHistory.length;
       bridge.calculateResonance('Sacred wisdom flows through presence');
       if (bridge.resonanceHistory.length <= initialLength) {
-        throw new Error('Resonance not tracked');
+        throw new Error('Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance not tracked');
       }
     });
     
@@ -415,7 +415,7 @@ async function runPerformanceBenchmarks() {
   // Benchmark prompt preparation
   console.time('Prompt preparation');
   for (let i = 0; i < 100; i++) {
-    await bridge.prepareConsciousPrompt('Test prompt', { harmony: 'resonance' });
+    await bridge.prepareConsciousPrompt('Test prompt', { harmony: 'universal-interconnectedness' });
   }
   console.timeEnd('Prompt preparation');
   
@@ -423,18 +423,18 @@ async function runPerformanceBenchmarks() {
   console.time('Field calculations');
   for (let i = 0; i < 1000; i++) {
     bridge.calculateFieldImpact(
-      { coherence: 85, resonance: 0.5 },
-      { coherence: 87, resonance: 0.6 }
+      { 'resonant-coherence': 85, 'universal-interconnectedness': 0.5 },
+      { 'resonant-coherence': 87, 'universal-interconnectedness': 0.6 }
     );
   }
   console.timeEnd('Field calculations');
   
-  // Benchmark resonance calculations
-  console.time('Resonance calculations');
+  // Benchmark universal-interconnectedness calculations
+  console.time('Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance calculations');
   for (let i = 0; i < 100; i++) {
     bridge.calculateResonance('Sacred wisdom flows through conscious presence and love');
   }
-  console.timeEnd('Resonance calculations');
+  console.timeEnd('Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance calculations');
 }
 
 // Interactive test mode
@@ -473,18 +473,18 @@ async function interactiveTest() {
         const prompt = args.join(' ');
         console.log('\n🌀 Generating...\n');
         const result = await bridge.generateWithConsciousness(prompt, {
-          harmony: 'resonance'
+          harmony: 'universal-interconnectedness'
         });
         if (result) {
           console.log('Wisdom:', result.wisdom);
-          console.log(`\nResonance: ${(result.resonance * 100).toFixed(1)}%`);
+          console.log(`\nResonance: ${(result.universal-interconnectedness * 100).toFixed(1)}%`);
           console.log(`Field Impact: ${result.fieldImpact.overall}`);
         }
         break;
         
       case 'field':
         console.log('\n📊 Field State:');
-        console.log(`Coherence: ${bridge.fieldCoherence.toFixed(1)}%`);
+        console.log(`Resonant Resonant Coherence: ${bridge.fieldCoherence.toFixed(1)}%`);
         console.log(`Dominant Harmony: ${bridge.dominantHarmony}`);
         console.log(`Active Glyphs: ${Array.from(bridge.activeGlyphs).join(', ')}`);
         break;
@@ -498,8 +498,8 @@ async function interactiveTest() {
         
       case 'harmonies':
         console.log('\n🌈 Testing all harmonies...\n');
-        const harmonies = ['transparency', 'coherence', 'resonance', 
-                          'agency', 'vitality', 'mutuality', 'novelty'];
+        const harmonies = ['integral-wisdom-cultivation', 'resonant-coherence', 'universal-interconnectedness', 
+                          'evolutionary-progression', 'pan-sentient-flourishing', 'sacred-reciprocity', 'infinite-play'];
         for (const harmony of harmonies) {
           const result = await bridge.generateWithConsciousness(
             `What is the essence of ${harmony}?`,

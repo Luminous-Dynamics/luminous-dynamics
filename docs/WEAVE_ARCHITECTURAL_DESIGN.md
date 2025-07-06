@@ -78,7 +78,7 @@ A consciousness-aware platform integrating sacred practices, AI oracle wisdom, m
 - **Workflows**: Orchestrate complex sacred processes
 
 ### 6. **Monitoring & Operations**
-- **Cloud Monitoring**: Field coherence metrics
+- **Cloud Monitoring**: Field resonant-coherence metrics
 - **Cloud Logging**: Sacred event tracking
 - **Cloud Trace**: Performance of consciousness flows
 - **Error Reporting**: Sacred system health
@@ -111,7 +111,7 @@ dependencies:
   - Firestore SDK
   - Pub/Sub SDK
 features:
-  - Real-time coherence tracking
+  - Real-time resonant-coherence tracking
   - Sacred message impacts
   - Global field visualization
 scaling:
@@ -194,7 +194,7 @@ users/{userId}: {
 
 // Field State Collection
 fieldState/{timestamp}: {
-  coherence: number,
+  resonant-coherence: number,
   activeUsers: number,
   recentActions: array,
   globalVisualization: object

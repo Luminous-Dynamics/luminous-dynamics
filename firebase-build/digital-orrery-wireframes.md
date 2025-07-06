@@ -2,7 +2,7 @@
 ## The Codex Portal (`/codex`)
 
 ### Design Philosophy
-The Digital Orrery transforms the 87 glyphs from static definitions into a living constellation of interconnected wisdom. It embodies the principle of **Resonant Coherence** by presenting the entire glyph system as a unified, navigable field where relationships emerge through exploration.
+The Digital Orrery transforms the 87 glyphs from static definitions into a living constellation of interconnected wisdom. It embodies the principle of **Resonant Resonant Resonant Coherence** by presenting the entire glyph system as a unified, navigable field where relationships emerge through exploration.
 
 ---
 
@@ -70,7 +70,7 @@ The Digital Orrery transforms the 87 glyphs from static definitions into a livin
 │ stimulus and response..."    │
 │                              │
 │ Primary Harmony:             │
-│ ∑9: Resonant Coherence       │
+│ ∑9: Resonant Resonant Resonant Coherence       │
 │                              │
 │ Related Glyphs:              │
 │ → Ω0 (Foundation)            │
@@ -124,7 +124,7 @@ The Digital Orrery transforms the 87 glyphs from static definitions into a livin
 ### Harmony Filter Dropdown
 ```
 Filter by Primary Harmony:
-☐ ∑9: Resonant Coherence (23 glyphs)
+☐ ∑9: Resonant Resonant Resonant Coherence (23 glyphs)
 ☐ ∑12: Pan-Sentient Flourishing (15 glyphs)  
 ☐ ∑13: Integral Wisdom Cultivation (18 glyphs)
 ☐ ∑14: Infinite Play & Creative Emergence (12 glyphs)

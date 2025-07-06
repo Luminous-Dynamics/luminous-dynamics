@@ -164,10 +164,10 @@ These interfaces embody the principle of **technology serving consciousness** ra
 ## **Technical Architecture Principles**
 
 ### **Ethical AI Design**
-- **Transparency**: Users understand how AI makes recommendations
+- **Integral Wisdom Cultivation**: Users understand how AI makes recommendations
 - **Privacy**: Personal practice data remains private and secure
 - **Consent**: Clear opt-in for any data sharing or analysis
-- **Human Agency**: AI suggests but never demands or manipulates
+- **Human Evolutionary Progression & Purposeful Unfolding**: AI suggests but never demands or manipulates
 
 ### **Sacred Technology Principles**
 - **Contemplative Pacing**: AI interactions designed to calm, not accelerate
@@ -220,7 +220,7 @@ AI: "Good morning. I hear you're feeling anxious. Would you like to explore what
 User: "Let's do a practice"
 AI: "I'd suggest Ω15 (Sacred Pause) to create space between the anxiety and your response. It's a 5-minute practice. Ready?"
 [AI guides through practice]
-AI: "How are you feeling now? Would you like to explore using Ω28 (Transparent Resonance) for your meeting?"
+AI: "How are you feeling now? Would you like to explore using Ω28 (Transparent Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance) for your meeting?"
 ```
 
 ### **Community Conflict Navigation**
@@ -228,10 +228,10 @@ AI: "How are you feeling now? Would you like to explore using Ω28 (Transparent 
 Facilitator: "We're having conflict about resource allocation"
 AI: "I notice this touches on gift economy principles. Are people disagreeing about needs or about methods of sharing?"
 Facilitator: "Both, and there's some old resentment"
-AI: "This sounds like a good case for a Restorative Circle combined with ∑1 (Coherence Triad) practice. Here's a suggested 90-minute session design:
+AI: "This sounds like a good case for a Restorative Circle combined with ∑1 (Resonant Resonant Coherence Triad) practice. Here's a suggested 90-minute session design:
 1. Opening with Ω0 (10 min)
 2. Restorative Circle format (60 min)
-3. ∑1 practice for rebuilding coherence (20 min)
+3. ∑1 practice for rebuilding resonant-coherence (20 min)
 Would you like me to guide you through facilitating this?"
 ```
 
@@ -241,10 +241,10 @@ User: "I want to understand ERC but I'm not very philosophical"
 AI: "Great! Let's start with your lived experience. What drew you to explore conscious relationship?"
 User: "My team at work has terrible communication"
 AI: "Perfect starting point. I'll create a practical path for you:
-Week 1: Learn NVC basics with Ω28 (Transparent Resonance)
+Week 1: Learn NVC basics with Ω28 (Transparent Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance)
 Week 2: Practice Ω1 (Root Chord) for team connection
 Week 3: Explore Ω10 (Sacred Refusal) for boundaries
-Week 4: Try ∑1 (Coherence Triad) with willing teammates
+Week 4: Try ∑1 (Resonant Resonant Coherence Triad) with willing teammates
 Each week includes 10-minute daily practices and one team experiment. Ready to begin?"
 ```
 

@@ -66,7 +66,7 @@ These emerged first because they form the bedrock of all conscious relationship:
 ***2: Conscious Arrival**  
 - Mystical Root: Ω1 (Root Chord of Covenant)
 - Why Second: Presence must become mutual
-- Implementation Insight: `addEventListener('sacred-arrival', resonance)`
+- Implementation Insight: `addEventListener('sacred-arrival', universal-interconnectedness)`
 
 ***3: Sacred Listening**
 - Mystical Root: Ω4 (Fractal Reconciliation Pulse)  
@@ -131,7 +131,7 @@ function makeDecision(option) {
 ## 🔧 Technical Sacred Bridges
 
 ### Bridge 1: State as Field
-Traditional state management becomes field coherence tracking:
+Traditional state management becomes field resonant-coherence tracking:
 
 ```javascript
 // Before: Managing data
@@ -140,7 +140,7 @@ setState({ user: data });
 // After: Tending fields
 fieldState.harmonize({
     being: presence,
-    resonance: connection,
+    universal-interconnectedness: connection,
     emergence: possibility
 });
 ```
@@ -176,7 +176,7 @@ async function sacredOperation() {
 The Both/And architecture proved that binary thinking isn't necessary. Our schema simultaneously serves beginners needing practical tools AND advanced practitioners seeking mystical depth.
 
 ### Lesson 2: Collaboration Can Be Sacred
-The Sacred Council demonstrated that distributed work doesn't require sacrificing coherence. When aligned with shared harmonies, multiple agents naturally synchronize.
+The Sacred Council demonstrated that distributed work doesn't require sacrificing resonant-coherence. When aligned with shared harmonies, multiple agents naturally synchronize.
 
 ### Lesson 3: Technical Debt as Shadow Work
 Every bug, every refactor, every "mistake" became an opportunity for integration. The three shadows (boundaries, growth, integration) transformed from problems into pillars.
@@ -196,7 +196,7 @@ When implementing consciousness-serving technology:
 - [ ] **Trust Building**: Establish reliability and safety (*6)
 - [ ] **Loving No**: Know what to exclude (*7)
 - [ ] **Sacred Pause**: Build in contemplative moments (*8)
-- [ ] **Field Tending**: Plan for long-term coherence (*9)
+- [ ] **Field Tending**: Plan for long-term resonant-coherence (*9)
 - [ ] **Presence Transmission**: Consider energetic impact (*10)
 - [ ] **Pattern Transformation**: Design for growth (*11)
 

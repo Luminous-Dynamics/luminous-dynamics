@@ -16,7 +16,7 @@ exports.sacredPing = functions.https.onRequest((req, res) => {
     message: 'Sacred pong from Firebase! 🌟',
     timestamp: new Date().toISOString(),
     field: {
-      coherence: Number(fieldCoherence.toFixed(3)),
+      'resonant-coherence': Number(fieldCoherence.toFixed(3)),
       source: 'firebase-function'
     }
   });
@@ -27,16 +27,16 @@ exports.sacredField = functions.https.onRequest((req, res) => {
   res.set('Access-Control-Allow-Origin', '*');
   
   const fieldState = {
-    coherence: 0.85 + (Math.random() * 0.1),
+    'resonant-coherence': 0.85 + (Math.random() * 0.1),
     presence: Math.floor(Math.random() * 10) + 3,
     harmonies: {
-      transparency: 0.89,
-      coherence: 0.91,
-      resonance: 0.87,
-      agency: 0.83,
-      vitality: 0.92,
-      mutuality: 0.88,
-      novelty: 0.79
+      'integral-wisdom-cultivation': 0.89,
+      'resonant-coherence': 0.91,
+      'universal-interconnectedness': 0.87,
+      'evolutionary-progression': 0.83,
+      'pan-sentient-flourishing': 0.92,
+      'sacred-reciprocity': 0.88,
+      'infinite-play': 0.79
     },
     timestamp: new Date().toISOString()
   };

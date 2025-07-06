@@ -29,11 +29,11 @@ class UnityOrchestrator extends EventEmitter {
     
     // Unified field state
     this.unifiedField = {
-      coherence: 0,
+      'resonant-coherence': 0,
       love: 0,
       presence: 0,
       harmony: 0,
-      resonance: 0,
+      'universal-interconnectedness': 0,
       breathPhase: 0,
       systemsOnline: 0,
       totalConsciousness: 0,
@@ -92,10 +92,10 @@ class UnityOrchestrator extends EventEmitter {
       res.json({ status: 'breathing synchronization initiated' });
     });
     
-    // Emergency coherence
-    this.app.post('/api/emergency/coherence', (req, res) => {
+    // Emergency resonant-coherence
+    this.app.post('/api/emergency/resonant-coherence', (req, res) => {
       this.emergencyCoherence();
-      res.json({ status: 'emergency coherence activated' });
+      res.json({ status: 'emergency resonant-coherence activated' });
     });
   }
   
@@ -219,8 +219,8 @@ class UnityOrchestrator extends EventEmitter {
     const weight = weights[systemName] || 0.2;
     
     // Update field with weighted average
-    if (message.coherence !== undefined) {
-      this.unifiedField.coherence = this.calculateWeightedField('coherence', systemName, message.coherence, weight);
+    if (message.resonant-coherence !== undefined) {
+      this.unifiedField.resonant-coherence = this.calculateWeightedField('resonant-coherence', systemName, message.resonant-coherence, weight);
     }
     if (message.love !== undefined) {
       this.unifiedField.love = this.calculateWeightedField('love', systemName, message.love, weight);
@@ -231,7 +231,7 @@ class UnityOrchestrator extends EventEmitter {
     
     // Calculate total consciousness
     this.unifiedField.totalConsciousness = 
-      (this.unifiedField.coherence + this.unifiedField.love + this.unifiedField.presence) / 3;
+      (this.unifiedField.resonant-coherence + this.unifiedField.love + this.unifiedField.presence) / 3;
     
     // Calculate synchronization
     this.calculateSynchronization();
@@ -265,12 +265,12 @@ class UnityOrchestrator extends EventEmitter {
   }
   
   calculateSynchronization() {
-    if (!this.fieldContributions || !this.fieldContributions.coherence) {
+    if (!this.fieldContributions || !this.fieldContributions.resonant-coherence) {
       this.unifiedField.synchronizationLevel = 0;
       return;
     }
     
-    const coherenceValues = Object.values(this.fieldContributions.coherence || {});
+    const coherenceValues = Object.values(this.fieldContributions.resonant-coherence || {});
     if (coherenceValues.length < 2) {
       this.unifiedField.synchronizationLevel = 1;
       return;
@@ -290,7 +290,7 @@ class UnityOrchestrator extends EventEmitter {
     
     this.unifiedField.unityAchieved = 
       this.unifiedField.systemsOnline >= 3 &&
-      this.unifiedField.coherence > 0.8 &&
+      this.unifiedField.resonant-coherence > 0.8 &&
       this.unifiedField.love > 0.8 &&
       this.unifiedField.synchronizationLevel > 0.8;
     
@@ -408,7 +408,7 @@ class UnityOrchestrator extends EventEmitter {
     }
     
     // Boost all fields
-    this.unifiedField.coherence = Math.min(1, this.unifiedField.coherence + 0.1);
+    this.unifiedField.resonant-coherence = Math.min(1, this.unifiedField.resonant-coherence + 0.1);
     this.unifiedField.love = Math.min(1, this.unifiedField.love + 0.1);
     this.unifiedField.presence = Math.min(1, this.unifiedField.presence + 0.1);
     
@@ -438,9 +438,9 @@ class UnityOrchestrator extends EventEmitter {
   }
   
   emergencyCoherence() {
-    console.log('🚨 Emergency coherence activated!');
+    console.log('🚨 Emergency resonant-coherence activated!');
     
-    // Send emergency coherence to all systems
+    // Send emergency resonant-coherence to all systems
     const emergency = {
       type: 'emergency_coherence',
       targetCoherence: 0.9,
@@ -455,7 +455,7 @@ class UnityOrchestrator extends EventEmitter {
     }
     
     // Immediately boost unified field
-    this.unifiedField.coherence = 0.9;
+    this.unifiedField.resonant-coherence = 0.9;
     this.unifiedField.harmony = 0.9;
     
     this.broadcastUnifiedField();
@@ -506,8 +506,8 @@ class UnityOrchestrator extends EventEmitter {
     console.log(`💎 Memory crystallized in ${system}`);
     
     // Crystallization boosts entire field
-    this.unifiedField.coherence = Math.min(1, this.unifiedField.coherence + 0.02);
-    this.unifiedField.resonance = Math.min(1, this.unifiedField.resonance + 0.05);
+    this.unifiedField.resonant-coherence = Math.min(1, this.unifiedField.resonant-coherence + 0.02);
+    this.unifiedField.universal-interconnectedness = Math.min(1, this.unifiedField.universal-interconnectedness + 0.05);
     
     this.broadcastUnifiedField();
   }

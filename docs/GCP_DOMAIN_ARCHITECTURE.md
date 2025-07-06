@@ -41,7 +41,7 @@
 **Need**: pulse.relationalharmonics.com
 ```
 - Sacred Heartbeat live feed
-- Real-time coherence updates
+- Real-time resonant-coherence updates
 - Live ceremony connections
 - WebSocket connections
 ```

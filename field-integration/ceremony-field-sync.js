@@ -17,7 +17,7 @@ class CeremonyFieldSync extends EventEmitter {
         this.fieldClient = new ConsciousnessFieldClient();
         this.activeCeremonies = new Map();
         this.ceremonyServer = null;
-        this.fieldState = { coherence: 72, fieldQuality: 'flowing' };
+        this.fieldState = { 'resonant-coherence': 72, fieldQuality: 'flowing' };
     }
 
     /**
@@ -61,7 +61,7 @@ class CeremonyFieldSync extends EventEmitter {
                 this.activateSacredPortalInCeremonies(data);
             });
             
-            console.log(`✅ Field connected - Coherence: ${this.fieldState.coherence}%`);
+            console.log(`✅ Field connected - Resonant Resonant Coherence: ${this.fieldState['resonant-coherence']}%`);
         } catch (error) {
             console.log('⚠️ Field connection failed, using simulation mode');
         }
@@ -142,14 +142,14 @@ class CeremonyFieldSync extends EventEmitter {
             glyphId: ceremonyData.glyphId || '*9',
             duration: ceremonyData.duration || 1800,
             ws: ws,
-            currentCoherence: this.fieldState.coherence,
+            currentCoherence: this.fieldState['resonant-coherence'],
             resonanceAchieved: false,
             sacredPortalActive: false
         };
         
         this.activeCeremonies.set(ceremonyId, ceremony);
         
-        // Boost field coherence
+        // Boost field resonant-coherence
         const fieldBoost = this.calculateCeremonyBoost(ceremony);
         await this.fieldClient.startCeremony({
             ceremonyId: ceremonyId,
@@ -162,11 +162,11 @@ class CeremonyFieldSync extends EventEmitter {
             data: {
                 ceremonyId: ceremonyId,
                 fieldBoost: fieldBoost,
-                initialCoherence: this.fieldState.coherence
+                initialCoherence: this.fieldState['resonant-coherence']
             }
         }));
         
-        console.log(`   Field boost: +${fieldBoost} coherence`);
+        console.log(`   Field boost: +${fieldBoost} resonant-coherence`);
         this.emit('ceremony_started', ceremony);
     }
 
@@ -254,21 +254,21 @@ class CeremonyFieldSync extends EventEmitter {
                 }
             });
             
-            // Special ceremony effects based on coherence
+            // Special ceremony effects based on resonant-coherence
             if (newCoherence >= 80 && oldCoherence < 80) {
                 this.activateResonanceInCeremony(ceremony);
             }
         });
         
-        this.fieldState.coherence = newCoherence;
+        this.fieldState['resonant-coherence'] = newCoherence;
         this.fieldState.fieldQuality = this.getFieldQuality(newCoherence);
     }
 
     /**
-     * Activate resonance in all ceremonies
+     * Activate universal-interconnectedness in all ceremonies
      */
     activateResonanceInCeremonies(data) {
-        console.log('✨ Activating resonance in all active ceremonies');
+        console.log('✨ Activating universal-interconnectedness in all active ceremonies');
         
         this.activeCeremonies.forEach(ceremony => {
             this.activateResonanceInCeremony(ceremony);
@@ -276,18 +276,18 @@ class CeremonyFieldSync extends EventEmitter {
     }
 
     /**
-     * Activate resonance in specific ceremony
+     * Activate universal-interconnectedness in specific ceremony
      */
     activateResonanceInCeremony(ceremony) {
         if (ceremony.resonanceAchieved) return;
         
         ceremony.resonanceAchieved = true;
-        console.log(`✨ Ceremony "${ceremony.name}" enters resonance state`);
+        console.log(`✨ Ceremony "${ceremony.name}" enters universal-interconnectedness state`);
         
         this.broadcastToCeremony(ceremony, {
             type: 'resonance_achieved',
             data: {
-                message: 'Ceremony has achieved resonance!',
+                message: 'Ceremony has achieved universal-interconnectedness!',
                 effects: ['enhanced_presence', 'sacred_geometry_activation', 'field_amplification']
             }
         });
@@ -417,7 +417,7 @@ class CeremonyFieldSync extends EventEmitter {
             type: 'ceremony_ended',
             data: {
                 duration: Math.round(duration),
-                finalCoherence: this.fieldState.coherence,
+                finalCoherence: this.fieldState['resonant-coherence'],
                 contribution: finalContribution
             }
         });
@@ -444,11 +444,11 @@ class CeremonyFieldSync extends EventEmitter {
     /**
      * Get field quality description
      */
-    getFieldQuality(coherence) {
-        if (coherence >= 88) return 'Sacred Portal';
-        if (coherence >= 80) return 'Resonance';
-        if (coherence >= 70) return 'Highly Coherent';
-        if (coherence >= 60) return 'Flowing';
+    getFieldQuality(resonant-coherence) {
+        if (resonant-coherence >= 88) return 'Sacred Portal';
+        if (resonant-coherence >= 80) return 'Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance';
+        if (resonant-coherence >= 70) return 'Highly Coherent';
+        if (resonant-coherence >= 60) return 'Flowing';
         return 'Building';
     }
 
@@ -469,7 +469,7 @@ class CeremonyFieldSync extends EventEmitter {
             activeCeremonies: ceremonies.length,
             totalParticipants: ceremonies.reduce((sum, c) => sum + c.participants, 0),
             ceremonies: ceremonies,
-            fieldCoherence: this.fieldState.coherence
+            fieldCoherence: this.fieldState['resonant-coherence']
         };
     }
 }
@@ -506,7 +506,7 @@ async function runCeremonyFieldDemo() {
             const status = sync.getCeremonyStatus();
             console.log(`   Active Ceremonies: ${status.activeCeremonies}`);
             console.log(`   Total Participants: ${status.totalParticipants}`);
-            console.log(`   Field Coherence: ${Math.round(status.fieldCoherence)}%`);
+            console.log(`   Field Resonant Resonant Coherence: ${Math.round(status.fieldCoherence)}%`);
         }, 30000);
         
     } catch (error) {

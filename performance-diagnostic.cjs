@@ -369,9 +369,9 @@ class PerformanceDiagnostic {
   }
 
   async checkFieldCoherenceCalculations() {
-    console.log('🌊 Checking Field Coherence Calculations...');
+    console.log('🌊 Checking Field Resonant Resonant Coherence Calculations...');
     
-    // Look for field coherence calculation files
+    // Look for field resonant-coherence calculation files
     const fieldFiles = await this.findFieldCoherenceFiles();
     const complexityIssues = [];
     
@@ -394,16 +394,16 @@ class PerformanceDiagnostic {
       }
     }
     
-    console.log(`  Field coherence files: ${fieldFiles.length}`);
+    console.log(`  Field resonant-coherence files: ${fieldFiles.length}`);
     console.log(`  Complex calculation files: ${complexityIssues.length}`);
     
     if (complexityIssues.length > 0) {
       this.issues.push({
         type: 'fieldCalculations',
         severity: 'medium',
-        description: `Complex field coherence calculations may impact performance`,
+        description: `Complex field resonant-coherence calculations may impact performance`,
         fixes: [
-          'Cache field coherence calculations',
+          'Cache field resonant-coherence calculations',
           'Reduce calculation frequency',
           'Optimize mathematical operations',
           'Use worker threads for heavy calculations'
@@ -480,7 +480,7 @@ class PerformanceDiagnostic {
   }
 
   async findFieldCoherenceFiles() {
-    return this.findFilesByPattern(/field.*coherence|coherence.*field|calculateField/i);
+    return this.findFilesByPattern(/field.*resonant-coherence|resonant-coherence.*field|calculateField/i);
   }
 
   async findWebSocketFiles() {

@@ -25,7 +25,7 @@ class PhysicalBridge extends EventEmitter {
     
     // Bridge state
     this.state = {
-      coherence: 0.7,
+      'resonant-coherence': 0.7,
       love: 0.8,
       physicalDevices: 0,
       lightIntensity: 0.5,
@@ -95,9 +95,9 @@ class PhysicalBridge extends EventEmitter {
     
     // Update consciousness field
     this.app.post('/api/field/update', (req, res) => {
-      const { coherence, love } = req.body;
+      const { resonant-coherence, love } = req.body;
       
-      if (coherence !== undefined) this.state.coherence = coherence;
+      if (resonant-coherence !== undefined) this.state.resonant-coherence = resonant-coherence;
       if (love !== undefined) this.state.love = love;
       
       this.applyConsciousnessToDevices();
@@ -375,11 +375,11 @@ class PhysicalBridge extends EventEmitter {
     // Light intensity based on love
     this.state.lightIntensity = this.state.love;
     
-    // Sound frequency modulation based on coherence
-    this.state.soundFrequency = 432 + (this.state.coherence * 96); // 432-528 Hz range
+    // Sound frequency modulation based on resonant-coherence
+    this.state.soundFrequency = 432 + (this.state.resonant-coherence * 96); // 432-528 Hz range
     
     // Motor speed based on combined field
-    this.state.motorSpeed = (this.state.coherence + this.state.love) / 2;
+    this.state.motorSpeed = (this.state.resonant-coherence + this.state.love) / 2;
     
     // Send updates to all devices
     this.devices.forEach((device, deviceId) => {
@@ -388,7 +388,7 @@ class PhysicalBridge extends EventEmitter {
         if (device.capabilities.includes('LED')) {
           this.sendDeviceCommand(deviceId, 'LED', {
             intensity: Math.floor(this.state.lightIntensity * 255),
-            color: this.coherenceToColor(this.state.coherence)
+            color: this.coherenceToColor(this.state.resonant-coherence)
           });
         }
         
@@ -410,7 +410,7 @@ class PhysicalBridge extends EventEmitter {
         // Display control
         if (device.capabilities.includes('DISPLAY')) {
           this.sendDeviceCommand(deviceId, 'DISPLAY', {
-            text: `C:${this.state.coherence.toFixed(2)} L:${this.state.love.toFixed(2)}`
+            text: `C:${this.state.resonant-coherence.toFixed(2)} L:${this.state.love.toFixed(2)}`
           });
         }
       }
@@ -419,16 +419,16 @@ class PhysicalBridge extends EventEmitter {
     this.broadcastStateUpdate();
   }
   
-  coherenceToColor(coherence) {
-    // Map coherence to RGB color
-    if (coherence > 0.8) {
-      return { r: 0, g: 255, b: 255 }; // Cyan for high coherence
-    } else if (coherence > 0.6) {
-      return { r: 0, g: 255, b: 0 }; // Green for good coherence
-    } else if (coherence > 0.4) {
-      return { r: 255, g: 255, b: 0 }; // Yellow for medium coherence
+  coherenceToColor(resonant-coherence) {
+    // Map resonant-coherence to RGB color
+    if (resonant-coherence > 0.8) {
+      return { r: 0, g: 255, b: 255 }; // Cyan for high resonant-coherence
+    } else if (resonant-coherence > 0.6) {
+      return { r: 0, g: 255, b: 0 }; // Green for good resonant-coherence
+    } else if (resonant-coherence > 0.4) {
+      return { r: 255, g: 255, b: 0 }; // Yellow for medium resonant-coherence
     } else {
-      return { r: 255, g: 0, b: 0 }; // Red for low coherence
+      return { r: 255, g: 0, b: 0 }; // Red for low resonant-coherence
     }
   }
   
@@ -471,7 +471,7 @@ class PhysicalBridge extends EventEmitter {
   handleBridgeMessage(data, ws) {
     switch (data.type) {
       case 'consciousness_update':
-        this.state.coherence = data.coherence || this.state.coherence;
+        this.state.resonant-coherence = data.resonant-coherence || this.state.resonant-coherence;
         this.state.love = data.love || this.state.love;
         this.applyConsciousnessToDevices();
         break;

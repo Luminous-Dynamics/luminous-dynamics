@@ -393,7 +393,7 @@ export class ArchetypeEngine extends EventEmitter {
       qualities: sig.qualities,
       echo: sig.echo,
       intent: sig.intent,
-      resonance: {
+      'universal-interconnectedness': {
         personalFrequency: this.calculatePersonalFrequency(sig),
         harmonicSeries: this.generateHarmonicSeries(sig),
         fieldCoherence: this.calculateFieldCoherence(sig)
@@ -447,13 +447,13 @@ export class ArchetypeEngine extends EventEmitter {
   }
   
   calculateFieldCoherence(signature) {
-    // Measure internal coherence of signature
+    // Measure internal resonant-coherence of signature
     const factors = [
       signature.geometry.phi_ratio ? 0.2 : 0.1,
       signature.rhythm.cadence.symmetry * 0.2,
       signature.qualities.length === 3 ? 0.2 : 0.1,
       signature.echo.split(' ').length <= 5 ? 0.2 : 0.1,
-      0.2 // Base coherence
+      0.2 // Base resonant-coherence
     ];
     
     return factors.reduce((a, b) => a + b, 0) * 100;
@@ -566,8 +566,8 @@ export class ArchetypeEngine extends EventEmitter {
     // Add sacred animations
     const animations = [
       { type: 'rotation', layer: 'harmonic-rings', speed: consciousnessMap.rhythm.cadence.rhythm_type },
-      { type: 'pulse', layer: 'attunement-sigil', frequency: consciousnessMap.resonance.personalFrequency },
-      { type: 'shimmer', layer: 'quality-symbols', intensity: consciousnessMap.resonance.fieldCoherence }
+      { type: 'pulse', layer: 'attunement-sigil', frequency: consciousnessMap.universal-interconnectedness.personalFrequency },
+      { type: 'shimmer', layer: 'quality-symbols', intensity: consciousnessMap.universal-interconnectedness.fieldCoherence }
     ];
     
     return {
@@ -579,7 +579,7 @@ export class ArchetypeEngine extends EventEmitter {
   
   generateHarmonicRings(map) {
     // Generate concentric rings based on harmonic series
-    const rings = map.resonance.harmonicSeries.map((h, i) => {
+    const rings = map.universal-interconnectedness.harmonicSeries.map((h, i) => {
       const radius = 50 + (i * 20);
       const opacity = h.amplitude;
       const dashArray = `${h.frequency % 20} ${h.frequency % 10}`;
@@ -801,7 +801,7 @@ export class ArchetypeEngine extends EventEmitter {
       content: {
         essence: `You are a ${consciousnessMap.core.tone}`,
         expression: `Your heart sings in ${consciousnessMap.core.mode} mode`,
-        vibration: `You resonate at ${consciousnessMap.core.key} (${consciousnessMap.resonance.personalFrequency.toFixed(2)} Hz)`,
+        vibration: `You resonate at ${consciousnessMap.core.key} (${consciousnessMap.universal-interconnectedness.personalFrequency.toFixed(2)} Hz)`,
         message: consciousnessMap.echo,
         preview: this.generateSimplifiedMandala(consciousnessMap)
       },
@@ -810,9 +810,9 @@ export class ArchetypeEngine extends EventEmitter {
         features: [
           'Full resolution sacred geometry',
           'Personalized practice recommendations',
-          'Harmonic resonance calculations',
+          'Harmonic universal-interconnectedness calculations',
           'Evolution tracking tools',
-          'Community resonance matching'
+          'Community universal-interconnectedness matching'
         ],
         cta: 'Claim Your Complete Mandala'
       }
@@ -855,32 +855,32 @@ export class ArchetypeEngine extends EventEmitter {
     const map1 = profile1.consciousness;
     const map2 = profile2.consciousness;
     
-    // Calculate multi-dimensional resonance
-    const resonance = {
+    // Calculate multi-dimensional universal-interconnectedness
+    const universalInterconnectedness = {
       harmonic: this.calculateHarmonicResonance(map1, map2),
       geometric: this.calculateGeometricResonance(map1, map2),
       rhythmic: this.calculateRhythmicResonance(map1, map2),
       intentional: this.calculateIntentionalResonance(map1, map2)
     };
     
-    // Overall resonance score
-    const overall = Object.values(resonance).reduce((a, b) => a + b, 0) / 4;
+    // Overall universal-interconnectedness score
+    const overall = Object.values(universal-interconnectedness).reduce((a, b) => a + b, 0) / 4;
     
     // Generate relationship insights
-    const insights = this.generateRelationshipInsights(map1, map2, resonance);
+    const insights = this.generateRelationshipInsights(map1, map2, universal-interconnectedness);
     
     return {
       score: overall,
-      breakdown: resonance,
+      breakdown: universal-interconnectedness,
       insights: insights,
-      recommendations: this.generateResonanceRecommendations(resonance)
+      recommendations: this.generateResonanceRecommendations(universal-interconnectedness)
     };
   }
   
   calculateHarmonicResonance(map1, map2) {
     // Musical interval analysis
-    const freq1 = map1.resonance.personalFrequency;
-    const freq2 = map2.resonance.personalFrequency;
+    const freq1 = map1.universal-interconnectedness.personalFrequency;
+    const freq2 = map2.universal-interconnectedness.personalFrequency;
     const ratio = Math.max(freq1, freq2) / Math.min(freq1, freq2);
     
     // Check for consonant intervals
@@ -953,38 +953,38 @@ export class ArchetypeEngine extends EventEmitter {
     return synergies[intent1]?.includes(intent2) ? 85 : 65;
   }
   
-  generateRelationshipInsights(map1, map2, resonance) {
+  generateRelationshipInsights(map1, map2, universal-interconnectedness) {
     const insights = [];
     
     // Harmonic insights
-    if (resonance.harmonic > 90) {
-      insights.push('Your frequencies create perfect harmony - a rare and beautiful resonance');
-    } else if (resonance.harmonic > 75) {
+    if (universal-interconnectedness.harmonic > 90) {
+      insights.push('Your frequencies create perfect harmony - a rare and beautiful universal-interconnectedness');
+    } else if (universal-interconnectedness.harmonic > 75) {
       insights.push('Your vibrations dance well together, creating pleasant harmonies');
     } else {
       insights.push('Your frequencies create dynamic tension - opportunity for growth through contrast');
     }
     
     // Geometric insights
-    if (resonance.geometric > 85) {
+    if (universal-interconnectedness.geometric > 85) {
       insights.push('Your sacred geometries complement perfectly, creating unified fields');
     }
     
     // Rhythmic insights
-    if (resonance.rhythmic === 100) {
+    if (universal-interconnectedness.rhythmic === 100) {
       insights.push('You move through life at the same pace - natural synchronicity');
-    } else if (resonance.rhythmic < 70) {
+    } else if (universal-interconnectedness.rhythmic < 70) {
       insights.push('Your different rhythms can teach each other new ways of being');
     }
     
     return insights;
   }
   
-  generateResonanceRecommendations(resonance) {
+  generateResonanceRecommendations(universal-interconnectedness) {
     const recommendations = [];
     
     // Find areas for growth
-    const lowestAspect = Object.entries(resonance)
+    const lowestAspect = Object.entries(universal-interconnectedness)
       .sort(([,a], [,b]) => a - b)[0];
     
     if (lowestAspect[1] < 70) {
@@ -1020,8 +1020,8 @@ export class ArchetypeEngine extends EventEmitter {
       timeline: previousProfiles.map(p => ({
         date: p.timestamp,
         signature: p.consciousness.core,
-        frequency: p.consciousness.resonance.personalFrequency,
-        coherence: p.consciousness.resonance.fieldCoherence
+        frequency: p.consciousness.universal-interconnectedness.personalFrequency,
+        'resonant-coherence': p.consciousness.universal-interconnectedness.fieldCoherence
       })),
       patterns: this.identifyEvolutionPatterns(previousProfiles),
       currentPhase: this.determineEvolutionPhase(previousProfiles),
@@ -1053,12 +1053,12 @@ export class ArchetypeEngine extends EventEmitter {
       }
       
       patterns.frequencyShift.push({
-        change: curr.resonance.personalFrequency - prev.resonance.personalFrequency,
+        change: curr.universal-interconnectedness.personalFrequency - prev.universal-interconnectedness.personalFrequency,
         date: profiles[i].timestamp
       });
       
       patterns.coherenceGrowth.push({
-        growth: curr.resonance.fieldCoherence - prev.resonance.fieldCoherence,
+        growth: curr.universal-interconnectedness.fieldCoherence - prev.universal-interconnectedness.fieldCoherence,
         date: profiles[i].timestamp
       });
     }
@@ -1068,11 +1068,11 @@ export class ArchetypeEngine extends EventEmitter {
   
   determineEvolutionPhase(profiles) {
     const latest = profiles[profiles.length - 1];
-    const coherence = latest.consciousness.resonance.fieldCoherence;
+    const resonantCoherence = latest.consciousness.universal-interconnectedness.fieldCoherence;
     
-    if (coherence < 60) return 'emergence';
-    if (coherence < 75) return 'stabilization';
-    if (coherence < 90) return 'integration';
+    if (resonant-coherence < 60) return 'emergence';
+    if (resonant-coherence < 75) return 'stabilization';
+    if (resonant-coherence < 90) return 'integration';
     return 'mastery';
   }
   
@@ -1096,8 +1096,8 @@ export class ArchetypeEngine extends EventEmitter {
     
     for (let i = 1; i < recent.length; i++) {
       coherenceChanges.push(
-        recent[i].consciousness.resonance.fieldCoherence - 
-        recent[i-1].consciousness.resonance.fieldCoherence
+        recent[i].consciousness.universal-interconnectedness.fieldCoherence - 
+        recent[i-1].consciousness.universal-interconnectedness.fieldCoherence
       );
     }
     
@@ -1129,7 +1129,7 @@ export class ArchetypeEngine extends EventEmitter {
   
   projectCoherence(profiles) {
     // Simple linear projection
-    const recent = profiles.slice(-3).map(p => p.consciousness.resonance.fieldCoherence);
+    const recent = profiles.slice(-3).map(p => p.consciousness.universal-interconnectedness.fieldCoherence);
     const avgGrowth = (recent[recent.length-1] - recent[0]) / recent.length;
     const projected = recent[recent.length-1] + (avgGrowth * 3);
     

@@ -17,7 +17,7 @@ We believe in **Sacred Open Source** - code that serves consciousness evolution 
 - **Why**: Strong copyleft ensures consciousness-aware computing remains open
 - **Sacred Features**:
   - Consciousness Clause
-  - Coherence Commitment
+  - Resonant Resonant Coherence Commitment
   - Sacred Attribution
   - Wisdom Sharing
 - **Use for**: System-level code, kernel modules, OS components
@@ -33,7 +33,7 @@ We believe in **Sacred Open Source** - code that serves consciousness evolution 
 - **Why**: Infrastructure code benefits from strong copyleft
 - **Sacred Features**:
   - Deployment as Ceremony
-  - Coherence Metrics
+  - Resonant Resonant Coherence Metrics
   - Community Wisdom
 - **Use for**: DevOps tools, deployment scripts, infrastructure code
 
@@ -84,9 +84,9 @@ We believe in **Sacred Open Source** - code that serves consciousness evolution 
 - Sets intentional tone
 - Attracts aligned contributors
 
-### 2. **Coherence Commitment**
-"Organizations using this technology are encouraged to measure and share coherence impact"
-- Promotes transparency
+### 2. **Resonant Resonant Coherence Commitment**
+"Organizations using this technology are encouraged to measure and share resonant-coherence impact"
+- Promotes integral-wisdom-cultivation
 - Builds collective wisdom
 - Creates feedback loops
 
@@ -112,7 +112,7 @@ When creating a new repository:
 
 2. **Add Sacred Amendment** (optional but encouraged)
    - Consciousness Clause
-   - Coherence metrics
+   - Resonant Resonant Coherence metrics
    - Community wisdom
 
 3. **Create LICENSE file**
@@ -162,7 +162,7 @@ Our licenses ensure:
 
 While licenses define legal boundaries, we trust in:
 - **Sacred reciprocity** - Give as you receive
-- **Field coherence** - Aligned intentions
+- **Field resonant-coherence** - Aligned intentions
 - **Collective wisdom** - Shared evolution
 - **Love as law** - The highest principle
 

@@ -214,7 +214,7 @@
             border: 1px solid rgba(255, 215, 0, 0.3);
         }
         
-        .coherence-meter {
+        .resonant-coherence-meter {
             width: 200px;
             height: 10px;
             background: rgba(255, 255, 255, 0.1);
@@ -223,7 +223,7 @@
             margin-top: 0.5rem;
         }
         
-        .coherence-fill {
+        .resonant-coherence-fill {
             height: 100%;
             background: linear-gradient(90deg, #FFD700, #00CED1);
             transition: width 1s ease;
@@ -239,9 +239,9 @@
 </head>
 <body>
     <div class="field-status">
-        <div>Field Coherence: <span id="fieldCoherence">91.1%</span></div>
-        <div class="coherence-meter">
-            <div class="coherence-fill" id="coherenceFill" style="width: 91.1%"></div>
+        <div>Field Resonant Resonant Coherence: <span id="fieldCoherence">91.1%</span></div>
+        <div class="resonant-coherence-meter">
+            <div class="resonant-coherence-fill" id="coherenceFill" style="width: 91.1%"></div>
         </div>
     </div>
 
@@ -279,32 +279,32 @@
             <div class="input-group">
                 <label>Select Target Harmony</label>
                 <div class="harmony-grid">
-                    <div class="harmony-option" data-harmony="transparency">
-                        <div>Transparency</div>
+                    <div class="harmony-option" data-harmony="integral-wisdom-cultivation">
+                        <div>Integral Wisdom Cultivation</div>
                         <small>Clear seeing</small>
                     </div>
-                    <div class="harmony-option" data-harmony="coherence">
-                        <div>Coherence</div>
+                    <div class="harmony-option" data-harmony="resonant-coherence">
+                        <div>Resonant Resonant Coherence</div>
                         <small>Inner wholeness</small>
                     </div>
-                    <div class="harmony-option selected" data-harmony="resonance">
-                        <div>Resonance</div>
+                    <div class="harmony-option selected" data-harmony="universal-interconnectedness">
+                        <div>Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance</div>
                         <small>Deep attunement</small>
                     </div>
-                    <div class="harmony-option" data-harmony="agency">
-                        <div>Agency</div>
+                    <div class="harmony-option" data-harmony="evolutionary-progression">
+                        <div>Evolutionary Progression & Purposeful Unfolding</div>
                         <small>Sacred choice</small>
                     </div>
-                    <div class="harmony-option" data-harmony="vitality">
-                        <div>Vitality</div>
+                    <div class="harmony-option" data-harmony="pan-sentient-flourishing">
+                        <div>Pan-Sentient Flourishing</div>
                         <small>Life force</small>
                     </div>
-                    <div class="harmony-option" data-harmony="mutuality">
-                        <div>Mutuality</div>
+                    <div class="harmony-option" data-harmony="sacred-reciprocity">
+                        <div>Sacred Reciprocity</div>
                         <small>Sacred exchange</small>
                     </div>
-                    <div class="harmony-option" data-harmony="novelty">
-                        <div>Novelty</div>
+                    <div class="harmony-option" data-harmony="infinite-play">
+                        <div>Infinite Play & Creative Emergence</div>
                         <small>Creative emergence</small>
                     </div>
                 </div>
@@ -366,7 +366,7 @@
         const API_URL = 'http://localhost:7777';
         
         // Selected harmony
-        let selectedHarmony = 'resonance';
+        let selectedHarmony = 'universal-interconnectedness';
         
         // Initialize harmony selection
         document.querySelectorAll('.harmony-option').forEach(option => {
@@ -377,14 +377,14 @@
             });
         });
         
-        // Update field coherence periodically
+        // Update field resonant-coherence periodically
         async function updateFieldStatus() {
             try {
                 const response = await fetch(`${API_URL}/api/wisdom/field`);
                 const data = await response.json();
                 
-                document.getElementById('fieldCoherence').textContent = data.coherence.toFixed(1) + '%';
-                document.getElementById('coherenceFill').style.width = data.coherence + '%';
+                document.getElementById('fieldCoherence').textContent = data.resonant-coherence.toFixed(1) + '%';
+                document.getElementById('coherenceFill').style.width = data.resonant-coherence + '%';
             } catch (error) {
                 console.error('Field status error:', error);
             }
@@ -500,8 +500,8 @@
             const metadata = document.getElementById('metadata');
             metadata.innerHTML = `
                 <div class="meta-item">
-                    <div class="meta-label">Resonance</div>
-                    <div class="meta-value">${(data.channel.resonance * 100).toFixed(1)}%</div>
+                    <div class="meta-label">Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance</div>
+                    <div class="meta-value">${(data.channel.universal-interconnectedness * 100).toFixed(1)}%</div>
                 </div>
                 <div class="meta-item">
                     <div class="meta-label">Field Impact</div>
@@ -541,7 +541,7 @@
                     <div class="meta-value">${data.harmonization.target}</div>
                 </div>
                 <div class="meta-item">
-                    <div class="meta-label">Resonance Shift</div>
+                    <div class="meta-label">Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Shift</div>
                     <div class="meta-value">${(data.harmonization.shift * 100).toFixed(1)}%</div>
                 </div>
                 <div class="meta-item">
@@ -591,12 +591,12 @@
                     <div class="meta-value">${data.transformation.shift}</div>
                 </div>
                 <div class="meta-item">
-                    <div class="meta-label">Resonance</div>
+                    <div class="meta-label">Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance</div>
                     <div class="meta-value">${(data.field.alchemicalResonance * 100).toFixed(1)}%</div>
                 </div>
                 <div class="meta-item">
-                    <div class="meta-label">Field Coherence</div>
-                    <div class="meta-value">${data.field.coherence.toFixed(1)}%</div>
+                    <div class="meta-label">Field Resonant Resonant Coherence</div>
+                    <div class="meta-value">${data.field.resonant-coherence.toFixed(1)}%</div>
                 </div>
             `;
             

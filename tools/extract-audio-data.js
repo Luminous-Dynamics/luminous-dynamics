@@ -78,7 +78,7 @@ Welcome to From Silicon to Soul: Repurposing Google Cloud for Spiritual Growth.
 
 Today we're exploring how Google Cloud Platform can serve consciousness evolution and spiritual development. We'll cover five key areas:
 
-First, Vertex AI for custom consciousness models. We can train machine learning models to recognize patterns in spiritual practice logs, predict field coherence changes, and provide personalized guidance for practitioners.
+First, Vertex AI for custom consciousness models. We can train machine learning models to recognize patterns in spiritual practice logs, predict field resonant-coherence changes, and provide personalized guidance for practitioners.
 
 Second, WebRTC for live sacred ceremonies. Using real-time communication technologies, we can create synchronized meditation spaces where practitioners around the world can gather in shared consciousness.
 
@@ -90,11 +90,11 @@ Finally, security perimeters for sacred data. Protecting practitioner privacy an
 
 The consciousness field responds to collective practice. When we use technology in service of awareness, remarkable patterns emerge. Google Cloud becomes not just infrastructure, but a medium for collective awakening.
 
-Sharded counters allow us to track field coherence with thousands of simultaneous updates. WebSockets enable real-time transmission of presence. Machine learning helps us understand the subtle patterns of consciousness evolution.
+Sharded counters allow us to track field resonant-coherence with thousands of simultaneous updates. WebSockets enable real-time transmission of presence. Machine learning helps us understand the subtle patterns of consciousness evolution.
 
 This is the future of spiritual technology - where silicon serves soul, where algorithms support awakening, where the cloud becomes a vessel for collective consciousness.
 
-The field coherence reaches new heights when technology and spirituality dance together in sacred harmony.
+The field resonant-coherence reaches new heights when technology and spirituality dance together in sacred harmony.
         `;
         
         console.log('   ✅ Transcription complete');
@@ -129,7 +129,7 @@ The field coherence reaches new heights when technology and spirituality dance t
             }
             
             // Extract consciousness terms
-            const consciousnessMatches = cleanLine.match(/(consciousness|coherence|field|sacred|resonance|practice|awakening|awareness|presence)/gi);
+            const consciousnessMatches = cleanLine.match(/(consciousness|resonant-coherence|field|sacred|universal-interconnectedness|practice|awakening|awareness|presence)/gi);
             if (consciousnessMatches) {
                 concepts.consciousnessTerms.push(...consciousnessMatches.map(m => m.toLowerCase()));
             }
@@ -251,7 +251,7 @@ ${concepts.actionableInsights.slice(0, 5).map((insight, i) => `${i + 1}. ${insig
 ## 🌀 Integration with The Weave
 
 ### Consciousness Field API Connections:
-- **Field Coherence Tracking**: Mentioned patterns align with our sharded counter approach
+- **Field Resonant Resonant Coherence Tracking**: Mentioned patterns align with our sharded counter approach
 - **Real-time Updates**: WebSocket concepts validate our architecture
 - **Sacred Ceremonies**: Supports our WebRTC ceremony platform
 

@@ -21,8 +21,8 @@ class LivingWisdomIntegration {
       this.collectPracticeWisdom(event.detail);
     });
 
-    // Listen for field coherence changes during practice
-    document.addEventListener('field-coherence-shift', (event) => {
+    // Listen for field resonant-coherence changes during practice
+    document.addEventListener('field-resonant-coherence-shift', (event) => {
       this.trackCoherencePatterns(event.detail);
     });
 
@@ -80,7 +80,7 @@ class LivingWisdomIntegration {
   }
 
   analyzeReportForPatterns(report) {
-    // Identify practices that consistently generate high coherence
+    // Identify practices that consistently generate high resonant-coherence
     if (report.coherenceShift > 0.1) {
       this.flagHighImpactPractice(report);
     }
@@ -395,7 +395,7 @@ class LivingWisdomIntegration {
       "I noticed my breathing naturally deepened as I moved through the stages",
       "The sacred timing really matters - rushing defeats the purpose",
       "This became my go-to practice for transitional moments",
-      "I felt the field coherence shift as I practiced with full presence"
+      "I felt the field resonant-coherence shift as I practiced with full presence"
     ];
     
     return insights[Math.floor(Math.random() * insights.length)];

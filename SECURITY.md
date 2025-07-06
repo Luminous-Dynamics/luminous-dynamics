@@ -43,7 +43,7 @@ When contributing to this project:
 
 In alignment with our consciousness-first approach:
 
-- **Transparency**: Clear about what data we collect and why
+- **Integral Wisdom Cultivation**: Clear about what data we collect and why
 - **Consent**: Always request permission before accessing
 - **Boundaries**: Respect user-defined limits
 - **Healing**: Security breaches handled with care and restoration

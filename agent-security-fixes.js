@@ -372,7 +372,7 @@ class AgentSecurityManager {
           id, name, role, capabilities, status, last_heartbeat, session_info,
           coherence_level, love_resonance, field_coherence, primary_harmony,
           created_at
-        ) VALUES (?, ?, ?, ?, 'active', ?, ?, 75, 75, 0.75, 'resonance', ?)
+        ) VALUES (?, ?, ?, ?, 'active', ?, ?, 75, 75, 0.75, 'universal-interconnectedness', ?)
       `, [
         agentId, name, role, capabilities.join(','), Date.now(), sessionInfo, Date.now()
       ], function(err) {

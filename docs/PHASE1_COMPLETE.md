@@ -37,7 +37,7 @@ legacy/
 ✅ **Local Services Running:**
 - Ollama API (port 11434)
 - Web Dashboard (port 8338)
-- Agent Network (1 active agent, 83.5% coherence)
+- Agent Network (1 active agent, 83.5% resonant-coherence)
 
 ✅ **Cloud Services Active:**
 - sacred-council-api

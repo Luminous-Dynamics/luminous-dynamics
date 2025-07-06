@@ -58,7 +58,7 @@ Then access at http://localhost:8080 (no auth required).
 4. **Move to Different Project**: Deploy to a project without restrictive org policies
 
 ## Current Capabilities (When Authenticated)
-- ✅ Real-time field coherence tracking
+- ✅ Real-time field resonant-coherence tracking
 - ✅ Sacred message processing
 - ✅ WebSocket connections for live updates
 - ✅ Harmony balancing

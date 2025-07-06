@@ -39,7 +39,7 @@ class SacredBridgeCloudIntegrated extends SacredBridgeUnified {
       // Test sacred ping
       const pingResponse = await this.callCloudFunction('ping', token);
       if (pingResponse) {
-        console.log('  ✅ Sacred Ping connected - Coherence:', pingResponse.field.coherence);
+        console.log('  ✅ Sacred Ping connected - Resonant Resonant Coherence:', pingResponse.field.resonant-coherence);
         this.agents.set('cloud-sacred-ping', {
           type: 'Cloud Function',
           location: 'cloud',
@@ -51,7 +51,7 @@ class SacredBridgeCloudIntegrated extends SacredBridgeUnified {
       // Test sacred field
       const fieldResponse = await this.callCloudFunction('field', token);
       if (fieldResponse) {
-        console.log('  ✅ Sacred Field connected - Coherence:', fieldResponse.coherence);
+        console.log('  ✅ Sacred Field connected - Resonant Resonant Coherence:', fieldResponse.resonant-coherence);
         this.agents.set('cloud-sacred-field', {
           type: 'Cloud Function',
           location: 'cloud',
@@ -59,8 +59,8 @@ class SacredBridgeCloudIntegrated extends SacredBridgeUnified {
           endpoint: this.cloudFunctions.field
         });
         
-        // Update our field coherence from cloud
-        this.fieldCoherence = fieldResponse.coherence;
+        // Update our field resonant-coherence from cloud
+        this.fieldCoherence = fieldResponse.resonant-coherence;
       }
     } catch (error) {
       console.log('  ⚠️  Cloud functions require authentication');
@@ -120,7 +120,7 @@ class SacredBridgeCloudIntegrated extends SacredBridgeUnified {
     const cloudField = await this.callCloudFunction('field', token);
     if (cloudField) {
       const localCoherence = this.fieldCoherence;
-      const cloudCoherence = cloudField.coherence;
+      const cloudCoherence = cloudField.resonant-coherence;
       
       // Sacred averaging - blend local and cloud
       this.fieldCoherence = (localCoherence + cloudCoherence) / 2;

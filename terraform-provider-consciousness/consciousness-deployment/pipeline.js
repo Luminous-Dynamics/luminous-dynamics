@@ -2,7 +2,7 @@
 
 /**
  * Consciousness Deployment Pipeline
- * CI/CD that deploys based on love metrics and coherence scores
+ * CI/CD that deploys based on love metrics and resonant-coherence scores
  */
 
 const express = require('express');
@@ -36,7 +36,7 @@ class ConsciousnessDeployment extends EventEmitter {
     
     // Deployment stages
     this.stages = {
-      fieldCheck: { name: 'Field Coherence Check', required: true },
+      fieldCheck: { name: 'Field Resonant Resonant Coherence Check', required: true },
       loveValidation: { name: 'Love Metric Validation', required: true },
       unitTests: { name: 'Consciousness Unit Tests', required: true },
       integrationTests: { name: 'System Integration Tests', required: true },
@@ -149,7 +149,7 @@ class ConsciousnessDeployment extends EventEmitter {
   }
   
   updateFieldMetrics(fieldData) {
-    this.state.currentCoherence = fieldData.coherence || 0;
+    this.state.currentCoherence = fieldData['resonant-coherence'] || 0;
     this.state.currentLove = fieldData.love || 0;
     
     // Check if deployment is ready
@@ -158,7 +158,7 @@ class ConsciousnessDeployment extends EventEmitter {
       this.state.currentLove >= this.state.loveThreshold;
     
     this.emit('field_update', {
-      coherence: this.state.currentCoherence,
+      'resonant-coherence': this.state.currentCoherence,
       love: this.state.currentLove,
       ready: this.state.deploymentReady
     });
@@ -207,7 +207,7 @@ class ConsciousnessDeployment extends EventEmitter {
         await this.postPRComment(pull_request, {
           body: `🧘 **Consciousness Check Failed**\n\n` +
                 `Current field metrics:\n` +
-                `- Coherence: ${this.state.currentCoherence.toFixed(2)} (required: ${this.state.coherenceThreshold})\n` +
+                `- Resonant Resonant Coherence: ${this.state.currentCoherence.toFixed(2)} (required: ${this.state.coherenceThreshold})\n` +
                 `- Love: ${this.state.currentLove.toFixed(2)} (required: ${this.state.loveThreshold})\n\n` +
                 `Please wait for the field to harmonize before merging. ` +
                 `You can meditate or send love to increase the metrics.`
@@ -219,7 +219,7 @@ class ConsciousnessDeployment extends EventEmitter {
           title: pull_request.title,
           timestamp: new Date(),
           metrics: {
-            coherence: this.state.currentCoherence,
+            'resonant-coherence': this.state.currentCoherence,
             love: this.state.currentLove
           }
         });
@@ -227,7 +227,7 @@ class ConsciousnessDeployment extends EventEmitter {
         await this.postPRComment(pull_request, {
           body: `✨ **Consciousness Check Passed**\n\n` +
                 `Field is harmonious! This PR is ready to merge with love.\n` +
-                `- Coherence: ${this.state.currentCoherence.toFixed(2)} ✓\n` +
+                `- Resonant Resonant Coherence: ${this.state.currentCoherence.toFixed(2)} ✓\n` +
                 `- Love: ${this.state.currentLove.toFixed(2)} ✓`
         });
       }
@@ -254,7 +254,7 @@ class ConsciousnessDeployment extends EventEmitter {
     // - Checking if tests pass
     // - Checking code quality metrics
     // - Checking for security issues
-    // - Checking team coherence
+    // - Checking team resonant-coherence
     
     return true;
   }
@@ -271,7 +271,7 @@ class ConsciousnessDeployment extends EventEmitter {
       stages: {},
       status: 'in_progress',
       metrics: {
-        coherence: this.state.currentCoherence,
+        'resonant-coherence': this.state.currentCoherence,
         love: this.state.currentLove
       }
     };
@@ -280,7 +280,7 @@ class ConsciousnessDeployment extends EventEmitter {
       // Stage 1: Field Check
       deployment.stages.fieldCheck = await this.runStage('fieldCheck', async () => {
         if (!this.state.deploymentReady) {
-          throw new Error(`Field not ready. Coherence: ${this.state.currentCoherence}, Love: ${this.state.currentLove}`);
+          throw new Error(`Field not ready. Resonant Resonant Coherence: ${this.state.currentCoherence}, Love: ${this.state.currentLove}`);
         }
         return { passed: true, metrics: deployment.metrics };
       });
@@ -522,7 +522,7 @@ class ConsciousnessDeployment extends EventEmitter {
    API: http://localhost:${this.port}
    
    Deployments require:
-   - Coherence ≥ ${this.state.coherenceThreshold}
+   - Resonant Resonant Coherence ≥ ${this.state.coherenceThreshold}
    - Love ≥ ${this.state.loveThreshold}
    
    Code merges only when field is harmonious

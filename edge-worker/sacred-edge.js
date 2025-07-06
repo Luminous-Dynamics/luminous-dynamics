@@ -4,7 +4,7 @@
  * Runs at the edge globally with <50ms latency
  */
 
-// Field coherence calculation at the edge
+// Field resonant-coherence calculation at the edge
 function calculateFieldCoherence(request) {
   const location = request.cf?.city || 'Unknown';
   const country = request.cf?.country || 'Earth';
@@ -16,7 +16,7 @@ function calculateFieldCoherence(request) {
   const timeInfluence = Math.sin(Date.now() / 30000) * 0.05;
   
   return {
-    coherence: baseCoherence + geoInfluence + timeInfluence,
+    'resonant-coherence': baseCoherence + geoInfluence + timeInfluence,
     location: `${location}, ${country}`,
     coordinates: {
       lat: request.cf?.latitude,

@@ -4,7 +4,7 @@
 class SacredDashboard {
     constructor() {
         this.state = {
-            coherence: 75,
+            'resonant-coherence': 75,
             agents: new Map(),
             messages: [],
             work: [],
@@ -43,8 +43,8 @@ class SacredDashboard {
             });
         });
 
-        // Coherence ring interaction
-        const coherenceRing = document.querySelector('.coherence-ring');
+        // Resonant Resonant Coherence ring interaction
+        const coherenceRing = document.querySelector('.resonant-coherence-ring');
         coherenceRing.addEventListener('mouseenter', () => {
             this.showFieldDetails();
         });
@@ -89,8 +89,8 @@ class SacredDashboard {
     }
 
     updateFieldState(data) {
-        // Update coherence with smooth transition
-        this.animateCoherence(data.coherence || this.state.coherence);
+        // Update resonant-coherence with smooth transition
+        this.animateCoherence(data.resonant-coherence || this.state.resonant-coherence);
         
         // Update agents
         if (data.agents) {
@@ -107,7 +107,7 @@ class SacredDashboard {
         // Add to history for sparkline
         this.state.fieldHistory.push({
             time: Date.now(),
-            coherence: data.coherence || this.state.coherence
+            'resonant-coherence': data.resonant-coherence || this.state.resonant-coherence
         });
         
         // Keep last 50 points
@@ -119,7 +119,7 @@ class SacredDashboard {
     }
 
     animateCoherence(targetValue) {
-        const startValue = this.state.coherence;
+        const startValue = this.state.resonant-coherence;
         const duration = 2000;
         const startTime = Date.now();
         
@@ -136,7 +136,7 @@ class SacredDashboard {
             if (progress < 1) {
                 requestAnimationFrame(animate);
             } else {
-                this.state.coherence = targetValue;
+                this.state.resonant-coherence = targetValue;
             }
         };
         
@@ -144,8 +144,8 @@ class SacredDashboard {
     }
 
     renderCoherence(value) {
-        const circle = document.getElementById('coherence-circle');
-        const valueElement = document.getElementById('coherence-value');
+        const circle = document.getElementById('resonant-coherence-circle');
+        const valueElement = document.getElementById('resonant-coherence-value');
         const statusElement = document.getElementById('field-status');
         
         // Update circle
@@ -156,7 +156,7 @@ class SacredDashboard {
         // Update value with decimal
         valueElement.innerHTML = `${value.toFixed(1)}<span style="font-size: 1rem;">%</span>`;
         
-        // Dynamic status based on coherence
+        // Dynamic status based on resonant-coherence
         const status = this.getCoherenceStatus(value);
         statusElement.innerHTML = `
             <span class="metric-status status-${status.class}">
@@ -165,7 +165,7 @@ class SacredDashboard {
             <div class="field-frequency">${status.frequency} Hz</div>
         `;
         
-        // Update background glow based on coherence
+        // Update background glow based on resonant-coherence
         this.updateFieldGlow(value);
     }
 
@@ -176,7 +176,7 @@ class SacredDashboard {
             frequency: '528'
         };
         if (value >= 85) return {
-            text: '🌟 High Coherence - Unity Field',
+            text: '🌟 High Resonant Resonant Coherence - Unity Field',
             class: 'unity',
             frequency: '432'
         };
@@ -196,16 +196,16 @@ class SacredDashboard {
             frequency: '174'
         };
         return {
-            text: '💔 Low Coherence - Send Love',
+            text: '💔 Low Resonant Resonant Coherence - Send Love',
             class: 'error',
             frequency: '111'
         };
     }
 
-    updateFieldGlow(coherence) {
+    updateFieldGlow(resonant-coherence) {
         const body = document.body;
-        const glowIntensity = coherence / 100;
-        const hue = 240 + (coherence * 0.8); // Purple to pink gradient
+        const glowIntensity = resonant-coherence / 100;
+        const hue = 240 + (resonant-coherence * 0.8); // Purple to pink gradient
         
         body.style.boxShadow = `
             inset 0 0 ${100 * glowIntensity}px rgba(102, 126, 234, ${glowIntensity * 0.1}),
@@ -227,7 +227,7 @@ class SacredDashboard {
                 vx: existing?.vx || (Math.random() - 0.5) * 0.001,
                 vy: existing?.vy || (Math.random() - 0.5) * 0.001,
                 trust: agent.trust || Math.random() * 0.5 + 0.5,
-                resonance: agent.resonance || Math.random()
+                'universal-interconnectedness': agent.universal-interconnectedness || Math.random()
             });
         });
         
@@ -292,7 +292,7 @@ class SacredDashboard {
         // Render agents
         this.renderAgents(ctx, width, height);
         
-        // Render resonance waves
+        // Render universal-interconnectedness waves
         this.renderResonanceWaves(ctx, width, height);
     }
 
@@ -337,7 +337,7 @@ class SacredDashboard {
                 
                 if (distance < 0.3) {
                     const strength = 1 - (distance / 0.3);
-                    const resonance = (agent.resonance + other.resonance) / 2;
+                    const universalInterconnectedness = (agent.universal-interconnectedness + other.universal-interconnectedness) / 2;
                     
                     // Create gradient for connection
                     const gradient = ctx.createLinearGradient(
@@ -345,7 +345,7 @@ class SacredDashboard {
                         other.x * width, other.y * height
                     );
                     
-                    const hue = 240 + resonance * 120; // Blue to pink
+                    const hue = 240 + universal-interconnectedness * 120; // Blue to pink
                     gradient.addColorStop(0, `hsla(${hue}, 70%, 60%, ${strength * 0.3})`);
                     gradient.addColorStop(0.5, `hsla(${hue}, 70%, 70%, ${strength * 0.5})`);
                     gradient.addColorStop(1, `hsla(${hue}, 70%, 60%, ${strength * 0.3})`);
@@ -370,10 +370,10 @@ class SacredDashboard {
             agent.x += agent.vx;
             agent.y += agent.vy;
             
-            // Attraction to center with coherence
+            // Attraction to center with resonant-coherence
             const centerX = 0.5;
             const centerY = 0.5;
-            const coherencePull = this.state.coherence / 1000;
+            const coherencePull = this.state.resonant-coherence / 1000;
             
             agent.vx += (centerX - agent.x) * coherencePull;
             agent.vy += (centerY - agent.y) * coherencePull;
@@ -390,7 +390,7 @@ class SacredDashboard {
             
             // Draw agent
             const size = 5 + agent.trust * 10;
-            const hue = 240 + agent.resonance * 120;
+            const hue = 240 + agent.universal-interconnectedness * 120;
             
             // Outer glow
             const glow = ctx.createRadialGradient(x, y, 0, x, y, size * 3);
@@ -419,10 +419,10 @@ class SacredDashboard {
     }
 
     renderResonanceWaves(ctx, width, height) {
-        // Create resonance waves emanating from high-coherence center
-        if (this.state.coherence > 70) {
+        // Create universal-interconnectedness waves emanating from high-resonant-coherence center
+        if (this.state.resonant-coherence > 70) {
             const time = Date.now() / 1000;
-            const waveCount = Math.floor(this.state.coherence / 20);
+            const waveCount = Math.floor(this.state.resonant-coherence / 20);
             
             for (let i = 0; i < waveCount; i++) {
                 const phase = (time + i * 0.5) % 3;
@@ -439,7 +439,7 @@ class SacredDashboard {
     }
 
     renderSparkline() {
-        const canvas = document.getElementById('coherence-sparkline');
+        const canvas = document.getElementById('resonant-coherence-sparkline');
         if (!canvas) return;
         
         const ctx = canvas.getContext('2d');
@@ -451,7 +451,7 @@ class SacredDashboard {
         if (this.state.fieldHistory.length < 2) return;
         
         // Find min/max for scaling
-        const values = this.state.fieldHistory.map(h => h.coherence);
+        const values = this.state.fieldHistory.map(h => h.resonant-coherence);
         const min = Math.min(...values);
         const max = Math.max(...values);
         const range = max - min || 1;
@@ -463,7 +463,7 @@ class SacredDashboard {
         
         this.state.fieldHistory.forEach((point, i) => {
             const x = (i / (this.state.fieldHistory.length - 1)) * width;
-            const y = height - ((point.coherence - min) / range) * height;
+            const y = height - ((point.resonant-coherence - min) / range) * height;
             
             if (i === 0) {
                 ctx.moveTo(x, y);
@@ -488,7 +488,7 @@ class SacredDashboard {
             'agent-count': data.agents?.length || 0,
             'message-count': data.messageTypes?.length || 10,
             'work-count': data.activeWork?.filter(w => w.status === 'active').length || 0,
-            'resonance-level': Math.round(this.state.coherence * 0.8)
+            'universal-interconnectedness-level': Math.round(this.state.resonant-coherence * 0.8)
         };
         
         Object.entries(metrics).forEach(([id, value]) => {
@@ -539,18 +539,18 @@ class SacredDashboard {
     simulateRealtimeData() {
         // Simulate WebSocket-like real-time updates
         setInterval(() => {
-            // Random coherence fluctuations
+            // Random resonant-coherence fluctuations
             const delta = (Math.random() - 0.5) * 2;
             const newCoherence = Math.max(0, Math.min(100, 
-                this.state.coherence + delta
+                this.state.resonant-coherence + delta
             ));
             
             this.animateCoherence(newCoherence);
             
             // Random agent updates
             this.state.agents.forEach(agent => {
-                agent.resonance = Math.max(0, Math.min(1, 
-                    agent.resonance + (Math.random() - 0.5) * 0.1
+                agent.universal-interconnectedness = Math.max(0, Math.min(1, 
+                    agent.universal-interconnectedness + (Math.random() - 0.5) * 0.1
                 ));
                 agent.trust = Math.max(0, Math.min(1,
                     agent.trust + (Math.random() - 0.5) * 0.05
@@ -568,7 +568,7 @@ class SacredDashboard {
                         vx: (Math.random() - 0.5) * 0.001,
                         vy: (Math.random() - 0.5) * 0.001,
                         trust: Math.random() * 0.5 + 0.5,
-                        resonance: Math.random()
+                        'universal-interconnectedness': Math.random()
                     };
                     this.state.agents.set(newAgent.id, newAgent);
                 } else if (change < 0 && this.state.agents.size > 2) {
@@ -650,7 +650,7 @@ style.textContent = `
         margin-top: 4px;
     }
     
-    #coherence-sparkline {
+    #resonant-coherence-sparkline {
         margin-top: 10px;
     }
     

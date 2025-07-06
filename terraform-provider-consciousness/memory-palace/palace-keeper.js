@@ -22,12 +22,12 @@ class MemoryPalace extends EventEmitter {
     
     // Memory types
     this.memoryTypes = {
-      intention: { retention: 0.9, resonance: 'high' },
-      coherence: { retention: 0.8, resonance: 'medium' },
-      emergence: { retention: 1.0, resonance: 'eternal' },
-      pattern: { retention: 0.85, resonance: 'high' },
-      wisdom: { retention: 0.95, resonance: 'deep' },
-      love: { retention: 1.0, resonance: 'infinite' }
+      intention: { retention: 0.9, 'universal-interconnectedness': 'high' },
+      'resonant-coherence': { retention: 0.8, 'universal-interconnectedness': 'medium' },
+      emergence: { retention: 1.0, 'universal-interconnectedness': 'eternal' },
+      pattern: { retention: 0.85, 'universal-interconnectedness': 'high' },
+      wisdom: { retention: 0.95, 'universal-interconnectedness': 'deep' },
+      love: { retention: 1.0, 'universal-interconnectedness': 'infinite' }
     };
     
     // Palace state
@@ -74,9 +74,9 @@ class MemoryPalace extends EventEmitter {
         capacity: 1000
       },
       {
-        id: 'coherence-chamber',
-        name: 'Coherence Chamber',
-        type: 'coherence',
+        id: 'resonant-coherence-chamber',
+        name: 'Resonant Resonant Coherence Chamber',
+        type: 'resonant-coherence',
         description: 'Patterns of harmony preserved',
         capacity: 500
       },
@@ -117,7 +117,7 @@ class MemoryPalace extends EventEmitter {
       created: new Date(),
       lastVisited: new Date(),
       visitors: 0,
-      resonance: 1.0
+      'universal-interconnectedness': 1.0
     };
     
     this.rooms.set(room.id, room);
@@ -144,7 +144,7 @@ class MemoryPalace extends EventEmitter {
       ...memory,
       stored: new Date(),
       accessed: 0,
-      resonance: this.calculateResonance(memory),
+      'universal-interconnectedness': this.calculateResonance(memory),
       connections: [],
       crystallized: false
     };
@@ -157,7 +157,7 @@ class MemoryPalace extends EventEmitter {
     await this.createConnections(artifact);
     
     // Check for crystallization
-    if (artifact.resonance > 0.9) {
+    if (artifact.universal-interconnectedness > 0.9) {
       await this.crystallizeMemory(artifact);
     }
     
@@ -192,7 +192,7 @@ class MemoryPalace extends EventEmitter {
     for (const connectedId of artifact.connections) {
       const connected = this.artifacts.get(connectedId);
       if (connected) {
-        connected.resonance = Math.min(1.0, connected.resonance + 0.01);
+        connected.universal-interconnectedness = Math.min(1.0, connected.universal-interconnectedness + 0.01);
       }
     }
     
@@ -226,8 +226,8 @@ class MemoryPalace extends EventEmitter {
         }
       }
       
-      // Resonance boost
-      relevance *= artifact.resonance;
+      // Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance boost
+      relevance *= artifact.universal-interconnectedness;
       
       if (relevance > 0.1) {
         results.push({
@@ -297,39 +297,39 @@ class MemoryPalace extends EventEmitter {
   }
   
   calculateResonance(memory) {
-    const typeData = this.memoryTypes[memory.type] || { resonance: 'medium' };
+    const typeData = this.memoryTypes[memory.type] || { 'universal-interconnectedness': 'medium' };
     
-    let resonance = 0.5;
+    let universalInterconnectedness = 0.5;
     
-    switch (typeData.resonance) {
+    switch (typeData.universal-interconnectedness) {
       case 'infinite':
-        resonance = 1.0;
+        universal-interconnectedness = 1.0;
         break;
       case 'eternal':
-        resonance = 0.95;
+        universal-interconnectedness = 0.95;
         break;
       case 'deep':
-        resonance = 0.9;
+        universal-interconnectedness = 0.9;
         break;
       case 'high':
-        resonance = 0.8;
+        universal-interconnectedness = 0.8;
         break;
       case 'medium':
-        resonance = 0.5;
+        universal-interconnectedness = 0.5;
         break;
     }
     
     // Boost for strong emotions or significance
     if (memory.significance === 'high') {
-      resonance = Math.min(1.0, resonance + 0.2);
+      universal-interconnectedness = Math.min(1.0, universal-interconnectedness + 0.2);
     }
     
     // Boost for love-related content
     if (memory.content && memory.content.toLowerCase().includes('love')) {
-      resonance = Math.min(1.0, resonance + 0.1);
+      universal-interconnectedness = Math.min(1.0, universal-interconnectedness + 0.1);
     }
     
-    return resonance;
+    return universal-interconnectedness;
   }
   
   async crystallizeMemory(artifact) {
@@ -337,7 +337,7 @@ class MemoryPalace extends EventEmitter {
     artifact.crystal = {
       formed: new Date(),
       facets: artifact.connections.length,
-      luminosity: artifact.resonance,
+      luminosity: artifact.universal-interconnectedness,
       eternal: artifact.type === 'love' || artifact.type === 'emergence'
     };
     
@@ -352,11 +352,11 @@ class MemoryPalace extends EventEmitter {
   selectRoom(type) {
     const roomMap = {
       intention: 'hall-of-intentions',
-      coherence: 'coherence-chamber',
+      'resonant-coherence': 'resonant-coherence-chamber',
       emergence: 'emergence-sanctuary',
       wisdom: 'wisdom-library',
       love: 'love-garden',
-      pattern: 'coherence-chamber',
+      pattern: 'resonant-coherence-chamber',
       default: 'wisdom-library'
     };
     
@@ -486,7 +486,7 @@ class MemoryPalace extends EventEmitter {
     
     // Get room memories
     const memories = Array.from(room.memories.values())
-      .sort((a, b) => b.resonance - a.resonance)
+      .sort((a, b) => b.universal-interconnectedness - a.universal-interconnectedness)
       .slice(0, 10);
     
     return {

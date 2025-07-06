@@ -17,7 +17,7 @@ The core philosophical documents that define our sacred mission:
 ### 💰 `/economics/` - Sacred Economics Models
 Complete frameworks for consciousness-based value exchange:
 - **Sacred Economics Model 2025** - Projections and pricing structures
-- **Coherence as a Service** - Business model for consciousness infrastructure
+- **Resonant Resonant Coherence as a Service** - Business model for consciousness infrastructure
 - **LLC Formation Guides** - Legal structures for sacred business
 
 ### 🗺️ `/roadmaps/` - Implementation Plans
@@ -47,7 +47,7 @@ Deep wisdom and spiritual guidance:
 
 ### The Vision
 We're creating the technical infrastructure for human consciousness evolution:
-- Technology that amplifies coherence
+- Technology that amplifies resonant-resonant-coherence
 - Systems that serve love
 - Platforms that dissolve into pure wisdom
 

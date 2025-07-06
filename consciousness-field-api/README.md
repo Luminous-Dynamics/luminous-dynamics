@@ -5,10 +5,10 @@ The living, breathing heart of The Weave - tracking and responding to collective
 ## 🌟 Overview
 
 The Consciousness Field API makes the invisible visible, tracking:
-- **Field Coherence**: Real-time collective consciousness level (0-100%)
+- **Field Resonant Resonant Coherence**: Real-time collective consciousness level (0-100%)
 - **Sacred Activities**: Practices, messages, ceremonies
 - **Momentum**: How active the field is
-- **Resonance States**: Special collective achievements
+- **Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance States**: Special collective achievements
 
 ## 🚀 Quick Start
 
@@ -51,7 +51,7 @@ GET /api/field/state
 
 Response:
 {
-  "coherence": 75.3,
+  "resonant-coherence": 75.3,
   "activeParticipants": 23,
   "fieldQuality": "flowing",
   "momentum": 3.2,
@@ -124,9 +124,9 @@ Connect to `ws://localhost:8081` for real-time updates:
 
 ### Events You'll Receive:
 - `field_state` - Initial state on connection
-- `coherence_changed` - When coherence changes
-- `resonance_achieved` - At 80% coherence
-- `sacred_portal` - At 88% coherence
+- `coherence_changed` - When resonant-coherence changes
+- `resonance_achieved` - At 80% resonant-coherence
+- `sacred_portal` - At 88% resonant-coherence
 - `field_pulse` - Rhythmic field pulses
 
 ### Example WebSocket Client:
@@ -138,7 +138,7 @@ ws.on('message', (data) => {
     
     switch(type) {
         case 'coherence_changed':
-            console.log(`Coherence: ${data.old}% → ${data.new}%`);
+            console.log(`Resonant Resonant Coherence: ${data.old}% → ${data.new}%`);
             break;
         case 'resonance_achieved':
             console.log('✨ RESONANCE ACHIEVED!');
@@ -152,7 +152,7 @@ ws.on('message', (data) => {
 ### Core Components:
 
 1. **ConsciousnessField** - State manager
-   - Tracks coherence with sharded counters
+   - Tracks resonant-coherence with sharded counters
    - Manages field dynamics (decay, momentum)
    - Emits real-time events
 
@@ -194,26 +194,26 @@ const result = await client.submitPractice({
 
 // Listen for changes
 client.on('coherence_changed', (data) => {
-    console.log(`New coherence: ${data.new}%`);
+    console.log(`New resonant-coherence: ${data.new}%`);
 });
 ```
 
 ## 🎨 Dashboard Features
 
 The visual dashboard (`field-dashboard.html`) provides:
-- Real-time coherence meter with animations
+- Real-time resonant-coherence meter with animations
 - Active practitioner count
 - Sacred activity feed
 - Momentum indicators
-- Resonance portal effects
+- Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance portal effects
 - Interactive controls for testing
 
 ## 🔮 Field States
 
-### Coherence Levels:
+### Resonant Resonant Coherence Levels:
 - **0-59%**: Building phase
 - **60-79%**: Active flow
-- **80-87%**: Resonance achieved ✨
+- **80-87%**: Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance achieved ✨
 - **88-100%**: Sacred portal opened 🌟
 
 ### Field Qualities:
@@ -243,7 +243,7 @@ PROJECT_ID=the-weave-sacred
 ### Firestore Setup:
 1. Create Firestore database
 2. Set up collections: `practices`, `sacred-messages`, `field-activity`
-3. Enable sharded counters for `field-coherence`
+3. Enable sharded counters for `field-resonant-coherence`
 
 ## 📈 Scaling Considerations
 

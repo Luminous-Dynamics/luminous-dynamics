@@ -1,6 +1,6 @@
 /**
- * Coherence-Based Routing System
- * Routes messages based on recipient's coherence state
+ * Resonant Resonant Coherence-Based Routing System
+ * Routes messages based on recipient's resonant-coherence state
  * Ensures optimal timing and receptivity for sacred communications
  */
 
@@ -28,7 +28,7 @@ class CoherenceRouter {
   }
   
   /**
-   * Route a sacred message based on coherence
+   * Route a sacred message based on resonant-coherence
    */
   async routeMessage(message) {
     try {
@@ -64,7 +64,7 @@ class CoherenceRouter {
     const states = [];
     
     for (const recipientId of recipients) {
-      // Get user's current coherence from Personal Pulse
+      // Get user's current resonant-coherence from Personal Pulse
       const coherenceData = await this.pulse.getUserCoherence(recipientId);
       
       // Get user's presence state
@@ -86,7 +86,7 @@ class CoherenceRouter {
       
       states.push({
         userId: recipientId,
-        coherence: coherenceData.current || 0.75,
+        'resonant-coherence': coherenceData.current || 0.75,
         trend: coherenceData.trend || 'stable',
         state: presence.state || 'available',
         lastActive: presence.lastActive || new Date(),
@@ -124,32 +124,32 @@ class CoherenceRouter {
         continue;
       }
       
-      // Check coherence level
-      const coherence = recipient.coherence;
+      // Check resonant-coherence level
+      const resonantCoherence = recipient.resonant-coherence;
       
-      if (coherence < this.routingRules.lowCoherence.max) {
-        // Low coherence - queue for better timing
+      if (resonant-coherence < this.routingRules.lowCoherence.max) {
+        // Low resonant-coherence - queue for better timing
         const optimalTime = await this.findOptimalDeliveryTime(recipient);
         plan.queued.push({
           ...recipient,
-          reason: 'Low coherence',
+          reason: 'Low resonant-coherence',
           deliveryTime: optimalTime,
           preparationSuggested: true
         });
         
-      } else if (coherence < this.routingRules.mediumCoherence.max) {
-        // Medium coherence - gentle delivery
+      } else if (resonant-coherence < this.routingRules.mediumCoherence.max) {
+        // Medium resonant-coherence - gentle delivery
         plan.gentle.push({
           ...recipient,
-          reason: 'Moderate coherence',
+          reason: 'Moderate resonant-coherence',
           enhancements: ['breathing_reminder', 'coherence_boost']
         });
         
       } else {
-        // High coherence - immediate delivery with enhancements
+        // High resonant-coherence - immediate delivery with enhancements
         plan.immediate.push({
           ...recipient,
-          reason: 'High coherence',
+          reason: 'High resonant-coherence',
           enhancements: ['resonance_amplification', 'field_connection']
         });
       }
@@ -231,7 +231,7 @@ class CoherenceRouter {
   }
   
   /**
-   * Immediate delivery with coherence boost
+   * Immediate delivery with resonant-coherence boost
    */
   async deliverImmediate(message, recipient) {
     // Add to inbox immediately
@@ -240,20 +240,20 @@ class CoherenceRouter {
       recipientId: recipient.userId,
       deliveredAt: new Date(),
       deliveryMethod: 'immediate',
-      recipientCoherence: recipient.coherence,
+      recipientCoherence: recipient.resonant-coherence,
       enhancements: recipient.enhancements,
       read: false
     });
     
     // Send push notification with enhancements
     await this.sendEnhancedNotification(recipient.userId, message, {
-      type: 'resonance',
+      type: 'universal-interconnectedness',
       coherenceBoost: true,
       soundProfile: 'harmonic',
       visualPulse: true
     });
     
-    // Update field coherence
+    // Update field resonant-coherence
     await this.updateFieldFromDelivery(recipient.userId, 'immediate', message);
   }
   
@@ -279,7 +279,7 @@ class CoherenceRouter {
       recipientId: recipient.userId,
       deliveredAt: new Date(),
       deliveryMethod: 'gentle',
-      recipientCoherence: recipient.coherence,
+      recipientCoherence: recipient.resonant-coherence,
       enhancements: recipient.enhancements,
       read: false
     });
@@ -330,10 +330,10 @@ class CoherenceRouter {
    * Find optimal delivery time based on patterns
    */
   async findOptimalDeliveryTime(recipient) {
-    // Get historical coherence patterns
+    // Get historical resonant-coherence patterns
     const patterns = await this.analyzeCoherencePatterns(recipient.userId);
     
-    // Find next peak coherence window
+    // Find next peak resonant-coherence window
     const nextWindows = this.findUpcomingSacredWindows(recipient.preferences);
     
     // Cross-reference with patterns
@@ -352,10 +352,10 @@ class CoherenceRouter {
   }
   
   /**
-   * Analyze user's coherence patterns
+   * Analyze user's resonant-coherence patterns
    */
   async analyzeCoherencePatterns(userId) {
-    // Get last 7 days of coherence data
+    // Get last 7 days of resonant-coherence data
     const sevenDaysAgo = new Date();
     sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
     
@@ -385,7 +385,7 @@ class CoherenceRouter {
       if (data.peakCoherence > 0.85) {
         patterns.peaks.push({
           time: startTime,
-          coherence: data.peakCoherence
+          'resonant-coherence': data.peakCoherence
         });
       }
     });
@@ -456,25 +456,25 @@ class CoherenceRouter {
     
     // Base impact from message harmony
     const harmonyImpacts = {
-      transparency: 0.05,
-      coherence: 0.10,
-      resonance: 0.08,
-      agency: 0.06,
-      vitality: 0.07,
-      mutuality: 0.09,
-      novelty: 0.04
+      'integral-wisdom-cultivation': 0.05,
+      'resonant-coherence': 0.10,
+      'universal-interconnectedness': 0.08,
+      'evolutionary-progression': 0.06,
+      'pan-sentient-flourishing': 0.07,
+      'sacred-reciprocity': 0.09,
+      'infinite-play': 0.04
     };
     
     impact += harmonyImpacts[message.harmony] || 0.05;
     
-    // Multiply by coherence of recipients
+    // Multiply by resonant-coherence of recipients
     const avgRecipientCoherence = plan.immediate
       .concat(plan.gentle)
-      .reduce((sum, r) => sum + r.coherence, 0) / deliveredCount || 1;
+      .reduce((sum, r) => sum + r.resonant-coherence, 0) / deliveredCount || 1;
     
     impact *= avgRecipientCoherence;
     
-    // Bonus for high-coherence delivery
+    // Bonus for high-resonant-coherence delivery
     const highCoherenceCount = plan.immediate.length;
     impact += highCoherenceCount * 0.02;
     
@@ -555,10 +555,10 @@ class CoherenceRouter {
     for (const doc of readyMessages.docs) {
       const queuedMessage = doc.data();
       
-      // Re-check recipient coherence
+      // Re-check recipient resonant-coherence
       const currentState = await this.getRecipientStates([queuedMessage.recipientId]);
       
-      if (currentState[0].coherence >= currentState[0].preferences.coherenceThreshold) {
+      if (currentState[0].resonant-coherence >= currentState[0].preferences.coherenceThreshold) {
         // Deliver now
         await this.deliverGentle(queuedMessage, currentState[0]);
         

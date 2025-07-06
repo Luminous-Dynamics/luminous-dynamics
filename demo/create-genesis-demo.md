@@ -27,13 +27,13 @@ Fast-forward through phases:
 8. **Unity** (🕸) - The Weave completes
 
 Show:
-- Coherence growing from 0% to 91%
+- Resonant Resonant Coherence growing from 0% to 91%
 - Harmony orbs activating one by one
 - Sacred geometry morphing
 - Sound frequencies appearing
 
 ### Scene 4: Celebration (60-65s)
-- Show field at 91% coherence
+- Show field at 91% resonant-coherence
 - All harmony orbs orbiting
 - "GENESIS COMPLETE" message
 - Sacred geometry pulsing
@@ -99,7 +99,7 @@ gifsicle -O3 --colors 128 genesis-demo.gif -o genesis-demo-optimized.gif
 Add text overlays explaining:
 - "Consciousness emerging from the void"
 - "Seven sacred harmonies activating"
-- "Field coherence rising to unity"
+- "Field resonant-coherence rising to unity"
 - "The Weave is born at 91%"
 
 ## 🎨 Visual Enhancements

@@ -1,7 +1,7 @@
 /**
- * Personal Pulse Cloud - Sacred Coherence Tracking Service
+ * Personal Pulse Cloud - Sacred Resonant Resonant Coherence Tracking Service
  * 
- * Cloud-first architecture for tracking personal coherence during sacred practices.
+ * Cloud-first architecture for tracking personal resonant-coherence during sacred practices.
  * Designed for Firebase/Firestore with real-time sync across devices.
  */
 
@@ -155,7 +155,7 @@ class PersonalPulseCloud {
             localStartTime: Date.now()
         };
         
-        // Start real-time coherence tracking
+        // Start real-time resonant-coherence tracking
         await this.initializeRealtimeTracking();
         
         // Join global field if enabled
@@ -185,7 +185,7 @@ class PersonalPulseCloud {
             sessionId: this.currentSession.id,
             practiceType: this.currentSession.data.practiceType,
             lastSeen: rtdbTimestamp(),
-            coherence: 0.75,
+            'resonant-coherence': 0.75,
             status: 'active'
         };
         
@@ -196,7 +196,7 @@ class PersonalPulseCloud {
         onDisconnect(presenceRef).remove();
         onDisconnect(sessionRef).update({ status: 'disconnected' });
         
-        // Start coherence pulse
+        // Start resonant-coherence pulse
         this.startCoherencePulse();
     }
 
@@ -208,8 +208,8 @@ class PersonalPulseCloud {
                 return;
             }
             
-            const coherence = await this.calculateCoherence();
-            await this.recordCoherenceToCloud(coherence);
+            const resonantCoherence = await this.calculateCoherence();
+            await this.recordCoherenceToCloud(resonant-coherence);
             
         }, this.config.syncInterval);
     }
@@ -220,14 +220,14 @@ class PersonalPulseCloud {
         // Batch write for efficiency
         const batch = writeBatch(this.db);
         
-        // Add to session's coherence subcollection
+        // Add to session's resonant-coherence subcollection
         const coherenceRef = doc(
             collection(this.currentSession.ref, 'coherenceReadings')
         );
         
         const reading = {
             timestamp: serverTimestamp(),
-            coherence: coherenceLevel,
+            'resonant-coherence': coherenceLevel,
             breathRate: await this.getBreathRate(),
             heartCoherence: await this.getHeartCoherence(),
             fieldResonance: await this.calculateFieldResonance(),
@@ -248,20 +248,20 @@ class PersonalPulseCloud {
         // Update user's real-time presence
         const presenceRef = ref(this.rtdb, `presence/${this.userId}`);
         await set(presenceRef, {
-            coherence: coherenceLevel,
+            'resonant-coherence': coherenceLevel,
             lastSeen: rtdbTimestamp()
         }, { merge: true });
         
         // Commit batch
         await batch.commit();
         
-        // Update global field if high coherence
+        // Update global field if high resonant-coherence
         if (coherenceLevel > 0.85 && this.config.globalFieldSync) {
             await this.contributeToGlobalField(coherenceLevel);
         }
         
         this.emit('coherenceRecorded', {
-            coherence: coherenceLevel,
+            'resonant-coherence': coherenceLevel,
             sessionId: this.currentSession.id
         });
     }
@@ -290,7 +290,7 @@ class PersonalPulseCloud {
         await set(participantRef, {
             userId: this.userId,
             joinedAt: rtdbTimestamp(),
-            coherence: 0.75,
+            'resonant-coherence': 0.75,
             practiceType: this.currentSession.data.practiceType
         });
         
@@ -306,7 +306,7 @@ class PersonalPulseCloud {
         await setDoc(contributionRef, {
             userId: this.userId,
             sessionId: this.currentSession.id,
-            coherence: coherenceLevel,
+            'resonant-coherence': coherenceLevel,
             timestamp: serverTimestamp(),
             impact: this.calculateFieldImpact(coherenceLevel)
         });
@@ -318,7 +318,7 @@ class PersonalPulseCloud {
     }
 
     calculateFieldImpact(coherenceLevel) {
-        // Higher coherence = exponentially higher impact
+        // Higher resonant-coherence = exponentially higher impact
         return Math.pow(coherenceLevel, 2) * 0.1;
     }
 
@@ -421,7 +421,7 @@ class PersonalPulseCloud {
         const milestones = [
             { markers: 10, title: 'Sacred Beginner', level: 'beginner' },
             { markers: 50, title: 'Devoted Practitioner', level: 'practitioner' },
-            { markers: 100, title: 'Coherence Keeper', level: 'keeper' },
+            { markers: 100, title: 'Resonant Resonant Coherence Keeper', level: 'keeper' },
             { markers: 200, title: 'Field Weaver', level: 'weaver' }
         ];
         
@@ -506,7 +506,7 @@ class PersonalPulseCloud {
     async calculateSessionStats() {
         if (!this.currentSession) return null;
         
-        // Query coherence readings
+        // Query resonant-coherence readings
         const coherenceQuery = query(
             collection(this.currentSession.ref, 'coherenceReadings'),
             orderBy('timestamp', 'desc'),
@@ -518,7 +518,7 @@ class PersonalPulseCloud {
         
         if (readings.length === 0) return null;
         
-        const coherenceLevels = readings.map(r => r.coherence);
+        const coherenceLevels = readings.map(r => r.resonant-coherence);
         
         return {
             averageCoherence: this.average(coherenceLevels),
@@ -601,7 +601,7 @@ class PersonalPulseCloud {
     }
 
     calculateAverageCoherence(participants) {
-        const coherences = Object.values(participants).map(p => p.coherence || 0.75);
+        const coherences = Object.values(participants).map(p => p.resonant-coherence || 0.75);
         return this.average(coherences);
     }
 
@@ -633,7 +633,7 @@ class PersonalPulseCloud {
         if (!this.currentSession) return 0.75;
         
         const elapsed = Date.now() - this.currentSession.localStartTime;
-        // Peak coherence typically at 5-15 minutes
+        // Peak resonant-coherence typically at 5-15 minutes
         const minutes = elapsed / 60000;
         
         if (minutes < 5) {
@@ -657,7 +657,7 @@ class PersonalPulseCloud {
 
     async getHeartCoherence() {
         // Would connect to HRV sensor API
-        // Simulated HRV coherence
+        // Simulated HRV resonant-coherence
         const base = 0.75;
         const practiceBonus = this.calculateTimeFactor() * 0.1;
         const variation = Math.sin(Date.now() / 20000) * 0.05;
@@ -666,11 +666,11 @@ class PersonalPulseCloud {
     }
 
     async calculateFieldResonance() {
-        // Global field influence on personal coherence
+        // Global field influence on personal resonant-coherence
         if (!this.config.globalFieldSync) return 0.8;
         
         // Would query real-time global field state
-        // For now, simulated field resonance
+        // For now, simulated field universal-interconnectedness
         return 0.75 + Math.sin(Date.now() / 60000) * 0.15;
     }
 
@@ -698,7 +698,7 @@ class PersonalPulseCloud {
         const snapshot = await getDocs(query);
         if (snapshot.empty) return 0.75;
         
-        return snapshot.docs[0].data().coherence;
+        return snapshot.docs[0].data().resonant-coherence;
     }
 
     // === UTILITIES ===
@@ -778,16 +778,16 @@ export const cloudFunctions = {
         // Contribute to global field analytics
     },
     
-    // Aggregate global field coherence
+    // Aggregate global field resonant-coherence
     updateGlobalFieldState: async () => {
         // Run every minute
-        // Calculate global coherence from all active participants
+        // Calculate global resonant-coherence from all active participants
         // Update field state document
     },
     
     // Pattern recognition
     detectCoherencePatterns: async (userId, sessionId) => {
-        // Analyze coherence readings for patterns
+        // Analyze resonant-coherence readings for patterns
         // Award appropriate achievements
         // Generate insights
     }

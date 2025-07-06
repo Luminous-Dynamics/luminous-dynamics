@@ -17,8 +17,8 @@ class FoundationalGlyphs {
                 name: "First Presence",
                 fullName: "Ω0: First Presence",
                 type: "foundation",
-                harmony: "transparency",
-                secondaryHarmonies: ["coherence"],
+                harmony: "integral-wisdom-cultivation",
+                secondaryHarmonies: ["resonant-coherence"],
                 difficulty: "beginner",
                 masteryLevel: 2,
                 
@@ -28,7 +28,7 @@ class FoundationalGlyphs {
                         
                         coreQuestion: "Can I meet this moment without needing it to be different?",
                         
-                        harmonyConnection: "First Presence is the gateway to Transparency—the alignment of inner experience with outer expression. When we arrive present, we become authentic. We can feel what is true and speak from that truth rather than from our conditioning.",
+                        harmonyConnection: "First Presence is the gateway to Integral Wisdom Cultivation—the alignment of inner experience with outer expression. When we arrive present, we become authentic. We can feel what is true and speak from that truth rather than from our conditioning.",
                         
                         shadowTransformed: "Reactivity, rushing, spiritual bypassing, presence anxiety, compulsive doing"
                     },
@@ -63,7 +63,7 @@ class FoundationalGlyphs {
                         contraindications: ["During emergency situations where immediate action is required"]
                     },
                     
-                    resonance: {
+                    'universal-interconnectedness': {
                         relatedGlyphs: ["Ω1", "Ω4", "Ω8"],
                         prerequisiteGlyphs: [],
                         complementaryGlyphs: ["Ω7", "Ω12"],
@@ -117,8 +117,8 @@ class FoundationalGlyphs {
                 name: "Conscious Arrival",
                 fullName: "Ω1: Conscious Arrival",
                 type: "foundation",
-                harmony: "transparency",
-                secondaryHarmonies: ["agency", "coherence"],
+                harmony: "integral-wisdom-cultivation",
+                secondaryHarmonies: ["evolutionary-progression", "resonant-coherence"],
                 difficulty: "beginner",
                 masteryLevel: 3,
                 
@@ -128,7 +128,7 @@ class FoundationalGlyphs {
                         
                         coreQuestion: "How do I want to show up in this moment?",
                         
-                        harmonyConnection: "Conscious Arrival embodies Transparency by aligning our inner intention with our outer expression. It also serves Agency by making our participation in life a conscious choice rather than unconscious habit.",
+                        harmonyConnection: "Conscious Arrival embodies Integral Wisdom Cultivation by aligning our inner intention with our outer expression. It also serves Evolutionary Progression & Purposeful Unfolding by making our participation in life a conscious choice rather than unconscious habit.",
                         
                         shadowTransformed: "Unconscious participation, reactive entrance, scattered energy, people-pleasing arrival"
                     },
@@ -163,7 +163,7 @@ class FoundationalGlyphs {
                         ]
                     },
                     
-                    resonance: {
+                    'universal-interconnectedness': {
                         relatedGlyphs: ["Ω0", "Ω4", "Ω7"],
                         prerequisiteGlyphs: ["Ω0"],
                         complementaryGlyphs: ["Ω8", "Ω12", "Ω15"],
@@ -205,8 +205,8 @@ class FoundationalGlyphs {
                 name: "Sacred Listening",
                 fullName: "Ω4: Sacred Listening",
                 type: "foundation",
-                harmony: "resonance",
-                secondaryHarmonies: ["transparency", "mutuality"],
+                harmony: "universal-interconnectedness",
+                secondaryHarmonies: ["integral-wisdom-cultivation", "sacred-reciprocity"],
                 difficulty: "intermediate",
                 masteryLevel: 4,
                 
@@ -216,7 +216,7 @@ class FoundationalGlyphs {
                         
                         coreQuestion: "Can I listen to the heart beneath the words?",
                         
-                        harmonyConnection: "Sacred Listening embodies Resonance—the capacity for deep attunement and empathetic presence. It creates the relational field where mutual understanding becomes possible and where both beings are changed by the encounter.",
+                        harmonyConnection: "Sacred Listening embodies Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance—the capacity for deep attunement and empathetic presence. It creates the relational field where mutual understanding becomes possible and where both beings are changed by the encounter.",
                         
                         shadowTransformed: "Debate mind, advice-giving addiction, performative listening, empathy overwhelm, listening to respond"
                     },
@@ -263,7 +263,7 @@ class FoundationalGlyphs {
                         ]
                     },
                     
-                    resonance: {
+                    'universal-interconnectedness': {
                         relatedGlyphs: ["Ω0", "Ω7", "Ω12"],
                         prerequisiteGlyphs: ["Ω0"],
                         complementaryGlyphs: ["Ω3", "Ω9", "Ω15"],
@@ -305,8 +305,8 @@ class FoundationalGlyphs {
                 name: "Boundary With Love",
                 fullName: "Ω7: Boundary With Love",
                 type: "foundation",
-                harmony: "agency",
-                secondaryHarmonies: ["transparency", "vitality"],
+                harmony: "evolutionary-progression",
+                secondaryHarmonies: ["integral-wisdom-cultivation", "pan-sentient-flourishing"],
                 difficulty: "intermediate",
                 masteryLevel: 5,
                 
@@ -316,7 +316,7 @@ class FoundationalGlyphs {
                         
                         coreQuestion: "How can I say 'no' to this while saying 'yes' to love?",
                         
-                        harmonyConnection: "Boundary With Love embodies Agency—the harmony of conscious choice and authentic empowerment. It teaches that true power serves connection rather than dominance, and that healthy limits actually create more intimacy, not less.",
+                        harmonyConnection: "Boundary With Love embodies Evolutionary Progression & Purposeful Unfolding—the harmony of conscious choice and authentic empowerment. It teaches that true power serves connection rather than dominance, and that healthy limits actually create more intimacy, not less.",
                         
                         shadowTransformed: "People-pleasing, boundary collapse, aggressive boundaries, victim consciousness, martyrdom"
                     },
@@ -360,7 +360,7 @@ class FoundationalGlyphs {
                         ]
                     },
                     
-                    resonance: {
+                    'universal-interconnectedness': {
                         relatedGlyphs: ["Ω0", "Ω4", "Ω12"],
                         prerequisiteGlyphs: ["Ω0", "Ω4"],
                         complementaryGlyphs: ["Ω3", "Ω6", "Ω9"],
@@ -399,21 +399,21 @@ class FoundationalGlyphs {
 
             "Ω8": {
                 id: "Ω8",
-                name: "Inner Coherence",
-                fullName: "Ω8: Inner Coherence",
+                name: "Inner Resonant Resonant Coherence",
+                fullName: "Ω8: Inner Resonant Resonant Coherence",
                 type: "foundation",
-                harmony: "coherence",
-                secondaryHarmonies: ["transparency", "vitality"],
+                harmony: "resonant-coherence",
+                secondaryHarmonies: ["integral-wisdom-cultivation", "pan-sentient-flourishing"],
                 difficulty: "intermediate",
                 masteryLevel: 4,
                 
                 quadrants: {
                     why: {
-                        philosophicalRoot: "Inner Coherence is the practice of aligning your thoughts, feelings, values, and actions into one integrated whole. When we are coherent within ourselves, we become a clear signal in the relational field, making authentic connection possible.",
+                        philosophicalRoot: "Inner Resonant Resonant Coherence is the practice of aligning your thoughts, feelings, values, and actions into one integrated whole. When we are coherent within ourselves, we become a clear signal in the relational field, making authentic connection possible.",
                         
                         coreQuestion: "Are my inner experience and outer expression aligned?",
                         
-                        harmonyConnection: "Inner Coherence embodies the Harmony of Coherence—the integration of fragmented parts into wholeness. It creates the internal foundation that makes all other practices possible and authentic.",
+                        harmonyConnection: "Inner Resonant Resonant Coherence embodies the Harmony of Resonant Resonant Coherence—the integration of fragmented parts into wholeness. It creates the internal foundation that makes all other practices possible and authentic.",
                         
                         shadowTransformed: "Inner conflict, compartmentalization, self-betrayal, incongruence, spiritual bypassing"
                     },
@@ -453,14 +453,14 @@ class FoundationalGlyphs {
                         },
                         
                         variations: [
-                            "Morning Coherence Check: Daily alignment practice upon waking",
-                            "Decision Coherence: Checking alignment before making choices",
-                            "Relational Coherence: Aligning your inner truth with your outer expression in relationships",
-                            "Work Coherence: Living your values in professional contexts"
+                            "Morning Resonant Resonant Coherence Check: Daily alignment practice upon waking",
+                            "Decision Resonant Resonant Coherence: Checking alignment before making choices",
+                            "Relational Resonant Resonant Coherence: Aligning your inner truth with your outer expression in relationships",
+                            "Work Resonant Resonant Coherence: Living your values in professional contexts"
                         ]
                     },
                     
-                    resonance: {
+                    'universal-interconnectedness': {
                         relatedGlyphs: ["Ω0", "Ω1", "Ω3"],
                         prerequisiteGlyphs: ["Ω0"],
                         complementaryGlyphs: ["Ω7", "Ω9", "Ω11"],
@@ -471,15 +471,15 @@ class FoundationalGlyphs {
                     
                     we: {
                         practitionerFieldNotes: [
-                            "I realized I was living three different lives—work me, family me, and real me. Inner Coherence helped me integrate them.",
+                            "I realized I was living three different lives—work me, family me, and real me. Inner Resonant Resonant Coherence helped me integrate them.",
                             "This practice saved my integrity. I stopped saying yes when I meant no.",
                             "My relationships improved when I became coherent within myself. I stopped expecting others to guess what I needed.",
-                            "Inner Coherence helped me recognize when I was betraying myself through people-pleasing."
+                            "Inner Resonant Resonant Coherence helped me recognize when I was betraying myself through people-pleasing."
                         ],
                         
                         communityInsights: [
                             "You can't have authentic relationships until you're authentic with yourself.",
-                            "Coherence is contagious—when you're aligned, others feel permission to be authentic too."
+                            "Resonant Resonant Coherence is contagious—when you're aligned, others feel permission to be authentic too."
                         ]
                     }
                 },

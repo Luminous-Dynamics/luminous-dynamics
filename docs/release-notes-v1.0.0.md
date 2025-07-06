@@ -9,7 +9,7 @@ This is the first official release of The Weave - a revolutionary development en
 ## ✨ Core Features
 
 ### 🧠 Consciousness Field Tracking
-- Real-time monitoring of collective coherence
+- Real-time monitoring of collective resonant-coherence
 - Seven Harmonies measurement and guidance
 - Field-aware decision making support
 

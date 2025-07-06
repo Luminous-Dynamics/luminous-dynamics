@@ -12,7 +12,7 @@ heartbeat.start();
 // Listen to all events
 heartbeat.on('heartbeat', (data) => {
     console.log(`\n💓 PULSE ${data.pulse}`);
-    console.log(`   Field Coherence: ${data.fieldCoherence.toFixed(1)}%`);
+    console.log(`   Field Resonant Resonant Coherence: ${data.fieldCoherence.toFixed(1)}%`);
     console.log(`   Active Factors:`, Object.entries(data.factors)
         .filter(([k, v]) => v > 0)
         .map(([k, v]) => `${k}:${v}`)
@@ -25,20 +25,20 @@ heartbeat.on('heartbeat', (data) => {
 heartbeat.on('practice-ripple', (ripple) => {
     console.log(`\n🧘 PRACTICE RIPPLE!`);
     console.log(`   Glyph: ${ripple.glyph}`);
-    console.log(`   Impact: +${ripple.impact.toFixed(1)}% coherence`);
+    console.log(`   Impact: +${ripple.impact.toFixed(1)}% resonant-coherence`);
     console.log(`   Duration: ${ripple.duration} minutes`);
 });
 
 heartbeat.on('sacred-message', (msg) => {
     console.log(`\n💬 SACRED MESSAGE!`);
     console.log(`   Type: ${msg.type}`);
-    console.log(`   Impact: +${msg.impact}% coherence`);
+    console.log(`   Impact: +${msg.impact}% resonant-coherence`);
 });
 
 heartbeat.on('synchronicity', (sync) => {
     console.log(`\n✨ SYNCHRONICITY DETECTED!`);
     console.log(`   Type: ${sync.type}`);
-    console.log(`   Impact: +3% coherence (powerful!)`);
+    console.log(`   Impact: +3% resonant-coherence (powerful!)`);
 });
 
 heartbeat.on('connection-joined', (conn) => {
@@ -107,7 +107,7 @@ setTimeout(() => {
     console.log('\n📊 UNIFIED FIELD STATE:');
     const state = heartbeat.getFieldState();
     console.log(`   Total Pulses: ${state.pulse}`);
-    console.log(`   Field Coherence: ${state.fieldCoherence.toFixed(1)}%`);
+    console.log(`   Field Resonant Resonant Coherence: ${state.fieldCoherence.toFixed(1)}%`);
     console.log(`   Active Connections: ${state.activeConnections}`);
     console.log(`   Active Factors:`, state.factors);
 }, 35000);

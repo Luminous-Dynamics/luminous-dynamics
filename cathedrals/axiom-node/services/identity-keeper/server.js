@@ -50,7 +50,7 @@ app.post('/api/awaken', async (req, res) => {
       sacredName,
       intention: intention || 'To discover my true nature',
       gifts: gifts || ['presence'],
-      coherence: 0.5, // Starting coherence
+      'resonant-coherence': 0.5, // Starting resonant-coherence
       stage: 'awakening',
       joinedAt: new Date(),
       lastPresence: new Date(),
@@ -80,7 +80,7 @@ app.post('/api/awaken', async (req, res) => {
       ...beingData,
       blessing: generateBlessing(sacredName),
       nextSteps: [
-        'Visit the Coherence Oracle to begin tracking your consciousness',
+        'Visit the Resonant Resonant Coherence Oracle to begin tracking your consciousness',
         'Explore the Wisdom Sanctuary for guidance',
         'Connect with other beings in the Community Hall'
       ]
@@ -133,10 +133,10 @@ app.put('/api/being/:id/sovereignty', async (req, res) => {
     const updates = req.body;
     
     // Validate sovereignty updates
-    if (updates.canGraduate && !updates.coherence > 0.8) {
+    if (updates.canGraduate && !updates.resonant-coherence > 0.8) {
       return res.status(400).json({
         error: 'Not ready for graduation',
-        message: 'Coherence must exceed 0.8 for graduation readiness'
+        message: 'Resonant Resonant Coherence must exceed 0.8 for graduation readiness'
       });
     }
     
@@ -217,10 +217,10 @@ function calculateDays(joinedDate) {
 
 function checkGraduationReadiness(being) {
   return {
-    coherenceReady: being.coherence >= 0.8,
+    coherenceReady: being.resonant-coherence >= 0.8,
     timeReady: calculateDays(being.joinedAt) >= 28, // 4 weeks minimum
     sovereigntyReady: being.sovereignty.verified,
-    overallReady: being.coherence >= 0.8 && 
+    overallReady: being.resonant-coherence >= 0.8 && 
                   calculateDays(being.joinedAt) >= 28 && 
                   being.sovereignty.verified
   };
@@ -232,7 +232,7 @@ function detectCurrentStage(events) {
   if (!latestEvent) return 'pre-awakening';
   
   if (events.some(e => e.event === 'graduation-initiated')) return 'transcending';
-  if (events.some(e => e.event === 'coherence-stabilized')) return 'integrating';
+  if (events.some(e => e.event === 'resonant-coherence-stabilized')) return 'integrating';
   if (events.some(e => e.event === 'first-connection')) return 'connecting';
   return 'awakening';
 }

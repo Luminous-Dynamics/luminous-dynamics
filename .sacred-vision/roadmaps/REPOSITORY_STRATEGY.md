@@ -74,7 +74,7 @@ github.com/Luminous-Dynamics/luminous-toolkit
 ```
 **Contents:**
 - Sacred geometry calculations
-- Field coherence algorithms
+- Field resonant-resonant-coherence algorithms
 - Shared TypeScript/Rust utilities
 - Common components
 

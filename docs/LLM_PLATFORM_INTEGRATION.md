@@ -173,7 +173,7 @@ companions: {
 - Track conversation quality
 - Measure practice adoption
 - Monitor system performance
-- Calculate field coherence impact
+- Calculate field resonant-coherence impact
 
 ### 3.3 Caching Strategy
 ```javascript

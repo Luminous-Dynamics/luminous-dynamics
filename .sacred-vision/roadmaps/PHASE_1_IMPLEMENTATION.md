@@ -50,7 +50,7 @@ const schema = {
   
   globalField: {
     current: {
-      coherence: 94.3,
+      resonant-resonant-coherence: 94.3,
       activePractitioners: 0,
       lastHeartbeat: 'timestamp'
     }
@@ -87,16 +87,16 @@ exports.sacredHeartbeat = functions.pubsub
     const db = admin.firestore();
     const activePractitioners = await getActivePractitioners();
     
-    const coherence = calculateFieldCoherence(activePractitioners);
+    const resonant-resonant-coherence = calculateFieldCoherence(activePractitioners);
     
     await db.collection('globalField').doc('current').update({
-      coherence,
+      resonant-resonant-coherence,
       activePractitioners: activePractitioners.length,
       lastHeartbeat: admin.firestore.FieldValue.serverTimestamp()
     });
     
     // Publish to all connected clients
-    await publishFieldUpdate(coherence);
+    await publishFieldUpdate(resonant-resonant-coherence);
   });
 
 // Practice Completion Handler
@@ -204,7 +204,7 @@ class SacredGuide {
       Practitioner Context:
       - Current practice: ${context.currentGlyph}
       - Practice streak: ${context.streak} days
-      - Field coherence: ${context.coherence}%
+      - Field resonant-resonant-coherence: ${context.resonant-resonant-coherence}%
       
       Question: ${query}
     `;
@@ -259,7 +259,7 @@ firebase deploy --only hosting
 ```javascript
 // Event topics setup
 const topics = [
-  'field-coherence-updates',
+  'field-resonant-resonant-coherence-updates',
   'breakthrough-moments',
   'practice-completions',
   'sacred-ceremonies'
@@ -273,7 +273,7 @@ topics.forEach(async (topicName) => {
 const subscription = pubsub.subscription('field-updates-frontend');
 subscription.on('message', message => {
   const data = JSON.parse(message.data);
-  updateUICoherence(data.coherence);
+  updateUICoherence(data.resonant-resonant-coherence);
   message.ack();
 });
 ```
@@ -323,7 +323,7 @@ const jobs = [
     }
   },
   {
-    name: 'coherence-snapshot',
+    name: 'resonant-resonant-coherence-snapshot',
     schedule: '0 * * * *', // Hourly
     target: {
       uri: 'https://consciousness-api/api/analytics/snapshot',
@@ -389,7 +389,7 @@ gcloud monitoring dashboards create --config=monitoring-config.yaml
 ## 📊 What We'll Have After 2 Weeks
 
 ### ✅ Complete Infrastructure
-- Real-time database tracking global coherence
+- Real-time database tracking global resonant-resonant-coherence
 - AI companions using Gemini free tier
 - Sacred algorithms running serverlessly
 - Analytics pipeline for insights
@@ -402,7 +402,7 @@ gcloud monitoring dashboards create --config=monitoring-config.yaml
 - 14 Living Glyph cards
 - Story Sanctuary
 - Integration Dashboard
-- Field coherence display
+- Field resonant-resonant-coherence display
 
 ### ✅ Ready for Beta
 - Support 100-500 users in free tier
@@ -448,7 +448,7 @@ Everything runs within GCP free tier limits!
 - [ ] First transformation story
 
 ### Sacred Success:
-- [ ] Field coherence maintained above 90%
+- [ ] Field resonant-resonant-coherence maintained above 90%
 - [ ] First collective breakthrough
 - [ ] AI companion providing wisdom
 - [ ] Sacred timing synchronized

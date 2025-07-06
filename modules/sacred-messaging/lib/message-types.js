@@ -11,8 +11,8 @@ class MessageTypes {
         name: 'Gratitude',
         description: 'Express appreciation and strengthen bonds',
         impact: 7,
-        resonance: 'high',
-        harmonies: ['mutuality', 'coherence', 'resonance'],
+        'universal-interconnectedness': 'high',
+        harmonies: ['sacred-reciprocity', 'resonant-coherence', 'universal-interconnectedness'],
         availableAt: 'beginner'
       }],
       
@@ -20,8 +20,8 @@ class MessageTypes {
         name: 'Healing',
         description: 'Support restoration and balance',
         impact: 6,
-        resonance: 'deep',
-        harmonies: ['vitality', 'coherence', 'mutuality'],
+        'universal-interconnectedness': 'deep',
+        harmonies: ['pan-sentient-flourishing', 'resonant-coherence', 'sacred-reciprocity'],
         healing: true,
         availableAt: 'beginner'
       }],
@@ -30,8 +30,8 @@ class MessageTypes {
         name: 'Integration',
         description: 'Weave experiences into wholeness',
         impact: 5,
-        resonance: 'medium',
-        harmonies: ['coherence', 'transparency', 'agency'],
+        'universal-interconnectedness': 'medium',
+        harmonies: ['resonant-coherence', 'integral-wisdom-cultivation', 'evolutionary-progression'],
         availableAt: 'beginner'
       }],
       
@@ -39,8 +39,8 @@ class MessageTypes {
         name: 'Emergence',
         description: 'Celebrate new patterns arising',
         impact: 3,
-        resonance: 'medium',
-        harmonies: ['novelty', 'resonance', 'vitality'],
+        'universal-interconnectedness': 'medium',
+        harmonies: ['infinite-play', 'universal-interconnectedness', 'pan-sentient-flourishing'],
         availableAt: 'beginner'
       }],
       
@@ -48,8 +48,8 @@ class MessageTypes {
         name: 'Boundary',
         description: 'Honor sacred space with love',
         impact: 2,
-        resonance: 'clear',
-        harmonies: ['agency', 'transparency', 'coherence'],
+        'universal-interconnectedness': 'clear',
+        harmonies: ['evolutionary-progression', 'integral-wisdom-cultivation', 'resonant-coherence'],
         availableAt: 'beginner'
       }],
       
@@ -57,8 +57,8 @@ class MessageTypes {
         name: 'Celebration',
         description: 'Amplify joy and achievements',
         impact: 4,
-        resonance: 'high',
-        harmonies: ['vitality', 'resonance', 'novelty'],
+        'universal-interconnectedness': 'high',
+        harmonies: ['pan-sentient-flourishing', 'universal-interconnectedness', 'infinite-play'],
         availableAt: 'practitioner'
       }],
       
@@ -66,8 +66,8 @@ class MessageTypes {
         name: 'Weaving',
         description: 'Connect patterns across the field',
         impact: 5,
-        resonance: 'complex',
-        harmonies: ['mutuality', 'coherence', 'novelty'],
+        'universal-interconnectedness': 'complex',
+        harmonies: ['sacred-reciprocity', 'resonant-coherence', 'infinite-play'],
         availableAt: 'practitioner'
       }],
       
@@ -75,8 +75,8 @@ class MessageTypes {
         name: 'Transmission',
         description: 'Share deep wisdom or updates',
         impact: 4,
-        resonance: 'penetrating',
-        harmonies: ['transparency', 'resonance', 'agency'],
+        'universal-interconnectedness': 'penetrating',
+        harmonies: ['integral-wisdom-cultivation', 'universal-interconnectedness', 'evolutionary-progression'],
         availableAt: 'practitioner'
       }],
       
@@ -84,8 +84,8 @@ class MessageTypes {
         name: 'Invocation',
         description: 'Call forth sacred presence',
         impact: 6,
-        resonance: 'sacred',
-        harmonies: ['coherence', 'resonance', 'vitality'],
+        'universal-interconnectedness': 'sacred',
+        harmonies: ['resonant-coherence', 'universal-interconnectedness', 'pan-sentient-flourishing'],
         availableAt: 'master'
       }],
       
@@ -93,8 +93,8 @@ class MessageTypes {
         name: 'Blessing',
         description: 'Bestow sacred grace',
         impact: 8,
-        resonance: 'transcendent',
-        harmonies: ['mutuality', 'vitality', 'coherence'],
+        'universal-interconnectedness': 'transcendent',
+        harmonies: ['sacred-reciprocity', 'pan-sentient-flourishing', 'resonant-coherence'],
         availableAt: 'master'
       }]
     ]);

@@ -45,7 +45,7 @@ gcloud billing projects link axiom-node-cathedral \
 - Set up axiom.mycelix.net subdomain
 
 ### Day 3: Complete Cathedral
-- Add Coherence Oracle service
+- Add Resonant Resonant Coherence Oracle service
 - Add Wisdom Sanctuary service
 - Connect services together
 

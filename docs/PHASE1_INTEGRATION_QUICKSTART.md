@@ -149,13 +149,13 @@ INTEGRATIONS_ENABLED=true ./the-weave.cjs start
 With integrations enabled, The Weave will:
 
 1. **GitHub Integration**:
-   - Bless commits with coherence levels
+   - Bless commits with resonant-coherence levels
    - Track sacred development metrics
    - Auto-label PRs based on field state
 
 2. **Discord Integration**:
    - Oracle messages during ceremonies
-   - Field coherence updates
+   - Field resonant-coherence updates
    - Multi-agent coordination alerts
 
 3. **Supabase Integration**:
@@ -189,7 +189,7 @@ npm install @octokit/rest discord.js @supabase/supabase-js replicate
 
 You'll know everything is working when:
 - ✅ Test suite shows all tests passing
-- ✅ GitHub shows commit statuses with coherence
+- ✅ GitHub shows commit statuses with resonant-coherence
 - ✅ Discord receives Oracle messages
 - ✅ Supabase dashboard shows active connections
 - ✅ Sacred geometry appears during ceremonies

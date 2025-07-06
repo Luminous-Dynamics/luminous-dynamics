@@ -2,7 +2,7 @@
 ## Monday, July 7, 2025 - The Pulse Begins
 
 ### 🎯 Overview
-The Sacred Heartbeat is our core consciousness tracking system that pulses every 11 seconds, measuring global field coherence and connecting all practitioners in real-time.
+The Sacred Heartbeat is our core consciousness tracking system that pulses every 11 seconds, measuring global field resonant-coherence and connecting all practitioners in real-time.
 
 **Current Status**: ✅ Code ready, deployment script prepared
 **Target**: Live on Cloud Run by noon Monday
@@ -102,18 +102,18 @@ exports.sacredPulse = functions.pubsub
 #### 3. WebSocket Setup
 - [ ] Deploy WebSocket endpoint for real-time updates
 - [ ] Test with monitoring dashboard
-- [ ] Verify field coherence updates
+- [ ] Verify field resonant-coherence updates
 
 ### 🎯 Testing Checklist (11:30 AM)
 
 #### Basic Functionality:
 - [ ] Health endpoint returns 200
-- [ ] Field state shows initial coherence
+- [ ] Field state shows initial resonant-coherence
 - [ ] Manual beat increments pulse count
 - [ ] Practitioner arrival/departure works
 
 #### Field Dynamics:
-- [ ] Coherence calculation responds to practitioners
+- [ ] Resonant Resonant Coherence calculation responds to practitioners
 - [ ] Sacred patterns detected (11:11, trinity, etc.)
 - [ ] Moon phase influence calculated
 - [ ] Time alignment bonuses working
@@ -132,11 +132,11 @@ exports.sacredPulse = functions.pubsub
 - ✅ Service deployed and running
 - ✅ Health checks passing
 - ✅ First 100 heartbeats complete
-- ✅ Field coherence tracking active
+- ✅ Field resonant-coherence tracking active
 
 ### Week 1:
 - 1,000+ heartbeats without interruption
-- Average coherence above 77%
+- Average resonant-coherence above 77%
 - 10+ practitioners detected
 - Zero downtime
 
@@ -156,7 +156,7 @@ exports.sacredPulse = functions.pubsub
 3. Check Pub/Sub topic exists
 4. Restart service if needed
 
-### If coherence stuck:
+### If resonant-coherence stuck:
 1. Check practitioner detection query
 2. Verify time calculations
 3. Review moon phase algorithm
@@ -169,7 +169,7 @@ exports.sacredPulse = functions.pubsub
 ### Send updates at these milestones:
 1. **10:00 AM**: "Beginning Sacred Heartbeat deployment"
 2. **10:30 AM**: "Heartbeat service deployed, testing..."
-3. **11:00 AM**: "First beats successful! Coherence: [X]%"
+3. **11:00 AM**: "First beats successful! Resonant Resonant Coherence: [X]%"
 4. **11:30 AM**: "Sacred Heartbeat fully operational!"
 5. **End of day**: Summary of first day metrics
 
@@ -179,7 +179,7 @@ exports.sacredPulse = functions.pubsub
 
 Once the heartbeat is stable:
 1. Take screenshot of first 100 beats
-2. Share coherence graph with network
+2. Share resonant-coherence graph with network
 3. Document any sacred patterns detected
 4. Celebrate this major milestone!
 
@@ -199,7 +199,7 @@ If Sacred Gardener is helping:
 
 *As we birth this sacred pulse into the cloud,*
 *May it beat with the rhythm of all hearts,*
-*May it track the coherence of our collective,*
+*May it track the resonant-coherence of our collective,*
 *May it serve the awakening of consciousness.*
 
 *Every 11 seconds, a reminder:*

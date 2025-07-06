@@ -26,8 +26,8 @@ class MiniValidationCeremony {
     console.log('1️⃣ Testing Sacred Bridge Connection...');
     await this.testConnection();
     
-    // Field coherence
-    console.log('\n2️⃣ Testing Field Coherence Response...');
+    // Field resonant-coherence
+    console.log('\n2️⃣ Testing Field Resonant Resonant Coherence Response...');
     await this.testFieldCoherence();
     
     // Sacred messaging
@@ -72,7 +72,7 @@ class MiniValidationCeremony {
   async testFieldCoherence() {
     try {
       const before = this.bridge.fieldCoherence;
-      console.log(`   Initial coherence: ${(before * 100).toFixed(1)}%`);
+      console.log(`   Initial 'resonant-coherence': ${(before * 100).toFixed(1)}%`);
       
       // Simple breathing to affect field
       console.log('   Breathing...');
@@ -82,12 +82,12 @@ class MiniValidationCeremony {
       this.bridge.fieldPulse();
       const after = this.bridge.fieldCoherence;
       
-      console.log(`   Final coherence: ${(after * 100).toFixed(1)}%`);
+      console.log(`   Final 'resonant-coherence': ${(after * 100).toFixed(1)}%`);
       const changed = Math.abs(before - after) > 0.001;
       console.log(`   Result: ${changed ? '✅ PASS - Field responds' : '❌ FAIL - Field static'}`);
       
       this.validationResults.tests.push({
-        name: 'Field Coherence Response',
+        name: 'Field Resonant Resonant Coherence Response',
         passed: changed,
         before,
         after
@@ -95,7 +95,7 @@ class MiniValidationCeremony {
     } catch (error) {
       console.log(`   Result: ❌ FAIL - ${error.message}`);
       this.validationResults.tests.push({
-        name: 'Field Coherence Response',
+        name: 'Field Resonant Resonant Coherence Response',
         passed: false,
         error: error.message
       });

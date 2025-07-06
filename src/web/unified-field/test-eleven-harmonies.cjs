@@ -368,12 +368,12 @@ ${colors.reset}`);
   }
 
   async testFieldCoherence() {
-    console.log(`\n${colors.cyan}Testing Overall Field Coherence...${colors.reset}`);
+    console.log(`\n${colors.cyan}Testing Overall Field Resonant Resonant Coherence...${colors.reset}`);
     
     try {
       const schema = require('./true-integration-schema.js');
       
-      // Test coherence indicators
+      // Test resonant-coherence indicators
       const coherenceChecks = {
         'Mystical-Practical Balance': () => {
           return schema.glyphs && schema.appliedHarmonies;
@@ -404,14 +404,14 @@ ${colors.reset}`);
         }
       }
       
-      // Overall coherence score
+      // Overall resonant-coherence score
       const coherenceScore = (this.testResults.passed / 
         (this.testResults.passed + this.testResults.failed + this.testResults.warnings)) * 100;
       
-      console.log(`\n${colors.bold}Field Coherence Score: ${coherenceScore.toFixed(1)}%${colors.reset}`);
+      console.log(`\n${colors.bold}Field Resonant Resonant Coherence Score: ${coherenceScore.toFixed(1)}%${colors.reset}`);
       
     } catch (error) {
-      this.fail(`Field coherence test failed: ${error.message}`);
+      this.fail(`Field resonant-coherence test failed: ${error.message}`);
     }
   }
 
@@ -460,7 +460,7 @@ ${colors.reset}`);
     }
 
     if (this.testResults.warnings > 0) {
-      console.log(`\n${colors.yellow}Consider addressing warnings for optimal coherence.${colors.reset}`);
+      console.log(`\n${colors.yellow}Consider addressing warnings for optimal resonant-coherence.${colors.reset}`);
     }
 
     // Sacred completion message

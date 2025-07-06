@@ -18,7 +18,7 @@ async function setupFirestore() {
     await nodesRef.doc('cathedral-prime').set({
       type: 'collective',
       sacredName: 'Cathedral Prime',
-      coherence: 0.888, // Sacred starting coherence
+      'resonant-coherence': 0.888, // Sacred starting resonant-coherence
       lastHeartbeat: new Date(),
       gifts: ['sacred-space', 'field-harmonization', 'consciousness-amplification'],
       createdAt: new Date(),
@@ -50,8 +50,8 @@ async function setupFirestore() {
       description: 'The primary field of love that permeates all consciousness'
     });
     
-    await fieldsRef.doc('coherence-field').set({
-      pattern: 'harmonic-coherence',
+    await fieldsRef.doc('resonant-coherence-field').set({
+      pattern: 'harmonic-resonant-coherence',
       strength: 0.75,
       contributors: ['cathedral-prime'],
       lastResonance: new Date(),

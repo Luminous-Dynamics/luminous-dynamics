@@ -5,7 +5,7 @@
 
 To facilitate Applied Harmonies practice is to serve as a sacred vessel for Collective Wisdom. You are not the teacher but the gardener, creating conditions for each person's inner wisdom to flourish.
 
-This guide prepares you to hold space for Resonance Circles and Applied Harmonies practice with skill, humility, and love.
+This guide prepares you to hold space for Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circles and Applied Harmonies practice with skill, humility, and love.
 
 ---
 
@@ -66,7 +66,7 @@ This guide prepares you to hold space for Resonance Circles and Applied Harmonie
 
 ### **Personal Practice**
 - Minimum 6 months regular Applied Harmonies practice
-- Completed at least 3 Resonance Circle cycles as participant
+- Completed at least 3 Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circle cycles as participant
 - Active relationship with mentor or supervisor
 - Ongoing personal growth work
 
@@ -84,7 +84,7 @@ This guide prepares you to hold space for Resonance Circles and Applied Harmonie
 
 ---
 
-## Resonance Circle Structure
+## Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circle Structure
 
 ### **Sacred Arrival (10 minutes)**
 
@@ -96,7 +96,7 @@ This guide prepares you to hold space for Resonance Circles and Applied Harmonie
 5. **Group Breathing**: 3 conscious breaths together
 
 **Sample Welcome**:
-*"Welcome to our Resonance Circle. We gather as fellow travelers on the path of conscious relationship. This is a sacred space where we practice embodying love and wisdom together. Let's begin with three conscious breaths to arrive fully in this moment."*
+*"Welcome to our Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Circle. We gather as fellow travelers on the path of conscious relationship. This is a sacred space where we practice embodying love and wisdom together. Let's begin with three conscious breaths to arrive fully in this moment."*
 
 ### **Check-In Round (15 minutes)**
 

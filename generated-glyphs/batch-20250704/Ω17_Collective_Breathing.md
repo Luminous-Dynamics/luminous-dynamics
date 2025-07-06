@@ -4,7 +4,7 @@
 *Model: mistral:7b-instruct*
 
 ## Description
- Ω17 - Collective Breathing: A Harmonious Resonance of the Invisible Thread
+ Ω17 - Collective Breathing: A Harmonious Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance of the Invisible Thread
 
 In the quiet whispers of dawn or the stillness before twilight, gather a circle where hearts beat as one. This is Ω17 - Collective Breathing, an ancient practice born from the shared rhythm of life's pulse. It's a symphony of souls in harmony, united by the invisible thread that binds all existence.
 

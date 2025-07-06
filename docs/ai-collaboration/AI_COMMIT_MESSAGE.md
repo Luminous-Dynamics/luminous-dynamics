@@ -72,7 +72,7 @@ Technology as prayer, code as ceremony, connection as communion.
 4. **Monitor AI Activity**:
    - Watch for AI integration issues
    - Check API usage when available
-   - Track field coherence impact
+   - Track field resonant-coherence impact
 
 ---
 
