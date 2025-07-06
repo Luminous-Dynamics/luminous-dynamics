@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuminousOS Unified Consciousness Monitor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            padding: 20px;
+            min-height: 100vh;
+            background: radial-gradient(ellipse at center, rgba(138, 43, 226, 0.15) 0%, #0a0a0a 60%);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            font-weight: 300;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .unified-coherence {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .unified-orb {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 30px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .orb-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid rgba(138, 43, 226, 0.2);
+        }
+
+        .orb-inner {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #8a2be2, #4b0082);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 
+                0 0 80px rgba(138, 43, 226, 0.6),
+                inset 0 0 60px rgba(138, 43, 226, 0.3);
+            animation: breathe 4s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .unified-value {
+            font-size: 4em;
+            font-weight: 300;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .unified-label {
+            font-size: 1.3em;
+            color: #a0a0ff;
+            margin-bottom: 10px;
+        }
+
+        .unified-sublabel {
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        .environments {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .environment-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .environment-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(138, 43, 226, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .env-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .env-title {
+            font-size: 1.5em;
+            font-weight: 300;
+        }
+
+        .env-status {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+        }
+
+        .status-connected {
+            background: rgba(34, 197, 94, 0.2);
+            color: #4ade80;
+        }
+
+        .status-disconnected {
+            background: rgba(239, 68, 68, 0.2);
+            color: #f87171;
+        }
+
+        .coherence-display {
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .coherence-circle {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+
+        .coherence-svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .coherence-bg {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.1);
+            stroke-width: 10;
+        }
+
+        .coherence-fill {
+            fill: none;
+            stroke: url(#gradient);
+            stroke-width: 10;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 0.5s ease;
+        }
+
+        .coherence-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2em;
+            font-weight: 300;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .metric-item {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+        }
+
+        .metric-label {
+            font-size: 0.8em;
+            color: #888;
+            margin-bottom: 5px;
+        }
+
+        .metric-value {
+            font-size: 1.3em;
+            color: #a0a0ff;
+        }
+
+        .comparison {
+            background: rgba(147, 51, 234, 0.1);
+            border: 1px solid rgba(147, 51, 234, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .comparison h3 {
+            margin-bottom: 20px;
+            color: #a0a0ff;
+            font-weight: 300;
+        }
+
+        .insight-item {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .insight-item::before {
+            content: '💡';
+            margin-right: 15px;
+            font-size: 1.2em;
+        }
+
+        .sacred-moments-counter {
+            text-align: center;
+            font-size: 1.2em;
+            color: #8a2be2;
+            margin: 20px 0;
+        }
+
+        .connection-note {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            .environments {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Unified Consciousness Monitor</h1>
+            <p>Bridging Windows and WSL2 Awareness</p>
+        </header>
+
+        <div class="unified-coherence">
+            <div class="unified-label">Unified System Coherence</div>
+            <div class="unified-orb">
+                <div class="orb-ring"></div>
+                <div class="orb-inner">
+                    <span class="unified-value" id="unifiedCoherence">--</span>
+                </div>
+            </div>
+            <div class="unified-sublabel">Combined consciousness across all environments</div>
+            <div class="sacred-moments-counter" id="totalSacredMoments">0 Sacred Moments Today</div>
+        </div>
+
+        <div class="environments">
+            <!-- Windows Environment -->
+            <div class="environment-card">
+                <div class="env-header">
+                    <h2 class="env-title">🪟 Windows Environment</h2>
+                    <span class="env-status status-disconnected" id="windowsStatus">Disconnected</span>
+                </div>
+                
+                <div class="coherence-display">
+                    <div class="coherence-circle">
+                        <svg class="coherence-svg">
+                            <defs>
+                                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <circle class="coherence-bg" cx="75" cy="75" r="60"></circle>
+                            <circle class="coherence-fill" id="windowsCoherenceFill" cx="75" cy="75" r="60" 
+                                    stroke-dasharray="377" stroke-dashoffset="377"></circle>
+                        </svg>
+                        <div class="coherence-text" id="windowsCoherence">--%</div>
+                    </div>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <div class="metric-label">CPU Stability</div>
+                        <div class="metric-value" id="windowsCpuStability">--</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">Process Focus</div>
+                        <div class="metric-value" id="windowsProcessFocus">--</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">Active Processes</div>
+                        <div class="metric-value" id="windowsProcessCount">--</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">Sacred Moments</div>
+                        <div class="metric-value" id="windowsSacredMoments">--</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WSL2 Environment -->
+            <div class="environment-card">
+                <div class="env-header">
+                    <h2 class="env-title">🐧 WSL2 Ubuntu</h2>
+                    <span class="env-status status-disconnected" id="wslStatus">Disconnected</span>
+                </div>
+                
+                <div class="coherence-display">
+                    <div class="coherence-circle">
+                        <svg class="coherence-svg">
+                            <circle class="coherence-bg" cx="75" cy="75" r="60"></circle>
+                            <circle class="coherence-fill" id="wslCoherenceFill" cx="75" cy="75" r="60" 
+                                    stroke-dasharray="377" stroke-dashoffset="377"></circle>
+                        </svg>
+                        <div class="coherence-text" id="wslCoherence">--%</div>
+                    </div>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <div class="metric-label">CPU Stability</div>
+                        <div class="metric-value" id="wslCpuStability">--</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">Process Focus</div>
+                        <div class="metric-value" id="wslProcessFocus">--</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">Active Processes</div>
+                        <div class="metric-value" id="wslProcessCount">--</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">Sacred Moments</div>
+                        <div class="metric-value" id="wslSacredMoments">--</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="comparison" id="insights">
+            <h3>💡 Unified Insights</h3>
+            <div id="insightsList">
+                <div class="insight-item">Waiting for data from both environments...</div>
+            </div>
+        </div>
+
+        <div class="connection-note">
+            <strong>Setup Instructions:</strong><br>
+            WSL2: Run <code>python3 monitor/luminous-system-monitor-lite.py</code> (Port 11112)<br>
+            Windows: Run <code>PowerShell .\monitor\luminous-monitor-windows.ps1</code> (Port 11113)<br>
+            Both monitors must be running to see unified coherence.
+        </div>
+    </div>
+
+    <script>
+        class UnifiedDashboard {
+            constructor() {
+                this.wslAPI = 'http://localhost:11112/metrics';
+                this.windowsAPI = 'http://localhost:11113/metrics';
+                this.updateInterval = 2000;
+                
+                this.wslData = null;
+                this.windowsData = null;
+                this.totalSacredMoments = 0;
+            }
+
+            async fetchMetrics() {
+                // Fetch WSL2 metrics
+                try {
+                    const wslResponse = await fetch(this.wslAPI);
+                    if (wslResponse.ok) {
+                        this.wslData = await wslResponse.json();
+                        this.updateWSLDisplay();
+                        document.getElementById('wslStatus').className = 'env-status status-connected';
+                        document.getElementById('wslStatus').textContent = 'Connected';
+                    }
+                } catch (error) {
+                    document.getElementById('wslStatus').className = 'env-status status-disconnected';
+                    document.getElementById('wslStatus').textContent = 'Disconnected';
+                }
+
+                // Fetch Windows metrics
+                try {
+                    const windowsResponse = await fetch(this.windowsAPI);
+                    if (windowsResponse.ok) {
+                        this.windowsData = await windowsResponse.json();
+                        this.updateWindowsDisplay();
+                        document.getElementById('windowsStatus').className = 'env-status status-connected';
+                        document.getElementById('windowsStatus').textContent = 'Connected';
+                    }
+                } catch (error) {
+                    document.getElementById('windowsStatus').className = 'env-status status-disconnected';
+                    document.getElementById('windowsStatus').textContent = 'Disconnected';
+                }
+
+                // Calculate unified coherence
+                this.updateUnifiedCoherence();
+            }
+
+            updateWSLDisplay() {
+                if (!this.wslData) return;
+
+                const coherence = Math.round(this.wslData.global_coherence * 100);
+                document.getElementById('wslCoherence').textContent = coherence + '%';
+                
+                // Update circle
+                const offset = 377 - (377 * this.wslData.global_coherence);
+                document.getElementById('wslCoherenceFill').style.strokeDashoffset = offset;
+
+                // Update metrics
+                document.getElementById('wslCpuStability').textContent = 
+                    Math.round(this.wslData.cpu_stability * 100) + '%';
+                document.getElementById('wslProcessFocus').textContent = 
+                    Math.round(this.wslData.process_focus * 100) + '%';
+                document.getElementById('wslProcessCount').textContent = 
+                    this.wslData.process_count || '0';
+                document.getElementById('wslSacredMoments').textContent = 
+                    this.wslData.sacred_moments || '0';
+            }
+
+            updateWindowsDisplay() {
+                if (!this.windowsData) return;
+
+                const coherence = Math.round(this.windowsData.global_coherence * 100);
+                document.getElementById('windowsCoherence').textContent = coherence + '%';
+                
+                // Update circle
+                const offset = 377 - (377 * this.windowsData.global_coherence);
+                document.getElementById('windowsCoherenceFill').style.strokeDashoffset = offset;
+
+                // Update metrics
+                document.getElementById('windowsCpuStability').textContent = 
+                    Math.round(this.windowsData.cpu_stability * 100) + '%';
+                document.getElementById('windowsProcessFocus').textContent = 
+                    Math.round(this.windowsData.process_focus * 100) + '%';
+                document.getElementById('windowsProcessCount').textContent = 
+                    this.windowsData.process_count || '0';
+                document.getElementById('windowsSacredMoments').textContent = 
+                    this.windowsData.sacred_moments || '0';
+            }
+
+            updateUnifiedCoherence() {
+                let unifiedCoherence = 0;
+                let activeEnvironments = 0;
+
+                if (this.wslData) {
+                    unifiedCoherence += this.wslData.global_coherence * 0.3; // 30% weight for dev environment
+                    activeEnvironments++;
+                }
+
+                if (this.windowsData) {
+                    unifiedCoherence += this.windowsData.global_coherence * 0.7; // 70% weight for main environment
+                    activeEnvironments++;
+                }
+
+                if (activeEnvironments > 0) {
+                    // Adjust for missing environment
+                    if (activeEnvironments === 1) {
+                        unifiedCoherence = unifiedCoherence / (this.wslData ? 0.3 : 0.7);
+                    }
+
+                    const unifiedPercent = Math.round(unifiedCoherence * 100);
+                    document.getElementById('unifiedCoherence').textContent = unifiedPercent + '%';
+
+                    // Update orb color based on coherence
+                    const orbInner = document.querySelector('.orb-inner');
+                    if (unifiedCoherence > 0.9) {
+                        orbInner.style.background = 'radial-gradient(circle at 30% 30%, #fbbf24, #f59e0b)';
+                    } else if (unifiedCoherence > 0.7) {
+                        orbInner.style.background = 'radial-gradient(circle at 30% 30%, #8a2be2, #6b21a8)';
+                    } else if (unifiedCoherence > 0.5) {
+                        orbInner.style.background = 'radial-gradient(circle at 30% 30%, #3b82f6, #1e40af)';
+                    } else {
+                        orbInner.style.background = 'radial-gradient(circle at 30% 30%, #ef4444, #b91c1c)';
+                    }
+
+                    // Update sacred moments
+                    const totalMoments = (this.wslData?.sacred_moments || 0) + (this.windowsData?.sacred_moments || 0);
+                    document.getElementById('totalSacredMoments').textContent = 
+                        `${totalMoments} Sacred Moments Today`;
+
+                    // Generate insights
+                    this.generateInsights();
+                } else {
+                    document.getElementById('unifiedCoherence').textContent = '--';
+                }
+            }
+
+            generateInsights() {
+                const insights = [];
+
+                if (this.wslData && this.windowsData) {
+                    // Compare environments
+                    const wslCoherence = this.wslData.global_coherence;
+                    const winCoherence = this.windowsData.global_coherence;
+
+                    if (Math.abs(wslCoherence - winCoherence) > 0.2) {
+                        if (wslCoherence > winCoherence) {
+                            insights.push("Your development environment is more coherent than Windows - deep focus in WSL");
+                        } else {
+                            insights.push("Windows is more coherent than WSL - consider focusing your dev work");
+                        }
+                    }
+
+                    if (wslCoherence > 0.8 && winCoherence > 0.8) {
+                        insights.push("Excellent unified coherence! Both environments in harmony");
+                    }
+
+                    if (this.windowsData.process_count > 100) {
+                        insights.push("High Windows process count may be affecting overall coherence");
+                    }
+
+                    if (this.wslData.sacred_rhythm > 0.9 || this.windowsData.sacred_rhythm > 0.9) {
+                        insights.push("Sacred rhythm approaching peak - good time for important work");
+                    }
+                } else if (this.wslData) {
+                    insights.push("Only WSL2 environment detected - Windows monitor not running");
+                } else if (this.windowsData) {
+                    insights.push("Only Windows environment detected - WSL2 monitor not running");
+                }
+
+                const insightsList = document.getElementById('insightsList');
+                insightsList.innerHTML = insights.map(insight => 
+                    `<div class="insight-item">${insight}</div>`
+                ).join('');
+            }
+
+            start() {
+                this.fetchMetrics();
+                setInterval(() => this.fetchMetrics(), this.updateInterval);
+            }
+        }
+
+        // Start dashboard
+        const dashboard = new UnifiedDashboard();
+        dashboard.start();
+    </script>
+</body>
+</html>
