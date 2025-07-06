@@ -1,0 +1,30 @@
+#!/bin/bash
+clear
+echo "✨ First Presence - System Meditation"
+echo "════════════════════════════════════"
+echo
+echo "A practice of pure awareness"
+echo "Nothing to do, nothing to achieve"
+echo
+read -p "Press Enter to begin..."
+clear
+
+# Simple breathing guide
+for i in {1..7}; do
+    echo -e "\n\n\n\n\n          Breathe In..."
+    sleep 4
+    clear
+    echo -e "\n\n\n\n\n          Hold..."
+    sleep 7
+    clear
+    echo -e "\n\n\n\n\n          Breathe Out..."
+    sleep 8
+    clear
+    echo -e "\n\n\n\n\n          Rest..."
+    sleep 2
+    clear
+done
+
+echo -e "\n\n\n\n\n          🙏"
+echo -e "\n\n   May your presence ripple through all activities"
+sleep 5

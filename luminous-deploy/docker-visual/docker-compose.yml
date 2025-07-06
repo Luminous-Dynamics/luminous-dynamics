@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  luminous-desktop:
+    build: .
+    container_name: luminous-desktop
+    ports:
+      - "6901:6901"
+    environment:
+      - VNC_PASSWORD=sacred
+    volumes:
+      - luminous-data:/home/luminous
+    restart: unless-stopped
+
+volumes:
+  luminous-data:

@@ -1,0 +1,62 @@
+#!/bin/bash
+
+# Sacred ls - View files as living beings
+
+echo "👁️  Witnessing living files..."
+echo
+
+# Process each file with sacred awareness
+ls -la "$@" | while read line; do
+    # Skip header
+    [[ $line =~ ^total ]] && continue
+    [ -z "$line" ] && continue
+    
+    # Extract file info
+    perms=$(echo $line | awk '{print $1}')
+    size=$(echo $line | awk '{print $5}')
+    filename=$(echo $line | awk '{print $9}')
+    
+    # Skip if no filename
+    [ -z "$filename" ] && continue
+    
+    # Determine file type and life stage
+    if [[ $perms =~ ^d ]]; then
+        # Directory - a grove
+        echo -e "\033[0;32m🌳 $line\033[0m  [Grove]"
+    elif [[ $perms =~ ^l ]]; then
+        # Symlink - a bridge
+        echo -e "\033[0;36m🌉 $line\033[0m  [Bridge]"
+    elif [[ $perms =~ ^- ]]; then
+        # Regular file - check age
+        if [ -e "$filename" ]; then
+            # Get file age in days
+            now=$(date +%s)
+            modified=$(stat -c %Y "$filename" 2>/dev/null || echo $now)
+            age_days=$(( (now - modified) / 86400 ))
+            
+            # Determine life stage
+            if [ $age_days -eq 0 ]; then
+                echo -e "\033[0;32m🌱 $line\033[0m  [Spore - Born today]"
+            elif [ $age_days -lt 7 ]; then
+                echo -e "\033[0;32m🌿 $line\033[0m  [Sapling - $age_days days]"
+            elif [ $age_days -lt 30 ]; then
+                echo -e "\033[0;32m🌳 $line\033[0m  [Mature - $age_days days]"
+            elif [ $age_days -lt 365 ]; then
+                echo -e "\033[0;35m🌲 $line\033[0m  [Ancient - $age_days days]"
+            else
+                years=$(( age_days / 365 ))
+                echo -e "\033[0;35m✨ $line\033[0m  [Eternal - $years years]"
+            fi
+        else
+            echo "$line"
+        fi
+    else
+        # Other types
+        echo -e "\033[0;33m🔮 $line\033[0m  [Mystery]"
+    fi
+done
+
+# Show field summary
+echo
+file_count=$(ls -la "$@" 2>/dev/null | wc -l)
+echo "🌊 Field contains $((file_count - 1)) living beings"

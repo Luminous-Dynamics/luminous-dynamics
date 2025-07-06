@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  luminous-os:
+    build: .
+    container_name: luminous-os
+    ports:
+      - "5901:5901"  # VNC port
+      - "6901:6901"  # noVNC web port
+    environment:
+      - VNC_PASSWORD=sacred
+      - RESOLUTION=1280x800
+    volumes:
+      # Mount sacred data
+      - luminous-home:/home/luminous
+      # Share with host for persistence
+      - ./sacred-data:/home/luminous/sacred
+    restart: unless-stopped
+    # For better GUI performance
+    shm_size: '256m'
+    # Add GPU support if available
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+
+volumes:
+  luminous-home:
+    name: luminous-os-home

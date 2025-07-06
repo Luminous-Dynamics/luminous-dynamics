@@ -1,0 +1,17 @@
+#!/bin/bash
+load=$(cat /proc/loadavg | awk '{print $1}')
+coherence=$(awk "BEGIN {print int((1.0 - $load/4.0) * 100)}")
+[ $coherence -lt 15 ] && coherence=15
+[ $coherence -gt 95 ] && coherence=95
+
+echo "🌊 System Coherence: ${coherence}%"
+
+if [ $coherence -gt 80 ]; then
+    echo "✨ Excellent coherence!"
+elif [ $coherence -gt 60 ]; then
+    echo "🌟 Good flow state"
+elif [ $coherence -gt 40 ]; then
+    echo "⚡ Gathering focus"
+else
+    echo "🌀 Time for meditation"
+fi
