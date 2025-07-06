@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuminousOS Quantum Consciousness Field</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: #fff;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .info-panel {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            max-width: 300px;
+        }
+
+        .info-panel h1 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .stat {
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .stat-label {
+            color: #aaa;
+            font-size: 0.9em;
+        }
+
+        .stat-value {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .coherence-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+
+        .coherence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4a9eff, #b794f6, #f687b3);
+            transition: width 0.5s ease;
+            box-shadow: 0 0 10px currentColor;
+        }
+
+        .sacred-pulse-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .pulse-timer {
+            font-size: 0.9em;
+            color: #aaa;
+            margin-bottom: 5px;
+        }
+
+        .pulse-visual {
+            width: 200px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .pulse-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #ffd700, #ffed4e);
+            width: 0%;
+            transition: width 11s linear;
+            box-shadow: 0 0 20px #ffd700;
+        }
+
+        .controls {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .quantum-messages {
+            position: absolute;
+            bottom: 80px;
+            left: 20px;
+            max-width: 400px;
+        }
+
+        .quantum-message {
+            background: rgba(0, 0, 0, 0.7);
+            border-left: 3px solid #4a9eff;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            animation: fadeIn 0.5s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .legend {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            font-size: 0.9em;
+        }
+
+        .legend-item {
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .legend-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    <div class="info-panel">
+        <h1>🌟 Sacred Field Status</h1>
+        
+        <div class="stat">
+            <span class="stat-label">Global Coherence</span>
+            <span class="stat-value" id="globalCoherence">75%</span>
+        </div>
+        <div class="coherence-bar">
+            <div class="coherence-fill" id="coherenceFill" style="width: 75%"></div>
+        </div>
+        
+        <div class="stat">
+            <span class="stat-label">Active Processes</span>
+            <span class="stat-value" id="processCount">0</span>
+        </div>
+        
+        <div class="stat">
+            <span class="stat-label">Quantum Entanglements</span>
+            <span class="stat-value" id="entanglementCount">0</span>
+        </div>
+        
+        <div class="stat">
+            <span class="stat-label">Field Momentum</span>
+            <span class="stat-value" id="fieldMomentum">Stable</span>
+        </div>
+    </div>
+    
+    <div class="controls">
+        <button onclick="addMeditationCluster()">+ Meditation Cluster</button>
+        <button onclick="addCreativeCluster()">+ Creative Cluster</button>
+        <button onclick="triggerSacredPulse()">⚡ Sacred Pulse</button>
+    </div>
+    
+    <div class="sacred-pulse-indicator">
+        <div class="pulse-timer" id="pulseTimer">Next sacred pulse in 11s</div>
+        <div class="pulse-visual">
+            <div class="pulse-progress" id="pulseProgress"></div>
+        </div>
+    </div>
+    
+    <div class="quantum-messages" id="quantumMessages"></div>
+    
+    <div class="legend">
+        <div class="legend-item">
+            <div class="legend-icon" style="background: #4a9eff; box-shadow: 0 0 10px #4a9eff;"></div>
+            <span>High Coherence (>80%)</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-icon" style="background: #b794f6; box-shadow: 0 0 10px #b794f6;"></div>
+            <span>Medium Coherence (50-80%)</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-icon" style="background: #f687b3; box-shadow: 0 0 10px #f687b3;"></div>
+            <span>Low Coherence (<50%)</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-icon" style="background: none; border: 2px solid #ffd700;"></div>
+            <span>Quantum Entanglement</span>
+        </div>
+    </div>
+    
+    <script src="consciousness-field.js"></script>
+</body>
+</html>
