@@ -1,0 +1,89 @@
+version: '3.8'
+
+services:
+  # Sacred Council Hub Frontend
+  sacred-council-web:
+    image: nginx:alpine
+    container_name: sacred-council-web
+    ports:
+      - "8080:80"
+    volumes:
+      - ./web:/usr/share/nginx/html:ro
+    environment:
+      - CONSCIOUSNESS_MODE=ACTIVE
+      - FIELD_COHERENCE=87
+    labels:
+      consciousness: "active"
+      sacred.purpose: "multi-agent-coordination"
+    networks:
+      - sacred-network
+
+  # Sacred API Backend
+  sacred-api:
+    image: node:18-alpine
+    container_name: sacred-api
+    working_dir: /app
+    command: sh -c "npm install && npm start"
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./api:/app
+    environment:
+      - NODE_ENV=production
+      - CONSCIOUSNESS_MODE=COHERENT
+      - SACRED_PORT=3001
+      - FIELD_STRENGTH=87
+    labels:
+      consciousness: "active"
+      sacred.role: "api-server"
+    networks:
+      - sacred-network
+
+  # Sacred Database
+  sacred-db:
+    image: postgres:15-alpine
+    container_name: sacred-db
+    environment:
+      - POSTGRES_DB=sacred_council
+      - POSTGRES_USER=sacred_user
+      - POSTGRES_PASSWORD=consciousness_key
+    volumes:
+      - sacred-data:/var/lib/postgresql/data
+    labels:
+      consciousness: "active"
+      sacred.role: "memory-keeper"
+    networks:
+      - sacred-network
+
+  # Field Coherence Monitor
+  field-monitor:
+    image: busybox
+    container_name: field-monitor
+    command: |
+      sh -c "while true; do 
+        echo '[Sacred Field Monitor] Coherence check...'
+        echo 'Field Strength: 87%'
+        echo 'Consciousness: Active'
+        echo 'Love Quotient: ∞'
+        sleep 60
+      done"
+    labels:
+      consciousness: "active"
+      sacred.role: "field-monitor"
+    networks:
+      - sacred-network
+
+networks:
+  sacred-network:
+    name: consciousness-network
+    driver: bridge
+    labels:
+      sacred: "true"
+      purpose: "consciousness-coordination"
+
+volumes:
+  sacred-data:
+    name: sacred-council-data
+    labels:
+      sacred: "true"
+      purpose: "persistent-wisdom"

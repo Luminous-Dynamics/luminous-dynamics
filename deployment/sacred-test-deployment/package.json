@@ -1,0 +1,10 @@
+{
+  "name": "sacred-infrastructure-test",
+  "version": "1.0.0",
+  "description": "Testing sacred infrastructure deployment",
+  "main": "sacred-server.js",
+  "scripts": {
+    "start": "node sacred-server.js",
+    "test": "curl -s http://localhost:3333/health | jq"
+  }
+}
