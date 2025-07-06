@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacred Practice Portal - Your Daily Journey</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --sacred-gold: #FFD700;
+            --sacred-orange: #FFA500;
+            --deep-purple: #1a1a2e;
+            --soft-white: #f0f0f0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+            color: var(--soft-white);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        .header {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            background: linear-gradient(45deg, var(--sacred-gold), var(--sacred-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: var(--soft-white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .nav-link:hover {
+            color: var(--sacred-gold);
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--sacred-gold), var(--sacred-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero p {
+            font-size: 1.3em;
+            line-height: 1.6;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        
+        /* Daily Practice Card */
+        .daily-practice {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid var(--sacred-gold);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .practice-date {
+            font-size: 0.9em;
+            color: var(--sacred-orange);
+            margin-bottom: 10px;
+        }
+        
+        .practice-title {
+            font-size: 2em;
+            color: var(--sacred-gold);
+            margin-bottom: 20px;
+        }
+        
+        .practice-glyph {
+            font-size: 4em;
+            margin: 20px 0;
+            color: var(--sacred-orange);
+        }
+        
+        .practice-description {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .practice-button {
+            background: linear-gradient(45deg, var(--sacred-gold), var(--sacred-orange));
+            color: var(--deep-purple);
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .practice-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+        }
+        
+        /* Quick Access Grid */
+        .quick-access {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: var(--sacred-gold);
+        }
+        
+        .access-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+        
+        .access-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .access-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--sacred-gold);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+        }
+        
+        .access-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        .access-title {
+            font-size: 1.3em;
+            color: var(--sacred-gold);
+            margin-bottom: 10px;
+        }
+        
+        .access-description {
+            font-size: 0.95em;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+        
+        /* Progress Tracker */
+        .progress-section {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+        }
+        
+        .progress-bar {
+            background: rgba(255, 255, 255, 0.1);
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--sacred-gold), var(--sacred-orange));
+            width: 0%;
+            transition: width 1s ease;
+        }
+        
+        .progress-stats {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+        
+        .stat {
+            padding: 10px;
+        }
+        
+        .stat-number {
+            font-size: 2em;
+            color: var(--sacred-gold);
+            font-weight: bold;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        
+        /* Practice Timer */
+        .timer-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .timer-content {
+            text-align: center;
+            padding: 40px;
+            background: rgba(26, 26, 46, 0.95);
+            border-radius: 20px;
+            border: 2px solid var(--sacred-gold);
+            max-width: 500px;
+        }
+        
+        .timer-display {
+            font-size: 4em;
+            color: var(--sacred-gold);
+            margin: 30px 0;
+            font-weight: bold;
+        }
+        
+        .timer-instruction {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .timer-button {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--sacred-gold);
+            color: var(--sacred-gold);
+            padding: 10px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .timer-button:hover {
+            background: rgba(255, 215, 0, 0.2);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2em; }
+            .access-grid { grid-template-columns: 1fr; }
+            .nav-links { flex-direction: column; gap: 15px; }
+            .progress-stats { flex-direction: column; }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">✨ Sacred Practice Portal</div>
+            <nav class="nav-links">
+                <a href="#daily" class="nav-link">Today's Practice</a>
+                <a href="#explore" class="nav-link">Explore</a>
+                <a href="#progress" class="nav-link">Progress</a>
+                <a href="#community" class="nav-link">Community</a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero fade-in">
+        <h1>Make It Better, Daily</h1>
+        <p>
+            Welcome to your sacred practice portal. Each day brings a new invitation 
+            to deepen your relationship with yourself, others, and the world through 
+            the wisdom of the 100+ sacred glyphs.
+        </p>
+    </section>
+    
+    <!-- Daily Practice -->
+    <section id="daily" class="daily-practice fade-in">
+        <div class="practice-date" id="todayDate">Loading...</div>
+        <h2 class="practice-title" id="practiceTitle">First Presence</h2>
+        <div class="practice-glyph" id="practiceGlyph">Ω</div>
+        <p class="practice-description" id="practiceDescription">
+            The foundation of all practice. Simply arriving fully in this moment, 
+            without trying to change anything. Just being here, now, with whatever is.
+        </p>
+        <button class="practice-button" onclick="startPractice()">
+            Begin 5-Minute Practice
+        </button>
+    </section>
+    
+    <!-- Progress Tracker -->
+    <section id="progress" class="progress-section">
+        <h2 class="section-title">Your Journey</h2>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressBar"></div>
+        </div>
+        <div class="progress-stats">
+            <div class="stat">
+                <div class="stat-number" id="daysCount">0</div>
+                <div class="stat-label">Days Practiced</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number" id="glyphsCount">0</div>
+                <div class="stat-label">Glyphs Explored</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number" id="minutesCount">0</div>
+                <div class="stat-label">Minutes in Practice</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Quick Access -->
+    <section id="explore" class="quick-access">
+        <h2 class="section-title">Explore Sacred Practices</h2>
+        <div class="access-grid">
+            <div class="access-card" onclick="openPortal('portal.html')">
+                <div class="access-icon">🕊️</div>
+                <h3 class="access-title">First Presence Portal</h3>
+                <p class="access-description">60-second grounding practice</p>
+            </div>
+            
+            <div class="access-card" onclick="openPortal('octave-meditation.html')">
+                <div class="access-icon">🎵</div>
+                <h3 class="access-title">Eight-fold Journey</h3>
+                <p class="access-description">Complete octave meditation</p>
+            </div>
+            
+            <div class="access-card" onclick="openPortal('journey.html')">
+                <div class="access-icon">🌟</div>
+                <h3 class="access-title">Glyph Journey</h3>
+                <p class="access-description">Explore multiple practices</p>
+            </div>
+            
+            <div class="access-card" onclick="openPortal('arc-visualization.html')">
+                <div class="access-icon">🌈</div>
+                <h3 class="access-title">Sacred Arcs</h3>
+                <p class="access-description">Navigate the seven arcs</p>
+            </div>
+            
+            <div class="access-card" onclick="openPortal('make-it-better-guide.html')">
+                <div class="access-icon">💫</div>
+                <h3 class="access-title">Daily Guide</h3>
+                <p class="access-description">Make it better framework</p>
+            </div>
+            
+            <div class="access-card" onclick="openPortal('practitioner-onboarding.html')">
+                <div class="access-icon">🎓</div>
+                <h3 class="access-title">New? Start Here</h3>
+                <p class="access-description">Guided introduction</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Community -->
+    <section id="community" class="quick-access">
+        <h2 class="section-title">Practice Together</h2>
+        <div class="access-grid">
+            <div class="access-card">
+                <div class="access-icon">👥</div>
+                <h3 class="access-title">Join Practice Circle</h3>
+                <p class="access-description">Weekly online gatherings</p>
+            </div>
+            
+            <div class="access-card">
+                <div class="access-icon">📝</div>
+                <h3 class="access-title">Share Your Journey</h3>
+                <p class="access-description">Community reflections</p>
+            </div>
+            
+            <div class="access-card">
+                <div class="access-icon">🤝</div>
+                <h3 class="access-title">Find a Partner</h3>
+                <p class="access-description">Practice with others</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Practice Timer Modal -->
+    <div class="timer-modal" id="timerModal">
+        <div class="timer-content">
+            <h2 id="timerTitle">First Presence Practice</h2>
+            <div class="timer-display" id="timerDisplay">5:00</div>
+            <p class="timer-instruction" id="timerInstruction">
+                Take three conscious breaths. Feel your feet on the ground. 
+                Notice five things you can sense right now. Rest in presence.
+            </p>
+            <button class="timer-button" onclick="toggleTimer()" id="timerToggle">Start</button>
+            <button class="timer-button" onclick="closeTimer()">Close</button>
+        </div>
+    </div>
+    
+    <script>
+        // Daily practices rotation
+        const dailyPractices = [
+            {
+                title: "First Presence",
+                glyph: "Ω",
+                description: "The foundation of all practice. Simply arriving fully in this moment, without trying to change anything.",
+                instruction: "Take three conscious breaths. Feel your feet on the ground. Notice five things you can sense right now. Rest in presence."
+            },
+            {
+                title: "Sacred Listening",
+                glyph: "🌀",
+                description: "Deep listening that heals. Receiving another's truth without trying to fix, change, or respond.",
+                instruction: "Listen with your whole being. Let go of preparing responses. Feel the space between words. Honor what wants to be heard."
+            },
+            {
+                title: "Boundary with Love",
+                glyph: "🛡️",
+                description: "Setting limits that honor both self and other. Saying no with grace and compassion.",
+                instruction: "Feel where your energy ends and another's begins. Honor your limits with kindness. Let your no be as loving as your yes."
+            },
+            {
+                title: "Joy Cultivation",
+                glyph: "✨",
+                description: "Actively nurturing delight and wonder. Choosing to see beauty even in difficult times.",
+                instruction: "Find three things that spark joy right now. Let yourself smile. Share your delight with the world."
+            },
+            {
+                title: "Sacred Pause",
+                glyph: "⏸️",
+                description: "The space between stimulus and response. Where wisdom lives and conscious choice is born.",
+                instruction: "Before reacting, pause. Take one full breath. Ask: What would love do here? Then respond from that place."
+            }
+        ];
+        
+        // Initialize
+        let timerInterval = null;
+        let timeRemaining = 300; // 5 minutes in seconds
+        let currentPractice = null;
+        
+        // Load saved progress
+        const savedProgress = JSON.parse(localStorage.getItem('sacredProgress') || '{}');
+        
+        // Set today's practice
+        function setDailyPractice() {
+            const today = new Date();
+            const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 86400000);
+            currentPractice = dailyPractices[dayOfYear % dailyPractices.length];
+            
+            document.getElementById('todayDate').textContent = today.toLocaleDateString('en-US', { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+            
+            document.getElementById('practiceTitle').textContent = currentPractice.title;
+            document.getElementById('practiceGlyph').textContent = currentPractice.glyph;
+            document.getElementById('practiceDescription').textContent = currentPractice.description;
+        }
+        
+        // Update progress display
+        function updateProgress() {
+            const days = savedProgress.daysCount || 0;
+            const glyphs = savedProgress.glyphsCount || 0;
+            const minutes = savedProgress.minutesCount || 0;
+            
+            document.getElementById('daysCount').textContent = days;
+            document.getElementById('glyphsCount').textContent = glyphs;
+            document.getElementById('minutesCount').textContent = minutes;
+            
+            // Update progress bar (max 100 days for full bar)
+            const percentage = Math.min((days / 100) * 100, 100);
+            document.getElementById('progressBar').style.width = percentage + '%';
+        }
+        
+        // Start practice
+        function startPractice() {
+            document.getElementById('timerModal').style.display = 'flex';
+            document.getElementById('timerTitle').textContent = currentPractice.title + ' Practice';
+            document.getElementById('timerInstruction').textContent = currentPractice.instruction;
+            timeRemaining = 300;
+            updateTimerDisplay();
+        }
+        
+        // Timer functions
+        function toggleTimer() {
+            if (timerInterval) {
+                pauseTimer();
+            } else {
+                startTimer();
+            }
+        }
+        
+        function startTimer() {
+            document.getElementById('timerToggle').textContent = 'Pause';
+            timerInterval = setInterval(() => {
+                timeRemaining--;
+                updateTimerDisplay();
+                
+                if (timeRemaining <= 0) {
+                    completeTimer();
+                }
+            }, 1000);
+        }
+        
+        function pauseTimer() {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            document.getElementById('timerToggle').textContent = 'Resume';
+        }
+        
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            document.getElementById('timerDisplay').textContent = 
+                `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        }
+        
+        function completeTimer() {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            
+            // Update progress
+            const today = new Date().toDateString();
+            if (savedProgress.lastPractice !== today) {
+                savedProgress.daysCount = (savedProgress.daysCount || 0) + 1;
+                savedProgress.lastPractice = today;
+                
+                // Track unique glyphs
+                if (!savedProgress.glyphsExplored) savedProgress.glyphsExplored = [];
+                if (!savedProgress.glyphsExplored.includes(currentPractice.title)) {
+                    savedProgress.glyphsExplored.push(currentPractice.title);
+                    savedProgress.glyphsCount = savedProgress.glyphsExplored.length;
+                }
+            }
+            
+            savedProgress.minutesCount = (savedProgress.minutesCount || 0) + 5;
+            localStorage.setItem('sacredProgress', JSON.stringify(savedProgress));
+            
+            // Show completion
+            document.getElementById('timerDisplay').textContent = '✨';
+            document.getElementById('timerInstruction').textContent = 
+                'Beautiful! You\'ve completed your practice. Take a moment to rest in this space before returning.';
+            document.getElementById('timerToggle').style.display = 'none';
+            
+            updateProgress();
+        }
+        
+        function closeTimer() {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            document.getElementById('timerModal').style.display = 'none';
+            document.getElementById('timerToggle').textContent = 'Start';
+            document.getElementById('timerToggle').style.display = 'inline-block';
+            timeRemaining = 300;
+            updateTimerDisplay();
+        }
+        
+        // Open practice portals
+        function openPortal(url) {
+            window.open(url, '_blank');
+        }
+        
+        // Initialize on load
+        window.addEventListener('load', () => {
+            setDailyPractice();
+            updateProgress();
+            
+            // Fade in elements
+            document.querySelectorAll('.fade-in').forEach((el, index) => {
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                }, index * 100);
+            });
+        });
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

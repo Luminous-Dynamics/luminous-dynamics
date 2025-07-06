@@ -90,6 +90,15 @@ sessions/
 !agent-comms-sqlite/messages.db
 
 # Keep the structure pure
-Dockerfile*
+Dockerfile.*
 docker-compose*.yml
+!Dockerfile
 .dockerignore
+
+# Other large directories not needed in container
+legacy/
+examples/
+demo/
+websites/
+archives/
+backup/
