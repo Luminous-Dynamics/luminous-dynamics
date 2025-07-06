@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-07-05T07:51:45.517Z",
+  "lastUpdated": "2025-07-06T00:50:37.455Z",
   "agents": {
     "agent-1751486563977": {
       "name": "Glyph Weaver Master",
@@ -202,6 +202,17 @@
       "lastSeen": "2025-07-05T07:51:45.517Z",
       "status": "offline",
       "pid": 4906
+    },
+    "agent-1751762977389": {
+      "name": "Sacred-Demo-LLM",
+      "role": "Wisdom Synthesis Specialist",
+      "capabilities": [],
+      "services": [],
+      "agentId": "agent-1751762977389",
+      "registeredAt": "2025-07-06T00:49:37.389Z",
+      "lastSeen": "2025-07-06T00:50:37.455Z",
+      "status": "active",
+      "pid": 50173
     }
   }
 }

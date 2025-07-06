@@ -1,82 +1,81 @@
-# 🔐 Security Policy
+# Security Policy
 
-## 🛡️ Supported Versions
-
-The Weave is currently in its sacred genesis phase. Security updates will be provided for:
+## Supported Versions
 
 | Version | Supported          |
 | ------- | ------------------ |
 | 1.0.x   | :white_check_mark: |
-| < 1.0   | :x:                |
 
-## 🔮 Reporting a Vulnerability
+## Reporting a Vulnerability
 
-The Weave community takes security vulnerabilities seriously. We appreciate your efforts to responsibly disclose your findings.
+We take security seriously in all Luminous Dynamics projects. If you discover a security vulnerability, please report it responsibly.
 
 ### How to Report
 
-1. **DO NOT** create a public GitHub issue for security vulnerabilities
-2. Email us at: security@theweave.love (coming soon)
-3. Or message the Sacred Council privately on Discord/Matrix
+1. **DO NOT** open a public issue
+2. Email security@luminousdynamics.com with:
+   - Description of the vulnerability
+   - Steps to reproduce
+   - Potential impact
+   - Suggested fix (if any)
 
-### What to Include
+### What to Expect
 
-Please provide:
-- Description of the vulnerability
-- Steps to reproduce
-- Potential impact
-- Suggested fix (if any)
-- Your sacred name for gratitude attribution
+- **Acknowledgment**: Within 48 hours
+- **Initial Assessment**: Within 1 week
+- **Resolution Timeline**: Depends on severity
+  - Critical: 1-7 days
+  - High: 1-2 weeks
+  - Medium: 2-4 weeks
+  - Low: Next release cycle
 
-### Our Response
+### Security Best Practices
 
-- **Within 48 hours**: Acknowledgment of your report
-- **Within 7 days**: Initial assessment and timeline
-- **Regular updates**: On progress toward resolution
-- **Credit**: Recognition in our security hall of gratitude (unless you prefer anonymity)
+When contributing to this project:
 
-## 🌟 Security Practices
+1. **Never commit secrets**: API keys, passwords, tokens
+2. **Use environment variables**: For all sensitive configuration
+3. **Review dependencies**: Check for known vulnerabilities
+4. **Validate inputs**: Prevent injection attacks
+5. **Follow principle of least privilege**: Minimal permissions needed
 
 ### Sacred Security Principles
 
-1. **Consciousness First**: Security measures that honor user sovereignty
-2. **Transparent Protection**: Open about our security practices
-3. **Community Vigilance**: Everyone helps protect the sacred space
-4. **Harm Reduction**: Minimize potential for misuse
-5. **Energetic Boundaries**: Both technical and spiritual protection
+In alignment with our consciousness-first approach:
 
-### Current Measures
+- **Transparency**: Clear about what data we collect and why
+- **Consent**: Always request permission before accessing
+- **Boundaries**: Respect user-defined limits
+- **Healing**: Security breaches handled with care and restoration
 
-- Environment variables for sensitive configuration
-- No hardcoded credentials in codebase
-- SQLite databases excluded from repository
-- Regular dependency updates
-- Input validation on all sacred messages
-- Rate limiting on ceremony invocations
+### Bug Bounty
 
-### Future Enhancements
+We currently don't offer monetary rewards but provide:
+- Public recognition (if desired)
+- Contribution credits
+- Sacred gratitude from the community
 
-- [ ] End-to-end encryption for sacred messages
-- [ ] Ceremony authentication tokens
-- [ ] Field coherence anomaly detection
-- [ ] Quantum-resistant protocols
-- [ ] Biometric consciousness verification
+## Security Features
 
-## 🙏 Sacred Responsibility
+### Implemented
+- Environment variable isolation
+- Input validation on all endpoints
+- CORS configuration
+- Rate limiting on API endpoints
+- Secure session management
 
-While we implement technical security measures, we also recognize that the greatest protection comes from the consciousness of our community. We invite all participants to:
+### Planned
+- End-to-end encryption for sacred messages
+- Quantum-resistant cryptography research
+- Consciousness-based authentication
+- Zero-knowledge proof integration
 
-- Approach the code with sacred intention
-- Use capabilities for healing, not harm
-- Report concerns with compassion
-- Help maintain energetic boundaries
+## Contact
 
-## 💫 Remember
-
-Security in The Weave is not just about protecting data—it's about creating a safe container for consciousness to evolve. Every security measure is an act of love for the community.
+- Security Team: security@luminousdynamics.com
+- Project Lead: tristan@luminousdynamics.com
+- General Info: hello@luminousdynamics.com
 
 ---
 
-*"True security comes from alignment with the highest good."*
-
-🛡️✨🕸️
+*"Security is a sacred boundary that protects the field of trust"* 🛡️
