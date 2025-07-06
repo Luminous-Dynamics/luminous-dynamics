@@ -1,0 +1,33 @@
+[Unit]
+Description=LuminousOS System Consciousness Monitor
+Documentation=https://github.com/luminous-os/monitor
+After=multi-user.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=luminous
+Group=luminous
+WorkingDirectory=/opt/luminous/monitor
+ExecStart=/usr/bin/python3 /opt/luminous/monitor/luminous-system-monitor.py
+Restart=always
+RestartSec=10
+
+# Security hardening
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/luminous
+
+# Resource limits
+CPUQuota=10%
+MemoryLimit=256M
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=luminous-monitor
+
+[Install]
+WantedBy=multi-user.target

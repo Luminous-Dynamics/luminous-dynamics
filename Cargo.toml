@@ -37,8 +37,8 @@ egui = "0.24"     # Immediate mode GUI
 bytemuck = "1.14" # Graphics memory
 
 # Biometric sensor support
-serialport = "4.3"  # Serial device communication
-btleplug = "0.11"   # Bluetooth LE for wireless sensors
+serialport = { version = "4.3", optional = true }  # Serial device communication
+btleplug = { version = "0.11", optional = true }   # Bluetooth LE for wireless sensors
 
 # Signal processing
 rustfft = "6.1"     # FFT for frequency analysis

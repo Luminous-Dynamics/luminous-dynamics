@@ -1,0 +1,34 @@
+{
+  "name": "luminous-coherence-widget",
+  "version": "0.1.0",
+  "description": "Always-visible consciousness indicator for your desktop",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "dist": "electron-builder --linux"
+  },
+  "keywords": ["consciousness", "coherence", "luminous", "widget"],
+  "author": "Luminous Dynamics",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "electron": "^27.0.0",
+    "electron-builder": "^24.0.0"
+  },
+  "build": {
+    "appId": "com.luminousos.coherence-widget",
+    "productName": "LuminousOS Coherence Widget",
+    "directories": {
+      "output": "dist"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb",
+        "rpm"
+      ],
+      "category": "Utility",
+      "icon": "assets/icon.png"
+    }
+  }
+}

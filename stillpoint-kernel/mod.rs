@@ -19,6 +19,10 @@ pub mod field_harmonizer;
 pub mod performance_optimization;
 pub mod biometric_devices;
 pub mod collective_consciousness;
+pub mod performance_profiler;
+pub mod coherence_cache;
+pub mod progressive_consciousness;
+pub mod desktop_integration;
 
 // Re-export core types
 pub use coherence_engine::{
