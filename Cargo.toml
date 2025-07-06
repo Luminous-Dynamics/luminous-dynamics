@@ -22,6 +22,10 @@ path = "kernel/luminous-kernel-demo.rs"
 name = "coherence-monitor"
 path = "kernel/process-coherence-monitor.rs"
 
+[[bin]]
+name = "entangle-demo"
+path = "quantum-entanglement/entangle-demo.rs"
+
 [profile.release]
 opt-level = 3
 lto = true
