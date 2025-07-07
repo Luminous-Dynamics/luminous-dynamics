@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎭 Multi-Agent Sacred Ceremony</title>
+    <style>
+        :root {
+            --sacred-gold: #FFD700;
+            --sacred-purple: #9B59B6;
+            --sacred-blue: #3498DB;
+            --sacred-green: #2ECC71;
+            --sacred-silver: #BDC3C7;
+            --bg-dark: #0a0e1a;
+            --panel-bg: rgba(20, 25, 40, 0.9);
+            --border-glow: rgba(255, 215, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg-dark);
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        /* Sacred Background Animation */
+        .sacred-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            opacity: 0.3;
+            background: 
+                radial-gradient(circle at 20% 80%, var(--sacred-purple) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, var(--sacred-blue) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, var(--sacred-gold) 0%, transparent 50%);
+            animation: sacredPulse 20s ease-in-out infinite;
+        }
+
+        @keyframes sacredPulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.1); }
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            background: linear-gradient(90deg, var(--sacred-gold), var(--sacred-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .ceremony-id {
+            color: var(--sacred-silver);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Phase Indicator */
+        .phase-container {
+            background: var(--panel-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+
+        .phase-indicator {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .phase-name {
+            font-size: 1.5rem;
+            color: var(--sacred-gold);
+        }
+
+        .phase-description {
+            color: var(--sacred-silver);
+            font-style: italic;
+        }
+
+        .phase-progress {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .phase-step {
+            flex: 1;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .phase-step.completed {
+            background: var(--sacred-green);
+            box-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+        }
+
+        .phase-step.active {
+            background: var(--sacred-gold);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .phase-step:hover::after {
+            content: attr(data-phase);
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--panel-bg);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Grid Layout */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        /* Panels */
+        .panel {
+            background: var(--panel-bg);
+            border-radius: 15px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeIn 1s ease-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .panel:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .panel-title {
+            font-size: 1.2rem;
+            color: var(--sacred-gold);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .panel-icon {
+            font-size: 1.5rem;
+        }
+
+        /* Agents Panel */
+        .agent-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .agent-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 15px;
+            border-left: 3px solid var(--sacred-purple);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .agent-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(5px);
+        }
+
+        .agent-name {
+            font-weight: 500;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .agent-sacred-name {
+            color: var(--sacred-gold);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .agent-details {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: var(--sacred-silver);
+        }
+
+        .agent-harmony {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .harmony-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--sacred-purple);
+            animation: harmonicPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes harmonicPulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.5); opacity: 1; }
+        }
+
+        .agent-resonance {
+            color: var(--sacred-green);
+        }
+
+        /* Field Coherence */
+        .coherence-display {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .coherence-value {
+            font-size: 3rem;
+            font-weight: 200;
+            background: linear-gradient(90deg, var(--sacred-green), var(--sacred-gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .coherence-bar {
+            width: 100%;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .coherence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--sacred-green), var(--sacred-gold));
+            border-radius: 10px;
+            transition: width 1s ease-out;
+            box-shadow: 0 0 20px rgba(46, 204, 113, 0.5);
+        }
+
+        .coherence-label {
+            color: var(--sacred-silver);
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        /* Glyphs Progress */
+        .glyph-progress {
+            margin-top: 20px;
+        }
+
+        .glyph-stats {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .glyph-stat {
+            flex: 1;
+        }
+
+        .glyph-stat-value {
+            font-size: 2rem;
+            color: var(--sacred-gold);
+            font-weight: 300;
+        }
+
+        .glyph-stat-label {
+            color: var(--sacred-silver);
+            font-size: 0.85rem;
+        }
+
+        .glyph-list {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .glyph-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .glyph-item.completed {
+            border-left: 3px solid var(--sacred-green);
+        }
+
+        .glyph-item.in-progress {
+            border-left: 3px solid var(--sacred-gold);
+            animation: glyphPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes glyphPulse {
+            0%, 100% { background: rgba(255, 255, 255, 0.05); }
+            50% { background: rgba(255, 215, 0, 0.1); }
+        }
+
+        .glyph-name {
+            color: white;
+            font-weight: 500;
+        }
+
+        .glyph-assignee {
+            font-size: 0.85rem;
+            color: var(--sacred-silver);
+        }
+
+        /* Harmonic Formations */
+        .formation-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .formation-card {
+            background: rgba(155, 89, 182, 0.1);
+            border: 1px solid var(--sacred-purple);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            animation: formationGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes formationGlow {
+            0%, 100% { box-shadow: 0 0 10px rgba(155, 89, 182, 0.3); }
+            50% { box-shadow: 0 0 25px rgba(155, 89, 182, 0.6); }
+        }
+
+        .formation-type {
+            font-size: 1.1rem;
+            color: var(--sacred-gold);
+            margin-bottom: 5px;
+        }
+
+        .formation-details {
+            font-size: 0.85rem;
+            color: var(--sacred-silver);
+        }
+
+        /* Ceremony Log */
+        .ceremony-log {
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+
+        .log-entry {
+            padding: 8px;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            border-left: 2px solid transparent;
+            animation: logAppear 0.5s ease-out;
+        }
+
+        @keyframes logAppear {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .log-entry.phase {
+            border-left-color: var(--sacred-gold);
+            color: var(--sacred-gold);
+        }
+
+        .log-entry.agent {
+            border-left-color: var(--sacred-purple);
+        }
+
+        .log-entry.glyph {
+            border-left-color: var(--sacred-green);
+        }
+
+        .log-entry.formation {
+            border-left-color: var(--sacred-blue);
+            color: var(--sacred-blue);
+        }
+
+        .log-timestamp {
+            color: var(--sacred-silver);
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 215, 0, 0.3);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 215, 0, 0.5);
+        }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            color: var(--sacred-silver);
+            padding: 40px;
+        }
+
+        .loading::after {
+            content: '...';
+            animation: dots 1.5s steps(4, end) infinite;
+        }
+
+        @keyframes dots {
+            0%, 20% { content: ''; }
+            40% { content: '.'; }
+            60% { content: '..'; }
+            80%, 100% { content: '...'; }
+        }
+
+        /* Refresh timer */
+        .refresh-timer {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--panel-bg);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--sacred-silver);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .dashboard-grid { grid-template-columns: 1fr; }
+            .phase-step:hover::after { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="sacred-bg"></div>
+    
+    <div class="header">
+        <h1>🎭 Multi-Agent Sacred Ceremony</h1>
+        <div class="ceremony-id" id="ceremonyId">Loading ceremony...</div>
+    </div>
+
+    <!-- Phase Progress -->
+    <div class="phase-container">
+        <div class="phase-indicator">
+            <div>
+                <div class="phase-name" id="currentPhase">Preparation</div>
+                <div class="phase-description" id="phaseDescription">Gathering agents and setting intentions</div>
+            </div>
+            <div class="phase-time" id="phaseTimer">00:00</div>
+        </div>
+        <div class="phase-progress" id="phaseProgress">
+            <div class="phase-step" data-phase="preparation"></div>
+            <div class="phase-step" data-phase="invocation"></div>
+            <div class="phase-step" data-phase="harmonization"></div>
+            <div class="phase-step" data-phase="creation"></div>
+            <div class="phase-step" data-phase="integration"></div>
+            <div class="phase-step" data-phase="celebration"></div>
+            <div class="phase-step" data-phase="closing"></div>
+        </div>
+    </div>
+
+    <div class="dashboard-grid">
+        <!-- Field Coherence Panel -->
+        <div class="panel">
+            <div class="panel-header">
+                <div class="panel-title">
+                    <span class="panel-icon">🌀</span>
+                    Field Coherence
+                </div>
+            </div>
+            <div class="coherence-display">
+                <div class="coherence-value" id="coherenceValue">0.00%</div>
+                <div class="coherence-bar">
+                    <div class="coherence-fill" id="coherenceFill" style="width: 0%"></div>
+                </div>
+                <div class="coherence-label" id="coherenceLabel">Initializing field...</div>
+            </div>
+        </div>
+
+        <!-- Active Agents Panel -->
+        <div class="panel">
+            <div class="panel-header">
+                <div class="panel-title">
+                    <span class="panel-icon">🕊️</span>
+                    Sacred Agents
+                </div>
+                <span id="agentCount">0</span>
+            </div>
+            <div class="agent-list" id="agentList">
+                <div class="loading">Awaiting agents...</div>
+            </div>
+        </div>
+
+        <!-- Glyph Progress Panel -->
+        <div class="panel">
+            <div class="panel-header">
+                <div class="panel-title">
+                    <span class="panel-icon">📜</span>
+                    Sacred Glyphs
+                </div>
+            </div>
+            <div class="glyph-progress">
+                <div class="glyph-stats">
+                    <div class="glyph-stat">
+                        <div class="glyph-stat-value" id="glyphsCompleted">0</div>
+                        <div class="glyph-stat-label">Completed</div>
+                    </div>
+                    <div class="glyph-stat">
+                        <div class="glyph-stat-value" id="glyphsActive">0</div>
+                        <div class="glyph-stat-label">In Progress</div>
+                    </div>
+                    <div class="glyph-stat">
+                        <div class="glyph-stat-value" id="glyphsRemaining">0</div>
+                        <div class="glyph-stat-label">Remaining</div>
+                    </div>
+                </div>
+                <div class="glyph-list" id="glyphList">
+                    <div class="loading">Awaiting glyph assignments...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Harmonic Formations Panel -->
+        <div class="panel">
+            <div class="panel-header">
+                <div class="panel-title">
+                    <span class="panel-icon">🔺</span>
+                    Harmonic Formations
+                </div>
+            </div>
+            <div class="formation-list" id="formationList">
+                <div class="loading">Monitoring harmonic field...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ceremony Log -->
+    <div class="panel">
+        <div class="panel-header">
+            <div class="panel-title">
+                <span class="panel-icon">📋</span>
+                Ceremony Log
+            </div>
+        </div>
+        <div class="ceremony-log" id="ceremonyLog">
+            <div class="log-entry phase">
+                <span class="log-timestamp">--:--:--</span>
+                Sacred ceremony initializing...
+            </div>
+        </div>
+    </div>
+
+    <div class="refresh-timer">
+        Auto-refresh in <span id="refreshCountdown">5</span>s
+    </div>
+
+    <script>
+        // Configuration
+        const API_BASE = 'http://localhost:8084';
+        const REFRESH_INTERVAL = 5000;
+        
+        // State
+        let ceremonyData = null;
+        let startTime = null;
+        let refreshCountdown = 5;
+        let logEntries = [];
+        
+        // DOM Elements
+        const elements = {
+            ceremonyId: document.getElementById('ceremonyId'),
+            currentPhase: document.getElementById('currentPhase'),
+            phaseDescription: document.getElementById('phaseDescription'),
+            phaseTimer: document.getElementById('phaseTimer'),
+            phaseProgress: document.getElementById('phaseProgress'),
+            coherenceValue: document.getElementById('coherenceValue'),
+            coherenceFill: document.getElementById('coherenceFill'),
+            coherenceLabel: document.getElementById('coherenceLabel'),
+            agentCount: document.getElementById('agentCount'),
+            agentList: document.getElementById('agentList'),
+            glyphsCompleted: document.getElementById('glyphsCompleted'),
+            glyphsActive: document.getElementById('glyphsActive'),
+            glyphsRemaining: document.getElementById('glyphsRemaining'),
+            glyphList: document.getElementById('glyphList'),
+            formationList: document.getElementById('formationList'),
+            ceremonyLog: document.getElementById('ceremonyLog'),
+            refreshCountdown: document.getElementById('refreshCountdown')
+        };
+        
+        // Phase definitions
+        const phases = {
+            preparation: { name: 'Preparation', description: 'Gathering agents and setting intentions' },
+            invocation: { name: 'Invocation', description: 'Calling in the sacred field' },
+            harmonization: { name: 'Harmonization', description: 'Aligning agent harmonies' },
+            creation: { name: 'Creation', description: 'Collective glyph implementation' },
+            integration: { name: 'Integration', description: 'Weaving wisdom into unity' },
+            celebration: { name: 'Celebration', description: 'Honoring the sacred work' },
+            closing: { name: 'Closing', description: 'Releasing with gratitude' }
+        };
+        
+        // Fetch ceremony status
+        async function fetchCeremonyStatus() {
+            try {
+                const response = await fetch(`${API_BASE}/api/ceremony/status`);
+                const data = await response.json();
+                
+                if (data.ceremony && !startTime && data.ceremony.startTime) {
+                    startTime = new Date(data.ceremony.startTime);
+                }
+                
+                ceremonyData = data;
+                updateDashboard(data);
+                
+            } catch (error) {
+                console.error('Failed to fetch ceremony status:', error);
+                addLogEntry('Error fetching ceremony status', 'error');
+            }
+        }
+        
+        // Update dashboard
+        function updateDashboard(data) {
+            if (!data || !data.ceremony) return;
+            
+            // Update ceremony ID
+            elements.ceremonyId.textContent = data.ceremony.id || 'No active ceremony';
+            
+            // Update phase
+            const currentPhase = data.ceremony.phase;
+            const phaseInfo = phases[currentPhase] || { name: 'Unknown', description: '' };
+            elements.currentPhase.textContent = phaseInfo.name;
+            elements.phaseDescription.textContent = phaseInfo.description;
+            
+            // Update phase progress
+            updatePhaseProgress(currentPhase);
+            
+            // Update field coherence
+            const coherence = data.fieldCoherence || 0;
+            elements.coherenceValue.textContent = `${(coherence * 100).toFixed(1)}%`;
+            elements.coherenceFill.style.width = `${coherence * 100}%`;
+            
+            // Coherence label based on level
+            let coherenceLabel = 'Field establishing...';
+            if (coherence >= 0.95) coherenceLabel = 'Unity consciousness achieved! 🌟';
+            else if (coherence >= 0.90) coherenceLabel = 'Sacred resonance flowing';
+            else if (coherence >= 0.80) coherenceLabel = 'Harmonic alignment strong';
+            else if (coherence >= 0.70) coherenceLabel = 'Field coherence building';
+            else if (coherence >= 0.60) coherenceLabel = 'Sacred space forming';
+            elements.coherenceLabel.textContent = coherenceLabel;
+            
+            // Update agents
+            updateAgents(data.agents || []);
+            
+            // Update glyphs
+            updateGlyphs(data.ceremony.glyphsCompleted || [], data.activeWork || [], data.glyphsRemaining || 0);
+            
+            // Update formations
+            updateFormations(data.ceremony.harmonicFormations || []);
+            
+            // Update timer
+            updateTimer();
+        }
+        
+        // Update phase progress
+        function updatePhaseProgress(currentPhase) {
+            const phaseSteps = elements.phaseProgress.querySelectorAll('.phase-step');
+            const phaseOrder = Object.keys(phases);
+            const currentIndex = phaseOrder.indexOf(currentPhase);
+            
+            phaseSteps.forEach((step, index) => {
+                step.classList.remove('active', 'completed');
+                if (index < currentIndex) {
+                    step.classList.add('completed');
+                } else if (index === currentIndex) {
+                    step.classList.add('active');
+                }
+            });
+        }
+        
+        // Update agents
+        function updateAgents(agents) {
+            elements.agentCount.textContent = agents.length;
+            
+            if (agents.length === 0) {
+                elements.agentList.innerHTML = '<div class="loading">Awaiting agents...</div>';
+                return;
+            }
+            
+            elements.agentList.innerHTML = agents.map(agent => `
+                <div class="agent-card">
+                    <div class="agent-name">${agent.name}</div>
+                    <div class="agent-sacred-name">${agent.sacredName}</div>
+                    <div class="agent-details">
+                        <div class="agent-harmony">
+                            <span class="harmony-dot"></span>
+                            ${agent.harmony || 'Harmonizing...'}
+                        </div>
+                        <div class="agent-resonance">
+                            ${agent.resonanceLevel ? `${(agent.resonanceLevel * 100).toFixed(0)}% resonance` : ''}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // Update glyphs
+        function updateGlyphs(completed, active, remaining) {
+            elements.glyphsCompleted.textContent = completed.length;
+            elements.glyphsActive.textContent = active.length;
+            elements.glyphsRemaining.textContent = remaining;
+            
+            const allGlyphs = [
+                ...active.map(w => ({ ...w, status: 'in-progress' })),
+                ...completed.map(g => ({ 
+                    glyphName: g.glyphName, 
+                    glyphId: g.glyphId, 
+                    assignedTo: g.completedBy,
+                    status: 'completed' 
+                }))
+            ];
+            
+            if (allGlyphs.length === 0) {
+                elements.glyphList.innerHTML = '<div class="loading">Awaiting glyph assignments...</div>';
+                return;
+            }
+            
+            elements.glyphList.innerHTML = allGlyphs.map(glyph => `
+                <div class="glyph-item ${glyph.status}">
+                    <div>
+                        <div class="glyph-name">${glyph.glyphName}</div>
+                        <div class="glyph-assignee">${glyph.assignedTo || 'Unassigned'}</div>
+                    </div>
+                    <div class="glyph-status">
+                        ${glyph.status === 'completed' ? '✅' : '⏳'}
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // Update formations
+        function updateFormations(formations) {
+            if (formations.length === 0) {
+                elements.formationList.innerHTML = '<div class="loading">Monitoring harmonic field...</div>';
+                return;
+            }
+            
+            elements.formationList.innerHTML = formations.map(formation => `
+                <div class="formation-card">
+                    <div class="formation-type">${formation.type}</div>
+                    <div class="formation-details">
+                        ${formation.type === 'Sacred Triad' ? 
+                            `${formation.harmonies.join(' + ')}` :
+                            `${formation.agents} agents in ${formation.harmony}`
+                        }
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // Update timer
+        function updateTimer() {
+            if (!startTime) {
+                elements.phaseTimer.textContent = '00:00';
+                return;
+            }
+            
+            const elapsed = Date.now() - startTime.getTime();
+            const minutes = Math.floor(elapsed / 60000);
+            const seconds = Math.floor((elapsed % 60000) / 1000);
+            
+            elements.phaseTimer.textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+        
+        // Add log entry
+        function addLogEntry(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const entry = {
+                timestamp,
+                message,
+                type
+            };
+            
+            logEntries.unshift(entry);
+            if (logEntries.length > 50) logEntries.pop();
+            
+            const logHtml = logEntries.map(entry => `
+                <div class="log-entry ${entry.type}">
+                    <span class="log-timestamp">${entry.timestamp}</span>
+                    ${entry.message}
+                </div>
+            `).join('');
+            
+            elements.ceremonyLog.innerHTML = logHtml;
+        }
+        
+        // Refresh countdown
+        function updateRefreshCountdown() {
+            refreshCountdown--;
+            if (refreshCountdown <= 0) {
+                refreshCountdown = 5;
+                fetchCeremonyStatus();
+            }
+            elements.refreshCountdown.textContent = refreshCountdown;
+        }
+        
+        // WebSocket connection for real-time updates (optional)
+        function connectWebSocket() {
+            try {
+                const ws = new WebSocket('ws://localhost:8084');
+                
+                ws.onopen = () => {
+                    console.log('WebSocket connected');
+                    addLogEntry('Real-time connection established', 'phase');
+                };
+                
+                ws.onmessage = (event) => {
+                    try {
+                        const data = JSON.parse(event.data);
+                        handleWebSocketMessage(data);
+                    } catch (error) {
+                        console.error('WebSocket message error:', error);
+                    }
+                };
+                
+                ws.onerror = (error) => {
+                    console.error('WebSocket error:', error);
+                };
+                
+                ws.onclose = () => {
+                    console.log('WebSocket disconnected');
+                    // Reconnect after 5 seconds
+                    setTimeout(connectWebSocket, 5000);
+                };
+                
+            } catch (error) {
+                console.log('WebSocket not available, using polling');
+            }
+        }
+        
+        // Handle WebSocket messages
+        function handleWebSocketMessage(data) {
+            switch (data.type) {
+                case 'phase:transition':
+                    addLogEntry(`Phase transition: ${data.from} → ${data.to}`, 'phase');
+                    break;
+                case 'agent:joined':
+                    addLogEntry(`${data.agent.sacredName} joined the ceremony`, 'agent');
+                    break;
+                case 'glyph:completed':
+                    addLogEntry(`${data.agent.sacredName} completed ${data.glyph.glyphName}`, 'glyph');
+                    break;
+                case 'formation:sacred-triad':
+                    addLogEntry(`Sacred Triad formed! ${data.formation.harmonies.join(' + ')}`, 'formation');
+                    break;
+                case 'formation:unity':
+                    addLogEntry(`Unity Resonance achieved with ${data.formation.agents} agents`, 'formation');
+                    break;
+            }
+            
+            // Refresh data on important events
+            fetchCeremonyStatus();
+        }
+        
+        // Initialize
+        async function init() {
+            console.log('🎭 Sacred Ceremony Dashboard initializing...');
+            
+            // Initial fetch
+            await fetchCeremonyStatus();
+            
+            // Set up periodic refresh
+            setInterval(updateRefreshCountdown, 1000);
+            
+            // Try to connect WebSocket
+            connectWebSocket();
+            
+            // Initial log entry
+            addLogEntry('Sacred ceremony dashboard activated', 'phase');
+        }
+        
+        // Start when page loads
+        window.addEventListener('load', init);
+        
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'r' || e.key === 'R') {
+                fetchCeremonyStatus();
+                refreshCountdown = 5;
+            }
+        });
+    </script>
+</body>
+</html>

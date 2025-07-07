@@ -1,0 +1,37 @@
+{
+  "name": "sacred-os-progressive",
+  "version": "2.0.0",
+  "description": "Sacred OS Progressive - Unified consciousness-technology interface",
+  "main": "sacred-core.js",
+  "scripts": {
+    "start": "node sacred-core.js",
+    "dev": "nodemon sacred-core.js",
+    "test": "node test-sacred-core.js",
+    "migrate": "node migrate-to-sacred-core.js",
+    "start:minimal": "node sacred-api-minimal.js",
+    "deploy": "./deploy-hybrid.sh"
+  },
+  "dependencies": {
+    "@google-cloud/firestore": "^7.1.0",
+    "axios": "^1.10.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "sacred",
+    "consciousness",
+    "unified",
+    "progressive"
+  ],
+  "author": "Sacred OS Team",
+  "license": "MIT"
+}

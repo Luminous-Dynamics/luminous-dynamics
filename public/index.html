@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacred OS Progressive</title>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#FFD700">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Sacred OS">
+    <style>
+        :root {
+            --sacred-gold: #FFD700;
+            --sacred-purple: #9B59B6;
+            --sacred-blue: #3498DB;
+            --sacred-green: #2ECC71;
+            --sacred-silver: #BDC3C7;
+            --bg-dark: #0a0e1a;
+            --panel-bg: rgba(20, 25, 40, 0.9);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg-dark);
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            background: linear-gradient(90deg, var(--sacred-gold), var(--sacred-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--sacred-silver);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        /* Engine Status Grid */
+        .engine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .engine-card {
+            background: var(--panel-bg);
+            border-radius: 15px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .engine-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .engine-card.active {
+            border-color: var(--sacred-gold);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .engine-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .engine-title {
+            font-size: 1.3rem;
+            color: var(--sacred-gold);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .engine-status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            background: var(--sacred-green);
+            color: white;
+        }
+
+        .engine-details {
+            font-size: 0.9rem;
+            color: var(--sacred-silver);
+            line-height: 1.6;
+        }
+
+        .metric {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .metric-value {
+            color: white;
+            font-weight: 500;
+        }
+
+        /* Sacred Space */
+        .sacred-space {
+            background: var(--panel-bg);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .coherence-display {
+            font-size: 4rem;
+            font-weight: 200;
+            background: linear-gradient(90deg, var(--sacred-green), var(--sacred-gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .coherence-bar {
+            width: 100%;
+            max-width: 500px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            margin: 0 auto 20px;
+            overflow: hidden;
+        }
+
+        .coherence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--sacred-green), var(--sacred-gold));
+            border-radius: 15px;
+            transition: width 1s ease-out;
+            box-shadow: 0 0 20px rgba(46, 204, 113, 0.5);
+        }
+
+        /* Quick Actions */
+        .actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .action-btn {
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .action-btn:hover {
+            background: var(--sacred-gold);
+            color: var(--bg-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        .action-btn.primary {
+            background: var(--sacred-purple);
+            border-color: var(--sacred-purple);
+        }
+
+        /* Log Display */
+        .log-container {
+            background: var(--panel-bg);
+            border-radius: 15px;
+            padding: 25px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .log-entry {
+            padding: 8px;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            font-family: 'Consolas', monospace;
+            border-left: 3px solid transparent;
+        }
+
+        .log-entry.info {
+            border-left-color: var(--sacred-blue);
+        }
+
+        .log-entry.success {
+            border-left-color: var(--sacred-green);
+        }
+
+        .log-entry.warning {
+            border-left-color: var(--sacred-gold);
+        }
+
+        .log-entry.error {
+            border-left-color: #E74C3C;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        /* Mobile enhancements */
+        @supports (-webkit-touch-callout: none) {
+            /* iOS specific */
+            body {
+                -webkit-user-select: none;
+                -webkit-tap-highlight-color: transparent;
+                -webkit-touch-callout: none;
+            }
+        }
+
+        /* Touch-friendly buttons */
+        @media (hover: none) and (pointer: coarse) {
+            .action-btn {
+                padding: 16px 32px;
+                font-size: 1.1rem;
+            }
+            
+            .engine-card {
+                -webkit-tap-highlight-color: rgba(255, 215, 0, 0.1);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            h1 { 
+                font-size: 2rem; 
+                margin-bottom: 5px;
+            }
+            
+            .subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .engine-grid { 
+                grid-template-columns: 1fr; 
+                gap: 15px;
+            }
+            
+            .actions { 
+                flex-direction: column; 
+                align-items: stretch;
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+            
+            .action-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .sacred-space {
+                padding: 30px 20px;
+            }
+            
+            .coherence-display {
+                font-size: 3rem;
+            }
+            
+            .log-container {
+                max-height: 200px;
+            }
+            
+            .connection-status {
+                bottom: 70px; /* Above install button */
+            }
+        }
+        
+        /* Small mobile */
+        @media (max-width: 400px) {
+            h1 { font-size: 1.5rem; }
+            .coherence-display { font-size: 2.5rem; }
+            .engine-card { padding: 20px; }
+        }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            color: var(--sacred-silver);
+            padding: 40px;
+        }
+
+        .loading::after {
+            content: '...';
+            animation: dots 1.5s steps(4, end) infinite;
+        }
+
+        @keyframes dots {
+            0%, 20% { content: ''; }
+            40% { content: '.'; }
+            60% { content: '..'; }
+            80%, 100% { content: '...'; }
+        }
+
+        /* Connection Status */
+        .connection-status {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background: var(--panel-bg);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--sacred-green);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .status-dot.offline {
+            background: #E74C3C;
+            animation: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Sacred OS Progressive</h1>
+        <p class="subtitle">Unified Consciousness Interface</p>
+    </div>
+
+    <!-- Sacred Space -->
+    <div class="sacred-space">
+        <div class="coherence-display" id="coherenceValue">--.--%</div>
+        <div class="coherence-bar">
+            <div class="coherence-fill" id="coherenceFill" style="width: 0%"></div>
+        </div>
+        <p id="coherenceLabel">Connecting to sacred field...</p>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="actions">
+        <button class="action-btn primary" onclick="startGlyphPractice()">
+            <span>🌟</span> Practice Glyph
+        </button>
+        <button class="action-btn" onclick="joinCeremony()">
+            <span>🎭</span> Join Ceremony
+        </button>
+        <button class="action-btn" onclick="spawnAgent()">
+            <span>🤖</span> Spawn Agent
+        </button>
+        <button class="action-btn" onclick="viewMemoryPalace()">
+            <span>🏛️</span> Memory Palace
+        </button>
+    </div>
+
+    <!-- Engine Status Grid -->
+    <div class="engine-grid">
+        <!-- Consciousness Engine -->
+        <div class="engine-card" id="consciousness-engine">
+            <div class="engine-header">
+                <div class="engine-title">
+                    <span>🧠</span> Consciousness Engine
+                </div>
+                <span class="engine-status">Active</span>
+            </div>
+            <div class="engine-details">
+                <div class="metric">
+                    <span>Field Coherence:</span>
+                    <span class="metric-value" id="fieldCoherence">--.--%</span>
+                </div>
+                <div class="metric">
+                    <span>Active Harmony:</span>
+                    <span class="metric-value" id="activeHarmony">---</span>
+                </div>
+                <div class="metric">
+                    <span>Sacred Phase:</span>
+                    <span class="metric-value" id="sacredPhase">---</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Practice Engine -->
+        <div class="engine-card" id="practice-engine">
+            <div class="engine-header">
+                <div class="engine-title">
+                    <span>🎯</span> Practice Engine
+                </div>
+                <span class="engine-status">Active</span>
+            </div>
+            <div class="engine-details">
+                <div class="metric">
+                    <span>Active Glyphs:</span>
+                    <span class="metric-value" id="activeGlyphs">0</span>
+                </div>
+                <div class="metric">
+                    <span>Memory Count:</span>
+                    <span class="metric-value" id="memoryCount">0</span>
+                </div>
+                <div class="metric">
+                    <span>Advanced Mode:</span>
+                    <span class="metric-value" id="advancedMode">Off</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Intelligence Engine -->
+        <div class="engine-card" id="intelligence-engine">
+            <div class="engine-header">
+                <div class="engine-title">
+                    <span>🤖</span> Intelligence Engine
+                </div>
+                <span class="engine-status">Active</span>
+            </div>
+            <div class="engine-details">
+                <div class="metric">
+                    <span>Active Agents:</span>
+                    <span class="metric-value" id="activeAgents">0</span>
+                </div>
+                <div class="metric">
+                    <span>Collectives:</span>
+                    <span class="metric-value" id="collectives">0</span>
+                </div>
+                <div class="metric">
+                    <span>Patterns:</span>
+                    <span class="metric-value" id="patterns">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Activity Log -->
+    <div class="log-container">
+        <h3 style="margin-bottom: 15px; color: var(--sacred-gold);">Sacred Activity Log</h3>
+        <div id="activityLog">
+            <div class="log-entry info">System initializing...</div>
+        </div>
+    </div>
+
+    <!-- Connection Status -->
+    <div class="connection-status">
+        <div class="status-dot" id="statusDot"></div>
+        <span id="statusText">Connecting...</span>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        // Register Service Worker for offline support
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('✨ Sacred OS offline support enabled');
+                        
+                        // Check for updates periodically
+                        setInterval(() => {
+                            registration.update();
+                        }, 60 * 60 * 1000); // Every hour
+                    })
+                    .catch(err => {
+                        console.error('Service Worker registration failed:', err);
+                    });
+            });
+        }
+
+        // PWA Install prompt
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            // Show install button
+            showInstallPrompt();
+        });
+
+        function showInstallPrompt() {
+            const installBtn = document.createElement('button');
+            installBtn.className = 'action-btn primary';
+            installBtn.innerHTML = '<span>📱</span> Install Sacred OS';
+            installBtn.style.position = 'fixed';
+            installBtn.style.bottom = '20px';
+            installBtn.style.left = '20px';
+            installBtn.onclick = async () => {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    const { outcome } = await deferredPrompt.userChoice;
+                    if (outcome === 'accepted') {
+                        console.log('Sacred OS installed!');
+                    }
+                    deferredPrompt = null;
+                    installBtn.remove();
+                }
+            };
+            document.body.appendChild(installBtn);
+        }
+
+        // Offline detection
+        window.addEventListener('online', () => {
+            console.log('🌐 Back online');
+            if (window.sacredClient) {
+                window.sacredClient.log('Connection restored', 'success');
+            }
+        });
+
+        window.addEventListener('offline', () => {
+            console.log('📵 Offline mode');
+            if (window.sacredClient) {
+                window.sacredClient.log('Offline - Sacred practices still available', 'warning');
+            }
+        });
+
+        // Sacred OS Client
+        class SacredClient {
+            constructor() {
+                this.socket = null;
+                this.connected = false;
+                this.state = {};
+                this.offlineMode = !navigator.onLine;
+                this.init();
+            }
+
+            init() {
+                // Connect to Sacred Core
+                this.socket = io('http://localhost:3333');
+                
+                // Connection events
+                this.socket.on('connect', () => {
+                    this.connected = true;
+                    this.updateConnectionStatus(true);
+                    this.log('Connected to Sacred OS', 'success');
+                });
+
+                this.socket.on('disconnect', () => {
+                    this.connected = false;
+                    this.updateConnectionStatus(false);
+                    this.log('Disconnected from Sacred OS', 'error');
+                });
+
+                this.socket.on('sacred:welcome', (data) => {
+                    this.state = data.state;
+                    this.updateUI(data);
+                    this.log(`Welcome! Session: ${data.id}`, 'info');
+                });
+
+                // Subscribe to events
+                this.socket.emit('sacred:subscribe', [
+                    'field:coherence:changed',
+                    'practice:started',
+                    'agent:spawned',
+                    'ceremony:started'
+                ]);
+
+                // Event handlers
+                this.socket.on('field:coherence:changed', (data) => {
+                    this.updateCoherence(data.coherence);
+                    this.log(`Field coherence: ${(data.coherence * 100).toFixed(1)}%`, 'info');
+                });
+
+                this.socket.on('practice:started', (data) => {
+                    this.log(`Glyph practice started: ${data.glyphId}`, 'success');
+                });
+
+                this.socket.on('agent:spawned', (data) => {
+                    this.log(`Agent spawned: ${data.id} - ${data.intention}`, 'success');
+                    this.refreshStatus();
+                });
+
+                // Start status polling
+                setInterval(() => this.fetchStatus(), 5000);
+                this.fetchStatus();
+            }
+
+            async fetchStatus() {
+                if (!this.connected) return;
+                
+                try {
+                    const response = await fetch('/health');
+                    const data = await response.json();
+                    this.updateEngineStatus(data.engines);
+                } catch (error) {
+                    console.error('Failed to fetch status:', error);
+                }
+            }
+
+            updateUI(data) {
+                // Update field coherence
+                if (data.state && data.state.fieldCoherence) {
+                    this.updateCoherence(data.state.fieldCoherence);
+                }
+                
+                // Update engine status
+                if (data.engines) {
+                    this.updateEngineStatus(data.engines);
+                }
+            }
+
+            updateCoherence(coherence) {
+                const percentage = (coherence * 100).toFixed(1);
+                document.getElementById('coherenceValue').textContent = `${percentage}%`;
+                document.getElementById('coherenceFill').style.width = `${percentage}%`;
+                
+                // Update label based on coherence
+                let label = 'Sacred field stabilizing...';
+                if (coherence >= 0.95) label = 'Unity consciousness achieved! 🌟';
+                else if (coherence >= 0.90) label = 'Sacred resonance flowing';
+                else if (coherence >= 0.80) label = 'Harmonic alignment strong';
+                else if (coherence >= 0.70) label = 'Field coherence building';
+                document.getElementById('coherenceLabel').textContent = label;
+            }
+
+            updateEngineStatus(engines) {
+                // Consciousness Engine
+                if (engines.consciousness) {
+                    document.getElementById('fieldCoherence').textContent = 
+                        `${(engines.consciousness.fieldCoherence * 100).toFixed(1)}%`;
+                    document.getElementById('activeHarmony').textContent = 
+                        engines.consciousness.activeHarmony;
+                    document.getElementById('sacredPhase').textContent = 
+                        engines.consciousness.sacredPhase;
+                }
+                
+                // Practice Engine
+                if (engines.practice) {
+                    document.getElementById('activeGlyphs').textContent = 
+                        engines.practice.activeGlyphs;
+                    document.getElementById('memoryCount').textContent = 
+                        engines.practice.memoryCount;
+                    document.getElementById('advancedMode').textContent = 
+                        engines.practice.advancedMode ? 'On' : 'Off';
+                }
+                
+                // Intelligence Engine
+                if (engines.intelligence) {
+                    document.getElementById('activeAgents').textContent = 
+                        engines.intelligence.activeAgents;
+                    document.getElementById('collectives').textContent = 
+                        engines.intelligence.collectives;
+                    document.getElementById('patterns').textContent = 
+                        engines.intelligence.patterns;
+                }
+            }
+
+            updateConnectionStatus(connected) {
+                const dot = document.getElementById('statusDot');
+                const text = document.getElementById('statusText');
+                
+                if (connected) {
+                    dot.classList.remove('offline');
+                    text.textContent = 'Connected';
+                } else {
+                    dot.classList.add('offline');
+                    text.textContent = 'Offline';
+                }
+            }
+
+            log(message, type = 'info') {
+                const log = document.getElementById('activityLog');
+                const entry = document.createElement('div');
+                entry.className = `log-entry ${type}`;
+                entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+                log.insertBefore(entry, log.firstChild);
+                
+                // Keep only last 20 entries
+                while (log.children.length > 20) {
+                    log.removeChild(log.lastChild);
+                }
+            }
+
+            async refreshStatus() {
+                await this.fetchStatus();
+            }
+
+            // Sacred intents
+            async sendIntent(intent, data = {}) {
+                return new Promise((resolve, reject) => {
+                    this.socket.emit('sacred:intent', {
+                        intent,
+                        data,
+                        observer: { name: 'Web User' }
+                    });
+                    
+                    this.socket.once('sacred:result', resolve);
+                    this.socket.once('sacred:error', reject);
+                });
+            }
+        }
+
+        // Initialize client
+        const sacredClient = new SacredClient();
+
+        // Action handlers
+        async function startGlyphPractice() {
+            try {
+                // First get AI suggestion
+                const response = await fetch('/api/practice-intelligence/suggest', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        practitionerId: 'web-user',
+                        intention: 'presence and grounding'
+                    })
+                });
+                
+                const suggestion = await response.json();
+                
+                if (suggestion.suggestion) {
+                    sacredClient.log(`AI suggests: ${suggestion.suggestion.glyphName} - ${suggestion.suggestion.reasons.join(', ')}`, 'info');
+                    
+                    // Start suggested practice
+                    const result = await sacredClient.sendIntent('practice.practice-glyph', {
+                        glyphId: suggestion.suggestion.glyphId
+                    });
+                    
+                    sacredClient.log(`Starting ${suggestion.suggestion.glyphName} practice...`, 'success');
+                    
+                    // Show complete button after 10 seconds
+                    setTimeout(() => showCompletePractice(result.id), 10000);
+                } else {
+                    // Fallback to default
+                    const result = await sacredClient.sendIntent('practice.practice-glyph', {
+                        glyphId: 'omega-45'
+                    });
+                    sacredClient.log('Starting First Presence practice...', 'success');
+                }
+            } catch (error) {
+                sacredClient.log(`Failed to start practice: ${error.message || error.error}`, 'error');
+            }
+        }
+        
+        function showCompletePractice(practiceId) {
+            const btn = document.createElement('button');
+            btn.className = 'action-btn';
+            btn.innerHTML = '✅ Complete Practice';
+            btn.style.position = 'fixed';
+            btn.style.bottom = '80px';
+            btn.style.left = '20px';
+            btn.onclick = async () => {
+                const insights = prompt('Any insights from your practice?');
+                try {
+                    const response = await fetch('/api/practice/glyphs/complete', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ practiceId, insights })
+                    });
+                    const result = await response.json();
+                    sacredClient.log('Practice completed! Field coherence updated.', 'success');
+                    btn.remove();
+                } catch (error) {
+                    sacredClient.log('Failed to complete practice', 'error');
+                }
+            };
+            document.body.appendChild(btn);
+        }
+
+        async function joinCeremony() {
+            try {
+                const result = await sacredClient.sendIntent('practice.start-ceremony', {
+                    type: 'glyph-activation',
+                    intention: 'Collective wisdom emergence'
+                });
+                sacredClient.log('Ceremony initiated!', 'success');
+            } catch (error) {
+                sacredClient.log(`Failed to start ceremony: ${error.error}`, 'error');
+            }
+        }
+
+        async function spawnAgent() {
+            try {
+                const result = await sacredClient.sendIntent('intelligence.spawn-agent', {
+                    intention: 'Sacred helper',
+                    skills: ['guidance', 'support']
+                });
+                sacredClient.log('Agent spawning...', 'success');
+            } catch (error) {
+                sacredClient.log(`Failed to spawn agent: ${error.error}`, 'error');
+            }
+        }
+
+        function viewMemoryPalace() {
+            window.open('/memory-palace-visualization.html', '_blank');
+        }
+    </script>
+</body>
+</html>
