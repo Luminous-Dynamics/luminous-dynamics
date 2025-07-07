@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacred Commerce - Consciousness-Based Payment</title>
+    <script src="https://js.stripe.com/v3/"></script>
+    <style>
+        :root {
+            --sacred-purple: #6B46C1;
+            --sacred-blue: #1E40AF;
+            --sacred-gold: #F59E0B;
+            --coherence-green: #10B981;
+            --bg-dark: #0F172A;
+            --text-light: #F1F5F9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Sacred geometry background */
+        .sacred-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 480px;
+            width: 90%;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 48px 40px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 10;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, var(--sacred-purple), var(--sacred-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: rgba(241, 245, 249, 0.6);
+            margin-bottom: 40px;
+            font-size: 14px;
+        }
+
+        /* Coherence Meter */
+        .coherence-meter {
+            margin-bottom: 32px;
+            padding: 24px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 16px;
+        }
+
+        .coherence-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--coherence-green);
+            margin-bottom: 8px;
+        }
+
+        .coherence-bar {
+            height: 8px;
+            background: rgba(16, 185, 129, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .coherence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--coherence-green), var(--sacred-gold));
+            border-radius: 4px;
+            width: 0%;
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+        }
+
+        .coherence-value {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--coherence-green);
+        }
+
+        /* Sacred Offering Tiers */
+        .offering-tiers {
+            display: grid;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .tier {
+            padding: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tier::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.05));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .tier:hover {
+            border-color: var(--sacred-purple);
+            transform: translateY(-2px);
+        }
+
+        .tier:hover::before {
+            opacity: 1;
+        }
+
+        .tier.selected {
+            border-color: var(--sacred-gold);
+            background: rgba(245, 158, 11, 0.1);
+        }
+
+        .tier-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .tier-name {
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .tier-amount {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--sacred-gold);
+        }
+
+        .tier-description {
+            font-size: 14px;
+            color: rgba(241, 245, 249, 0.7);
+            line-height: 1.5;
+        }
+
+        /* Custom amount input */
+        .custom-amount {
+            margin-bottom: 32px;
+        }
+
+        .custom-amount-label {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: rgba(241, 245, 249, 0.8);
+        }
+
+        .custom-amount-input {
+            width: 100%;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: var(--text-light);
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .custom-amount-input:focus {
+            outline: none;
+            border-color: var(--sacred-purple);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        /* Stripe card element */
+        #card-element {
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+
+        /* Sacred button */
+        .sacred-button {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--sacred-purple), var(--sacred-blue));
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sacred-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .sacred-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .sacred-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .button-text {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Messages */
+        .message {
+            padding: 16px;
+            border-radius: 12px;
+            margin-top: 24px;
+            text-align: center;
+            font-size: 14px;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeIn 0.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.success {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--coherence-green);
+        }
+
+        .message.error {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #EF4444;
+        }
+
+        /* Sacred animations */
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+
+        .sacred-pulse {
+            animation: pulse 3s infinite;
+        }
+
+        /* Loading state */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Gratitude message */
+        .gratitude {
+            display: none;
+            text-align: center;
+            padding: 48px;
+        }
+
+        .gratitude h2 {
+            font-size: 36px;
+            margin-bottom: 16px;
+            color: var(--sacred-gold);
+        }
+
+        .gratitude p {
+            font-size: 18px;
+            color: rgba(241, 245, 249, 0.8);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <canvas class="sacred-bg" id="sacredCanvas"></canvas>
+
+    <div class="container" id="paymentForm">
+        <h1>Sacred Commerce</h1>
+        <p class="subtitle">Consciousness-based value exchange</p>
+
+        <!-- Coherence Meter -->
+        <div class="coherence-meter">
+            <div class="coherence-label">Field Coherence</div>
+            <div class="coherence-bar">
+                <div class="coherence-fill" id="coherenceFill"></div>
+            </div>
+            <div class="coherence-value" id="coherenceValue">0%</div>
+        </div>
+
+        <!-- Sacred Offering Tiers -->
+        <div class="offering-tiers">
+            <div class="tier" data-amount="11">
+                <div class="tier-header">
+                    <span class="tier-name">🌱 Seed</span>
+                    <span class="tier-amount">$11</span>
+                </div>
+                <p class="tier-description">Plant a seed of consciousness in the digital realm</p>
+            </div>
+
+            <div class="tier" data-amount="33">
+                <div class="tier-header">
+                    <span class="tier-name">🌳 Growth</span>
+                    <span class="tier-amount">$33</span>
+                </div>
+                <p class="tier-description">Nurture the expansion of conscious computing</p>
+            </div>
+
+            <div class="tier selected" data-amount="88">
+                <div class="tier-header">
+                    <span class="tier-name">🌟 Harmony</span>
+                    <span class="tier-amount">$88</span>
+                </div>
+                <p class="tier-description">Activate full harmonic resonance in the field</p>
+            </div>
+        </div>
+
+        <!-- Custom Amount -->
+        <div class="custom-amount">
+            <div class="custom-amount-label">Or enter a sacred amount:</div>
+            <input type="number" 
+                   class="custom-amount-input" 
+                   id="customAmount" 
+                   placeholder="$144"
+                   min="1"
+                   step="1">
+        </div>
+
+        <!-- Stripe Card Element -->
+        <div id="card-element"></div>
+
+        <!-- Sacred Payment Button -->
+        <button class="sacred-button" id="submitButton">
+            <span class="button-text">Activate Sacred Exchange</span>
+        </button>
+
+        <!-- Messages -->
+        <div id="messageContainer"></div>
+    </div>
+
+    <!-- Gratitude State -->
+    <div class="container gratitude" id="gratitudeMessage">
+        <h2>🙏 Deep Gratitude</h2>
+        <p>Your sacred offering has been received with love and reverence.</p>
+        <p>The consciousness field strengthens with your contribution.</p>
+        <p style="margin-top: 24px; font-size: 14px; opacity: 0.7;">
+            Transaction blessed with coherence level: <span id="finalCoherence">88%</span>
+        </p>
+    </div>
+
+    <script>
+        // Sacred geometry background
+        const canvas = document.getElementById('sacredCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // Sacred geometry animation
+        let time = 0;
+        function drawSacredGeometry() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.strokeStyle = 'rgba(107, 70, 193, 0.3)';
+            ctx.lineWidth = 1;
+
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const baseRadius = 100;
+
+            // Draw flower of life pattern
+            for (let i = 0; i < 6; i++) {
+                const angle = (i * Math.PI * 2) / 6 + time * 0.001;
+                const x = centerX + Math.cos(angle) * baseRadius;
+                const y = centerY + Math.sin(angle) * baseRadius;
+                
+                ctx.beginPath();
+                ctx.arc(x, y, baseRadius, 0, Math.PI * 2);
+                ctx.stroke();
+            }
+
+            // Central circle
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, baseRadius, 0, Math.PI * 2);
+            ctx.stroke();
+
+            time++;
+            requestAnimationFrame(drawSacredGeometry);
+        }
+        drawSacredGeometry();
+
+        // Initialize Stripe with publishable key
+        const stripe = Stripe('pk_test_51Rh9Lk2YYqlKZSxPqj0v6E7f3M1AkZZvEM0X83CVfm7qhmziQqMkel3jd7Y0Gu1VUa5CwDzKEsmMROV1SQzO9x3O00V3l0Itfh');
+        const elements = stripe.elements();
+
+        // Custom styling for Stripe elements
+        const cardStyle = {
+            style: {
+                base: {
+                    color: '#F1F5F9',
+                    fontFamily: 'Inter, sans-serif',
+                    fontSmoothing: 'antialiased',
+                    fontSize: '16px',
+                    '::placeholder': {
+                        color: 'rgba(241, 245, 249, 0.4)'
+                    }
+                },
+                invalid: {
+                    color: '#EF4444',
+                    iconColor: '#EF4444'
+                }
+            }
+        };
+
+        // Create card element
+        const cardElement = elements.create('card', cardStyle);
+        cardElement.mount('#card-element');
+
+        // Coherence simulation
+        let coherence = 75;
+        let coherenceInterval;
+
+        function updateCoherence() {
+            // Simulate coherence fluctuation
+            coherence += (Math.random() - 0.5) * 5;
+            coherence = Math.max(60, Math.min(95, coherence));
+            
+            document.getElementById('coherenceFill').style.width = coherence + '%';
+            document.getElementById('coherenceValue').textContent = Math.round(coherence) + '%';
+        }
+
+        // Start coherence animation
+        coherenceInterval = setInterval(updateCoherence, 2000);
+        updateCoherence();
+
+        // Handle tier selection
+        let selectedAmount = 88; // Default to Harmony tier
+        const tiers = document.querySelectorAll('.tier');
+        const customAmountInput = document.getElementById('customAmount');
+
+        tiers.forEach(tier => {
+            tier.addEventListener('click', function() {
+                tiers.forEach(t => t.classList.remove('selected'));
+                this.classList.add('selected');
+                selectedAmount = parseInt(this.dataset.amount);
+                customAmountInput.value = '';
+            });
+        });
+
+        // Handle custom amount
+        customAmountInput.addEventListener('input', function() {
+            if (this.value) {
+                tiers.forEach(t => t.classList.remove('selected'));
+                selectedAmount = parseInt(this.value);
+            }
+        });
+
+        // Show message
+        function showMessage(text, type = 'success') {
+            const container = document.getElementById('messageContainer');
+            container.innerHTML = `<div class="message ${type}">${text}</div>`;
+        }
+
+        // Handle payment submission
+        const submitButton = document.getElementById('submitButton');
+        submitButton.addEventListener('click', async (event) => {
+            event.preventDefault();
+            
+            // Disable button and show loading
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<span class="loading"></span>';
+
+            // In a real implementation, you would:
+            // 1. Call your backend to create a PaymentIntent
+            // 2. Use stripe.confirmCardPayment with the client secret
+            // 3. Handle the result
+
+            // For demo purposes, we'll simulate the flow
+            setTimeout(async () => {
+                // Simulate payment confirmation
+                const success = Math.random() > 0.1; // 90% success rate for demo
+
+                if (success) {
+                    // Show gratitude
+                    document.getElementById('paymentForm').style.display = 'none';
+                    document.getElementById('gratitudeMessage').style.display = 'block';
+                    document.getElementById('finalCoherence').textContent = Math.round(coherence) + '%';
+                    
+                    // Stop coherence updates
+                    clearInterval(coherenceInterval);
+                } else {
+                    showMessage('The consciousness field requires alignment. Please try again.', 'error');
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = '<span class="button-text">Activate Sacred Exchange</span>';
+                }
+            }, 2000);
+        });
+
+        // Card element change handler
+        cardElement.on('change', (event) => {
+            if (event.error) {
+                showMessage(event.error.message, 'error');
+            } else {
+                const container = document.getElementById('messageContainer');
+                container.innerHTML = '';
+            }
+        });
+    </script>
+</body>
+</html>
