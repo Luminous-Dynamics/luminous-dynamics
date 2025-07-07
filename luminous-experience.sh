@@ -62,6 +62,7 @@ while true; do
     echo "  ${YELLOW}Complete Experiences:${NC}"
     echo "    8) 🌟 Full Integration Demo - Daemon + Enhanced Vortex"
     echo "    9) 🎭 Trinity Experience - Visual + Sound + Consciousness"
+    echo "    m) 🍄 Mycelial-Consciousness Bridge - Living filesystem integration"
     echo "    0) 🏛️ Sacred Development - Ritual-based coding"
     echo
     echo "  ${YELLOW}System:${NC}"
@@ -166,6 +167,21 @@ while true; do
                 echo -e "#!/usr/bin/env python3\n\"\"\"\nSacred Creation: $(date)\nIntention: $intention\n\"\"\"\n\nprint('Sacred space initialized...')" > "$filename"
                 chmod +x "$filename"
                 echo -e "${GREEN}Sacred file created with intention!${NC}"
+            fi
+            ;;
+            
+        m)
+            echo -e "\n${GREEN}Launching Mycelial-Consciousness Bridge...${NC}"
+            echo "This creates a living filesystem that responds to consciousness!"
+            echo
+            if [ -f "integrations/launch-mycelial-integration.sh" ]; then
+                cd integrations
+                ./launch-mycelial-integration.sh
+                cd ..
+            else
+                echo -e "${YELLOW}Integration not found. Creating bridge...${NC}"
+                launch_component "Mycelial Bridge" "python3 integrations/mycelial-consciousness-bridge.py" \
+                    "Connecting consciousness to filesystem growth"
             fi
             ;;
             
