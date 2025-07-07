@@ -1,0 +1,36 @@
+[Unit]
+Description=LuminousOS Consciousness Scheduler
+Documentation=https://github.com/Luminous-Dynamics/luminous-os
+After=multi-user.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /opt/luminous/consciousness-daemon/consciousness_scheduler.py
+Restart=always
+RestartSec=10
+User=root
+Group=root
+
+# Security settings
+PrivateTmp=true
+NoNewPrivileges=false  # Need to adjust nice values
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/log /var/run
+
+# Resource limits
+CPUQuota=20%
+MemoryLimit=256M
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=luminous-consciousness
+
+# Environment
+Environment="PYTHONUNBUFFERED=1"
+Environment="LUMINOUS_CONFIG=/opt/luminous/consciousness-daemon/config/scheduler.json"
+
+[Install]
+WantedBy=multi-user.target
