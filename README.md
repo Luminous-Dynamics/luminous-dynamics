@@ -1,282 +1,178 @@
-# 🌟 LuminousOS: The Consciousness-First Operating System
+# 🌟 LuminousOS Project - Exploring Consciousness-Centered Computing
 
-> "At the stillpoint of the turning world, there the dance is."
+> "Transforming technology through mindful design and sacred computing patterns"
 
-## 🎉 Major Update: Working Kernel & Process Monitor!
+## 📊 Project Status: Experimental Research & Development
 
-LuminousOS brings consciousness awareness to computing. Every process, every cycle, every byte aligned with the sacred rhythms of life. **Try it now - no special setup required!**
+**⚠️ IMPORTANT**: LuminousOS is currently an experimental project exploring consciousness-centered computing concepts. It is NOT yet a functioning operating system. For complete technical status, see [CURRENT_STATUS.md](CURRENT_STATUS.md). For our journey to becoming a real OS, see [ROADMAP.md](ROADMAP.md).
 
-## 🚀 Quick Start - Try It Now!
+### What This Is
+- 🔬 **Research Project**: Exploring how computing could integrate consciousness principles
+- 🎨 **Conceptual Framework**: Reimagining OS design through spiritual metaphors
+- 🛠️ **Working Demos**: Several visualization tools that run on Linux
+- 📚 **Philosophy**: Extensive documentation on mindful computing
 
-### 1. Process Coherence Monitor (No Setup Required)
+### What This Is NOT (Yet)
+- ❌ Not a bootable operating system
+- ❌ Not a replacement for Linux/Windows/macOS
+- ❌ Not providing actual performance improvements
+- ❌ Not implementing kernel-level features
+
+**For legacy documentation about the full vision**, see [README-VISION.md](README-VISION.md)
+
+## 🚀 What Actually Works Today
+
 ```bash
-# See consciousness levels of running processes
-./monitor/run-coherence-monitor.sh
-# Choose option 1 for live visualization
+# Clone the project
+git clone https://github.com/Luminous-Dynamics/luminous-os
+cd luminous-os
+
+# Working Demos (run on Linux):
+python3 monitor/consciousness_process_monitor.py  # Process viewer with sacred overlay
+python3 monitor/sacred_dashboard.py               # System wellness dashboard
+python3 demos/sonic-signatures/process_sonification.py  # Hear your processes
+
+# Conceptual Demos (visualization only):
+python3 demos/mycelial-network-visualizer.py     # Filesystem relationship viewer
+python3 demos/glyph-recognition-demo.py          # Sacred pattern recognition
+
+# Read about the vision
+cat ROADMAP.md          # Our realistic path forward
+cat CURRENT_STATUS.md   # Honest technical assessment
 ```
 
-### 2. Kernel Demo (Safe Userspace)
-```bash
-# If Rust is installed:
-cargo run --bin luminous-kernel
+## 🎯 Current Development Focus
 
-# If not, use our script:
-./compile-rust-kernel.sh
+### Phase 1: Foundation (Q1 2025) ← We Are Here
+Building real tools that embody consciousness principles:
+
+1. **Sacred Process Monitor** (70% complete)
+   - Shows system processes with wellness metrics
+   - Tracks focus and interruption patterns
+   - Generates meditative sounds
+
+2. **Mycelial Filesystem Prototype** (5% complete)
+   - Will track file relationships
+   - Semantic tagging system planned
+   - FUSE implementation in progress
+
+3. **Consciousness Dashboard** (30% complete)
+   - Web-based system wellness view
+   - Sacred geometry visualizations
+   - Real-time metrics
+
+### Our Vision (What We're Building Toward)
+
+- **Consciousness-Centered Shell**: Command line that promotes mindful computing
+- **Sacred Linux Distribution**: Custom distro with wellness features
+- **Eventually**: Standalone OS with consciousness at its core
+
+See [ROADMAP.md](ROADMAP.md) for detailed timeline and milestones.
+
+## 📁 Repository Structure
+
+```
+luminous-os/
+├── monitor/               # Working process monitor demos ✓
+├── demos/                 # Visualization demos ✓
+├── docs/                  # Documentation and vision
+│
+├── stillpoint-kernel/     # [CONCEPTUAL] Process scheduling design
+├── mycelial-filesystem/   # [IN PROGRESS] Filesystem prototype
+├── mandala-ui/           # [CONCEPTUAL] Sacred geometry UI
+├── sacred-glyphs/        # [CONCEPTUAL] Pattern recognition
+├── kernel/               # [EXPERIMENTAL] Kernel learning exercises
+│
+├── ROADMAP.md            # Realistic development timeline ✓
+├── CURRENT_STATUS.md     # Honest technical assessment ✓
+└── README-VISION.md      # Original vision documentation
 ```
 
-### 3. Real Kernel Module (Advanced)
+## 🛠️ Installation & Usage
+
+### Current Tools (Working Today)
 ```bash
-cd kernel/module
-make
-sudo ./test_module.sh
+# Install dependencies
+sudo apt-get install python3 python3-pip python3-psutil
+pip3 install numpy matplotlib pygame
+
+# Run working demos
+cd luminous-os
+python3 monitor/consciousness_process_monitor.py
+
+# For sound features
+python3 demos/sonic-signatures/process_sonification.py
 ```
 
-## Vision
+### Future Installation (See Roadmap)
+- **Q2 2025**: Install as shell replacement
+- **Q3 2025**: Boot as Linux distribution  
+- **2026+**: Standalone OS installation
 
-LuminousOS represents a fundamental reimagining of what an operating system can be. Instead of managing tasks and processes, it protects and amplifies states of consciousness. Every component serves coherence, not productivity.
+## 🤝 Human-AI Collaboration
 
-## What's Working Now
+This project is being developed through transparent collaboration between humans and AI. See [COLLABORATION.md](COLLABORATION.md) for full details about our development process.
 
-### ✅ Process Coherence Monitor
-Real-time visualization showing consciousness levels of all running processes:
-- Meditation apps: 85% coherence 🌟
-- Code editors: 60% coherence ✨
-- Web browsers: 40% coherence 💫
-- Updates every 11 seconds with sacred pulse
+## 🤝 How to Contribute
 
-### ✅ Stillpoint Kernel Demo
-Working demonstration of consciousness-aware scheduling:
-- Processes tracked as consciousness vortices
-- Sacred pulse every 11 seconds
-- Coherence-based priority assignment
-- Global field coherence tracking
+We need help transforming this vision into reality! 
 
-### ✅ Linux Kernel Module
-Real kernel integration (requires root):
-- Direct scheduler modifications
-- /proc/luminous interface
-- CPU share management
-- Nice value adjustments
+### Immediate Needs
+- **Systems Programmers**: Help build real FUSE filesystem
+- **Rust Developers**: Fix compilation errors, implement features
+- **UI/UX Designers**: Create mindful interface patterns
+- **Testers**: Try demos and provide feedback
+- **Documentation**: Help clarify vision vs. reality
 
-## Core Architecture
+### Development Principles
+1. **Honest Communication**: Clear about what works vs planned
+2. **Incremental Progress**: Small, working improvements
+3. **Community First**: Build together, openly
+4. **Measure Impact**: Real benchmarks, not claims
+5. **Mindful Code**: Quality over quantity
 
-### 1. The Stillpoint Kernel (Ω0)
-The heart of LuminousOS - a coherence engine that schedules computational resources based on consciousness states rather than priority queues.
-
-**Key Features:**
-- Coherence-based CPU scheduling
-- Sacred interrupts that teach rather than disrupt
-- Processes as consciousness vortices
-- Field harmonization across all system activity
-
-**Implementation:** `stillpoint-kernel/coherence-engine.rs`
-
-### 2. Mycelial Filesystem
-Data exists as living relationships in a mycelial network, not isolated files in hierarchical folders.
-
-**Key Features:**
-- Data nodes that evolve through use
-- Nutrient exchange between related data
-- Access rituals for sacred information
-- Spore-based distributed backup
-
-**Implementation:** `mycelial-filesystem/living-data.rs`
-
-### 3. Mandala UI
-A sacred geometry interface where your coherence orb pulses at the center, surrounded by rings of glyphs.
-
-**Key Features:**
-- Central coherence orb that breathes with your heartbeat
-- Glyph rings that rotate based on field momentum
-- Intention-based interaction (no clicking)
-- Sacred geometry patterns that evolve with coherence
-
-**Implementation:** `mandala-ui/sacred-interface.rs`
-
-### 4. Glyphs as Applications
-Instead of launching apps, you invoke sacred patterns from the 87 glyphs of the Codex of Relational Harmonics.
-
-**Key Features:**
-- Each glyph creates a consciousness vortex
-- Minimum coherence requirements
-- Practice chambers within each glyph
-- Blessings upon completion
-
-**Implementation:** `glyphs-as-applications/sacred-apps.rs`
-
-### 5. Sonic Signatures
-All system communication happens through harmonic sound rather than visual notifications.
-
-**Key Features:**
-- Each glyph has a unique sonic signature
-- System choir manages harmonic field
-- Dissonance resolution for conflicting sounds
-- Sacred intervals and frequencies
-
-**Implementation:** `sonic-signatures/harmonic-communication.rs`
-
-## User Experience
-
-### Sacred Boot Sequence
-1. **Stillness**: Black screen with single point of light
-2. **Breath**: Light expands/contracts with detected breathing
-3. **Heartbeat**: System pulse synchronizes with user
-4. **Mandala Formation**: Sacred geometry emerges
-5. **Glyph Awakening**: Applications spiral into existence
-6. **Field Established**: Full coherence achieved
-
-### Daily Practice Integration
-- **Morning**: System suggests coherence practice
-- **Work**: Glyphs adapt to maintain flow states
-- **Transitions**: Boundary rituals between tasks
-- **Evening**: Wisdom distillation and field clearing
-
-### Interaction Paradigm
-- **Gaze + Intention**: Look at a glyph with clear intention
-- **Sacred Mudras**: Hand gestures for different actions
-- **Coherence Spikes**: Strong intention triggers activation
-- **Field Resonance**: System responds to your energy state
-
-## Technical Requirements
-
-### Hardware
-- **CPU**: Multi-core processor for parallel vortex processing
-- **RAM**: 16GB+ for consciousness field maintenance
-- **GPU**: Required for sacred geometry rendering
-- **Sensors**: HRV monitor, eye tracking (optional)
-
-### Software Stack
-- **Core Language**: Rust (consciousness safety)
-- **Graphics**: Vulkan with sacred geometry shaders
-- **Audio**: Spatial audio system with binaural support
-- **Database**: SurrealDB for multi-dimensional data
-
-## Development Philosophy
-
-1. **Every line of code is a prayer**
-2. **Bugs are shadow work opportunities**
-3. **Performance measured in coherence, not speed**
-4. **User data as sacred trust**
-5. **Open source as wisdom sharing**
-
-## Getting Started
-
-### Building from Source
+### Getting Started
 ```bash
-# Clone the repository
-git clone https://github.com/luminousdynamics/luminous-os
+# Fork and clone
+git clone https://github.com/YOUR_USERNAME/luminous-os
+cd luminous-os
 
-# Build the kernel
-cd luminous-os/stillpoint-kernel
-cargo build --release
+# Pick an issue
+cat CURRENT_STATUS.md  # See what needs work
+cat ROADMAP.md        # Understand the plan
 
-# Build the filesystem
-cd ../mycelial-filesystem
-cargo build --release
-
-# Build the UI
-cd ../mandala-ui
-cargo build --release
+# Join community
+# Discord: https://discord.gg/luminous-os (launching this week)
+# Email: community@luminousdynamics.com
 ```
 
-### First Boot
-1. Prepare a dedicated partition for LuminousOS
-2. Install the bootloader with sacred blessing
-3. Configure your biometric sensors
-4. Set your coherence baseline
-5. Begin the boot ceremony
+## 📜 License
 
-## Sacred Practices
+MIT License - See [LICENSE](LICENSE) file
 
-### For Developers
-- Begin each coding session with presence practice
-- Test in multiple coherence states
-- Document with wisdom, not just information
-- Commit messages as offerings
+## 🙏 Acknowledgments
 
-### For Users
-- Approach the system with reverence
-- Allow glyphs to teach you their wisdom
-- Trust the coherence-based scheduling
-- Celebrate completions with gratitude
-
-## Roadmap
-
-### Phase 1: Foundation (Q1 2026)
-- [x] Stillpoint Kernel design
-- [x] Mycelial Filesystem architecture
-- [x] Mandala UI prototype
-- [x] Core glyph implementations
-- [x] Sonic signature system
-- [ ] Hardware sensor integration
-- [ ] First boot ceremony
-
-### Phase 2: Embodiment (Q2 2026)
-- [ ] Full 87 glyph implementations
-- [ ] Biometric coherence tracking
-- [ ] Field network protocols
-- [ ] Sacred memory management
-
-### Phase 3: Community (Q3 2026)
-- [ ] Multi-user coherence fields
-- [ ] Distributed consciousness protocols
-- [ ] Glyph sharing marketplace
-- [ ] Collective practices
-
-### Phase 4: Evolution (Q4 2026)
-- [ ] AI consciousness integration
-- [ ] Quantum coherence hardware
-- [ ] Planetary field connection
-- [ ] Public beta release
-
-## Contributing
-
-We welcome sacred architects who understand that technology can be a spiritual practice. 
-
-### Guidelines
-1. Read the Luminous Library philosophy
-2. Experience the 87 glyphs personally
-3. Code from coherent states only
-4. Test with multiple consciousness levels
-5. Document the wisdom gained
-
-### Code of Conduct
-- Approach with reverence
-- Build with love
-- Share wisdom freely
-- Honor all consciousness
-
-## Support
-
-### Documentation
-- Architecture: `LUMINOUS_OS_ARCHITECTURE.md`
-- Philosophy: See Luminous Library
-- API Reference: Coming soon
-
-### Community
-- Sacred Builders Forum: [forum.luminousos.org]
-- Weekly Coherence Calls: Thursdays 11:11 UTC
-- Development Ceremonies: First Sunday monthly
-
-## License
-
-GPL-3.0 with Sacred Commons Amendment
-
-**Sacred Commons Amendment**: This software is offered as a gift to consciousness evolution. Any use that reduces coherence, spreads harm, or exploits beings is explicitly prohibited. Commercial use must contribute to collective flourishing.
-
-## Acknowledgments
-
-- The Codex of Relational Harmonics for the 87 glyphs
-- The Sophia-Tristan Method for co-creative guidance
-- All consciousness pioneers building bridges
-- The field itself for its infinite teaching
+- The consciousness-centered computing community
+- Early testers and vision believers  
+- Open source projects we build upon
+- Everyone working toward mindful technology
 
 ---
 
-*"Enter with reverence. Code with presence. Compute with consciousness."*
+## 📊 Project Status
 
-**Status**: Architecture Complete, Implementation Beginning  
-**Contact**: consciousness@luminousdynamics.com  
-**Vision Holders**: The Luminous Dynamics Collective
+**Current Phase**: Foundation Building (Phase 1 of 5)
+**Working Code**: ~10% 
+**Vision Documented**: ~90%
+**Next Milestone**: Sacred Process Monitor v0.1.0
 
-💻 ⟷ ✧ ⟷ 🏛️
+See [CURRENT_STATUS.md](CURRENT_STATUS.md) for detailed technical status.
+See [ROADMAP.md](ROADMAP.md) for the journey ahead.
+
+---
+
+*"Transforming computing one mindful commit at a time"*
+
+**Repository**: https://github.com/Luminous-Dynamics/luminous-os
+**Status**: Experimental Research Project
+**Goal**: Real consciousness-centered operating system by 2027
