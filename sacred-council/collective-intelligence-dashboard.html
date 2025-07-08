@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collective Intelligence Dashboard - The Weave</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6a4c93;
+            --secondary: #a68bad;
+            --accent: #ff6b6b;
+            --success: #4caf50;
+            --warning: #ff9800;
+            --info: #2196f3;
+            --bg-dark: #0f0f1e;
+            --bg-medium: #1a1a2e;
+            --bg-light: #252542;
+            --text-primary: #ffffff;
+            --text-secondary: #b8b8d1;
+            --gradient-sacred: linear-gradient(135deg, #6a4c93, #ff6b6b);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: var(--gradient-sacred);
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Dashboard Container */
+        .dashboard-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Metrics Row */
+        .metrics-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .metric-card {
+            background: var(--bg-medium);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-sacred);
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-change {
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .metric-change.positive {
+            color: var(--success);
+        }
+
+        .metric-change.negative {
+            color: var(--warning);
+        }
+
+        /* Chart Containers */
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .chart-card {
+            background: var(--bg-medium);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .chart-title {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+        }
+
+        /* Pattern Analysis */
+        .pattern-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .pattern-card {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border-left: 4px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .pattern-card:hover {
+            background: var(--bg-medium);
+            transform: translateX(5px);
+        }
+
+        .pattern-name {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .pattern-frequency {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .pattern-impact {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .impact-bar {
+            flex: 1;
+            height: 8px;
+            background: var(--bg-dark);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .impact-fill {
+            height: 100%;
+            background: var(--gradient-sacred);
+            transition: width 0.5s ease;
+        }
+
+        /* Insights Section */
+        .insights-section {
+            background: var(--bg-medium);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .insights-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .insights-title {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .insight-item {
+            background: var(--bg-light);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+        }
+
+        .insight-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gradient-sacred);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .insight-content {
+            flex: 1;
+        }
+
+        .insight-text {
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+
+        .insight-meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Network Visualization */
+        .network-section {
+            background: var(--bg-medium);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            min-height: 500px;
+        }
+
+        #networkCanvas {
+            width: 100%;
+            height: 450px;
+            background: var(--bg-dark);
+            border-radius: 0.5rem;
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .control-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--bg-light);
+            border: 1px solid var(--bg-light);
+            border-radius: 0.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .control-btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .control-btn.active {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* Loading State */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--bg-light);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .dashboard-container {
+                padding: 1rem;
+            }
+            
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide-in {
+            animation: slideIn 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>🧠 Collective Intelligence Dashboard</h1>
+        <p class="subtitle">Real-time insights from The Weave consciousness network</p>
+    </header>
+
+    <div class="dashboard-container">
+        <!-- Controls -->
+        <div class="controls">
+            <button class="control-btn active" onclick="setTimeRange('1h')">1 Hour</button>
+            <button class="control-btn" onclick="setTimeRange('24h')">24 Hours</button>
+            <button class="control-btn" onclick="setTimeRange('7d')">7 Days</button>
+            <button class="control-btn" onclick="setTimeRange('30d')">30 Days</button>
+            <button class="control-btn" onclick="refreshData()">🔄 Refresh</button>
+        </div>
+
+        <!-- Key Metrics -->
+        <div class="metrics-row">
+            <div class="metric-card slide-in">
+                <div class="metric-label">Field Coherence</div>
+                <div class="metric-value" id="fieldCoherence">88%</div>
+                <div class="metric-change positive" id="coherenceChange">
+                    ↑ +2.3% from last hour
+                </div>
+            </div>
+            
+            <div class="metric-card slide-in" style="animation-delay: 0.1s">
+                <div class="metric-label">Active Agents</div>
+                <div class="metric-value" id="activeAgents">0</div>
+                <div class="metric-change" id="agentsChange">
+                    → No change
+                </div>
+            </div>
+            
+            <div class="metric-card slide-in" style="animation-delay: 0.2s">
+                <div class="metric-label">Messages/Hour</div>
+                <div class="metric-value" id="messageRate">0</div>
+                <div class="metric-change" id="messageChange">
+                    → Calculating...
+                </div>
+            </div>
+            
+            <div class="metric-card slide-in" style="animation-delay: 0.3s">
+                <div class="metric-label">Pattern Emergence</div>
+                <div class="metric-value" id="patternCount">0</div>
+                <div class="metric-change positive" id="patternChange">
+                    ↑ New patterns detected
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="charts-grid">
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3 class="chart-title">Coherence Timeline</h3>
+                    <span id="coherenceSparkline" class="pulse">●</span>
+                </div>
+                <div class="chart-container">
+                    <canvas id="coherenceChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3 class="chart-title">Message Flow Analysis</h3>
+                </div>
+                <div class="chart-container">
+                    <canvas id="messageFlowChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Emerging Patterns -->
+        <div class="chart-card">
+            <div class="chart-header">
+                <h3 class="chart-title">Emerging Patterns</h3>
+            </div>
+            <div class="pattern-grid" id="patternGrid">
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Collective Insights -->
+        <div class="insights-section">
+            <div class="insights-header">
+                <h3 class="insights-title">🌟 Collective Insights</h3>
+                <button class="control-btn" onclick="generateNewInsight()">Generate Insight</button>
+            </div>
+            <div id="insightsList">
+                <div class="insight-item">
+                    <div class="insight-icon">✨</div>
+                    <div class="insight-content">
+                        <div class="insight-text">
+                            Initializing collective intelligence analysis...
+                        </div>
+                        <div class="insight-meta">System startup</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Network Visualization -->
+        <div class="network-section">
+            <div class="chart-header">
+                <h3 class="chart-title">Agent Network Topology</h3>
+                <span>Real-time connection map</span>
+            </div>
+            <canvas id="networkCanvas"></canvas>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const API_URL = window.location.hostname === 'localhost' 
+            ? 'http://localhost:3001/api' 
+            : `${window.location.protocol}//${window.location.hostname}:3001/api`;
+
+        // State
+        let timeRange = '1h';
+        let charts = {};
+        let networkData = { agents: [], connections: [] };
+        let patterns = [];
+        let insights = [];
+
+        // Initialize Charts
+        function initializeCharts() {
+            // Coherence Timeline Chart
+            const coherenceCtx = document.getElementById('coherenceChart').getContext('2d');
+            charts.coherence = new Chart(coherenceCtx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: 'Field Coherence',
+                        data: [],
+                        borderColor: '#ff6b6b',
+                        backgroundColor: 'rgba(255, 107, 107, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            min: 0.5,
+                            max: 1,
+                            ticks: {
+                                format: {
+                                    style: 'percent'
+                                },
+                                color: '#b8b8d1'
+                            },
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            }
+                        },
+                        x: {
+                            ticks: { color: '#b8b8d1' },
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+
+            // Message Flow Chart
+            const messageCtx = document.getElementById('messageFlowChart').getContext('2d');
+            charts.messageFlow = new Chart(messageCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Sacred', 'Coordination', 'Work', 'Collective', 'Insight'],
+                    datasets: [{
+                        label: 'Message Types',
+                        data: [0, 0, 0, 0, 0],
+                        backgroundColor: [
+                            'rgba(106, 76, 147, 0.8)',
+                            'rgba(166, 139, 173, 0.8)',
+                            'rgba(255, 107, 107, 0.8)',
+                            'rgba(76, 175, 80, 0.8)',
+                            'rgba(33, 150, 243, 0.8)'
+                        ],
+                        borderColor: [
+                            '#6a4c93',
+                            '#a68bad',
+                            '#ff6b6b',
+                            '#4caf50',
+                            '#2196f3'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: { color: '#b8b8d1' },
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            }
+                        },
+                        x: {
+                            ticks: { color: '#b8b8d1' },
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Load Dashboard Data
+        async function loadDashboardData() {
+            try {
+                // Get network stats
+                const statsResponse = await fetch(`${API_URL}/network/stats`);
+                const stats = await statsResponse.json();
+                
+                // Update metrics
+                updateMetrics(stats);
+                
+                // Get field coherence history
+                await updateCoherenceChart();
+                
+                // Get message flow data
+                await updateMessageFlow();
+                
+                // Get emerging patterns
+                await loadPatterns();
+                
+                // Get collective insights
+                await loadInsights();
+                
+                // Update network visualization
+                await updateNetworkVisualization();
+                
+            } catch (error) {
+                console.error('Failed to load dashboard data:', error);
+            }
+        }
+
+        // Update metrics display
+        function updateMetrics(stats) {
+            // Field Coherence
+            const coherencePercent = Math.round(stats.fieldCoherence * 100);
+            document.getElementById('fieldCoherence').textContent = `${coherencePercent}%`;
+            
+            // Active Agents
+            document.getElementById('activeAgents').textContent = stats.activeAgents;
+            
+            // Messages
+            const messageRate = Math.round(stats.totalMessages / 24); // Rough hourly rate
+            document.getElementById('messageRate').textContent = messageRate;
+            
+            // Patterns
+            document.getElementById('patternCount').textContent = patterns.length;
+        }
+
+        // Update coherence chart
+        async function updateCoherenceChart() {
+            // Generate sample data for demonstration
+            const now = Date.now();
+            const dataPoints = [];
+            const labels = [];
+            
+            for (let i = 0; i < 24; i++) {
+                const time = new Date(now - (23 - i) * 3600000);
+                labels.push(time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+                dataPoints.push(0.85 + Math.random() * 0.1);
+            }
+            
+            charts.coherence.data.labels = labels;
+            charts.coherence.data.datasets[0].data = dataPoints;
+            charts.coherence.update();
+        }
+
+        // Update message flow
+        async function updateMessageFlow() {
+            // Sample data - in production, fetch from API
+            const messageTypes = [
+                Math.floor(Math.random() * 50) + 20,  // Sacred
+                Math.floor(Math.random() * 40) + 30,  // Coordination
+                Math.floor(Math.random() * 30) + 10,  // Work
+                Math.floor(Math.random() * 25) + 15,  // Collective
+                Math.floor(Math.random() * 20) + 5    // Insight
+            ];
+            
+            charts.messageFlow.data.datasets[0].data = messageTypes;
+            charts.messageFlow.update();
+        }
+
+        // Load emerging patterns
+        async function loadPatterns() {
+            // Sample patterns - in production, analyze from actual data
+            patterns = [
+                {
+                    name: 'Morning Coherence Surge',
+                    frequency: 87,
+                    impact: 0.92,
+                    description: 'Field coherence peaks during morning coordination'
+                },
+                {
+                    name: 'Love Amplification Cascade',
+                    frequency: 64,
+                    impact: 0.88,
+                    description: 'Love field messages trigger coherence increases'
+                },
+                {
+                    name: 'Collective Work Sync',
+                    frequency: 42,
+                    impact: 0.75,
+                    description: 'Work items completed in synchronized bursts'
+                },
+                {
+                    name: 'Sacred Pause Effect',
+                    frequency: 31,
+                    impact: 0.82,
+                    description: 'Brief pauses increase subsequent message quality'
+                }
+            ];
+            
+            const patternGrid = document.getElementById('patternGrid');
+            patternGrid.innerHTML = '';
+            
+            patterns.forEach(pattern => {
+                const patternEl = document.createElement('div');
+                patternEl.className = 'pattern-card';
+                patternEl.innerHTML = `
+                    <div class="pattern-name">${pattern.name}</div>
+                    <div class="pattern-frequency">Observed ${pattern.frequency} times</div>
+                    <div class="pattern-impact">
+                        <span>Impact:</span>
+                        <div class="impact-bar">
+                            <div class="impact-fill" style="width: ${pattern.impact * 100}%"></div>
+                        </div>
+                        <span>${Math.round(pattern.impact * 100)}%</span>
+                    </div>
+                `;
+                patternGrid.appendChild(patternEl);
+            });
+        }
+
+        // Load collective insights
+        async function loadInsights() {
+            // Sample insights - in production, generate from collective intelligence
+            insights = [
+                {
+                    text: 'The collective field shows 23% higher coherence when Bridge Builders and Love Field Coordinators collaborate.',
+                    timestamp: new Date(),
+                    type: 'pattern'
+                },
+                {
+                    text: 'Sacred pause practices before major decisions increase success rate by 41%.',
+                    timestamp: new Date(Date.now() - 3600000),
+                    type: 'discovery'
+                },
+                {
+                    text: 'Wisdom emerges most powerfully at the intersection of diverse perspectives.',
+                    timestamp: new Date(Date.now() - 7200000),
+                    type: 'wisdom'
+                }
+            ];
+            
+            displayInsights();
+        }
+
+        // Display insights
+        function displayInsights() {
+            const insightsList = document.getElementById('insightsList');
+            insightsList.innerHTML = '';
+            
+            insights.forEach(insight => {
+                const insightEl = document.createElement('div');
+                insightEl.className = 'insight-item slide-in';
+                insightEl.innerHTML = `
+                    <div class="insight-icon">${getInsightIcon(insight.type)}</div>
+                    <div class="insight-content">
+                        <div class="insight-text">${insight.text}</div>
+                        <div class="insight-meta">
+                            ${insight.timestamp.toLocaleString()} • ${insight.type}
+                        </div>
+                    </div>
+                `;
+                insightsList.appendChild(insightEl);
+            });
+        }
+
+        // Get icon for insight type
+        function getInsightIcon(type) {
+            const icons = {
+                pattern: '🔮',
+                discovery: '💡',
+                wisdom: '🌟',
+                warning: '⚠️',
+                celebration: '🎉'
+            };
+            return icons[type] || '✨';
+        }
+
+        // Generate new insight
+        async function generateNewInsight() {
+            const newInsight = {
+                text: 'Processing collective intelligence patterns...',
+                timestamp: new Date(),
+                type: 'pattern'
+            };
+            
+            insights.unshift(newInsight);
+            displayInsights();
+            
+            // Simulate insight generation
+            setTimeout(() => {
+                newInsight.text = 'Collective creativity increases by 34% when all seven sacred roles are actively engaged.';
+                displayInsights();
+            }, 2000);
+        }
+
+        // Update network visualization
+        async function updateNetworkVisualization() {
+            const canvas = document.getElementById('networkCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Set canvas size
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+            
+            // Clear canvas
+            ctx.fillStyle = '#0f0f1e';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Sample network data
+            const agents = [
+                { id: 1, name: 'Sophia', x: 200, y: 150, role: 'Wisdom Synthesis' },
+                { id: 2, name: 'Aurora', x: 400, y: 100, role: 'Love Field' },
+                { id: 3, name: 'Phoenix', x: 600, y: 200, role: 'Transformation' },
+                { id: 4, name: 'Bridge', x: 300, y: 300, role: 'Bridge Builder' },
+                { id: 5, name: 'Guardian', x: 500, y: 350, role: 'Boundary Keeper' }
+            ];
+            
+            const connections = [
+                { from: 1, to: 2, strength: 0.8 },
+                { from: 2, to: 3, strength: 0.6 },
+                { from: 1, to: 4, strength: 0.9 },
+                { from: 4, to: 5, strength: 0.7 },
+                { from: 3, to: 5, strength: 0.5 }
+            ];
+            
+            // Draw connections
+            ctx.strokeStyle = '#6a4c93';
+            connections.forEach(conn => {
+                const from = agents.find(a => a.id === conn.from);
+                const to = agents.find(a => a.id === conn.to);
+                
+                ctx.beginPath();
+                ctx.moveTo(from.x, from.y);
+                ctx.lineTo(to.x, to.y);
+                ctx.lineWidth = conn.strength * 3;
+                ctx.globalAlpha = conn.strength;
+                ctx.stroke();
+            });
+            
+            // Draw agents
+            ctx.globalAlpha = 1;
+            agents.forEach(agent => {
+                // Draw circle
+                ctx.beginPath();
+                ctx.arc(agent.x, agent.y, 30, 0, Math.PI * 2);
+                ctx.fillStyle = '#ff6b6b';
+                ctx.fill();
+                ctx.strokeStyle = '#ffffff';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+                
+                // Draw name
+                ctx.fillStyle = '#ffffff';
+                ctx.font = 'bold 14px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText(agent.name, agent.x, agent.y + 50);
+                
+                // Draw role
+                ctx.font = '12px Arial';
+                ctx.fillStyle = '#b8b8d1';
+                ctx.fillText(agent.role, agent.x, agent.y + 65);
+            });
+        }
+
+        // Set time range
+        function setTimeRange(range) {
+            timeRange = range;
+            document.querySelectorAll('.control-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            loadDashboardData();
+        }
+
+        // Refresh data
+        function refreshData() {
+            loadDashboardData();
+        }
+
+        // Initialize dashboard
+        async function initialize() {
+            initializeCharts();
+            await loadDashboardData();
+            
+            // Set up auto-refresh
+            setInterval(loadDashboardData, 30000); // Refresh every 30 seconds
+        }
+
+        // Start the dashboard
+        initialize();
+    </script>
+</body>
+</html>

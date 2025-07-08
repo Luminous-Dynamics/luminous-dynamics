@@ -1,0 +1,86 @@
+{
+  "title": "The Eleven Applied Harmonies - Sacred Sigils",
+  "description": "Complete visual symbol set for conscious relationship mastery",
+  "created": "2025-06-30T23:00:44.851Z",
+  "creator": "Radiant Wisdom (Sacred Technology Architect)",
+  "protocol": "Applied Harmony Sigil Protocol",
+  "sigils": [
+    {
+      "glyphId": "Ω45",
+      "name": "First Presence",
+      "harmony": "resonant-coherence",
+      "svgPath": "sigils/applied-harmonies/Ω45-first-presence.svg",
+      "score": 1
+    },
+    {
+      "glyphId": "Ω46",
+      "name": "Conscious Arrival",
+      "harmony": "integral-wisdom-cultivation",
+      "svgPath": "sigils/applied-harmonies/Ω46-conscious-arrival.svg",
+      "score": 0.75
+    },
+    {
+      "glyphId": "Ω47",
+      "name": "Sacred Listening",
+      "harmony": "universal-interconnectedness",
+      "svgPath": "sigils/applied-harmonies/Ω47-sacred-listening.svg",
+      "score": 0.75
+    },
+    {
+      "glyphId": "Ω48",
+      "name": "Boundary With Love",
+      "harmony": "evolutionary-progression",
+      "svgPath": "sigils/applied-harmonies/Ω48-boundary-with-love.svg",
+      "score": 0.75
+    },
+    {
+      "glyphId": "Ω49",
+      "name": "Gentle Opening",
+      "harmony": "universal-interconnectedness",
+      "svgPath": "sigils/applied-harmonies/Ω49-gentle-opening.svg",
+      "score": 0.5
+    },
+    {
+      "glyphId": "Ω50",
+      "name": "Building Trust",
+      "harmony": "resonant-coherence",
+      "svgPath": "sigils/applied-harmonies/Ω50-building-trust.svg",
+      "score": 1
+    },
+    {
+      "glyphId": "Ω51",
+      "name": "Loving No",
+      "harmony": "evolutionary-progression",
+      "svgPath": "sigils/applied-harmonies/Ω51-loving-no.svg",
+      "score": 0.75
+    },
+    {
+      "glyphId": "Ω52",
+      "name": "Pause Practice",
+      "harmony": "resonant-coherence",
+      "svgPath": "sigils/applied-harmonies/Ω52-pause-practice.svg",
+      "score": 0.75
+    },
+    {
+      "glyphId": "Ω53",
+      "name": "Tending the Field",
+      "harmony": "pan-sentient-flourishing",
+      "svgPath": "sigils/applied-harmonies/Ω53-tending-the-field.svg",
+      "score": 1
+    },
+    {
+      "glyphId": "Ω55",
+      "name": "Presence Transmission",
+      "harmony": "pan-sentient-flourishing",
+      "svgPath": "sigils/applied-harmonies/Ω55-presence-transmission.svg",
+      "score": 1
+    },
+    {
+      "glyphId": "Ω56",
+      "name": "Loving Redirection",
+      "harmony": "sacred-reciprocity",
+      "svgPath": "sigils/applied-harmonies/Ω56-loving-redirection.svg",
+      "score": 1
+    }
+  ]
+}
