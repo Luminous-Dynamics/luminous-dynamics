@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sacred-core
+spec:
+  replicas: 3
+  template:
+    spec:
+      containers:
+      - name: sacred-core
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "1000m"
+          limits:
+            memory: "1Gi"
+            cpu: "2000m"
+        env:
+        - name: SACRED_PERSISTENCE_PATH
+          value: "/data/production"
+        - name: SACRED_FIELD_COHERENCE_TARGET
+          value: "0.88"
+        - name: SACRED_AUTO_SCALE_ENABLED
+          value: "true"

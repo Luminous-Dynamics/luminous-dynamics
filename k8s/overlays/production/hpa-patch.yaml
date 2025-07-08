@@ -1,0 +1,30 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: sacred-core-hpa
+spec:
+  minReplicas: 3
+  maxReplicas: 20
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 60
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 70
+  - type: External
+    external:
+      metric:
+        name: sacred_field_coherence
+        selector:
+          matchLabels:
+            app: sacred-core
+      target:
+        type: Value
+        value: "0.85"

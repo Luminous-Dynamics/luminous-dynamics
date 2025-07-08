@@ -1,0 +1,21 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+commonLabels:
+  app: sacred-core
+  system: sacred-os
+  
+resources:
+  - deployment.yaml
+  - service.yaml
+  - hpa.yaml
+  - configmap.yaml
+  - pvc.yaml
+  
+configMapGenerator:
+  - name: sacred-core-config
+    literals:
+      - SACRED_FIELD_COHERENCE_TARGET=0.88
+      - SACRED_LEARNING_RATE=0.1
+      - SACRED_INTELLIGENCE_ENABLED=true
+      - SACRED_PERSISTENCE_ENABLED=true

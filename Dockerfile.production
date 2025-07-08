@@ -1,0 +1,58 @@
+# Production Dockerfile for Sacred Core
+FROM node:20-alpine AS builder
+
+# Install build dependencies
+RUN apk add --no-cache python3 make g++
+
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install production dependencies
+RUN npm ci --only=production && \
+    npm cache clean --force
+
+# Copy application code
+COPY . .
+
+# Production stage
+FROM node:20-alpine
+
+# Install dumb-init for proper signal handling
+RUN apk add --no-cache dumb-init
+
+# Create non-root user
+RUN addgroup -g 1001 -S sacred && \
+    adduser -S sacred -u 1001
+
+WORKDIR /app
+
+# Copy from builder
+COPY --from=builder --chown=sacred:sacred /app/node_modules ./node_modules
+COPY --chown=sacred:sacred . .
+
+# Set production environment
+ENV NODE_ENV=production \
+    SACRED_PORT=3333 \
+    SACRED_INTELLIGENCE_ENABLED=true \
+    SACRED_PERSISTENCE_PATH=/data
+
+# Create data directory for persistence
+RUN mkdir -p /data && chown sacred:sacred /data
+
+# Use non-root user
+USER sacred
+
+# Expose Sacred Core port
+EXPOSE 3333
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
+  CMD node healthcheck.js || exit 1
+
+# Use dumb-init to handle signals properly
+ENTRYPOINT ["dumb-init", "--"]
+
+# Start Sacred Core
+CMD ["node", "sacred-core-standalone.js"]
