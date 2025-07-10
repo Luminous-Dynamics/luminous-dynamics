@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sacred-core-config
+data:
+  sacred-config.json: |
+    {
+      "fieldCoherence": {
+        "target": 0.88,
+        "alertThreshold": 0.8,
+        "criticalThreshold": 0.6
+      },
+      "intelligence": {
+        "learningRate": 0.1,
+        "minCoherenceForGuidance": 0.8,
+        "patternRetentionDays": 30
+      },
+      "harmonies": [
+        "Resonant Coherence",
+        "Pan-Sentient Flourishing",
+        "Integral Wisdom",
+        "Infinite Play",
+        "Universal Interconnectedness",
+        "Sacred Reciprocity",
+        "Evolutionary Progression"
+      ],
+      "practices": {
+        "featured": ["Ω45", "Ω46", "Ω47", "Ω48"],
+        "dailyRecommendations": 3,
+        "adaptiveGuidance": true
+      }
+    }

@@ -1,0 +1,88 @@
+groups:
+  - name: sacred_core_alerts
+    interval: 30s
+    rules:
+      # Field Coherence Alerts
+      - alert: LowFieldCoherence
+        expr: sacred_field_coherence < 0.8
+        for: 5m
+        labels:
+          severity: warning
+          component: consciousness-engine
+        annotations:
+          summary: "Field coherence below threshold (instance {{ $labels.instance }})"
+          description: "Field coherence is {{ $value }} which is below the 0.8 threshold for {{ $labels.instance }}"
+          
+      - alert: CriticalFieldCoherence
+        expr: sacred_field_coherence < 0.6
+        for: 2m
+        labels:
+          severity: critical
+          component: consciousness-engine
+        annotations:
+          summary: "Critical field coherence level (instance {{ $labels.instance }})"
+          description: "Field coherence has dropped to {{ $value }} on {{ $labels.instance }}. Immediate intervention required."
+          
+      # Practice Intelligence Alerts
+      - alert: PracticeIntelligenceLearningRateLow
+        expr: rate(sacred_intelligence_patterns_learned[5m]) < 0.1
+        for: 10m
+        labels:
+          severity: warning
+          component: intelligence-engine
+        annotations:
+          summary: "Practice Intelligence learning rate is low"
+          description: "The learning rate is {{ $value }} patterns/second, below expected threshold"
+          
+      # Service Health Alerts
+      - alert: SacredCoreDown
+        expr: up{job="sacred-core"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          component: sacred-core
+        annotations:
+          summary: "Sacred Core instance is down"
+          description: "Sacred Core {{ $labels.instance }} has been down for more than 1 minute"
+          
+      - alert: HighMemoryUsage
+        expr: (container_memory_usage_bytes{pod=~"sacred-core-.*"} / container_spec_memory_limit_bytes{pod=~"sacred-core-.*"}) > 0.9
+        for: 5m
+        labels:
+          severity: warning
+          component: sacred-core
+        annotations:
+          summary: "High memory usage in Sacred Core pod"
+          description: "Pod {{ $labels.pod }} is using {{ $value | humanizePercentage }} of its memory limit"
+          
+      - alert: HighCPUUsage
+        expr: rate(container_cpu_usage_seconds_total{pod=~"sacred-core-.*"}[5m]) > 0.9
+        for: 5m
+        labels:
+          severity: warning
+          component: sacred-core
+        annotations:
+          summary: "High CPU usage in Sacred Core pod"
+          description: "Pod {{ $labels.pod }} is using high CPU ({{ $value | humanizePercentage }})"
+          
+      # Sacred Message Flow
+      - alert: SacredMessageBacklog
+        expr: sacred_message_queue_size > 1000
+        for: 5m
+        labels:
+          severity: warning
+          component: messaging
+        annotations:
+          summary: "Sacred message queue backlog detected"
+          description: "Message queue has {{ $value }} pending messages"
+          
+      # WebSocket Connections
+      - alert: HighWebSocketConnections
+        expr: sacred_websocket_connections > 5000
+        for: 5m
+        labels:
+          severity: warning
+          component: websocket
+        annotations:
+          summary: "High number of WebSocket connections"
+          description: "{{ $value }} active WebSocket connections detected"

@@ -1,0 +1,107 @@
+version: '3.8'
+
+services:
+  sacred-core:
+    build:
+      context: .
+      dockerfile: Dockerfile.production
+    container_name: sacred-core-prod
+    ports:
+      - "3333:3333"
+    environment:
+      - NODE_ENV=production
+      - SACRED_PORT=3333
+      - SACRED_INTELLIGENCE_ENABLED=true
+      - SACRED_PERSISTENCE_PATH=/data
+      - SACRED_FIELD_COHERENCE_TARGET=0.88
+      - SACRED_LEARNING_RATE=0.1
+    volumes:
+      - sacred-data:/data
+      - sacred-logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "healthcheck.js"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 40s
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 512M
+        reservations:
+          cpus: '0.5'
+          memory: 256M
+    networks:
+      - sacred-network
+
+  # Monitoring stack
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: sacred-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus-data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    networks:
+      - sacred-network
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: sacred-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=sacred
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards
+      - ./monitoring/grafana/datasources:/etc/grafana/provisioning/datasources
+    networks:
+      - sacred-network
+
+  # Log aggregation
+  loki:
+    image: grafana/loki:latest
+    container_name: sacred-loki
+    ports:
+      - "3100:3100"
+    volumes:
+      - ./monitoring/loki-config.yml:/etc/loki/local-config.yaml
+      - loki-data:/loki
+    networks:
+      - sacred-network
+
+  promtail:
+    image: grafana/promtail:latest
+    container_name: sacred-promtail
+    volumes:
+      - ./monitoring/promtail-config.yml:/etc/promtail/config.yml
+      - sacred-logs:/var/log/sacred
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: -config.file=/etc/promtail/config.yml
+    networks:
+      - sacred-network
+
+volumes:
+  sacred-data:
+    name: sacred-core-data
+  sacred-logs:
+    name: sacred-core-logs
+  prometheus-data:
+    name: sacred-prometheus-data
+  grafana-data:
+    name: sacred-grafana-data
+  loki-data:
+    name: sacred-loki-data
+
+networks:
+  sacred-network:
+    name: sacred-net
+    driver: bridge
