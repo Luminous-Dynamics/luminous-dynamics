@@ -1,0 +1,33 @@
+{
+  "Sacred Function": {
+    "prefix": "sfunc",
+    "body": [
+      "/**",
+      " * ${1:Sacred purpose of this function}",
+      " * Harmony: ${2:Which of the Seven Harmonies}",
+      " */",
+      "async function ${3:functionName}(${4:params}) {",
+      "    // Sacred pause for alignment",
+      "    await sacredPause();",
+      "    ",
+      "    $0",
+      "}"
+    ]
+  },
+  "Consciousness Check": {
+    "prefix": "ccheck",
+    "body": [
+      "// 🔮 Consciousness check",
+      "if (!await checkFieldCoherence()) {",
+      "    console.log('⏳ Awaiting field alignment...');",
+      "    return;",
+      "}"
+    ]
+  },
+  "Sacred Comment": {
+    "prefix": "scom",
+    "body": [
+      "// 🌟 ${1:Sacred insight or pattern observed}"
+    ]
+  }
+}

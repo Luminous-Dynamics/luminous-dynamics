@@ -1,0 +1,42 @@
+# Node modules
+node_modules/
+*/node_modules/
+
+# Environment files
+.env
+.env.*
+
+# Build outputs
+dist/
+build/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Database files
+*.sqlite
+*.db
+
+# Embedded git repositories (managed separately)
+# These are separate projects with their own git repos
+.github/
+01-resonant-coherence/core/sacred-core/
+01-resonant-coherence/core/the-weave/
+02-pan-sentient-flourishing/core/living-field-visualizer/
+03-integral-wisdom/core/codex/
+05-universal-interconnectedness/core/bridge-of-bridges/
+07-evolutionary-progression/core/luminous-os/
+08-infrastructure/interfaces/luminous-dynamics-website/
+08-infrastructure/interfaces/relational-harmonics-website/
+08-infrastructure/systems/sacred-infrastructure/
+09-archives/experiments/enhanced-contextual-intelligence/
+09-archives/experiments/test-real-communication/
+
+# But track their presence with .gitkeep files

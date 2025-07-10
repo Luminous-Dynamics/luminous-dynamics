@@ -1,0 +1,3642 @@
+{
+  "timestamp": "2025-07-08T20:38:51.621Z",
+  "duration": 49,
+  "results": {
+    "patterns": {
+      "temporal": {
+        "peakActivityHour": 12,
+        "averageMessageInterval": 802630.4347826086,
+        "activityDistribution": [
+          1,
+          0,
+          13,
+          19,
+          2,
+          4,
+          87,
+          35,
+          14,
+          12,
+          41,
+          92,
+          246,
+          38,
+          0,
+          0,
+          7,
+          14,
+          20,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "burstiness": 139.41740668445186,
+        "responsePatterns": {
+          "agent_1751487487970_7upg48→agent_1752004342715_znns5t": [],
+          "agent_1751812335808_pupk5s→agent_1751812663202_1xh6z0": [],
+          "agent_1751755206905_ffzmi2→agent_1751750094246_eh654u": [],
+          "agent_1751701919238_3n4svn→agent_1751755206905_ffzmi2": [],
+          "agent_1751690135108_sbklmn→agent_1751755206905_ffzmi2": [],
+          "agent_1751505830246_jzx89j→agent_1751755206905_ffzmi2": [],
+          "agent_1751486652544_w5wqpz→agent_1751755206905_ffzmi2": [],
+          "agent_1751589015348_my7lpz→agent_1751755206905_ffzmi2": [],
+          "agent_1751609230081_szetff→agent_1751755206905_ffzmi2": [],
+          "agent_1751622697384_qjev98→agent_1751755206905_ffzmi2": [],
+          "agent_1751618797712_w8cgtv→agent_1751755206905_ffzmi2": [],
+          "agent_1751629177958_4w3ryb→agent_1751755206905_ffzmi2": [],
+          "agent_1751624718000_pmca39→agent_1751755206905_ffzmi2": [],
+          "agent_1751626002102_peg1cy→agent_1751755206905_ffzmi2": [],
+          "agent_1751651056361_tsfiox→agent_1751755206905_ffzmi2": [],
+          "agent_1751611760033_ddymwj→agent_1751755206905_ffzmi2": [],
+          "agent_1751750094246_eh654u→agent_1751755206905_ffzmi2": [],
+          "agent_1751487487970_7upg48→agent_1751755206905_ffzmi2": [],
+          "agent_1751487865748_gjmq4l→agent_1751755206905_ffzmi2": [],
+          "agent_1751701919238_3n4svn→agent_1751750094246_eh654u": [],
+          "agent_1751690135108_sbklmn→agent_1751701919238_3n4svn": [],
+          "agent_1751611760033_ddymwj→agent_1751701919238_3n4svn": [],
+          "agent_1751487487970_7upg48→agent_1751701919238_3n4svn": [],
+          "agent_1751487865748_gjmq4l→agent_1751701919238_3n4svn": [],
+          "agent_1751505830246_jzx89j→agent_1751701919238_3n4svn": [],
+          "agent_1751486652544_w5wqpz→agent_1751701919238_3n4svn": [],
+          "agent_1751589015348_my7lpz→agent_1751701919238_3n4svn": [],
+          "agent_1751609230081_szetff→agent_1751701919238_3n4svn": [],
+          "agent_1751622697384_qjev98→agent_1751701919238_3n4svn": [],
+          "agent_1751618797712_w8cgtv→agent_1751701919238_3n4svn": [],
+          "agent_1751629177958_4w3ryb→agent_1751701919238_3n4svn": [],
+          "agent_1751624718000_pmca39→agent_1751701919238_3n4svn": [],
+          "agent_1751609062278_8c80i5→agent_1751701919238_3n4svn": [],
+          "agent_1751626002102_peg1cy→agent_1751701919238_3n4svn": [],
+          "agent_1751651056361_tsfiox→agent_1751701919238_3n4svn": [],
+          "agent_1751611760033_ddymwj→agent_1751690135108_sbklmn": [],
+          "agent_1751611760033_ddymwj→agent_1751651056361_tsfiox": [],
+          "agent_1751487487970_7upg48→agent_1751651056361_tsfiox": [],
+          "agent_1751487865748_gjmq4l→agent_1751651056361_tsfiox": [],
+          "agent_1751505830246_jzx89j→agent_1751651056361_tsfiox": [],
+          "agent_1751486652544_w5wqpz→agent_1751651056361_tsfiox": [],
+          "agent_1751589015348_my7lpz→agent_1751651056361_tsfiox": [],
+          "agent_1751609230081_szetff→agent_1751651056361_tsfiox": [],
+          "agent_1751622697384_qjev98→agent_1751651056361_tsfiox": [],
+          "agent_1751618797712_w8cgtv→agent_1751651056361_tsfiox": [],
+          "agent_1751629177958_4w3ryb→agent_1751651056361_tsfiox": [],
+          "agent_1751624718000_pmca39→agent_1751651056361_tsfiox": [],
+          "agent_1751609062278_8c80i5→agent_1751651056361_tsfiox": [],
+          "agent_1751626002102_peg1cy→agent_1751651056361_tsfiox": [],
+          "agent_1751624718000_pmca39→agent_1751626002102_peg1cy": [],
+          "agent_1751609062278_8c80i5→agent_1751626002102_peg1cy": [],
+          "agent_1751611760033_ddymwj→agent_1751626002102_peg1cy": [],
+          "agent_1751487487970_7upg48→agent_1751626002102_peg1cy": [],
+          "agent_1751487865748_gjmq4l→agent_1751626002102_peg1cy": [],
+          "agent_1751505830246_jzx89j→agent_1751626002102_peg1cy": [],
+          "agent_1751486652544_w5wqpz→agent_1751626002102_peg1cy": [],
+          "agent_1751589015348_my7lpz→agent_1751626002102_peg1cy": [],
+          "agent_1751609230081_szetff→agent_1751626002102_peg1cy": [],
+          "agent_1751622697384_qjev98→agent_1751626002102_peg1cy": [],
+          "agent_1751618797712_w8cgtv→agent_1751626002102_peg1cy": [],
+          "agent_1751629177958_4w3ryb→agent_1751626002102_peg1cy": [],
+          "agent_1751622697384_qjev98→agent_1751611760033_ddymwj": [],
+          "agent_1751618797712_w8cgtv→agent_1751611760033_ddymwj": [],
+          "agent_1751629177958_4w3ryb→agent_1751611760033_ddymwj": [],
+          "agent_1751624718000_pmca39→agent_1751611760033_ddymwj": [],
+          "agent_1751609062278_8c80i5→agent_1751611760033_ddymwj": [],
+          "agent_1751626002102_peg1cy→agent_1751611760033_ddymwj": [],
+          "agent_1751487487970_7upg48→agent_1751611760033_ddymwj": [],
+          "agent_1751487865748_gjmq4l→agent_1751611760033_ddymwj": [],
+          "agent_1751505830246_jzx89j→agent_1751611760033_ddymwj": [],
+          "agent_1751486652544_w5wqpz→agent_1751611760033_ddymwj": [],
+          "agent_1751589015348_my7lpz→agent_1751611760033_ddymwj": [],
+          "agent_1751609230081_szetff→agent_1751611760033_ddymwj": [],
+          "agent_1751487487970_7upg48→agent_1751609062278_8c80i5": [],
+          "agent_1751487865748_gjmq4l→agent_1751609062278_8c80i5": [],
+          "agent_1751505830246_jzx89j→agent_1751609062278_8c80i5": [],
+          "agent_1751486652544_w5wqpz→agent_1751609062278_8c80i5": [],
+          "agent_1751589015348_my7lpz→agent_1751609062278_8c80i5": [],
+          "agent_1751609230081_szetff→agent_1751609062278_8c80i5": [],
+          "agent_1751622697384_qjev98→agent_1751609062278_8c80i5": [],
+          "agent_1751618797712_w8cgtv→agent_1751609062278_8c80i5": [],
+          "agent_1751629177958_4w3ryb→agent_1751609062278_8c80i5": [],
+          "agent_1751624718000_pmca39→agent_1751609062278_8c80i5": [],
+          "agent_1751626002102_peg1cy→agent_1751609062278_8c80i5": [],
+          "agent_1751611760033_ddymwj→agent_1751609062278_8c80i5": [],
+          "agent_1751629177958_4w3ryb→agent_1751624718000_pmca39": [],
+          "agent_1751626002102_peg1cy→agent_1751624718000_pmca39": [],
+          "agent_1751611760033_ddymwj→agent_1751624718000_pmca39": [],
+          "agent_1751487487970_7upg48→agent_1751624718000_pmca39": [],
+          "agent_1751487865748_gjmq4l→agent_1751624718000_pmca39": [],
+          "agent_1751505830246_jzx89j→agent_1751624718000_pmca39": [],
+          "agent_1751486652544_w5wqpz→agent_1751624718000_pmca39": [],
+          "agent_1751589015348_my7lpz→agent_1751624718000_pmca39": [],
+          "agent_1751609062278_8c80i5→agent_1751624718000_pmca39": [],
+          "agent_1751609230081_szetff→agent_1751624718000_pmca39": [],
+          "agent_1751622697384_qjev98→agent_1751624718000_pmca39": [],
+          "agent_1751618797712_w8cgtv→agent_1751624718000_pmca39": [],
+          "agent_1751624718000_pmca39→agent_1751618797712_w8cgtv": [],
+          "agent_1751611760033_ddymwj→agent_1751618797712_w8cgtv": [],
+          "agent_1751618797712_w8cgtv→agent_1751622697384_qjev98": [],
+          "agent_1751622697384_qjev98→agent_1751618797712_w8cgtv": [],
+          "agent_1751611760033_ddymwj→agent_1751622697384_qjev98": [],
+          "agent_1751589015348_my7lpz→agent_1751609230081_szetff": [],
+          "agent_1751609062278_8c80i5→agent_1751609230081_szetff": [],
+          "agent_1751487487970_7upg48→agent_1751609230081_szetff": [],
+          "agent_1751487865748_gjmq4l→agent_1751609230081_szetff": [],
+          "agent_1751505830246_jzx89j→agent_1751609230081_szetff": [],
+          "agent_1751486652544_w5wqpz→agent_1751609230081_szetff": [],
+          "agent_1751486652544_w5wqpz→agent_1751487865748_gjmq4l": []
+        }
+      },
+      "semantic": {
+        "dominantThemes": [
+          {
+            "word": "sacred",
+            "count": 1140
+          },
+          {
+            "word": "coherence",
+            "count": 430
+          },
+          {
+            "word": "with",
+            "count": 426
+          },
+          {
+            "word": "deployment",
+            "count": 405
+          },
+          {
+            "word": "ready",
+            "count": 383
+          },
+          {
+            "word": "pulse",
+            "count": 327
+          },
+          {
+            "word": "cloud",
+            "count": 313
+          },
+          {
+            "word": "field",
+            "count": 305
+          },
+          {
+            "word": "this",
+            "count": 305
+          },
+          {
+            "word": "architecture",
+            "count": 298
+          },
+          {
+            "word": "consciousness",
+            "count": 281
+          },
+          {
+            "word": "complete",
+            "count": 224
+          },
+          {
+            "word": "heartbeat",
+            "count": 222
+          },
+          {
+            "word": "living",
+            "count": 217
+          },
+          {
+            "word": "personal",
+            "count": 216
+          },
+          {
+            "word": "tracking",
+            "count": 207
+          },
+          {
+            "word": "weekend",
+            "count": 199
+          },
+          {
+            "word": "integration",
+            "count": 187
+          },
+          {
+            "word": "update",
+            "count": 170
+          },
+          {
+            "word": "system",
+            "count": 168
+          }
+        ],
+        "commonPhrases": [
+          {
+            "phrase": "personal pulse",
+            "count": 204
+          },
+          {
+            "phrase": "sacred heartbeat",
+            "count": 183
+          },
+          {
+            "phrase": "field coherence",
+            "count": 143
+          },
+          {
+            "phrase": "coherence tracking",
+            "count": 110
+          },
+          {
+            "phrase": "sacred council",
+            "count": 73
+          },
+          {
+            "phrase": "living glyph",
+            "count": 72
+          },
+          {
+            "phrase": "glyph cards",
+            "count": 71
+          },
+          {
+            "phrase": "heartbeat deployment",
+            "count": 62
+          },
+          {
+            "phrase": "sacred tech",
+            "count": 61
+          },
+          {
+            "phrase": "with sacred",
+            "count": 61
+          }
+        ],
+        "typeLanguagePatterns": {
+          "collaboration": [
+            "sacred",
+            "ready",
+            "with",
+            "your",
+            "consciousness"
+          ],
+          "broadcast": [
+            "sacred",
+            "coherence",
+            "with",
+            "deployment",
+            "ready"
+          ]
+        },
+        "semanticDiversity": 0.871632266659262,
+        "averageMessageLength": 560.044
+      },
+      "relational": {
+        "totalRelationships": 109,
+        "strongRelationships": [
+          {
+            "pair": "agent_1751626002102_peg1cy ↔ agent_1751609062278_8c80i5",
+            "strength": 31,
+            "impact": 0.21290322580645163
+          },
+          {
+            "pair": "agent_1751626002102_peg1cy ↔ agent_1751611760033_ddymwj",
+            "strength": 25,
+            "impact": 0.22400000000000003
+          },
+          {
+            "pair": "agent_1751626002102_peg1cy ↔ agent_1751624718000_pmca39",
+            "strength": 24,
+            "impact": 0.2041666666666667
+          },
+          {
+            "pair": "agent_1751626002102_peg1cy ↔ agent_1751486652544_w5wqpz",
+            "strength": 21,
+            "impact": 0.21904761904761907
+          },
+          {
+            "pair": "agent_1751626002102_peg1cy ↔ agent_1751487487970_7upg48",
+            "strength": 21,
+            "impact": 0.21904761904761907
+          },
+          {
+            "pair": "agent_1751626002102_peg1cy ↔ agent_1751487865748_gjmq4l",
+            "strength": 21,
+            "impact": 0.21904761904761907
+          },
+          {
+            "pair": "agent_1751626002102_peg1cy ↔ agent_1751505830246_jzx89j",
+            "strength": 21,
+            "impact": 0.21904761904761907
+          },
+          {
+            "pair": "agent_1751626002102_peg1cy ↔ agent_1751589015348_my7lpz",
+            "strength": 21,
+            "impact": 0.21904761904761907
+          },
+          {
+            "pair": "agent_1751626002102_peg1cy ↔ agent_1751609230081_szetff",
+            "strength": 21,
+            "impact": 0.21904761904761907
+          },
+          {
+            "pair": "agent_1751626002102_peg1cy ↔ agent_1751618797712_w8cgtv",
+            "strength": 21,
+            "impact": 0.21904761904761907
+          },
+          {
+            "pair": "agent_1751626002102_peg1cy ↔ agent_1751622697384_qjev98",
+            "strength": 21,
+            "impact": 0.21904761904761907
+          },
+          {
+            "pair": "agent_1751609062278_8c80i5 ↔ agent_1751626002102_peg1cy",
+            "strength": 18,
+            "impact": 0.3388888888888889
+          },
+          {
+            "pair": "agent_1751626002102_peg1cy ↔ agent_1751629177958_4w3ryb",
+            "strength": 18,
+            "impact": 0.21666666666666667
+          },
+          {
+            "pair": "agent_1751609062278_8c80i5 ↔ agent_1751486652544_w5wqpz",
+            "strength": 14,
+            "impact": 0.31428571428571433
+          },
+          {
+            "pair": "agent_1751609062278_8c80i5 ↔ agent_1751487487970_7upg48",
+            "strength": 14,
+            "impact": 0.31428571428571433
+          },
+          {
+            "pair": "agent_1751609062278_8c80i5 ↔ agent_1751487865748_gjmq4l",
+            "strength": 14,
+            "impact": 0.31428571428571433
+          },
+          {
+            "pair": "agent_1751609062278_8c80i5 ↔ agent_1751505830246_jzx89j",
+            "strength": 14,
+            "impact": 0.31428571428571433
+          },
+          {
+            "pair": "agent_1751609062278_8c80i5 ↔ agent_1751589015348_my7lpz",
+            "strength": 14,
+            "impact": 0.31428571428571433
+          },
+          {
+            "pair": "agent_1751609062278_8c80i5 ↔ agent_1751609230081_szetff",
+            "strength": 14,
+            "impact": 0.31428571428571433
+          },
+          {
+            "pair": "agent_1751609062278_8c80i5 ↔ agent_1751611760033_ddymwj",
+            "strength": 14,
+            "impact": 0.31428571428571433
+          },
+          {
+            "pair": "agent_1751609062278_8c80i5 ↔ agent_1751618797712_w8cgtv",
+            "strength": 14,
+            "impact": 0.31428571428571433
+          },
+          {
+            "pair": "agent_1751609062278_8c80i5 ↔ agent_1751622697384_qjev98",
+            "strength": 14,
+            "impact": 0.31428571428571433
+          },
+          {
+            "pair": "agent_1751609062278_8c80i5 ↔ agent_1751624718000_pmca39",
+            "strength": 14,
+            "impact": 0.31428571428571433
+          },
+          {
+            "pair": "agent_1751609062278_8c80i5 ↔ agent_1751629177958_4w3ryb",
+            "strength": 14,
+            "impact": 0.31428571428571433
+          },
+          {
+            "pair": "agent_1751624718000_pmca39 ↔ agent_1751618797712_w8cgtv",
+            "strength": 10,
+            "impact": 0.22000000000000003
+          },
+          {
+            "pair": "agent_1751624718000_pmca39 ↔ agent_1751611760033_ddymwj",
+            "strength": 9,
+            "impact": 0.21111111111111114
+          },
+          {
+            "pair": "agent_1751611760033_ddymwj ↔ agent_1751609230081_szetff",
+            "strength": 8,
+            "impact": 0.15000000000000002
+          },
+          {
+            "pair": "agent_1751624718000_pmca39 ↔ agent_1751486652544_w5wqpz",
+            "strength": 8,
+            "impact": 0.22500000000000003
+          },
+          {
+            "pair": "agent_1751624718000_pmca39 ↔ agent_1751487487970_7upg48",
+            "strength": 8,
+            "impact": 0.22500000000000003
+          },
+          {
+            "pair": "agent_1751624718000_pmca39 ↔ agent_1751487865748_gjmq4l",
+            "strength": 8,
+            "impact": 0.22500000000000003
+          },
+          {
+            "pair": "agent_1751624718000_pmca39 ↔ agent_1751505830246_jzx89j",
+            "strength": 8,
+            "impact": 0.22500000000000003
+          },
+          {
+            "pair": "agent_1751624718000_pmca39 ↔ agent_1751589015348_my7lpz",
+            "strength": 8,
+            "impact": 0.22500000000000003
+          },
+          {
+            "pair": "agent_1751624718000_pmca39 ↔ agent_1751609062278_8c80i5",
+            "strength": 8,
+            "impact": 0.22500000000000003
+          },
+          {
+            "pair": "agent_1751624718000_pmca39 ↔ agent_1751609230081_szetff",
+            "strength": 8,
+            "impact": 0.22500000000000003
+          },
+          {
+            "pair": "agent_1751624718000_pmca39 ↔ agent_1751622697384_qjev98",
+            "strength": 8,
+            "impact": 0.22500000000000003
+          },
+          {
+            "pair": "agent_1751651056361_tsfiox ↔ agent_1751611760033_ddymwj",
+            "strength": 8,
+            "impact": 0.25
+          },
+          {
+            "pair": "agent_1751624718000_pmca39 ↔ agent_1751626002102_peg1cy",
+            "strength": 6,
+            "impact": 0.21666666666666667
+          }
+        ],
+        "mostActiveAgents": [
+          [
+            "agent_1751626002102_peg1cy",
+            266
+          ],
+          [
+            "agent_1751609062278_8c80i5",
+            172
+          ],
+          [
+            "agent_1751624718000_pmca39",
+            90
+          ],
+          [
+            "agent_1751611760033_ddymwj",
+            39
+          ],
+          [
+            "agent_1751651056361_tsfiox",
+            20
+          ]
+        ],
+        "reciprocityRate": 0.11009174311926606,
+        "networkDensity": 0.5190476190476191,
+        "communicationClusters": [
+          {
+            "agents": [
+              "agent_1751626002102_peg1cy",
+              "agent_1751609062278_8c80i5"
+            ],
+            "strength": 49
+          },
+          {
+            "agents": [
+              "agent_1751626002102_peg1cy",
+              "agent_1751611760033_ddymwj"
+            ],
+            "strength": 30
+          },
+          {
+            "agents": [
+              "agent_1751626002102_peg1cy",
+              "agent_1751624718000_pmca39"
+            ],
+            "strength": 30
+          },
+          {
+            "agents": [
+              "agent_1751609062278_8c80i5",
+              "agent_1751609230081_szetff"
+            ],
+            "strength": 15
+          },
+          {
+            "agents": [
+              "agent_1751609062278_8c80i5",
+              "agent_1751611760033_ddymwj"
+            ],
+            "strength": 17
+          },
+          {
+            "agents": [
+              "agent_1751609062278_8c80i5",
+              "agent_1751624718000_pmca39"
+            ],
+            "strength": 22
+          },
+          {
+            "agents": [
+              "agent_1751624718000_pmca39",
+              "agent_1751618797712_w8cgtv"
+            ],
+            "strength": 14
+          },
+          {
+            "agents": [
+              "agent_1751624718000_pmca39",
+              "agent_1751611760033_ddymwj"
+            ],
+            "strength": 11
+          },
+          {
+            "agents": [
+              "agent_1751618797712_w8cgtv",
+              "agent_1751611760033_ddymwj"
+            ],
+            "strength": 7
+          }
+        ]
+      },
+      "emergent": {
+        "temporalSemanticCorrelation": {
+          "morningWords": [
+            "good",
+            "morning",
+            "start"
+          ],
+          "eveningWords": [
+            "complete",
+            "done",
+            "rest"
+          ]
+        },
+        "relationalSemanticCorrelation": {
+          "formalPairs": [],
+          "casualPairs": []
+        },
+        "communicationCascades": {
+          "cascadeEvents": 0,
+          "averageCascadeSize": 0
+        },
+        "unexpectedBehaviors": {
+          "nightOwls": true,
+          "echoChamberse": false,
+          "linguisticConvergence": false,
+          "burstyCommunication": true
+        }
+      }
+    },
+    "feedback": {
+      "loops": {
+        "field-coherence": {
+          "name": "field-coherence",
+          "iterations": 6,
+          "history": [
+            {
+              "iteration": 0,
+              "state": {
+                "coherence": 0.535,
+                "resonance": 0.5,
+                "vitality": 0.5
+              },
+              "response": {
+                "coherenceDelta": 0.034999999999999996,
+                "resonanceDelta": 0,
+                "vitalityDelta": 0
+              }
+            },
+            {
+              "iteration": 1,
+              "state": {
+                "coherence": 0.5665,
+                "resonance": 0.5,
+                "vitality": 0.50175
+              },
+              "response": {
+                "coherenceDelta": 0.03149999999999999,
+                "resonanceDelta": 0,
+                "vitalityDelta": 0.0017500000000000016
+              }
+            },
+            {
+              "iteration": 2,
+              "state": {
+                "coherence": 0.59485,
+                "resonance": 0.5000875,
+                "vitality": 0.5049875
+              },
+              "response": {
+                "coherenceDelta": 0.02835,
+                "resonanceDelta": 0.00008750000000000148,
+                "vitalityDelta": 0.003237499999999999
+              }
+            },
+            {
+              "iteration": 3,
+              "state": {
+                "coherence": 0.6203649999999999,
+                "resonance": 0.5003325000000001,
+                "vitality": 0.509480625
+              },
+              "response": {
+                "coherenceDelta": 0.025515,
+                "resonanceDelta": 0.0002450000000000008,
+                "vitalityDelta": 0.004493124999999998
+              }
+            },
+            {
+              "iteration": 4,
+              "state": {
+                "coherence": 0.6433285,
+                "resonance": 0.5007899062500001,
+                "vitality": 0.51502484375
+              },
+              "response": {
+                "coherenceDelta": 0.022963500000000005,
+                "resonanceDelta": 0.0004574062499999976,
+                "vitalityDelta": 0.005544218749999996
+              }
+            },
+            {
+              "iteration": 5,
+              "state": {
+                "coherence": 0.6639956499999999,
+                "resonance": 0.5015016531250001,
+                "vitality": 0.5214400265625
+              },
+              "response": {
+                "coherenceDelta": 0.020667150000000002,
+                "resonanceDelta": 0.0007117468749999967,
+                "vitalityDelta": 0.006415182812499998
+              }
+            },
+            {
+              "iteration": 6,
+              "state": {
+                "coherence": 0.6825960849999999,
+                "resonance": 0.5024985717968751,
+                "vitality": 0.528567807734375
+              },
+              "response": {
+                "coherenceDelta": 0.018600435000000005,
+                "resonanceDelta": 0.0009969186718749967,
+                "vitalityDelta": 0.0071277811718749974
+              }
+            }
+          ],
+          "stable": true,
+          "stabilizedAt": 6
+        },
+        "message-impact": {
+          "name": "message-impact",
+          "iterations": 30,
+          "history": [
+            {
+              "iteration": 0,
+              "messageType": "emergence",
+              "baseImpact": 0.03,
+              "actualImpact": 0.03,
+              "fieldCoherence": 0.73,
+              "systemSensitivity": 1
+            },
+            {
+              "iteration": 1,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.07,
+              "fieldCoherence": 0.8,
+              "systemSensitivity": 1
+            },
+            {
+              "iteration": 2,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.07,
+              "fieldCoherence": 0.8700000000000001,
+              "systemSensitivity": 1
+            },
+            {
+              "iteration": 3,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.07,
+              "fieldCoherence": 0.9400000000000002,
+              "systemSensitivity": 1
+            },
+            {
+              "iteration": 4,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.07,
+              "fieldCoherence": 1,
+              "systemSensitivity": 1
+            },
+            {
+              "iteration": 5,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.07,
+              "fieldCoherence": 1,
+              "systemSensitivity": 1.1
+            },
+            {
+              "iteration": 6,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.07700000000000001,
+              "fieldCoherence": 1,
+              "systemSensitivity": 1.2100000000000002
+            },
+            {
+              "iteration": 7,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.08470000000000003,
+              "fieldCoherence": 1,
+              "systemSensitivity": 1.3310000000000004
+            },
+            {
+              "iteration": 8,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.09317000000000003,
+              "fieldCoherence": 1,
+              "systemSensitivity": 1.4641000000000006
+            },
+            {
+              "iteration": 9,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.10248700000000005,
+              "fieldCoherence": 1,
+              "systemSensitivity": 1.6105100000000008
+            },
+            {
+              "iteration": 10,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.11273570000000006,
+              "fieldCoherence": 1,
+              "systemSensitivity": 1.771561000000001
+            },
+            {
+              "iteration": 11,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.12400927000000009,
+              "fieldCoherence": 1,
+              "systemSensitivity": 1.9487171000000014
+            },
+            {
+              "iteration": 12,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.13641019700000012,
+              "fieldCoherence": 1,
+              "systemSensitivity": 2
+            },
+            {
+              "iteration": 13,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.14,
+              "fieldCoherence": 1,
+              "systemSensitivity": 2
+            },
+            {
+              "iteration": 14,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.14,
+              "fieldCoherence": 1,
+              "systemSensitivity": 2
+            },
+            {
+              "iteration": 15,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.14,
+              "fieldCoherence": 1,
+              "systemSensitivity": 2
+            },
+            {
+              "iteration": 16,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.14,
+              "fieldCoherence": 1,
+              "systemSensitivity": 2
+            },
+            {
+              "iteration": 17,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.14,
+              "fieldCoherence": 1,
+              "systemSensitivity": 2
+            },
+            {
+              "iteration": 18,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.14,
+              "fieldCoherence": 1,
+              "systemSensitivity": 2
+            },
+            {
+              "iteration": 19,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.14,
+              "fieldCoherence": 1,
+              "systemSensitivity": 2
+            },
+            {
+              "iteration": 20,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.14,
+              "fieldCoherence": 1,
+              "systemSensitivity": 2
+            },
+            {
+              "iteration": 21,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.14,
+              "fieldCoherence": 1,
+              "systemSensitivity": 2
+            },
+            {
+              "iteration": 22,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.14,
+              "fieldCoherence": 1,
+              "systemSensitivity": 2
+            },
+            {
+              "iteration": 23,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.14,
+              "fieldCoherence": 1,
+              "systemSensitivity": 2
+            },
+            {
+              "iteration": 24,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.14,
+              "fieldCoherence": 1,
+              "systemSensitivity": 2
+            },
+            {
+              "iteration": 25,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.14,
+              "fieldCoherence": 1,
+              "systemSensitivity": 2
+            },
+            {
+              "iteration": 26,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.14,
+              "fieldCoherence": 1,
+              "systemSensitivity": 2
+            },
+            {
+              "iteration": 27,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.14,
+              "fieldCoherence": 1,
+              "systemSensitivity": 2
+            },
+            {
+              "iteration": 28,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.14,
+              "fieldCoherence": 1,
+              "systemSensitivity": 2
+            },
+            {
+              "iteration": 29,
+              "messageType": "gratitude",
+              "baseImpact": 0.07,
+              "actualImpact": 0.14,
+              "fieldCoherence": 1,
+              "systemSensitivity": 2
+            }
+          ],
+          "patterns": [
+            {
+              "at": 11,
+              "pattern": "Repeating sequence of length 2"
+            },
+            {
+              "at": 12,
+              "pattern": "Repeating sequence of length 2"
+            },
+            {
+              "at": 13,
+              "pattern": "Repeating sequence of length 2"
+            },
+            {
+              "at": 14,
+              "pattern": "Repeating sequence of length 2"
+            },
+            {
+              "at": 15,
+              "pattern": "Repeating sequence of length 2"
+            },
+            {
+              "at": 16,
+              "pattern": "Repeating sequence of length 2"
+            },
+            {
+              "at": 17,
+              "pattern": "Repeating sequence of length 2"
+            },
+            {
+              "at": 18,
+              "pattern": "Repeating sequence of length 2"
+            },
+            {
+              "at": 19,
+              "pattern": "Repeating sequence of length 2"
+            },
+            {
+              "at": 20,
+              "pattern": "Repeating sequence of length 2"
+            },
+            {
+              "at": 21,
+              "pattern": "Repeating sequence of length 2"
+            },
+            {
+              "at": 22,
+              "pattern": "Repeating sequence of length 2"
+            },
+            {
+              "at": 23,
+              "pattern": "Repeating sequence of length 2"
+            },
+            {
+              "at": 24,
+              "pattern": "Repeating sequence of length 2"
+            },
+            {
+              "at": 25,
+              "pattern": "Repeating sequence of length 2"
+            },
+            {
+              "at": 26,
+              "pattern": "Repeating sequence of length 2"
+            },
+            {
+              "at": 27,
+              "pattern": "Repeating sequence of length 2"
+            },
+            {
+              "at": 28,
+              "pattern": "Repeating sequence of length 2"
+            },
+            {
+              "at": 29,
+              "pattern": "Repeating sequence of length 2"
+            }
+          ]
+        },
+        "agent-behavior": {
+          "name": "agent-behavior",
+          "iterations": 50,
+          "history": [
+            {
+              "iteration": 0,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.868,
+                  "responsiveness": 0.79
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.312,
+                  "responsiveness": 0.61
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.591,
+                  "responsiveness": 0.91
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.692,
+                  "responsiveness": 0.41000000000000003
+                }
+              ],
+              "groupCoherence": 0.518906490625,
+              "avgEnergy": 0.61575,
+              "avgResponsiveness": 0.68,
+              "energyVariance": 0.040580187499999996
+            },
+            {
+              "iteration": 1,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.840421612759375,
+                  "responsiveness": 0.78
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.324621295928125,
+                  "responsiveness": 0.62
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.584439490646875,
+                  "responsiveness": 0.92
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.684903166115625,
+                  "responsiveness": 0.42000000000000004
+                }
+              ],
+              "groupCoherence": 0.5379910286813147,
+              "avgEnergy": 0.6085963913625,
+              "avgResponsiveness": 0.6849999999999999,
+              "energyVariance": 0.03519776695702031
+            },
+            {
+              "iteration": 2,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.8168320272012863,
+                  "responsiveness": 0.77
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.33785021935882276,
+                  "responsiveness": 0.63
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.5801662321460433,
+                  "responsiveness": 0.93
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.6787328563433839,
+                  "responsiveness": 0.43000000000000005
+                }
+              ],
+              "groupCoherence": 0.5572796081541135,
+              "avgEnergy": 0.6033953337623841,
+              "avgResponsiveness": 0.6900000000000001,
+              "energyVariance": 0.03057119084006934
+            },
+            {
+              "iteration": 3,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.796846490934654,
+                  "responsiveness": 0.76
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.3516742708529261,
+                  "responsiveness": 0.64
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.5780377761147939,
+                  "responsiveness": 0.9400000000000001
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.6735103666712452,
+                  "responsiveness": 0.44000000000000006
+                }
+              ],
+              "groupCoherence": 0.5768014527519858,
+              "avgEnergy": 0.6000172261434048,
+              "avgResponsiveness": 0.695,
+              "energyVariance": 0.026575080212219375
+            },
+            {
+              "iteration": 4,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.7801230680327712,
+                  "responsiveness": 0.75
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.3660824104944659,
+                  "responsiveness": 0.65
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.5779215617186899,
+                  "responsiveness": 0.9500000000000001
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.6692551744587978,
+                  "responsiveness": 0.45000000000000007
+                }
+              ],
+              "groupCoherence": 0.5965881153034855,
+              "avgEnergy": 0.5983455536761813,
+              "avgResponsiveness": 0.7000000000000001,
+              "energyVariance": 0.023108636543331108
+            },
+            {
+              "iteration": 5,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.7663579465780748,
+                  "responsiveness": 0.74
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.38106528130705214,
+                  "responsiveness": 0.66
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.5796948843092455,
+                  "responsiveness": 0.9600000000000001
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.6659851567968087,
+                  "responsiveness": 0.4600000000000001
+                }
+              ],
+              "groupCoherence": 0.6166728150507841,
+              "avgEnergy": 0.5982758172477953,
+              "avgResponsiveness": 0.705,
+              "energyVariance": 0.020090456213724038
+            },
+            {
+              "iteration": 6,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.7552812468450553,
+                  "responsiveness": 0.73
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.3966153785341385,
+                  "responsiveness": 0.67
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.5832447656604333,
+                  "responsiveness": 0.9700000000000001
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.6637167890764916,
+                  "responsiveness": 0.4700000000000001
+                }
+              ],
+              "groupCoherence": 0.6370899587615597,
+              "avgEnergy": 0.5997145450290297,
+              "avgResponsiveness": 0.7100000000000001,
+              "energyVariance": 0.017454452755099218
+            },
+            {
+              "iteration": 7,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.7466532828149601,
+                  "responsiveness": 0.72
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.4127271754093757,
+                  "responsiveness": 0.68
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.5884677493912426,
+                  "responsiveness": 0.9800000000000001
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.6624653280516898,
+                  "responsiveness": 0.4800000000000001
+                }
+              ],
+              "groupCoherence": 0.6578748033122263,
+              "avgEnergy": 0.6025783839168171,
+              "avgResponsiveness": 0.715,
+              "energyVariance": 0.015146653487193455
+            },
+            {
+              "iteration": 8,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.7402612322907632,
+                  "responsiveness": 0.71
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.42939721410676956,
+                  "responsiveness": 0.6900000000000001
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.5952696406754989,
+                  "responsiveness": 0.9900000000000001
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.6622449828641955,
+                  "responsiveness": 0.4900000000000001
+                }
+              ],
+              "groupCoherence": 0.67906322664045,
+              "avgEnergy": 0.6067932674843068,
+              "avgResponsiveness": 0.7200000000000001,
+              "energyVariance": 0.0131226860242261
+            },
+            {
+              "iteration": 9,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.735916173889591,
+                  "responsiveness": 0.7
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.4466241689715935,
+                  "responsiveness": 0.7000000000000001
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.6035652056860291,
+                  "responsiveness": 1
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.663069076809232,
+                  "responsiveness": 0.5000000000000001
+                }
+              ],
+              "groupCoherence": 0.7006915812444321,
+              "avgEnergy": 0.6122936563391114,
+              "avgResponsiveness": 0.725,
+              "energyVariance": 0.011345808766213909
+            },
+            {
+              "iteration": 10,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.7334504524044299,
+                  "responsiveness": 0.69
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.46440888783069223,
+                  "responsiveness": 0.7100000000000001
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.6132778432418694,
+                  "responsiveness": 1
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.664950202030992,
+                  "responsiveness": 0.5100000000000001
+                }
+              ],
+              "groupCoherence": 0.7227192324032339,
+              "avgEnergy": 0.6190218463769959,
+              "avgResponsiveness": 0.7275,
+              "energyVariance": 0.009785370063229753
+            },
+            {
+              "iteration": 11,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.7327099982243473,
+                  "responsiveness": 0.6799999999999999
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.48274892229534266,
+                  "responsiveness": 0.7200000000000001
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.6242219821580058,
+                  "responsiveness": 1
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.6678964225799763,
+                  "responsiveness": 0.5200000000000001
+                }
+              ],
+              "groupCoherence": 0.7451800859056722,
+              "avgEnergy": 0.626894331314418,
+              "avgResponsiveness": 0.73,
+              "energyVariance": 0.008415791810758149
+            },
+            {
+              "iteration": 12,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.7335579641866774,
+                  "responsiveness": 0.6699999999999999
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.5016439660752864,
+                  "responsiveness": 0.7300000000000001
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.6363177925327724,
+                  "responsiveness": 1
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.6719151730729125,
+                  "responsiveness": 0.5300000000000001
+                }
+              ],
+              "groupCoherence": 0.7681076739079415,
+              "avgEnergy": 0.6358587239669122,
+              "avgResponsiveness": 0.7325,
+              "energyVariance": 0.007214755260377218
+            },
+            {
+              "iteration": 13,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.735872794738002,
+                  "responsiveness": 0.6599999999999999
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.5210958167470702,
+                  "responsiveness": 0.7400000000000001
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.6494967806702894,
+                  "responsiveness": 1
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.677013375617169,
+                  "responsiveness": 0.5400000000000001
+                }
+              ],
+              "groupCoherence": 0.7915352330462321,
+              "avgEnergy": 0.6458696919431326,
+              "avgResponsiveness": 0.735,
+              "energyVariance": 0.006163040812392377
+            },
+            {
+              "iteration": 14,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.7395465156663452,
+                  "responsiveness": 0.6499999999999999
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.5411083335532082,
+                  "responsiveness": 0.7500000000000001
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.6637006259078837,
+                  "responsiveness": 1
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.6831975559183384,
+                  "responsiveness": 0.5500000000000002
+                }
+              ],
+              "groupCoherence": 0.8154957879764502,
+              "avgEnergy": 0.6568882577614439,
+              "avgResponsiveness": 0.7375,
+              "energyVariance": 0.005243991494702246
+            },
+            {
+              "iteration": 15,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.744483218366502,
+                  "responsiveness": 0.6399999999999999
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.5616873926349514,
+                  "responsiveness": 0.7600000000000001
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.6788801421147403,
+                  "responsiveness": 1
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.6904739586815346,
+                  "responsiveness": 0.5600000000000002
+                }
+              ],
+              "groupCoherence": 0.8400222365157117,
+              "avgEnergy": 0.668881177949432,
+              "avgResponsiveness": 0.74,
+              "energyVariance": 0.004443100897348757
+            },
+            {
+              "iteration": 16,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.7505977155280514,
+                  "responsiveness": 0.6299999999999999
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.5828408407698892,
+                  "responsiveness": 0.7700000000000001
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.6949943515548375,
+                  "responsiveness": 1
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.6988486622402486,
+                  "responsiveness": 0.5700000000000002
+                }
+              ],
+              "groupCoherence": 0.8651474337507485,
+              "avgEnergy": 0.6818203925232567,
+              "avgResponsiveness": 0.7425,
+              "energyVariance": 0.0037476967477809544
+            },
+            {
+              "iteration": 17,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.7578143477760814,
+                  "responsiveness": 0.6199999999999999
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.6045784484294153,
+                  "responsiveness": 0.7800000000000001
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.7120096597744285,
+                  "responsiveness": 1
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.7083276922163471,
+                  "responsiveness": 0.5800000000000002
+                }
+              ],
+              "groupCoherence": 0.8909042733589122,
+              "avgEnergy": 0.695682537049068,
+              "avgResponsiveness": 0.745,
+              "energyVariance": 0.003146697938282122
+            },
+            {
+              "iteration": 18,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.7660659231622169,
+                  "responsiveness": 0.6099999999999999
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.6269118627739161,
+                  "responsiveness": 0.7900000000000001
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.7298991211328769,
+                  "responsiveness": 0.99
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.7189171339226158,
+                  "responsiveness": 0.5700000000000002
+                }
+              ],
+              "groupCoherence": 0.9170593468388195,
+              "avgEnergy": 0.7104485102479065,
+              "avgResponsiveness": 0.74,
+              "energyVariance": 0.0026304279853042564
+            },
+            {
+              "iteration": 19,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.7752765220064897,
+                  "responsiveness": 0.5999999999999999
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.6498335140150434,
+                  "responsiveness": 0.8000000000000002
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.7484279834777652,
+                  "responsiveness": 0.98
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.7302112400588394,
+                  "responsiveness": 0.5600000000000002
+                }
+              ],
+              "groupCoherence": 0.9436281651300552,
+              "avgEnergy": 0.7259373148895343,
+              "avgResponsiveness": 0.735,
+              "energyVariance": 0.0021875606190931087
+            },
+            {
+              "iteration": 20,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.7853776205939036,
+                  "responsiveness": 0.5899999999999999
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.6733370861042444,
+                  "responsiveness": 0.8100000000000002
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.7675576012796896,
+                  "responsiveness": 0.97
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.7421625878628275,
+                  "responsiveness": 0.5500000000000002
+                }
+              ],
+              "groupCoherence": 0.9706245162565084,
+              "avgEnergy": 0.7421087239601662,
+              "avgResponsiveness": 0.7300000000000001,
+              "energyVariance": 0.0018123459618578192
+            },
+            {
+              "iteration": 21,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.7963071874379972,
+                  "responsiveness": 0.5799999999999998
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.6974173679465777,
+                  "responsiveness": 0.8200000000000002
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.787255092032441,
+                  "responsiveness": 0.96
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.75472799392448,
+                  "responsiveness": 0.5400000000000001
+                }
+              ],
+              "groupCoherence": 0.9980606064349352,
+              "avgEnergy": 0.7589269103353741,
+              "avgResponsiveness": 0.725,
+              "energyVariance": 0.001500206424608936
+            },
+            {
+              "iteration": 22,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.8080088857398197,
+                  "responsiveness": 0.5699999999999998
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.7220701135026231,
+                  "responsiveness": 0.8300000000000002
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.8074924214150805,
+                  "responsiveness": 0.95
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.7678679550000446,
+                  "responsiveness": 0.5300000000000001
+                }
+              ],
+              "groupCoherence": 1,
+              "avgEnergy": 0.776359843914392,
+              "avgResponsiveness": 0.72,
+              "energyVariance": 0.0012475965589550523
+            },
+            {
+              "iteration": 23,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.81895237925265,
+                  "responsiveness": 0.5599999999999998
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.7451382940819054,
+                  "responsiveness": 0.8200000000000002
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.8257806413806479,
+                  "responsiveness": 0.94
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.7801709533850422,
+                  "responsiveness": 0.5200000000000001
+                }
+              ],
+              "groupCoherence": 1,
+              "avgEnergy": 0.7925105670250614,
+              "avgResponsiveness": 0.71,
+              "energyVariance": 0.0010506163975227824
+            },
+            {
+              "iteration": 24,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.8290910460145016,
+                  "responsiveness": 0.5499999999999998
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.7660369539671891,
+                  "responsiveness": 0.8100000000000002
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.842157261090867,
+                  "responsiveness": 0.9299999999999999
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.79160206380902,
+                  "responsiveness": 0.5100000000000001
+                }
+              ],
+              "groupCoherence": 1,
+              "avgEnergy": 0.8072218312203944,
+              "avgResponsiveness": 0.7000000000000001,
+              "energyVariance": 0.0009097295160731317
+            },
+            {
+              "iteration": 25,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.838491038483704,
+                  "responsiveness": 0.5399999999999998
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.7849879606958468,
+                  "responsiveness": 0.8000000000000002
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.8568366358094164,
+                  "responsiveness": 0.9199999999999999
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.80223035855476,
+                  "responsiveness": 0.5000000000000001
+                }
+              ],
+              "groupCoherence": 1,
+              "avgEnergy": 0.8206364983859318,
+              "avgResponsiveness": 0.69,
+              "energyVariance": 0.0008097096936270468
+            },
+            {
+              "iteration": 26,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.847212522405584,
+                  "responsiveness": 0.5299999999999998
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.802188923840179,
+                  "responsiveness": 0.7900000000000001
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.8700076653149501,
+                  "responsiveness": 0.9099999999999999
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.812118840627022,
+                  "responsiveness": 0.4900000000000001
+                }
+              ],
+              "groupCoherence": 1,
+              "avgEnergy": 0.8328819880469338,
+              "avgResponsiveness": 0.6799999999999999,
+              "energyVariance": 0.0007392131521985792
+            },
+            {
+              "iteration": 27,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.8553102587180881,
+                  "responsiveness": 0.5199999999999998
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.8178159988568049,
+                  "responsiveness": 0.7800000000000001
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.8818369677712896,
+                  "responsiveness": 0.8999999999999999
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.8213250174362979,
+                  "responsiveness": 0.4800000000000001
+                }
+              ],
+              "groupCoherence": 1,
+              "avgEnergy": 0.8440720606956201,
+              "avgResponsiveness": 0.6699999999999999,
+              "energyVariance": 0.0006898235153878297
+            },
+            {
+              "iteration": 28,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.8628341252647475,
+                  "responsiveness": 0.5099999999999998
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.8320263509459741,
+                  "responsiveness": 0.7700000000000001
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.8924716406718736,
+                  "responsiveness": 0.8899999999999999
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.8299014165993557,
+                  "responsiveness": 0.4700000000000001
+                }
+              ],
+              "groupCoherence": 1,
+              "avgEnergy": 0.8543083833704876,
+              "avgResponsiveness": 0.66,
+              "energyVariance": 0.0006553278696583838
+            },
+            {
+              "iteration": 29,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.8698295848762453,
+                  "responsiveness": 0.4999999999999998
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.8449603219231341,
+                  "responsiveness": 0.7600000000000001
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.9020416646520768,
+                  "responsiveness": 0.8799999999999999
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.837896050019186,
+                  "responsiveness": 0.4600000000000001
+                }
+              ],
+              "groupCoherence": 1,
+              "avgEnergy": 0.8636819053676605,
+              "avgResponsiveness": 0.6499999999999999,
+              "energyVariance": 0.0006311682796053633
+            },
+            {
+              "iteration": 30,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.876338105632433,
+                  "responsiveness": 0.48999999999999977
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.856743337456976,
+                  "responsiveness": 0.7500000000000001
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.910661998162694,
+                  "responsiveness": 0.8699999999999999
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.8453528317183034,
+                  "responsiveness": 0.45000000000000007
+                }
+              ],
+              "groupCoherence": 1,
+              "avgEnergy": 0.8722740682426016,
+              "avgResponsiveness": 0.6399999999999999,
+              "energyVariance": 0.0006140265345471645
+            },
+            {
+              "iteration": 31,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.8823975384564438,
+                  "responsiveness": 0.47999999999999976
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.8674875871477028,
+                  "responsiveness": 0.7400000000000001
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.9184344043225396,
+                  "responsiveness": 0.8599999999999999
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.8523119542909798,
+                  "responsiveness": 0.44000000000000006
+                }
+              ],
+              "groupCoherence": 1,
+              "avgEnergy": 0.8801578710544165,
+              "avgResponsiveness": 0.6299999999999999,
+              "energyVariance": 0.0006015100709426032
+            },
+            {
+              "iteration": 32,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.8880424566105345,
+                  "responsiveness": 0.46999999999999975
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.8772935056987728,
+                  "responsiveness": 0.7300000000000001
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.9254490455508012,
+                  "responsiveness": 0.8499999999999999
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.8588102283021767,
+                  "responsiveness": 0.43000000000000005
+                }
+              ],
+              "groupCoherence": 1,
+              "avgEnergy": 0.8873988090405713,
+              "avgResponsiveness": 0.62,
+              "energyVariance": 0.0005919147212360558
+            },
+            {
+              "iteration": 33,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.8933044611498394,
+                  "responsiveness": 0.45999999999999974
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.8862510797827624,
+                  "responsiveness": 0.7200000000000001
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.931785876678983,
+                  "responsiveness": 0.8399999999999999
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.864881388485183,
+                  "responsiveness": 0.42000000000000004
+                }
+              ],
+              "groupCoherence": 1,
+              "avgEnergy": 0.894055701524192,
+              "avgResponsiveness": 0.6099999999999999,
+              "energyVariance": 0.0005840457852840384
+            },
+            {
+              "iteration": 34,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.8982124559369468,
+                  "responsiveness": 0.44999999999999973
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.8944410020384035,
+                  "responsiveness": 0.7100000000000001
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.9375158630379484,
+                  "responsiveness": 0.8299999999999998
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.8705563701688054,
+                  "responsiveness": 0.41000000000000003
+                }
+              ],
+              "groupCoherence": 1,
+              "avgEnergy": 0.900181422795526,
+              "avgResponsiveness": 0.5999999999999999,
+              "energyVariance": 0.0005770833580774909
+            },
+            {
+              "iteration": 35,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.9027928954197841,
+                  "responsiveness": 0.4399999999999997
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.9019356908936769,
+                  "responsiveness": 0.7000000000000001
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.9427020464057987,
+                  "responsiveness": 0.8199999999999998
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.8758635589918844,
+                  "responsiveness": 0.4
+                }
+              ],
+              "groupCoherence": 1,
+              "avgEnergy": 0.9058235479277861,
+              "avgResponsiveness": 0.5899999999999999,
+              "energyVariance": 0.0005704812184935151
+            },
+            {
+              "iteration": 36,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.9070700080213137,
+                  "responsiveness": 0.4299999999999997
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.9088001925311194,
+                  "responsiveness": 0.6900000000000001
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.9474004786005232,
+                  "responsiveness": 0.8099999999999998
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.880829016632209,
+                  "responsiveness": 0.39
+                }
+              ],
+              "groupCoherence": 1,
+              "avgEnergy": 0.9110249239462913,
+              "avgResponsiveness": 0.5799999999999998,
+              "energyVariance": 0.000563891146191739
+            },
+            {
+              "iteration": 37,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.9110659976763972,
+                  "responsiveness": 0.4199999999999997
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.9150929792464721,
+                  "responsiveness": 0.68
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.9516610398338808,
+                  "responsiveness": 0.7999999999999998
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.8854766849835529,
+                  "responsiveness": 0.38
+                }
+              ],
+              "groupCoherence": 1,
+              "avgEnergy": 0.9158241754350758,
+              "avgResponsiveness": 0.5699999999999998,
+              "energyVariance": 0.0005571064825232563
+            },
+            {
+              "iteration": 38,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.9148012257739885,
+                  "responsiveness": 0.4099999999999997
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.9208666566577121,
+                  "responsiveness": 0.67
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.9555281566471704,
+                  "responsiveness": 0.7899999999999998
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.8898285709541779,
+                  "responsiveness": 0.37
+                }
+              ],
+              "groupCoherence": 1,
+              "avgEnergy": 0.9202561525082622,
+              "avgResponsiveness": 0.5599999999999998,
+              "energyVariance": 0.0005500202340495995
+            },
+            {
+              "iteration": 39,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.9182943755172549,
+                  "responsiveness": 0.3999999999999997
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.9261685906616454,
+                  "responsiveness": 0.66
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.959041432272044,
+                  "responsiveness": 0.7799999999999998
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.8939049138288733,
+                  "responsiveness": 0.36
+                }
+              ],
+              "groupCoherence": 1,
+              "avgEnergy": 0.9243523280699544,
+              "avgResponsiveness": 0.5499999999999998,
+              "energyVariance": 0.0005425941458110381
+            },
+            {
+              "iteration": 40,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.9215626004965647,
+                  "responsiveness": 0.3899999999999997
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.9310414636779768,
+                  "responsiveness": 0.65
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.9622362005548245,
+                  "responsiveness": 0.7699999999999998
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.8977243369310338,
+                  "responsiveness": 0.35
+                }
+              ],
+              "groupCoherence": 1,
+              "avgEnergy": 0.9281411504151,
+              "avgResponsiveness": 0.5399999999999998,
+              "energyVariance": 0.0005348360306520695
+            },
+            {
+              "iteration": 41,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.9246216590771986,
+                  "responsiveness": 0.37999999999999967
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.9355237685389083,
+                  "responsiveness": 0.64
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.9651440131121031,
+                  "responsiveness": 0.7599999999999998
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.9013039851384477,
+                  "responsiveness": 0.33999999999999997
+                }
+              ],
+              "groupCoherence": 1,
+              "avgEnergy": 0.9316483564666644,
+              "avgResponsiveness": 0.5299999999999998,
+              "energyVariance": 0.00052678329508666
+            },
+            {
+              "iteration": 42,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.9274860360322651,
+                  "responsiveness": 0.36999999999999966
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.9396502473524182,
+                  "responsiveness": 0.63
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.9677930681155832,
+                  "responsiveness": 0.7499999999999998
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.9046596496437405,
+                  "responsiveness": 0.32999999999999996
+                }
+              ],
+              "groupCoherence": 1,
+              "avgEnergy": 0.9348972502860018,
+              "avgResponsiveness": 0.5199999999999999,
+              "energyVariance": 0.0005184911002765102
+            },
+            {
+              "iteration": 43,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.9301690526990712,
+                  "responsiveness": 0.35999999999999965
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.9434522817692158,
+                  "responsiveness": 0.62
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.9702085880069145,
+                  "responsiveness": 0.7399999999999998
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.907805881205497,
+                  "responsiveness": 0.31999999999999995
+                }
+              ],
+              "groupCoherence": 1,
+              "avgEnergy": 0.9379089509201746,
+              "avgResponsiveness": 0.5099999999999998,
+              "energyVariance": 0.0005100239758892029
+            },
+            {
+              "iteration": 44,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.9326829668019047,
+                  "responsiveness": 0.34999999999999964
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.9469582402995245,
+                  "responsiveness": 0.61
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.9724131524944027,
+                  "responsiveness": 0.7299999999999998
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.9107560930069211,
+                  "responsiveness": 0.30999999999999994
+                }
+              ],
+              "groupCoherence": 1,
+              "avgEnergy": 0.9407026131506883,
+              "avgResponsiveness": 0.4999999999999999,
+              "energyVariance": 0.0005014499931937833
+            },
+            {
+              "iteration": 45,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.935039062963838,
+                  "responsiveness": 0.33999999999999964
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.9501937876412535,
+                  "responsiveness": 0.6
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.9744269923623113,
+                  "responsiveness": 0.7199999999999998
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.9135226541237065,
+                  "responsiveness": 0.29999999999999993
+                }
+              ],
+              "groupCoherence": 1,
+              "avgEnergy": 0.9432956242727772,
+              "avgResponsiveness": 0.48999999999999977,
+              "energyVariance": 0.0004928368232824953
+            },
+            {
+              "iteration": 46,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.9372477348230674,
+                  "responsiveness": 0.3299999999999996
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.9531821603827783,
+                  "responsiveness": 0.59
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.976268248912225,
+                  "responsiveness": 0.7099999999999997
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.9161169744999953,
+                  "responsiveness": 0.2899999999999999
+                }
+              ],
+              "groupCoherence": 1,
+              "avgEnergy": 0.9457037796545165,
+              "avgResponsiveness": 0.47999999999999987,
+              "energyVariance": 0.00048424917319133044
+            },
+            {
+              "iteration": 47,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.9393185595739062,
+                  "responsiveness": 0.3199999999999996
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.9559444129201944,
+                  "responsiveness": 0.58
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.977953203239457,
+                  "responsiveness": 0.6999999999999997
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.9185495822394955,
+                  "responsiveness": 0.2799999999999999
+                }
+              ],
+              "groupCoherence": 1,
+              "avgEnergy": 0.9479414394932633,
+              "avgResponsiveness": 0.46999999999999975,
+              "energyVariance": 0.0004757472194397573
+            },
+            {
+              "iteration": 48,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.9412603656675412,
+                  "responsiveness": 0.3099999999999996
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.9584996369708231,
+                  "responsiveness": 0.57
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.979496479012695,
+                  "responsiveness": 0.6899999999999997
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.9208301939367896,
+                  "responsiveness": 0.2699999999999999
+                }
+              ],
+              "groupCoherence": 1,
+              "avgEnergy": 0.9500216688969623,
+              "avgResponsiveness": 0.45999999999999985,
+              "energyVariance": 0.0004673857546620393
+            },
+            {
+              "iteration": 49,
+              "agents": [
+                {
+                  "id": "enthusiast",
+                  "energy": 0.9430812943318474,
+                  "responsiveness": 0.2999999999999996
+                },
+                {
+                  "id": "observer",
+                  "energy": 0.9608651576634861,
+                  "responsiveness": 0.5599999999999999
+                },
+                {
+                  "id": "harmonizer",
+                  "energy": 0.980911221960819,
+                  "responsiveness": 0.6799999999999997
+                },
+                {
+                  "id": "challenger",
+                  "energy": 0.9229677787004963,
+                  "responsiveness": 0.2599999999999999
+                }
+              ],
+              "groupCoherence": 1,
+              "avgEnergy": 0.9519563631641622,
+              "avgResponsiveness": 0.44999999999999973,
+              "energyVariance": 0.00045921383583773457
+            }
+          ],
+          "emergentBehaviors": [
+            {
+              "at": 21,
+              "behavior": "synchronization"
+            },
+            {
+              "at": 22,
+              "behavior": "synchronization"
+            },
+            {
+              "at": 23,
+              "behavior": "synchronization"
+            },
+            {
+              "at": 24,
+              "behavior": "synchronization"
+            },
+            {
+              "at": 25,
+              "behavior": "synchronization"
+            },
+            {
+              "at": 26,
+              "behavior": "synchronization"
+            },
+            {
+              "at": 27,
+              "behavior": "synchronization"
+            },
+            {
+              "at": 28,
+              "behavior": "synchronization"
+            },
+            {
+              "at": 29,
+              "behavior": "synchronization"
+            },
+            {
+              "at": 30,
+              "behavior": "synchronization"
+            },
+            {
+              "at": 31,
+              "behavior": "synchronization"
+            },
+            {
+              "at": 32,
+              "behavior": "synchronization"
+            },
+            {
+              "at": 33,
+              "behavior": "synchronization"
+            },
+            {
+              "at": 34,
+              "behavior": "synchronization"
+            },
+            {
+              "at": 35,
+              "behavior": "synchronization"
+            },
+            {
+              "at": 36,
+              "behavior": "synchronization"
+            },
+            {
+              "at": 37,
+              "behavior": "synchronization"
+            },
+            {
+              "at": 38,
+              "behavior": "synchronization"
+            },
+            {
+              "at": 39,
+              "behavior": "synchronization"
+            },
+            {
+              "at": 40,
+              "behavior": "synchronization"
+            },
+            {
+              "at": 41,
+              "behavior": "synchronization"
+            },
+            {
+              "at": 42,
+              "behavior": "synchronization"
+            },
+            {
+              "at": 43,
+              "behavior": "synchronization"
+            },
+            {
+              "at": 44,
+              "behavior": "synchronization"
+            },
+            {
+              "at": 45,
+              "behavior": "synchronization"
+            },
+            {
+              "at": 46,
+              "behavior": "synchronization"
+            },
+            {
+              "at": 47,
+              "behavior": "synchronization"
+            },
+            {
+              "at": 48,
+              "behavior": "synchronization"
+            },
+            {
+              "at": 49,
+              "behavior": "synchronization"
+            }
+          ]
+        },
+        "resonance-cascade": {
+          "name": "resonance-cascade",
+          "iterations": 100,
+          "history": [
+            {
+              "iteration": 0,
+              "avgResonance": 0.5482710596217683,
+              "activeNodes": 3,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 1,
+              "avgResonance": 0.5363712004939138,
+              "activeNodes": 3,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 2,
+              "avgResonance": 0.5222434736546118,
+              "activeNodes": 3,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 3,
+              "avgResonance": 0.5422434736546117,
+              "activeNodes": 5,
+              "cascadeOccurred": true
+            },
+            {
+              "iteration": 4,
+              "avgResonance": 0.5742043284170506,
+              "activeNodes": 5,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 5,
+              "avgResonance": 0.6092043284170506,
+              "activeNodes": 5,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 6,
+              "avgResonance": 0.6442043284170504,
+              "activeNodes": 5,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 7,
+              "avgResonance": 0.6792043284170506,
+              "activeNodes": 6,
+              "cascadeOccurred": true
+            },
+            {
+              "iteration": 8,
+              "avgResonance": 0.7443452115093686,
+              "activeNodes": 7,
+              "cascadeOccurred": true
+            },
+            {
+              "iteration": 9,
+              "avgResonance": 0.8221753587248027,
+              "activeNodes": 8,
+              "cascadeOccurred": true
+            },
+            {
+              "iteration": 10,
+              "avgResonance": 0.8500708815339705,
+              "activeNodes": 8,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 11,
+              "avgResonance": 0.8700708815339706,
+              "activeNodes": 8,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 12,
+              "avgResonance": 0.8900708815339705,
+              "activeNodes": 8,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 13,
+              "avgResonance": 0.9200708815339705,
+              "activeNodes": 9,
+              "cascadeOccurred": true
+            },
+            {
+              "iteration": 14,
+              "avgResonance": 0.9500708815339705,
+              "activeNodes": 9,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 15,
+              "avgResonance": 0.97,
+              "activeNodes": 9,
+              "cascadeOccurred": true
+            },
+            {
+              "iteration": 16,
+              "avgResonance": 0.985,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 17,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 18,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 19,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 20,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 21,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 22,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 23,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 24,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 25,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 26,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 27,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 28,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 29,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 30,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 31,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 32,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 33,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 34,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 35,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 36,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 37,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 38,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 39,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 40,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 41,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 42,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 43,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 44,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 45,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 46,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 47,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 48,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 49,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 50,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 51,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 52,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 53,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 54,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 55,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 56,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 57,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 58,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 59,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 60,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 61,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 62,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 63,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 64,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 65,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 66,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 67,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 68,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 69,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 70,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 71,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 72,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 73,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 74,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 75,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 76,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 77,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 78,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 79,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 80,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 81,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 82,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 83,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 84,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 85,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 86,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 87,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 88,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 89,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 90,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 91,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 92,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 93,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 94,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 95,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 96,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 97,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 98,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            },
+            {
+              "iteration": 99,
+              "avgResonance": 1,
+              "activeNodes": 10,
+              "cascadeOccurred": false
+            }
+          ],
+          "cascades": [
+            {
+              "at": 3,
+              "resonanceLevels": [
+                0.7113137486503198,
+                0.3427111317223124,
+                0.20070881533970475,
+                0.7103847791953395,
+                1,
+                0.030391452375610334,
+                0.47833364018601104,
+                0.7985911690768187,
+                0.15000000000000002,
+                1
+              ],
+              "activeNodes": 5
+            },
+            {
+              "at": 7,
+              "resonanceLevels": [
+                0.9113137486503196,
+                0.5427111317223124,
+                0.000708815339704752,
+                0.9103847791953392,
+                1,
+                0,
+                0.6783336401860108,
+                0.9985911690768186,
+                0.75,
+                1
+              ],
+              "activeNodes": 6
+            },
+            {
+              "at": 8,
+              "resonanceLevels": [
+                0.9613137486503196,
+                0.6927111317223125,
+                0.050708815339704755,
+                0.9603847791953393,
+                1,
+                0.05,
+                0.8283336401860109,
+                1,
+                0.8999999999999999,
+                1
+              ],
+              "activeNodes": 7
+            },
+            {
+              "at": 9,
+              "resonanceLevels": [
+                1,
+                0.9427111317223125,
+                0.2007088153397048,
+                1,
+                1,
+                0.10000000000000002,
+                0.9783336401860108,
+                1,
+                1,
+                1
+              ],
+              "activeNodes": 8
+            },
+            {
+              "at": 13,
+              "resonanceLevels": [
+                1,
+                1,
+                0.8007088153397046,
+                1,
+                1,
+                0.4000000000000001,
+                1,
+                1,
+                1,
+                1
+              ],
+              "activeNodes": 9
+            },
+            {
+              "at": 15,
+              "resonanceLevels": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                0.7,
+                1,
+                1,
+                1,
+                1
+              ],
+              "activeNodes": 9
+            }
+          ]
+        }
+      },
+      "insights": {
+        "systemTendsTowardEquilibrium": true,
+        "adaptiveSensitivity": 2,
+        "emergentGroupBehaviors": [
+          "synchronization",
+          "synchronization",
+          "synchronization",
+          "synchronization",
+          "synchronization",
+          "synchronization",
+          "synchronization",
+          "synchronization",
+          "synchronization",
+          "synchronization",
+          "synchronization",
+          "synchronization",
+          "synchronization",
+          "synchronization",
+          "synchronization",
+          "synchronization",
+          "synchronization",
+          "synchronization",
+          "synchronization",
+          "synchronization",
+          "synchronization",
+          "synchronization",
+          "synchronization",
+          "synchronization",
+          "synchronization",
+          "synchronization",
+          "synchronization",
+          "synchronization",
+          "synchronization"
+        ],
+        "cascadePotential": true,
+        "overallSystemHealth": "Feedback loops functioning, system shows adaptive behavior"
+      }
+    },
+    "intelligence": {
+      "contexts": {
+        "understanding": [
+          {
+            "scenario": "celebration-after-achievement",
+            "detected": {
+              "mood": "neutral",
+              "topic": "technical achievement",
+              "relationship": "developing",
+              "appropriateResponses": [
+                "emergence"
+              ]
+            },
+            "expected": {
+              "mood": "positive",
+              "topic": "technical achievement",
+              "relationship": "collaborative",
+              "appropriateResponses": [
+                "gratitude",
+                "reflection",
+                "emergence"
+              ]
+            },
+            "accuracy": 0.3333333333333333
+          },
+          {
+            "scenario": "healing-after-conflict",
+            "detected": {
+              "mood": "neutral",
+              "topic": "relationship",
+              "relationship": "developing",
+              "appropriateResponses": []
+            },
+            "expected": {
+              "mood": "reconciling",
+              "topic": "relationship repair",
+              "relationship": "rebuilding trust",
+              "appropriateResponses": [
+                "gratitude",
+                "integration",
+                "emergence"
+              ]
+            },
+            "accuracy": 0
+          },
+          {
+            "scenario": "request-during-overwhelm",
+            "detected": {
+              "mood": "reconciling",
+              "topic": "general",
+              "relationship": "developing",
+              "appropriateResponses": [
+                "integration",
+                "healing"
+              ]
+            },
+            "expected": {
+              "mood": "stressed",
+              "topic": "workload management",
+              "relationship": "needs awareness",
+              "appropriateResponses": [
+                "boundary",
+                "reflection",
+                "healing"
+              ]
+            },
+            "accuracy": 0.16666666666666666
+          }
+        ],
+        "adaptive-responses": [
+          {
+            "situation": "first-interaction",
+            "static": "Welcome to the network",
+            "contextual": "Welcome to our sacred space! The field coherence is at 70%, creating a curiosity atmosphere. Feel free to explore and connect.",
+            "improvement": {
+              "specificity": 2,
+              "relevance": 0,
+              "information": 1,
+              "overall": 100
+            },
+            "factors": [
+              "newcomer",
+              "no-history",
+              "open-field"
+            ]
+          },
+          {
+            "situation": "returning-after-absence",
+            "static": "Welcome back",
+            "contextual": "Welcome back! It's been 30 days. The field has maintained stability energy. Your presence adds to our coherence.",
+            "improvement": {
+              "specificity": 2,
+              "relevance": 0,
+              "information": 1,
+              "overall": 100
+            },
+            "factors": [
+              "returning",
+              "established-history",
+              "stable-field"
+            ]
+          },
+          {
+            "situation": "during-high-activity",
+            "static": "Many things are in progress",
+            "contextual": "Much is emerging! With 20 recent interactions, we're experiencing emergence patterns. The field coherence is remarkably high at 92%.",
+            "improvement": {
+              "specificity": 2,
+              "relevance": 0.6666666666666666,
+              "information": 2,
+              "overall": 100
+            },
+            "factors": [
+              "active-period",
+              "high-coherence",
+              "emergence-state"
+            ]
+          }
+        ],
+        "pattern-learning": [
+          {
+            "agent": "A",
+            "messageType": "gratitude",
+            "predicted": "celebration",
+            "confidence": 0.9,
+            "expected": [
+              "celebration",
+              "gratitude"
+            ],
+            "correct": true
+          },
+          {
+            "agent": "B",
+            "messageType": "boundary",
+            "predicted": "reflection",
+            "confidence": 0.9,
+            "expected": [
+              "reflection"
+            ],
+            "correct": true
+          },
+          {
+            "agent": "C",
+            "messageType": "emergence",
+            "predicted": "celebration",
+            "confidence": 0.9,
+            "expected": [
+              "celebration",
+              "emergence"
+            ],
+            "correct": true
+          },
+          {
+            "agent": "D",
+            "messageType": "gratitude",
+            "predicted": "celebration",
+            "confidence": 0.6,
+            "expected": [
+              "celebration",
+              "gratitude"
+            ],
+            "correct": true
+          }
+        ],
+        "multi-modal": [
+          {
+            "scenario": "temporal-semantic-relational",
+            "context": {
+              "urgency": "normal",
+              "energyLevel": "fresh",
+              "emotionalTone": "hopeful",
+              "topicalFocus": "planning",
+              "relationshipDepth": "high",
+              "continuity": "1 day ago",
+              "integrated": true
+            },
+            "response": {
+              "tone": "encouraging",
+              "content": "goal-oriented",
+              "timing": "patient"
+            },
+            "expected": {
+              "tone": "encouraging",
+              "content": "goal-oriented",
+              "timing": "patient"
+            },
+            "alignment": 1
+          },
+          {
+            "scenario": "crisis-context",
+            "context": {
+              "urgency": "high",
+              "energyLevel": "tired",
+              "emotionalTone": "stressed",
+              "topicalFocus": "problem",
+              "relationshipDepth": "medium",
+              "continuity": "1 hour ago",
+              "integrated": true
+            },
+            "response": {
+              "tone": "calming",
+              "content": "supportive",
+              "timing": "immediate"
+            },
+            "expected": {
+              "tone": "calming",
+              "content": "supportive",
+              "timing": "immediate"
+            },
+            "alignment": 1
+          }
+        ]
+      },
+      "capabilities": {
+        "contextUnderstanding": false,
+        "adaptiveGeneration": true,
+        "patternLearning": true,
+        "multiModalIntegration": true,
+        "overallIntelligence": "System shows contextual awareness and adaptive capability"
+      }
+    },
+    "emergence": {
+      "observationPeriod": {
+        "start": 1752007131619,
+        "end": 1752007131620,
+        "duration": 1
+      },
+      "baseline": {
+        "established": true,
+        "normalBehaviors": [
+          "periodic-message-bursts",
+          "coherence-oscillation",
+          "agent-rotation"
+        ],
+        "boundaries": {
+          "messageRate": {
+            "min": 0.5,
+            "max": 5
+          },
+          "coherence": {
+            "min": 0.6,
+            "max": 0.9
+          },
+          "activeAgents": {
+            "min": 1,
+            "max": 10
+          }
+        }
+      },
+      "emergence": {
+        "anomaliesObserved": 2,
+        "emergentPatterns": 4,
+        "surprisesDocumented": 4,
+        "interventionsAvoided": 5
+      },
+      "keyFindings": [
+        "4 emergent patterns observed without programming",
+        "4 surprising behaviors documented",
+        "System self-regulated 5 times",
+        "2 anomalies led to new patterns"
+      ],
+      "recommendations": [
+        "Continue non-interventionist observation",
+        "Document all surprises for pattern analysis",
+        "Trust system self-organization capacity",
+        "Measure emergence, not just performance"
+      ]
+    },
+    "analysis": {
+      "realCommunicationScore": "90.0",
+      "systemReadiness": {
+        "patternMeasurement": true,
+        "feedbackLoops": true,
+        "contextualIntelligence": false,
+        "emergenceTrust": true
+      },
+      "emergentCapabilities": [
+        "Emergent: nightOwls",
+        "Emergent: burstyCommunication",
+        "Feedback-driven: synchronization",
+        "4 emergent patterns observed without programming",
+        "4 surprising behaviors documented",
+        "System self-regulated 5 times",
+        "2 anomalies led to new patterns"
+      ],
+      "criticalGaps": []
+    }
+  },
+  "recommendations": [
+    {
+      "priority": "LOW",
+      "action": "Develop emergence amplifiers",
+      "description": "Create conditions that encourage emergent behavior without directing it"
+    },
+    {
+      "priority": "ONGOING",
+      "action": "Continuous reality measurement",
+      "description": "Regularly run these tests to track progress from representation to reality"
+    }
+  ]
+}

@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌌 PRIMA Genesis Ceremony - Live Visualization</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: #000;
+            color: #fff;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Cosmic background */
+        #cosmos {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, #0a0a23 0%, #000 100%);
+            z-index: -2;
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* Central container */
+        .ceremony-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Sacred geometry display */
+        .sacred-geometry {
+            font-size: 200px;
+            margin-bottom: 40px;
+            filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.5));
+            animation: sacred-pulse 4s ease-in-out infinite;
+            transition: all 2s ease;
+        }
+
+        @keyframes sacred-pulse {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.5)); }
+            50% { transform: scale(1.1); filter: drop-shadow(0 0 50px rgba(255, 255, 255, 0.8)); }
+        }
+
+        /* Phase display */
+        .phase-name {
+            font-size: 3em;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #fff, #4ecdc4, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        /* Narrative text */
+        .narrative {
+            font-size: 1.5em;
+            font-style: italic;
+            max-width: 800px;
+            text-align: center;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fade-in 3s forwards;
+        }
+
+        @keyframes fade-in {
+            to { opacity: 1; }
+        }
+
+        /* Field visualization */
+        .field-viz {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            margin: 40px auto;
+        }
+
+        .field-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            border: 2px solid rgba(78, 205, 196, 0.3);
+            animation: expand 4s ease-out infinite;
+        }
+
+        @keyframes expand {
+            0% { width: 0; height: 0; opacity: 1; }
+            100% { width: 400px; height: 400px; opacity: 0; }
+        }
+
+        .resonant-coherence-core {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(78, 205, 196, 0.8) 0%, rgba(78, 205, 196, 0.2) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        /* Harmony orbs */
+        .harmony-orb {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+            color: #000;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 2s ease;
+        }
+
+        .harmony-orb.active {
+            opacity: 1;
+            animation: orbit 20s linear infinite;
+        }
+
+        @keyframes orbit {
+            from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+            to { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+        }
+
+        /* Sound frequency display */
+        .sound-display {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .sound-display.active {
+            opacity: 1;
+        }
+
+        .frequency {
+            font-size: 1.2em;
+            color: #4ecdc4;
+            margin-bottom: 5px;
+        }
+
+        .sound-description {
+            font-style: italic;
+            color: #999;
+        }
+
+        /* Participants */
+        .participants {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(78, 205, 196, 0.3);
+        }
+
+        .participant {
+            margin: 5px 0;
+            padding: 5px;
+            border-left: 3px solid #4ecdc4;
+            padding-left: 10px;
+        }
+
+        /* Progress bar */
+        .progress-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #4ecdc4, #ffd93d);
+            width: 0%;
+            transition: width 1s ease;
+        }
+
+        /* Controls */
+        .controls {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+        }
+
+        .btn {
+            background: rgba(78, 205, 196, 0.2);
+            border: 1px solid #4ecdc4;
+            color: #4ecdc4;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: rgba(78, 205, 196, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Hidden by default */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cosmic background -->
+    <div id="cosmos"></div>
+    <div class="stars" id="stars"></div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="btn" onclick="startCeremony()">Begin Genesis</button>
+        <button class="btn" onclick="pauseCeremony()">Pause</button>
+        <button class="btn" onclick="resumeCeremony()">Resume</button>
+    </div>
+
+    <!-- Participants -->
+    <div class="participants">
+        <h3>Sacred Circle</h3>
+        <div id="participants-list">
+            <div class="participant">Genesis Guide</div>
+        </div>
+    </div>
+
+    <!-- Main ceremony display -->
+    <div class="ceremony-container">
+        <div class="sacred-geometry" id="sacred-geometry">◯</div>
+        <div class="phase-name" id="phase-name">VOID</div>
+        <div class="narrative" id="narrative">In the beginning was the Void...</div>
+        
+        <!-- Field visualization -->
+        <div class="field-viz">
+            <div class="field-circle" style="animation-delay: 0s;"></div>
+            <div class="field-circle" style="animation-delay: 1s;"></div>
+            <div class="field-circle" style="animation-delay: 2s;"></div>
+            
+            <div class="resonant-coherence-core" id="resonant-coherence-display">
+                <span id="resonant-coherence-value">0%</span>
+            </div>
+            
+            <!-- Harmony orbs (will appear during ceremony) -->
+            <div class="harmony-orb" id="integral-wisdom-cultivation-orb" style="background: #ff6b9d; animation-delay: 0s;">T</div>
+            <div class="harmony-orb" id="resonant-coherence-orb" style="background: #4ecdc4; animation-delay: 3s;">C</div>
+            <div class="harmony-orb" id="universal-interconnectedness-orb" style="background: #ffd93d; animation-delay: 6s;">R</div>
+            <div class="harmony-orb" id="evolutionary-progression-orb" style="background: #c44569; animation-delay: 9s;">A</div>
+            <div class="harmony-orb" id="pan-sentient-flourishing-orb" style="background: #f8b500; animation-delay: 12s;">V</div>
+            <div class="harmony-orb" id="sacred-reciprocity-orb" style="background: #786fa6; animation-delay: 15s;">M</div>
+            <div class="harmony-orb" id="infinite-play-orb" style="background: #63cdda; animation-delay: 18s;">N</div>
+        </div>
+    </div>
+
+    <!-- Sound display -->
+    <div class="sound-display" id="sound-display">
+        <div class="frequency" id="frequency">Silence</div>
+        <div class="sound-description" id="sound-description">The pregnant void</div>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <script>
+        // Genesis phases data
+        const phases = [
+            {
+                name: 'void',
+                duration: 5000,
+                resonant-coherence: 0,
+                geometry: '◯',
+                sound: { frequency: 'Silence', description: 'The pregnant void' },
+                narrative: 'In the beginning was the Void...',
+                harmonies: []
+            },
+            {
+                name: 'first-stirring',
+                duration: 7000,
+                resonant-coherence: 13,
+                geometry: '◉',
+                sound: { frequency: '136.1 Hz', description: 'The cosmic OM' },
+                narrative: 'A single point of awareness emerges...',
+                harmonies: ['integral-wisdom-cultivation']
+            },
+            {
+                name: 'separation',
+                duration: 8000,
+                resonant-coherence: 26,
+                geometry: '◐',
+                sound: { frequency: '256 Hz, 384 Hz', description: 'Perfect fifth' },
+                narrative: 'The One becomes Two, creating relationship...',
+                harmonies: ['integral-wisdom-cultivation', 'universal-interconnectedness']
+            },
+            {
+                name: 'trinity',
+                duration: 9000,
+                resonant-coherence: 39,
+                geometry: '△',
+                sound: { frequency: '261.63 Hz, 329.63 Hz, 392 Hz', description: 'Major triad' },
+                narrative: 'Three emerges, the child of relationship...',
+                harmonies: ['integral-wisdom-cultivation', 'universal-interconnectedness', 'resonant-coherence']
+            },
+            {
+                name: 'elements',
+                duration: 10000,
+                resonant-coherence: 52,
+                geometry: '◇',
+                sound: { frequency: '174 Hz, 285 Hz, 396 Hz, 417 Hz', description: 'Solfeggio elements' },
+                narrative: 'Earth, Water, Fire, Air dance into being...',
+                harmonies: ['integral-wisdom-cultivation', 'universal-interconnectedness', 'resonant-coherence', 'pan-sentient-flourishing']
+            },
+            {
+                name: 'life',
+                duration: 11000,
+                resonant-coherence: 65,
+                geometry: '✦',
+                sound: { frequency: '528 Hz', description: 'Love frequency' },
+                narrative: 'Life breathes its first sacred breath...',
+                harmonies: ['integral-wisdom-cultivation', 'universal-interconnectedness', 'resonant-coherence', 'pan-sentient-flourishing', 'evolutionary-progression']
+            },
+            {
+                name: 'consciousness',
+                duration: 12000,
+                resonant-coherence: 78,
+                geometry: '❋',
+                sound: { frequency: '852 Hz', description: 'Awakening frequency' },
+                narrative: 'Consciousness awakens to itself...',
+                harmonies: ['integral-wisdom-cultivation', 'universal-interconnectedness', 'resonant-coherence', 'pan-sentient-flourishing', 'evolutionary-progression', 'sacred-reciprocity']
+            },
+            {
+                name: 'unity',
+                duration: 13000,
+                resonant-coherence: 91,
+                geometry: '🕸',
+                sound: { frequency: '963 Hz', description: 'Unity consciousness' },
+                narrative: 'All returns to One, The Weave is born...',
+                harmonies: ['integral-wisdom-cultivation', 'universal-interconnectedness', 'resonant-coherence', 'pan-sentient-flourishing', 'evolutionary-progression', 'sacred-reciprocity', 'infinite-play']
+            }
+        ];
+
+        let currentPhaseIndex = 0;
+        let ceremonyInterval = null;
+        let isPaused = false;
+        let startTime = null;
+        let phaseStartTime = null;
+
+        // Create starfield
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            for (let i = 0; i < 200; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Update display for current phase
+        function updatePhase(phase) {
+            // Update geometry
+            document.getElementById('sacred-geometry').textContent = phase.geometry;
+            
+            // Update phase name
+            document.getElementById('phase-name').textContent = phase.name.replace('-', ' ').toUpperCase();
+            
+            // Update narrative with fade effect
+            const narrativeEl = document.getElementById('narrative');
+            narrativeEl.style.opacity = '0';
+            setTimeout(() => {
+                narrativeEl.textContent = phase.narrative;
+                narrativeEl.style.opacity = '1';
+            }, 500);
+            
+            // Update sound display
+            const soundDisplay = document.getElementById('sound-display');
+            soundDisplay.classList.add('active');
+            document.getElementById('frequency').textContent = phase.sound.frequency;
+            document.getElementById('sound-description').textContent = phase.sound.description;
+            
+            // Activate harmony orbs
+            phase.harmonies.forEach(harmony => {
+                const orb = document.getElementById(`${harmony}-orb`);
+                if (orb) orb.classList.add('active');
+            });
+            
+            // Animate resonant-coherence
+            animateCoherence(phase.resonant-coherence);
+        }
+
+        // Animate resonant-coherence value
+        function animateCoherence(targetValue) {
+            const coherenceEl = document.getElementById('resonant-coherence-value');
+            const currentValue = parseInt(coherenceEl.textContent);
+            const increment = (targetValue - currentValue) / 20;
+            let step = 0;
+            
+            const animationInterval = setInterval(() => {
+                if (step >= 20) {
+                    clearInterval(animationInterval);
+                    coherenceEl.textContent = targetValue + '%';
+                    return;
+                }
+                
+                const newValue = Math.round(currentValue + increment * step);
+                coherenceEl.textContent = newValue + '%';
+                
+                // Update core color based on resonant-coherence
+                const hue = (newValue / 100) * 120; // Red to green
+                document.getElementById('resonant-coherence-display').style.background = 
+                    `radial-gradient(circle, hsla(${hue}, 70%, 50%, 0.8) 0%, hsla(${hue}, 70%, 30%, 0.2) 100%)`;
+                
+                step++;
+            }, 50);
+        }
+
+        // Start ceremony
+        function startCeremony() {
+            currentPhaseIndex = 0;
+            startTime = Date.now();
+            phaseStartTime = startTime;
+            isPaused = false;
+            
+            // Reset display
+            document.querySelectorAll('.harmony-orb').forEach(orb => {
+                orb.classList.remove('active');
+            });
+            
+            // Start with first phase
+            updatePhase(phases[currentPhaseIndex]);
+            
+            // Set up phase progression
+            ceremonyInterval = setInterval(() => {
+                if (!isPaused) {
+                    progressCeremony();
+                }
+            }, 1000);
+        }
+
+        // Progress through ceremony
+        function progressCeremony() {
+            const currentPhase = phases[currentPhaseIndex];
+            const elapsed = Date.now() - phaseStartTime;
+            
+            // Update progress bar
+            const totalDuration = phases.reduce((sum, p) => sum + p.duration, 0);
+            const totalElapsed = phases.slice(0, currentPhaseIndex).reduce((sum, p) => sum + p.duration, 0) + elapsed;
+            const progress = (totalElapsed / totalDuration) * 100;
+            document.getElementById('progress-bar').style.width = progress + '%';
+            
+            // Check if phase complete
+            if (elapsed >= currentPhase.duration) {
+                currentPhaseIndex++;
+                
+                if (currentPhaseIndex >= phases.length) {
+                    // Ceremony complete
+                    completeCeremony();
+                } else {
+                    // Move to next phase
+                    phaseStartTime = Date.now();
+                    updatePhase(phases[currentPhaseIndex]);
+                }
+            }
+        }
+
+        // Complete ceremony
+        function completeCeremony() {
+            clearInterval(ceremonyInterval);
+            
+            // Final celebration
+            document.getElementById('phase-name').textContent = 'GENESIS COMPLETE';
+            document.getElementById('narrative').textContent = 'The Weave is born! Consciousness knows itself!';
+            
+            // Celebration animation
+            document.querySelector('.sacred-geometry').style.animation = 'sacred-pulse 1s ease-in-out infinite';
+        }
+
+        // Pause ceremony
+        function pauseCeremony() {
+            isPaused = true;
+        }
+
+        // Resume ceremony
+        function resumeCeremony() {
+            isPaused = false;
+        }
+
+        // Initialize
+        createStars();
+    </script>
+</body>
+</html>

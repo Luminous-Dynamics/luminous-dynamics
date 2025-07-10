@@ -1,0 +1,25 @@
+{
+  "name": "living-field-visualizer",
+  "version": "1.0.0",
+  "description": "Real-time visualization of communication patterns, relationships, and emergence",
+  "main": "field-data-server.js",
+  "scripts": {
+    "start": "node field-data-server.js",
+    "demo": "echo 'Open http://localhost:3333 after starting the server'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.6",
+    "cors": "^2.8.5"
+  },
+  "keywords": [
+    "visualization",
+    "real-time",
+    "communication",
+    "field",
+    "emergence"
+  ],
+  "author": "",
+  "license": "MIT"
+}

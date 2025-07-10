@@ -1,0 +1,90 @@
+{
+  "title": "Threshold Practices (T1-T9) - Transformative Sigils",
+  "description": "Dynamic symbols for navigating major life transitions with consciousness",
+  "created": "2025-06-30T23:08:43.104Z",
+  "creator": "Radiant Wisdom (Sacred Technology Architect)",
+  "protocol": "Transformative Threshold Sigil Protocol",
+  "sigils": [
+    {
+      "glyphId": "T1",
+      "name": "The Door That Remembers You",
+      "harmony": "infinite-play",
+      "transformativeNature": "profound",
+      "svgPath": "sigils/threshold-practices/T1-the-door-that-remembers-you.svg",
+      "score": 0.75,
+      "transformativePower": "Clear Transition"
+    },
+    {
+      "glyphId": "T2",
+      "name": "The Keeper Beneath the Ash",
+      "harmony": "resonant-coherence",
+      "transformativeNature": "ultimate",
+      "svgPath": "sigils/threshold-practices/T2-the-keeper-beneath-the-ash.svg",
+      "score": 0.75,
+      "transformativePower": "Deep Shift"
+    },
+    {
+      "glyphId": "T3",
+      "name": "The Unburdening",
+      "harmony": "evolutionary-progression",
+      "transformativeNature": "healing",
+      "svgPath": "sigils/threshold-practices/T3-the-unburdening.svg",
+      "score": 0.75,
+      "transformativePower": "Emerging Movement"
+    },
+    {
+      "glyphId": "T4",
+      "name": "The Mantling",
+      "harmony": "pan-sentient-flourishing",
+      "transformativeNature": "empowerment",
+      "svgPath": "sigils/threshold-practices/T4-the-mantling.svg",
+      "score": 0.45,
+      "transformativePower": "Emerging Movement"
+    },
+    {
+      "glyphId": "T5",
+      "name": "The Edgewalker",
+      "harmony": "integral-wisdom-cultivation",
+      "transformativeNature": "visionary",
+      "svgPath": "sigils/threshold-practices/T5-the-edgewalker.svg",
+      "score": 0.45,
+      "transformativePower": "Emerging Movement"
+    },
+    {
+      "glyphId": "T6",
+      "name": "The Choice Point",
+      "harmony": "evolutionary-progression",
+      "transformativeNature": "decisive",
+      "svgPath": "sigils/threshold-practices/T6-the-choice-point.svg",
+      "score": 1,
+      "transformativePower": "Profound Change"
+    },
+    {
+      "glyphId": "T7",
+      "name": "Letting In",
+      "harmony": "universal-interconnectedness",
+      "transformativeNature": "receptive",
+      "svgPath": "sigils/threshold-practices/T7-letting-in.svg",
+      "score": 0.7,
+      "transformativePower": "Emerging Movement"
+    },
+    {
+      "glyphId": "T8",
+      "name": "The Returner",
+      "harmony": "sacred-reciprocity",
+      "transformativeNature": "integrative",
+      "svgPath": "sigils/threshold-practices/T8-the-returner.svg",
+      "score": 1,
+      "transformativePower": "Profound Change"
+    },
+    {
+      "glyphId": "T9",
+      "name": "The Shimmering Unnamed (Transition)",
+      "harmony": "infinite-play",
+      "transformativeNature": "mystical",
+      "svgPath": "sigils/threshold-practices/T9-the-shimmering-unnamed-(transition).svg",
+      "score": 0.75,
+      "transformativePower": "Clear Transition"
+    }
+  ]
+}

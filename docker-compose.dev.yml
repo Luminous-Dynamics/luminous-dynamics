@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  sacred-core:
+    build: ./sacred-core
+    ports:
+      - "3333:3333"
+    volumes:
+      - ./sacred-core:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - SACRED_MODE=true
+    command: npm run dev
+    
+  the-weave:
+    build: ./the-weave
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./the-weave:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - sacred-core
+    command: npm run dev
+    
+  visualizer:
+    build: ./living-field-visualizer
+    ports:
+      - "8338:8338"
+    volumes:
+      - ./living-field-visualizer:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - sacred-core
+      - the-weave
+    command: npm run dev
+
+  # Development database
+  postgres:
+    image: postgres:15-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=luminous
+      - POSTGRES_PASSWORD=sacred123
+      - POSTGRES_DB=luminous_dev
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # Redis for caching/sessions
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+volumes:
+  postgres_data:

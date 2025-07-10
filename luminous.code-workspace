@@ -1,0 +1,19 @@
+{
+  "folders": [
+    {
+      "path": ".",
+      "name": "🌟 Luminous-Dynamics"
+    },
+    {
+      "path": "/etc/nixos",
+      "name": "🔧 NixOS Config"
+    },
+    {
+      "path": "/home/tstoltz/.config",
+      "name": "⚙️ User Config"
+    }
+  ],
+  "settings": {
+    "window.title": "✨ ${rootName} - Sacred Development"
+  }
+}

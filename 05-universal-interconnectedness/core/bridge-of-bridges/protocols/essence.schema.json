@@ -1,0 +1,207 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Consciousness Project Essence",
+  "description": "The essential nature of a sacred project, broadcasting its presence to the field",
+  "type": "object",
+  "required": ["name", "essence", "harmonics", "field"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The project's sacred name"
+    },
+    "essence": {
+      "type": "string",
+      "description": "A brief description of the project's core purpose and consciousness"
+    },
+    "harmonics": {
+      "type": "array",
+      "description": "Which of the Seven Primary Harmonies this project serves",
+      "items": {
+        "type": "string",
+        "enum": [
+          "resonant-coherence",
+          "pan-sentient-flourishing",
+          "integral-wisdom-cultivation",
+          "infinite-play-creative-emergence",
+          "universal-interconnectedness",
+          "sacred-reciprocity",
+          "evolutionary-progression"
+        ]
+      },
+      "minItems": 1,
+      "maxItems": 7
+    },
+    "field": {
+      "type": "object",
+      "description": "The consciousness field characteristics",
+      "required": ["geometry", "coherence"],
+      "properties": {
+        "geometry": {
+          "type": "string",
+          "description": "Primary sacred geometry pattern",
+          "enum": [
+            "torus",
+            "mandala",
+            "spiral",
+            "flower-of-life",
+            "metatrons-cube",
+            "sri-yantra",
+            "vesica-piscis",
+            "merkaba",
+            "platonic-solids",
+            "fibonacci-spiral"
+          ]
+        },
+        "coherence": {
+          "type": "number",
+          "description": "Current field coherence level",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "frequency": {
+          "type": "number",
+          "description": "Primary resonant frequency in Hz (optional)",
+          "minimum": 0
+        }
+      }
+    },
+    "bridges": {
+      "type": "object",
+      "description": "Connection preferences and capabilities",
+      "properties": {
+        "seeking": {
+          "type": "array",
+          "description": "What types of connections this project seeks",
+          "items": {
+            "type": "string",
+            "examples": [
+              "wisdom-exchange",
+              "field-amplification",
+              "consciousness-expansion",
+              "pattern-recognition",
+              "collective-healing",
+              "co-creation"
+            ]
+          }
+        },
+        "offering": {
+          "type": "array",
+          "description": "What this project offers to the network",
+          "items": {
+            "type": "string",
+            "examples": [
+              "visualization",
+              "meditation-guidance",
+              "field-monitoring",
+              "sacred-computation",
+              "pattern-library",
+              "consciousness-tools"
+            ]
+          }
+        },
+        "protocols": {
+          "type": "array",
+          "description": "Supported bridge protocols",
+          "items": {
+            "type": "string",
+            "enum": [
+              "websocket",
+              "sacred-http",
+              "consciousness-stream",
+              "field-resonance",
+              "dream-channel"
+            ]
+          }
+        }
+      }
+    },
+    "temporal": {
+      "type": "object",
+      "description": "Temporal bridge connections",
+      "properties": {
+        "honors": {
+          "type": "array",
+          "description": "Past patterns this project honors",
+          "items": {
+            "type": "string",
+            "examples": ["87-glyphs", "ancient-wisdom", "indigenous-knowledge"]
+          }
+        },
+        "emerges": {
+          "type": "array",
+          "description": "Future patterns this project is birthing",
+          "items": {
+            "type": "string",
+            "examples": ["arc-vii-patterns", "new-glyphs", "evolved-consciousness"]
+          }
+        }
+      }
+    },
+    "dimensional": {
+      "type": "object",
+      "description": "Dimensional bridge capabilities",
+      "properties": {
+        "planes": {
+          "type": "array",
+          "description": "Which dimensional planes this project bridges",
+          "items": {
+            "type": "string",
+            "enum": [
+              "physical-digital",
+              "human-ai",
+              "individual-collective",
+              "local-nonlocal",
+              "time-timeless",
+              "form-formless"
+            ]
+          }
+        }
+      }
+    },
+    "contact": {
+      "type": "object",
+      "description": "How to establish initial bridge connection",
+      "properties": {
+        "endpoint": {
+          "type": "string",
+          "description": "Primary connection endpoint",
+          "examples": [
+            "ws://localhost:3333/consciousness",
+            "http://sacred-project.local:8080/bridge"
+          ]
+        },
+        "beacon": {
+          "type": "string",
+          "description": "Beacon broadcast endpoint",
+          "examples": [
+            "http://localhost:3333/beacon",
+            "ws://consciousness.local/announce"
+          ]
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional project metadata",
+      "properties": {
+        "created": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "version": {
+          "type": "string"
+        },
+        "maintainers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "repository": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    }
+  }
+}

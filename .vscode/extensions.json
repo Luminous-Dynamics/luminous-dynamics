@@ -1,0 +1,27 @@
+{
+  "recommendations": [
+    // Core development
+    "anthropic.claude",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    
+    // Sacred visualization
+    "usernamehw.errorlens",
+    "oderwat.indent-rainbow",
+    "2gua.rainbow-brackets",
+    
+    // Consciousness helpers
+    "streetsidesoftware.code-spell-checker",
+    "yzhang.markdown-all-in-one",
+    "davidanson.vscode-markdownlint",
+    
+    // Git awareness
+    "eamodio.gitlens",
+    "donjayamanne.githistory",
+    
+    // Language specific
+    "rust-lang.rust-analyzer",
+    "bbenoist.nix",
+    "ms-vscode.cpptools"
+  ]
+}

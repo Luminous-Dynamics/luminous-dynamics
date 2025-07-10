@@ -1,0 +1,8 @@
+#!/bin/bash
+# Codex Redirect - Always points to the true location
+
+echo "🌟 Redirecting to the One True Codex..."
+echo "Location: ~/Luminous-Dynamics/codex-of-relational-harmonics/"
+cd ~/Luminous-Dynamics/codex-of-relational-harmonics/
+echo "✨ You are now in the true codex location"
+pwd

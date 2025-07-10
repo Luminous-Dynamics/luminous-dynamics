@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Sacred Core",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/sacred-core/index.js",
+      "console": "integratedTerminal",
+      "env": {
+        "NODE_ENV": "development",
+        "SACRED_MODE": "true"
+      }
+    },
+    {
+      "name": "The Weave",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/the-weave/index.js",
+      "console": "integratedTerminal"
+    }
+  ]
+}

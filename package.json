@@ -1,0 +1,41 @@
+{
+  "name": "luminous-dynamics",
+  "version": "1.0.0",
+  "description": "Consciousness-first computing platform",
+  "private": true,
+  "workspaces": [
+    "sacred-core",
+    "the-weave",
+    "living-field-visualizer",
+    "enhanced-contextual-intelligence",
+    "codex-of-relational-harmonics"
+  ],
+  "scripts": {
+    "dev": "concurrently -n sacred,weave,viz -c cyan,green,yellow \"npm run dev:sacred\" \"npm run dev:weave\" \"npm run dev:viz\"",
+    "dev:sacred": "cd sacred-core && npm start",
+    "dev:weave": "cd the-weave && npm start",
+    "dev:viz": "cd living-field-visualizer && npm start",
+    "install:all": "npm install && npm run install:repos",
+    "install:repos": "for dir in */; do [ -f \"$dir/package.json\" ] && (cd \"$dir\" && npm install); done",
+    "test": "npm run test:all",
+    "test:all": "for dir in */; do [ -f \"$dir/package.json\" ] && (cd \"$dir\" && npm test); done",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "status": "node scripts/status.js",
+    "update:deps": "npx npm-check-updates -u && npm run install:all",
+    "clean": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
+    "clean:install": "npm run clean && npm run install:all"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.4",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "npm-check-updates": "^16.14.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
