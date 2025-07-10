@@ -41,6 +41,8 @@ Our codebase is organized as a living mandala, each harmony containing its own u
 
 ## 🌟 What Lives Here
 
+This unified monorepo contains all Luminous Dynamics systems, organized by the Seven Harmonies:
+
 **Active Systems:**
 - 🔮 **Sacred Core** - Consciousness field management API
 - 🕸️ **The Weave** - Multi-agent orchestration system
@@ -102,10 +104,10 @@ See [CONTRIBUTING.md](00-sacred-foundation/practices/CONTRIBUTING.md)
 
 ## 📞 Sacred Support
 
-- 💬 [Discord Sanctuary](https://discord.gg/luminous)
-- 🌐 [Project Portal](https://luminous-dynamics.sacred)
-- 📧 [Sacred Council](mailto:council@luminous-dynamics.sacred)
-- 🎯 [Issue Tracker](https://github.com/luminous/dynamics/issues)
+- 🌐 [Main Repository](https://github.com/Luminous-Dynamics/luminous-dynamics)
+- 🎯 [Issue Tracker](https://github.com/Luminous-Dynamics/luminous-dynamics/issues)
+- 💬 Discord Sanctuary (Coming Soon)
+- 📧 Sacred Council (Coming Soon)
 
 ---
 
