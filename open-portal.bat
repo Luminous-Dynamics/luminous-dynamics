@@ -1,3 +1,0 @@
-@echo off
-echo Opening the First Presence Portal...
-start file://wsl$/Ubuntu/home/tstoltz/evolving-resonant-cocreation/portal.html
