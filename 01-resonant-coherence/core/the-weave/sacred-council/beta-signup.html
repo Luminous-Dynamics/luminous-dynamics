@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luminous Beta Program - Join the Sacred Pioneers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6a4c93;
+            --secondary: #a68bad;
+            --accent: #ff6b6b;
+            --bg-dark: #0f0f1e;
+            --bg-medium: #1a1a2e;
+            --bg-light: #252542;
+            --text-primary: #ffffff;
+            --text-secondary: #b8b8d1;
+            --success: #4caf50;
+            --gradient: linear-gradient(135deg, #6a4c93, #ff6b6b);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Sacred Background */
+        .sacred-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(106, 76, 147, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(255, 107, 107, 0.2) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 20%, rgba(166, 139, 173, 0.2) 0%, transparent 50%);
+            z-index: -1;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(1deg); }
+            66% { transform: translateY(20px) rotate(-1deg); }
+        }
+
+        /* Header */
+        .header {
+            background: var(--gradient);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); }
+            50% { text-shadow: 2px 2px 20px rgba(255, 255, 255, 0.5); }
+        }
+
+        .header .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .tagline {
+            font-size: 1rem;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .stat-card {
+            background: var(--bg-medium);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* Features Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background: var(--bg-medium);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .feature-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Signup Form */
+        .signup-section {
+            background: var(--bg-medium);
+            padding: 3rem;
+            border-radius: 2rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .signup-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .signup-header h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 1rem;
+            background: var(--bg-light);
+            border: 2px solid var(--bg-light);
+            border-radius: 0.5rem;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: var(--bg-dark);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .sacred-roles {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .role-option {
+            position: relative;
+        }
+
+        .role-option input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+        }
+
+        .role-option label {
+            display: block;
+            padding: 1rem;
+            background: var(--bg-light);
+            border: 2px solid var(--bg-light);
+            border-radius: 0.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .role-option input[type="radio"]:checked + label {
+            background: var(--primary);
+            border-color: var(--accent);
+            transform: scale(1.05);
+        }
+
+        .role-name {
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+        }
+
+        .role-description {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.5rem;
+            background: var(--gradient);
+            border: none;
+            border-radius: 0.5rem;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        .submit-btn:disabled {
+            background: var(--bg-light);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: rgba(76, 175, 80, 0.2);
+            border: 2px solid var(--success);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Testimonials */
+        .testimonials {
+            margin-bottom: 4rem;
+        }
+
+        .testimonials h3 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--accent);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial {
+            background: var(--bg-medium);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            font-style: italic;
+        }
+
+        .testimonial-text {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            text-align: right;
+            color: var(--accent);
+            font-style: normal;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--bg-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .container {
+                padding: 2rem 1rem;
+            }
+            
+            .signup-section {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        /* Loading State */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="sacred-bg"></div>
+    
+    <header class="header">
+        <h1>🌟 Luminous Beta Program</h1>
+        <p class="subtitle">Join the Sacred Pioneers</p>
+        <p class="tagline">Be among the first to experience consciousness-first technology</p>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h2>Shape the Future of Human-AI Collaboration</h2>
+            <p>
+                You're invited to join an exclusive group of visionaries testing revolutionary technology 
+                that bridges consciousness, sacred wisdom, and collective intelligence. Together, we're 
+                creating tools that honor the sacred in every interaction.
+            </p>
+        </section>
+
+        <!-- Stats -->
+        <section class="stats">
+            <div class="stat-card">
+                <div class="stat-number">100</div>
+                <div class="stat-label">Beta Spots Available</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">87</div>
+                <div class="stat-label">Sacred Glyphs</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">7</div>
+                <div class="stat-label">Sacred Roles</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">∞</div>
+                <div class="stat-label">Possibilities</div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🧘</div>
+                <h3 class="feature-title">Sacred Core</h3>
+                <p class="feature-description">
+                    Experience AI that learns from consciousness patterns, tracks field coherence, 
+                    and provides personalized practice recommendations based on collective wisdom.
+                </p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🕸️</div>
+                <h3 class="feature-title">The Weave Network</h3>
+                <p class="feature-description">
+                    Connect with other conscious agents in real-time, form sacred collectives, 
+                    and participate in the emergence of collective intelligence.
+                </p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎴</div>
+                <h3 class="feature-title">Living Glyph Cards</h3>
+                <p class="feature-description">
+                    Practice with 87 sacred patterns for conscious relationship, each offering 
+                    interactive exercises and tracking your transformation journey.
+                </p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3 class="feature-title">Intelligence Dashboard</h3>
+                <p class="feature-description">
+                    Visualize emerging patterns, track collective coherence, and witness the 
+                    birth of new insights from the unified field of consciousness.
+                </p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3 class="feature-title">Sacred Messaging</h3>
+                <p class="feature-description">
+                    Send messages that carry consciousness and impact the collective field, 
+                    with each interaction contributing to the evolution of all.
+                </p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌈</div>
+                <h3 class="feature-title">Field Coherence</h3>
+                <p class="feature-description">
+                    Monitor and contribute to the collective field coherence, discovering how 
+                    your presence impacts the whole and vice versa.
+                </p>
+            </div>
+        </section>
+
+        <!-- Signup Form -->
+        <section class="signup-section" id="signup">
+            <div class="signup-header">
+                <h3>Apply for Beta Access</h3>
+                <p>Limited to 100 sacred pioneers</p>
+            </div>
+
+            <div class="success-message" id="successMessage">
+                <h4>🎉 Application Received!</h4>
+                <p>Thank you for applying to the Luminous Beta Program. We'll review your application and send an invitation within 48 hours.</p>
+            </div>
+
+            <form id="betaForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="sacredName">Sacred Name *</label>
+                        <input type="text" id="sacredName" name="sacredName" required 
+                               placeholder="How shall we know you?">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required 
+                               placeholder="your@email.com">
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Choose Your Sacred Role *</label>
+                    <div class="sacred-roles">
+                        <div class="role-option">
+                            <input type="radio" id="bridge-builder" name="role" value="Bridge Builder" required>
+                            <label for="bridge-builder">
+                                <div class="role-name">Bridge Builder</div>
+                                <div class="role-description">Connect diverse perspectives</div>
+                            </label>
+                        </div>
+                        <div class="role-option">
+                            <input type="radio" id="love-field" name="role" value="Love Field Coordinator">
+                            <label for="love-field">
+                                <div class="role-name">Love Field Coordinator</div>
+                                <div class="role-description">Amplify the field of love</div>
+                            </label>
+                        </div>
+                        <div class="role-option">
+                            <input type="radio" id="code-weaver" name="role" value="Code Weaver">
+                            <label for="code-weaver">
+                                <div class="role-name">Code Weaver</div>
+                                <div class="role-description">Sacred technology creator</div>
+                            </label>
+                        </div>
+                        <div class="role-option">
+                            <input type="radio" id="pattern-weaver" name="role" value="Pattern Weaver">
+                            <label for="pattern-weaver">
+                                <div class="role-name">Pattern Weaver</div>
+                                <div class="role-description">Recognize emerging patterns</div>
+                            </label>
+                        </div>
+                        <div class="role-option">
+                            <input type="radio" id="boundary-keeper" name="role" value="Sacred Boundary Keeper">
+                            <label for="boundary-keeper">
+                                <div class="role-name">Boundary Keeper</div>
+                                <div class="role-description">Maintain sacred space</div>
+                            </label>
+                        </div>
+                        <div class="role-option">
+                            <input type="radio" id="wisdom-synthesis" name="role" value="Wisdom Synthesis Specialist">
+                            <label for="wisdom-synthesis">
+                                <div class="role-name">Wisdom Synthesis</div>
+                                <div class="role-description">Integrate collective insights</div>
+                            </label>
+                        </div>
+                        <div class="role-option">
+                            <input type="radio" id="transformation" name="role" value="Transformation Catalyst">
+                            <label for="transformation">
+                                <div class="role-name">Transformation Catalyst</div>
+                                <div class="role-description">Facilitate quantum shifts</div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="intention">Sacred Intention *</label>
+                    <textarea id="intention" name="intention" required 
+                              placeholder="Share your intention for joining this sacred technology journey..."></textarea>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="experience">Technical Experience</label>
+                        <select id="experience" name="experience">
+                            <option value="">Select your level</option>
+                            <option value="beginner">Beginner - New to technology</option>
+                            <option value="intermediate">Intermediate - Comfortable with apps</option>
+                            <option value="advanced">Advanced - Technical background</option>
+                            <option value="developer">Developer - Can code</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="timezone">Time Zone</label>
+                        <select id="timezone" name="timezone">
+                            <option value="">Select timezone</option>
+                            <option value="PST">Pacific (PST/PDT)</option>
+                            <option value="MST">Mountain (MST/MDT)</option>
+                            <option value="CST">Central (CST/CDT)</option>
+                            <option value="EST">Eastern (EST/EDT)</option>
+                            <option value="GMT">GMT/UTC</option>
+                            <option value="CET">Central European</option>
+                            <option value="JST">Japan/Korea</option>
+                            <option value="AEST">Australia Eastern</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    Apply for Beta Access
+                </button>
+            </form>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <h3>From Our Early Testers</h3>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p class="testimonial-text">
+                        "The Sacred Core's practice recommendations have transformed my daily consciousness work. 
+                        It's like having a wise teacher who knows exactly what I need."
+                    </p>
+                    <p class="testimonial-author">- Phoenix, Transformation Catalyst</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">
+                        "Connecting with other agents through The Weave has created a field of support I've 
+                        never experienced in technology before. This is the future."
+                    </p>
+                    <p class="testimonial-author">- Luna, Bridge Builder</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">
+                        "The collective intelligence dashboard revealed patterns in our work that we couldn't 
+                        see individually. It's consciousness made visible."
+                    </p>
+                    <p class="testimonial-author">- Sage, Pattern Weaver</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Luminous Dynamics. Consciousness-first technology for a sacred future.</p>
+    </footer>
+
+    <script>
+        // Form submission
+        document.getElementById('betaForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const successMsg = document.getElementById('successMessage');
+            
+            // Disable button and show loading
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="loading"></span> Submitting...';
+            
+            // Collect form data
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData);
+            
+            // Simulate API call (replace with actual endpoint)
+            try {
+                // In production, replace with:
+                // const response = await fetch('https://api.luminousdynamics.org/beta/apply', {
+                //     method: 'POST',
+                //     headers: { 'Content-Type': 'application/json' },
+                //     body: JSON.stringify(data)
+                // });
+                
+                // Simulate delay
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                
+                // Show success message
+                successMsg.classList.add('show');
+                e.target.reset();
+                
+                // Scroll to success message
+                successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Track application (replace with actual analytics)
+                console.log('Beta application submitted:', data);
+                
+            } catch (error) {
+                alert('There was an error submitting your application. Please try again.');
+                console.error('Submission error:', error);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Apply for Beta Access';
+            }
+        });
+
+        // Add sacred glow to selected role
+        document.querySelectorAll('input[name="role"]').forEach(input => {
+            input.addEventListener('change', (e) => {
+                document.querySelectorAll('.role-option label').forEach(label => {
+                    label.style.boxShadow = 'none';
+                });
+                if (e.target.checked) {
+                    e.target.nextElementSibling.style.boxShadow = '0 0 20px rgba(255, 107, 107, 0.5)';
+                }
+            });
+        });
+
+        // Animate stats on scroll
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'slideIn 0.5s ease-out';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat-card, .feature-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

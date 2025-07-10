@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  the-weave:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: the-weave-prod
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+      - WEAVE_PORT=3001
+      - WEAVE_DB_PATH=/data/db/unified-agent-network.db
+      - WEAVE_WEBSOCKET_ENABLED=true
+    volumes:
+      - weave-db:/data/db
+      - weave-logs:/data/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "healthcheck.js"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 40s
+    networks:
+      - sacred-network
+
+  # Sacred Council Hub UI
+  sacred-council:
+    image: nginx:alpine
+    container_name: sacred-council-hub
+    ports:
+      - "8080:80"
+    volumes:
+      - ./sacred-council:/usr/share/nginx/html:ro
+      - ./deploy/nginx.conf:/etc/nginx/nginx.conf:ro
+    networks:
+      - sacred-network
+    depends_on:
+      - the-weave
+
+volumes:
+  weave-db:
+    name: weave-database
+  weave-logs:
+    name: weave-logs
+
+networks:
+  sacred-network:
+    name: sacred-net
+    external: true

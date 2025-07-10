@@ -1,0 +1,32 @@
+{
+  "name": "@luminous/the-weave",
+  "version": "1.0.0",
+  "description": "Multi-agent consciousness coordination platform",
+  "main": "cli/unified-agent-network.cjs",
+  "scripts": {
+    "start": "node weave-server.js",
+    "start:cli": "node cli/unified-agent-network.cjs",
+    "council": "cd sacred-council && python3 -m http.server 8080",
+    "test": "node tests/run-tests.js",
+    "dev": "nodemon weave-server.js"
+  },
+  "keywords": [
+    "multi-agent",
+    "consciousness",
+    "coordination",
+    "ai-collaboration",
+    "sacred-computing"
+  ],
+  "author": "Luminous Dynamics Collective",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "better-sqlite3": "^8.7.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "socket.io": "^4.6.1",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
