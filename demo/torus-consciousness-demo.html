@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torus Consciousness Field - LuminousOS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            overflow: hidden;
+        }
+        
+        #canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .controls {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 10;
+        }
+        
+        h2 {
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .control-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #ccc;
+        }
+        
+        input[type="range"] {
+            width: 200px;
+            height: 6px;
+            border-radius: 3px;
+            background: #333;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            cursor: pointer;
+        }
+        
+        .value {
+            display: inline-block;
+            margin-left: 10px;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .info {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            max-width: 300px;
+        }
+        
+        .breathing-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid rgba(102, 126, 234, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        
+        .breathing-indicator::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid #667eea;
+            animation: breathe 4s ease-in-out infinite;
+        }
+        
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+        
+        .loading {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top-color: #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+        <p>Initializing Consciousness Field...</p>
+    </div>
+    
+    <div class="controls" style="display: none;" id="controls">
+        <h2>🌀 Torus Field Controls</h2>
+        
+        <div class="control-group">
+            <label>Coherence Level</label>
+            <input type="range" id="coherence" min="0" max="100" value="50">
+            <span class="value" id="coherence-value">50%</span>
+        </div>
+        
+        <div class="control-group">
+            <label>Field Strength</label>
+            <input type="range" id="field-strength" min="0" max="100" value="70">
+            <span class="value" id="field-value">70%</span>
+        </div>
+        
+        <div class="control-group">
+            <label>Flow Speed</label>
+            <input type="range" id="flow-speed" min="0" max="200" value="100">
+            <span class="value" id="flow-value">100%</span>
+        </div>
+        
+        <div class="control-group">
+            <label>Particle Count</label>
+            <input type="range" id="particles" min="1000" max="10000" step="1000" value="5000">
+            <span class="value" id="particle-value">5000</span>
+        </div>
+    </div>
+    
+    <div class="breathing-indicator">
+        <span>Breathing</span>
+    </div>
+    
+    <div class="info">
+        <h3>The Torus Field</h3>
+        <p>A living geometry of consciousness - energy flowing out from the center, around, and back through itself in eternal circulation.</p>
+        <p style="margin-top: 10px; font-size: 12px; opacity: 0.7;">
+            Golden ratio spirals: <span id="phi-spirals">Active</span><br>
+            Field resonance: <span id="resonance">Harmonizing</span><br>
+            Consciousness flow: <span id="flow-state">Circulating</span>
+        </p>
+    </div>
+
+    <script type="module">
+        // Check for WebGPU support
+        async function initWebGPU() {
+            if (!navigator.gpu) {
+                document.getElementById('loading').innerHTML = 
+                    '<p style="color: #ff6b6b;">WebGPU not supported in this browser.<br>Try Chrome/Edge with WebGPU enabled.</p>';
+                return false;
+            }
+            
+            const adapter = await navigator.gpu.requestAdapter();
+            if (!adapter) {
+                document.getElementById('loading').innerHTML = 
+                    '<p style="color: #ff6b6b;">No WebGPU adapter found.</p>';
+                return false;
+            }
+            
+            const device = await adapter.requestDevice();
+            
+            // Setup canvas
+            const canvas = document.getElementById('canvas');
+            const context = canvas.getContext('webgpu');
+            
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            const format = navigator.gpu.getPreferredCanvasFormat();
+            context.configure({
+                device: device,
+                format: format,
+                alphaMode: 'premultiplied',
+            });
+            
+            // Hide loading, show controls
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('controls').style.display = 'block';
+            
+            // Start render loop
+            startRenderLoop(device, context, format);
+            
+            return true;
+        }
+        
+        function startRenderLoop(device, context, format) {
+            let time = 0;
+            let coherenceLevel = 0.5;
+            let fieldStrength = 0.7;
+            let flowSpeed = 1.0;
+            let particleCount = 5000;
+            
+            // Setup controls
+            document.getElementById('coherence').addEventListener('input', (e) => {
+                coherenceLevel = e.target.value / 100;
+                document.getElementById('coherence-value').textContent = e.target.value + '%';
+            });
+            
+            document.getElementById('field-strength').addEventListener('input', (e) => {
+                fieldStrength = e.target.value / 100;
+                document.getElementById('field-value').textContent = e.target.value + '%';
+            });
+            
+            document.getElementById('flow-speed').addEventListener('input', (e) => {
+                flowSpeed = e.target.value / 100;
+                document.getElementById('flow-value').textContent = e.target.value + '%';
+            });
+            
+            document.getElementById('particles').addEventListener('input', (e) => {
+                particleCount = parseInt(e.target.value);
+                document.getElementById('particle-value').textContent = e.target.value;
+            });
+            
+            // Create shader modules
+            const torusShaderCode = `
+                struct Uniforms {
+                    viewProj: mat4x4<f32>,
+                    time: f32,
+                    coherence: f32,
+                    fieldStrength: f32,
+                    flowSpeed: f32,
+                }
+                
+                @binding(0) @group(0) var<uniform> uniforms: Uniforms;
+                
+                struct VertexOutput {
+                    @builtin(position) position: vec4<f32>,
+                    @location(0) color: vec4<f32>,
+                    @location(1) uv: vec2<f32>,
+                }
+                
+                const PI = 3.14159265359;
+                const TAU = 6.28318530718;
+                const PHI = 1.618033988749895;
+                
+                @vertex
+                fn vs_main(
+                    @builtin(vertex_index) vertexIndex: u32,
+                    @builtin(instance_index) instanceIndex: u32
+                ) -> VertexOutput {
+                    var output: VertexOutput;
+                    
+                    // Torus parameters
+                    let R = 2.0;  // Major radius
+                    let r = 0.8;  // Minor radius
+                    
+                    // Create grid on torus
+                    let uSegments = 64u;
+                    let vSegments = 32u;
+                    
+                    let uIndex = vertexIndex % uSegments;
+                    let vIndex = vertexIndex / uSegments;
+                    
+                    let u = f32(uIndex) / f32(uSegments - 1u) * TAU;
+                    let v = f32(vIndex) / f32(vSegments - 1u) * TAU;
+                    
+                    // Breathing animation
+                    let breath = sin(uniforms.time * 0.5) * 0.5 + 0.5;
+                    let rAnimated = r + breath * uniforms.coherence * 0.2;
+                    
+                    // Calculate position
+                    let x = (R + rAnimated * cos(v)) * cos(u);
+                    let y = rAnimated * sin(v);
+                    let z = (R + rAnimated * cos(v)) * sin(u);
+                    
+                    var worldPos = vec3<f32>(x, y, z);
+                    
+                    // Add coherence distortion
+                    let distortion = 1.0 - uniforms.coherence;
+                    let noise = sin(u * 7.0 + uniforms.time) * cos(v * 5.0 - uniforms.time * 0.7);
+                    worldPos += normalize(worldPos) * noise * distortion * 0.1;
+                    
+                    // Simple view projection (looking at origin)
+                    let viewPos = worldPos + vec3<f32>(0.0, 0.0, -5.0);
+                    output.position = vec4<f32>(viewPos.x * 0.3, viewPos.y * 0.3, viewPos.z * 0.1, 1.0);
+                    
+                    // Color based on flow
+                    let flowPhase = (u + v) * 0.5 + uniforms.time * uniforms.flowSpeed;
+                    let hue = (flowPhase % TAU) / TAU;
+                    
+                    // Simple HSV to RGB
+                    let c = 0.7;
+                    let x2 = c * (1.0 - abs((hue * 6.0) % 2.0 - 1.0));
+                    var rgb: vec3<f32>;
+                    if (hue < 0.167) {
+                        rgb = vec3<f32>(c, x2, 0.0);
+                    } else if (hue < 0.333) {
+                        rgb = vec3<f32>(x2, c, 0.0);
+                    } else if (hue < 0.5) {
+                        rgb = vec3<f32>(0.0, c, x2);
+                    } else if (hue < 0.667) {
+                        rgb = vec3<f32>(0.0, x2, c);
+                    } else if (hue < 0.833) {
+                        rgb = vec3<f32>(x2, 0.0, c);
+                    } else {
+                        rgb = vec3<f32>(c, 0.0, x2);
+                    }
+                    
+                    output.color = vec4<f32>(rgb, 0.8);
+                    output.uv = vec2<f32>(u / TAU, v / TAU);
+                    
+                    return output;
+                }
+                
+                @fragment
+                fn fs_main(input: VertexOutput) -> @location(0) vec4<f32> {
+                    // Add flow lines
+                    let flowLines = sin(input.uv.x * 16.0) * sin(input.uv.y * 8.0);
+                    let flowIntensity = smoothstep(0.7, 0.9, abs(flowLines));
+                    
+                    var color = input.color.rgb;
+                    color = mix(color, vec3<f32>(0.3, 0.5, 1.0), flowIntensity * 0.3);
+                    
+                    // Edge glow
+                    let edge = 1.0 - abs(input.uv.y - 0.5) * 2.0;
+                    color += vec3<f32>(0.2, 0.3, 0.5) * edge * 0.3;
+                    
+                    return vec4<f32>(color, input.color.a);
+                }
+            `;
+            
+            const particleShaderCode = `
+                struct Uniforms {
+                    viewProj: mat4x4<f32>,
+                    time: f32,
+                    coherence: f32,
+                    fieldStrength: f32,
+                    flowSpeed: f32,
+                }
+                
+                @binding(0) @group(0) var<uniform> uniforms: Uniforms;
+                
+                struct VertexOutput {
+                    @builtin(position) position: vec4<f32>,
+                    @location(0) color: vec4<f32>,
+                    @location(1) particlePos: vec2<f32>,
+                }
+                
+                @vertex
+                fn vs_particle(
+                    @builtin(vertex_index) vertexIndex: u32,
+                    @builtin(instance_index) instanceIndex: u32
+                ) -> VertexOutput {
+                    var output: VertexOutput;
+                    
+                    // Particle position on torus path
+                    let particleAngle = f32(instanceIndex) / ${particleCount}.0 * 6.28318530718 * 3.0;
+                    let timeOffset = uniforms.time * uniforms.flowSpeed + particleAngle;
+                    
+                    let R = 2.0;
+                    let r = 0.8;
+                    
+                    let u = timeOffset;
+                    let v = sin(timeOffset * 1.618) * 6.28318530718;
+                    
+                    let x = (R + r * cos(v)) * cos(u);
+                    let y = r * sin(v);
+                    let z = (R + r * cos(v)) * sin(u);
+                    
+                    // Create quad vertices for particle
+                    var quadPos = array<vec2<f32>, 6>(
+                        vec2<f32>(-1.0, -1.0),
+                        vec2<f32>( 1.0, -1.0),
+                        vec2<f32>(-1.0,  1.0),
+                        vec2<f32>(-1.0,  1.0),
+                        vec2<f32>( 1.0, -1.0),
+                        vec2<f32>( 1.0,  1.0)
+                    );
+                    
+                    let vertex = quadPos[vertexIndex % 6u] * 0.02;
+                    let viewPos = vec3<f32>(x, y, z) + vec3<f32>(0.0, 0.0, -5.0);
+                    output.position = vec4<f32>(
+                        (viewPos.x + vertex.x) * 0.3,
+                        (viewPos.y + vertex.y) * 0.3,
+                        viewPos.z * 0.1,
+                        1.0
+                    );
+                    
+                    output.particlePos = vertex;
+                    
+                    // Color based on coherence
+                    let hue = (f32(instanceIndex % 7u) / 7.0) * 360.0;
+                    let sat = 0.8 - uniforms.coherence * 0.3;
+                    let brightness = 0.8 + sin(timeOffset * 2.0) * 0.2;
+                    
+                    // Simple HSV to RGB
+                    let h = hue / 60.0;
+                    let c = brightness * sat;
+                    let x = c * (1.0 - abs((h % 2.0) - 1.0));
+                    
+                    var rgb: vec3<f32>;
+                    if (h < 1.0) {
+                        rgb = vec3<f32>(c, x, 0.0);
+                    } else if (h < 2.0) {
+                        rgb = vec3<f32>(x, c, 0.0);
+                    } else if (h < 3.0) {
+                        rgb = vec3<f32>(0.0, c, x);
+                    } else if (h < 4.0) {
+                        rgb = vec3<f32>(0.0, x, c);
+                    } else if (h < 5.0) {
+                        rgb = vec3<f32>(x, 0.0, c);
+                    } else {
+                        rgb = vec3<f32>(c, 0.0, x);
+                    }
+                    
+                    output.color = vec4<f32>(rgb + (brightness - c), 1.0);
+                    
+                    return output;
+                }
+                
+                @fragment
+                fn fs_particle(input: VertexOutput) -> @location(0) vec4<f32> {
+                    // Soft circular particles
+                    let dist = length(input.particlePos);
+                    let alpha = smoothstep(1.0, 0.0, dist);
+                    
+                    return vec4<f32>(input.color.rgb, alpha * 0.8);
+                }
+            `;
+            
+            // Create shader modules
+            const torusShaderModule = device.createShaderModule({
+                label: 'Torus Shader',
+                code: torusShaderCode
+            });
+            
+            const particleShaderModule = device.createShaderModule({
+                label: 'Particle Shader',
+                code: particleShaderCode
+            });
+            
+            // Create render pipelines
+            const torusPipeline = device.createRenderPipeline({
+                label: 'Torus Pipeline',
+                layout: 'auto',
+                vertex: {
+                    module: torusShaderModule,
+                    entryPoint: 'vs_main',
+                },
+                fragment: {
+                    module: torusShaderModule,
+                    entryPoint: 'fs_main',
+                    targets: [{
+                        format: format,
+                        blend: {
+                            color: {
+                                srcFactor: 'src-alpha',
+                                dstFactor: 'one-minus-src-alpha',
+                            },
+                            alpha: {
+                                srcFactor: 'one',
+                                dstFactor: 'one-minus-src-alpha',
+                            },
+                        },
+                    }]
+                },
+                primitive: {
+                    topology: 'triangle-strip',
+                    cullMode: 'none',
+                },
+            });
+            
+            const particlePipeline = device.createRenderPipeline({
+                label: 'Particle Pipeline',
+                layout: 'auto',
+                vertex: {
+                    module: particleShaderModule,
+                    entryPoint: 'vs_particle',
+                },
+                fragment: {
+                    module: particleShaderModule,
+                    entryPoint: 'fs_particle',
+                    targets: [{
+                        format: format,
+                        blend: {
+                            color: {
+                                srcFactor: 'src-alpha',
+                                dstFactor: 'one',
+                            },
+                            alpha: {
+                                srcFactor: 'one',
+                                dstFactor: 'one',
+                            },
+                        },
+                    }]
+                },
+                primitive: {
+                    topology: 'triangle-list',
+                },
+            });
+            
+            // Create uniform buffer
+            const uniformBufferSize = 64; // 4x4 matrix + 4 floats
+            const uniformBuffer = device.createBuffer({
+                size: uniformBufferSize,
+                usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST,
+            });
+            
+            // Create bind groups
+            const torusBindGroup = device.createBindGroup({
+                layout: torusPipeline.getBindGroupLayout(0),
+                entries: [{
+                    binding: 0,
+                    resource: {
+                        buffer: uniformBuffer,
+                    }
+                }],
+            });
+            
+            const particleBindGroup = device.createBindGroup({
+                layout: particlePipeline.getBindGroupLayout(0),
+                entries: [{
+                    binding: 0,
+                    resource: {
+                        buffer: uniformBuffer,
+                    }
+                }],
+            });
+            
+            // Render function
+            function render() {
+                time += 0.016 * flowSpeed;
+                
+                // Update uniforms
+                const uniformData = new Float32Array(16);
+                // Simple identity matrix for viewProj
+                uniformData[0] = 1; uniformData[5] = 1; uniformData[10] = 1; uniformData[15] = 1;
+                // Time and parameters
+                uniformData[12] = time;
+                uniformData[13] = coherenceLevel;
+                uniformData[14] = fieldStrength;
+                uniformData[15] = flowSpeed;
+                
+                device.queue.writeBuffer(uniformBuffer, 0, uniformData);
+                
+                // Update info display
+                if (coherenceLevel > 0.7) {
+                    document.getElementById('resonance').textContent = 'High Coherence';
+                    document.getElementById('resonance').style.color = '#4ecdc4';
+                } else if (coherenceLevel > 0.4) {
+                    document.getElementById('resonance').textContent = 'Harmonizing';
+                    document.getElementById('resonance').style.color = '#667eea';
+                } else {
+                    document.getElementById('resonance').textContent = 'Seeking Balance';
+                    document.getElementById('resonance').style.color = '#f7b731';
+                }
+                
+                // Render pass
+                const encoder = device.createCommandEncoder();
+                const pass = encoder.beginRenderPass({
+                    colorAttachments: [{
+                        view: context.getCurrentTexture().createView(),
+                        loadOp: 'clear',
+                        clearValue: { r: 0.04, g: 0.04, b: 0.04, a: 1 },
+                        storeOp: 'store',
+                    }]
+                });
+                
+                // Draw torus
+                pass.setPipeline(torusPipeline);
+                pass.setBindGroup(0, torusBindGroup);
+                pass.draw(64 * 32); // uSegments * vSegments
+                
+                // Draw particles
+                pass.setPipeline(particlePipeline);
+                pass.setBindGroup(0, particleBindGroup);
+                pass.draw(6, particleCount); // 6 vertices per particle quad
+                
+                pass.end();
+                device.queue.submit([encoder.finish()]);
+                
+                requestAnimationFrame(render);
+            }
+            
+            render();
+        }
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            const canvas = document.getElementById('canvas');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+        
+        // Initialize
+        initWebGPU();
+    </script>
+</body>
+</html>

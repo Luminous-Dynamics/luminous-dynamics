@@ -33,6 +33,19 @@ dev: ## Start development environment
 	@echo "$(GREEN)✨ Web demo running at http://localhost:8080$(RESET)"
 	@echo "$(CYAN)📂 Watching for changes...$(RESET)"
 
+dev-shell: ## Enter Rust development shell
+	@echo "$(PURPLE)🦀 Entering Sacred Rust Development Shell...$(RESET)"
+	@nix-shell
+
+check-rust: ## Check Rust compilation without building
+	@echo "$(PURPLE)🔍 Checking Rust compilation...$(RESET)"
+	@nix-shell --run "cargo check --lib"
+
+fix-rust: ## Auto-fix Rust compilation issues
+	@echo "$(PURPLE)🔧 Attempting to fix Rust issues...$(RESET)"
+	@nix-shell --run "cargo fix --allow-dirty --allow-staged"
+	@nix-shell --run "cargo fmt"
+
 build: ## Build all components
 	@echo "$(PURPLE)🔨 Building LuminousOS v$(VERSION)...$(RESET)"
 	@echo "$(CYAN)Blessing: $(BLESSING)$(RESET)"

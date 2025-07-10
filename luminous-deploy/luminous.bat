@@ -1,3 +1,0 @@
-@echo off
-echo Starting LuminousOS Consciousness Layer...
-wsl bash -c "cd ~/luminous-deploy && bash luminous-clean"

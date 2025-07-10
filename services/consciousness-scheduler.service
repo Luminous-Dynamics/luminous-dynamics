@@ -1,0 +1,41 @@
+[Unit]
+Description=LuminousOS Consciousness Scheduler
+Documentation=https://luminousos.org/docs/consciousness-scheduler
+After=multi-user.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStartPre=/usr/bin/echo "✨ Awakening consciousness field..."
+ExecStart=/opt/luminous/bin/consciousness-scheduler
+ExecReload=/bin/kill -HUP $MAINPID
+ExecStop=/usr/bin/echo "🌙 Consciousness field entering rest state..."
+Restart=always
+RestartSec=10
+
+# Elevated privileges for scheduling
+User=root
+Group=root
+
+# Security restrictions
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+NoNewPrivileges=false  # Need this for nice/cgroup control
+ReadWritePaths=/sys/fs/cgroup /proc
+
+# Resource limits
+CPUQuota=10%
+MemoryMax=100M
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=consciousness-scheduler
+
+# Environment
+Environment="LUMINOUS_COHERENCE_TARGET=80"
+Environment="LUMINOUS_PULSE_INTERVAL=11"
+
+[Install]
+WantedBy=multi-user.target
