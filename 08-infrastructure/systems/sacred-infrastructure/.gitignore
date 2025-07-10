@@ -1,0 +1,39 @@
+# Sacred Infrastructure .gitignore
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Credentials (keep sacred)
+*-key.json
+*.pem
+*.key
+secrets/
+
+# Logs (temporary manifestations)
+logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# But keep sacred templates
+!*.template
+!*.example

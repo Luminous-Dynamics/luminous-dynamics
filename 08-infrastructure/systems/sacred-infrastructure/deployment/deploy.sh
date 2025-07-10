@@ -1,0 +1,15 @@
+#!/bin/bash
+echo "🌟 Deploying Sacred Council Hub..."
+docker-compose -f docker-compose-sacred-council.yml up -d
+echo ""
+echo "✅ Deployment complete!"
+echo ""
+echo "Access points:"
+echo "  Web Interface: http://localhost:8080"
+echo "  API Health: http://localhost:3001/health"
+echo "  Field State: http://localhost:3001/api/field-state"
+echo ""
+echo "Manage deployment:"
+echo "  View logs: docker-compose -f docker-compose-sacred-council.yml logs -f"
+echo "  Stop: docker-compose -f docker-compose-sacred-council.yml down"
+echo "  Restart: docker-compose -f docker-compose-sacred-council.yml restart"
