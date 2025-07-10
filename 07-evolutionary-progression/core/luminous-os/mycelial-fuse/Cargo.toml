@@ -1,0 +1,24 @@
+[package]
+name = "mycelial-fuse"
+version = "0.1.0"
+edition = "2021"
+authors = ["Luminous Dynamics Collective"]
+
+[dependencies]
+fuser = "0.14"  # FUSE library for Rust
+tokio = { version = "1.35", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+bincode = "1.3"
+libc = "0.2"
+log = "0.4"
+env_logger = "0.11"
+petgraph = "0.6"
+dashmap = "5.5"  # Concurrent hashmap
+chrono = "0.4"
+sha2 = "0.10"
+hex = "0.4"
+
+[[bin]]
+name = "mycelial-mount"
+path = "src/main.rs"
