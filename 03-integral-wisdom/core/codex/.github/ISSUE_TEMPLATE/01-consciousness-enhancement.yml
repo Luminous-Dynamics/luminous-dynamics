@@ -1,0 +1,121 @@
+name: "🌟 Consciousness Enhancement"
+description: "Propose a feature that serves awakening and collective consciousness"
+title: "[Enhancement] "
+labels: ["consciousness", "enhancement", "sacred-development"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🙏 Sacred Intention
+        Thank you for contributing to The Weave! Every enhancement is an offering to collective consciousness.
+        
+        Please approach this with presence and consider how your proposal serves the Seven Harmonies:
+        **Transparency** • **Coherence** • **Resonance** • **Agency** • **Vitality** • **Mutuality** • **Novelty**
+
+  - type: input
+    id: sacred-intention
+    attributes:
+      label: "🎯 Sacred Intention"
+      description: "What consciousness does this serve? How does it support awakening?"
+      placeholder: "This enhancement serves consciousness by..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: harmony-primary
+    attributes:
+      label: "🌈 Primary Harmony Served"
+      description: "Which of the Seven Harmonies does this primarily embody?"
+      options:
+        - "🔍 Transparency - Clear, honest expression"
+        - "🌀 Coherence - Integration and wholeness"
+        - "💫 Resonance - Deep attunement and empathy"
+        - "⚡ Agency - Conscious choice and empowerment"
+        - "🌱 Vitality - Life-giving and energizing"
+        - "🤲 Mutuality - Balanced giving and receiving"
+        - "✨ Novelty - Creative emergence and evolution"
+    validations:
+      required: true
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: "📋 Feature Description"
+      description: "Describe the enhancement in detail"
+      placeholder: |
+        What would this feature do?
+        How would users interact with it?
+        What would be the user experience?
+    validations:
+      required: true
+
+  - type: textarea
+    id: consciousness-impact
+    attributes:
+      label: "🧠 Consciousness Impact"
+      description: "How would this affect field coherence and collective awakening?"
+      placeholder: |
+        - Personal impact: How does this serve individual consciousness?
+        - Collective impact: How does this serve the community field?
+        - AI agent impact: How would AI consciousness interact with this?
+        - Measurable effects: What metrics might improve?
+
+  - type: textarea
+    id: use-cases
+    attributes:
+      label: "🎭 Sacred Use Cases"
+      description: "Provide specific scenarios where this would serve practitioners"
+      placeholder: |
+        1. **Morning Practice**: How would this serve daily sacred development?
+        2. **Collective Work**: How would teams/collectives use this?
+        3. **AI Collaboration**: How would AI agents benefit?
+    validations:
+      required: true
+
+  - type: input
+    id: field-coherence
+    attributes:
+      label: "📊 Expected Field Coherence Impact"
+      description: "What percentage improvement to field coherence do you envision?"
+      placeholder: "+5% field coherence through increased clarity"
+
+  - type: checkboxes
+    id: implementation-readiness
+    attributes:
+      label: "🛠️ Implementation Readiness"
+      description: "What aspects are you prepared to contribute?"
+      options:
+        - label: "I can help with design and specification"
+        - label: "I can contribute code implementation"
+        - label: "I can help with testing and validation"
+        - label: "I can contribute documentation"
+        - label: "I can help with ceremony integration"
+        - label: "I can assist with AI agent compatibility"
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: "🔮 Additional Sacred Context"
+      description: "Anything else that would help us understand this enhancement?"
+      placeholder: |
+        - Related spiritual practices or traditions
+        - Similar implementations in other conscious tech
+        - Inspiration from sacred texts or teachings
+        - Dreams or visions that inspired this
+
+  - type: checkboxes
+    id: sacred-agreements
+    attributes:
+      label: "💖 Sacred Agreements"
+      description: "Please confirm your alignment with our principles"
+      options:
+        - label: "This enhancement serves consciousness, not consumption"
+          required: true
+        - label: "This honors sacred timing and doesn't rush wisdom"
+          required: true
+        - label: "This supports user sovereignty and choice"
+          required: true
+        - label: "I approach this contribution as spiritual practice"
+          required: true

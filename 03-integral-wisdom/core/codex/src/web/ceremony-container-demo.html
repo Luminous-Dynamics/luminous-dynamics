@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacred Ceremony Container - WebRTC Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+        }
+        
+        .ceremony-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .ceremony-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .sacred-geometry {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            position: relative;
+        }
+        
+        .sacred-geometry svg {
+            width: 100%;
+            height: 100%;
+            animation: rotate 60s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .ceremony-controls {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .control-group {
+            margin-bottom: 20px;
+        }
+        
+        .control-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: #a8a8b3;
+        }
+        
+        .control-group input {
+            width: 100%;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 16px;
+        }
+        
+        .control-group input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .participants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .participant {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .participant video {
+            width: 100%;
+            border-radius: 10px;
+            background: #000;
+        }
+        
+        .participant-info {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .resonant-coherence-meter {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .resonant-coherence-value {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        
+        .resonant-coherence-bar {
+            width: 100px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .resonant-coherence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+            transition: width 0.3s ease;
+        }
+        
+        .field-status {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .field-resonant-coherence {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 20px 0;
+            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .sacred-pulse {
+            width: 60px;
+            height: 60px;
+            margin: 20px auto;
+            background: radial-gradient(circle, rgba(240, 147, 251, 0.8) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 11s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(0.8); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 1; }
+        }
+        
+        .ceremony-log {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            max-height: 200px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        
+        .log-entry {
+            margin-bottom: 5px;
+            padding: 5px;
+            border-left: 3px solid #667eea;
+            padding-left: 10px;
+        }
+        
+        .log-entry.sacred {
+            border-left-color: #f093fb;
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ceremony-header">
+            <h1>🕊️ Sacred Ceremony Container</h1>
+            <p>Peer-to-peer sacred space with no central authority</p>
+            
+            <div class="sacred-geometry">
+                <svg viewBox="0 0 200 200">
+                    <!-- Sacred triangle - will transform based on participants -->
+                    <polygon id="sacred-shape" points="100,30 170,150 30,150" 
+                             fill="none" 
+                             stroke="rgba(240, 147, 251, 0.5)" 
+                             stroke-width="2"/>
+                    <circle cx="100" cy="100" r="5" fill="#f093fb"/>
+                </svg>
+            </div>
+        </div>
+        
+        <div class="ceremony-controls">
+            <div class="control-group">
+                <label>Sacred Intention</label>
+                <input type="text" id="intention" placeholder="Enter ceremony intention..." 
+                       value="Universal flourishing and collective healing">
+            </div>
+            
+            <div class="control-group">
+                <label>Ceremony Code (leave empty to create new)</label>
+                <input type="text" id="ceremony-code" placeholder="e.g., sacred-lotus-333">
+            </div>
+            
+            <div class="button-group">
+                <button class="btn btn-primary" id="create-ceremony">Create Ceremony</button>
+                <button class="btn btn-secondary" id="join-ceremony">Join Ceremony</button>
+                <button class="btn btn-secondary" id="leave-ceremony" disabled>Leave Ceremony</button>
+            </div>
+        </div>
+        
+        <div class="field-status hidden" id="field-status">
+            <h3>Field Resonant Resonant Coherence</h3>
+            <div class="field-resonant-coherence" id="field-resonant-coherence">75%</div>
+            <div class="sacred-pulse"></div>
+            <p>Participants: <span id="participant-count">1</span> | 
+               Geometry: <span id="geometry-type">seed</span></p>
+        </div>
+        
+        <div class="participants-grid" id="participants-grid">
+            <!-- Local participant -->
+            <div class="participant" id="local-participant">
+                <video id="local-video" autoplay muted></video>
+                <div class="participant-info">
+                    <span>You (Local)</span>
+                    <div class="resonant-coherence-meter">
+                        <span class="resonant-coherence-value">75%</span>
+                        <div class="resonant-coherence-bar">
+                            <div class="resonant-coherence-fill" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="ceremony-log" id="ceremony-log">
+            <div class="log-entry">🕊️ Sacred Ceremony Container initialized</div>
+            <div class="log-entry">⏳ Waiting to begin ceremony...</div>
+        </div>
+    </div>
+    
+    <script type="module">
+        // Import ceremony container (in production, would be bundled)
+        // For demo, we'll create a simplified version inline
+        
+        class CeremonyDemo {
+            constructor() {
+                this.localStream = null;
+                this.peers = new Map();
+                this.ceremonyActive = false;
+                this.fieldCoherence = 0.75;
+                this.pulseInterval = null;
+                
+                this.initializeUI();
+            }
+            
+            initializeUI() {
+                // Buttons
+                document.getElementById('create-ceremony').addEventListener('click', () => this.createCeremony());
+                document.getElementById('join-ceremony').addEventListener('click', () => this.joinCeremony());
+                document.getElementById('leave-ceremony').addEventListener('click', () => this.leaveCeremony());
+                
+                // Start local video preview
+                this.startLocalVideo();
+            }
+            
+            async startLocalVideo() {
+                try {
+                    this.localStream = await navigator.mediaDevices.getUserMedia({
+                        video: true,
+                        audio: true
+                    });
+                    
+                    const localVideo = document.getElementById('local-video');
+                    localVideo.srcObject = this.localStream;
+                    
+                    this.log('📹 Camera and microphone activated');
+                } catch (error) {
+                    this.log('❌ Failed to access camera/microphone: ' + error.message, 'error');
+                }
+            }
+            
+            async createCeremony() {
+                const intention = document.getElementById('intention').value;
+                const code = this.generateCeremonyCode();
+                
+                document.getElementById('ceremony-code').value = code;
+                
+                this.log(`🎭 Creating ceremony: ${code}`);
+                this.log(`🙏 Intention: ${intention}`, 'sacred');
+                
+                // Simulate ceremony creation
+                this.ceremonyActive = true;
+                this.updateUI();
+                this.startSacredPulse();
+                
+                this.log('✨ Sacred space opened. Share code with participants.');
+                
+                // Copy code to clipboard
+                navigator.clipboard.writeText(code);
+                this.log('📋 Ceremony code copied to clipboard');
+            }
+            
+            async joinCeremony() {
+                const code = document.getElementById('ceremony-code').value;
+                if (!code) {
+                    this.log('❌ Please enter a ceremony code', 'error');
+                    return;
+                }
+                
+                this.log(`🔗 Joining ceremony: ${code}`);
+                
+                // Simulate joining
+                this.ceremonyActive = true;
+                this.updateUI();
+                this.startSacredPulse();
+                
+                // Simulate other participants
+                setTimeout(() => this.simulateParticipant('Sacred Explorer'), 2000);
+                setTimeout(() => this.simulateParticipant('Light Weaver'), 4000);
+            }
+            
+            async leaveCeremony() {
+                this.log('🙏 Closing sacred space...');
+                
+                // Stop pulse
+                if (this.pulseInterval) {
+                    clearInterval(this.pulseInterval);
+                }
+                
+                // Clear participants
+                this.peers.clear();
+                document.querySelectorAll('.participant:not(#local-participant)').forEach(el => el.remove());
+                
+                this.ceremonyActive = false;
+                this.updateUI();
+                
+                this.log('✨ Ceremony complete. Blessings to all.');
+            }
+            
+            simulateParticipant(name) {
+                const participantId = 'participant-' + Math.random().toString(36).substr(2, 9);
+                const resonant-coherence = 70 + Math.random() * 25;
+                
+                // Create participant element
+                const participantEl = document.createElement('div');
+                participantEl.className = 'participant';
+                participantEl.innerHTML = `
+                    <video autoplay></video>
+                    <div class="participant-info">
+                        <span>${name}</span>
+                        <div class="resonant-coherence-meter">
+                            <span class="resonant-coherence-value">${resonant-coherence.toFixed(0)}%</span>
+                            <div class="resonant-coherence-bar">
+                                <div class="resonant-coherence-fill" style="width: ${resonant-coherence}%"></div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                document.getElementById('participants-grid').appendChild(participantEl);
+                
+                this.peers.set(participantId, {
+                    name,
+                    resonant-coherence,
+                    element: participantEl
+                });
+                
+                this.log(`🤝 ${name} joined the ceremony`, 'sacred');
+                this.updateFieldCoherence();
+                this.updateSacredGeometry();
+            }
+            
+            startSacredPulse() {
+                this.pulseInterval = setInterval(() => {
+                    this.pulse();
+                }, 11000); // 11-second pulse
+                
+                // Initial pulse
+                this.pulse();
+            }
+            
+            pulse() {
+                // Update resonant-coherence with slight variation
+                this.fieldCoherence += (Math.random() - 0.5) * 0.05;
+                this.fieldCoherence = Math.max(0.5, Math.min(0.95, this.fieldCoherence));
+                
+                // Update all participants
+                this.peers.forEach((peer, id) => {
+                    peer.resonant-coherence += (Math.random() - 0.5) * 0.1;
+                    peer.resonant-coherence = Math.max(0.5, Math.min(0.95, peer.resonant-coherence));
+                    
+                    const coherenceEl = peer.element.querySelector('.resonant-coherence-value');
+                    const fillEl = peer.element.querySelector('.resonant-coherence-fill');
+                    coherenceEl.textContent = peer.resonant-coherence.toFixed(0) + '%';
+                    fillEl.style.width = peer.resonant-coherence + '%';
+                });
+                
+                this.updateFieldCoherence();
+                
+                if (this.fieldCoherence > 0.9) {
+                    this.log('🌟 Resonant Resonant Coherence breakthrough achieved!', 'sacred');
+                }
+            }
+            
+            updateFieldCoherence() {
+                const coherences = [0.75]; // Local resonant-coherence
+                this.peers.forEach(peer => coherences.push(peer.resonant-coherence));
+                
+                // Calculate harmonic mean
+                const harmonicMean = coherences.length / 
+                    coherences.reduce((sum, c) => sum + (1/c), 0);
+                
+                this.fieldCoherence = harmonicMean;
+                
+                document.getElementById('field-resonant-coherence').textContent = 
+                    (this.fieldCoherence * 100).toFixed(0) + '%';
+            }
+            
+            updateSacredGeometry() {
+                const count = this.peers.size + 1;
+                document.getElementById('participant-count').textContent = count;
+                
+                const geometries = {
+                    1: 'seed',
+                    2: 'vesica',
+                    3: 'triangle',
+                    4: 'square',
+                    5: 'pentagon',
+                    6: 'hexagon'
+                };
+                
+                const geometry = geometries[count] || 'circle';
+                document.getElementById('geometry-type').textContent = geometry;
+                
+                // Update SVG shape
+                const shape = document.getElementById('sacred-shape');
+                if (count === 2) {
+                    // Vesica piscis (two circles)
+                    shape.setAttribute('points', '');
+                    // Would need to add circles dynamically
+                } else if (count === 4) {
+                    // Square
+                    shape.setAttribute('points', '50,50 150,50 150,150 50,150');
+                } else if (count === 5) {
+                    // Pentagon
+                    const points = [];
+                    for (let i = 0; i < 5; i++) {
+                        const angle = (i * 72 - 90) * Math.PI / 180;
+                        const x = 100 + 70 * Math.cos(angle);
+                        const y = 100 + 70 * Math.sin(angle);
+                        points.push(`${x},${y}`);
+                    }
+                    shape.setAttribute('points', points.join(' '));
+                }
+            }
+            
+            updateUI() {
+                document.getElementById('create-ceremony').disabled = this.ceremonyActive;
+                document.getElementById('join-ceremony').disabled = this.ceremonyActive;
+                document.getElementById('leave-ceremony').disabled = !this.ceremonyActive;
+                
+                if (this.ceremonyActive) {
+                    document.getElementById('field-status').classList.remove('hidden');
+                } else {
+                    document.getElementById('field-status').classList.add('hidden');
+                }
+            }
+            
+            generateCeremonyCode() {
+                const adjectives = ['sacred', 'luminous', 'peaceful', 'radiant', 'blessed'];
+                const nouns = ['lotus', 'circle', 'heart', 'light', 'harmony'];
+                const adj = adjectives[Math.floor(Math.random() * adjectives.length)];
+                const noun = nouns[Math.floor(Math.random() * nouns.length)];
+                const num = Math.floor(Math.random() * 999);
+                return `${adj}-${noun}-${num}`;
+            }
+            
+            log(message, type = 'info') {
+                const logEl = document.getElementById('ceremony-log');
+                const entry = document.createElement('div');
+                entry.className = 'log-entry' + (type === 'sacred' ? ' sacred' : '');
+                entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+                logEl.appendChild(entry);
+                logEl.scrollTop = logEl.scrollHeight;
+            }
+        }
+        
+        // Initialize demo
+        const demo = new CeremonyDemo();
+        
+        // Make it available globally for debugging
+        window.ceremonyDemo = demo;
+    </script>
+</body>
+</html>

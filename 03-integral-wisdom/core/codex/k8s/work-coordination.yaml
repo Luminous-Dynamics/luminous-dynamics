@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: work-coordination
+  namespace: sacred-council
+  labels:
+    app: work-coordination
+    harmony: agency
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: work-coordination
+  template:
+    metadata:
+      labels:
+        app: work-coordination
+    spec:
+      containers:
+      - name: work-coordination
+        image: us-central1-docker.pkg.dev/the-weave-sacred/sacred-council/work-coordination:latest
+        ports:
+        - containerPort: 3336
+        env:
+        - name: NODE_ENV
+          value: "production"
+        - name: MESSAGING_API
+          value: "http://sacred-messaging"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "100m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: work-coordination
+  namespace: sacred-council
+spec:
+  selector:
+    app: work-coordination
+  ports:
+  - port: 80
+    targetPort: 3336
+  type: ClusterIP

@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Breath Pathway - Deep Integration Journey</title>
+    
+    <style>
+        :root {
+            --bg-cosmos: #0a0a1a;
+            --second-breath-primary: #c471ed;
+            --integration-gold: #ffd700;
+            --shadow-purple: #6a4c93;
+            --heart-pink: #ff6ec4;
+            --wisdom-blue: #4facfe;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: radial-gradient(ellipse at center, #2a1845 0%, var(--bg-cosmos) 100%);
+            color: #e0e0ff;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .pathway-header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: linear-gradient(180deg, rgba(196,113,237,0.1) 0%, transparent 100%);
+        }
+
+        .pathway-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            background: linear-gradient(135deg, var(--second-breath-primary), var(--integration-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .pathway-subtitle {
+            font-size: 1.5rem;
+            color: #a0a0ff;
+            margin-bottom: 30px;
+        }
+
+        .readiness-check {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--second-breath-primary);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        /* Container */
+        .pathway-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        /* Pathway Section */
+        .pathway-section {
+            margin-bottom: 60px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .pathway-section:nth-child(2) { animation-delay: 0.2s; }
+        .pathway-section:nth-child(3) { animation-delay: 0.4s; }
+        .pathway-section:nth-child(4) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--integration-gold);
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: #c0c0ff;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Integration Waves */
+        .integration-waves {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .wave-card {
+            background: linear-gradient(135deg, rgba(196,113,237,0.1), rgba(255,255,255,0.05));
+            border: 1px solid var(--second-breath-primary);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wave-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .wave-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(196,113,237,0.3);
+        }
+
+        .wave-card:hover::before {
+            left: 100%;
+        }
+
+        .wave-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .wave-title {
+            font-size: 1.5rem;
+            color: var(--integration-gold);
+            margin-bottom: 15px;
+        }
+
+        .wave-stars {
+            color: var(--second-breath-primary);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .wave-description {
+            color: #b0b0ff;
+            margin-bottom: 25px;
+        }
+
+        .wave-practices {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .practice-tag {
+            background: rgba(196,113,237,0.2);
+            color: var(--second-breath-primary);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(196,113,237,0.3);
+        }
+
+        /* Readiness Assessment */
+        .readiness-assessment {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid var(--integration-gold);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .assessment-title {
+            font-size: 1.8rem;
+            color: var(--integration-gold);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .readiness-checklist {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .readiness-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .readiness-icon {
+            font-size: 1.5rem;
+            margin-top: 5px;
+        }
+
+        .readiness-text {
+            flex: 1;
+        }
+
+        .readiness-title {
+            color: #7fe7dc;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .readiness-desc {
+            color: #c0c0ff;
+            font-size: 0.95rem;
+        }
+
+        /* Journey Timeline */
+        .journey-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--second-breath-primary), var(--integration-gold));
+            transform: translateX(-50%);
+        }
+
+        .timeline-step {
+            position: relative;
+            margin-bottom: 60px;
+            display: flex;
+            align-items: center;
+        }
+
+        .timeline-step:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--second-breath-primary);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 0 30px;
+            position: relative;
+        }
+
+        .timeline-number {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--second-breath-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            border: 3px solid var(--bg-cosmos);
+        }
+
+        .timeline-title {
+            color: var(--integration-gold);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .timeline-desc {
+            color: #c0c0ff;
+        }
+
+        /* Action Buttons */
+        .action-section {
+            text-align: center;
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .action-title {
+            font-size: 1.8rem;
+            color: var(--integration-gold);
+            margin-bottom: 20px;
+        }
+
+        .action-description {
+            color: #b0b0ff;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            background: linear-gradient(135deg, var(--second-breath-primary), var(--shadow-purple));
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(196,113,237,0.4);
+        }
+
+        .action-btn.secondary {
+            background: linear-gradient(135deg, var(--wisdom-blue), var(--heart-pink));
+        }
+
+        /* Warning Box */
+        .integration-warning {
+            background: rgba(255, 170, 0, 0.1);
+            border: 1px solid rgba(255, 170, 0, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .warning-title {
+            color: #ffaa00;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .warning-text {
+            color: #e0d0aa;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .pathway-header {
+                padding: 40px 15px 30px;
+            }
+            
+            .integration-waves {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-step {
+                flex-direction: column !important;
+            }
+            
+            .timeline-content {
+                margin: 20px 0;
+            }
+            
+            .timeline-line {
+                display: none;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="pathway-header">
+        <h1 class="pathway-title">🌠 Second Breath Pathway</h1>
+        <p class="pathway-subtitle">The Deep Integration Journey</p>
+        
+        <div class="readiness-check">
+            <h3 style="color: var(--integration-gold); margin-bottom: 15px;">Are You Ready for Second Breath?</h3>
+            <p style="color: #c0c0ff;">
+                The Second Breath is for practitioners who have established foundation practices and are ready 
+                to explore the deeper patterns of relating - shadow work, emotional alchemy, and sacred conflict.
+            </p>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="pathway-container">
+        
+        <!-- Integration Waves Overview -->
+        <div class="pathway-section">
+            <div class="section-header">
+                <h2 class="section-title">The Three Waves of Integration</h2>
+                <p class="section-description">
+                    Seven stars guide the journey from surface healing to core transformation. 
+                    Each wave addresses deeper layers of conscious relating.
+                </p>
+            </div>
+            
+            <div class="integration-waves">
+                <div class="wave-card">
+                    <span class="wave-icon">💫</span>
+                    <h3 class="wave-title">Process Work</h3>
+                    <div class="wave-stars">Stars *12-*13</div>
+                    <p class="wave-description">
+                        Sacred practices for embracing incompleteness and releasing transactional patterns.
+                        Learn to love the unfinished and flow in debtless exchange.
+                    </p>
+                    <div class="wave-practices">
+                        <span class="practice-tag">*12 Process Grace</span>
+                        <span class="practice-tag">*13 Sacred Exchange</span>
+                    </div>
+                </div>
+                
+                <div class="wave-card">
+                    <span class="wave-icon">💝</span>
+                    <h3 class="wave-title">Emotional Alchemy</h3>
+                    <div class="wave-stars">Stars *14-*15</div>
+                    <p class="wave-description">
+                        Transform grief into wisdom and embody joy fully. These stars teach you to 
+                        honor loss while celebrating life's fullness.
+                    </p>
+                    <div class="wave-practices">
+                        <span class="practice-tag">*14 Grief Honoring</span>
+                        <span class="practice-tag">*15 Joy Embodiment</span>
+                    </div>
+                </div>
+                
+                <div class="wave-card">
+                    <span class="wave-icon">🌟</span>
+                    <h3 class="wave-title">Relational Evolution</h3>
+                    <div class="wave-stars">Stars *16-*18</div>
+                    <p class="wave-description">
+                        Advanced practices for sacred inquiry, shadow integration, and conflict transformation.
+                        Deepen your capacity for authentic, evolving relationship.
+                    </p>
+                    <div class="wave-practices">
+                        <span class="practice-tag">*16 Curious Questions</span>
+                        <span class="practice-tag">*17 Shadow Dancing</span>
+                        <span class="practice-tag">*18 Conflict Alchemy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Readiness Assessment -->
+        <div class="pathway-section">
+            <div class="readiness-assessment">
+                <h2 class="assessment-title">🔍 Readiness Assessment</h2>
+                <div class="readiness-checklist">
+                    <div class="readiness-item">
+                        <span class="readiness-icon">✨</span>
+                        <div class="readiness-text">
+                            <div class="readiness-title">First Breath Foundation</div>
+                            <div class="readiness-desc">You've completed most of the First Eleven harmonies and feel grounded in basic presence practices.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="readiness-item">
+                        <span class="readiness-icon">💪</span>
+                        <div class="readiness-text">
+                            <div class="readiness-title">Emotional Resilience</div>
+                            <div class="readiness-desc">You can stay present with difficult emotions and are curious about your shadow patterns.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="readiness-item">
+                        <span class="readiness-icon">🤝</span>
+                        <div class="readiness-text">
+                            <div class="readiness-title">Relational Stability</div>
+                            <div class="readiness-desc">You have at least one stable relationship where you can practice integration work safely.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="readiness-item">
+                        <span class="readiness-icon">🎯</span>
+                        <div class="readiness-text">
+                            <div class="readiness-title">Integration Commitment</div>
+                            <div class="readiness-desc">You're ready for deeper work and willing to face what's been avoided or unconscious.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="readiness-item">
+                        <span class="readiness-icon">⏰</span>
+                        <div class="readiness-text">
+                            <div class="readiness-title">Time & Space</div>
+                            <div class="readiness-desc">You can dedicate 8-10 minutes per practice and have supportive space for integration.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="readiness-item">
+                        <span class="readiness-icon">🌱</span>
+                        <div class="readiness-text">
+                            <div class="readiness-title">Growth Orientation</div>
+                            <div class="readiness-desc">You see challenges as opportunities and welcome feedback from life and relationships.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Journey Timeline -->
+        <div class="pathway-section">
+            <div class="section-header">
+                <h2 class="section-title">Your Integration Journey</h2>
+                <p class="section-description">
+                    A suggested path through the seven integration stars, designed for natural progression and deep embodiment.
+                </p>
+            </div>
+            
+            <div class="journey-timeline">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-step">
+                    <div class="timeline-number">1</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Begin with Process Grace (*12)</h3>
+                        <p class="timeline-desc">
+                            Start by releasing perfectionism and learning to love what's incomplete. This creates spaciousness for deeper work.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="timeline-number">2</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Explore Sacred Exchange (*13)</h3>
+                        <p class="timeline-desc">
+                            Learn to give and receive without keeping score. This foundation supports all relationship healing.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="timeline-number">3</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Honor Your Grief (*14)</h3>
+                        <p class="timeline-desc">
+                            Create sacred space for loss and allow grief to transform into wisdom and compassion.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="timeline-number">4</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Embody Joy (*15)</h3>
+                        <p class="timeline-desc">
+                            After processing grief, learn to fully celebrate and let joy live in your body without guilt.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="timeline-number">5</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Practice Curious Questions (*16)</h3>
+                        <p class="timeline-desc">
+                            Transform judgment into wonder. Learn the art of sacred inquiry that opens new possibilities.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="timeline-number">6</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Dance with Your Shadow (*17)</h3>
+                        <p class="timeline-desc">
+                            Welcome back rejected parts of yourself. This deep integration work transforms your relating from the inside out.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="timeline-number">7</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Master Conflict Alchemy (*18)</h3>
+                        <p class="timeline-desc">
+                            Learn to transform discord into deeper intimacy. This culminating practice integrates all previous work.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Integration Warning -->
+        <div class="pathway-section">
+            <div class="integration-warning">
+                <h3 class="warning-title">⚠️ Integration Work Requires Care</h3>
+                <p class="warning-text">
+                    Second Breath practices can bring up deep material. Please ensure you have adequate support, 
+                    go slowly, and honor your capacity. Consider working with a therapist or spiritual director 
+                    if you're processing significant trauma or life transitions.
+                </p>
+            </div>
+        </div>
+
+        <!-- Action Section -->
+        <div class="action-section">
+            <h2 class="action-title">Begin Your Second Breath Journey</h2>
+            <p class="action-description">
+                When you feel ready, step into the deeper waters of conscious relating. 
+                The seven integration stars await your exploration.
+            </p>
+            
+            <div class="action-buttons">
+                <a href="applied-harmonies-dojo.html" class="action-btn">Enter the Dojo</a>
+                <a href="constellation-journey-map.html" class="action-btn secondary">View Your Journey Map</a>
+                <a href="sacred-constellation-map.html" class="action-btn secondary">Explore Star Connections</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple progress checking
+        function checkFirstBreathProgress() {
+            const progress = JSON.parse(localStorage.getItem('harmonyProgress') || '{}');
+            const firstBreathPractices = ['Ω45', 'Ω46', 'Ω47', 'Ω48', 'Ω49', 'Ω50', 'Ω51', 'Ω52', 'Ω53', 'Ω55', 'Ω56'];
+            const completed = firstBreathPractices.filter(id => progress[id] === 'complete').length;
+            
+            if (completed < 6) {
+                const warning = document.createElement('div');
+                warning.className = 'integration-warning';
+                warning.innerHTML = `
+                    <h3 class="warning-title">🌱 Continue Your Foundation Work</h3>
+                    <p class="warning-text">
+                        You've completed ${completed} of 11 First Breath practices. Consider deepening your foundation 
+                        before beginning integration work. The stars will be here when you're ready.
+                    </p>
+                `;
+                
+                document.querySelector('.action-section').insertAdjacentElement('beforebegin', warning);
+            } else if (completed >= 8) {
+                const celebration = document.createElement('div');
+                celebration.style.cssText = `
+                    background: rgba(0,255,136,0.1);
+                    border: 1px solid rgba(0,255,136,0.3);
+                    border-radius: 15px;
+                    padding: 25px;
+                    margin: 30px 0;
+                    text-align: center;
+                `;
+                celebration.innerHTML = `
+                    <h3 style="color: #00ff88; font-size: 1.3rem; margin-bottom: 15px;">✨ Foundation Strong!</h3>
+                    <p style="color: #c0ffc0; line-height: 1.6;">
+                        You've completed ${completed} First Breath practices! Your foundation is solid. 
+                        You're ready to explore the deeper integration work of the Second Breath.
+                    </p>
+                `;
+                
+                document.querySelector('.action-section').insertAdjacentElement('beforebegin', celebration);
+            }
+        }
+
+        // Check progress on load
+        window.addEventListener('load', checkFirstBreathProgress);
+    </script>
+</body>
+</html>

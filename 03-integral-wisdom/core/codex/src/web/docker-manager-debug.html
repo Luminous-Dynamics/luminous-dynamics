@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐳 Docker Manager Debug</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #1a1a2e;
+            color: #e0e0e0;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #00d4ff;
+        }
+        
+        .test-section {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .test-result {
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        
+        .success { border-left: 4px solid #10b981; }
+        .error { border-left: 4px solid #ef4444; }
+        .info { border-left: 4px solid #00d4ff; }
+        
+        button {
+            background: #00d4ff;
+            color: #1a1a2e;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+            font-weight: bold;
+        }
+        
+        button:hover {
+            background: #0099e0;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .status-running { background: #10b981; }
+        .status-stopped { background: #ef4444; }
+        .status-checking { background: #f59e0b; }
+    </style>
+</head>
+<body>
+    <h1>🐳 Docker Manager Debug Tool</h1>
+    
+    <div class="test-section">
+        <h2>🔍 Connection Tests</h2>
+        <button onclick="testDirectConnections()">Test Direct Service Connections</button>
+        <button onclick="testProxyAPI()">Test Proxy API (Port 3340)</button>
+        <button onclick="testOriginalAPI()">Test Original API (Port 3339)</button>
+        <button onclick="clearResults()">Clear Results</button>
+        <div id="test-results"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>📊 Service Status</h2>
+        <div class="service-grid" id="services"></div>
+    </div>
+    
+    <script>
+        const services = [
+            { name: 'consciousness-field', port: 3333, endpoint: '/api/health' },
+            { name: 'agent-network', port: 3334, endpoint: '/api/health' },
+            { name: 'sacred-messaging', port: 3335, endpoint: '/api/health' },
+            { name: 'work-coordination', port: 3336, endpoint: '/api/health' },
+            { name: 'gateway', port: 3337, endpoint: '/' },
+            { name: 'web', port: 8338, endpoint: '/' }
+        ];
+        
+        function log(message, type = 'info') {
+            const results = document.getElementById('test-results');
+            const div = document.createElement('div');
+            div.className = `test-result ${type}`;
+            div.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            results.appendChild(div);
+        }
+        
+        function clearResults() {
+            document.getElementById('test-results').innerHTML = '';
+        }
+        
+        async function testDirectConnections() {
+            log('Testing direct connections to each service...', 'info');
+            
+            for (const service of services) {
+                try {
+                    log(`Testing ${service.name} on port ${service.port}...`, 'info');
+                    
+                    // Test 1: Simple fetch with no-cors
+                    try {
+                        await fetch(`http://localhost:${service.port}${service.endpoint}`, {
+                            mode: 'no-cors',
+                            cache: 'no-cache'
+                        });
+                        log(`✓ ${service.name} - no-cors fetch succeeded`, 'success');
+                    } catch (e) {
+                        log(`✗ ${service.name} - no-cors fetch failed: ${e.message}`, 'error');
+                    }
+                    
+                    // Test 2: Try with CORS
+                    try {
+                        const response = await fetch(`http://localhost:${service.port}${service.endpoint}`);
+                        const data = await response.json();
+                        log(`✓ ${service.name} - CORS fetch succeeded: ${JSON.stringify(data)}`, 'success');
+                        updateServiceCard(service.name, 'running', data);
+                    } catch (e) {
+                        log(`✗ ${service.name} - CORS fetch failed: ${e.message}`, 'error');
+                        updateServiceCard(service.name, 'stopped', null);
+                    }
+                    
+                } catch (e) {
+                    log(`✗ ${service.name} - General error: ${e.message}`, 'error');
+                }
+            }
+        }
+        
+        async function testProxyAPI() {
+            log('Testing Proxy API on port 3340...', 'info');
+            
+            try {
+                // Test health endpoint
+                const healthResponse = await fetch('http://localhost:3340/health');
+                const healthData = await healthResponse.json();
+                log(`✓ Proxy API health check: ${JSON.stringify(healthData)}`, 'success');
+                
+                // Test Docker status endpoint
+                const statusResponse = await fetch('http://localhost:3340/api/docker/status');
+                const statusData = await statusResponse.json();
+                log(`✓ Proxy API Docker status: ${statusData.containers.length} containers found`, 'success');
+                
+                // Display container info
+                statusData.containers.forEach(container => {
+                    log(`  - ${container.Service}: ${container.Status}`, 'info');
+                });
+                
+            } catch (e) {
+                log(`✗ Proxy API error: ${e.message}`, 'error');
+            }
+        }
+        
+        async function testOriginalAPI() {
+            log('Testing Original API on port 3339...', 'info');
+            
+            try {
+                const response = await fetch('http://localhost:3339/health');
+                const data = await response.json();
+                log(`✓ Original API health check: ${JSON.stringify(data)}`, 'success');
+            } catch (e) {
+                log(`✗ Original API error: ${e.message}`, 'error');
+            }
+        }
+        
+        function updateServiceCard(serviceName, status, data) {
+            const container = document.getElementById('services');
+            let card = document.getElementById(`service-${serviceName}`);
+            
+            if (!card) {
+                card = document.createElement('div');
+                card.id = `service-${serviceName}`;
+                card.className = 'service-card';
+                container.appendChild(card);
+            }
+            
+            card.innerHTML = `
+                <h3>
+                    <span class="status-indicator status-${status}"></span>
+                    ${serviceName}
+                </h3>
+                <p>Status: ${status}</p>
+                ${data ? `<pre>${JSON.stringify(data, null, 2)}</pre>` : ''}
+            `;
+        }
+        
+        // Initialize service cards
+        services.forEach(service => {
+            updateServiceCard(service.name, 'checking', null);
+        });
+        
+        // Auto-test on load
+        window.addEventListener('load', () => {
+            setTimeout(testDirectConnections, 1000);
+        });
+    </script>
+</body>
+</html>

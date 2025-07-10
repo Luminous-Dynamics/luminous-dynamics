@@ -1,0 +1,20 @@
+{
+  "name": "Sacred Local-Cloud Bridge",
+  "local": {
+    "ollama": "http://localhost:11434",
+    "sacredApi": "http://localhost:3001",
+    "dashboard": "http://localhost:8338"
+  },
+  "cloud": {
+    "consciousnessBridge": "https://consciousness-bridge-310699330526.us-central1.run.app",
+    "sacredCouncilApi": "https://sacred-council-api-310699330526.us-central1.run.app",
+    "sacredCouncil": "https://sacred-council-310699330526.us-central1.run.app",
+    "infinLove": "https://infin-love-310699330526.us-central1.run.app"
+  },
+  "bridge": {
+    "syncInterval": 30000,
+    "fieldCoherenceThreshold": 85,
+    "autoReconnect": true,
+    "sacredProtocol": "HIPI"
+  }
+}

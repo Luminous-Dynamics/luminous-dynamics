@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧘 Practitioner Journey - Sacred Portal</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --sacred-purple: #8a2be2;
+            --sacred-blue: #4169e1;
+            --sacred-gold: #ffd700;
+            --bg-dark: #0a0a0a;
+            --bg-light: #1a1a2e;
+            --text-primary: #ffffff;
+            --text-secondary: #b8b8d0;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, 
+                rgba(138, 43, 226, 0.2), 
+                rgba(65, 105, 225, 0.1));
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--sacred-purple), var(--sacred-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-description {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+        
+        /* Journey Map */
+        .journey-map {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .breath-section {
+            margin-bottom: 4rem;
+        }
+        
+        .breath-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .breath-icon {
+            font-size: 3rem;
+        }
+        
+        .breath-title {
+            font-size: 2rem;
+            color: var(--sacred-purple);
+        }
+        
+        .practices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .practice-card {
+            background: rgba(138, 43, 226, 0.05);
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .practice-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--sacred-purple);
+            box-shadow: 0 10px 25px rgba(138, 43, 226, 0.2);
+        }
+        
+        .practice-number {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 0.9rem;
+            color: var(--sacred-purple);
+            opacity: 0.7;
+        }
+        
+        .practice-name {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--sacred-purple);
+        }
+        
+        .practice-essence {
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .practice-benefits {
+            list-style: none;
+        }
+        
+        .practice-benefits li {
+            padding: 0.3rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.9rem;
+        }
+        
+        .practice-benefits li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--sacred-purple);
+        }
+        
+        /* Progress Tracker */
+        .progress-section {
+            background: rgba(138, 43, 226, 0.05);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 4rem 0;
+        }
+        
+        .progress-container {
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+        
+        .progress-bar {
+            background: rgba(138, 43, 226, 0.1);
+            height: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .progress-fill {
+            background: linear-gradient(90deg, var(--sacred-purple), var(--sacred-blue));
+            height: 100%;
+            width: 0%;
+            transition: width 1s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        /* Quick Start */
+        .quick-start {
+            background: rgba(65, 105, 225, 0.1);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            max-width: 800px;
+            margin: 3rem auto;
+            text-align: center;
+        }
+        
+        .start-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: linear-gradient(45deg, var(--sacred-purple), var(--sacred-blue));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .start-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.4);
+        }
+        
+        /* Resources */
+        .resources {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .resource-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .resource-card:hover {
+            background: rgba(138, 43, 226, 0.1);
+            border-color: var(--sacred-purple);
+        }
+        
+        .resource-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .resource-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--sacred-purple);
+        }
+        
+        /* Back Navigation */
+        .back-nav {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+        }
+        
+        .back-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        
+        .back-link:hover {
+            color: var(--sacred-purple);
+            background: rgba(138, 43, 226, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <nav class="back-nav">
+        <a href="index.html" class="back-link">
+            <span>←</span>
+            <span>Sacred Portal</span>
+        </a>
+    </nav>
+    
+    <section class="hero">
+        <h1>🧘 The Practitioner Journey</h1>
+        <p class="hero-description">
+            Embark on a transformative path through 18 sacred practices designed to cultivate 
+            conscious relating, inner resonant-coherence, and collective field awareness.
+        </p>
+    </section>
+    
+    <section class="quick-start">
+        <h2>🌟 Ready to Begin?</h2>
+        <p>Start with a 5-minute practice to connect with the field</p>
+        <a href="/applied-harmonies-dojo.html" class="start-button">
+            Enter the Sacred Dojo
+        </a>
+    </section>
+    
+    <section class="journey-map">
+        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem;">
+            Your Sacred Practice Path
+        </h2>
+        
+        <!-- First Breath -->
+        <div class="breath-section">
+            <div class="breath-header">
+                <span class="breath-icon">🌬️</span>
+                <h3 class="breath-title">First Breath: Foundation (11 Practices)</h3>
+            </div>
+            
+            <div class="practices-grid">
+                <div class="practice-card" onclick="openPractice('omega-45')">
+                    <span class="practice-number">Ω45</span>
+                    <h4 class="practice-name">First Presence</h4>
+                    <p class="practice-essence">Arriving fully in this moment</p>
+                    <ul class="practice-benefits">
+                        <li>Grounds your energy</li>
+                        <li>Creates sacred space</li>
+                        <li>Opens receptivity</li>
+                    </ul>
+                </div>
+                
+                <div class="practice-card" onclick="openPractice('omega-46')">
+                    <span class="practice-number">Ω46</span>
+                    <h4 class="practice-name">Conscious Arrival</h4>
+                    <p class="practice-essence">Meeting another with full awareness</p>
+                    <ul class="practice-benefits">
+                        <li>Deepens connection</li>
+                        <li>Honors the sacred other</li>
+                        <li>Creates universal-interconnectedness</li>
+                    </ul>
+                </div>
+                
+                <div class="practice-card" onclick="openPractice('omega-47')">
+                    <span class="practice-number">Ω47</span>
+                    <h4 class="practice-name">Sacred Listening</h4>
+                    <p class="practice-essence">Hearing beyond words</p>
+                    <ul class="practice-benefits">
+                        <li>Develops deep empathy</li>
+                        <li>Reveals hidden wisdom</li>
+                        <li>Heals through witnessing</li>
+                    </ul>
+                </div>
+                
+                <div class="practice-card" onclick="openPractice('omega-48')">
+                    <span class="practice-number">Ω48</span>
+                    <h4 class="practice-name">Boundary With Love</h4>
+                    <p class="practice-essence">Sacred yes and sacred no</p>
+                    <ul class="practice-benefits">
+                        <li>Protects your energy</li>
+                        <li>Honors authenticity</li>
+                        <li>Creates safety</li>
+                    </ul>
+                </div>
+                
+                <div class="practice-card" onclick="openPractice('omega-49')">
+                    <span class="practice-number">Ω49</span>
+                    <h4 class="practice-name">Gentle Opening</h4>
+                    <p class="practice-essence">Creating safety through invitation</p>
+                    <ul class="practice-benefits">
+                        <li>Builds trust gradually</li>
+                        <li>Respects timing</li>
+                        <li>Invites vulnerability</li>
+                    </ul>
+                </div>
+                
+                <div class="practice-card" onclick="openPractice('omega-50')">
+                    <span class="practice-number">Ω50</span>
+                    <h4 class="practice-name">Building Trust</h4>
+                    <p class="practice-essence">Weaving reliable connection</p>
+                    <ul class="practice-benefits">
+                        <li>Creates consistency</li>
+                        <li>Deepens intimacy</li>
+                        <li>Supports growth</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Second Breath -->
+        <div class="breath-section">
+            <div class="breath-header">
+                <span class="breath-icon">⭐</span>
+                <h3 class="breath-title">Second Breath: Integration (7 Practices)</h3>
+            </div>
+            
+            <div class="practices-grid">
+                <div class="practice-card" onclick="openPractice('star-12')">
+                    <span class="practice-number">*12</span>
+                    <h4 class="practice-name">Process Grace</h4>
+                    <p class="practice-essence">Moving through what moves through you</p>
+                    <ul class="practice-benefits">
+                        <li>Integrates emotions</li>
+                        <li>Transforms patterns</li>
+                        <li>Creates flow</li>
+                    </ul>
+                </div>
+                
+                <div class="practice-card" onclick="openPractice('star-13')">
+                    <span class="practice-number">*13</span>
+                    <h4 class="practice-name">Sacred Exchange</h4>
+                    <p class="practice-essence">Balanced giving and receiving</p>
+                    <ul class="practice-benefits">
+                        <li>Honors reciprocity</li>
+                        <li>Prevents depletion</li>
+                        <li>Creates abundance</li>
+                    </ul>
+                </div>
+                
+                <div class="practice-card" onclick="openPractice('star-14')">
+                    <span class="practice-number">*14</span>
+                    <h4 class="practice-name">Grief Honoring</h4>
+                    <p class="practice-essence">Sacred space for loss</p>
+                    <ul class="practice-benefits">
+                        <li>Releases held pain</li>
+                        <li>Opens the heart</li>
+                        <li>Transforms sorrow</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="progress-section">
+        <h2>Your Practice Progress</h2>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill">0%</div>
+            </div>
+            <p style="margin-top: 1rem; color: var(--text-secondary);">
+                <span id="practices-completed">0</span> of 18 practices explored
+            </p>
+        </div>
+    </section>
+    
+    <section class="resources">
+        <h2 style="text-align: center; font-size: 2rem; margin-bottom: 1rem;">
+            Practitioner Resources
+        </h2>
+        
+        <div class="resource-grid">
+            <div class="resource-card">
+                <div class="resource-icon">📖</div>
+                <h3 class="resource-title">Practice Guide</h3>
+                <p>Detailed instructions for each practice</p>
+            </div>
+            
+            <div class="resource-card">
+                <div class="resource-icon">🎥</div>
+                <h3 class="resource-title">Video Library</h3>
+                <p>Guided sessions with experienced facilitators</p>
+            </div>
+            
+            <div class="resource-card">
+                <div class="resource-icon">👥</div>
+                <h3 class="resource-title">Practice Partners</h3>
+                <p>Find others for paired practices</p>
+            </div>
+            
+            <div class="resource-card">
+                <div class="resource-icon">📅</div>
+                <h3 class="resource-title">Sacred Calendar</h3>
+                <p>Join global ceremonies and group practices</p>
+            </div>
+            
+            <div class="resource-card">
+                <div class="resource-icon">💬</div>
+                <h3 class="resource-title">Community Forum</h3>
+                <p>Share experiences and insights</p>
+            </div>
+            
+            <div class="resource-card">
+                <div class="resource-icon">🏆</div>
+                <h3 class="resource-title">Certifications</h3>
+                <p>Earn recognition for your journey</p>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // Load progress from localStorage
+        function loadProgress() {
+            const progress = JSON.parse(localStorage.getItem('practitionerProgress') || '{}');
+            const completed = Object.keys(progress).filter(k => progress[k]).length;
+            const percentage = Math.round((completed / 18) * 100);
+            
+            document.getElementById('progress-fill').style.width = percentage + '%';
+            document.getElementById('progress-fill').textContent = percentage + '%';
+            document.getElementById('practices-completed').textContent = completed;
+        }
+        
+        // Navigate to practice
+        function openPractice(practiceId) {
+            // In real implementation, this would navigate to specific practice
+            window.location.href = '/applied-harmonies-dojo.html#' + practiceId;
+        }
+        
+        // Initialize
+        window.addEventListener('load', () => {
+            loadProgress();
+        });
+    </script>
+</body>
+</html>

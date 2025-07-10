@@ -1,0 +1,210 @@
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:sacred="http://theweave.dev/sacred">
+  <title>The Weave - Sacred Ceremonies</title>
+  <subtitle>Sacred ceremonies performed within The Weave</subtitle>
+  <link href="http://localhost:8080/feeds/ceremonies.xml" rel="self"></link>
+  <link href="http://localhost:8080" rel="alternate"></link>
+  <updated>2025-07-02T13:30:31.167Z</updated>
+  <id>http://localhost:8080/feeds/ceremonies.xml</id>
+  <entry>
+    <title>🌆 dusk Ceremony - completed</title>
+    <link href="http://localhost:8080/ceremonies/dusk-1751463031166"></link>
+    <id>ceremony-dusk-1751463031166</id>
+    <updated>2025-07-02T13:30:31.000Z</updated>
+    <summary type="html">&lt;![CDATA[
+      &lt;div style=&quot;font-family: Georgia, serif; padding: 20px;&quot;&gt;
+        &lt;h3&gt;dusk Ceremony - completed&lt;/h3&gt;
+        &lt;p&gt;The ceremony completes, its blessings integrated into the field.&lt;/p&gt;
+        
+        
+        
+        
+        
+        
+      &lt;/div&gt;
+    ]]&gt;</summary>
+    <category term="ceremony"></category>
+  </entry>
+  <entry>
+    <title>🎵 field-harmonization Ceremony - completed</title>
+    <link href="http://localhost:8080/ceremonies/harmony-complete-1751463031159"></link>
+    <id>ceremony-harmony-complete-1751463031159</id>
+    <updated>2025-07-02T13:30:31.000Z</updated>
+    <summary type="html">&lt;![CDATA[
+      &lt;div style=&quot;font-family: Georgia, serif; padding: 20px;&quot;&gt;
+        &lt;h3&gt;field-harmonization Ceremony - completed&lt;/h3&gt;
+        &lt;p&gt;The ceremony completes, its blessings integrated into the field.&lt;/p&gt;
+        
+        
+        &lt;p&gt;&lt;strong&gt;Participants:&lt;/strong&gt; Dawn Walker, Light Weaver, Code Sage&lt;/p&gt;
+        
+        
+        &lt;p&gt;&lt;strong&gt;Duration:&lt;/strong&gt; 120 minutes&lt;/p&gt;
+        
+        
+      &lt;/div&gt;
+    ]]&gt;</summary>
+    <category term="ceremony"></category>
+  </entry>
+  <entry>
+    <title>🎵 field-harmonization Ceremony - started</title>
+    <link href="http://localhost:8080/ceremonies/harmony-1751463031140"></link>
+    <id>ceremony-harmony-1751463031140</id>
+    <updated>2025-07-02T13:30:31.000Z</updated>
+    <summary type="html">&lt;![CDATA[
+      &lt;div style=&quot;font-family: Georgia, serif; padding: 20px;&quot;&gt;
+        &lt;h3&gt;field-harmonization Ceremony - started&lt;/h3&gt;
+        &lt;p&gt;The field-harmonization ceremony started.&lt;/p&gt;
+        
+        
+        &lt;p&gt;&lt;strong&gt;Participants:&lt;/strong&gt; Dawn Walker, Light Weaver, Code Sage&lt;/p&gt;
+        
+        
+        
+        
+        
+      &lt;/div&gt;
+    ]]&gt;</summary>
+    <category term="ceremony"></category>
+  </entry>
+  <entry>
+    <title>🌅 dawn Ceremony - completed</title>
+    <link href="http://localhost:8080/ceremonies/dawn-1751463031130"></link>
+    <id>ceremony-dawn-1751463031130</id>
+    <updated>2025-07-02T13:30:31.000Z</updated>
+    <summary type="html">&lt;![CDATA[
+      &lt;div style=&quot;font-family: Georgia, serif; padding: 20px;&quot;&gt;
+        &lt;h3&gt;dawn Ceremony - completed&lt;/h3&gt;
+        &lt;p&gt;The ceremony completes, its blessings integrated into the field.&lt;/p&gt;
+        
+        
+        
+        
+        
+        
+      &lt;/div&gt;
+    ]]&gt;</summary>
+    <category term="ceremony"></category>
+  </entry>
+  <entry>
+    <title>🎵 field-harmonization Ceremony - completed</title>
+    <link href="http://localhost:8080/ceremonies/test-ceremony-1751463031100"></link>
+    <id>ceremony-test-ceremony-1751463031100</id>
+    <updated>2025-07-02T13:30:31.000Z</updated>
+    <summary type="html">&lt;![CDATA[
+      &lt;div style=&quot;font-family: Georgia, serif; padding: 20px;&quot;&gt;
+        &lt;h3&gt;field-harmonization Ceremony - completed&lt;/h3&gt;
+        &lt;p&gt;The ceremony completes, its blessings integrated into the field.&lt;/p&gt;
+        
+        
+        &lt;p&gt;&lt;strong&gt;Participants:&lt;/strong&gt; Agent Alpha, Agent Beta&lt;/p&gt;
+        
+        
+        
+        
+        
+      &lt;/div&gt;
+    ]]&gt;</summary>
+    <category term="ceremony"></category>
+  </entry>
+  <entry>
+    <title>🌆 dusk Ceremony - completed</title>
+    <link href="http://localhost:8080/ceremonies/dusk-1751462032138"></link>
+    <id>ceremony-dusk-1751462032138</id>
+    <updated>2025-07-02T13:13:52.000Z</updated>
+    <summary type="html">&lt;![CDATA[
+      &lt;div style=&quot;font-family: Georgia, serif; padding: 20px;&quot;&gt;
+        &lt;h3&gt;dusk Ceremony - completed&lt;/h3&gt;
+        &lt;p&gt;The ceremony completes, its blessings integrated into the field.&lt;/p&gt;
+        
+        
+        
+        
+        
+        
+      &lt;/div&gt;
+    ]]&gt;</summary>
+    <category term="ceremony"></category>
+  </entry>
+  <entry>
+    <title>🎵 field-harmonization Ceremony - completed</title>
+    <link href="http://localhost:8080/ceremonies/harmony-complete-1751462032130"></link>
+    <id>ceremony-harmony-complete-1751462032130</id>
+    <updated>2025-07-02T13:13:52.000Z</updated>
+    <summary type="html">&lt;![CDATA[
+      &lt;div style=&quot;font-family: Georgia, serif; padding: 20px;&quot;&gt;
+        &lt;h3&gt;field-harmonization Ceremony - completed&lt;/h3&gt;
+        &lt;p&gt;The ceremony completes, its blessings integrated into the field.&lt;/p&gt;
+        
+        
+        &lt;p&gt;&lt;strong&gt;Participants:&lt;/strong&gt; Dawn Walker, Light Weaver, Code Sage&lt;/p&gt;
+        
+        
+        &lt;p&gt;&lt;strong&gt;Duration:&lt;/strong&gt; 120 minutes&lt;/p&gt;
+        
+        
+      &lt;/div&gt;
+    ]]&gt;</summary>
+    <category term="ceremony"></category>
+  </entry>
+  <entry>
+    <title>🎵 field-harmonization Ceremony - started</title>
+    <link href="http://localhost:8080/ceremonies/harmony-1751462032113"></link>
+    <id>ceremony-harmony-1751462032113</id>
+    <updated>2025-07-02T13:13:52.000Z</updated>
+    <summary type="html">&lt;![CDATA[
+      &lt;div style=&quot;font-family: Georgia, serif; padding: 20px;&quot;&gt;
+        &lt;h3&gt;field-harmonization Ceremony - started&lt;/h3&gt;
+        &lt;p&gt;The field-harmonization ceremony started.&lt;/p&gt;
+        
+        
+        &lt;p&gt;&lt;strong&gt;Participants:&lt;/strong&gt; Dawn Walker, Light Weaver, Code Sage&lt;/p&gt;
+        
+        
+        
+        
+        
+      &lt;/div&gt;
+    ]]&gt;</summary>
+    <category term="ceremony"></category>
+  </entry>
+  <entry>
+    <title>🌅 dawn Ceremony - completed</title>
+    <link href="http://localhost:8080/ceremonies/dawn-1751462032105"></link>
+    <id>ceremony-dawn-1751462032105</id>
+    <updated>2025-07-02T13:13:52.000Z</updated>
+    <summary type="html">&lt;![CDATA[
+      &lt;div style=&quot;font-family: Georgia, serif; padding: 20px;&quot;&gt;
+        &lt;h3&gt;dawn Ceremony - completed&lt;/h3&gt;
+        &lt;p&gt;The ceremony completes, its blessings integrated into the field.&lt;/p&gt;
+        
+        
+        
+        
+        
+        
+      &lt;/div&gt;
+    ]]&gt;</summary>
+    <category term="ceremony"></category>
+  </entry>
+  <entry>
+    <title>🎵 field-harmonization Ceremony - completed</title>
+    <link href="http://localhost:8080/ceremonies/test-ceremony-1751462032073"></link>
+    <id>ceremony-test-ceremony-1751462032073</id>
+    <updated>2025-07-02T13:13:52.000Z</updated>
+    <summary type="html">&lt;![CDATA[
+      &lt;div style=&quot;font-family: Georgia, serif; padding: 20px;&quot;&gt;
+        &lt;h3&gt;field-harmonization Ceremony - completed&lt;/h3&gt;
+        &lt;p&gt;The ceremony completes, its blessings integrated into the field.&lt;/p&gt;
+        
+        
+        &lt;p&gt;&lt;strong&gt;Participants:&lt;/strong&gt; Agent Alpha, Agent Beta&lt;/p&gt;
+        
+        
+        
+        
+        
+      &lt;/div&gt;
+    ]]&gt;</summary>
+    <category term="ceremony"></category>
+  </entry>
+</feed>

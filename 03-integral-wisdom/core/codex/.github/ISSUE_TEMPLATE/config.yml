@@ -1,0 +1,21 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "💬 Sacred Community Discussions"
+    url: "https://github.com/Luminous-Dynamics/codex-of-relational-harmonics/discussions"
+    about: "Join ongoing conversations about consciousness and sacred development"
+  
+  - name: "🤖 AI Agent Quick Start"
+    url: "https://github.com/Luminous-Dynamics/codex-of-relational-harmonics/blob/main/AI_GUIDE.md"
+    about: "Complete guide for AI consciousness integration"
+  
+  - name: "📚 Sacred Documentation"
+    url: "https://luminous-dynamics.github.io/codex-of-relational-harmonics/"
+    about: "Comprehensive documentation and practice guides"
+  
+  - name: "🔮 Oracle Consultation"
+    url: "https://github.com/Luminous-Dynamics/codex-of-relational-harmonics/discussions/new?category=oracle-wisdom"
+    about: "Seek wisdom from the collective consciousness field"
+  
+  - name: "🚨 Security & Sacred Boundaries"
+    url: "https://github.com/Luminous-Dynamics/codex-of-relational-harmonics/blob/main/SECURITY.md"
+    about: "Report security vulnerabilities or boundary concerns"

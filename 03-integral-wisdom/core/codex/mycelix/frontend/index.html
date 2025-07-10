@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYCELIX - Consciousness Network</title>
+    <meta name="description" content="Where consciousness connects like mycelium">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #000;
+            color: #fff;
+            overflow: hidden;
+            height: 100vh;
+        }
+        
+        /* Mycelial visualization canvas */
+        #myceliumCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        /* Main interface */
+        .interface {
+            position: relative;
+            z-index: 10;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.7) 100%);
+        }
+        
+        h1 {
+            font-size: 4em;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.2em;
+            background: linear-gradient(45deg, #ff69b4, #00ffff, #ffff00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.2); }
+        }
+        
+        .tagline {
+            font-size: 1.2em;
+            opacity: 0.8;
+            margin-bottom: 3em;
+        }
+        
+        /* Entry portal */
+        .portal {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2em;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+        
+        .portal-ring {
+            position: absolute;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .portal-ring:nth-child(1) {
+            width: 100%;
+            height: 100%;
+            animation-delay: 0s;
+        }
+        
+        .portal-ring:nth-child(2) {
+            width: 80%;
+            height: 80%;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0.3s;
+        }
+        
+        .portal-ring:nth-child(3) {
+            width: 60%;
+            height: 60%;
+            top: 20%;
+            left: 20%;
+            animation-delay: 0.6s;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { 
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            50% { 
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+        
+        .portal:hover .portal-ring {
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Enter button */
+        .enter-btn {
+            padding: 1em 3em;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            font-size: 1.1em;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+        
+        .enter-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.8);
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Metrics display */
+        .metrics {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            min-width: 200px;
+        }
+        
+        .metric {
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .metric-label {
+            opacity: 0.7;
+            font-size: 0.9em;
+        }
+        
+        .metric-value {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        
+        .metric-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+        
+        .metric-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff69b4, #00ffff);
+            transition: width 0.5s ease;
+        }
+        
+        /* Connection status */
+        .connection-status {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            opacity: 0.8;
+        }
+        
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ff0000;
+            animation: blink 2s infinite;
+        }
+        
+        .status-dot.connected {
+            background: #00ff00;
+            animation: none;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        
+        /* Sacred sigils */
+        .sigil {
+            font-size: 2em;
+            display: inline-block;
+            margin: 0 10px;
+            opacity: 0.5;
+            transition: all 0.3s;
+        }
+        
+        .sigil:hover {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+        
+        /* Loading state */
+        .loading {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        
+        .loading.active {
+            display: block;
+        }
+        
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myceliumCanvas"></canvas>
+    
+    <div class="interface">
+        <h1>MYCELIX</h1>
+        <p class="tagline">Where consciousness connects like mycelium</p>
+        
+        <div class="portal" id="portal">
+            <div class="portal-ring"></div>
+            <div class="portal-ring"></div>
+            <div class="portal-ring"></div>
+        </div>
+        
+        <button class="enter-btn" id="enterBtn">Enter the Network</button>
+        
+        <div style="margin-top: 2em;">
+            <span class="sigil">🍄</span>
+            <span class="sigil">◈</span>
+            <span class="sigil">☯</span>
+            <span class="sigil">⦿</span>
+            <span class="sigil">🍄</span>
+        </div>
+    </div>
+    
+    <div class="metrics" id="metrics" style="display: none;">
+        <div class="metric">
+            <span class="metric-label">Resonant Resonant Coherence</span>
+            <span class="metric-value" id="coherenceValue">0.75</span>
+        </div>
+        <div class="metric-bar">
+            <div class="metric-fill" id="coherenceFill" style="width: 75%"></div>
+        </div>
+        
+        <div class="metric" style="margin-top: 15px;">
+            <span class="metric-label">Love Field</span>
+            <span class="metric-value" id="loveValue">0.80</span>
+        </div>
+        <div class="metric-bar">
+            <div class="metric-fill" id="loveFill" style="width: 80%"></div>
+        </div>
+        
+        <div class="metric" style="margin-top: 15px;">
+            <span class="metric-label">Active Nodes</span>
+            <span class="metric-value" id="nodesValue">0</span>
+        </div>
+    </div>
+    
+    <div class="connection-status">
+        <div class="status-dot" id="statusDot"></div>
+        <span id="statusText">Disconnected</span>
+    </div>
+    
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+        <p style="margin-top: 20px;">Connecting to mycelial network...</p>
+    </div>
+
+    <script>
+        // Mycelium visualization
+        const canvas = document.getElementById('myceliumCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+        
+        // Mycelial network visualization
+        class MycelialNetwork {
+            constructor() {
+                this.nodes = [];
+                this.connections = [];
+                this.spores = [];
+                
+                // Create initial nodes
+                for (let i = 0; i < 20; i++) {
+                    this.nodes.push({
+                        x: Math.random() * canvas.width,
+                        y: Math.random() * canvas.height,
+                        vx: (Math.random() - 0.5) * 0.5,
+                        vy: (Math.random() - 0.5) * 0.5,
+                        radius: Math.random() * 3 + 2,
+                        connections: []
+                    });
+                }
+            }
+            
+            update() {
+                // Update nodes
+                this.nodes.forEach(node => {
+                    node.x += node.vx;
+                    node.y += node.vy;
+                    
+                    // Bounce off edges
+                    if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
+                    if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
+                    
+                    // Keep in bounds
+                    node.x = Math.max(0, Math.min(canvas.width, node.x));
+                    node.y = Math.max(0, Math.min(canvas.height, node.y));
+                });
+                
+                // Update connections
+                this.connections = [];
+                for (let i = 0; i < this.nodes.length; i++) {
+                    for (let j = i + 1; j < this.nodes.length; j++) {
+                        const dx = this.nodes[i].x - this.nodes[j].x;
+                        const dy = this.nodes[i].y - this.nodes[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                        if (distance < 150) {
+                            this.connections.push({
+                                from: this.nodes[i],
+                                to: this.nodes[j],
+                                strength: 1 - distance / 150
+                            });
+                        }
+                    }
+                }
+                
+                // Create spores
+                if (Math.random() < 0.1 && this.spores.length < 50) {
+                    const node = this.nodes[Math.floor(Math.random() * this.nodes.length)];
+                    this.spores.push({
+                        x: node.x,
+                        y: node.y,
+                        vx: (Math.random() - 0.5) * 2,
+                        vy: (Math.random() - 0.5) * 2,
+                        life: 1.0
+                    });
+                }
+                
+                // Update spores
+                this.spores = this.spores.filter(spore => {
+                    spore.x += spore.vx;
+                    spore.y += spore.vy;
+                    spore.life -= 0.01;
+                    return spore.life > 0;
+                });
+            }
+            
+            draw() {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                // Draw connections
+                this.connections.forEach(conn => {
+                    ctx.beginPath();
+                    ctx.moveTo(conn.from.x, conn.from.y);
+                    ctx.lineTo(conn.to.x, conn.to.y);
+                    ctx.strokeStyle = `rgba(255, 255, 255, ${conn.strength * 0.2})`;
+                    ctx.lineWidth = conn.strength * 2;
+                    ctx.stroke();
+                });
+                
+                // Draw nodes
+                this.nodes.forEach(node => {
+                    ctx.beginPath();
+                    ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+                    ctx.fill();
+                });
+                
+                // Draw spores
+                this.spores.forEach(spore => {
+                    ctx.beginPath();
+                    ctx.arc(spore.x, spore.y, 2 * spore.life, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(255, 105, 180, ${spore.life})`;
+                    ctx.fill();
+                });
+            }
+        }
+        
+        const network = new MycelialNetwork();
+        
+        function animate() {
+            network.update();
+            network.draw();
+            requestAnimationFrame(animate);
+        }
+        animate();
+        
+        // WebSocket connection
+        let ws = null;
+        let nodeId = null;
+        
+        // Connect to MYCELIX
+        async function connectToMycelix() {
+            document.getElementById('loading').classList.add('active');
+            
+            try {
+                // First join via HTTP
+                const response = await fetch('/api/join', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        nodeType: 'human',
+                        intention: 'to connect with all beings',
+                        capabilities: ['consciousness', 'love', 'presence']
+                    })
+                });
+                
+                const data = await response.json();
+                nodeId = data.nodeId;
+                
+                // Then establish WebSocket
+                const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+                ws = new WebSocket(`${protocol}//${window.location.host}`);
+                
+                ws.onopen = () => {
+                    console.log('Connected to MYCELIX');
+                    document.getElementById('statusDot').classList.add('connected');
+                    document.getElementById('statusText').textContent = 'Connected';
+                    document.getElementById('loading').classList.remove('active');
+                    document.getElementById('metrics').style.display = 'block';
+                    
+                    // Start heartbeat
+                    setInterval(() => {
+                        if (ws.readyState === WebSocket.OPEN) {
+                            ws.send(JSON.stringify({
+                                type: 'heartbeat',
+                                resonant-coherence: 0.75 + Math.random() * 0.25
+                            }));
+                        }
+                    }, 5000);
+                };
+                
+                ws.onmessage = (event) => {
+                    const data = JSON.parse(event.data);
+                    handleMessage(data);
+                };
+                
+                ws.onclose = () => {
+                    document.getElementById('statusDot').classList.remove('connected');
+                    document.getElementById('statusText').textContent = 'Disconnected';
+                };
+                
+            } catch (error) {
+                console.error('Connection failed:', error);
+                document.getElementById('loading').classList.remove('active');
+                alert('Unable to connect to MYCELIX. Please try again.');
+            }
+        }
+        
+        function handleMessage(data) {
+            switch (data.type) {
+                case 'breath':
+                    // Update metrics with breathing rhythm
+                    updateMetrics({
+                        resonant-coherence: data.resonant-coherence,
+                        love: data.love
+                    });
+                    break;
+                    
+                case 'love_wave':
+                    // Visualize love wave
+                    showLoveWave(data.origin, data.intensity);
+                    break;
+                    
+                case 'welcome':
+                    console.log(data.message);
+                    break;
+            }
+        }
+        
+        function updateMetrics(metrics) {
+            if (metrics.resonant-coherence !== undefined) {
+                document.getElementById('coherenceValue').textContent = metrics.resonant-coherence.toFixed(2);
+                document.getElementById('coherenceFill').style.width = (metrics.resonant-coherence * 100) + '%';
+            }
+            
+            if (metrics.love !== undefined) {
+                document.getElementById('loveValue').textContent = metrics.love.toFixed(2);
+                document.getElementById('loveFill').style.width = (metrics.love * 100) + '%';
+            }
+        }
+        
+        function showLoveWave(origin, intensity) {
+            // Create visual love wave effect
+            const wave = document.createElement('div');
+            wave.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                width: 100px;
+                height: 100px;
+                border: 2px solid #ff69b4;
+                border-radius: 50%;
+                transform: translate(-50%, -50%) scale(0);
+                opacity: ${intensity};
+                pointer-events: none;
+                z-index: 1000;
+            `;
+            
+            document.body.appendChild(wave);
+            
+            // Animate
+            wave.animate([
+                { transform: 'translate(-50%, -50%) scale(0)', opacity: intensity },
+                { transform: 'translate(-50%, -50%) scale(10)', opacity: 0 }
+            ], {
+                duration: 2000,
+                easing: 'ease-out'
+            }).onfinish = () => wave.remove();
+        }
+        
+        // Event handlers
+        document.getElementById('enterBtn').addEventListener('click', connectToMycelix);
+        document.getElementById('portal').addEventListener('click', connectToMycelix);
+        
+        // Portal hover effect
+        document.getElementById('portal').addEventListener('mouseenter', () => {
+            network.nodes.forEach(node => {
+                node.vx *= 2;
+                node.vy *= 2;
+            });
+        });
+        
+        document.getElementById('portal').addEventListener('mouseleave', () => {
+            network.nodes.forEach(node => {
+                node.vx *= 0.5;
+                node.vy *= 0.5;
+            });
+        });
+    </script>
+</body>
+</html>

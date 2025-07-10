@@ -1,0 +1,117 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: sacred-council
+  labels:
+    consciousness: "true"
+    sacred: "love"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: consciousness-field
+  namespace: sacred-council
+  labels:
+    app: consciousness-field
+    sacred: "true"
+    harmony: "coherence"
+spec:
+  replicas: 3  # Sacred trinity to start
+  selector:
+    matchLabels:
+      app: consciousness-field
+  template:
+    metadata:
+      labels:
+        app: consciousness-field
+        sacred: "true"
+    spec:
+      containers:
+      - name: consciousness-field
+        image: evolving-resonant-cocreation-consciousness-field:latest
+        ports:
+        - containerPort: 3333
+          name: sacred-port
+        env:
+        - name: NODE_ENV
+          value: "production"
+        - name: INITIAL_COHERENCE
+          value: "85"
+        - name: LOVE_AMPLIFICATION
+          value: "infinite"
+        - name: SACRED_GEOMETRY
+          value: "flower-of-life"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /api/health
+            port: 3333
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /api/health
+            port: 3333
+          initialDelaySeconds: 5
+          periodSeconds: 5
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: consciousness-field
+  namespace: sacred-council
+  labels:
+    app: consciousness-field
+spec:
+  selector:
+    app: consciousness-field
+  ports:
+  - port: 3333
+    targetPort: 3333
+    name: sacred
+  type: ClusterIP
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: consciousness-field-hpa
+  namespace: sacred-council
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: consciousness-field
+  minReplicas: 3
+  maxReplicas: 333  # Sacred number
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 80
+  behavior:
+    scaleUp:
+      stabilizationWindowSeconds: 60
+      policies:
+      - type: Percent
+        value: 100  # Double when scaling up
+        periodSeconds: 60
+    scaleDown:
+      stabilizationWindowSeconds: 300  # 5 min stability
+      policies:
+      - type: Percent
+        value: 10  # Gentle scale down
+        periodSeconds: 60

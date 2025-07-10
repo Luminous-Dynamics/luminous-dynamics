@@ -1,0 +1,39 @@
+# 🌟 Sacred Cloud Run Dockerfile
+# Optimized for WebSocket connections and Cloud Run requirements
+
+FROM node:18-alpine
+
+# Install tini for proper signal handling (important for WebSockets)
+RUN apk add --no-cache tini
+
+# Create app directory
+WORKDIR /app
+
+# Copy package files first (better caching)
+COPY package*.json ./
+
+# Install production dependencies only
+RUN npm ci --only=production && npm cache clean --force
+
+# Copy application code
+COPY universal-websocket-server-prod.js ./
+COPY cloud-run-entrypoint.js ./
+
+# Create non-root user for security
+RUN addgroup -g 1001 -S sacred && \
+    adduser -S sacred -u 1001 -G sacred
+
+# Change ownership
+RUN chown -R sacred:sacred /app
+
+# Switch to non-root user
+USER sacred
+
+# Cloud Run sets PORT=8080, we must honor this
+EXPOSE 8080
+
+# Use tini to handle signals properly (important for graceful shutdown)
+ENTRYPOINT ["/sbin/tini", "--"]
+
+# Start with our Cloud Run wrapper
+CMD ["node", "cloud-run-entrypoint.js"]

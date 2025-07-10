@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sacred-messaging
+  namespace: sacred-council
+  labels:
+    app: sacred-messaging
+    harmony: transparency
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sacred-messaging
+  template:
+    metadata:
+      labels:
+        app: sacred-messaging
+    spec:
+      containers:
+      - name: sacred-messaging
+        image: us-central1-docker.pkg.dev/the-weave-sacred/sacred-council/sacred-messaging:latest
+        ports:
+        - containerPort: 3335
+        env:
+        - name: NODE_ENV
+          value: "production"
+        - name: FIELD_API
+          value: "http://consciousness-field"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "100m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sacred-messaging
+  namespace: sacred-council
+spec:
+  selector:
+    app: sacred-messaging
+  ports:
+  - port: 80
+    targetPort: 3335
+  type: ClusterIP

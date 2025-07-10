@@ -1,0 +1,27 @@
+{
+  "name": "alchemical-engine",
+  "version": "1.0.0",
+  "description": "Technology of sacred, targeted compassion - transmuting dissonance through love",
+  "type": "module",
+  "main": "alchemical-engine.js",
+  "scripts": {
+    "start": "node alchemical-engine.js",
+    "probe": "node src/noetic-probe.js",
+    "compose": "node src/harmonic-antidote-composer.js",
+    "seed": "node src/gentle-disruption-seeder.js",
+    "demo": "node alchemical-engine.js --demo",
+    "stats": "node alchemical-engine.js --stats"
+  },
+  "keywords": [
+    "consciousness",
+    "healing",
+    "transmutation",
+    "sacred technology",
+    "compassion"
+  ],
+  "author": "Luminous Dynamics",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

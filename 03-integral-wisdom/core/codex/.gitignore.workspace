@@ -1,0 +1,11 @@
+# Google Workspace Security
+credentials/.workspace/*
+*.json
+!*.example.json
+.env*
+!.env.example
+logs/.workspace/*
+backup/.workspace/*
+service-account-key.json
+client_secret*.json
+token.json

@@ -1,0 +1,16 @@
+FROM node:18
+
+# Create app directory
+WORKDIR /app
+
+# Copy everything (simple for now)
+COPY . .
+
+# Install dependencies
+RUN npm install
+
+# Expose the sacred port
+EXPOSE 3333
+
+# Run the field
+CMD ["node", "start.js"]

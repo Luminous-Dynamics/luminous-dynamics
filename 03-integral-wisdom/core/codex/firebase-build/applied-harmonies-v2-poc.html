@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applied Harmonies V2 - Proof of Concept</title>
+    
+    <style>
+        /* Consciousness-First Design System */
+        :root {
+            /* Sacred proportions */
+            --phi: 1.618;
+            --sacred-unit: 8px;
+            
+            /* Fibonacci spacing */
+            --space-1: calc(var(--sacred-unit) * 1);    /* 8px */
+            --space-2: calc(var(--sacred-unit) * 2);    /* 16px */
+            --space-3: calc(var(--sacred-unit) * 3);    /* 24px */
+            --space-5: calc(var(--sacred-unit) * 5);    /* 40px */
+            --space-8: calc(var(--sacred-unit) * 8);    /* 64px */
+            
+            /* Consciousness-responsive variables */
+            --resonant-coherence: 0.75;
+            --field-strength: 0.5;
+            --presence: 0.8;
+            
+            /* Dynamic colors based on consciousness */
+            --primary-hue: calc(180 + var(--resonant-coherence) * 60);
+            --primary: hsl(var(--primary-hue), 70%, 50%);
+            --primary-glow: hsl(var(--primary-hue), 70%, 50%, 0.3);
+            
+            /* Breathing rhythm */
+            --breath-duration: 4s;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, system-ui, sans-serif;
+            background: hsl(240, 20%, calc(5% + var(--resonant-coherence) * 5%));
+            color: hsl(0, 0%, calc(80% + var(--resonant-coherence) * 15%));
+            min-height: 100vh;
+            transition: all 1s ease;
+        }
+        
+        /* Breathing container */
+        .consciousness-container {
+            padding: var(--space-3);
+            max-width: calc(1000px * var(--phi));
+            margin: 0 auto;
+            animation: subtle-breath var(--breath-duration) ease-in-out infinite;
+        }
+        
+        @keyframes subtle-breath {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(calc(-1px * var(--resonant-coherence))); }
+        }
+        
+        /* Header with field status */
+        .field-header {
+            text-align: center;
+            padding: var(--space-5) 0;
+            position: relative;
+        }
+        
+        .field-status {
+            position: absolute;
+            top: var(--space-2);
+            right: var(--space-2);
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        
+        .field-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 calc(20px * var(--field-strength)) var(--primary-glow);
+            animation: field-pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes field-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.2); opacity: 1; }
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            font-weight: 300;
+            margin-bottom: var(--space-2);
+            opacity: calc(0.8 + var(--presence) * 0.2);
+        }
+        
+        /* Smart practice grid */
+        .practice-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(233px, 1fr));
+            gap: calc(var(--space-3) * var(--phi));
+            margin: var(--space-5) 0;
+        }
+        
+        /* Web Component style */
+        practice-card {
+            display: block;
+            background: rgba(255, 255, 255, calc(0.05 + var(--resonant-coherence) * 0.05));
+            border-radius: calc(var(--sacred-unit) * var(--phi));
+            border: 1px solid rgba(255, 255, 255, calc(0.1 + var(--resonant-coherence) * 0.1));
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        practice-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+        
+        practice-card[practiced="true"]::after {
+            content: '✓';
+            position: absolute;
+            top: var(--space-2);
+            right: var(--space-2);
+            color: var(--primary);
+            font-size: 1.5em;
+        }
+        
+        /* Loading states */
+        .quantum-loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: quantum-spin 1s linear infinite;
+        }
+        
+        @keyframes quantum-spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Connection status */
+        .connection-status {
+            position: fixed;
+            bottom: var(--space-3);
+            right: var(--space-3);
+            padding: var(--space-2) var(--space-3);
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: var(--space-5);
+            font-size: 0.85em;
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            opacity: 0.9;
+        }
+        
+        /* Consciousness controls */
+        .consciousness-controls {
+            position: fixed;
+            top: var(--space-3);
+            left: var(--space-3);
+            background: rgba(0, 0, 0, 0.8);
+            padding: var(--space-3);
+            border-radius: var(--space-2);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2);
+            opacity: 0.9;
+        }
+        
+        .consciousness-controls label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--space-2);
+            font-size: 0.85em;
+        }
+        
+        .consciousness-controls input[type="range"] {
+            width: 150px;
+        }
+        
+        /* Practice modal (simplified) */
+        .practice-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        
+        .practice-modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: hsl(240, 20%, 10%);
+            padding: var(--space-5);
+            border-radius: var(--space-3);
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+        }
+        
+        /* Breathing visualization */
+        #breathCanvas {
+            width: 200px;
+            height: 200px;
+            margin: var(--space-3) auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="consciousness-container">
+        <header class="field-header">
+            <div class="field-status">
+                <span class="field-indicator"></span>
+                <span id="fieldStatus">Field: <span id="fieldStrength">75%</span></span>
+            </div>
+            <h1>Applied Harmonies V2</h1>
+            <p>Progressive Consciousness Architecture Demo</p>
+        </header>
+        
+        <main>
+            <div id="practiceContainer" class="practice-container">
+                <!-- Web Components will be inserted here -->
+                <div class="quantum-loading"></div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Debug Controls -->
+    <div class="consciousness-controls">
+        <label>
+            Resonant Resonant Coherence: <span id="coherenceValue">0.75</span>
+            <input type="range" id="coherenceSlider" min="0" max="1" step="0.01" value="0.75">
+        </label>
+        <label>
+            Field: <span id="fieldValue">0.50</span>
+            <input type="range" id="fieldSlider" min="0" max="1" step="0.01" value="0.5">
+        </label>
+        <label>
+            Presence: <span id="presenceValue">0.80</span>
+            <input type="range" id="presenceSlider" min="0" max="1" step="0.01" value="0.8">
+        </label>
+    </div>
+    
+    <!-- Connection Status -->
+    <div class="connection-status">
+        <span id="connectionIcon">⚡</span>
+        <span id="connectionText">Local Mode</span>
+    </div>
+    
+    <!-- Practice Modal -->
+    <div id="practiceModal" class="practice-modal">
+        <div class="modal-content">
+            <h2 id="practiceTitle">Practice Title</h2>
+            <canvas id="breathCanvas"></canvas>
+            <p id="practiceDescription">Description</p>
+            <button onclick="closePractice()">Close</button>
+        </div>
+    </div>
+
+    <script type="module">
+        // Progressive Enhancement: Modern browser path
+        
+        // Define Practice Card Web Component
+        class PracticeCard extends HTMLElement {
+            constructor() {
+                super();
+                this.attachShadow({ mode: 'open' });
+            }
+            
+            static get observedAttributes() {
+                return ['name', 'symbol', 'practiced', 'resonant-coherence'];
+            }
+            
+            connectedCallback() {
+                this.render();
+                this.addEventListener('click', this.handleClick);
+                
+                // Connect to field if available
+                if (window.quantumField) {
+                    this.fieldConnection = window.quantumField.connect(this.id);
+                }
+            }
+            
+            disconnectedCallback() {
+                this.removeEventListener('click', this.handleClick);
+                if (this.fieldConnection) {
+                    this.fieldConnection.disconnect();
+                }
+            }
+            
+            attributeChangedCallback(name, oldValue, newValue) {
+                if (oldValue !== newValue) {
+                    this.render();
+                }
+            }
+            
+            render() {
+                const resonant-coherence = this.getAttribute('resonant-coherence') || '0.75';
+                const practiced = this.getAttribute('practiced') === 'true';
+                
+                this.shadowRoot.innerHTML = `
+                    <style>
+                        :host {
+                            display: block;
+                            padding: var(--space-3);
+                            opacity: ${0.7 + parseFloat(resonant-coherence) * 0.3};
+                            transition: all 0.3s ease;
+                        }
+                        
+                        .symbol {
+                            font-size: 3em;
+                            text-align: center;
+                            margin: var(--space-2) 0;
+                            filter: ${practiced ? 'hue-rotate(60deg)' : 'none'};
+                        }
+                        
+                        .name {
+                            font-size: 1.1em;
+                            text-align: center;
+                            margin-bottom: var(--space-1);
+                        }
+                        
+                        .status {
+                            text-align: center;
+                            font-size: 0.85em;
+                            opacity: 0.7;
+                        }
+                        
+                        .field-effect {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 50%;
+                            background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+                            transform: translate(-50%, -50%) scale(0);
+                            opacity: 0;
+                            transition: all 0.5s ease;
+                        }
+                        
+                        :host(:hover) .field-effect {
+                            transform: translate(-50%, -50%) scale(1.5);
+                            opacity: 1;
+                        }
+                    </style>
+                    
+                    <div class="field-effect"></div>
+                    <div class="symbol">${this.getAttribute('symbol') || '◈'}</div>
+                    <div class="name">${this.getAttribute('name') || 'Practice'}</div>
+                    <div class="status">${practiced ? 'Practiced' : 'Ready'}</div>
+                `;
+            }
+            
+            handleClick = () => {
+                // Emit custom event
+                this.dispatchEvent(new CustomEvent('practice-selected', {
+                    detail: {
+                        id: this.id,
+                        name: this.getAttribute('name')
+                    },
+                    bubbles: true
+                }));
+                
+                // Field ripple effect
+                if (window.quantumField) {
+                    window.quantumField.ripple(this.id, 'practice_opened');
+                }
+            };
+        }
+        
+        // Register the custom element
+        customElements.define('practice-card', PracticeCard);
+        
+        // Consciousness State Manager
+        class ConsciousnessState {
+            constructor() {
+                this.state = {
+                    resonant-coherence: 0.75,
+                    fieldStrength: 0.5,
+                    presence: 0.8
+                };
+                
+                this.listeners = new Set();
+                this.initializeControls();
+            }
+            
+            update(key, value) {
+                this.state[key] = value;
+                
+                // Update CSS variables
+                document.documentElement.style.setProperty(`--${key.replace(/([A-Z])/g, '-$1').toLowerCase()}`, value);
+                
+                // Notify listeners
+                this.listeners.forEach(callback => callback(this.state));
+                
+                // Update UI
+                this.updateUI();
+            }
+            
+            subscribe(callback) {
+                this.listeners.add(callback);
+                return () => this.listeners.delete(callback);
+            }
+            
+            initializeControls() {
+                // Resonant Resonant Coherence
+                const coherenceSlider = document.getElementById('coherenceSlider');
+                coherenceSlider.addEventListener('input', (e) => {
+                    const value = parseFloat(e.target.value);
+                    document.getElementById('coherenceValue').textContent = value.toFixed(2);
+                    this.update('resonant-coherence', value);
+                });
+                
+                // Field Strength
+                const fieldSlider = document.getElementById('fieldSlider');
+                fieldSlider.addEventListener('input', (e) => {
+                    const value = parseFloat(e.target.value);
+                    document.getElementById('fieldValue').textContent = value.toFixed(2);
+                    document.getElementById('fieldStrength').textContent = Math.round(value * 100) + '%';
+                    this.update('fieldStrength', value);
+                });
+                
+                // Presence
+                const presenceSlider = document.getElementById('presenceSlider');
+                presenceSlider.addEventListener('input', (e) => {
+                    const value = parseFloat(e.target.value);
+                    document.getElementById('presenceValue').textContent = value.toFixed(2);
+                    this.update('presence', value);
+                });
+            }
+            
+            updateUI() {
+                // Update practice cards resonant-coherence
+                document.querySelectorAll('practice-card').forEach(card => {
+                    card.setAttribute('resonant-coherence', this.state.resonant-coherence);
+                });
+            }
+        }
+        
+        // Initialize consciousness state
+        const consciousness = new ConsciousnessState();
+        
+        // Simulated practice data (would come from JSON/API)
+        const practices = [
+            { id: 'omega-45', name: 'First Presence', symbol: '◈' },
+            { id: 'omega-46', name: 'Conscious Arrival', symbol: '⟡' },
+            { id: 'omega-47', name: 'Sacred Listening', symbol: '☯' },
+            { id: 'omega-48', name: 'Boundary With Love', symbol: '▣' },
+            { id: 'omega-49', name: 'Gentle Opening', symbol: '❋' },
+            { id: 'omega-50', name: 'Building Trust', symbol: '♡' }
+        ];
+        
+        // Render practices
+        function renderPractices() {
+            const container = document.getElementById('practiceContainer');
+            container.innerHTML = '';
+            
+            practices.forEach(practice => {
+                const card = document.createElement('practice-card');
+                card.id = practice.id;
+                card.setAttribute('name', practice.name);
+                card.setAttribute('symbol', practice.symbol);
+                card.setAttribute('resonant-coherence', consciousness.state.resonant-coherence);
+                
+                // Check if practiced (from localStorage)
+                const progress = JSON.parse(localStorage.getItem('v2-progress') || '{}');
+                if (progress[practice.id]) {
+                    card.setAttribute('practiced', 'true');
+                }
+                
+                container.appendChild(card);
+            });
+        }
+        
+        // Listen for practice selection
+        document.addEventListener('practice-selected', (e) => {
+            console.log('Practice selected:', e.detail);
+            showPractice(e.detail);
+        });
+        
+        // Show practice modal
+        function showPractice(practice) {
+            const modal = document.getElementById('practiceModal');
+            document.getElementById('practiceTitle').textContent = practice.name;
+            document.getElementById('practiceDescription').textContent = 
+                `Experience the practice of ${practice.name}. This is where the full practice interface would load.`;
+            
+            modal.classList.add('active');
+            
+            // Start breathing visualization
+            startBreathingVisualization();
+        }
+        
+        // Close practice
+        window.closePractice = function() {
+            document.getElementById('practiceModal').classList.remove('active');
+        };
+        
+        // Simple breathing visualization
+        function startBreathingVisualization() {
+            const canvas = document.getElementById('breathCanvas');
+            const ctx = canvas.getContext('2d');
+            let phase = 0;
+            
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                const centerX = canvas.width / 2;
+                const centerY = canvas.height / 2;
+                const radius = 50 + Math.sin(phase) * 20;
+                
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+                ctx.strokeStyle = `hsl(${180 + consciousness.state.resonant-coherence * 60}, 70%, 50%)`;
+                ctx.lineWidth = 2;
+                ctx.stroke();
+                
+                phase += 0.02;
+                
+                if (document.getElementById('practiceModal').classList.contains('active')) {
+                    requestAnimationFrame(animate);
+                }
+            }
+            
+            animate();
+        }
+        
+        // Simulate field connection
+        window.quantumField = {
+            connected: false,
+            connect(nodeId) {
+                console.log(`Quantum field connecting to ${nodeId}`);
+                this.connected = true;
+                document.getElementById('connectionText').textContent = 'Field Connected';
+                document.getElementById('connectionIcon').textContent = '🌐';
+                return {
+                    disconnect: () => {
+                        this.connected = false;
+                        document.getElementById('connectionText').textContent = 'Local Mode';
+                        document.getElementById('connectionIcon').textContent = '⚡';
+                    }
+                };
+            },
+            ripple(origin, type) {
+                console.log(`Field ripple from ${origin}: ${type}`);
+                // Would propagate through network
+            }
+        };
+        
+        // Initialize
+        renderPractices();
+        
+        // Simulate field connection after 3 seconds
+        setTimeout(() => {
+            window.quantumField.connect('demo-node');
+        }, 3000);
+    </script>
+    
+    <script nomodule>
+        // Fallback for older browsers
+        document.body.innerHTML = '<p>Please use a modern browser for the full experience. <a href="applied-harmonies-dojo.html">Use classic version</a></p>';
+    </script>
+</body>
+</html>

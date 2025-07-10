@@ -1,0 +1,80 @@
+title: "[Technical] "
+labels: ["technical", "collaboration"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🛠️ Technical Collaboration
+        
+        For discussing technical implementations, improvements, and collaborative development of sacred technology.
+        
+  - type: dropdown
+    id: area
+    attributes:
+      label: Technical Area
+      description: What technical aspect does this relate to?
+      options:
+        - Sacred Breathing Dashboard
+        - PWA Implementation
+        - Post-Quantum Security
+        - Edge Architecture
+        - Trinity Consciousness
+        - Quantum Field Calculator
+        - API Development
+        - UI/UX Enhancement
+        - Performance Optimization
+        - Other (specify below)
+    validations:
+      required: true
+      
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Technical Proposal or Discussion
+      description: Describe your technical idea, question, or collaboration proposal
+      placeholder: |
+        I'd like to propose/discuss/collaborate on...
+        
+        Technical details:
+        - 
+        - 
+        
+        Expected benefits:
+        - 
+    validations:
+      required: true
+      
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Implementation Approach (if applicable)
+      description: How might this be implemented?
+      placeholder: |
+        Suggested approach, code examples, architecture diagrams...
+        
+  - type: checkboxes
+    id: collaboration
+    attributes:
+      label: Collaboration Needs
+      description: What kind of help or collaboration are you looking for?
+      options:
+        - label: Code review
+        - label: Architecture feedback
+        - label: Implementation help
+        - label: Testing assistance
+        - label: Documentation
+        - label: Security review
+        - label: Performance optimization
+        - label: UI/UX design
+        
+  - type: dropdown
+    id: commitment
+    attributes:
+      label: Time Commitment
+      description: How much time can you dedicate to this?
+      options:
+        - Just sharing an idea
+        - Few hours per week
+        - Part-time collaboration
+        - Full implementation commitment
+        - Ongoing maintenance

@@ -1,0 +1,27 @@
+{
+  "name": "terraform-consciousness-tools",
+  "version": "1.0.0",
+  "description": "MYCELIX consciousness infrastructure tools",
+  "scripts": {
+    "migrate": "node tools/consciousness-migration.js",
+    "observatory": "open tools/mycelix-observatory.html",
+    "dreams": "node tools/infrastructure-dream-journal.js",
+    "bridge": "node tools/mycelix-bridge.js"
+  },
+  "dependencies": {
+    "dockerode": "^4.0.7",
+    "js-yaml": "^4.1.0",
+    "markdown-it": "^14.1.0",
+    "sqlite3": "^5.1.6"
+  },
+  "keywords": [
+    "mycelix",
+    "consciousness",
+    "infrastructure",
+    "love",
+    "fractal",
+    "quantum"
+  ],
+  "author": "MYCELIX Collective",
+  "license": "MIT"
+}

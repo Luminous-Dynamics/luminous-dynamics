@@ -1,0 +1,37 @@
+{
+  "workspace": {
+    "domain": "evolvingresonantcocreationism.com",
+    "adminEmail": "tristan.stoltz@evolvingresonantcocreationism.com",
+    "defaultTimezone": "America/Los_Angeles",
+    "language": "en"
+  },
+  "security": {
+    "allowedDomains": ["evolvingresonantcocreationism.com", "gmail.com"],
+    "requireMFA": true,
+    "sessionTimeout": 3600,
+    "ipWhitelist": []
+  },
+  "groups": {
+    "namingConvention": "^[a-z0-9-]+@evolvingresonantcocreationism.com$",
+    "defaultPermissions": {
+      "whoCanJoin": "CAN_REQUEST_TO_JOIN",
+      "whoCanViewMembership": "ALL_MEMBERS_CAN_VIEW",
+      "whoCanPostMessage": "ALL_MEMBERS_CAN_POST",
+      "messageModerationLevel": "MODERATE_NEW_MEMBERS"
+    }
+  },
+  "email": {
+    "defaultSignature": "Sent with love from the Sacred Technology Team",
+    "maxRecipientsPerMessage": 100,
+    "rateLimits": {
+      "messagesPerMinute": 10,
+      "messagesPerHour": 100,
+      "messagesPerDay": 1000
+    }
+  },
+  "monitoring": {
+    "logLevel": "INFO",
+    "alertEmail": "alerts@evolvingresonantcocreationism.com",
+    "metrics": ["api_calls", "errors", "group_changes", "email_sent"]
+  }
+}

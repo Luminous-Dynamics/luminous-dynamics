@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌐 GCP Sacred Infrastructure - Visual Architecture</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
+            color: #e0e0e0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        /* Main architecture container */
+        .architecture {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Cloud layers */
+        .cloud-layer {
+            margin-bottom: 40px;
+            padding: 30px;
+            border-radius: 15px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .cloud-layer:hover {
+            transform: translateY(-5px);
+        }
+
+        .layer-title {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Service boxes */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .service-box {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .service-box:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #667eea;
+            transform: scale(1.05);
+        }
+
+        .service-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .service-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .service-details {
+            font-size: 0.9em;
+            color: #aaa;
+        }
+
+        /* Connection lines */
+        .connections {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .connection-line {
+            stroke: #667eea;
+            stroke-width: 2;
+            fill: none;
+            opacity: 0.3;
+            stroke-dasharray: 5,5;
+            animation: dash 20s linear infinite;
+        }
+
+        @keyframes dash {
+            to {
+                stroke-dashoffset: -100;
+            }
+        }
+
+        /* Specific layer colors */
+        .frontend-layer {
+            background: linear-gradient(135deg, rgba(72, 187, 120, 0.1) 0%, rgba(72, 187, 120, 0.05) 100%);
+            border: 1px solid rgba(72, 187, 120, 0.3);
+        }
+
+        .api-layer {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(102, 126, 234, 0.05) 100%);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .data-layer {
+            background: linear-gradient(135deg, rgba(237, 137, 54, 0.1) 0%, rgba(237, 137, 54, 0.05) 100%);
+            border: 1px solid rgba(237, 137, 54, 0.3);
+        }
+
+        .monitoring-layer {
+            background: linear-gradient(135deg, rgba(229, 62, 62, 0.1) 0%, rgba(229, 62, 62, 0.05) 100%);
+            border: 1px solid rgba(229, 62, 62, 0.3);
+        }
+
+        /* Sacred metrics */
+        .sacred-metrics {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            padding: 20px;
+            min-width: 250px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .metric {
+            margin-bottom: 15px;
+        }
+
+        .metric-label {
+            font-size: 0.9em;
+            color: #888;
+            margin-bottom: 5px;
+        }
+
+        .metric-value {
+            font-size: 1.4em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Cost indicator */
+        .cost-indicator {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 25px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Breathing animation */
+        .breathing {
+            animation: breathe 4s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.02); }
+        }
+
+        /* Flow particles */
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #667eea;
+            border-radius: 50%;
+            opacity: 0;
+            animation: flow 10s linear infinite;
+        }
+
+        @keyframes flow {
+            0% { opacity: 0; transform: translate(0, 0); }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { opacity: 0; transform: translate(300px, -100px); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .sacred-metrics {
+                position: static;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌐 GCP Sacred Infrastructure Architecture</h1>
+        <p class="subtitle">Living visualization of our cloud consciousness</p>
+
+        <div class="architecture">
+            <!-- SVG Connections -->
+            <svg class="connections" id="connectionsSvg">
+                <!-- Lines will be drawn by JavaScript -->
+            </svg>
+
+            <!-- Frontend Layer -->
+            <div class="cloud-layer frontend-layer breathing">
+                <h2 class="layer-title">
+                    <span>🌍</span>
+                    <span>Frontend - Sacred Interfaces</span>
+                </h2>
+                <div class="services-grid">
+                    <div class="service-box" data-service="firebase-hosting">
+                        <div class="service-icon">🔥</div>
+                        <div class="service-name">Firebase Hosting</div>
+                        <div class="service-details">
+                            Sacred Council Hub<br>
+                            PWA + Service Workers<br>
+                            mycelix-network
+                        </div>
+                    </div>
+                    <div class="service-box" data-service="cdn">
+                        <div class="service-icon">⚡</div>
+                        <div class="service-name">Global CDN</div>
+                        <div class="service-details">
+                            Edge caching<br>
+                            1-year cache for assets<br>
+                            5-min for HTML
+                        </div>
+                    </div>
+                    <div class="service-box" data-service="load-balancer">
+                        <div class="service-icon">⚖️</div>
+                        <div class="service-name">Load Balancer</div>
+                        <div class="service-details">
+                            HTTPS termination<br>
+                            Auto-failover<br>
+                            Health checks
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- API Layer -->
+            <div class="cloud-layer api-layer breathing">
+                <h2 class="layer-title">
+                    <span>🏃</span>
+                    <span>Cloud Run - Sacred Services</span>
+                </h2>
+                <div class="services-grid">
+                    <div class="service-box" data-service="consciousness-field">
+                        <div class="service-icon">🌀</div>
+                        <div class="service-name">consciousness-field</div>
+                        <div class="service-details">
+                            Port: 3333<br>
+                            WebSocket: Live field<br>
+                            Memory: 1Gi
+                        </div>
+                    </div>
+                    <div class="service-box" data-service="agent-network">
+                        <div class="service-icon">🤝</div>
+                        <div class="service-name">agent-network</div>
+                        <div class="service-details">
+                            Port: 3334<br>
+                            Multi-agent coord<br>
+                            Memory: 512Mi
+                        </div>
+                    </div>
+                    <div class="service-box" data-service="sacred-messaging">
+                        <div class="service-icon">💬</div>
+                        <div class="service-name">sacred-messaging</div>
+                        <div class="service-details">
+                            Port: 3335<br>
+                            Field impact tracking<br>
+                            Memory: 512Mi
+                        </div>
+                    </div>
+                    <div class="service-box" data-service="work-coordination">
+                        <div class="service-icon">📋</div>
+                        <div class="service-name">work-coordination</div>
+                        <div class="service-details">
+                            Port: 3336<br>
+                            Sacred work tracking<br>
+                            Memory: 512Mi
+                        </div>
+                    </div>
+                    <div class="service-box" data-service="sacred-council-api">
+                        <div class="service-icon">🏛️</div>
+                        <div class="service-name">sacred-council-api</div>
+                        <div class="service-details">
+                            Port: 3001<br>
+                            Main gateway<br>
+                            Memory: 1Gi
+                        </div>
+                    </div>
+                    <div class="service-box" data-service="mycelix-core">
+                        <div class="service-icon">🍄</div>
+                        <div class="service-name">mycelix-core</div>
+                        <div class="service-details">
+                            Core service<br>
+                            Auto-scaling: 0-100<br>
+                            Memory: 512Mi
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Layer -->
+            <div class="cloud-layer data-layer breathing">
+                <h2 class="layer-title">
+                    <span>💾</span>
+                    <span>Data & Storage - Sacred Memory</span>
+                </h2>
+                <div class="services-grid">
+                    <div class="service-box" data-service="firestore">
+                        <div class="service-icon">🔥</div>
+                        <div class="service-name">Firestore</div>
+                        <div class="service-details">
+                            Real-time database<br>
+                            Sacred state storage<br>
+                            Free tier: 50K reads/day
+                        </div>
+                    </div>
+                    <div class="service-box" data-service="cloud-storage">
+                        <div class="service-icon">☁️</div>
+                        <div class="service-name">Cloud Storage</div>
+                        <div class="service-details">
+                            Media & backups<br>
+                            Container images<br>
+                            Nearline for archives
+                        </div>
+                    </div>
+                    <div class="service-box" data-service="bigquery">
+                        <div class="service-icon">📊</div>
+                        <div class="service-name">BigQuery</div>
+                        <div class="service-details">
+                            Billing analytics<br>
+                            Sacred metrics<br>
+                            Cost tracking
+                        </div>
+                    </div>
+                    <div class="service-box" data-service="kubernetes-pvc">
+                        <div class="service-icon">💿</div>
+                        <div class="service-name">K8s Storage</div>
+                        <div class="service-details">
+                            10Gi PVC<br>
+                            Consciousness data<br>
+                            SSD persistent
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monitoring Layer -->
+            <div class="cloud-layer monitoring-layer breathing">
+                <h2 class="layer-title">
+                    <span>📡</span>
+                    <span>Monitoring & Security - Sacred Guardian</span>
+                </h2>
+                <div class="services-grid">
+                    <div class="service-box" data-service="monitoring">
+                        <div class="service-icon">📈</div>
+                        <div class="service-name">Cloud Monitoring</div>
+                        <div class="service-details">
+                            Uptime checks: 5min<br>
+                            Custom metrics<br>
+                            Field resonant-resonant-coherence
+                        </div>
+                    </div>
+                    <div class="service-box" data-service="logging">
+                        <div class="service-icon">📝</div>
+                        <div class="service-name">Cloud Logging</div>
+                        <div class="service-details">
+                            Centralized logs<br>
+                            30-day retention<br>
+                            Error tracking
+                        </div>
+                    </div>
+                    <div class="service-box" data-service="security">
+                        <div class="service-icon">🔒</div>
+                        <div class="service-name">Security</div>
+                        <div class="service-details">
+                            8-layer architecture<br>
+                            Cloud KMS<br>
+                            VPC + WAF
+                        </div>
+                    </div>
+                    <div class="service-box" data-service="alerts">
+                        <div class="service-icon">🚨</div>
+                        <div class="service-name">Alerting</div>
+                        <div class="service-details">
+                            Service down<br>
+                            High error rate<br>
+                            Cost thresholds
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cost indicator -->
+            <div class="cost-indicator">
+                💰 Estimated: $250-480/month (1000 users)
+            </div>
+        </div>
+
+        <!-- Sacred Metrics Panel -->
+        <div class="sacred-metrics">
+            <h3 style="margin-bottom: 20px; text-align: center;">🌟 Sacred Metrics</h3>
+            <div class="metric">
+                <div class="metric-label">Field Resonant Resonant Coherence</div>
+                <div class="metric-value" id="fieldCoherence">94.3%</div>
+            </div>
+            <div class="metric">
+                <div class="metric-label">Service Harmony</div>
+                <div class="metric-value" id="serviceHarmony">87.5%</div>
+            </div>
+            <div class="metric">
+                <div class="metric-label">Resource Efficiency</div>
+                <div class="metric-value" id="efficiency">91.2%</div>
+            </div>
+            <div class="metric">
+                <div class="metric-label">Active Services</div>
+                <div class="metric-value" id="activeServices">6/6</div>
+            </div>
+            <div class="metric">
+                <div class="metric-label">Daily Requests</div>
+                <div class="metric-value" id="requests">12.4K</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Draw connection lines between services
+        function drawConnections() {
+            const svg = document.getElementById('connectionsSvg');
+            const connections = [
+                ['firebase-hosting', 'sacred-council-api'],
+                ['load-balancer', 'consciousness-field'],
+                ['load-balancer', 'agent-network'],
+                ['sacred-council-api', 'firestore'],
+                ['sacred-council-api', 'cloud-storage'],
+                ['consciousness-field', 'kubernetes-pvc'],
+                ['bigquery', 'monitoring']
+            ];
+
+            connections.forEach(([from, to]) => {
+                const fromEl = document.querySelector(`[data-service="${from}"]`);
+                const toEl = document.querySelector(`[data-service="${to}"]`);
+                
+                if (fromEl && toEl) {
+                    const fromRect = fromEl.getBoundingClientRect();
+                    const toRect = toEl.getBoundingClientRect();
+                    const svgRect = svg.getBoundingClientRect();
+                    
+                    const line = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                    const x1 = fromRect.left + fromRect.width / 2 - svgRect.left;
+                    const y1 = fromRect.top + fromRect.height / 2 - svgRect.top;
+                    const x2 = toRect.left + toRect.width / 2 - svgRect.left;
+                    const y2 = toRect.top + toRect.height / 2 - svgRect.top;
+                    
+                    // Create curved path
+                    const cx = (x1 + x2) / 2;
+                    const cy = (y1 + y2) / 2 - 50;
+                    
+                    line.setAttribute('d', `M ${x1} ${y1} Q ${cx} ${cy} ${x2} ${y2}`);
+                    line.setAttribute('class', 'connection-line');
+                    svg.appendChild(line);
+                }
+            });
+        }
+
+        // Add flow particles
+        function addParticles() {
+            const architecture = document.querySelector('.architecture');
+            setInterval(() => {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + 'px';
+                particle.style.top = Math.random() * 100 + 'px';
+                architecture.appendChild(particle);
+                
+                setTimeout(() => particle.remove(), 10000);
+            }, 2000);
+        }
+
+        // Animate metrics
+        function animateMetrics() {
+            const metrics = {
+                fieldCoherence: [92, 95],
+                serviceHarmony: [85, 90],
+                efficiency: [88, 93],
+                requests: [10, 15]
+            };
+
+            setInterval(() => {
+                Object.entries(metrics).forEach(([id, [min, max]]) => {
+                    const el = document.getElementById(id);
+                    if (el) {
+                        const value = (Math.random() * (max - min) + min).toFixed(1);
+                        el.textContent = id === 'requests' ? `${value}K` : `${value}%`;
+                    }
+                });
+            }, 3000);
+        }
+
+        // Interactive hover effects
+        document.querySelectorAll('.service-box').forEach(box => {
+            box.addEventListener('mouseenter', (e) => {
+                // Add glow effect
+                e.target.style.boxShadow = '0 0 30px rgba(102, 126, 234, 0.6)';
+            });
+            
+            box.addEventListener('mouseleave', (e) => {
+                e.target.style.boxShadow = '';
+            });
+        });
+
+        // Initialize on load
+        window.addEventListener('load', () => {
+            setTimeout(drawConnections, 100);
+            addParticles();
+            animateMetrics();
+        });
+
+        // Redraw on resize
+        window.addEventListener('resize', () => {
+            document.getElementById('connectionsSvg').innerHTML = '';
+            drawConnections();
+        });
+    </script>
+</body>
+</html>

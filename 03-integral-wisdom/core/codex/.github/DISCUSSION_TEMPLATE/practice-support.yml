@@ -1,0 +1,81 @@
+title: "[Practice Support] "
+labels: ["practice-support", "community"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🫂 Practice Support
+        
+        A sacred space for seeking and offering support in your practice with the glyphs and sacred patterns.
+        
+        **This is a judgment-free zone of mutual support and witnessing.**
+        
+  - type: dropdown
+    id: support_type
+    attributes:
+      label: Type of Support
+      description: What kind of support are you seeking or offering?
+      options:
+        - Seeking practice guidance
+        - Sharing a challenge
+        - Offering support to others
+        - Requesting accountability partner
+        - Group practice invitation
+        - Integration support
+        - Sacred witnessing request
+    validations:
+      required: true
+      
+  - type: textarea
+    id: context
+    attributes:
+      label: Context & Request
+      description: Share what's alive for you and what support would be helpful
+      placeholder: |
+        I'm working with [glyph/practice] and experiencing...
+        
+        What would be supportive is...
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: practice_area
+    attributes:
+      label: Practice Area
+      description: Which area of practice does this relate to?
+      options:
+        - Daily Applied Harmonies
+        - Boundary work
+        - Trust building
+        - Field tending
+        - Presence practices
+        - Sacred pause
+        - Pattern interruption
+        - Relationship dynamics
+        - Group practices
+        - Other
+        
+  - type: checkboxes
+    id: support_offerings
+    attributes:
+      label: How Others Can Support
+      description: What would be helpful? (check all that apply)
+      options:
+        - label: Witnessing and holding space
+        - label: Sharing similar experiences
+        - label: Practice suggestions
+        - label: Accountability check-ins
+        - label: Co-practice sessions
+        - label: Resource recommendations
+        - label: Sacred questions for reflection
+        
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: Support Timeline
+      description: When do you need support?
+      options:
+        - Immediate support needed
+        - Within a few days
+        - Ongoing support
+        - Offering support to others

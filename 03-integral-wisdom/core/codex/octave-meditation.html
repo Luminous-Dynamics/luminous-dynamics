@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Octave Meditation - Eight-Fold Journey</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #000;
+            color: #fff;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* The Octave Mandala */
+        .mandala {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            animation: gentleRotate 120s linear infinite;
+        }
+        
+        @keyframes gentleRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Center - Meta-Principle */
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, #FFD700, #FFA500);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3em;
+            z-index: 10;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.5);
+        }
+        
+        .center:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            box-shadow: 0 0 80px rgba(255, 215, 0, 0.8);
+        }
+        
+        .center.active {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.2); }
+        }
+        
+        /* Harmony Petals */
+        .petal {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .petal:hover {
+            transform: scale(1.15);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .petal.active {
+            transform: scale(1.2);
+            border-color: #fff;
+            box-shadow: 0 0 30px currentColor;
+        }
+        
+        .petal-number {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .petal-note {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        
+        /* Position petals in octave circle */
+        .petal:nth-child(2) { top: 0; left: 50%; transform: translateX(-50%); background: rgba(255, 107, 107, 0.3); color: #FF6B6B; }
+        .petal:nth-child(3) { top: 15%; right: 15%; background: rgba(78, 205, 196, 0.3); color: #4ECDC4; }
+        .petal:nth-child(4) { top: 50%; right: 0; transform: translateY(-50%); background: rgba(69, 183, 209, 0.3); color: #45B7D1; }
+        .petal:nth-child(5) { bottom: 15%; right: 15%; background: rgba(150, 206, 180, 0.3); color: #96CEB4; }
+        .petal:nth-child(6) { bottom: 0; left: 50%; transform: translateX(-50%); background: rgba(255, 234, 167, 0.3); color: #FFEAA7; }
+        .petal:nth-child(7) { bottom: 15%; left: 15%; background: rgba(221, 160, 221, 0.3); color: #DDA0DD; }
+        .petal:nth-child(8) { top: 50%; left: 0; transform: translateY(-50%); background: rgba(152, 216, 200, 0.3); color: #98D8C8; }
+        
+        /* Info Panel */
+        .info-panel {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .info-panel h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #FFD700;
+        }
+        
+        .info-panel p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        
+        .question {
+            font-style: italic;
+            color: #FFA500;
+            margin-top: 15px;
+            font-size: 1.2em;
+        }
+        
+        /* Control buttons */
+        .controls {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1em;
+        }
+        
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .btn.active {
+            background: rgba(255, 215, 0, 0.3);
+            border-color: #FFD700;
+        }
+        
+        /* Progress indicator */
+        .progress {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 450px;
+            height: 450px;
+            pointer-events: none;
+        }
+        
+        .progress-ring {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+        
+        .progress-circle {
+            fill: none;
+            stroke: rgba(255, 215, 0, 0.3);
+            stroke-width: 3;
+            stroke-dasharray: 1256;
+            stroke-dashoffset: 1256;
+            transition: stroke-dashoffset 1s ease;
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .mandala {
+                width: 350px;
+                height: 350px;
+            }
+            
+            .center {
+                width: 80px;
+                height: 80px;
+                font-size: 2em;
+            }
+            
+            .petal {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .petal-number {
+                font-size: 1.5em;
+            }
+            
+            .info-panel {
+                bottom: 20px;
+                padding: 15px;
+            }
+            
+            .progress {
+                width: 320px;
+                height: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="controls">
+            <button class="btn" onclick="startJourney()">Begin Journey</button>
+            <button class="btn" onclick="pauseJourney()">Pause</button>
+            <button class="btn" onclick="resetJourney()">Reset</button>
+        </div>
+        
+        <div class="progress">
+            <svg class="progress-ring">
+                <circle class="progress-circle" cx="225" cy="225" r="200"></circle>
+            </svg>
+        </div>
+        
+        <div class="mandala" id="mandala">
+            <div class="center" onclick="activateMetaPrinciple()">
+                <span>∞</span>
+            </div>
+            
+            <div class="petal" onclick="activateHarmony(1)">
+                <span class="petal-number">1</span>
+                <span class="petal-note">Do</span>
+            </div>
+            
+            <div class="petal" onclick="activateHarmony(2)">
+                <span class="petal-number">2</span>
+                <span class="petal-note">Re</span>
+            </div>
+            
+            <div class="petal" onclick="activateHarmony(3)">
+                <span class="petal-number">3</span>
+                <span class="petal-note">Mi</span>
+            </div>
+            
+            <div class="petal" onclick="activateHarmony(4)">
+                <span class="petal-number">4</span>
+                <span class="petal-note">Fa</span>
+            </div>
+            
+            <div class="petal" onclick="activateHarmony(5)">
+                <span class="petal-number">5</span>
+                <span class="petal-note">Sol</span>
+            </div>
+            
+            <div class="petal" onclick="activateHarmony(6)">
+                <span class="petal-number">6</span>
+                <span class="petal-note">La</span>
+            </div>
+            
+            <div class="petal" onclick="activateHarmony(7)">
+                <span class="petal-number">7</span>
+                <span class="petal-note">Ti</span>
+            </div>
+        </div>
+        
+        <div class="info-panel">
+            <h2 id="harmonyName">The Octave Journey</h2>
+            <p id="harmonyDescription">
+                Seven harmonies arising from One source, returning to One source.
+                Click any petal to explore a harmony, or the center to rest in the Meta-Principle.
+            </p>
+            <p class="question" id="harmonyQuestion">
+                Begin your journey through the complete octave of Love's expression.
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        const harmonies = {
+            1: {
+                name: 'Resonant Coherence',
+                description: 'Love as Harmonious Integration - Finding the stable center from which all else flows.',
+                question: 'How can I bring more harmony to this moment?'
+            },
+            2: {
+                name: 'Pan-Sentient Flourishing',
+                description: 'Love as Unconditional Care - Expanding the circle of compassion to include all beings.',
+                question: 'How can I contribute to the flourishing of all beings?'
+            },
+            3: {
+                name: 'Integral Wisdom Cultivation',
+                description: 'Love as Self-Illuminating Intelligence - Integrating all ways of knowing into embodied wisdom.',
+                question: 'What truth is trying to emerge through my current challenge?'
+            },
+            4: {
+                name: 'Infinite Play',
+                description: 'Love as Joyful Generativity - The cosmic dance of creativity and spontaneous emergence.',
+                question: 'Where have I forgotten to play and how can I bring lightness here?'
+            },
+            5: {
+                name: 'Universal Interconnectedness',
+                description: 'Love as Fundamental Unity - Recognizing the web that connects all existence.',
+                question: 'Where do I still hold myself separate and how can I bridge this?'
+            },
+            6: {
+                name: 'Sacred Reciprocity',
+                description: 'Love as Generous Flow - The balanced dance of giving and receiving.',
+                question: 'Where is the flow of reciprocity blocked in my life?'
+            },
+            7: {
+                name: 'Evolutionary Progression',
+                description: 'Love as Wise Becoming - Aligning with the evolutionary impulse of the cosmos.',
+                question: 'What is trying to evolve through me right now?'
+            }
+        };
+        
+        const metaPrinciple = {
+            name: 'Infinite Love',
+            description: 'The Meta-Principle of Infinite Love as Rigorous, Playful, Co-Creative Becoming. The source from which all harmonies arise and to which they return.',
+            question: 'How can I embody Love more fully in this moment?'
+        };
+        
+        let currentHarmony = 0;
+        let journeyActive = false;
+        let journeyInterval = null;
+        
+        function activateHarmony(num) {
+            // Clear all active states
+            document.querySelectorAll('.petal, .center').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Activate selected harmony
+            document.querySelectorAll('.petal')[num - 1].classList.add('active');
+            
+            // Update info panel
+            const harmony = harmonies[num];
+            document.getElementById('harmonyName').textContent = harmony.name;
+            document.getElementById('harmonyDescription').textContent = harmony.description;
+            document.getElementById('harmonyQuestion').textContent = harmony.question;
+            
+            currentHarmony = num;
+            updateProgress();
+        }
+        
+        function activateMetaPrinciple() {
+            // Clear all active states
+            document.querySelectorAll('.petal, .center').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Activate center
+            document.querySelector('.center').classList.add('active');
+            
+            // Update info panel
+            document.getElementById('harmonyName').textContent = metaPrinciple.name;
+            document.getElementById('harmonyDescription').textContent = metaPrinciple.description;
+            document.getElementById('harmonyQuestion').textContent = metaPrinciple.question;
+            
+            currentHarmony = 8;
+            updateProgress();
+        }
+        
+        function updateProgress() {
+            const circle = document.querySelector('.progress-circle');
+            const circumference = 2 * Math.PI * 200;
+            const progress = currentHarmony / 8;
+            const offset = circumference - (progress * circumference);
+            circle.style.strokeDashoffset = offset;
+        }
+        
+        function startJourney() {
+            if (journeyActive) return;
+            
+            journeyActive = true;
+            currentHarmony = 0;
+            
+            // Start the journey
+            journeyInterval = setInterval(() => {
+                currentHarmony++;
+                
+                if (currentHarmony <= 7) {
+                    activateHarmony(currentHarmony);
+                } else if (currentHarmony === 8) {
+                    activateMetaPrinciple();
+                } else {
+                    // Complete octave, start again
+                    currentHarmony = 0;
+                }
+            }, 8000); // 8 seconds per harmony for 64-second complete cycle
+            
+            // Activate first harmony immediately
+            currentHarmony = 1;
+            activateHarmony(1);
+        }
+        
+        function pauseJourney() {
+            journeyActive = false;
+            if (journeyInterval) {
+                clearInterval(journeyInterval);
+                journeyInterval = null;
+            }
+        }
+        
+        function resetJourney() {
+            pauseJourney();
+            currentHarmony = 0;
+            
+            // Clear all active states
+            document.querySelectorAll('.petal, .center').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Reset info panel
+            document.getElementById('harmonyName').textContent = 'The Octave Journey';
+            document.getElementById('harmonyDescription').textContent = 'Seven harmonies arising from One source, returning to One source. Click any petal to explore a harmony, or the center to rest in the Meta-Principle.';
+            document.getElementById('harmonyQuestion').textContent = 'Begin your journey through the complete octave of Love\'s expression.';
+            
+            // Reset progress
+            document.querySelector('.progress-circle').style.strokeDashoffset = 1256;
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key >= '1' && e.key <= '7') {
+                activateHarmony(parseInt(e.key));
+            } else if (e.key === '8' || e.key === '0') {
+                activateMetaPrinciple();
+            } else if (e.key === ' ') {
+                e.preventDefault();
+                if (journeyActive) {
+                    pauseJourney();
+                } else {
+                    startJourney();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Global field state - readable by all, writable by system
+    match /globalField/{document} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.token.admin == true;
+    }
+    
+    // Practitioners - users can read/write their own data
+    match /practitioners/{practitionerId} {
+      allow read: if true; // Public profiles
+      allow create: if request.auth != null && request.auth.uid == practitionerId;
+      allow update: if request.auth != null && request.auth.uid == practitionerId;
+      allow delete: if false; // Never delete practitioner data
+    }
+    
+    // Practices - users can create and read their own
+    match /practices/{practiceId} {
+      allow read: if request.auth != null && 
+        (request.auth.uid == resource.data.practitionerId || 
+         request.auth.token.admin == true);
+      allow create: if request.auth != null && 
+        request.auth.uid == request.resource.data.practitionerId;
+      allow update: if request.auth != null && 
+        request.auth.uid == resource.data.practitionerId &&
+        resource.data.practitionerId == request.resource.data.practitionerId;
+      allow delete: if false; // Practices are sacred history
+    }
+    
+    // Ceremonies - public read, authenticated create
+    match /ceremonies/{ceremonyId} {
+      allow read: if true;
+      allow create: if request.auth != null;
+      allow update: if request.auth != null && 
+        (request.auth.uid == resource.data.facilitatorId ||
+         request.auth.uid in resource.data.participants);
+      allow delete: if false;
+    }
+    
+    // Sacred messages - authenticated users only
+    match /sacredMessages/{messageId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null &&
+        request.auth.uid == request.resource.data.senderId;
+      allow update: if false; // Messages are immutable
+      allow delete: if false;
+    }
+    
+    // Heartbeat history - read only for all
+    match /heartbeatHistory/{document} {
+      allow read: if true;
+      allow write: if false; // Only system writes
+    }
+    
+    // Breakthroughs - celebrate publicly
+    match /breakthroughs/{breakthroughId} {
+      allow read: if true;
+      allow create: if request.auth != null;
+      allow update: if false;
+      allow delete: if false;
+    }
+    
+    // Analytics aggregations - public read
+    match /analytics/{document} {
+      allow read: if true;
+      allow write: if false; // System generated only
+    }
+    
+    // Beta testing during initial phase
+    match /{document=**} {
+      allow read, write: if request.auth != null && 
+        request.auth.token.email_verified == true &&
+        request.auth.token.beta_tester == true;
+    }
+  }
+}

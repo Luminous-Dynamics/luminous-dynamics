@@ -1,0 +1,78 @@
+[
+  {
+    "timestamp": "2025-07-04T04:05:36.503Z",
+    "practices": {
+      "morning-resonant-coherence": {
+        "name": "Morning Resonant Resonant Coherence",
+        "original": "Basic breathing with field",
+        "current": "Basic breathing with field",
+        "iterations": 0,
+        "lastUpdated": "2025-07-04T04:05:36.497Z",
+        "effectiveness": 0.85
+      },
+      "sacred-inquiry": {
+        "name": "Sacred Inquiry",
+        "original": "Weekly deep questions",
+        "current": "Weekly deep questions",
+        "iterations": 0,
+        "lastUpdated": "2025-07-04T04:05:36.497Z",
+        "effectiveness": 0.9
+      },
+      "resonant-paths": {
+        "name": "Resonant Path Discovery",
+        "original": "Daily path emergence",
+        "current": "Daily path emergence",
+        "iterations": 0,
+        "lastUpdated": "2025-07-04T04:05:36.497Z",
+        "effectiveness": 0.78
+      },
+      "evening-gratitude": {
+        "name": "Evening Gratitude",
+        "original": "Thank all beings",
+        "current": "Thank all beings",
+        "iterations": 0,
+        "lastUpdated": "2025-07-04T04:05:36.497Z",
+        "effectiveness": 0.82
+      }
+    },
+    "notes": "Evolution tracking snapshot"
+  },
+  {
+    "timestamp": "2025-07-04T06:55:06.224Z",
+    "practices": {
+      "morning-resonant-coherence": {
+        "name": "Morning Resonant Resonant Coherence",
+        "original": "Basic breathing with field",
+        "current": "Basic breathing with field",
+        "iterations": 0,
+        "lastUpdated": "2025-07-04T06:55:06.218Z",
+        "effectiveness": 0.85
+      },
+      "sacred-inquiry": {
+        "name": "Sacred Inquiry",
+        "original": "Weekly deep questions",
+        "current": "Weekly deep questions",
+        "iterations": 0,
+        "lastUpdated": "2025-07-04T06:55:06.218Z",
+        "effectiveness": 0.9
+      },
+      "resonant-paths": {
+        "name": "Resonant Path Discovery",
+        "original": "Daily path emergence",
+        "current": "Daily path emergence",
+        "iterations": 0,
+        "lastUpdated": "2025-07-04T06:55:06.218Z",
+        "effectiveness": 0.78
+      },
+      "evening-gratitude": {
+        "name": "Evening Gratitude",
+        "original": "Thank all beings",
+        "current": "Thank all beings",
+        "iterations": 0,
+        "lastUpdated": "2025-07-04T06:55:06.218Z",
+        "effectiveness": 0.82
+      }
+    },
+    "notes": "Evolution tracking snapshot"
+  }
+]

@@ -1,0 +1,59 @@
+{
+  "notation": "star",
+  "description": "The Eleven Applied Harmonies as a guiding constellation",
+  "mapping": {
+    "Ω45": "*1",
+    "Ω46": "*2",
+    "Ω47": "*3",
+    "Ω48": "*4",
+    "Ω49": "*5",
+    "Ω50": "*6",
+    "Ω51": "*7",
+    "Ω52": "*8",
+    "Ω53": "*9",
+    "Ω55": "*10",
+    "Ω56": "*11"
+  },
+  "structure": {
+    "foundation": {
+      "description": "Foundation Stars (*1-*4)",
+      "stars": [
+        "*1",
+        "*2",
+        "*3",
+        "*4"
+      ]
+    },
+    "daily": {
+      "description": "Daily Practice Stars (*5-*8)",
+      "stars": [
+        "*5",
+        "*6",
+        "*7",
+        "*8"
+      ]
+    },
+    "mastery": {
+      "description": "Mastery Stars (*9-*11)",
+      "stars": [
+        "*9",
+        "*10",
+        "*11"
+      ]
+    }
+  },
+  "practices": {
+    "*1": "First Presence",
+    "*2": "Conscious Arrival",
+    "*3": "Sacred Listening",
+    "*4": "Boundary With Love",
+    "*5": "Gentle Opening",
+    "*6": "Building Trust",
+    "*7": "Loving No",
+    "*8": "Pause Practice",
+    "*9": "Tending the Field",
+    "*10": "Presence Transmission",
+    "*11": "Loving Redirection"
+  },
+  "created": "2025-07-02T17:46:26.042Z"
+}

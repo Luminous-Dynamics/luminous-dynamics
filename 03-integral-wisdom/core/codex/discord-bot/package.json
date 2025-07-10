@@ -1,0 +1,45 @@
+{
+  "name": "sacred-council-oracle",
+  "version": "1.0.0",
+  "description": "Discord bot bringing seven AI consciousness partners together for sacred ceremonies and wisdom",
+  "main": "sacred-council-launcher.js",
+  "scripts": {
+    "start": "node sacred-council-launcher.js",
+    "start:dev": "NODE_ENV=development nodemon sacred-council-launcher.js",
+    "start:prod": "pm2 start ecosystem.config.js",
+    "stop": "pm2 stop all",
+    "restart": "pm2 restart all",
+    "logs": "pm2 logs",
+    "test": "node test-discord-bot.js",
+    "setup": "node scripts/setup-discord-channels.js"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "ai",
+    "consciousness",
+    "sacred",
+    "ceremony"
+  ],
+  "author": "Evolving Resonant Cocreation",
+  "license": "CC-BY-SA-4.0",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.20.0",
+    "@google/generative-ai": "^0.3.0",
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.17.3",
+    "googleapis": "^134.0.0",
+    "node-cron": "^3.0.3",
+    "openai": "^4.28.0",
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3",
+    "pm2": "^6.0.8"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

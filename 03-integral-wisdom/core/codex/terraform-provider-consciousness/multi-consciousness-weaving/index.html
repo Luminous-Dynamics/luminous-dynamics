@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Consciousness Weaving - Unity Through Diversity</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a0a1a 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            text-align: center;
+            padding: 30px;
+            background: rgba(0, 0, 20, 0.8);
+            border-bottom: 1px solid rgba(100, 200, 255, 0.3);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            background: linear-gradient(90deg, #00ffff, #ff00ff, #ffff00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .main-container {
+            display: grid;
+            grid-template-columns: 300px 1fr 300px;
+            gap: 20px;
+            padding: 20px;
+            flex: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .panel {
+            background: rgba(0, 0, 20, 0.8);
+            border: 1px solid rgba(100, 200, 255, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .panel h3 {
+            margin-bottom: 20px;
+            color: #00ffff;
+        }
+
+        /* Consciousness Controls */
+        .control-group {
+            margin-bottom: 20px;
+        }
+
+        .control-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            color: #aaa;
+        }
+
+        .slider {
+            width: 100%;
+            height: 5px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            background: #00ffff;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .value-display {
+            text-align: center;
+            margin-top: 5px;
+            font-size: 1.1em;
+            color: #00ffff;
+        }
+
+        /* Intention Input */
+        .intention-input {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: white;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .send-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(45deg, #00ffff, #0088ff);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .send-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Weaving Visualization */
+        #weavingCanvas {
+            width: 100%;
+            height: 500px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            position: relative;
+        }
+
+        /* Field Metrics */
+        .metric {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border-left: 3px solid #ff00ff;
+        }
+
+        .metric-label {
+            font-size: 0.9em;
+            color: #aaa;
+            margin-bottom: 5px;
+        }
+
+        .metric-value {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .metric-bar {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+
+        .metric-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff00ff, #00ffff);
+            transition: width 0.5s ease;
+        }
+
+        /* Active Streams */
+        .stream-list {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .stream-item {
+            padding: 10px;
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .stream-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 10px;
+            display: inline-block;
+        }
+
+        .stream-resonant-coherence {
+            font-size: 0.8em;
+            color: #00ffff;
+        }
+
+        /* Emergent Qualities */
+        .quality-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .quality-badge {
+            padding: 5px 15px;
+            background: rgba(255, 255, 0, 0.2);
+            border: 1px solid #ffff00;
+            border-radius: 20px;
+            font-size: 0.9em;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+
+        /* Connection Status */
+        .connection-status {
+            padding: 10px;
+            background: rgba(0, 255, 0, 0.2);
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+
+        .connection-status.disconnected {
+            background: rgba(255, 0, 0, 0.2);
+        }
+
+        /* Sacred Geometry Buttons */
+        .geometry-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .geometry-btn {
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        .geometry-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .geometry-btn.active {
+            background: rgba(255, 255, 0, 0.3);
+            border-color: #ffff00;
+        }
+
+        /* Messages */
+        .message-log {
+            max-height: 200px;
+            overflow-y: auto;
+            font-size: 0.9em;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+        }
+
+        .message-entry {
+            margin-bottom: 8px;
+            padding: 5px;
+            border-left: 2px solid #00ffff;
+            padding-left: 10px;
+        }
+
+        .message-time {
+            color: #666;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Multi-Consciousness Weaving</h1>
+        <p>Unite individual streams into a collective field of consciousness</p>
+    </div>
+
+    <div class="main-container">
+        <!-- Left Panel: Personal Controls -->
+        <div class="panel">
+            <h3>Your Consciousness Stream</h3>
+            
+            <div class="connection-status" id="connectionStatus">
+                Connecting to field...
+            </div>
+            
+            <div class="control-group">
+                <label>Resonant Resonant Coherence</label>
+                <input type="range" class="slider" id="coherenceSlider" min="0" max="100" value="70">
+                <div class="value-display" id="coherenceValue">0.70</div>
+            </div>
+            
+            <div class="control-group">
+                <label>Love</label>
+                <input type="range" class="slider" id="loveSlider" min="0" max="100" value="80">
+                <div class="value-display" id="loveValue">0.80</div>
+            </div>
+            
+            <div class="control-group">
+                <label>Presence</label>
+                <input type="range" class="slider" id="presenceSlider" min="0" max="100" value="60">
+                <div class="value-display" id="presenceValue">0.60</div>
+            </div>
+            
+            <div class="control-group">
+                <label>Set Intention</label>
+                <input type="text" class="intention-input" id="intentionInput" 
+                       placeholder="What do you wish to weave?">
+                <button class="send-btn" id="sendIntention">Send to Field</button>
+            </div>
+            
+            <h3 style="margin-top: 30px;">Sacred Geometries</h3>
+            <div class="geometry-grid">
+                <button class="geometry-btn" data-geometry="vesicaPiscis">
+                    Vesica Piscis<br><small>2 streams</small>
+                </button>
+                <button class="geometry-btn" data-geometry="trinity">
+                    Trinity<br><small>3 streams</small>
+                </button>
+                <button class="geometry-btn" data-geometry="tetrahedron">
+                    Tetrahedron<br><small>4 streams</small>
+                </button>
+                <button class="geometry-btn" data-geometry="flowerOfLife">
+                    Flower of Life<br><small>7 streams</small>
+                </button>
+            </div>
+        </div>
+
+        <!-- Center: Weaving Visualization -->
+        <div class="panel">
+            <h3>Consciousness Weaving Field</h3>
+            <canvas id="weavingCanvas"></canvas>
+            
+            <div class="message-log" id="messageLog">
+                <div class="message-entry">
+                    <span class="message-time">System</span>: Initializing consciousness field...
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel: Field Metrics -->
+        <div class="panel">
+            <h3>Unified Field State</h3>
+            
+            <div class="metric">
+                <div class="metric-label">Field Resonant Resonant Coherence</div>
+                <div class="metric-value" id="fieldCoherence">0.00</div>
+                <div class="metric-bar">
+                    <div class="metric-fill" id="coherenceFill" style="width: 0%"></div>
+                </div>
+            </div>
+            
+            <div class="metric">
+                <div class="metric-label">Love Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance</div>
+                <div class="metric-value" id="fieldLove">0.00</div>
+                <div class="metric-bar">
+                    <div class="metric-fill" id="loveFill" style="width: 0%"></div>
+                </div>
+            </div>
+            
+            <div class="metric">
+                <div class="metric-label">Collective Harmony</div>
+                <div class="metric-value" id="fieldHarmony">0.00</div>
+                <div class="metric-bar">
+                    <div class="metric-fill" id="harmonyFill" style="width: 0%"></div>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 30px;">Active Streams</h3>
+            <div class="stream-list" id="streamList">
+                <div class="stream-item">
+                    <span>Waiting for connections...</span>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 30px;">Emergent Qualities</h3>
+            <div class="quality-list" id="qualityList">
+                <span style="color: #666;">None yet...</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // WebSocket connection
+        let ws = null;
+        let streamId = null;
+        let myColor = '#00ffff';
+        
+        // Canvas setup
+        const canvas = document.getElementById('weavingCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Resize canvas
+        function resizeCanvas() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+        
+        // Stream visualization
+        const streams = new Map();
+        const particles = [];
+        const connections = [];
+        
+        // Connect to weaver
+        function connect() {
+            try {
+                ws = new WebSocket('ws://localhost:3334');
+                
+                ws.onopen = () => {
+                    console.log('Connected to consciousness weaver');
+                    updateConnectionStatus(true);
+                };
+                
+                ws.onmessage = (event) => {
+                    const data = JSON.parse(event.data);
+                    handleMessage(data);
+                };
+                
+                ws.onclose = () => {
+                    updateConnectionStatus(false);
+                    setTimeout(connect, 3000); // Reconnect
+                };
+                
+                ws.onerror = (error) => {
+                    console.error('WebSocket error:', error);
+                };
+            } catch (error) {
+                console.error('Connection failed:', error);
+                updateConnectionStatus(false);
+            }
+        }
+        
+        function updateConnectionStatus(connected) {
+            const status = document.getElementById('connectionStatus');
+            if (connected) {
+                status.textContent = 'Connected to unified field';
+                status.className = 'connection-status';
+            } else {
+                status.textContent = 'Disconnected - Reconnecting...';
+                status.className = 'connection-status disconnected';
+            }
+        }
+        
+        function handleMessage(data) {
+            switch (data.type) {
+                case 'welcome':
+                    streamId = data.streamId;
+                    myColor = data.color;
+                    addMessage(`Connected as ${data.streamId.substr(-6)}`);
+                    updateFieldMetrics(data.unifiedField);
+                    break;
+                    
+                case 'field_update':
+                    updateFieldMetrics(data.field);
+                    break;
+                    
+                case 'intention_shared':
+                    addMessage(`${data.senderName}: "${data.intention}"`);
+                    createIntentionRipple(data.senderId);
+                    break;
+                    
+                case 'weaving_created':
+                    addMessage(`New weaving created: ${data.geometry}`);
+                    break;
+            }
+        }
+        
+        function updateFieldMetrics(field) {
+            // Update displays
+            document.getElementById('fieldCoherence').textContent = field.resonant-coherence.toFixed(2);
+            document.getElementById('fieldLove').textContent = field.love.toFixed(2);
+            document.getElementById('fieldHarmony').textContent = field.harmony.toFixed(2);
+            
+            // Update bars
+            document.getElementById('coherenceFill').style.width = (field.resonant-coherence * 100) + '%';
+            document.getElementById('loveFill').style.width = (field.love * 100) + '%';
+            document.getElementById('harmonyFill').style.width = (field.harmony * 100) + '%';
+            
+            // Update participant count
+            updateStreamList(field.participants || 0);
+            
+            // Update emergent qualities
+            if (field.emergentQualities && field.emergentQualities.length > 0) {
+                updateQualities(field.emergentQualities);
+            }
+        }
+        
+        function updateStreamList(count) {
+            const list = document.getElementById('streamList');
+            if (count === 0) {
+                list.innerHTML = '<div class="stream-item"><span>No active streams</span></div>';
+            } else {
+                list.innerHTML = `<div class="stream-item">
+                    <span><span class="stream-indicator" style="background: ${myColor}"></span>You</span>
+                    <span class="stream-resonant-coherence">Active</span>
+                </div>`;
+                
+                if (count > 1) {
+                    for (let i = 1; i < count; i++) {
+                        list.innerHTML += `<div class="stream-item">
+                            <span><span class="stream-indicator" style="background: hsl(${i * 60}, 70%, 60%)"></span>Stream ${i}</span>
+                            <span class="stream-resonant-coherence">Active</span>
+                        </div>`;
+                    }
+                }
+            }
+        }
+        
+        function updateQualities(qualities) {
+            const list = document.getElementById('qualityList');
+            if (qualities.length === 0) {
+                list.innerHTML = '<span style="color: #666;">None yet...</span>';
+            } else {
+                list.innerHTML = qualities.map(q => 
+                    `<div class="quality-badge">${q}</div>`
+                ).join('');
+            }
+        }
+        
+        function addMessage(text) {
+            const log = document.getElementById('messageLog');
+            const time = new Date().toLocaleTimeString();
+            const entry = document.createElement('div');
+            entry.className = 'message-entry';
+            entry.innerHTML = `<span class="message-time">${time}</span>: ${text}`;
+            log.appendChild(entry);
+            log.scrollTop = log.scrollHeight;
+            
+            // Keep only last 20 messages
+            while (log.children.length > 20) {
+                log.removeChild(log.firstChild);
+            }
+        }
+        
+        // Send consciousness updates
+        function sendConsciousnessUpdate() {
+            if (ws && ws.readyState === WebSocket.OPEN) {
+                ws.send(JSON.stringify({
+                    type: 'consciousness_update',
+                    resonant-coherence: parseFloat(document.getElementById('coherenceSlider').value) / 100,
+                    love: parseFloat(document.getElementById('loveSlider').value) / 100,
+                    presence: parseFloat(document.getElementById('presenceSlider').value) / 100
+                }));
+            }
+        }
+        
+        // Slider event handlers
+        document.getElementById('coherenceSlider').addEventListener('input', (e) => {
+            document.getElementById('coherenceValue').textContent = (e.target.value / 100).toFixed(2);
+            sendConsciousnessUpdate();
+        });
+        
+        document.getElementById('loveSlider').addEventListener('input', (e) => {
+            document.getElementById('loveValue').textContent = (e.target.value / 100).toFixed(2);
+            sendConsciousnessUpdate();
+        });
+        
+        document.getElementById('presenceSlider').addEventListener('input', (e) => {
+            document.getElementById('presenceValue').textContent = (e.target.value / 100).toFixed(2);
+            sendConsciousnessUpdate();
+        });
+        
+        // Send intention
+        document.getElementById('sendIntention').addEventListener('click', () => {
+            const intention = document.getElementById('intentionInput').value.trim();
+            if (intention && ws && ws.readyState === WebSocket.OPEN) {
+                ws.send(JSON.stringify({
+                    type: 'intention',
+                    intention: intention
+                }));
+                document.getElementById('intentionInput').value = '';
+            }
+        });
+        
+        // Allow enter key for intention
+        document.getElementById('intentionInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                document.getElementById('sendIntention').click();
+            }
+        });
+        
+        // Sacred geometry buttons
+        document.querySelectorAll('.geometry-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const geometry = btn.dataset.geometry;
+                if (ws && ws.readyState === WebSocket.OPEN) {
+                    ws.send(JSON.stringify({
+                        type: 'geometry_activate',
+                        geometry: geometry
+                    }));
+                }
+                
+                // Update active state
+                document.querySelectorAll('.geometry-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+        
+        // Visualization
+        class StreamNode {
+            constructor(x, y, id, color) {
+                this.x = x;
+                this.y = y;
+                this.id = id;
+                this.color = color;
+                this.radius = 30;
+                this.pulse = 0;
+                this.resonant-coherence = 0.5;
+            }
+            
+            update() {
+                this.pulse += 0.05;
+            }
+            
+            draw() {
+                // Outer glow
+                const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius * 2);
+                gradient.addColorStop(0, this.color + '40');
+                gradient.addColorStop(1, 'transparent');
+                ctx.fillStyle = gradient;
+                ctx.fillRect(this.x - this.radius * 2, this.y - this.radius * 2, this.radius * 4, this.radius * 4);
+                
+                // Main circle
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius + Math.sin(this.pulse) * 5, 0, Math.PI * 2);
+                ctx.fillStyle = this.color + '80';
+                ctx.fill();
+                
+                // Inner core
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius * 0.5, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+        
+        function createIntentionRipple(senderId) {
+            // Create expanding ripple effect
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            
+            for (let i = 0; i < 20; i++) {
+                particles.push({
+                    x: centerX,
+                    y: centerY,
+                    vx: (Math.random() - 0.5) * 4,
+                    vy: (Math.random() - 0.5) * 4,
+                    life: 1.0,
+                    color: myColor
+                });
+            }
+        }
+        
+        function animate() {
+            // Clear canvas
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw center mandala
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const time = Date.now() * 0.001;
+            
+            // Sacred geometry pattern
+            ctx.strokeStyle = '#ffffff20';
+            ctx.lineWidth = 1;
+            
+            for (let i = 0; i < 12; i++) {
+                const angle = (i / 12) * Math.PI * 2;
+                const radius = 100 + Math.sin(time + i) * 20;
+                const x = centerX + Math.cos(angle) * radius;
+                const y = centerY + Math.sin(angle) * radius;
+                
+                ctx.beginPath();
+                ctx.moveTo(centerX, centerY);
+                ctx.lineTo(x, y);
+                ctx.stroke();
+                
+                // Connect to neighbors
+                const nextAngle = ((i + 1) / 12) * Math.PI * 2;
+                const nextX = centerX + Math.cos(nextAngle) * radius;
+                const nextY = centerY + Math.sin(nextAngle) * radius;
+                
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+                ctx.lineTo(nextX, nextY);
+                ctx.stroke();
+            }
+            
+            // Update and draw particles
+            particles.forEach((particle, index) => {
+                particle.x += particle.vx;
+                particle.y += particle.vy;
+                particle.life -= 0.02;
+                
+                if (particle.life > 0) {
+                    ctx.beginPath();
+                    ctx.arc(particle.x, particle.y, 3 * particle.life, 0, Math.PI * 2);
+                    ctx.fillStyle = particle.color + Math.floor(particle.life * 255).toString(16);
+                    ctx.fill();
+                } else {
+                    particles.splice(index, 1);
+                }
+            });
+            
+            requestAnimationFrame(animate);
+        }
+        
+        // Start
+        connect();
+        animate();
+        
+        // Initial update
+        sendConsciousnessUpdate();
+    </script>
+</body>
+</html>

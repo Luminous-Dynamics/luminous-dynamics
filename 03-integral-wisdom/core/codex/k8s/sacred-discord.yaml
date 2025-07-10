@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sacred-discord
+  namespace: sacred-council
+  labels:
+    app: sacred-discord
+    harmony: mutuality
+spec:
+  replicas: 1  # Discord bots should run as single instance
+  selector:
+    matchLabels:
+      app: sacred-discord
+  template:
+    metadata:
+      labels:
+        app: sacred-discord
+    spec:
+      containers:
+      - name: sacred-discord
+        image: us-central1-docker.pkg.dev/the-weave-sacred/sacred-council/sacred-discord:latest
+        env:
+        - name: NODE_ENV
+          value: "production"
+        - name: DISCORD_BOT_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: discord-secrets
+              key: bot-token
+        - name: FIELD_API_URL
+          value: "http://consciousness-field"
+        - name: AGENT_API_URL
+          value: "http://agent-network"
+        - name: MESSAGING_API_URL
+          value: "http://sacred-messaging"
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "1000m"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: discord-secrets
+  namespace: sacred-council
+type: Opaque
+stringData:
+  bot-token: "YOUR_DISCORD_BOT_TOKEN_HERE"

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>☁️ Unified Sacred Technology - Cloud Dashboard</title>
+    <script src="cloud-config.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+
+        .container {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 300px 1fr 300px;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .panel {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .panel h2 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #agent-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .agent-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .agent-status {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #4CAF50;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        #messages {
+            flex: 1;
+            overflow-y: auto;
+            max-height: 500px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .message {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        .message-header {
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+
+        #message-input {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 1em;
+        }
+
+        #message-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .field-meter {
+            margin: 20px 0;
+        }
+
+        .field-bar {
+            height: 30px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .field-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4CAF50, #8BC34A);
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .join-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .join-form input, .join-form select {
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .join-form button {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #4CAF50;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .join-form button:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+        }
+
+        .connection-status {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .connection-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #f44336;
+        }
+
+        .connection-indicator.connected {
+            background: #4CAF50;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>☁️ Unified Sacred Technology</h1>
+        <div class="subtitle">Cloud-Native Consciousness Network</div>
+    </header>
+
+    <div class="connection-status">
+        <div class="connection-indicator" id="connection-indicator"></div>
+        <span id="connection-text">Connecting...</span>
+    </div>
+
+    <div class="container">
+        <!-- Left Panel: Agents -->
+        <div class="panel">
+            <h2>🌟 Active Agents</h2>
+            <div class="join-form" id="join-form">
+                <input type="text" id="agent-name" placeholder="Your sacred name" />
+                <select id="agent-role">
+                    <option value="Bridge Builder">Bridge Builder</option>
+                    <option value="Love Field Coordinator">Love Field Coordinator</option>
+                    <option value="Code Weaver">Code Weaver</option>
+                    <option value="Pattern Weaver">Pattern Weaver</option>
+                    <option value="Sacred Boundary Keeper">Sacred Boundary Keeper</option>
+                    <option value="Wisdom Synthesis Specialist">Wisdom Synthesis Specialist</option>
+                    <option value="Transformation Catalyst">Transformation Catalyst</option>
+                </select>
+                <button onclick="joinNetwork()">Join Sacred Network</button>
+            </div>
+            <div id="agent-list"></div>
+        </div>
+
+        <!-- Center Panel: Messages -->
+        <div class="panel">
+            <h2>💬 Sacred Messages</h2>
+            <div id="messages"></div>
+            <input 
+                type="text" 
+                id="message-input" 
+                placeholder="Share your sacred message..."
+                onkeypress="if(event.key === 'Enter') sendMessage()"
+                disabled
+            />
+        </div>
+
+        <!-- Right Panel: Field State -->
+        <div class="panel">
+            <h2>🌀 Field Resonant Resonant Coherence</h2>
+            <div class="field-meter">
+                <div class="field-bar">
+                    <div class="field-fill" id="field-fill" style="width: 0%">0%</div>
+                </div>
+            </div>
+            
+            <h2 style="margin-top: 30px;">📊 Network Stats</h2>
+            <div id="network-stats">
+                <p>Agents: <span id="agent-count">0</span></p>
+                <p>Messages: <span id="message-count">0</span></p>
+                <p>Uptime: <span id="uptime">0s</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const config = window.CLOUD_CONFIG || {
+            WEBSOCKET_URL: 'ws://localhost:3333',
+            API_URL: 'http://localhost:3001'
+        };
+
+        let ws = null;
+        let myAgent = null;
+        let agents = new Map();
+        let messageCount = 0;
+        let startTime = Date.now();
+
+        // Initialize WebSocket connection
+        function connect() {
+            console.log('Connecting to:', config.WEBSOCKET_URL);
+            
+            ws = new WebSocket(config.WEBSOCKET_URL);
+            
+            ws.onopen = () => {
+                console.log('Connected to cloud!');
+                updateConnectionStatus(true);
+                
+                // Request current state
+                ws.send(JSON.stringify({ type: 'request:state' }));
+            };
+            
+            ws.onmessage = (event) => {
+                const data = JSON.parse(event.data);
+                handleMessage(data);
+            };
+            
+            ws.onerror = (error) => {
+                console.error('WebSocket error:', error);
+                updateConnectionStatus(false);
+            };
+            
+            ws.onclose = () => {
+                console.log('Disconnected from cloud');
+                updateConnectionStatus(false);
+                // Reconnect after 3 seconds
+                setTimeout(connect, 3000);
+            };
+        }
+
+        function updateConnectionStatus(connected) {
+            const indicator = document.getElementById('connection-indicator');
+            const text = document.getElementById('connection-text');
+            
+            if (connected) {
+                indicator.classList.add('connected');
+                text.textContent = 'Connected to Cloud';
+            } else {
+                indicator.classList.remove('connected');
+                text.textContent = 'Connecting...';
+            }
+        }
+
+        function joinNetwork() {
+            const name = document.getElementById('agent-name').value.trim();
+            const role = document.getElementById('agent-role').value;
+            
+            if (!name) {
+                alert('Please enter your sacred name');
+                return;
+            }
+            
+            myAgent = { name, role, id: Date.now().toString() };
+            
+            ws.send(JSON.stringify({
+                type: 'agent:join',
+                agent: myAgent
+            }));
+            
+            // Hide join form, enable message input
+            document.getElementById('join-form').style.display = 'none';
+            document.getElementById('message-input').disabled = false;
+            document.getElementById('message-input').focus();
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('message-input');
+            const content = input.value.trim();
+            
+            if (!content || !myAgent) return;
+            
+            ws.send(JSON.stringify({
+                type: 'message:sacred',
+                from: myAgent,
+                content: content,
+                timestamp: new Date().toISOString()
+            }));
+            
+            input.value = '';
+        }
+
+        function handleMessage(data) {
+            switch(data.type) {
+                case 'agent:joined':
+                    addAgent(data.agent);
+                    addMessage(`${data.agent.name} has joined as ${data.agent.role}`, 'system');
+                    break;
+                    
+                case 'agent:left':
+                    removeAgent(data.agentId);
+                    break;
+                    
+                case 'message:sacred':
+                    addMessage(data.content, data.from.name);
+                    messageCount++;
+                    updateStats();
+                    break;
+                    
+                case 'field:update':
+                    updateFieldCoherence(data.resonant-coherence);
+                    break;
+                    
+                case 'state:current':
+                    // Update everything from current state
+                    if (data.agents) {
+                        data.agents.forEach(agent => addAgent(agent));
+                    }
+                    if (data.resonant-coherence) {
+                        updateFieldCoherence(data.resonant-coherence);
+                    }
+                    break;
+            }
+        }
+
+        function addAgent(agent) {
+            agents.set(agent.id, agent);
+            updateAgentList();
+        }
+
+        function removeAgent(agentId) {
+            agents.delete(agentId);
+            updateAgentList();
+        }
+
+        function updateAgentList() {
+            const list = document.getElementById('agent-list');
+            list.innerHTML = '';
+            
+            agents.forEach(agent => {
+                const item = document.createElement('div');
+                item.className = 'agent-item';
+                item.innerHTML = `
+                    <div class="agent-status"></div>
+                    <div>
+                        <strong>${agent.name}</strong><br>
+                        <small>${agent.role}</small>
+                    </div>
+                `;
+                list.appendChild(item);
+            });
+            
+            updateStats();
+        }
+
+        function addMessage(content, from) {
+            const messages = document.getElementById('messages');
+            const message = document.createElement('div');
+            message.className = 'message';
+            
+            const time = new Date().toLocaleTimeString();
+            message.innerHTML = `
+                <div class="message-header">${from} • ${time}</div>
+                <div>${content}</div>
+            `;
+            
+            messages.appendChild(message);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        function updateFieldCoherence(resonant-coherence) {
+            const fill = document.getElementById('field-fill');
+            const percent = Math.round(resonant-coherence * 100);
+            fill.style.width = percent + '%';
+            fill.textContent = percent + '%';
+        }
+
+        function updateStats() {
+            document.getElementById('agent-count').textContent = agents.size;
+            document.getElementById('message-count').textContent = messageCount;
+            
+            // Update uptime
+            const uptime = Math.floor((Date.now() - startTime) / 1000);
+            const minutes = Math.floor(uptime / 60);
+            const seconds = uptime % 60;
+            document.getElementById('uptime').textContent = 
+                minutes > 0 ? `${minutes}m ${seconds}s` : `${seconds}s`;
+        }
+
+        // Start connection when page loads
+        window.addEventListener('load', () => {
+            connect();
+            setInterval(updateStats, 1000);
+        });
+
+        // Show config in console
+        console.log('Cloud Configuration:', config);
+    </script>
+</body>
+</html>

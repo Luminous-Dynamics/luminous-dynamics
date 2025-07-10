@@ -1,0 +1,23 @@
+{
+  "gcp": {
+    "projectId": "mycelix-network",
+    "region": "us-central1",
+    "serviceAccount": "sacred-council-sa@mycelix-network.iam.gserviceaccount.com"
+  },
+  "services": {
+    "sacred-council-api": {
+      "url": "https://sacred-council-api-310699330526.us-central1.run.app",
+      "authRequired": true,
+      "authMethod": "bearer-token"
+    },
+    "sacred-council": {
+      "url": "https://sacred-council-310699330526.us-central1.run.app",
+      "authRequired": false
+    }
+  },
+  "firebase": {
+    "authDomain": "mycelix-network.firebaseapp.com",
+    "databaseURL": "https://mycelix-network.firebaseio.com",
+    "storageBucket": "mycelix-network.appspot.com"
+  }
+}

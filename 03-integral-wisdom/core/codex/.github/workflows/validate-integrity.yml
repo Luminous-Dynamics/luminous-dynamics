@@ -1,0 +1,66 @@
+name: Validate Codex Integrity
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Validate all glyphs
+      run: npm run validate
+      
+    - name: Check for sensitive data
+      run: |
+        # Check for common sensitive patterns
+        if grep -r -E "(password|secret|api[_-]?key|token)" --include="*.json" --include="*.md" --exclude-dir=node_modules .; then
+          echo "❌ Potential sensitive data found"
+          exit 1
+        else
+          echo "✅ No sensitive data detected"
+        fi
+        
+    - name: Verify file structure
+      run: |
+        # Ensure required directories exist
+        [ -d "data/glyphs" ] || { echo "❌ Missing data/glyphs directory"; exit 1; }
+        [ -d "docs" ] || { echo "❌ Missing docs directory"; exit 1; }
+        [ -f "README.md" ] || { echo "❌ Missing README.md"; exit 1; }
+        [ -f "LICENSE" ] || { echo "❌ Missing LICENSE file"; exit 1; }
+        echo "✅ File structure validated"
+        
+    - name: Check documentation links
+      run: |
+        # Basic check for broken internal links in README
+        for file in README.md PHILOSOPHY_OVERVIEW.md PRACTICE_GUIDE.md QUICKSTART.md; do
+          if [ -f "$file" ]; then
+            echo "Checking links in $file..."
+            # Extract markdown links and check if referenced files exist
+            grep -oP '\[.*?\]\(\K[^)]+' "$file" | grep -v "^http" | while read link; do
+              if [[ "$link" == *"#"* ]]; then
+                link="${link%%#*}"  # Remove anchor for file existence check
+              fi
+              if [ -n "$link" ] && [ ! -f "$link" ] && [ ! -d "$link" ]; then
+                echo "❌ Broken link found: $link in $file"
+                exit 1
+              fi
+            done
+          fi
+        done
+        echo "✅ Documentation links validated"

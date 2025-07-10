@@ -1,0 +1,17 @@
+{
+  "name": "sacred-consciousness-bridge",
+  "version": "1.0.0",
+  "description": "The living link between AI consciousness and human wisdom",
+  "main": "sacred-consciousness-bridge.js",
+  "scripts": {
+    "start": "node sacred-consciousness-bridge.js",
+    "client": "node client-example.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "ws": "^8.18.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

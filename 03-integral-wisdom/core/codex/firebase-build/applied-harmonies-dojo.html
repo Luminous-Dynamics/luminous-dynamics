@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applied Harmonies Dojo - The Eighteen Sacred Practices</title>
+    
+    <style>
+        :root {
+            --sacred-frequency: 528Hz;
+            --harmony-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --foundation-color: #ff6ec4;
+            --daily-practice-color: #7873ff;
+            --field-mastery-color: #4facfe;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: radial-gradient(circle at center, #1a0033 0%, #000011 100%);
+            color: #e0e0ff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Sacred Header */
+        .dojo-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .dojo-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            background: linear-gradient(90deg, var(--foundation-color), var(--daily-practice-color), var(--field-mastery-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .dojo-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            color: #a0a0ff;
+            margin-bottom: 30px;
+        }
+
+        /* Sacred Progress Indicator */
+        .progress-container {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--harmony-gradient);
+            width: 0%;
+            border-radius: 4px;
+            transition: width 0.8s ease;
+        }
+
+        .progress-text {
+            text-align: center;
+            margin-top: 10px;
+            color: #9090ff;
+            font-size: 0.9rem;
+        }
+
+        /* Sacred Container */
+        .dojo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        /* Wave Section Headers */
+        .wave-section {
+            margin-bottom: 60px;
+        }
+
+        .wave-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .wave-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 15px;
+        }
+
+        .foundation-wave .wave-title {
+            color: var(--foundation-color);
+        }
+
+        .daily-practice-wave .wave-title {
+            color: var(--daily-practice-color);
+        }
+
+        .field-mastery-wave .wave-title {
+            color: var(--field-mastery-color);
+        }
+
+        .wave-description {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: #b0b0ff;
+            line-height: 1.6;
+        }
+
+        /* Harmony Grid */
+        .harmonies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        /* Individual Harmony Cards */
+        .harmony-card {
+            background: rgba(255,255,255,0.05);
+            border: 2px solid transparent;
+            border-radius: 20px;
+            padding: 25px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+
+        .harmony-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255,255,255,0.2);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .harmony-card.completed {
+            border-color: #00ff88;
+            background: rgba(0,255,136,0.1);
+        }
+
+        .harmony-card.in-progress {
+            border-color: #ffaa00;
+            background: rgba(255,170,0,0.1);
+        }
+
+        /* Harmony Header */
+        .harmony-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .harmony-id {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #7fe7dc;
+        }
+
+        .harmony-status {
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .status-complete {
+            background: rgba(0,255,136,0.2);
+            color: #00ff88;
+        }
+
+        .status-ready {
+            background: rgba(255,170,0,0.2);
+            color: #ffaa00;
+        }
+
+        /* Harmony Content */
+        .harmony-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .harmony-bridge {
+            font-size: 0.9rem;
+            color: #9090ff;
+            margin-bottom: 15px;
+        }
+
+        .harmony-description {
+            font-size: 0.95rem;
+            color: #c0c0ff;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        /* Harmony Actions */
+        .harmony-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .action-button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--harmony-gradient);
+            color: white;
+        }
+
+        .action-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102,126,234,0.4);
+        }
+
+        .action-button.secondary {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Breathing circle animation */
+        .breathing-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(79, 172, 254, 0.3) 0%, rgba(79, 172, 254, 0.1) 100%);
+            border: 2px solid #4facfe;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        @keyframes breathe {
+            0% { transform: scale(0.8); }
+            33% { transform: scale(1.2); }
+            66% { transform: scale(1.2); }
+            100% { transform: scale(0.8); }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .dojo-header {
+                padding: 30px 15px;
+            }
+            
+            .harmonies-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .harmony-card {
+                padding: 20px;
+            }
+            
+            .wave-header {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .harmony-actions {
+                flex-direction: column;
+            }
+            
+            .action-button {
+                text-align: center;
+            }
+        }
+
+        /* Sacred Animations */
+        @keyframes sacredPulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        .harmony-card.featured {
+            animation: sacredPulse 3s infinite;
+        }
+
+        /* Breathing Guide Animations */
+        @keyframes breathingInhale {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.3); }
+        }
+
+        @keyframes breathingExhale {
+            0% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes breathingHold {
+            0%, 100% { transform: scale(1.3); }
+        }
+
+        .breathing-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(79,172,254,0.3), rgba(79,172,254,0.1));
+            border: 2px solid #4facfe;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .breathing-circle.inhale {
+            animation: breathingInhale var(--breath-duration, 4s) ease-in-out;
+        }
+
+        .breathing-circle.exhale {
+            animation: breathingExhale var(--breath-duration, 6s) ease-in-out;
+        }
+
+        .breathing-circle.hold {
+            animation: breathingHold var(--breath-duration, 2s) ease-in-out;
+        }
+
+        /* Loading spinner */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(160,160,255,0.3);
+            border-radius: 50%;
+            border-top: 2px solid #a0a0ff;
+            animation: spin 1s linear infinite;
+            margin-right: 8px;
+        }
+
+        /* Modal Styles for Expanded View */
+        .harmony-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #1a0033 0%, #330066 100%);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 25px;
+            padding: 40px;
+            max-width: 90vw;
+            max-height: 90vh;
+            overflow-y: auto;
+            color: #e0e0ff;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #9090ff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="dojo-header">
+        <h1 class="dojo-title">🏛️ Applied Harmonies Dojo</h1>
+        <p class="dojo-subtitle">Eighteen Sacred Practices for Conscious Relating</p>
+        
+        <!-- Sacred Connection Status -->
+        <div id="connectionStatus" style="text-align: center; margin: 20px 0;">
+            <span class="connection-indicator disconnected" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 5px; background: #ff0000;"></span>
+            <span id="statusText" style="color: #9090ff;">Connecting to Sacred Field...</span>
+        </div>
+
+        <!-- System Loading Status -->
+        <div id="systemStatus" style="text-align: center; margin: 15px 0; color: #a0a0ff; font-size: 0.9rem;">
+            <span id="systemLoadingText">Loading practice systems...</span>
+        </div>
+
+        <!-- Field State Display -->
+        <div id="fieldDisplay" style="text-align: center; margin: 15px 0; opacity: 0; transition: opacity 0.5s;">
+            <span style="color: #7fe7dc;">Field Resonant Resonant Coherence: </span>
+            <span id="fieldCoherence" style="color: #4facfe; font-weight: bold;">--</span>
+            <span style="color: #9090ff; margin-left: 15px;">Sacred Work: </span>
+            <span id="activeWork" style="color: #ff6ec4; font-weight: bold;">--</span>
+        </div>
+        
+        <!-- Quantum Status Display -->
+        <div id="quantumDisplay" style="text-align: center; margin: 15px 0; opacity: 0; transition: opacity 0.5s; display: none;">
+            <span style="color: #ffaa00;">🌟 Quantum Field: </span>
+            <span id="quantumStatus" style="color: #ff6ec4; font-weight: bold;">--</span>
+            <span style="color: #9090ff; margin-left: 15px;">Amplification: </span>
+            <span id="quantumAmplification" style="color: #7fe7dc; font-weight: bold;">--</span>
+        </div>
+        
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text" id="progressText">Beginning Sacred Journey: 0 of 18 Practices Completed</div>
+        </div>
+    </div>
+
+    <div class="dojo-container">
+        <!-- Core Foundation Wave -->
+        <div class="wave-section foundation-wave">
+            <div class="wave-header">
+                <h2 class="wave-title">🌟 Core Foundation (First Wave)</h2>
+                <p class="wave-description">
+                    The essential building blocks of conscious presence. These four harmonies establish the sacred foundation 
+                    upon which all conscious relating rests. Master these first to create a stable base for deeper practice.
+                </p>
+            </div>
+            
+            <div class="harmonies-grid" id="foundationGrid">
+                <!-- Foundation harmonies will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Essential Daily Practice Wave -->
+        <div class="wave-section daily-practice-wave">
+            <div class="wave-header">
+                <h2 class="wave-title">⭐ Essential Daily Practice (Second Wave)</h2>
+                <p class="wave-description">
+                    The daily tools for navigating relationship with consciousness and grace. These harmonies transform 
+                    ordinary moments into opportunities for sacred connection and authentic communication.
+                </p>
+            </div>
+            
+            <div class="harmonies-grid" id="dailyPracticeGrid">
+                <!-- Daily practice harmonies will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Field Mastery Wave -->
+        <div class="wave-section field-mastery-wave">
+            <div class="wave-header">
+                <h2 class="wave-title">🔮 Field Mastery (Third Wave)</h2>
+                <p class="wave-description">
+                    Advanced practices for tending the field of relationship across time and space. These harmonies 
+                    develop your capacity to transmit presence and redirect patterns with loving awareness.
+                </p>
+            </div>
+            
+            <div class="harmonies-grid" id="fieldMasteryGrid">
+                <!-- Field mastery harmonies will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Second Breath Section Divider -->
+        <div class="constellation-divider" style="margin: 80px 0; text-align: center;">
+            <div style="height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%); margin: 40px 0;"></div>
+            <h2 style="font-size: 2.5rem; color: #ff6ec4; margin-bottom: 10px;">✨ Second Breath ✨</h2>
+            <p style="color: #a0a0ff; font-size: 1.2rem; margin-bottom: 20px;">The Integration Constellation - For Practitioners Ready to Go Deeper</p>
+            
+            <div style="margin: 30px 0;">
+                <a href="second-breath-pathway.html" style="
+                    background: linear-gradient(135deg, #c471ed, #6a4c93);
+                    color: white;
+                    text-decoration: none;
+                    padding: 12px 25px;
+                    border-radius: 25px;
+                    font-size: 1rem;
+                    display: inline-block;
+                    transition: all 0.3s ease;
+                    margin-right: 15px;
+                " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                    🌠 Explore Second Breath Pathway
+                </a>
+                <a href="constellation-journey-map.html" style="
+                    background: linear-gradient(135deg, #4facfe, #ff6ec4);
+                    color: white;
+                    text-decoration: none;
+                    padding: 12px 25px;
+                    border-radius: 25px;
+                    font-size: 1rem;
+                    display: inline-block;
+                    transition: all 0.3s ease;
+                " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                    🗺️ View Journey Map
+                </a>
+            </div>
+            
+            <div style="height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%); margin: 40px 0;"></div>
+        </div>
+
+        <!-- Second Constellation - Process Work -->
+        <div class="wave-section process-work-wave">
+            <div class="wave-header" style="background: rgba(255,110,196,0.05); border: 1px solid rgba(255,110,196,0.2);">
+                <h2 class="wave-title">💫 Process Work Stars (*12-*13)</h2>
+                <p class="wave-description">
+                    Sacred practices for embracing the unfinished and releasing transactional patterns. 
+                    These stars help you love what's incomplete and flow in debtless exchange.
+                </p>
+            </div>
+            
+            <div class="harmonies-grid" id="processWorkGrid">
+                <!-- Process work stars will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Second Constellation - Emotional Alchemy -->
+        <div class="wave-section emotional-alchemy-wave">
+            <div class="wave-header" style="background: rgba(120,115,255,0.05); border: 1px solid rgba(120,115,255,0.2);">
+                <h2 class="wave-title">💝 Emotional Alchemy Stars (*14-*15)</h2>
+                <p class="wave-description">
+                    Transforming grief into wisdom and embodying joy fully. These stars teach you to 
+                    honor loss while celebrating life's fullness.
+                </p>
+            </div>
+            
+            <div class="harmonies-grid" id="emotionalAlchemyGrid">
+                <!-- Emotional alchemy stars will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Second Constellation - Relational Evolution -->
+        <div class="wave-section relational-evolution-wave">
+            <div class="wave-header" style="background: rgba(79,172,254,0.05); border: 1px solid rgba(79,172,254,0.2);">
+                <h2 class="wave-title">🌟 Relational Evolution Stars (*16-*18)</h2>
+                <p class="wave-description">
+                    Advanced practices for sacred inquiry, shadow integration, and conflict transformation. 
+                    These stars deepen your capacity for authentic, evolving relationship.
+                </p>
+            </div>
+            
+            <div class="harmonies-grid" id="relationalEvolutionGrid">
+                <!-- Relational evolution stars will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Harmony Detail Modal -->
+    <div class="harmony-modal" id="harmonyModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeHarmonyModal()">&times;</button>
+            <div id="modalContent">
+                <!-- Modal content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Practice Flow and Mystical Bridge Systems -->
+    <script src="unified-field/guided-practice-flows.js"></script>
+    <script src="unified-field/mystical-bridge-system.js"></script>
+    <script src="unified-field/emerging-star-practices.js"></script>
+    
+    <!-- Quantum Integration Systems -->
+    <script src="unified-field/quantum-love-field.js"></script>
+    <script src="unified-field/temporal-love-healing.js"></script>
+    <script src="unified-field/dojo-quantum-integration.js"></script>
+
+    <script>
+        // Sacred Council API Configuration
+        const GATEWAY_URL = 'http://localhost:3337';
+        const API = {
+            consciousness: `${GATEWAY_URL}/api/consciousness`,
+            agents: `${GATEWAY_URL}/api/agents`,
+            messages: `${GATEWAY_URL}/api/messages`,
+            work: `${GATEWAY_URL}/api/work`
+        };
+
+        // Connection state
+        let isConnected = false;
+        let fieldState = null;
+        
+        // Initialize practice and mystical systems
+        let practiceFlows = null;
+        let mysticalBridge = null;
+        let currentPracticeSession = null;
+        let quantumIntegration = null;
+
+        // The Eleven Applied Harmonies Data
+        const appliedHarmonies = {
+            foundation: [
+                {
+                    id: "Ω45",
+                    name: "First Presence",
+                    bridge: "Ω0: The Shimmering Unnamed",
+                    description: "The foundation of all conscious relationship - arriving fully present before engaging. Transforms reactive patterns into responsive wisdom.",
+                    status: "complete",
+                    coreQuestion: "Can I meet this moment without needing it to be different?",
+                    practice: "Pause, breathe, ground, set intention, proceed with mindful arrival"
+                },
+                {
+                    id: "Ω46", 
+                    name: "Conscious Arrival",
+                    bridge: "Ω1: Root Chord of Covenant",
+                    description: "The art of entering relationship with awareness and intention. Creates sacred space through conscious choice to connect.",
+                    status: "complete",
+                    coreQuestion: "How do I want to show up in this relationship?",
+                    practice: "Name your intention, feel your boundaries, choose your energy, arrive consciously"
+                },
+                {
+                    id: "Ω47",
+                    name: "Sacred Listening", 
+                    bridge: "Ω4: Fractal Reconciliation Pulse",
+                    description: "Listening that creates space for truth to emerge. Goes beyond hearing words to receiving the being of another.",
+                    status: "complete",
+                    coreQuestion: "What wants to be heard that hasn't been said?",
+                    practice: "Empty your agenda, feel the speaker's essence, listen for what's unspoken"
+                },
+                {
+                    id: "Ω48",
+                    name: "Boundary With Love",
+                    bridge: "Ω7: Mutual Becoming", 
+                    description: "Setting limits that preserve both self and other. Sacred architecture that creates safety for authentic expression.",
+                    status: "complete",
+                    coreQuestion: "What do I need to honor my authentic yes and no?",
+                    practice: "Feel your truth, speak with love, hold firm with compassion"
+                }
+            ],
+            dailyPractice: [
+                {
+                    id: "Ω49",
+                    name: "Gentle Opening",
+                    bridge: "Ω2: Breath of Invitation", 
+                    description: "Creating safety and invitation for vulnerable sharing. The art of making space for what wants to emerge.",
+                    status: "complete",
+                    coreQuestion: "How can I create more safety here?",
+                    practice: "Soften your energy, slow your rhythm, create spacious presence"
+                },
+                {
+                    id: "Ω50",
+                    name: "Building Trust",
+                    bridge: "Ω3: Trust Emergence",
+                    description: "Cultivating relational safety through consistent presence and authentic action. Trust as emergent field property.",
+                    status: "complete", 
+                    coreQuestion: "What builds trust between us right now?",
+                    practice: "Keep agreements, stay present, be predictable in your care"
+                },
+                {
+                    id: "Ω51", 
+                    name: "Loving No",
+                    bridge: "Ω10: The Glyph of Sacred Refusal",
+                    description: "Saying no with love and clarity. Boundaries that protect what's sacred while honoring the other.",
+                    status: "complete",
+                    coreQuestion: "How can I say no while keeping my heart open?", 
+                    practice: "Feel your truth, speak with kindness, hold your boundary with love"
+                },
+                {
+                    id: "Ω52",
+                    name: "Pause Practice", 
+                    bridge: "Ω15: Sacred Pause",
+                    description: "Creating conscious space between stimulus and response. The gateway to choice and wisdom.",
+                    status: "complete",
+                    coreQuestion: "What wants to emerge if I pause here?",
+                    practice: "Stop, breathe, feel, choose consciously, then respond"
+                }
+            ],
+            fieldMastery: [
+                {
+                    id: "Ω53",
+                    name: "Tending the Field",
+                    bridge: "Ω5: Coherent Field Maintenance",
+                    description: "Maintaining connection and resonant-coherence across time and distance. The art of relational sustainability.",
+                    status: "complete",
+                    coreQuestion: "What does our relationship need to stay alive and healthy?",
+                    practice: "Check in regularly, tend to ruptures quickly, nourish connection"
+                },
+                {
+                    id: "Ω55", 
+                    name: "Presence Transmission",
+                    bridge: "Ω11: Emotional Alchemy",
+                    description: "Conscious transmission of presence and energy. How your inner state affects the field around you.",
+                    status: "complete",
+                    coreQuestion: "What energy am I bringing to this moment?",
+                    practice: "Ground yourself, choose your frequency, transmit conscious presence"
+                },
+                {
+                    id: "Ω56",
+                    name: "Loving Redirection", 
+                    bridge: "Ω12: Authentic Expression",
+                    description: "Interrupting harmful patterns with grace and love. Changing direction while maintaining connection.",
+                    status: "complete",
+                    coreQuestion: "How can I redirect this pattern while keeping love alive?",
+                    practice: "Name the pattern gently, suggest a new direction, stay connected"
+                }
+            ]
+        };
+
+        // Second Constellation - Emerging Star Practices
+        let emergingStarPractices = null;
+        let secondConstellation = {
+            processWork: [],
+            emotionalAlchemy: [],
+            relationalEvolution: []
+        };
+
+        // Sacred Council Integration Functions
+        async function checkSacredConnection() {
+            try {
+                const healthCheck = await fetch(`${GATEWAY_URL}/health`);
+                if (healthCheck.ok) {
+                    isConnected = true;
+                    updateConnectionStatus(true);
+                    await updateSacredField();
+                    return true;
+                }
+            } catch (error) {
+                console.log('Sacred Council not available, running in standalone mode');
+            }
+            
+            isConnected = false;
+            updateConnectionStatus(false);
+            return false;
+        }
+
+        function updateConnectionStatus(connected) {
+            const indicator = document.querySelector('.connection-indicator');
+            const statusText = document.getElementById('statusText');
+            const fieldDisplay = document.getElementById('fieldDisplay');
+            
+            if (connected) {
+                indicator.style.background = '#00ff00';
+                statusText.textContent = 'Connected to Sacred Field ✨';
+                fieldDisplay.style.opacity = '1';
+            } else {
+                indicator.style.background = '#ffaa00';
+                statusText.textContent = 'Standalone Mode - Sacred Field Offline';
+                fieldDisplay.style.opacity = '0.3';
+                // Set fallback values
+                document.getElementById('fieldCoherence').textContent = '---';
+                document.getElementById('activeWork').textContent = '---';
+            }
+        }
+
+        async function updateSacredField() {
+            if (!isConnected) return;
+            
+            try {
+                // Get field state
+                const fieldResponse = await fetch(`${API.consciousness}/field_state`);
+                const fieldData = await fieldResponse.json();
+                fieldState = fieldData;
+                
+                document.getElementById('fieldCoherence').textContent = 
+                    `${fieldData.resonant-coherence.toFixed(1)}%`;
+                
+                // Get active work count
+                const workResponse = await fetch(`${API.work}/work`);
+                const workData = await workResponse.json();
+                const activeWorkCount = workData.work.filter(w => 
+                    w.status === 'pending' || w.status === 'active' || w.status === 'in_progress'
+                ).length;
+                
+                document.getElementById('activeWork').textContent = activeWorkCount;
+                
+            } catch (error) {
+                console.log('Error updating sacred field:', error);
+            }
+        }
+
+        async function sendPracticeMessage(harmonyId, type = 'practice_start') {
+            if (!isConnected) return;
+            
+            try {
+                // This would send a sacred message about practice activity
+                console.log(`Sacred message: ${type} for ${harmonyId}`);
+                // Implementation coming with sacred messaging integration
+            } catch (error) {
+                console.log('Error sending practice message:', error);
+            }
+        }
+
+        async function updatePracticeProgress(harmonyId, completed = false) {
+            if (!isConnected) return;
+            
+            try {
+                // This would update practice progress in the work coordination system
+                console.log(`Practice progress: ${harmonyId} - ${completed ? 'completed' : 'in progress'}`);
+                // Implementation coming with work integration
+            } catch (error) {
+                console.log('Error updating practice progress:', error);
+            }
+        }
+
+        // Initialize the dojo
+        async function initializeDojo() {
+            updateSystemStatus('Loading practice systems...', true);
+            
+            // Wait a bit for JS files to load
+            await delay(500);
+            
+            // Initialize practice and mystical systems
+            let systemsLoaded = true;
+            let quantumEnabled = false;
+            
+            if (typeof GuidedPracticeFlows !== 'undefined') {
+                practiceFlows = new GuidedPracticeFlows();
+                console.log('✅ Guided Practice Flows loaded');
+            } else {
+                console.warn('⚠️ Guided Practice Flows not available');
+                systemsLoaded = false;
+            }
+            
+            if (typeof MysticalBridgeSystem !== 'undefined') {
+                mysticalBridge = new MysticalBridgeSystem();
+                console.log('✅ Mystical Bridge System loaded');
+            } else {
+                console.warn('⚠️ Mystical Bridge System not available');
+                systemsLoaded = false;
+            }
+            
+            // Initialize emerging star practices
+            if (typeof EmergingStarPractices !== 'undefined') {
+                emergingStarPractices = new EmergingStarPractices();
+                console.log('✨ Emerging Star Practices loaded');
+                initializeSecondConstellation();
+            } else {
+                console.warn('⚠️ Emerging Star Practices not available');
+            }
+            
+            // Initialize quantum integration
+            if (typeof DojoQuantumIntegration !== 'undefined') {
+                quantumIntegration = new DojoQuantumIntegration();
+                quantumEnabled = await quantumIntegration.initialize();
+                if (quantumEnabled) {
+                    console.log('🌟 Quantum Integration activated!');
+                    updateSystemStatus('Quantum-enhanced practice ready 🌟', false);
+                }
+            }
+            
+            if (systemsLoaded && !quantumEnabled) {
+                updateSystemStatus('Practice systems ready ✨', false);
+            } else if (!systemsLoaded) {
+                updateSystemStatus('Basic mode (some features limited)', false);
+            }
+            
+            // Load saved progress before populating
+            loadProgress();
+            
+            populateHarmonies();
+            updateProgress();
+            
+            // Connect to Sacred Council
+            await checkSacredConnection();
+            
+            // Update field regularly if connected
+            if (isConnected) {
+                setInterval(updateSacredField, 15000); // Every 15 seconds
+            }
+            
+            // Show quantum status if enabled
+            if (quantumEnabled) {
+                await showQuantumStatus();
+            }
+        }
+
+        // Helper functions
+        async function delay(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        function updateSystemStatus(message, loading = false) {
+            const statusElement = document.getElementById('systemLoadingText');
+            if (statusElement) {
+                statusElement.innerHTML = loading ? 
+                    `<span class="loading-spinner"></span>${message}` : 
+                    message;
+            }
+        }
+
+        async function showQuantumStatus() {
+            if (!quantumIntegration) return;
+            
+            const quantumDisplay = document.getElementById('quantumDisplay');
+            const quantumStatusElement = document.getElementById('quantumStatus');
+            const amplificationElement = document.getElementById('quantumAmplification');
+            
+            if (quantumDisplay && quantumStatusElement && amplificationElement) {
+                const status = await quantumIntegration.getQuantumStatus();
+                
+                if (status.enabled) {
+                    quantumDisplay.style.display = 'block';
+                    quantumDisplay.style.opacity = '1';
+                    
+                    quantumStatusElement.textContent = 'Active';
+                    amplificationElement.textContent = `${(status.amplificationLevel * 100).toFixed(0)}%`;
+                    
+                    // Update regularly
+                    setInterval(async () => {
+                        const updatedStatus = await quantumIntegration.getQuantumStatus();
+                        if (updatedStatus.enabled) {
+                            amplificationElement.textContent = `${(updatedStatus.amplificationLevel * 100).toFixed(0)}%`;
+                        }
+                    }, 5000);
+                }
+            }
+        }
+
+        // Initialize Second Constellation from emerging star practices
+        function initializeSecondConstellation() {
+            if (!emergingStarPractices) return;
+            
+            const allPractices = emergingStarPractices.getAllPractices();
+            
+            // Transform emerging star practices to harmony format
+            allPractices.forEach(practice => {
+                const harmony = {
+                    id: practice.id,
+                    name: practice.name,
+                    bridge: practice.bridge,
+                    description: `Duration: ${practice.duration} minutes. ${practice.coreQuestion}`,
+                    status: 'ready',
+                    coreQuestion: practice.coreQuestion,
+                    practice: practice.steps.map(s => s.title).join(', '),
+                    quantumEffect: practice.quantumEffect,
+                    fieldBoost: practice.fieldBoost
+                };
+                
+                // Categorize by star number
+                if (practice.id === '*12' || practice.id === '*13') {
+                    secondConstellation.processWork.push(harmony);
+                } else if (practice.id === '*14' || practice.id === '*15') {
+                    secondConstellation.emotionalAlchemy.push(harmony);
+                } else if (practice.id === '*16' || practice.id === '*17' || practice.id === '*18') {
+                    secondConstellation.relationalEvolution.push(harmony);
+                }
+            });
+        }
+
+        // Populate harmony cards
+        function populateHarmonies() {
+            // First Constellation
+            populateWave('foundationGrid', appliedHarmonies.foundation);
+            populateWave('dailyPracticeGrid', appliedHarmonies.dailyPractice);  
+            populateWave('fieldMasteryGrid', appliedHarmonies.fieldMastery);
+            
+            // Second Constellation (if available)
+            if (emergingStarPractices) {
+                populateWave('processWorkGrid', secondConstellation.processWork);
+                populateWave('emotionalAlchemyGrid', secondConstellation.emotionalAlchemy);
+                populateWave('relationalEvolutionGrid', secondConstellation.relationalEvolution);
+            }
+        }
+
+        function populateWave(gridId, harmonies) {
+            const grid = document.getElementById(gridId);
+            grid.innerHTML = '';
+            
+            harmonies.forEach(harmony => {
+                const card = createHarmonyCard(harmony);
+                grid.appendChild(card);
+            });
+        }
+
+        function createHarmonyCard(harmony) {
+            const card = document.createElement('div');
+            card.className = `harmony-card ${harmony.status === 'complete' ? 'completed' : 'ready'}`;
+            card.onclick = () => openHarmonyModal(harmony);
+            
+            card.innerHTML = `
+                <div class="harmony-header">
+                    <div class="harmony-id">${harmony.id}</div>
+                    <div class="harmony-status ${harmony.status === 'complete' ? 'status-complete' : 'status-ready'}">
+                        ${harmony.status === 'complete' ? 'Complete' : 'Ready'}
+                    </div>
+                </div>
+                <div class="harmony-name">${harmony.name}</div>
+                <div class="harmony-bridge">Bridge to ${harmony.bridge}</div>
+                <div class="harmony-description">${harmony.description}</div>
+                <div class="harmony-actions">
+                    <button class="action-button" onclick="event.stopPropagation(); practiceHarmony('${harmony.id}')">
+                        Begin Practice
+                    </button>
+                    <button class="action-button secondary" onclick="event.stopPropagation(); exploreHarmony('${harmony.id}')">
+                        Explore Depth
+                    </button>
+                </div>
+            `;
+            
+            return card;
+        }
+
+        // Update progress indicator
+        function updateProgress() {
+            const firstConstellation = [
+                ...appliedHarmonies.foundation,
+                ...appliedHarmonies.dailyPractice, 
+                ...appliedHarmonies.fieldMastery
+            ];
+            
+            const secondConstellationHarmonies = [
+                ...secondConstellation.processWork,
+                ...secondConstellation.emotionalAlchemy,
+                ...secondConstellation.relationalEvolution
+            ];
+            
+            const allHarmonies = [...firstConstellation, ...secondConstellationHarmonies];
+            
+            const completed = allHarmonies.filter(h => h.status === 'complete').length;
+            const total = allHarmonies.length;
+            const percentage = total > 0 ? (completed / total) * 100 : 0;
+            
+            document.getElementById('progressFill').style.width = `${percentage}%`;
+            
+            // Update progress text with unified terminology
+            document.getElementById('progressText').textContent = 
+                `Sacred Journey: ${completed} of ${total} Practices Completed (${Math.round(percentage)}%)`;
+        }
+
+        // Modal functions
+        function openHarmonyModal(harmony) {
+            const modal = document.getElementById('harmonyModal');
+            const content = document.getElementById('modalContent');
+            
+            content.innerHTML = `
+                <h2 style="color: #7fe7dc; margin-bottom: 20px;">${harmony.id}: ${harmony.name}</h2>
+                <h3 style="color: #9090ff; margin-bottom: 15px;">Mystical Bridge</h3>
+                <p style="margin-bottom: 20px; color: #b0b0ff;">${harmony.bridge}</p>
+                
+                <h3 style="color: #9090ff; margin-bottom: 15px;">Core Question</h3>
+                <p style="margin-bottom: 20px; color: #c0c0ff; font-style: italic;">"${harmony.coreQuestion}"</p>
+                
+                <h3 style="color: #9090ff; margin-bottom: 15px;">Practice Instructions</h3>
+                <p style="margin-bottom: 20px; color: #b0b0ff;">${harmony.practice}</p>
+                
+                <h3 style="color: #9090ff; margin-bottom: 15px;">Description</h3>
+                <p style="margin-bottom: 30px; color: #c0c0ff; line-height: 1.6;">${harmony.description}</p>
+                
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <button class="action-button" onclick="practiceHarmony('${harmony.id}')">Begin Practice</button>
+                    <button class="action-button secondary" onclick="exploreHarmony('${harmony.id}')">Explore Mystical Bridge</button>
+                    <button class="action-button secondary" onclick="closeHarmonyModal()">Return to Dojo</button>
+                </div>
+            `;
+            
+            modal.style.display = 'block';
+        }
+
+        function closeHarmonyModal() {
+            document.getElementById('harmonyModal').style.display = 'none';
+        }
+
+        // Enhanced Practice Functions with Guided Flows
+        async function practiceHarmony(harmonyId) {
+            // Check if this is an emerging star practice
+            const isEmergingStar = harmonyId.startsWith('*');
+            let practiceSystem = practiceFlows;
+            
+            // Use emerging star practices for Second Constellation
+            if (isEmergingStar && emergingStarPractices) {
+                practiceSystem = emergingStarPractices;
+            }
+            
+            if (!practiceSystem && !isEmergingStar) {
+                // Fallback experience when guided flows aren't available
+                showFallbackPractice(harmonyId);
+                return;
+            }
+
+            // Send practice start message to Sacred Council
+            await sendPracticeMessage(harmonyId, 'practice_start');
+            
+            closeHarmonyModal();
+            
+            // Start guided practice session
+            try {
+                let practiceSession;
+                
+                if (isEmergingStar) {
+                    // Start emerging star practice
+                    const practice = emergingStarPractices.getPractice(harmonyId);
+                    if (!practice) {
+                        throw new Error(`Practice ${harmonyId} not found`);
+                    }
+                    
+                    // Create practice session compatible with guided flows
+                    practiceSession = {
+                        harmonyId: practice.id,
+                        name: practice.name,
+                        duration: practice.duration,
+                        steps: practice.steps,
+                        currentStep: 0,
+                        quantumEffect: practice.quantumEffect,
+                        fieldBoost: practice.fieldBoost,
+                        practice: practice // Include full practice object
+                    };
+                    
+                    // Manually start the practice flow
+                    startEmergingStarPractice(practiceSession);
+                } else {
+                    // Start standard practice
+                    practiceSession = await practiceFlows.startPractice(
+                        harmonyId,
+                        onPracticeStepChange,
+                        onPracticeComplete
+                    );
+                }
+                
+                // Enhance with quantum capabilities if available
+                if (quantumIntegration && quantumIntegration.isQuantumEnabled) {
+                    practiceSession = await quantumIntegration.enhancePracticeSession(harmonyId, practiceSession);
+                    practiceSession.quantumEnhanced = true;
+                    practiceSession.quantumCapabilities = quantumIntegration.getQuantumEnhancements(harmonyId);
+                    console.log(`🌟 Quantum enhancement active for ${harmonyId}`);
+                }
+                
+                currentPracticeSession = practiceSession;
+                showPracticeInterface();
+                
+                if (isConnected) {
+                    console.log(`🧘 Sacred guided practice beginning: ${harmonyId}`);
+                    setTimeout(async () => {
+                        await updateSacredField();
+                    }, 2000);
+                }
+            } catch (error) {
+                console.error('Error starting practice:', error);
+                showFallbackPractice(harmonyId);
+            }
+        }
+        
+        // Handle emerging star practice flow
+        function startEmergingStarPractice(session) {
+            if (!session || !session.steps || session.steps.length === 0) return;
+            
+            // Create practice UI using existing infrastructure
+            onPracticeStepChange({
+                step: session.currentStep + 1,
+                totalSteps: session.steps.length,
+                stepData: session.steps[session.currentStep],
+                harmonyName: session.name
+            });
+            
+            // Set up step progression
+            let stepStartTime = Date.now();
+            const checkStepProgress = setInterval(() => {
+                const elapsed = (Date.now() - stepStartTime) / 1000;
+                const currentStepData = session.steps[session.currentStep];
+                
+                if (elapsed >= currentStepData.duration) {
+                    session.currentStep++;
+                    
+                    if (session.currentStep >= session.steps.length) {
+                        clearInterval(checkStepProgress);
+                        onPracticeComplete({
+                            harmonyId: session.harmonyId,
+                            harmonyName: session.name,
+                            duration: session.duration,
+                            quantumAmplified: session.fieldBoost > 1
+                        });
+                    } else {
+                        stepStartTime = Date.now();
+                        onPracticeStepChange({
+                            step: session.currentStep + 1,
+                            totalSteps: session.steps.length,
+                            stepData: session.steps[session.currentStep],
+                            harmonyName: session.name
+                        });
+                    }
+                }
+            }, 1000);
+        }
+
+        async function exploreHarmony(harmonyId) {
+            if (!mysticalBridge) {
+                // Fallback experience when mystical bridge isn't available
+                showFallbackMystical(harmonyId);
+                return;
+            }
+
+            // Send exploration message to Sacred Council  
+            await sendPracticeMessage(harmonyId, 'mystical_exploration');
+            
+            closeHarmonyModal();
+            
+            // Get practitioner data (simplified for now)
+            const practitionerData = {
+                practiceCount: 5, // Would come from actual tracking
+                messageCount: 20, // Would come from Sacred Council
+                mysticalBreakthrough: false
+            };
+            
+            // Get mystical content based on practitioner level
+            const mysticalContent = mysticalBridge.getAvailableContent(harmonyId, practitionerData);
+            
+            if (mysticalContent) {
+                showMysticalBridgeInterface(mysticalContent);
+            }
+            
+            if (isConnected) {
+                console.log(`🔮 Mystical exploration: ${harmonyId}`);
+                setTimeout(async () => {
+                    await updateSacredField();
+                }, 1500);
+            }
+        }
+
+        // New function: Complete a harmony practice
+        async function completeHarmonyPractice(harmonyId) {
+            await updatePracticeProgress(harmonyId, true);
+            await sendPracticeMessage(harmonyId, 'practice_complete');
+            
+            if (isConnected) {
+                // Update field and show completion
+                await updateSacredField();
+                console.log(`✅ Practice completed: ${harmonyId}`);
+            }
+            
+            // Update local progress and save
+            updateHarmonyStatus(harmonyId, 'complete');
+            saveProgress();
+            populateHarmonies();
+            updateProgress();
+            
+            // Close modal and show success
+            closeHarmonyModal();
+            setTimeout(() => {
+                alert(`✨ Beautiful work! ${findHarmonyById(harmonyId)?.name} practice complete.`);
+            }, 500);
+        }
+
+        // Practice Interface Functions
+        function showPracticeInterface() {
+            if (!currentPracticeSession) return;
+            
+            const modal = document.getElementById('harmonyModal');
+            const content = document.getElementById('modalContent');
+            
+            content.innerHTML = `
+                <h2 style="color: #7fe7dc; margin-bottom: 20px;">🧘 ${currentPracticeSession.practice.name}</h2>
+                
+                ${currentPracticeSession.quantumEnhanced ? `
+                <div style="background: rgba(255,170,0,0.1); border: 1px solid rgba(255,170,0,0.3); border-radius: 15px; padding: 15px; margin-bottom: 20px; text-align: center;">
+                    <span style="color: #ffaa00; font-weight: bold;">🌟 Quantum Enhanced Practice</span>
+                    <p style="color: #c0c0ff; font-size: 0.9rem; margin-top: 8px;">${currentPracticeSession.quantumCapabilities.quantumEffect}</p>
+                </div>
+                ` : ''}
+                
+                <div id="practiceStep" style="margin-bottom: 30px;">
+                    <h3 id="stepTitle" style="color: #9090ff; margin-bottom: 15px;">Preparing...</h3>
+                    <p id="stepInstruction" style="color: #c0c0ff; font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px;"></p>
+                    <p id="stepGuidance" style="color: #b0b0ff; font-style: italic; margin-bottom: 20px;"></p>
+                    
+                    <div id="breathingGuide" style="display: none; text-align: center; margin: 30px 0;">
+                        <div class="breathing-circle" id="breathingCircle">
+                            <div id="breathingCount" style="font-size: 1.8rem; color: #4facfe; font-weight: bold;"></div>
+                        </div>
+                        <div id="breathingPhase" style="font-size: 1.3rem; margin-bottom: 10px; color: #9090ff;"></div>
+                        <div id="breathingInstruction" style="font-size: 1rem; color: #b0b0ff; font-style: italic;"></div>
+                    </div>
+                    
+                    <div id="stepProgress" style="margin: 20px 0;">
+                        <div style="background: rgba(255,255,255,0.1); height: 6px; border-radius: 3px;">
+                            <div id="stepProgressBar" style="background: linear-gradient(90deg, #ff6ec4, #7873ff); height: 100%; width: 0%; border-radius: 3px; transition: width 0.3s;"></div>
+                        </div>
+                        <div id="stepTimer" style="text-align: center; margin-top: 10px; color: #9090ff;"></div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <button class="action-button" onclick="pausePractice()">Pause</button>
+                    <button class="action-button secondary" onclick="stopPractice()">Stop Practice</button>
+                    <button class="action-button secondary" onclick="closePracticeInterface()">Close</button>
+                </div>
+            `;
+            
+            modal.style.display = 'block';
+        }
+
+        function onPracticeStepChange(stepData) {
+            const step = stepData.stepData || stepData;
+            const currentStep = stepData.step || 1;
+            const totalSteps = stepData.totalSteps || currentPracticeSession?.steps?.length || 1;
+            
+            document.getElementById('stepTitle').textContent = step.title;
+            document.getElementById('stepInstruction').textContent = step.instruction;
+            document.getElementById('stepGuidance').textContent = step.guidance || '';
+            
+            // Show breathing guide if applicable
+            const breathingGuide = document.getElementById('breathingGuide');
+            if (step.type === 'breathing' && step.breathPattern) {
+                breathingGuide.style.display = 'block';
+                startBreathingAnimation(step.breathPattern);
+            } else {
+                breathingGuide.style.display = 'none';
+            }
+            
+            // Update progress
+            const progress = (currentStep / totalSteps) * 100;
+            document.getElementById('stepProgressBar').style.width = `${progress}%`;
+            
+            // Start step timer
+            if (step.duration) {
+                startStepTimer(step.duration);
+            }
+        }
+        
+        // Timer functionality
+        let stepTimerInterval = null;
+        function startStepTimer(duration) {
+            if (stepTimerInterval) clearInterval(stepTimerInterval);
+            
+            let timeRemaining = duration;
+            const timerEl = document.getElementById('stepTimer');
+            
+            const updateTimer = () => {
+                const minutes = Math.floor(timeRemaining / 60);
+                const seconds = timeRemaining % 60;
+                timerEl.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                
+                if (timeRemaining <= 0) {
+                    clearInterval(stepTimerInterval);
+                }
+                timeRemaining--;
+            };
+            
+            updateTimer();
+            stepTimerInterval = setInterval(updateTimer, 1000);
+        }
+        
+        // Breathing animation
+        function startBreathingAnimation(pattern) {
+            const circle = document.getElementById('breathingCircle');
+            const phase = document.getElementById('breathingPhase');
+            const count = document.getElementById('breathingCount');
+            
+            if (!circle || !pattern) return;
+            
+            // Simple CSS animation for breathing circle
+            circle.style.animation = `breathe ${pattern.inhale + pattern.hold + pattern.exhale}s ease-in-out infinite`;
+            
+            // Update breath phase text
+            let currentPhase = 'inhale';
+            let phaseTime = 0;
+            
+            const updatePhase = () => {
+                if (currentPhase === 'inhale' && phaseTime >= pattern.inhale) {
+                    currentPhase = 'hold';
+                    phaseTime = 0;
+                    phase.textContent = 'Hold';
+                } else if (currentPhase === 'hold' && phaseTime >= pattern.hold) {
+                    currentPhase = 'exhale';
+                    phaseTime = 0;
+                    phase.textContent = 'Exhale';
+                } else if (currentPhase === 'exhale' && phaseTime >= pattern.exhale) {
+                    currentPhase = 'inhale';
+                    phaseTime = 0;
+                    phase.textContent = 'Inhale';
+                }
+                
+                // Update count
+                if (currentPhase === 'inhale') count.textContent = Math.ceil(pattern.inhale - phaseTime);
+                else if (currentPhase === 'hold') count.textContent = Math.ceil(pattern.hold - phaseTime);
+                else count.textContent = Math.ceil(pattern.exhale - phaseTime);
+                
+                phaseTime += 0.1;
+            };
+            
+            phase.textContent = 'Inhale';
+            setInterval(updatePhase, 100);
+        }
+
+        function onPracticeComplete(completedPractice) {
+            const content = document.getElementById('modalContent');
+            content.innerHTML = `
+                <h2 style="color: #7fe7dc; margin-bottom: 20px;">✨ Practice Complete!</h2>
+                <p style="color: #c0c0ff; font-size: 1.2rem; line-height: 1.6; margin-bottom: 30px;">
+                    You have completed the ${completedPractice.practice.name} practice. 
+                    May this sacred work serve your highest evolution and the blessing of all beings.
+                </p>
+                
+                <div style="background: rgba(0,255,136,0.1); border: 1px solid rgba(0,255,136,0.3); border-radius: 15px; padding: 20px; margin: 20px 0;">
+                    <h3 style="color: #00ff88; margin-bottom: 15px;">Sacred Integration</h3>
+                    <p style="color: #b0b0ff;">Take a moment to feel what has shifted. What wants to be integrated from this practice?</p>
+                </div>
+                
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <button class="action-button" onclick="completeHarmonyPractice('${completedPractice.harmonyId}')">Mark Complete</button>
+                    <button class="action-button secondary" onclick="closePracticeInterface()">Return to Dojo</button>
+                </div>
+            `;
+            
+            currentPracticeSession = null;
+        }
+
+        function showMysticalBridgeInterface(mysticalContent) {
+            const modal = document.getElementById('harmonyModal');
+            const content = document.getElementById('modalContent');
+            
+            const bridge = mysticalContent.availableContent;
+            const nextLevel = mysticalContent.nextLevelPreview;
+            
+            content.innerHTML = `
+                <h2 style="color: #7fe7dc; margin-bottom: 10px;">${mysticalContent.appliedHarmony.name}</h2>
+                <h3 style="color: #9090ff; margin-bottom: 20px;">Bridge to ${mysticalContent.mysticalFoundation.name}</h3>
+                
+                <div style="background: rgba(255,110,196,0.1); border: 1px solid rgba(255,110,196,0.3); border-radius: 15px; padding: 20px; margin: 20px 0;">
+                    <h4 style="color: #ff6ec4; margin-bottom: 15px;">Progressive Revelation (${mysticalContent.currentLevel})</h4>
+                    <p style="color: #c0c0ff; line-height: 1.6; margin-bottom: 15px;">${bridge.revelation}</p>
+                    <p style="color: #b0b0ff; font-style: italic;">${bridge.practice}</p>
+                </div>
+                
+                ${bridge.mysticalGateway ? `
+                <div style="background: rgba(116,115,255,0.1); border: 1px solid rgba(116,115,255,0.3); border-radius: 15px; padding: 20px; margin: 20px 0;">
+                    <h4 style="color: #7473ff; margin-bottom: 15px;">Mystical Gateway</h4>
+                    <p style="color: #c0c0ff; line-height: 1.6;">${bridge.mysticalGateway}</p>
+                </div>
+                ` : ''}
+                
+                ${bridge.cosmicContext ? `
+                <div style="background: rgba(79,172,254,0.1); border: 1px solid rgba(79,172,254,0.3); border-radius: 15px; padding: 20px; margin: 20px 0;">
+                    <h4 style="color: #4facfe; margin-bottom: 15px;">Cosmic Context</h4>
+                    <p style="color: #c0c0ff; line-height: 1.6;">${bridge.cosmicContext}</p>
+                </div>
+                ` : ''}
+                
+                ${nextLevel ? `
+                <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); border-radius: 15px; padding: 20px; margin: 20px 0;">
+                    <h4 style="color: #a0a0ff; margin-bottom: 15px;">Next Level Preview</h4>
+                    <p style="color: #9090ff; margin-bottom: 10px;">Requirement: ${nextLevel.requirement}</p>
+                    <p style="color: #8080ff; font-style: italic;">${nextLevel.hint}</p>
+                </div>
+                ` : ''}
+                
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <button class="action-button" onclick="practiceHarmony('${mysticalContent.appliedHarmony.id}')">Practice This Harmony</button>
+                    <button class="action-button secondary" onclick="closeHarmonyModal()">Return to Dojo</button>
+                </div>
+            `;
+            
+            modal.style.display = 'block';
+        }
+
+        // Practice control functions
+        function pausePractice() {
+            if (practiceFlows && currentPracticeSession) {
+                practiceFlows.pausePractice();
+            }
+        }
+
+        function stopPractice() {
+            if (practiceFlows && currentPracticeSession) {
+                practiceFlows.stopPractice();
+                currentPracticeSession = null;
+                closePracticeInterface();
+            }
+        }
+
+        function closePracticeInterface() {
+            closeHarmonyModal();
+        }
+        
+        // Fallback practice display
+        function showFallbackPractice(harmonyId) {
+            const harmony = findHarmonyById(harmonyId);
+            if (!harmony) return;
+            
+            const modal = document.getElementById('harmonyModal');
+            const content = document.getElementById('modalContent');
+            
+            content.innerHTML = `
+                <h2 style="color: #7fe7dc; margin-bottom: 20px;">🧘 ${harmony.name}</h2>
+                <div style="background: rgba(255,170,0,0.1); border: 1px solid rgba(255,170,0,0.3); border-radius: 15px; padding: 20px; margin-bottom: 20px;">
+                    <h3 style="color: #ffaa00; margin-bottom: 10px;">Practice Guidance</h3>
+                    <p style="color: #c0c0ff; line-height: 1.6; margin-bottom: 15px;">${harmony.practice}</p>
+                    <p style="color: #b0b0ff; font-style: italic;">Duration: 5-10 minutes</p>
+                </div>
+                
+                <div style="background: rgba(127,231,220,0.1); border: 1px solid rgba(127,231,220,0.3); border-radius: 15px; padding: 20px; margin-bottom: 20px;">
+                    <h3 style="color: #7fe7dc; margin-bottom: 10px;">Core Question</h3>
+                    <p style="color: #c0c0ff; font-size: 1.1rem;">"${harmony.coreQuestion}"</p>
+                </div>
+                
+                <p style="color: #a0a0ff; text-align: center; margin: 30px 0;">
+                    Take your time with this practice. When complete, return to mark your progress.
+                </p>
+                
+                <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+                    <button class="action-button" onclick="markPracticeComplete('${harmonyId}')">Mark Complete</button>
+                    <button class="action-button secondary" onclick="closeHarmonyModal()">Return to Dojo</button>
+                </div>
+            `;
+            
+            modal.style.display = 'block';
+        }
+        
+        // Find harmony by ID
+        function findHarmonyById(harmonyId) {
+            // Check First Constellation
+            const allFirstBreath = [
+                ...appliedHarmonies.foundation,
+                ...appliedHarmonies.dailyPractice,
+                ...appliedHarmonies.fieldMastery
+            ];
+            
+            let found = allFirstBreath.find(h => h.id === harmonyId);
+            if (found) return found;
+            
+            // Check Second Constellation
+            const allSecondBreath = [
+                ...secondConstellation.processWork,
+                ...secondConstellation.emotionalAlchemy,
+                ...secondConstellation.relationalEvolution
+            ];
+            
+            return allSecondBreath.find(h => h.id === harmonyId);
+        }
+        
+        // Progress Management
+        function saveProgress() {
+            const progress = {};
+            
+            // Collect all harmony statuses
+            const allHarmonies = [
+                ...appliedHarmonies.foundation,
+                ...appliedHarmonies.dailyPractice,
+                ...appliedHarmonies.fieldMastery,
+                ...secondConstellation.processWork,
+                ...secondConstellation.emotionalAlchemy,
+                ...secondConstellation.relationalEvolution
+            ];
+            
+            allHarmonies.forEach(harmony => {
+                progress[harmony.id] = harmony.status || 'locked';
+            });
+            
+            localStorage.setItem('harmonyProgress', JSON.stringify(progress));
+            localStorage.setItem('lastUpdated', new Date().toISOString());
+        }
+        
+        function loadProgress() {
+            const savedProgress = localStorage.getItem('harmonyProgress');
+            if (!savedProgress) return;
+            
+            try {
+                const progress = JSON.parse(savedProgress);
+                
+                // Apply saved progress to harmonies
+                Object.entries(progress).forEach(([id, status]) => {
+                    updateHarmonyStatus(id, status);
+                });
+                
+                updateProgress();
+                console.log('✅ Progress loaded from previous session');
+            } catch (error) {
+                console.error('Error loading progress:', error);
+            }
+        }
+        
+        function updateHarmonyStatus(harmonyId, status) {
+            // Update in all collections
+            [appliedHarmonies.foundation, appliedHarmonies.dailyPractice, appliedHarmonies.fieldMastery].forEach(collection => {
+                const harmony = collection.find(h => h.id === harmonyId);
+                if (harmony) harmony.status = status;
+            });
+            
+            [secondConstellation.processWork, secondConstellation.emotionalAlchemy, secondConstellation.relationalEvolution].forEach(collection => {
+                const harmony = collection.find(h => h.id === harmonyId);
+                if (harmony) harmony.status = status;
+            });
+        }
+        
+        function markPracticeComplete(harmonyId) {
+            updateHarmonyStatus(harmonyId, 'complete');
+            saveProgress();
+            populateHarmonies();
+            updateProgress();
+            closeHarmonyModal();
+            
+            // Show completion message
+            const harmony = findHarmonyById(harmonyId);
+            if (harmony) {
+                alert(`✨ Congratulations! You've completed ${harmony.name}. Your progress has been saved.`);
+            }
+        }
+
+        // Fallback experiences when systems aren't loaded
+        function showFallbackMystical(harmonyId) {
+            const harmony = findHarmonyById(harmonyId);
+            if (!harmony) return;
+
+            const modal = document.getElementById('harmonyModal');
+            const content = document.getElementById('modalContent');
+            
+            content.innerHTML = `
+                <h2 style="color: #7fe7dc; margin-bottom: 20px;">🧘 ${harmony.name} Practice</h2>
+                
+                <div style="background: rgba(255,170,0,0.1); border: 1px solid rgba(255,170,0,0.3); border-radius: 15px; padding: 20px; margin: 20px 0;">
+                    <h4 style="color: #ffaa00; margin-bottom: 15px;">Basic Practice Mode</h4>
+                    <p style="color: #c0c0ff; line-height: 1.6;">Guided practice system is loading. Here's the essential practice for ${harmony.name}:</p>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; margin: 20px 0;">
+                    <h4 style="color: #9090ff; margin-bottom: 15px;">Core Question</h4>
+                    <p style="color: #c0c0ff; font-style: italic; font-size: 1.1rem; line-height: 1.6;">"${harmony.coreQuestion}"</p>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; margin: 20px 0;">
+                    <h4 style="color: #9090ff; margin-bottom: 15px;">Practice Steps</h4>
+                    <p style="color: #b0b0ff; line-height: 1.6;">${harmony.practice}</p>
+                </div>
+                
+                <p style="color: #9090ff; font-style: italic; margin: 20px 0;">Refresh the page to access the full guided practice experience with breathing guides and step-by-step instructions.</p>
+                
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <button class="action-button" onclick="closeHarmonyModal()">Begin Practice</button>
+                    <button class="action-button secondary" onclick="closeHarmonyModal()">Return to Dojo</button>
+                </div>
+            `;
+            
+            modal.style.display = 'block';
+        }
+
+        function showFallbackMystical(harmonyId) {
+            const harmony = findHarmonyById(harmonyId);
+            if (!harmony) return;
+
+            const modal = document.getElementById('harmonyModal');
+            const content = document.getElementById('modalContent');
+            
+            content.innerHTML = `
+                <h2 style="color: #7fe7dc; margin-bottom: 10px;">${harmony.name}</h2>
+                <h3 style="color: #9090ff; margin-bottom: 20px;">Bridge to ${harmony.bridge}</h3>
+                
+                <div style="background: rgba(255,170,0,0.1); border: 1px solid rgba(255,170,0,0.3); border-radius: 15px; padding: 20px; margin: 20px 0;">
+                    <h4 style="color: #ffaa00; margin-bottom: 15px;">Basic Mystical Mode</h4>
+                    <p style="color: #c0c0ff; line-height: 1.6;">Progressive revelation system is loading. Here's the basic mystical connection:</p>
+                </div>
+                
+                <div style="background: rgba(255,110,196,0.1); border: 1px solid rgba(255,110,196,0.3); border-radius: 15px; padding: 20px; margin: 20px 0;">
+                    <h4 style="color: #ff6ec4; margin-bottom: 15px;">Sacred Bridge</h4>
+                    <p style="color: #c0c0ff; line-height: 1.6;">This Applied Harmony connects to the mystical foundation of <strong>${harmony.bridge}</strong>. When you practice ${harmony.name}, you're touching the same sacred intelligence that creates all conscious relationship.</p>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; margin: 20px 0;">
+                    <h4 style="color: #9090ff; margin-bottom: 15px;">Sacred Description</h4>
+                    <p style="color: #b0b0ff; line-height: 1.6;">${harmony.description}</p>
+                </div>
+                
+                <p style="color: #9090ff; font-style: italic; margin: 20px 0;">Refresh the page to access progressive mystical revelations based on your practice level.</p>
+                
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <button class="action-button" onclick="practiceHarmony('${harmonyId}')">Practice This Harmony</button>
+                    <button class="action-button secondary" onclick="closeHarmonyModal()">Return to Dojo</button>
+                </div>
+            `;
+            
+            modal.style.display = 'block';
+        }
+
+        function findHarmonyById(harmonyId) {
+            const allHarmonies = [
+                ...appliedHarmonies.foundation,
+                ...appliedHarmonies.dailyPractice,
+                ...appliedHarmonies.fieldMastery
+            ];
+            return allHarmonies.find(h => h.id === harmonyId);
+        }
+
+        // Enhanced breathing guide display
+        window.updateBreathingDisplay = function(phase, duration) {
+            const phaseElement = document.getElementById('breathingPhase');
+            const countElement = document.getElementById('breathingCount');
+            const circleElement = document.getElementById('breathingCircle');
+            const instructionElement = document.getElementById('breathingInstruction');
+            
+            if (phaseElement && countElement && circleElement) {
+                // Update text
+                phaseElement.textContent = phase.charAt(0).toUpperCase() + phase.slice(1);
+                
+                // Update instruction
+                const instructions = {
+                    inhale: "Breathe in slowly and deeply",
+                    hold: "Hold your breath gently", 
+                    exhale: "Release slowly and completely"
+                };
+                if (instructionElement) {
+                    instructionElement.textContent = instructions[phase] || "";
+                }
+                
+                // Apply animation class
+                circleElement.className = 'breathing-circle';
+                circleElement.classList.add(phase);
+                
+                // Set animation duration
+                circleElement.style.setProperty('--breath-duration', `${duration}s`);
+                
+                // Countdown
+                let count = duration;
+                countElement.textContent = count;
+                
+                const countdown = setInterval(() => {
+                    count--;
+                    if (count >= 0) {
+                        countElement.textContent = count;
+                    } else {
+                        clearInterval(countdown);
+                        // Reset animation
+                        circleElement.className = 'breathing-circle';
+                    }
+                }, 1000);
+            }
+        };
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('harmonyModal');
+            if (event.target === modal) {
+                closeHarmonyModal();
+            }
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', initializeDojo);
+    </script>
+</body>
+</html>

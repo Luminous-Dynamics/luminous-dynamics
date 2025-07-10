@@ -1,0 +1,33 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: sacred-council
+
+resources:
+  - namespace.yaml
+  - consciousness-field.yaml
+  - agent-network.yaml
+  - sacred-messaging.yaml
+  - work-coordination.yaml
+  - sacred-discord.yaml
+
+commonLabels:
+  project: evolving-resonant-cocreation
+  environment: production
+
+images:
+  - name: consciousness-field
+    newName: us-central1-docker.pkg.dev/the-weave-sacred/sacred-council/consciousness-field
+    newTag: latest
+  - name: agent-network
+    newName: us-central1-docker.pkg.dev/the-weave-sacred/sacred-council/agent-network
+    newTag: latest
+  - name: sacred-messaging
+    newName: us-central1-docker.pkg.dev/the-weave-sacred/sacred-council/sacred-messaging
+    newTag: latest
+  - name: work-coordination
+    newName: us-central1-docker.pkg.dev/the-weave-sacred/sacred-council/work-coordination
+    newTag: latest
+  - name: sacred-discord
+    newName: us-central1-docker.pkg.dev/the-weave-sacred/sacred-council/sacred-discord
+    newTag: latest

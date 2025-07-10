@@ -1,0 +1,44 @@
+{
+  "id": "340a4b2ee3a9ac55",
+  "timestamp": "2025-07-04T21:50:27.735Z",
+  "targetSystem": {
+    "type": "social-media",
+    "description": "People arguing and nobody listening"
+  },
+  "fieldResonance": {
+    "resonant-coherence": 0,
+    "dissonanceScore": 0,
+    "resonanceScore": 0,
+    "dominantFrequency": "anger-frequency",
+    "fieldStrength": "mild"
+  },
+  "loveShadow": {
+    "pattern": "not-seen",
+    "wound": "The wound of invisibility and not being witnessed",
+    "harmonicSignature": "isolation-frequency",
+    "seeking": "To be witnessed and recognized",
+    "intensity": "surface",
+    "healingGlyph": "Ω6: Mutual Recognition"
+  },
+  "coreWound": null,
+  "harmonicDiagnosis": {
+    "summary": "The field exhibits 0% resonant-coherence with a dominant anger-frequency. The Love Shadow reveals The wound of invisibility and not being witnessed, seeking To be witnessed and recognized.",
+    "prescription": {
+      "immediateAction": "Begin with gentle presence and witnessing",
+      "primaryPractice": "Ω6: Mutual Recognition",
+      "antidoteFrequency": "connection-frequency",
+      "approach": "Deep witnessing and recognition practices"
+    },
+    "prognosis": "Field is ready for gentle transformation",
+    "warnings": [
+      "Never force healing - only offer",
+      "Trust the field's own wisdom",
+      "Small seeds can create great change"
+    ]
+  },
+  "healingPath": {
+    "primaryGlyph": "Ω6: Mutual Recognition",
+    "antidoteFrequency": "connection-frequency",
+    "approach": "Deep witnessing and recognition practices"
+  }
+}

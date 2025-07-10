@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  sacred-council-oracle:
+    build: .
+    container_name: sacred-council-oracle
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - BOT_MODE=unified
+    env_file:
+      - .env
+    volumes:
+      - ./logs:/app/logs
+      - ./data:/app/data
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3001/health', (res) => process.exit(res.statusCode === 200 ? 0 : 1))"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    networks:
+      - sacred-network
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 512M
+        reservations:
+          cpus: '0.5'
+          memory: 256M
+
+networks:
+  sacred-network:
+    driver: bridge
+
+volumes:
+  logs:
+  data:

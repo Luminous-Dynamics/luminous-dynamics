@@ -1,0 +1,38 @@
+{
+  "production_services": {
+    "agent_network": {
+      "name": "Unified Agent Network",
+      "path": "the-weave/cli/unified-agent-network.cjs",
+      "database": "the-weave/core/data/unified-agent-network.db",
+      "port": null,
+      "type": "cli",
+      "status": "active"
+    },
+    "web_dashboard": {
+      "name": "Sacred Dashboard",
+      "path": "python3 -m http.server",
+      "port": 8338,
+      "type": "http",
+      "status": "active"
+    },
+    "sacred_council_api": {
+      "name": "Sacred Council WebSocket API",
+      "url": "https://sacred-council-api-310699330526.us-central1.run.app",
+      "type": "cloud",
+      "auth": "required",
+      "status": "active"
+    },
+    "ollama": {
+      "name": "Local LLM Service",
+      "port": 11434,
+      "type": "local",
+      "status": "active"
+    }
+  },
+  "deprecated_services": [
+    "agent-comms-sqlite",
+    "agent-discovery-protocol",
+    "sacred-council-hub (docker)",
+    "firebase-deployment"
+  ]
+}

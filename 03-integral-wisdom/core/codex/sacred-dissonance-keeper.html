@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Keeper of Sacred Dissonance - Group Practice Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #9B59B6;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #9B59B6, #8E44AD);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            color: #b0b0b0;
+            font-style: italic;
+        }
+        
+        .intro-quote {
+            background: rgba(155, 89, 182, 0.1);
+            border-left: 4px solid #9B59B6;
+            padding: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            font-size: 1.1em;
+        }
+        
+        .section {
+            margin: 40px 0;
+        }
+        
+        .section h2 {
+            color: #9B59B6;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .role-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(155, 89, 182, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+        }
+        
+        .role-card h3 {
+            color: #BB8FCE;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        .practice-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .practice-list li {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 3px solid #9B59B6;
+        }
+        
+        .practice-list li strong {
+            color: #BB8FCE;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .question-bank {
+            background: rgba(155, 89, 182, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        
+        .question {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-style: italic;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .question:hover {
+            background: rgba(155, 89, 182, 0.1);
+            transform: translateX(5px);
+        }
+        
+        .keeper-rotation {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid #9B59B6;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .rotation-display {
+            font-size: 1.5em;
+            color: #9B59B6;
+            margin: 20px 0;
+        }
+        
+        .rotation-button {
+            background: linear-gradient(45deg, #9B59B6, #8E44AD);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .rotation-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(155, 89, 182, 0.4);
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .tip-card {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(155, 89, 182, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+        }
+        
+        .tip-card h4 {
+            color: #BB8FCE;
+            margin-bottom: 10px;
+        }
+        
+        .warning-box {
+            background: rgba(231, 76, 60, 0.1);
+            border: 1px solid rgba(231, 76, 60, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .warning-box h4 {
+            color: #E74C3C;
+            margin-bottom: 10px;
+        }
+        
+        .group-agreement {
+            background: rgba(46, 204, 113, 0.1);
+            border: 1px solid rgba(46, 204, 113, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+        
+        .group-agreement h3 {
+            color: #2ECC71;
+            margin-bottom: 15px;
+        }
+        
+        .agreement-list {
+            list-style: none;
+        }
+        
+        .agreement-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .agreement-list li:before {
+            content: "✓ ";
+            color: #2ECC71;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .download-section {
+            text-align: center;
+            margin: 50px 0;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+        }
+        
+        .download-button {
+            background: linear-gradient(45deg, #9B59B6, #8E44AD);
+            color: white;
+            text-decoration: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            display: inline-block;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .download-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(155, 89, 182, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            .tips-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>The Keeper of Sacred Dissonance</h1>
+            <p class="subtitle">A rotating role for protecting authentic dialogue in groups</p>
+        </header>
+        
+        <div class="intro-quote">
+            "The strongest harmony includes all notes. A true 'Resonant Coherence' is not a fragile unanimity where everyone agrees. It is a robust and resilient harmony that has the strength to include, understand, and integrate dissenting and uncomfortable notes."
+            <br><br>
+            <em>— From the Codex of Relational Harmonics</em>
+        </div>
+        
+        <section class="section">
+            <h2>🛡️ Understanding the Role</h2>
+            
+            <div class="role-card">
+                <h3>What is a Keeper of Sacred Dissonance?</h3>
+                <p>
+                    The Keeper is a rotating role in your Resonance Circle or practice group. 
+                    Their sacred duty is not to lead discussion, but to protect the psychological 
+                    safety of the group by consciously tending to unheard voices and unspoken truths.
+                </p>
+                <p style="margin-top: 15px;">
+                    <strong>Key principle:</strong> The greatest danger to a group is not conflict, 
+                    but the pleasant silence of "harmonious groupthink" where difficult truths can no longer be spoken.
+                </p>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>🌟 Core Practices of the Keeper</h2>
+            
+            <ul class="practice-list">
+                <li>
+                    <strong>Active Solicitation</strong>
+                    Listen for what is NOT being said. At key moments, gently interject with 
+                    questions designed to open the space and invite different perspectives.
+                </li>
+                
+                <li>
+                    <strong>Amplifying the Quiet Voice</strong>
+                    Pay special attention to body language and hesitation. If someone wants to 
+                    speak but is holding back, create a gentle, specific invitation.
+                </li>
+                
+                <li>
+                    <strong>Shielding the Dissenter</strong>
+                    If someone shares a challenging viewpoint that gets dismissed or ignored, 
+                    immediately shield that person and acknowledge their contribution.
+                </li>
+                
+                <li>
+                    <strong>Holding Sacred Space</strong>
+                    Remind the group that dissonance is a gift - an essential part of Love's 
+                    refinement process and the group's evolution.
+                </li>
+            </ul>
+        </section>
+        
+        <section class="section">
+            <h2>💬 Sacred Questions Bank</h2>
+            
+            <div class="question-bank">
+                <p style="margin-bottom: 20px;">
+                    Click any question to copy it to your clipboard for easy use:
+                </p>
+                
+                <div class="question" onclick="copyToClipboard(this)">
+                    "Is there a perspective we haven't heard yet?"
+                </div>
+                
+                <div class="question" onclick="copyToClipboard(this)">
+                    "I'm sensing a lot of agreement. For our collective wisdom, is there a different way to see this?"
+                </div>
+                
+                <div class="question" onclick="copyToClipboard(this)">
+                    "What might be the riskiest or most vulnerable truth in the room right now?"
+                </div>
+                
+                <div class="question" onclick="copyToClipboard(this)">
+                    "Who might disagree with what we're saying? What wisdom might they offer?"
+                </div>
+                
+                <div class="question" onclick="copyToClipboard(this)">
+                    "What are we not talking about that we should be?"
+                </div>
+                
+                <div class="question" onclick="copyToClipboard(this)">
+                    "If someone completely outside our group heard this, what might surprise or concern them?"
+                </div>
+                
+                <div class="question" onclick="copyToClipboard(this)">
+                    "Where might we be falling into comfortable patterns instead of growth?"
+                </div>
+                
+                <div class="question" onclick="copyToClipboard(this)">
+                    "What shadow or difficulty are we collectively avoiding?"
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>🔄 Keeper Rotation System</h2>
+            
+            <div class="keeper-rotation">
+                <h3>Who is today's Keeper?</h3>
+                <div class="rotation-display" id="currentKeeper">
+                    Click below to select your group's Keeper
+                </div>
+                
+                <input type="text" id="memberInput" placeholder="Enter member names (comma separated)" 
+                       style="width: 80%; padding: 10px; margin: 20px 0; border-radius: 5px; border: 1px solid #9B59B6; background: rgba(0,0,0,0.3); color: white;">
+                
+                <br>
+                
+                <button class="rotation-button" onclick="setupRotation()">
+                    Setup Rotation
+                </button>
+                
+                <button class="rotation-button" onclick="nextKeeper()">
+                    Next Keeper
+                </button>
+                
+                <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.8;">
+                    The role rotates each meeting to ensure everyone experiences both holding and being held.
+                </p>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>💡 Tips for Effective Keeping</h2>
+            
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>Start Gentle</h4>
+                    <p>Begin with softer interventions. You can always become more direct if needed.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>Model Vulnerability</h4>
+                    <p>Share your own uncertainties and questions to make it safer for others.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>Watch Body Language</h4>
+                    <p>Notice crossed arms, looking away, or leaning back - signs someone may disagree.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>Create Pauses</h4>
+                    <p>Silence gives space for quieter voices and deeper truths to emerge.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>Name the Pattern</h4>
+                    <p>If you notice groupthink, gently name it: "I notice we're all agreeing quickly..."</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>Thank Dissenters</h4>
+                    <p>Always appreciate those who share different views - they're serving the group.</p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="warning-box">
+            <h4>⚠️ What the Keeper is NOT</h4>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Not a devil's advocate who argues for argument's sake</li>
+                <li>Not a critic who tears down others' contributions</li>
+                <li>Not a leader who directs the conversation</li>
+                <li>Not someone who forces conflict where none exists</li>
+            </ul>
+            <p style="margin-top: 15px;">
+                The Keeper serves from love, creating safety for ALL voices - including dissenting ones.
+            </p>
+        </div>
+        
+        <section class="section">
+            <h2>🤝 Group Agreement</h2>
+            
+            <div class="group-agreement">
+                <h3>Sacred Commitments for All Members</h3>
+                <ul class="agreement-list">
+                    <li>We welcome dissonance as a gift and teacher</li>
+                    <li>We listen to understand, not to defend</li>
+                    <li>We honor the courage it takes to speak difficult truths</li>
+                    <li>We support our Keeper in their sacred role</li>
+                    <li>We take turns being the Keeper to share this responsibility</li>
+                    <li>We celebrate both harmony AND healthy conflict</li>
+                    <li>We trust that including all voices makes us stronger</li>
+                </ul>
+            </div>
+        </section>
+        
+        <div class="download-section">
+            <h3>Resources for Your Group</h3>
+            <p style="margin-bottom: 20px;">Download and share these materials with your Resonance Circle</p>
+            
+            <a href="#" class="download-button" onclick="downloadGuide()">
+                📄 Download PDF Guide
+            </a>
+            
+            <a href="#" class="download-button" onclick="printQuestions()">
+                🎴 Print Question Cards
+            </a>
+            
+            <a href="#" class="download-button" onclick="shareProtocol()">
+                📤 Share This Protocol
+            </a>
+        </div>
+    </div>
+    
+    <script>
+        // Keeper rotation system
+        let members = [];
+        let currentKeeperIndex = 0;
+        
+        // Load saved data
+        const savedData = localStorage.getItem('keeperRotation');
+        if (savedData) {
+            const data = JSON.parse(savedData);
+            members = data.members || [];
+            currentKeeperIndex = data.currentIndex || 0;
+            if (members.length > 0) {
+                updateKeeperDisplay();
+            }
+        }
+        
+        function setupRotation() {
+            const input = document.getElementById('memberInput').value;
+            if (!input) {
+                alert('Please enter member names separated by commas');
+                return;
+            }
+            
+            members = input.split(',').map(name => name.trim()).filter(name => name);
+            currentKeeperIndex = 0;
+            saveRotation();
+            updateKeeperDisplay();
+        }
+        
+        function nextKeeper() {
+            if (members.length === 0) {
+                alert('Please setup the rotation first');
+                return;
+            }
+            
+            currentKeeperIndex = (currentKeeperIndex + 1) % members.length;
+            saveRotation();
+            updateKeeperDisplay();
+        }
+        
+        function updateKeeperDisplay() {
+            if (members.length > 0) {
+                document.getElementById('currentKeeper').textContent = 
+                    `Today's Keeper: ${members[currentKeeperIndex]}`;
+            }
+        }
+        
+        function saveRotation() {
+            localStorage.setItem('keeperRotation', JSON.stringify({
+                members: members,
+                currentIndex: currentKeeperIndex
+            }));
+        }
+        
+        // Copy question to clipboard
+        function copyToClipboard(element) {
+            const text = element.textContent.trim();
+            navigator.clipboard.writeText(text).then(() => {
+                // Visual feedback
+                const original = element.style.background;
+                element.style.background = 'rgba(155, 89, 182, 0.3)';
+                setTimeout(() => {
+                    element.style.background = original;
+                }, 300);
+            });
+        }
+        
+        // Download functions (placeholders - would need server-side generation for real PDFs)
+        function downloadGuide() {
+            alert('In a full implementation, this would download a beautifully formatted PDF guide for your group.');
+        }
+        
+        function printQuestions() {
+            // Create a simple printable version
+            const questions = document.querySelectorAll('.question');
+            let printContent = '<h1>Sacred Dissonance Questions</h1>';
+            questions.forEach(q => {
+                printContent += `<div style="border: 1px solid #ccc; padding: 20px; margin: 10px; page-break-inside: avoid;">
+                    <p style="font-size: 18px; font-style: italic;">${q.textContent}</p>
+                </div>`;
+            });
+            
+            const printWindow = window.open('', '', 'height=600,width=800');
+            printWindow.document.write('<html><head><title>Sacred Questions</title></head><body>');
+            printWindow.document.write(printContent);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.print();
+        }
+        
+        function shareProtocol() {
+            const url = window.location.href;
+            if (navigator.share) {
+                navigator.share({
+                    title: 'The Keeper of Sacred Dissonance',
+                    text: 'A protocol for authentic dialogue in groups',
+                    url: url
+                });
+            } else {
+                navigator.clipboard.writeText(url);
+                alert('Link copied to clipboard!');
+            }
+        }
+    </script>
+</body>
+</html>

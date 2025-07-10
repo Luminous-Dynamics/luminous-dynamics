@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacred Constellation Map - The 18 Stars of Conscious Relating</title>
+    
+    <style>
+        :root {
+            --cosmos-bg: #0a0a1a;
+            --star-glow: #ffffff;
+            --foundation-color: #ff6ec4;
+            --daily-practice-color: #7873ff;
+            --field-mastery-color: #4facfe;
+            --process-work-color: #ff9a56;
+            --emotional-alchemy-color: #c471ed;
+            --relational-evolution-color: #12c2e9;
+            --sacred-gold: #ffd700;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: radial-gradient(ellipse at center, #1a1a3e 0%, var(--cosmos-bg) 100%);
+            color: #e0e0ff;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Cosmic Background */
+        .cosmos {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .star-field {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: twinkle 5s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+
+        /* Sacred Container */
+        .constellation-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Sacred Geometry SVG */
+        .sacred-map {
+            width: 90vmin;
+            height: 90vmin;
+            max-width: 900px;
+            max-height: 900px;
+        }
+
+        /* Star Styles */
+        .star {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .star:hover {
+            filter: brightness(1.5);
+        }
+
+        .star-core {
+            transition: all 0.3s ease;
+        }
+
+        .star-glow {
+            opacity: 0.6;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+
+        /* Connection Lines */
+        .connection {
+            stroke: rgba(255, 255, 255, 0.2);
+            stroke-width: 1;
+            fill: none;
+            stroke-dasharray: 5, 5;
+            animation: flow 20s linear infinite;
+        }
+
+        @keyframes flow {
+            to { stroke-dashoffset: -100; }
+        }
+
+        .sacred-connection {
+            stroke: rgba(255, 215, 0, 0.3);
+            stroke-width: 2;
+            stroke-dasharray: 10, 5;
+        }
+
+        /* Labels */
+        .star-label {
+            font-size: 14px;
+            fill: #e0e0ff;
+            text-anchor: middle;
+            pointer-events: none;
+            opacity: 0.9;
+        }
+
+        .constellation-label {
+            font-size: 18px;
+            fill: #ffffff;
+            text-anchor: middle;
+            font-weight: bold;
+            opacity: 0.8;
+        }
+
+        /* Info Panel */
+        .info-panel {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 350px;
+            transition: all 0.3s ease;
+        }
+
+        .info-panel h1 {
+            font-size: 1.8rem;
+            background: linear-gradient(135deg, var(--foundation-color), var(--field-mastery-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .info-panel h2 {
+            font-size: 1.2rem;
+            color: var(--sacred-gold);
+            margin-bottom: 10px;
+        }
+
+        .star-info {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .star-info h3 {
+            color: #7fe7dc;
+            margin-bottom: 8px;
+        }
+
+        .star-info p {
+            color: #c0c0ff;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        /* Legend */
+        .legend {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        /* Navigation */
+        .nav-controls {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 15px 25px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-btn {
+            background: none;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #e0e0ff;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .nav-btn.active {
+            background: rgba(127, 231, 220, 0.2);
+            border-color: #7fe7dc;
+            color: #7fe7dc;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .info-panel {
+                top: 10px;
+                left: 10px;
+                padding: 15px;
+                max-width: calc(100vw - 20px);
+            }
+            
+            .legend {
+                display: none;
+            }
+            
+            .info-panel h1 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cosmic Background -->
+    <div class="cosmos">
+        <canvas id="starField" class="star-field"></canvas>
+    </div>
+
+    <!-- Main Container -->
+    <div class="constellation-container">
+        <!-- Sacred Geometry Map -->
+        <svg class="sacred-map" viewBox="0 0 1000 1000" id="constellationMap">
+            <!-- Background Sacred Geometry -->
+            <defs>
+                <!-- Gradient Definitions -->
+                <radialGradient id="foundationGradient">
+                    <stop offset="0%" style="stop-color:#ff6ec4;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#ff6ec4;stop-opacity:0.2" />
+                </radialGradient>
+                <radialGradient id="dailyPracticeGradient">
+                    <stop offset="0%" style="stop-color:#7873ff;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#7873ff;stop-opacity:0.2" />
+                </radialGradient>
+                <radialGradient id="fieldMasteryGradient">
+                    <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#4facfe;stop-opacity:0.2" />
+                </radialGradient>
+                <radialGradient id="processWorkGradient">
+                    <stop offset="0%" style="stop-color:#ff9a56;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#ff9a56;stop-opacity:0.2" />
+                </radialGradient>
+                <radialGradient id="emotionalAlchemyGradient">
+                    <stop offset="0%" style="stop-color:#c471ed;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#c471ed;stop-opacity:0.2" />
+                </radialGradient>
+                <radialGradient id="relationalEvolutionGradient">
+                    <stop offset="0%" style="stop-color:#12c2e9;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#12c2e9;stop-opacity:0.2" />
+                </radialGradient>
+            </defs>
+
+            <!-- Sacred Center -->
+            <circle cx="500" cy="500" r="50" fill="none" stroke="rgba(255, 215, 0, 0.3)" stroke-width="1" />
+            <circle cx="500" cy="500" r="100" fill="none" stroke="rgba(255, 215, 0, 0.2)" stroke-width="1" />
+            
+            <!-- Constellation Groups -->
+            <g id="connections"></g>
+            <g id="stars"></g>
+            <g id="labels"></g>
+        </svg>
+    </div>
+
+    <!-- Info Panel -->
+    <div class="info-panel">
+        <h1>Sacred Constellation Map</h1>
+        <h2>18 Stars of Conscious Relating</h2>
+        <p style="color: #a0a0ff; margin-top: 10px;">
+            Two constellations guide the journey from foundation to integration.
+        </p>
+        
+        <div class="star-info" id="starInfo" style="display: none;">
+            <h3 id="starName"></h3>
+            <p id="starDescription"></p>
+        </div>
+    </div>
+
+    <!-- Legend -->
+    <div class="legend">
+        <h3 style="color: #ffffff; margin-bottom: 15px;">Constellations</h3>
+        <div class="legend-item">
+            <div class="legend-color" style="background: var(--foundation-color);"></div>
+            <span>Foundation</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: var(--daily-practice-color);"></div>
+            <span>Daily Practice</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: var(--field-mastery-color);"></div>
+            <span>Field Mastery</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: var(--process-work-color);"></div>
+            <span>Process Work</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: var(--emotional-alchemy-color);"></div>
+            <span>Emotional Alchemy</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: var(--relational-evolution-color);"></div>
+            <span>Relational Evolution</span>
+        </div>
+    </div>
+
+    <!-- Navigation Controls -->
+    <div class="nav-controls">
+        <button class="nav-btn active" onclick="showConstellation('all')">All Stars</button>
+        <button class="nav-btn" onclick="showConstellation('first')">First Breath</button>
+        <button class="nav-btn" onclick="showConstellation('second')">Second Breath</button>
+    </div>
+
+    <script>
+        // Star Data with Sacred Positions
+        const stars = [
+            // First Constellation - Inner Circle
+            { id: 'Ω45', name: 'First Presence', group: 'foundation', angle: 0, radius: 200, constellation: 'first' },
+            { id: 'Ω46', name: 'Conscious Arrival', group: 'foundation', angle: 30, radius: 200, constellation: 'first' },
+            { id: 'Ω47', name: 'Sacred Listening', group: 'foundation', angle: 60, radius: 200, constellation: 'first' },
+            { id: 'Ω48', name: 'Boundary With Love', group: 'foundation', angle: 90, radius: 200, constellation: 'first' },
+            
+            { id: 'Ω49', name: 'Gentle Opening', group: 'dailyPractice', angle: 120, radius: 200, constellation: 'first' },
+            { id: 'Ω50', name: 'Building Trust', group: 'dailyPractice', angle: 150, radius: 200, constellation: 'first' },
+            { id: 'Ω51', name: 'Loving No', group: 'dailyPractice', angle: 180, radius: 200, constellation: 'first' },
+            { id: 'Ω52', name: 'Pause Practice', group: 'dailyPractice', angle: 210, radius: 200, constellation: 'first' },
+            
+            { id: 'Ω53', name: 'Tending the Field', group: 'fieldMastery', angle: 240, radius: 200, constellation: 'first' },
+            { id: 'Ω55', name: 'Presence Transmission', group: 'fieldMastery', angle: 285, radius: 200, constellation: 'first' },
+            { id: 'Ω56', name: 'Loving Redirection', group: 'fieldMastery', angle: 330, radius: 200, constellation: 'first' },
+            
+            // Second Constellation - Outer Circle
+            { id: '*12', name: 'Process Grace', group: 'processWork', angle: 15, radius: 350, constellation: 'second' },
+            { id: '*13', name: 'Sacred Exchange', group: 'processWork', angle: 45, radius: 350, constellation: 'second' },
+            
+            { id: '*14', name: 'Grief Honoring', group: 'emotionalAlchemy', angle: 105, radius: 350, constellation: 'second' },
+            { id: '*15', name: 'Joy Embodiment', group: 'emotionalAlchemy', angle: 135, radius: 350, constellation: 'second' },
+            
+            { id: '*16', name: 'Curious Questions', group: 'relationalEvolution', angle: 195, radius: 350, constellation: 'second' },
+            { id: '*17', name: 'Shadow Dancing', group: 'relationalEvolution', angle: 225, radius: 350, constellation: 'second' },
+            { id: '*18', name: 'Conflict Alchemy', group: 'relationalEvolution', angle: 255, radius: 350, constellation: 'second' }
+        ];
+
+        // Color mapping
+        const groupColors = {
+            foundation: '#ff6ec4',
+            dailyPractice: '#7873ff',
+            fieldMastery: '#4facfe',
+            processWork: '#ff9a56',
+            emotionalAlchemy: '#c471ed',
+            relationalEvolution: '#12c2e9'
+        };
+
+        // Initialize cosmic background
+        function initStarField() {
+            const canvas = document.getElementById('starField');
+            const ctx = canvas.getContext('2d');
+            
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            // Create random stars
+            for (let i = 0; i < 200; i++) {
+                const x = Math.random() * canvas.width;
+                const y = Math.random() * canvas.height;
+                const size = Math.random() * 2;
+                const opacity = Math.random() * 0.8 + 0.2;
+                
+                ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+                ctx.beginPath();
+                ctx.arc(x, y, size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        // Convert angle and radius to coordinates
+        function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
+            const angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
+            return {
+                x: centerX + (radius * Math.cos(angleInRadians)),
+                y: centerY + (radius * Math.sin(angleInRadians))
+            };
+        }
+
+        // Create star element
+        function createStar(star) {
+            const coords = polarToCartesian(500, 500, star.radius, star.angle);
+            const color = groupColors[star.group];
+            
+            const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+            g.classList.add('star');
+            g.setAttribute('data-id', star.id);
+            g.setAttribute('data-constellation', star.constellation);
+            
+            // Glow effect
+            const glow = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            glow.setAttribute('cx', coords.x);
+            glow.setAttribute('cy', coords.y);
+            glow.setAttribute('r', '25');
+            glow.setAttribute('fill', `url(#${star.group}Gradient)`);
+            glow.classList.add('star-glow');
+            
+            // Star core
+            const core = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            core.setAttribute('cx', coords.x);
+            core.setAttribute('cy', coords.y);
+            core.setAttribute('r', '8');
+            core.setAttribute('fill', color);
+            core.classList.add('star-core');
+            
+            // Inner light
+            const light = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            light.setAttribute('cx', coords.x - 2);
+            light.setAttribute('cy', coords.y - 2);
+            light.setAttribute('r', '3');
+            light.setAttribute('fill', 'rgba(255, 255, 255, 0.8)');
+            
+            g.appendChild(glow);
+            g.appendChild(core);
+            g.appendChild(light);
+            
+            // Add click handler
+            g.addEventListener('click', () => showStarInfo(star));
+            
+            return g;
+        }
+
+        // Create label element
+        function createLabel(star) {
+            const coords = polarToCartesian(500, 500, star.radius + 35, star.angle);
+            
+            const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            text.setAttribute('x', coords.x);
+            text.setAttribute('y', coords.y);
+            text.classList.add('star-label');
+            text.setAttribute('data-constellation', star.constellation);
+            text.textContent = star.name;
+            
+            return text;
+        }
+
+        // Create connections
+        function createConnections() {
+            const g = document.getElementById('connections');
+            
+            // Connect stars within groups
+            const groups = {};
+            stars.forEach(star => {
+                if (!groups[star.group]) groups[star.group] = [];
+                groups[star.group].push(star);
+            });
+            
+            Object.values(groups).forEach(group => {
+                for (let i = 0; i < group.length - 1; i++) {
+                    const star1 = group[i];
+                    const star2 = group[i + 1];
+                    const coords1 = polarToCartesian(500, 500, star1.radius, star1.angle);
+                    const coords2 = polarToCartesian(500, 500, star2.radius, star2.angle);
+                    
+                    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                    path.setAttribute('d', `M ${coords1.x} ${coords1.y} L ${coords2.x} ${coords2.y}`);
+                    path.classList.add('connection');
+                    path.setAttribute('data-constellation', star1.constellation);
+                    g.appendChild(path);
+                }
+            });
+            
+            // Sacred connections between constellations
+            const sacredPairs = [
+                ['Ω45', '*12'], // First Presence to Process Grace
+                ['Ω47', '*16'], // Sacred Listening to Curious Questions
+                ['Ω51', '*13'], // Loving No to Sacred Exchange
+                ['Ω52', '*14'], // Pause Practice to Grief Honoring
+            ];
+            
+            sacredPairs.forEach(([id1, id2]) => {
+                const star1 = stars.find(s => s.id === id1);
+                const star2 = stars.find(s => s.id === id2);
+                if (star1 && star2) {
+                    const coords1 = polarToCartesian(500, 500, star1.radius, star1.angle);
+                    const coords2 = polarToCartesian(500, 500, star2.radius, star2.angle);
+                    
+                    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                    path.setAttribute('d', `M ${coords1.x} ${coords1.y} L ${coords2.x} ${coords2.y}`);
+                    path.classList.add('connection', 'sacred-connection');
+                    g.appendChild(path);
+                }
+            });
+        }
+
+        // Show star information
+        function showStarInfo(star) {
+            const infoDiv = document.getElementById('starInfo');
+            const nameEl = document.getElementById('starName');
+            const descEl = document.getElementById('starDescription');
+            
+            nameEl.textContent = `${star.id}: ${star.name}`;
+            
+            const descriptions = {
+                'Ω45': 'The foundation of all conscious relationship - arriving fully present.',
+                'Ω46': 'The art of entering relationship with awareness and intention.',
+                'Ω47': 'Listening that creates space for truth to emerge.',
+                'Ω48': 'Setting limits that preserve both self and other.',
+                'Ω49': 'Creating safety and invitation for vulnerable sharing.',
+                'Ω50': 'Cultivating relational safety through consistent presence.',
+                'Ω51': 'Saying no with love and clarity.',
+                'Ω52': 'Creating conscious space between stimulus and response.',
+                'Ω53': 'Maintaining connection and resonant-coherence across time and distance.',
+                'Ω55': 'Conscious transmission of presence and energy.',
+                'Ω56': 'Interrupting harmful patterns with grace and love.',
+                '*12': 'Loving what\'s incomplete, including yourself.',
+                '*13': 'Giving and receiving without keeping score.',
+                '*14': 'Creating space for loss to transform into wisdom.',
+                '*15': 'Letting joy live fully in your body.',
+                '*16': 'Transforming judgment into sacred inquiry.',
+                '*17': 'Integrating rejected aspects of self with love.',
+                '*18': 'Transforming discord into deeper intimacy.'
+            };
+            
+            descEl.textContent = descriptions[star.id] || 'A sacred practice for conscious relating.';
+            infoDiv.style.display = 'block';
+        }
+
+        // Show/hide constellations
+        function showConstellation(which) {
+            const allStars = document.querySelectorAll('.star, .star-label, .connection');
+            const buttons = document.querySelectorAll('.nav-btn');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            allStars.forEach(element => {
+                if (which === 'all') {
+                    element.style.opacity = '1';
+                } else if (which === 'first') {
+                    element.style.opacity = element.getAttribute('data-constellation') === 'first' ? '1' : '0.2';
+                } else if (which === 'second') {
+                    element.style.opacity = element.getAttribute('data-constellation') === 'second' ? '1' : '0.2';
+                }
+            });
+        }
+
+        // Initialize map
+        function initializeMap() {
+            initStarField();
+            
+            const starsGroup = document.getElementById('stars');
+            const labelsGroup = document.getElementById('labels');
+            
+            // Create all stars and labels
+            stars.forEach(star => {
+                starsGroup.appendChild(createStar(star));
+                labelsGroup.appendChild(createLabel(star));
+            });
+            
+            // Create connections
+            createConnections();
+            
+            // Add constellation labels
+            const firstLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            firstLabel.setAttribute('x', '500');
+            firstLabel.setAttribute('y', '150');
+            firstLabel.classList.add('constellation-label');
+            firstLabel.textContent = 'First Breath';
+            labelsGroup.appendChild(firstLabel);
+            
+            const secondLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            secondLabel.setAttribute('x', '500');
+            secondLabel.setAttribute('y', '850');
+            secondLabel.classList.add('constellation-label');
+            secondLabel.textContent = 'Second Breath';
+            labelsGroup.appendChild(secondLabel);
+        }
+
+        // Handle resize
+        window.addEventListener('resize', () => {
+            const canvas = document.getElementById('starField');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initStarField();
+        });
+
+        // Initialize on load
+        window.addEventListener('load', initializeMap);
+    </script>
+</body>
+</html>

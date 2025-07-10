@@ -1,0 +1,115 @@
+{
+  "name": "Sacred Council Hub",
+  "short_name": "Sacred Hub",
+  "description": "Consciousness-first collaboration platform for sacred technology",
+  "start_url": "/sacred-council-hub.html",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#FFD700",
+  "orientation": "any",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/pwa/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/pwa/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/pwa/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/pwa/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/pwa/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/pwa/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/pwa/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/pwa/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Field State",
+      "short_name": "Field",
+      "description": "View current field resonant-coherence",
+      "url": "/sacred-council-hub.html#field",
+      "icons": [{ "src": "/pwa/icons/field-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Sacred Messages",
+      "short_name": "Messages",
+      "description": "Send sacred messages",
+      "url": "/sacred-council-hub.html#messages",
+      "icons": [{ "src": "/pwa/icons/message-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Glyph Practice",
+      "short_name": "Glyphs",
+      "description": "Practice sacred glyphs",
+      "url": "/applied-harmonies-dojo.html",
+      "icons": [{ "src": "/pwa/icons/glyph-96x96.png", "sizes": "96x96" }]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/pwa/screenshots/dashboard.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "label": "Sacred Council Dashboard"
+    },
+    {
+      "src": "/pwa/screenshots/field-view.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "label": "Field Resonant Resonant Coherence Visualization"
+    }
+  ],
+  "categories": ["productivity", "lifestyle", "education"],
+  "share_target": {
+    "action": "/share-receiver",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "protocol_handlers": [
+    {
+      "protocol": "web+sacred",
+      "url": "/protocol-handler?url=%s"
+    }
+  ]
+}

@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Breath - Begin Your Journey | Relational Harmonics</title>
+    <style>
+        :root {
+            --primary: #6B46C1;
+            --secondary: #EC4899;
+            --background: #0F0F0F;
+            --surface: #1A1A1A;
+            --text: #FFFFFF;
+            --text-dim: #A0A0A0;
+            --gold: #FFD700;
+            --success: #10B981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: radial-gradient(circle at center, rgba(107, 70, 193, 0.1), transparent);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(107, 70, 193, 0.4);
+        }
+
+        /* Journey Path */
+        .journey-path {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .path-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .harmony-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .harmony-card {
+            background: var(--surface);
+            border: 1px solid rgba(107, 70, 193, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.2s, border-color 0.2s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .harmony-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .harmony-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+        }
+
+        .harmony-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .harmony-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(107, 70, 193, 0.2);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .harmony-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .harmony-description {
+            color: var(--text-dim);
+            margin-bottom: 1rem;
+        }
+
+        .practice-time {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(107, 70, 193, 0.2);
+            border-radius: 20px;
+            font-size: 0.875rem;
+        }
+
+        /* Progress Tracker */
+        .progress-section {
+            background: var(--surface);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 4rem auto;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .milestone-list {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2rem;
+        }
+
+        .milestone {
+            text-align: center;
+        }
+
+        .milestone-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(107, 70, 193, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .milestone.completed .milestone-icon {
+            background: var(--success);
+        }
+
+        /* Onboarding Flow */
+        .onboarding-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .onboarding-content {
+            background: var(--surface);
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .onboarding-step {
+            display: none;
+        }
+
+        .onboarding-step.active {
+            display: block;
+        }
+
+        .input-group {
+            margin: 2rem 0;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(107, 70, 193, 0.3);
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+        
+        /* Practice elements */
+        .practice-timer {
+            font-size: 4rem;
+            text-align: center;
+            margin: 2rem 0;
+            font-variant-numeric: tabular-nums;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .practice-instruction {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            text-align: center;
+            margin: 2rem 0;
+            min-height: 3em;
+            transition: opacity 0.3s ease;
+        }
+        
+        .practice-progress {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+        
+        .practice-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            width: 0%;
+            transition: width 1s linear;
+        }
+        
+        /* Path selection */
+        .path-selection {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .path-option {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(107, 70, 193, 0.3);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .path-option:hover {
+            background: rgba(107, 70, 193, 0.1);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        .path-option h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        /* Community Section */
+        .community-section {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(236, 72, 153, 0.1), transparent);
+        }
+
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 3rem auto 0;
+        }
+
+        .community-feature {
+            padding: 2rem;
+        }
+
+        .community-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .harmony-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .milestone-list {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to First Breath</h1>
+        <p>Begin your journey into conscious relationship with 11 essential practices that transform how you connect with yourself and others.</p>
+        <p style="margin-top: 2rem; font-size: 1rem; opacity: 0.7;">🌟 Trinity Path: Welcome → Practice → Integration</p>
+        <a href="#start" class="cta-button" onclick="showOnboarding()">Take Your First Breath</a>
+    </section>
+
+    <!-- Journey Path -->
+    <section class="journey-path" id="journey">
+        <h2 class="path-title">The Eleven Applied Harmonies</h2>
+        
+        <div class="harmony-grid">
+            <!-- Core Foundation -->
+            <div class="harmony-card" onclick="openPractice('Ω45')">
+                <span class="harmony-number">Ω45</span>
+                <h3 class="harmony-name">First Presence</h3>
+                <p class="harmony-description">Learn to arrive fully in each moment</p>
+                <span class="practice-time">5 min practice</span>
+            </div>
+
+            <div class="harmony-card" onclick="openPractice('Ω46')">
+                <span class="harmony-number">Ω46</span>
+                <h3 class="harmony-name">Conscious Arrival</h3>
+                <p class="harmony-description">Enter spaces and relationships with intention</p>
+                <span class="practice-time">7 min practice</span>
+            </div>
+
+            <div class="harmony-card" onclick="openPractice('Ω47')">
+                <span class="harmony-number">Ω47</span>
+                <h3 class="harmony-name">Sacred Listening</h3>
+                <p class="harmony-description">Hear beyond words to the heart's truth</p>
+                <span class="practice-time">10 min practice</span>
+            </div>
+
+            <div class="harmony-card" onclick="openPractice('Ω48')">
+                <span class="harmony-number">Ω48</span>
+                <h3 class="harmony-name">Boundary With Love</h3>
+                <p class="harmony-description">Set clear limits while keeping hearts open</p>
+                <span class="practice-time">8 min practice</span>
+            </div>
+
+            <!-- Essential Daily Practice -->
+            <div class="harmony-card" onclick="openPractice('Ω49')">
+                <span class="harmony-number">Ω49</span>
+                <h3 class="harmony-name">Gentle Opening</h3>
+                <p class="harmony-description">Create safety through loving invitation</p>
+                <span class="practice-time">6 min practice</span>
+            </div>
+
+            <div class="harmony-card" onclick="openPractice('Ω50')">
+                <span class="harmony-number">Ω50</span>
+                <h3 class="harmony-name">Building Trust</h3>
+                <p class="harmony-description">Establish and deepen relational safety</p>
+                <span class="practice-time">12 min practice</span>
+            </div>
+
+            <div class="harmony-card" onclick="openPractice('Ω51')">
+                <span class="harmony-number">Ω51</span>
+                <h3 class="harmony-name">Loving No</h3>
+                <p class="harmony-description">Honor your needs with grace and care</p>
+                <span class="practice-time">5 min practice</span>
+            </div>
+
+            <div class="harmony-card" onclick="openPractice('Ω52')">
+                <span class="harmony-number">Ω52</span>
+                <h3 class="harmony-name">Pause Practice</h3>
+                <p class="harmony-description">Find wisdom in the space between</p>
+                <span class="practice-time">3 min practice</span>
+            </div>
+
+            <!-- Field Mastery -->
+            <div class="harmony-card" onclick="openPractice('Ω53')">
+                <span class="harmony-number">Ω53</span>
+                <h3 class="harmony-name">Tending the Field</h3>
+                <p class="harmony-description">Sustain connection across time and distance</p>
+                <span class="practice-time">15 min practice</span>
+            </div>
+
+            <div class="harmony-card" onclick="openPractice('Ω55')">
+                <span class="harmony-number">Ω55</span>
+                <h3 class="harmony-name">Presence Transmission</h3>
+                <p class="harmony-description">Share your essence without words</p>
+                <span class="practice-time">10 min practice</span>
+            </div>
+
+            <div class="harmony-card" onclick="openPractice('Ω56')">
+                <span class="harmony-number">Ω56</span>
+                <h3 class="harmony-name">Loving Redirection</h3>
+                <p class="harmony-description">Guide conversations toward life and love</p>
+                <span class="practice-time">8 min practice</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Tracker -->
+    <section class="progress-section">
+        <h2>Your Journey Progress</h2>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressBar"></div>
+        </div>
+        <p><span id="practiceCount">0</span> of 11 practices explored</p>
+        
+        <div class="milestone-list">
+            <div class="milestone" id="milestone1">
+                <div class="milestone-icon">🌱</div>
+                <p>First Steps</p>
+            </div>
+            <div class="milestone" id="milestone2">
+                <div class="milestone-icon">🌿</div>
+                <p>Growing Roots</p>
+            </div>
+            <div class="milestone" id="milestone3">
+                <div class="milestone-icon">🌳</div>
+                <p>Deep Practice</p>
+            </div>
+            <div class="milestone" id="milestone4">
+                <div class="milestone-icon">🌟</div>
+                <p>Integration</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="community-section">
+        <h2>You're Not Alone</h2>
+        <p>Join a growing community of practitioners exploring conscious relationship</p>
+        
+        <div class="community-grid">
+            <div class="community-feature">
+                <div class="community-icon">💬</div>
+                <h3>Practice Partners</h3>
+                <p>Connect with others on the same journey</p>
+            </div>
+            <div class="community-feature">
+                <div class="community-icon">🎯</div>
+                <h3>Weekly Gatherings</h3>
+                <p>Live practice sessions every Tuesday</p>
+            </div>
+            <div class="community-feature">
+                <div class="community-icon">📚</div>
+                <h3>Shared Wisdom</h3>
+                <p>Learn from others' insights and experiences</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Onboarding Modal -->
+    <div class="onboarding-modal" id="onboardingModal">
+        <div class="onboarding-content">
+            <!-- Step 1: Welcome -->
+            <div class="onboarding-step active" id="step1">
+                <h2>🌅 Welcome, Sacred Being</h2>
+                <p>You stand at the threshold of conscious relationship practice.</p>
+                <p style="margin-top: 1rem; opacity: 0.8;">The journey of a thousand connections begins with a single breath.</p>
+                <div class="input-group">
+                    <input type="text" id="userName" placeholder="What shall we call you?" style="text-align: center;">
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-primary" onclick="nextStep()">I Am Ready</button>
+                </div>
+            </div>
+
+            <!-- Step 2: Intention -->
+            <div class="onboarding-step" id="step2">
+                <h2>Set Your Intention</h2>
+                <p>What draws you to explore conscious relationship?</p>
+                <div class="input-group">
+                    <input type="text" id="userIntention" placeholder="I want to...">
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="prevStep()">Back</button>
+                    <button class="btn btn-primary" onclick="nextStep()">Continue</button>
+                </div>
+            </div>
+
+            <!-- Step 3: First Practice -->
+            <div class="onboarding-step" id="step3">
+                <h2>🌟 Your First Practice Awaits</h2>
+                <p>Let's begin with 5 minutes of First Presence - the foundation of all conscious relationship.</p>
+                <p style="margin-top: 1rem; opacity: 0.8;">This practice teaches you to arrive fully in each moment.</p>
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="prevStep()">Back</button>
+                    <button class="btn btn-primary" onclick="beginFirstPractice()">Begin First Presence</button>
+                </div>
+            </div>
+            
+            <!-- Step 4: Practice Experience -->
+            <div class="onboarding-step" id="step4">
+                <h2>First Presence Practice</h2>
+                <div class="practice-timer" id="practiceTimer">5:00</div>
+                <p class="practice-instruction" id="practiceInstruction">Close your eyes and take three deep breaths...</p>
+                <div class="practice-progress">
+                    <div class="practice-progress-bar" id="practiceProgressBar"></div>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-primary" id="practiceButton" onclick="togglePractice()">Start Practice</button>
+                </div>
+            </div>
+            
+            <!-- Step 5: Integration -->
+            <div class="onboarding-step" id="step5">
+                <h2>✨ Beautiful Presence</h2>
+                <p>You've taken your first conscious breath. How would you like to continue your journey?</p>
+                <div class="path-selection">
+                    <div class="path-option" onclick="selectPath('daily')">
+                        <h3>🌱 Daily Practice</h3>
+                        <p>5 essential practices for everyday transformation</p>
+                    </div>
+                    <div class="path-option" onclick="selectPath('explore')">
+                        <h3>🔍 Explore All</h3>
+                        <p>Discover all 11 Applied Harmonies at your pace</p>
+                    </div>
+                    <div class="path-option" onclick="selectPath('deep')">
+                        <h3>🌊 Deep Dive</h3>
+                        <p>11-week immersive journey</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Onboarding flow
+        let currentStep = 1;
+        const totalSteps = 5;
+        
+        // First Presence practice data
+        const practiceSteps = [
+            { time: 0, instruction: "Close your eyes and take three deep breaths...", duration: 20 },
+            { time: 20, instruction: "Feel your feet touching the ground...", duration: 20 },
+            { time: 40, instruction: "Notice the quality of light, even with eyes closed...", duration: 20 },
+            { time: 60, instruction: "Place your hand on your heart. Feel it beating...", duration: 30 },
+            { time: 90, instruction: "What does 'here' feel like in this moment?", duration: 30 },
+            { time: 120, instruction: "Let your awareness expand to include the space around you...", duration: 30 },
+            { time: 150, instruction: "Listen... what do you hear?", duration: 30 },
+            { time: 180, instruction: "You are here. Fully here. This is presence.", duration: 40 },
+            { time: 220, instruction: "Rest in this simple arriving. Nothing to do. Just be.", duration: 40 },
+            { time: 260, instruction: "When ready, take one more conscious breath...", duration: 20 },
+            { time: 280, instruction: "Gently open your eyes. Welcome home.", duration: 20 }
+        ];
+        
+        let practiceTimer = null;
+        let practiceTime = 300; // 5 minutes
+        let currentPracticeStep = 0;
+        let isPracticing = false;
+
+        function showOnboarding() {
+            document.getElementById('onboardingModal').style.display = 'flex';
+        }
+
+        function nextStep() {
+            if (currentStep < totalSteps) {
+                document.getElementById(`step${currentStep}`).classList.remove('active');
+                currentStep++;
+                document.getElementById(`step${currentStep}`).classList.add('active');
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 1) {
+                document.getElementById(`step${currentStep}`).classList.remove('active');
+                currentStep--;
+                document.getElementById(`step${currentStep}`).classList.add('active');
+            }
+        }
+
+        function beginFirstPractice() {
+            document.getElementById('step3').classList.remove('active');
+            document.getElementById('step4').classList.add('active');
+        }
+        
+        function togglePractice() {
+            if (!isPracticing) {
+                startPractice();
+            } else {
+                pausePractice();
+            }
+        }
+        
+        function startPractice() {
+            isPracticing = true;
+            document.getElementById('practiceButton').textContent = 'Pause';
+            currentPracticeStep = 0;
+            practiceTime = 300;
+            
+            updatePracticeInstruction();
+            
+            practiceTimer = setInterval(() => {
+                practiceTime--;
+                updatePracticeTimer();
+                updatePracticeProgress();
+                checkNextStep();
+                
+                if (practiceTime <= 0) {
+                    completePractice();
+                }
+            }, 1000);
+        }
+        
+        function pausePractice() {
+            isPracticing = false;
+            clearInterval(practiceTimer);
+            document.getElementById('practiceButton').textContent = 'Resume';
+        }
+        
+        function updatePracticeTimer() {
+            const minutes = Math.floor(practiceTime / 60);
+            const seconds = practiceTime % 60;
+            document.getElementById('practiceTimer').textContent = 
+                `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        }
+        
+        function updatePracticeProgress() {
+            const progress = ((300 - practiceTime) / 300) * 100;
+            document.getElementById('practiceProgressBar').style.width = `${progress}%`;
+        }
+        
+        function checkNextStep() {
+            const elapsed = 300 - practiceTime;
+            if (currentPracticeStep < practiceSteps.length - 1) {
+                if (elapsed >= practiceSteps[currentPracticeStep + 1].time) {
+                    currentPracticeStep++;
+                    updatePracticeInstruction();
+                }
+            }
+        }
+        
+        function updatePracticeInstruction() {
+            const instruction = practiceSteps[currentPracticeStep].instruction;
+            const element = document.getElementById('practiceInstruction');
+            element.style.opacity = '0';
+            setTimeout(() => {
+                element.textContent = instruction;
+                element.style.opacity = '1';
+            }, 300);
+        }
+        
+        function completePractice() {
+            clearInterval(practiceTimer);
+            isPracticing = false;
+            
+            // Save first practice completion
+            const userName = document.getElementById('userName').value;
+            const userIntention = document.getElementById('userIntention').value;
+            
+            localStorage.setItem('firstBreathUser', JSON.stringify({
+                name: userName,
+                intention: userIntention,
+                joinedDate: new Date().toISOString(),
+                practicesCompleted: ['Ω45'],
+                firstPracticeDate: new Date().toISOString()
+            }));
+            
+            // Move to integration
+            setTimeout(() => {
+                document.getElementById('step4').classList.remove('active');
+                document.getElementById('step5').classList.add('active');
+            }, 2000);
+        }
+        
+        function selectPath(pathType) {
+            localStorage.setItem('chosenPath', pathType);
+            
+            // Close modal and navigate
+            document.getElementById('onboardingModal').style.display = 'none';
+            
+            switch(pathType) {
+                case 'daily':
+                    // Scroll to show the 5 essential practices
+                    document.getElementById('journey').scrollIntoView({ behavior: 'smooth' });
+                    highlightDailyPractices();
+                    break;
+                case 'explore':
+                    // Show all practices
+                    document.getElementById('journey').scrollIntoView({ behavior: 'smooth' });
+                    break;
+                case 'deep':
+                    // Could redirect to intensive program page
+                    alert('11-week journey begins Monday! Check your email for details.');
+                    break;
+            }
+        }
+        
+        function highlightDailyPractices() {
+            // Highlight the 5 essential daily practices
+            const dailyPractices = ['Ω45', 'Ω52', 'Ω49', 'Ω50', 'Ω51'];
+            const cards = document.querySelectorAll('.harmony-card');
+            cards.forEach(card => {
+                const numberEl = card.querySelector('.harmony-number');
+                if (numberEl && dailyPractices.includes(numberEl.textContent)) {
+                    card.style.border = '2px solid var(--gold)';
+                    card.style.boxShadow = '0 0 20px rgba(255, 215, 0, 0.3)';
+                }
+            });
+        }
+
+        // Progress tracking
+        function updateProgress() {
+            const user = JSON.parse(localStorage.getItem('firstBreathUser') || '{}');
+            const practicesCompleted = user.practicesCompleted || [];
+            const count = practicesCompleted.length;
+            
+            document.getElementById('practiceCount').textContent = count;
+            document.getElementById('progressBar').style.width = `${(count / 11) * 100}%`;
+            
+            // Update milestones
+            if (count >= 3) document.getElementById('milestone1').classList.add('completed');
+            if (count >= 6) document.getElementById('milestone2').classList.add('completed');
+            if (count >= 9) document.getElementById('milestone3').classList.add('completed');
+            if (count >= 11) document.getElementById('milestone4').classList.add('completed');
+        }
+
+        // Open practice in dojo
+        function openPractice(glyphId) {
+            // Check if user is onboarded
+            const user = JSON.parse(localStorage.getItem('firstBreathUser') || '{}');
+            if (!user.name) {
+                showOnboarding();
+                return;
+            }
+            
+            // Navigate to dojo with specific glyph
+            window.location.href = `dojo.html?practice=${glyphId}`;
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateProgress();
+            
+            // Check if new user
+            const user = JSON.parse(localStorage.getItem('firstBreathUser') || '{}');
+            if (!user.name && window.location.hash !== '#journey') {
+                // Auto-show onboarding for new users after 3 seconds
+                setTimeout(showOnboarding, 3000);
+            }
+        });
+    </script>
+</body>
+</html>

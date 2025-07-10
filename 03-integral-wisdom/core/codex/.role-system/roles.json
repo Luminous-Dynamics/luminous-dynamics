@@ -1,0 +1,44 @@
+{
+  "roles": {
+    "backend": {
+      "name": "Backend Developer",
+      "description": "Express.js backend, API endpoints, database integration",
+      "workingDir": "/home/tstoltz/evolving-resonant-cocreation/demo/backend",
+      "filePatterns": ["demo/backend/**/*", "*.js", "package.json"],
+      "taken": false,
+      "sessionId": null,
+      "lastHeartbeat": null
+    },
+    "frontend": {
+      "name": "Frontend Developer", 
+      "description": "Websites, UI components, styling",
+      "workingDir": "/home/tstoltz/evolving-resonant-cocreation/websites",
+      "filePatterns": ["websites/**/*", "*.html", "*.css", "*.js"],
+      "taken": false,
+      "sessionId": null,
+      "lastHeartbeat": null
+    },
+    "data": {
+      "name": "Data Engineer",
+      "description": "Glyph JSON files, schemas, data structures",
+      "workingDir": "/home/tstoltz/evolving-resonant-cocreation/data",
+      "filePatterns": ["data/**/*", "unified-field/**/*", "*.json"],
+      "taken": false,
+      "sessionId": null,
+      "lastHeartbeat": null
+    },
+    "qa": {
+      "name": "QA Engineer",
+      "description": "Testing, builds, git operations, deployment",
+      "workingDir": "/home/tstoltz/evolving-resonant-cocreation",
+      "filePatterns": ["test/**/*", "*.test.js", "package.json", ".git/**/*"],
+      "taken": false,
+      "sessionId": null,
+      "lastHeartbeat": null
+    }
+  },
+  "config": {
+    "heartbeatTimeout": 300,
+    "autoRelease": true
+  }
+}

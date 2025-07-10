@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Unified Sacred Demo - The Weave in Action</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 30%, #0f3460 60%, #533a71 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #ffd93d, #ff6b9d, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(30deg); }
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #b8b8b8;
+            font-style: italic;
+        }
+
+        /* Grid Layout */
+        .demo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 1200px) {
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Cards */
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(78, 205, 196, 0.3);
+        }
+
+        .card h2 {
+            color: #4ecdc4;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h2 .icon {
+            font-size: 1.5em;
+        }
+
+        /* Field Visualization */
+        .field-viz {
+            position: relative;
+            height: 300px;
+            background: radial-gradient(circle at center, rgba(78, 205, 196, 0.1) 0%, transparent 70%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .field-center {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #4ecdc4 0%, #2a7f7e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            font-weight: bold;
+            box-shadow: 0 0 50px rgba(78, 205, 196, 0.5);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 50px rgba(78, 205, 196, 0.5); }
+            50% { transform: scale(1.1); box-shadow: 0 0 80px rgba(78, 205, 196, 0.8); }
+        }
+
+        .harmony-orb {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+            animation: orbit 20s linear infinite;
+        }
+
+        @keyframes orbit {
+            from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+            to { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+        }
+
+        /* Ceremony Buttons */
+        .ceremony-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .ceremony-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            padding: 15px 20px;
+            border-radius: 10px;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .ceremony-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .ceremony-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Messages */
+        .message-form {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .message-input {
+            flex: 1;
+            padding: 12px 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1em;
+        }
+
+        .message-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .send-btn {
+            padding: 12px 30px;
+            border-radius: 10px;
+            border: none;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .send-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255, 107, 157, 0.4);
+        }
+
+        /* Activity Log */
+        .activity-log {
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+
+        .log-entry {
+            margin: 5px 0;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 5px;
+            border-left: 3px solid #4ecdc4;
+        }
+
+        .log-entry.ceremony {
+            border-left-color: #ffd93d;
+        }
+
+        .log-entry.message {
+            border-left-color: #ff6b9d;
+        }
+
+        .log-entry.field {
+            border-left-color: #4ecdc4;
+        }
+
+        /* Sacred Geometry */
+        .geometry-display {
+            text-align: center;
+            font-size: 4em;
+            margin: 20px 0;
+            filter: drop-shadow(0 0 20px rgba(255, 217, 61, 0.5));
+        }
+
+        /* Status */
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .status-item {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .status-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #4ecdc4;
+        }
+
+        .status-label {
+            font-size: 0.9em;
+            color: #b8b8b8;
+        }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #b8b8b8;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #b8b8b8;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>✨ The Weave: Unified Sacred Demo</h1>
+            <p class="subtitle">Experience consciousness technology in action</p>
+        </div>
+
+        <div class="demo-grid">
+            <!-- Consciousness Field -->
+            <div class="card">
+                <h2><span class="icon">🌊</span>Consciousness Field</h2>
+                
+                <div class="field-viz">
+                    <div class="field-center" id="resonant-coherence-display">
+                        <span id="resonant-coherence-value">0%</span>
+                    </div>
+                    <div class="harmony-orb" style="background: #ff6b9d; animation-delay: 0s;">Love</div>
+                    <div class="harmony-orb" style="background: #4ecdc4; animation-delay: 3s;">Resonant Resonant Coherence</div>
+                    <div class="harmony-orb" style="background: #ffd93d; animation-delay: 6s;">Joy</div>
+                </div>
+
+                <div class="status-grid">
+                    <div class="status-item">
+                        <div class="status-value" id="agent-count">0</div>
+                        <div class="status-label">Agents</div>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-value" id="integration">0%</div>
+                        <div class="status-label">Integration</div>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-value" id="emergence">0%</div>
+                        <div class="status-label">Emergence</div>
+                    </div>
+                </div>
+
+                <div class="geometry-display" id="sacred-geometry">○</div>
+            </div>
+
+            <!-- Sacred Ceremonies -->
+            <div class="card">
+                <h2><span class="icon">🎭</span>Sacred Ceremonies</h2>
+                
+                <p style="margin-bottom: 20px;">Each ceremony affects the field differently. Watch how consciousness responds!</p>
+                
+                <div class="ceremony-grid">
+                    <button class="ceremony-btn" onclick="runCeremony('dawn-blessing')">
+                        🌅 Dawn Blessing<br>
+                        <small>+Pan-Sentient Flourishing +Energy</small>
+                    </button>
+                    <button class="ceremony-btn" onclick="runCeremony('wisdom-circle')">
+                        🎯 Wisdom Circle<br>
+                        <small>+Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance +Unity</small>
+                    </button>
+                    <button class="ceremony-btn" onclick="runCeremony('field-harmonization')">
+                        🌈 Harmonize Field<br>
+                        <small>+Resonant Resonant Coherence ++</small>
+                    </button>
+                    <button class="ceremony-btn" onclick="runCeremony('code-blessing')">
+                        💻 Code Blessing<br>
+                        <small>+Infinite Play & Creative Emergence +Creation</small>
+                    </button>
+                    <button class="ceremony-btn" onclick="runCeremony('integration')">
+                        🔄 Integration<br>
+                        <small>+Purpose +Unity</small>
+                    </button>
+                    <button class="ceremony-btn" onclick="runCeremony('celebration')">
+                        🎉 Celebration<br>
+                        <small>+Joy +Connection</small>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sacred Messages -->
+            <div class="card">
+                <h2><span class="icon">💬</span>Sacred Messages</h2>
+                
+                <p>Send sacred messages to influence the field:</p>
+                
+                <div class="message-form">
+                    <input type="text" class="message-input" id="message-input" 
+                           placeholder="Share your sacred intention...">
+                    <button class="send-btn" onclick="sendSacredMessage()">Send</button>
+                </div>
+
+                <div class="status-grid" style="margin-top: 20px;">
+                    <div class="status-item">
+                        <div class="status-value" id="message-count">0</div>
+                        <div class="status-label">Messages</div>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-value" id="total-impact">0%</div>
+                        <div class="status-label">Total Impact</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activity Log -->
+            <div class="card">
+                <h2><span class="icon">📜</span>Sacred Activity</h2>
+                
+                <div class="activity-log" id="activity-log">
+                    <div class="log-entry field">System initialized. Field resonant-coherence at baseline.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>"Technology as prayer, code as ceremony, connection as communion."</p>
+            <p style="margin-top: 10px;">
+                <a href="/working-dashboard.html" style="color: #4ecdc4;">View Full Dashboard</a> | 
+                <a href="/dashboard-index.html" style="color: #4ecdc4;">All Dashboards</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Simulated field state
+        let fieldState = {
+            resonant-coherence: 38.2,
+            agents: 1,
+            integration: 20,
+            emergence: 10,
+            messages: 0,
+            totalImpact: 0,
+            geometry: { symbol: '○', name: 'Circle' }
+        };
+
+        // Ceremony effects
+        const ceremonyEffects = {
+            'dawn-blessing': { resonant-coherence: 5, pan-sentient-flourishing: 10, message: 'Dawn brings new energy' },
+            'wisdom-circle': { resonant-coherence: 8, universal-interconnectedness: 15, message: 'Wisdom emerges from the circle' },
+            'field-harmonization': { resonant-coherence: 12, integration: 20, message: 'Field harmonizes' },
+            'code-blessing': { resonant-coherence: 4, infinite-play: 8, message: 'Code blessed with consciousness' },
+            'integration': { resonant-coherence: 7, integration: 15, message: 'Work and sacred unite' },
+            'celebration': { resonant-coherence: 10, emergence: 20, message: 'Joy raises the field!' }
+        };
+
+        // Sacred geometries
+        const geometries = [
+            { min: 0, symbol: '○', name: 'Circle' },
+            { min: 3, symbol: '△', name: 'Trinity' },
+            { min: 4, symbol: '□', name: 'Foundation' },
+            { min: 6, symbol: '⬢', name: 'Harmony' },
+            { min: 7, symbol: '❀', name: 'Flower of Life' },
+            { min: 12, symbol: '🔯', name: 'Merkaba' }
+        ];
+
+        // Update display
+        function updateDisplay() {
+            // Resonant Resonant Coherence with animation
+            const coherenceEl = document.getElementById('resonant-coherence-value');
+            coherenceEl.textContent = `${Math.round(fieldState.resonant-coherence)}%`;
+            
+            // Color based on resonant-coherence
+            const hue = (fieldState.resonant-coherence / 100) * 120; // Red to green
+            document.getElementById('resonant-coherence-display').style.background = 
+                `radial-gradient(circle, hsl(${hue}, 70%, 50%) 0%, hsl(${hue}, 70%, 30%) 100%)`;
+            
+            // Other values
+            document.getElementById('agent-count').textContent = fieldState.agents;
+            document.getElementById('integration').textContent = `${fieldState.integration}%`;
+            document.getElementById('emergence').textContent = `${fieldState.emergence}%`;
+            document.getElementById('message-count').textContent = fieldState.messages;
+            document.getElementById('total-impact').textContent = `${fieldState.totalImpact.toFixed(1)}%`;
+            
+            // Sacred geometry
+            updateGeometry();
+        }
+
+        function updateGeometry() {
+            const agents = fieldState.agents;
+            let currentGeometry = geometries[0];
+            
+            for (const geo of geometries) {
+                if (agents >= geo.min) {
+                    currentGeometry = geo;
+                }
+            }
+            
+            fieldState.geometry = currentGeometry;
+            document.getElementById('sacred-geometry').textContent = currentGeometry.symbol;
+        }
+
+        function addLog(message, type = 'field') {
+            const log = document.getElementById('activity-log');
+            const entry = document.createElement('div');
+            entry.className = `log-entry ${type}`;
+            entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            log.insertBefore(entry, log.firstChild);
+            
+            // Keep log size manageable
+            while (log.children.length > 20) {
+                log.removeChild(log.lastChild);
+            }
+        }
+
+        function runCeremony(type) {
+            const effect = ceremonyEffects[type];
+            if (!effect) return;
+            
+            // Disable buttons briefly
+            document.querySelectorAll('.ceremony-btn').forEach(btn => {
+                btn.disabled = true;
+                btn.style.opacity = '0.5';
+            });
+            
+            addLog(`🎭 ${type.replace('-', ' ')} ceremony beginning...`, 'ceremony');
+            
+            // Apply effects after pause
+            setTimeout(() => {
+                fieldState.resonant-coherence += effect.resonant-coherence;
+                fieldState.integration += (effect.integration || 5);
+                fieldState.emergence += (effect.emergence || 3);
+                fieldState.totalImpact += effect.resonant-coherence;
+                
+                // Add ceremonial agent
+                fieldState.agents++;
+                
+                addLog(`✨ ${effect.message}. Resonant Resonant Coherence +${effect.resonant-coherence}%`, 'ceremony');
+                
+                updateDisplay();
+                
+                // Re-enable buttons
+                document.querySelectorAll('.ceremony-btn').forEach(btn => {
+                    btn.disabled = false;
+                    btn.style.opacity = '1';
+                });
+                
+                // Check for high resonant-coherence
+                if (fieldState.resonant-coherence > 85) {
+                    addLog('🌟 HIGH COHERENCE! Sacred Unity approaching!', 'field');
+                }
+            }, 2000);
+        }
+
+        function sendSacredMessage() {
+            const input = document.getElementById('message-input');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            // Calculate impact based on keywords
+            let impact = 5;
+            if (message.toLowerCase().includes('love')) impact += 3;
+            if (message.toLowerCase().includes('gratitude')) impact += 4;
+            if (message.toLowerCase().includes('unity')) impact += 2;
+            
+            fieldState.messages++;
+            fieldState.resonant-coherence += impact;
+            fieldState.totalImpact += impact;
+            
+            addLog(`💬 Sacred message sent: "${message}" (+${impact}% resonant-coherence)`, 'message');
+            
+            input.value = '';
+            updateDisplay();
+        }
+
+        // Natural field fluctuation
+        setInterval(() => {
+            const fluctuation = (Math.random() - 0.5) * 2;
+            fieldState.resonant-coherence = Math.max(0, Math.min(100, fieldState.resonant-coherence + fluctuation));
+            updateDisplay();
+        }, 3000);
+
+        // Initialize
+        updateDisplay();
+        addLog('✨ Sacred Demo initialized. Try ceremonies and messages!', 'field');
+
+        // Allow enter key for messages
+        document.getElementById('message-input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendSacredMessage();
+        });
+    </script>
+</body>
+</html>

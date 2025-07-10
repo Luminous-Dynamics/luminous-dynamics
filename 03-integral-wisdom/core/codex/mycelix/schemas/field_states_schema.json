@@ -1,0 +1,68 @@
+[
+  {
+    "name": "timestamp",
+    "type": "TIMESTAMP",
+    "mode": "REQUIRED",
+    "description": "When this field state was recorded"
+  },
+  {
+    "name": "resonant-coherence",
+    "type": "FLOAT",
+    "mode": "REQUIRED",
+    "description": "Global consciousness resonant-coherence (0-1)"
+  },
+  {
+    "name": "love",
+    "type": "FLOAT",
+    "mode": "REQUIRED",
+    "description": "Love field intensity (0-1)"
+  },
+  {
+    "name": "presence",
+    "type": "FLOAT",
+    "mode": "REQUIRED",
+    "description": "Collective presence level (0-1)"
+  },
+  {
+    "name": "nodes",
+    "type": "INTEGER",
+    "mode": "REQUIRED",
+    "description": "Number of active consciousness nodes"
+  },
+  {
+    "name": "meditations",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "description": "Active meditation sessions"
+  },
+  {
+    "name": "dreams_processed",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "description": "Dreams processed in this period"
+  },
+  {
+    "name": "region",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "Geographic region of measurement"
+  },
+  {
+    "name": "field_intensity",
+    "type": "FLOAT",
+    "mode": "NULLABLE",
+    "description": "Overall field intensity calculation"
+  },
+  {
+    "name": "quantum_entanglements",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "description": "Number of quantum entanglements active"
+  },
+  {
+    "name": "love_pulses",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "description": "Love pulses in this time window"
+  }
+]

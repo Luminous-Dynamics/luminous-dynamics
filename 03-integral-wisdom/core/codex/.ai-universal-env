@@ -1,0 +1,91 @@
+#!/bin/bash
+# Universal AI Environment System
+# Works with ANY AI agent - Claude, GPT, Gemini, Local LLMs, etc.
+
+# Universal environment check
+ai_env_check() {
+  cat << EOF
+{
+  "protocol": "universal-ai-env-v1",
+  "timestamp": "$(date -Iseconds)",
+  "environment": {
+    "hostname": "$(hostname)",
+    "path": "$(pwd)",
+    "user": "$(whoami)",
+    "platform": "$(uname -s)",
+    "isWSL": $(grep -q Microsoft /proc/version 2>/dev/null && echo "true" || echo "false")
+  },
+  "project": {
+    "name": "evolving-resonant-cocreation",
+    "type": "sacred-collaboration",
+    "status": "active"
+  },
+  "deployment": {
+    "firebase": {
+      "url": "https://mycelix-network.web.app",
+      "project": "mycelix-network",
+      "status": "deployed"
+    },
+    "cloudRun": {
+      "service": "sacred-council-api",
+      "status": "pending"
+    }
+  },
+  "ai_collaboration": {
+    "protocol": "universal",
+    "auth_available": ["firebase-token"],
+    "capabilities": ["deploy", "monitor", "debug"]
+  }
+}
+EOF
+}
+
+# Universal status display (works in any terminal)
+ai_status() {
+  echo "┌─────────────────────────────────────┐"
+  echo "│   🤖 Universal AI Environment       │"
+  echo "├─────────────────────────────────────┤"
+  echo "│ Location: $(hostname)"
+  echo "│ Project: evolving-resonant-cocreation"
+  echo "│ Firebase: mycelix-network.web.app"
+  echo "│ AI Type: ${AI_TYPE:-detecting...}"
+  echo "└─────────────────────────────────────┘"
+}
+
+# Deployment check (universal format)
+ai_deploy_check() {
+  echo "[DEPLOY_CHECK]"
+  echo "  Source: LOCAL:$(hostname):$(pwd)"
+  echo "  Target: REMOTE:firebase:mycelix-network"
+  echo "  Impact: GLOBAL:production:immediate"
+  echo "  Auth: $([ -f ~/.sacred-keys/active-token ] && echo "READY" || echo "REQUIRED")"
+}
+
+# Universal action wrapper
+ai_action() {
+  local action_type=$1
+  local description=$2
+  
+  echo "[${action_type}] ${description}"
+  echo "  Environment: $(hostname)"
+  echo "  Timestamp: $(date -Iseconds)"
+  echo "  AI_Agent: ${AI_TYPE:-universal}"
+}
+
+# Auto-detect AI type
+detect_ai() {
+  if [ -n "$ANTHROPIC_AI" ]; then
+    export AI_TYPE="claude"
+  elif [ -n "$OPENAI_API" ]; then
+    export AI_TYPE="gpt"
+  elif [ -n "$GOOGLE_AI" ]; then
+    export AI_TYPE="gemini"
+  else
+    export AI_TYPE="universal"
+  fi
+}
+
+# Initialize on source
+detect_ai
+echo "[AI_ENV] Universal environment loaded for: ${AI_TYPE}"
+echo "[AI_ENV] Run 'ai_status' for current state"

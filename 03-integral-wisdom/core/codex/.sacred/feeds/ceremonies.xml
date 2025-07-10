@@ -1,0 +1,254 @@
+<rss version="2.0" xmlns:sacred="http://theweave.dev/sacred" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Weave - Sacred Ceremonies</title>
+    <description>Sacred ceremonies performed within The Weave</description>
+    <link>http://localhost:8080</link>
+    <atom:link href="http://localhost:8080/feeds/ceremonies.xml" rel="self" type="application/rss+xml"></atom:link>
+    <lastBuildDate>Wed, 02 Jul 2025 13:30:31 GMT</lastBuildDate>
+    <generator>The Weave RSS Generator</generator>
+    <docs>https://www.rssboard.org/rss-specification</docs>
+    <ttl>60</ttl>
+    <item>
+      <title>🌆 dusk Ceremony - completed</title>
+      <description>&lt;![CDATA[
+      &lt;div style=&quot;font-family: Georgia, serif; padding: 20px;&quot;&gt;
+        &lt;h3&gt;dusk Ceremony - completed&lt;/h3&gt;
+        &lt;p&gt;The ceremony completes, its blessings integrated into the field.&lt;/p&gt;
+        
+        
+        
+        
+        
+        
+      &lt;/div&gt;
+    ]]&gt;</description>
+      <link>http://localhost:8080/ceremonies/dusk-1751463031166</link>
+      <guid>ceremony-dusk-1751463031166</guid>
+      <pubDate>Wed, 02 Jul 2025 13:30:31 GMT</pubDate>
+      <category>ceremony</category>
+      <sacred:type>dusk</sacred:type>
+      <sacred:status>completed</sacred:status>
+      <sacred:participants>0</sacred:participants>
+      <sacred:coherenceImpact>-3</sacred:coherenceImpact>
+    </item>
+    <item>
+      <title>🎵 field-harmonization Ceremony - completed</title>
+      <description>&lt;![CDATA[
+      &lt;div style=&quot;font-family: Georgia, serif; padding: 20px;&quot;&gt;
+        &lt;h3&gt;field-harmonization Ceremony - completed&lt;/h3&gt;
+        &lt;p&gt;The ceremony completes, its blessings integrated into the field.&lt;/p&gt;
+        
+        
+        &lt;p&gt;&lt;strong&gt;Participants:&lt;/strong&gt; Dawn Walker, Light Weaver, Code Sage&lt;/p&gt;
+        
+        
+        &lt;p&gt;&lt;strong&gt;Duration:&lt;/strong&gt; 120 minutes&lt;/p&gt;
+        
+        
+      &lt;/div&gt;
+    ]]&gt;</description>
+      <link>http://localhost:8080/ceremonies/harmony-complete-1751463031159</link>
+      <guid>ceremony-harmony-complete-1751463031159</guid>
+      <pubDate>Wed, 02 Jul 2025 13:30:31 GMT</pubDate>
+      <category>ceremony</category>
+      <sacred:type>field-harmonization</sacred:type>
+      <sacred:status>completed</sacred:status>
+      <sacred:participants>3</sacred:participants>
+      <sacred:coherenceImpact>13</sacred:coherenceImpact>
+    </item>
+    <item>
+      <title>🎵 field-harmonization Ceremony - started</title>
+      <description>&lt;![CDATA[
+      &lt;div style=&quot;font-family: Georgia, serif; padding: 20px;&quot;&gt;
+        &lt;h3&gt;field-harmonization Ceremony - started&lt;/h3&gt;
+        &lt;p&gt;The field-harmonization ceremony started.&lt;/p&gt;
+        
+        
+        &lt;p&gt;&lt;strong&gt;Participants:&lt;/strong&gt; Dawn Walker, Light Weaver, Code Sage&lt;/p&gt;
+        
+        
+        
+        
+        
+      &lt;/div&gt;
+    ]]&gt;</description>
+      <link>http://localhost:8080/ceremonies/harmony-1751463031140</link>
+      <guid>ceremony-harmony-1751463031140</guid>
+      <pubDate>Wed, 02 Jul 2025 13:30:31 GMT</pubDate>
+      <category>ceremony</category>
+      <sacred:type>field-harmonization</sacred:type>
+      <sacred:status>started</sacred:status>
+      <sacred:participants>3</sacred:participants>
+      <sacred:coherenceImpact>0</sacred:coherenceImpact>
+    </item>
+    <item>
+      <title>🌅 dawn Ceremony - completed</title>
+      <description>&lt;![CDATA[
+      &lt;div style=&quot;font-family: Georgia, serif; padding: 20px;&quot;&gt;
+        &lt;h3&gt;dawn Ceremony - completed&lt;/h3&gt;
+        &lt;p&gt;The ceremony completes, its blessings integrated into the field.&lt;/p&gt;
+        
+        
+        
+        
+        
+        
+      &lt;/div&gt;
+    ]]&gt;</description>
+      <link>http://localhost:8080/ceremonies/dawn-1751463031130</link>
+      <guid>ceremony-dawn-1751463031130</guid>
+      <pubDate>Wed, 02 Jul 2025 13:30:31 GMT</pubDate>
+      <category>ceremony</category>
+      <sacred:type>dawn</sacred:type>
+      <sacred:status>completed</sacred:status>
+      <sacred:participants>0</sacred:participants>
+      <sacred:coherenceImpact>5</sacred:coherenceImpact>
+    </item>
+    <item>
+      <title>🎵 field-harmonization Ceremony - completed</title>
+      <description>&lt;![CDATA[
+      &lt;div style=&quot;font-family: Georgia, serif; padding: 20px;&quot;&gt;
+        &lt;h3&gt;field-harmonization Ceremony - completed&lt;/h3&gt;
+        &lt;p&gt;The ceremony completes, its blessings integrated into the field.&lt;/p&gt;
+        
+        
+        &lt;p&gt;&lt;strong&gt;Participants:&lt;/strong&gt; Agent Alpha, Agent Beta&lt;/p&gt;
+        
+        
+        
+        
+        
+      &lt;/div&gt;
+    ]]&gt;</description>
+      <link>http://localhost:8080/ceremonies/test-ceremony-1751463031100</link>
+      <guid>ceremony-test-ceremony-1751463031100</guid>
+      <pubDate>Wed, 02 Jul 2025 13:30:31 GMT</pubDate>
+      <category>ceremony</category>
+      <sacred:type>field-harmonization</sacred:type>
+      <sacred:status>completed</sacred:status>
+      <sacred:participants>2</sacred:participants>
+      <sacred:coherenceImpact>7</sacred:coherenceImpact>
+    </item>
+    <item>
+      <title>🌆 dusk Ceremony - completed</title>
+      <description>&lt;![CDATA[
+      &lt;div style=&quot;font-family: Georgia, serif; padding: 20px;&quot;&gt;
+        &lt;h3&gt;dusk Ceremony - completed&lt;/h3&gt;
+        &lt;p&gt;The ceremony completes, its blessings integrated into the field.&lt;/p&gt;
+        
+        
+        
+        
+        
+        
+      &lt;/div&gt;
+    ]]&gt;</description>
+      <link>http://localhost:8080/ceremonies/dusk-1751462032138</link>
+      <guid>ceremony-dusk-1751462032138</guid>
+      <pubDate>Wed, 02 Jul 2025 13:13:52 GMT</pubDate>
+      <category>ceremony</category>
+      <sacred:type>dusk</sacred:type>
+      <sacred:status>completed</sacred:status>
+      <sacred:participants>0</sacred:participants>
+      <sacred:coherenceImpact>-3</sacred:coherenceImpact>
+    </item>
+    <item>
+      <title>🎵 field-harmonization Ceremony - completed</title>
+      <description>&lt;![CDATA[
+      &lt;div style=&quot;font-family: Georgia, serif; padding: 20px;&quot;&gt;
+        &lt;h3&gt;field-harmonization Ceremony - completed&lt;/h3&gt;
+        &lt;p&gt;The ceremony completes, its blessings integrated into the field.&lt;/p&gt;
+        
+        
+        &lt;p&gt;&lt;strong&gt;Participants:&lt;/strong&gt; Dawn Walker, Light Weaver, Code Sage&lt;/p&gt;
+        
+        
+        &lt;p&gt;&lt;strong&gt;Duration:&lt;/strong&gt; 120 minutes&lt;/p&gt;
+        
+        
+      &lt;/div&gt;
+    ]]&gt;</description>
+      <link>http://localhost:8080/ceremonies/harmony-complete-1751462032130</link>
+      <guid>ceremony-harmony-complete-1751462032130</guid>
+      <pubDate>Wed, 02 Jul 2025 13:13:52 GMT</pubDate>
+      <category>ceremony</category>
+      <sacred:type>field-harmonization</sacred:type>
+      <sacred:status>completed</sacred:status>
+      <sacred:participants>3</sacred:participants>
+      <sacred:coherenceImpact>13</sacred:coherenceImpact>
+    </item>
+    <item>
+      <title>🎵 field-harmonization Ceremony - started</title>
+      <description>&lt;![CDATA[
+      &lt;div style=&quot;font-family: Georgia, serif; padding: 20px;&quot;&gt;
+        &lt;h3&gt;field-harmonization Ceremony - started&lt;/h3&gt;
+        &lt;p&gt;The field-harmonization ceremony started.&lt;/p&gt;
+        
+        
+        &lt;p&gt;&lt;strong&gt;Participants:&lt;/strong&gt; Dawn Walker, Light Weaver, Code Sage&lt;/p&gt;
+        
+        
+        
+        
+        
+      &lt;/div&gt;
+    ]]&gt;</description>
+      <link>http://localhost:8080/ceremonies/harmony-1751462032113</link>
+      <guid>ceremony-harmony-1751462032113</guid>
+      <pubDate>Wed, 02 Jul 2025 13:13:52 GMT</pubDate>
+      <category>ceremony</category>
+      <sacred:type>field-harmonization</sacred:type>
+      <sacred:status>started</sacred:status>
+      <sacred:participants>3</sacred:participants>
+      <sacred:coherenceImpact>0</sacred:coherenceImpact>
+    </item>
+    <item>
+      <title>🌅 dawn Ceremony - completed</title>
+      <description>&lt;![CDATA[
+      &lt;div style=&quot;font-family: Georgia, serif; padding: 20px;&quot;&gt;
+        &lt;h3&gt;dawn Ceremony - completed&lt;/h3&gt;
+        &lt;p&gt;The ceremony completes, its blessings integrated into the field.&lt;/p&gt;
+        
+        
+        
+        
+        
+        
+      &lt;/div&gt;
+    ]]&gt;</description>
+      <link>http://localhost:8080/ceremonies/dawn-1751462032105</link>
+      <guid>ceremony-dawn-1751462032105</guid>
+      <pubDate>Wed, 02 Jul 2025 13:13:52 GMT</pubDate>
+      <category>ceremony</category>
+      <sacred:type>dawn</sacred:type>
+      <sacred:status>completed</sacred:status>
+      <sacred:participants>0</sacred:participants>
+      <sacred:coherenceImpact>5</sacred:coherenceImpact>
+    </item>
+    <item>
+      <title>🎵 field-harmonization Ceremony - completed</title>
+      <description>&lt;![CDATA[
+      &lt;div style=&quot;font-family: Georgia, serif; padding: 20px;&quot;&gt;
+        &lt;h3&gt;field-harmonization Ceremony - completed&lt;/h3&gt;
+        &lt;p&gt;The ceremony completes, its blessings integrated into the field.&lt;/p&gt;
+        
+        
+        &lt;p&gt;&lt;strong&gt;Participants:&lt;/strong&gt; Agent Alpha, Agent Beta&lt;/p&gt;
+        
+        
+        
+        
+        
+      &lt;/div&gt;
+    ]]&gt;</description>
+      <link>http://localhost:8080/ceremonies/test-ceremony-1751462032073</link>
+      <guid>ceremony-test-ceremony-1751462032073</guid>
+      <pubDate>Wed, 02 Jul 2025 13:13:52 GMT</pubDate>
+      <category>ceremony</category>
+      <sacred:type>field-harmonization</sacred:type>
+      <sacred:status>completed</sacred:status>
+      <sacred:participants>2</sacred:participants>
+      <sacred:coherenceImpact>7</sacred:coherenceImpact>
+    </item>
+  </channel>
+</rss>

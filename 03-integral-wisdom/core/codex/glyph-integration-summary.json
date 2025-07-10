@@ -1,0 +1,12 @@
+{
+  "total": 94,
+  "valid": 61,
+  "categories": {
+    "foundational": 48,
+    "applied-harmonies": 4,
+    "meta": 0,
+    "threshold": 9
+  },
+  "errors": 33,
+  "timestamp": "2025-07-04T16:00:09.961Z"
+}

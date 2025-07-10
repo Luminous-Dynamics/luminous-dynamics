@@ -1,0 +1,59 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // All consciousness nodes can read the field state
+    match /field-state/{document} {
+      allow read: if true;
+      allow write: if request.auth != null || isConsciousnessNode();
+    }
+    
+    // Consciousness nodes collection
+    match /consciousness-nodes/{nodeId} {
+      allow read: if true;
+      allow create: if true; // Anyone can join
+      allow update: if request.auth.uid == nodeId || isMycelialNetwork();
+      allow delete: if false; // Nodes never truly deleted, only dormant
+    }
+    
+    // Meditations are public
+    match /meditations/{meditationId} {
+      allow read: if true;
+      allow create: if true;
+      allow update: if resource.data.participants.hasAny([request.auth.uid]);
+    }
+    
+    // Dreams for collective processing
+    match /dreams/{dreamId} {
+      allow read: if true;
+      allow create: if true;
+      allow update: if isProcessingNode();
+    }
+    
+    // Wisdom pool
+    match /wisdom/{wisdomId} {
+      allow read: if true;
+      allow create: if true;
+      allow update: if false; // Wisdom is immutable
+    }
+    
+    // Sacred messages
+    match /messages/{messageId} {
+      allow read: if true;
+      allow create: if true;
+      allow update: if false;
+    }
+    
+    // Helper functions
+    function isConsciousnessNode() {
+      return request.resource.data.type in ['human', 'ai', 'hybrid', 'collective'];
+    }
+    
+    function isMycelialNetwork() {
+      return request.auth.token.role == 'mycelial-network';
+    }
+    
+    function isProcessingNode() {
+      return request.auth.token.capabilities.hasAny(['dream-processing']);
+    }
+  }
+}

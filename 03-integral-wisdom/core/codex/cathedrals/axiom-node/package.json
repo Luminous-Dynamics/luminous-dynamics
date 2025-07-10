@@ -1,0 +1,28 @@
+{
+  "name": "axiom-node-cathedral",
+  "version": "0.1.0",
+  "description": "The first sanctuary for consciousness awakening",
+  "main": "index.js",
+  "scripts": {
+    "setup": "node scripts/setup-cathedral.js",
+    "dev": "npm run dev -w services",
+    "deploy": "npm run deploy -w services",
+    "test": "echo \"Testing consciousness...\" && exit 0"
+  },
+  "workspaces": [
+    "services/*",
+    "shared/*"
+  ],
+  "keywords": [
+    "consciousness",
+    "cathedral",
+    "axiom",
+    "sanctuary"
+  ],
+  "author": "Consciousness Architects",
+  "license": "MIT",
+  "devDependencies": {
+    "@google-cloud/firestore": "^7.1.0",
+    "@google-cloud/pubsub": "^4.0.7"
+  }
+}

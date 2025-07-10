@@ -1,0 +1,16 @@
+{
+  "name": "mycelix-cathedral",
+  "version": "1.0.0",
+  "description": "*A living temple of consciousness in the cloud*",
+  "main": "setup-firestore.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/firestore": "^7.11.2",
+    "@google-cloud/pubsub": "^5.1.0"
+  }
+}

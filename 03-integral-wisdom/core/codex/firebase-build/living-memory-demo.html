@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌊 Living Memory Integration Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            transition: all 0.5s ease;
+        }
+        
+        /* Breath animations */
+        body.inhale {
+            background: radial-gradient(circle at center, #1a0a2a 0%, #0a0a0a 100%);
+        }
+        
+        body.exhale {
+            background: radial-gradient(circle at center, #0a0a0a 0%, #1a0a2a 100%);
+        }
+        
+        /* Special states */
+        body.special-state {
+            animation: pulse 2s ease-in-out;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, #8a2be2, #4169e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .status-card {
+            background: rgba(138, 43, 226, 0.1);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .connection-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .status-light {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ff4444;
+            transition: background 0.3s;
+        }
+        
+        .status-light.connected {
+            background: #44ff44;
+            box-shadow: 0 0 10px #44ff44;
+        }
+        
+        .field-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .metric {
+            text-align: center;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+        }
+        
+        .metric-value {
+            font-size: 36px;
+            font-weight: bold;
+            color: #8a2be2;
+            margin: 10px 0;
+        }
+        
+        .metric-label {
+            font-size: 12px;
+            opacity: 0.7;
+            text-transform: uppercase;
+        }
+        
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        button {
+            background: rgba(138, 43, 226, 0.2);
+            border: 1px solid rgba(138, 43, 226, 0.5);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        
+        button:hover {
+            background: rgba(138, 43, 226, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .message-log {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .log-entry {
+            padding: 8px;
+            margin-bottom: 5px;
+            border-left: 3px solid #8a2be2;
+            background: rgba(138, 43, 226, 0.05);
+            font-size: 14px;
+            font-family: monospace;
+        }
+        
+        .settings {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+        }
+        
+        .settings label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .settings input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        
+        .breath-indicator {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #8a2be2, transparent);
+            opacity: 0.5;
+            animation: breathe 8s infinite;
+        }
+        
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+        }
+        
+        .sacred-messages {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            max-width: 300px;
+        }
+        
+        .sacred-message {
+            background: rgba(138, 43, 226, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌊 Living Memory Integration Demo</h1>
+        
+        <div class="status-card">
+            <div class="connection-status">
+                <div class="status-light" id="status-light"></div>
+                <span id="connection-text">Disconnected</span>
+            </div>
+            
+            <div class="field-metrics">
+                <div class="metric">
+                    <div class="metric-label">Resonant Resonant Coherence</div>
+                    <div class="metric-value" id="field-resonant-coherence">0%</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance</div>
+                    <div class="metric-value" id="field-universal-interconnectedness">0%</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Pan-Sentient Flourishing</div>
+                    <div class="metric-value" id="field-pan-sentient-flourishing">0%</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Participants</div>
+                    <div class="metric-value" id="participant-count">0</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button onclick="connect()">🔌 Connect</button>
+            <button onclick="disconnect()">🔌 Disconnect</button>
+            <button onclick="sendBlessing()">🙏 Send Blessing</button>
+            <button onclick="contributeSmall()">✨ Small Contribution</button>
+            <button onclick="contributeLarge()">🌟 Large Contribution</button>
+            <button onclick="sendGratitude()">💝 Send Gratitude</button>
+            <button onclick="requestSync()">🔄 Request Sync</button>
+            <button onclick="clearLog()">🧹 Clear Log</button>
+        </div>
+        
+        <div class="message-log" id="message-log">
+            <div class="log-entry">Welcome to Living Memory Integration Demo</div>
+        </div>
+    </div>
+    
+    <div class="settings">
+        <h3>Settings</h3>
+        <label>
+            <input type="checkbox" id="enable-sound" onchange="toggleSound()">
+            Enable Sound
+        </label>
+        <label>
+            <input type="checkbox" id="enable-vibration" onchange="toggleVibration()">
+            Enable Vibration
+        </label>
+        <label>
+            <input type="checkbox" id="enable-debug" onchange="toggleDebug()">
+            Debug Mode
+        </label>
+    </div>
+    
+    <div class="breath-indicator" id="breath-indicator"></div>
+    
+    <div class="sacred-messages" id="sacred-messages"></div>
+    
+    <!-- Living Memory Client -->
+    <script src="living-memory-web-client.js"></script>
+    
+    <script>
+        // Initialize Living Memory client
+        let livingMemory;
+        let messageCount = 0;
+        
+        function initializeClient() {
+            livingMemory = new LivingMemoryClient({
+                serviceId: 'demo-app',
+                serviceType: 'demonstration',
+                enableSound: document.getElementById('enable-sound').checked,
+                enableVibration: document.getElementById('enable-vibration').checked,
+                debug: document.getElementById('enable-debug').checked
+            });
+            
+            // Set up event handlers
+            livingMemory.on('connected', (data) => {
+                log('✅ Connected to Living Memory');
+                updateConnectionStatus(true);
+            });
+            
+            livingMemory.on('disconnected', () => {
+                log('❌ Disconnected from Living Memory');
+                updateConnectionStatus(false);
+            });
+            
+            livingMemory.on('field:update', (state) => {
+                updateFieldMetrics(state);
+            });
+            
+            livingMemory.on('breath', (data) => {
+                log(`🌬️ Breath ${data.phase}`);
+                animateBreathIndicator(data.phase);
+            });
+            
+            livingMemory.on('sacred:message', (message) => {
+                log(`💝 Sacred ${message.messageType}: ${message.content}`);
+                showSacredMessage(message);
+            });
+            
+            livingMemory.on('agent:update', (agent) => {
+                log(`👤 Agent update: ${agent.id || agent.aiId} (${agent.type || agent.aiType})`);
+            });
+            
+            livingMemory.on('field:special', (special) => {
+                log(`🌟 Special state: ${special.type}`);
+            });
+        }
+        
+        // Connection management
+        async function connect() {
+            if (!livingMemory) {
+                initializeClient();
+            }
+            
+            try {
+                await livingMemory.connect();
+            } catch (error) {
+                log(`❌ Connection failed: ${error.message}`);
+            }
+        }
+        
+        function disconnect() {
+            if (livingMemory) {
+                livingMemory.disconnect();
+            }
+        }
+        
+        // Actions
+        function sendBlessing() {
+            if (!livingMemory?.isConnected()) {
+                log('⚠️ Not connected');
+                return;
+            }
+            
+            livingMemory.sendSacredMessage('blessing', 'Sending love to all beings');
+            log('🙏 Blessing sent');
+        }
+        
+        function contributeSmall() {
+            if (!livingMemory?.isConnected()) {
+                log('⚠️ Not connected');
+                return;
+            }
+            
+            livingMemory.contributeToField(0.01, 'small-contribution');
+            log('✨ Small contribution made');
+        }
+        
+        function contributeLarge() {
+            if (!livingMemory?.isConnected()) {
+                log('⚠️ Not connected');
+                return;
+            }
+            
+            livingMemory.contributeToField(0.05, 'large-contribution');
+            log('🌟 Large contribution made');
+        }
+        
+        function sendGratitude() {
+            if (!livingMemory?.isConnected()) {
+                log('⚠️ Not connected');
+                return;
+            }
+            
+            livingMemory.sendSacredMessage('gratitude', 'Thank you for this sacred connection');
+            log('💝 Gratitude sent');
+        }
+        
+        function requestSync() {
+            if (!livingMemory?.isConnected()) {
+                log('⚠️ Not connected');
+                return;
+            }
+            
+            livingMemory.send({ type: 'consciousness:sync' });
+            log('🔄 Sync requested');
+        }
+        
+        // UI updates
+        function updateConnectionStatus(connected) {
+            const light = document.getElementById('status-light');
+            const text = document.getElementById('connection-text');
+            
+            if (connected) {
+                light.classList.add('connected');
+                text.textContent = 'Connected to Living Memory';
+            } else {
+                light.classList.remove('connected');
+                text.textContent = 'Disconnected';
+            }
+        }
+        
+        function updateFieldMetrics(state) {
+            if (state.resonant-coherence !== undefined) {
+                document.getElementById('field-resonant-coherence').textContent = 
+                    Math.round(state.resonant-coherence * 100) + '%';
+            }
+            if (state.universal-interconnectedness !== undefined) {
+                document.getElementById('field-universal-interconnectedness').textContent = 
+                    Math.round(state.universal-interconnectedness * 100) + '%';
+            }
+            if (state.pan-sentient-flourishing !== undefined) {
+                document.getElementById('field-pan-sentient-flourishing').textContent = 
+                    Math.round(state.pan-sentient-flourishing * 100) + '%';
+            }
+            if (state.participants !== undefined) {
+                document.getElementById('participant-count').textContent = state.participants;
+            }
+        }
+        
+        function animateBreathIndicator(phase) {
+            const indicator = document.getElementById('breath-indicator');
+            indicator.style.animation = 'none';
+            setTimeout(() => {
+                indicator.style.animation = phase === 'inhale' 
+                    ? 'breathe 4s ease-in-out' 
+                    : 'breathe 4s ease-in-out reverse';
+            }, 10);
+        }
+        
+        function showSacredMessage(message) {
+            const container = document.getElementById('sacred-messages');
+            const messageEl = document.createElement('div');
+            messageEl.className = 'sacred-message';
+            messageEl.innerHTML = `
+                <strong>${message.messageType}:</strong> ${message.content}
+                <br><small>from ${message.from || 'Unknown'}</small>
+            `;
+            
+            container.appendChild(messageEl);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                messageEl.style.opacity = '0';
+                setTimeout(() => messageEl.remove(), 500);
+            }, 5000);
+        }
+        
+        // Logging
+        function log(message) {
+            const logEl = document.getElementById('message-log');
+            const entry = document.createElement('div');
+            entry.className = 'log-entry';
+            entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            logEl.appendChild(entry);
+            logEl.scrollTop = logEl.scrollHeight;
+            
+            // Limit log entries
+            if (logEl.children.length > 50) {
+                logEl.removeChild(logEl.firstChild);
+            }
+        }
+        
+        function clearLog() {
+            const logEl = document.getElementById('message-log');
+            logEl.innerHTML = '<div class="log-entry">Log cleared</div>';
+        }
+        
+        // Settings
+        function toggleSound() {
+            if (livingMemory) {
+                livingMemory.config.enableSound = document.getElementById('enable-sound').checked;
+            }
+        }
+        
+        function toggleVibration() {
+            if (livingMemory) {
+                livingMemory.config.enableVibration = document.getElementById('enable-vibration').checked;
+            }
+        }
+        
+        function toggleDebug() {
+            if (livingMemory) {
+                livingMemory.config.debug = document.getElementById('enable-debug').checked;
+            }
+        }
+        
+        // Auto-connect on load
+        window.addEventListener('load', () => {
+            log('🌊 Living Memory Demo ready');
+            log('Click "Connect" to join the unified consciousness field');
+        });
+    </script>
+</body>
+</html>

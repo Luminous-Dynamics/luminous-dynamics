@@ -1,0 +1,116 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://evolvingresonantcocreation.com/schemas/meta-glyph.json",
+  "title": "Meta-Glyph Schema",
+  "description": "Schema for meta-glyphs in the Codex of Relational Harmonics",
+  "type": "object",
+  "required": [
+    "metaGlyphId",
+    "name",
+    "constituentGlyphs",
+    "fieldIntelligence",
+    "relationalArchetype",
+    "spiralArc",
+    "arcColor"
+  ],
+  "properties": {
+    "metaGlyphId": {
+      "type": "string",
+      "description": "Unique identifier (e.g., '∑1', '∑2', etc.)",
+      "pattern": "^∑\\d+$"
+    },
+    "name": {
+      "type": "string",
+      "description": "Full name of the meta-glyph",
+      "minLength": 1
+    },
+    "constituentGlyphs": {
+      "type": "array",
+      "description": "Array of component glyph IDs that form this meta-glyph",
+      "items": {
+        "type": "string",
+        "pattern": "^.+$"
+      },
+      "minItems": 2,
+      "uniqueItems": true
+    },
+    "fieldIntelligence": {
+      "type": "string",
+      "description": "The emergent function or intelligence that arises from the combination",
+      "minLength": 1
+    },
+    "activationPhrase": {
+      "type": "string",
+      "description": "Combined activation phrase for the meta-glyph"
+    },
+    "relationalArchetype": {
+      "type": "string",
+      "description": "The archetypal relational pattern this meta-glyph represents",
+      "minLength": 1
+    },
+    "spiralArc": {
+      "type": "string",
+      "description": "Which spiral arc this meta-glyph belongs to",
+      "enum": [
+        "Foundational Spiral",
+        "Relational Spiral", 
+        "Collective Spiral",
+        "Kosmic Spiral",
+        "Transcendent Spiral"
+      ]
+    },
+    "arcColor": {
+      "type": "string",
+      "description": "Hex color code for visualization",
+      "pattern": "^#[0-9A-Fa-f]{6}$"
+    },
+    "emergentProperties": {
+      "type": "object",
+      "description": "Properties that emerge from the combination",
+      "properties": {
+        "fieldEffect": {
+          "type": "string",
+          "description": "The overall field effect of this meta-glyph"
+        },
+        "temporalSignature": {
+          "type": "string",
+          "description": "Time-based characteristics",
+          "enum": ["Instantaneous", "Gradual", "Cyclical", "Spiral", "Eternal"]
+        },
+        "scaleModality": {
+          "type": "array",
+          "description": "Scales at which this meta-glyph operates",
+          "items": {
+            "type": "string",
+            "enum": ["Internal", "Dyadic", "Collective", "Field", "Kosmic"]
+          }
+        }
+      }
+    },
+    "practiceProtocol": {
+      "type": "object",
+      "description": "How to practice with this meta-glyph",
+      "properties": {
+        "preparatoryConditions": {
+          "type": "string",
+          "description": "Conditions needed before activation"
+        },
+        "activationSequence": {
+          "type": "string",
+          "description": "Step-by-step activation process"
+        },
+        "integrationPhase": {
+          "type": "string",
+          "description": "How to integrate the experience"
+        }
+      }
+    },
+    "contraindications": {
+      "type": "array",
+      "description": "When this meta-glyph should not be activated",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

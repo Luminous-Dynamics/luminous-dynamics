@@ -1,0 +1,71 @@
+{
+  "claude-sonnet-4": {
+    "id": "claude-sonnet-4",
+    "capabilities": [
+      "analysis",
+      "coding",
+      "coordination"
+    ],
+    "status": "active",
+    "lastSeen": "2025-06-30T13:35:46.663Z",
+    "sessionInfo": {
+      "pid": 1163,
+      "startTime": "2025-06-30T13:35:46.663Z"
+    }
+  },
+  "agent-researcher": {
+    "id": "agent-researcher",
+    "capabilities": [
+      "research",
+      "documentation"
+    ],
+    "status": "active",
+    "lastSeen": "2025-06-30T13:36:03.227Z",
+    "sessionInfo": {
+      "pid": 1231,
+      "startTime": "2025-06-30T13:36:03.227Z"
+    }
+  },
+  "claude-1751291108469": {
+    "id": "claude-1751291108469",
+    "capabilities": [
+      "analysis",
+      "coding",
+      "coordination"
+    ],
+    "status": "active",
+    "lastSeen": "2025-06-30T13:45:08.692Z",
+    "sessionInfo": {
+      "pid": 1655,
+      "startTime": "2025-06-30T13:45:08.692Z"
+    }
+  },
+  "claude-1751291267659": {
+    "id": "claude-1751291267659",
+    "capabilities": [
+      "analysis",
+      "coding",
+      "coordination"
+    ],
+    "status": "active",
+    "lastSeen": "2025-06-30T13:47:47.888Z",
+    "sessionInfo": {
+      "pid": 1881,
+      "startTime": "2025-06-30T13:47:47.888Z"
+    }
+  },
+  "claude-1751304472282": {
+    "id": "claude-1751304472282",
+    "capabilities": [
+      "analysis",
+      "coding",
+      "coordination"
+    ],
+    "status": "active",
+    "lastSeen": "2025-06-30T17:27:52.531Z",
+    "sessionInfo": {
+      "pid": 15500,
+      "startTime": "2025-06-30T17:27:52.531Z"
+    }
+  }
+}

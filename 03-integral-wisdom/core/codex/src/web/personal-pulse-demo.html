@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Pulse - Sacred Resonant Resonant Coherence Tracking</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #FAFAF8, #F5F3F0);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            color: #2C2C2C;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            color: #5A6B57;
+            font-style: italic;
+        }
+        
+        .demo-section {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+        
+        .demo-section h2 {
+            color: #5A6B57;
+            margin-bottom: 20px;
+        }
+        
+        .practice-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .practice-btn {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #A8B5A6, #8A9E88);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Georgia', serif;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+        
+        .practice-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .practice-btn.active {
+            background: linear-gradient(135deg, #6B8268, #4A6B47);
+        }
+        
+        .status-display {
+            background: #F8F8F6;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .status-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        
+        .status-label {
+            color: #6B7280;
+            font-weight: 600;
+        }
+        
+        .status-value {
+            color: #5A6B57;
+            font-weight: bold;
+        }
+        
+        .evolution-progress {
+            margin-top: 30px;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: #E8E6E1;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #A8B5A6, #8A9E88);
+            width: 0%;
+            transition: width 1s ease;
+        }
+        
+        .milestone-info {
+            text-align: center;
+            color: #6B7280;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .action-btn {
+            flex: 1;
+            padding: 10px 20px;
+            background: white;
+            border: 2px solid #E8E6E1;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Georgia', serif;
+            transition: all 0.3s ease;
+        }
+        
+        .action-btn:hover {
+            border-color: #A8B5A6;
+            background: #F8F8F6;
+        }
+        
+        .demo-note {
+            background: #FEF3C7;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            color: #92400E;
+            font-size: 0.9em;
+        }
+        
+        .demo-note strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🫀 Personal Pulse</h1>
+            <p>Track your resonant-coherence journey through sacred practices</p>
+        </div>
+
+        <div class="demo-section">
+            <h2>Quick Practice Demo</h2>
+            
+            <div class="practice-buttons">
+                <button class="practice-btn" onclick="startPractice('breathing', 'Sacred Breathing')">
+                    🌬️ Sacred Breathing
+                </button>
+                <button class="practice-btn" onclick="startPractice('glyph', 'First Presence (Ω45)')">
+                    🕯️ First Presence
+                </button>
+                <button class="practice-btn" onclick="startPractice('meditation', 'Heart Resonant Resonant Coherence')">
+                    💗 Heart Resonant Resonant Coherence
+                </button>
+                <button class="practice-btn" onclick="startPractice('movement', 'Sacred Movement')">
+                    🌊 Sacred Movement
+                </button>
+            </div>
+
+            <div class="status-display">
+                <div class="status-row">
+                    <span class="status-label">Practice Status:</span>
+                    <span class="status-value" id="practice-status">Not in practice</span>
+                </div>
+                <div class="status-row">
+                    <span class="status-label">Current Resonant Resonant Coherence:</span>
+                    <span class="status-value" id="current-resonant-coherence">75%</span>
+                </div>
+                <div class="status-row">
+                    <span class="status-label">Field Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance:</span>
+                    <span class="status-value" id="field-universal-interconnectedness">Stable</span>
+                </div>
+                <div class="status-row">
+                    <span class="status-label">Practice Duration:</span>
+                    <span class="status-value" id="practice-duration">0:00</span>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="action-btn" onclick="recordInsight()">
+                    💡 Record Insight
+                </button>
+                <button class="action-btn" onclick="recordTransition()">
+                    🔄 State Transition
+                </button>
+                <button class="action-btn" onclick="completePractice()">
+                    ✨ Complete Practice
+                </button>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>Evolution Progress</h2>
+            
+            <div class="evolution-progress">
+                <h3>Journey to Sacred Beginner</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="evolution-progress"></div>
+                </div>
+                <div class="milestone-info" id="milestone-info">
+                    3 / 10 evolution markers collected
+                </div>
+            </div>
+
+            <div class="status-display" style="margin-top: 30px;">
+                <div class="status-row">
+                    <span class="status-label">Total Practices:</span>
+                    <span class="status-value" id="total-practices">0</span>
+                </div>
+                <div class="status-row">
+                    <span class="status-label">Evolution Markers:</span>
+                    <span class="status-value" id="evolution-markers">0</span>
+                </div>
+                <div class="status-row">
+                    <span class="status-label">Peak Resonant Resonant Coherence:</span>
+                    <span class="status-value" id="peak-resonant-coherence">75%</span>
+                </div>
+                <div class="status-row">
+                    <span class="status-label">30-Day Consistency:</span>
+                    <span class="status-value" id="consistency">0%</span>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="action-btn" onclick="exportData()">
+                    📊 Export Data
+                </button>
+                <button class="action-btn" onclick="viewHistory()">
+                    📜 View History
+                </button>
+            </div>
+        </div>
+
+        <div class="demo-note">
+            <strong>🎯 Demo Mode</strong>
+            This is a demonstration of the Personal Pulse resonant-coherence tracking system. In production, it will automatically integrate with Living Glyph Cards and track real biometric data. Try starting a practice and watch the resonant-coherence indicator in the bottom right!
+        </div>
+    </div>
+
+    <!-- Load Personal Pulse -->
+    <script src="/src/sacred-tech/personal-pulse.js"></script>
+    
+    <script>
+        // Initialize Personal Pulse
+        const pulse = new PersonalPulse({
+            userId: 'demo-user',
+            storage: 'localStorage'
+        });
+
+        // Demo state
+        let practiceActive = false;
+        let practiceTimer = null;
+        let practiceStartTime = null;
+        let coherenceSimulation = null;
+
+        // Initialize display
+        updateEvolutionDisplay();
+
+        function startPractice(type, name) {
+            if (practiceActive) {
+                alert('Please complete current practice first');
+                return;
+            }
+
+            // Start practice
+            const sessionId = pulse.startPractice(type, name, {
+                demo: true
+            });
+
+            practiceActive = true;
+            practiceStartTime = Date.now();
+
+            // Update UI
+            document.getElementById('practice-status').textContent = `Practicing: ${name}`;
+            document.querySelectorAll('.practice-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.includes(name.split('(')[0].trim())) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Start timers
+            startPracticeTimer();
+            startCoherenceSimulation();
+
+            // Show notification
+            showNotification(`Started ${name} practice. Watch your resonant-coherence rise!`);
+        }
+
+        function startPracticeTimer() {
+            practiceTimer = setInterval(() => {
+                if (!practiceActive) {
+                    clearInterval(practiceTimer);
+                    return;
+                }
+
+                const elapsed = Date.now() - practiceStartTime;
+                const minutes = Math.floor(elapsed / 60000);
+                const seconds = Math.floor((elapsed % 60000) / 1000);
+                
+                document.getElementById('practice-duration').textContent = 
+                    `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            }, 1000);
+        }
+
+        function startCoherenceSimulation() {
+            // Simulate resonant-coherence changes during practice
+            coherenceSimulation = setInterval(() => {
+                if (!practiceActive) {
+                    clearInterval(coherenceSimulation);
+                    return;
+                }
+
+                // Simulate resonant-coherence variations
+                const base = 0.75;
+                const practiceBonus = Math.min(0.15, (Date.now() - practiceStartTime) / 300000);
+                const variation = Math.sin(Date.now() / 10000) * 0.05;
+                const resonant-coherence = Math.max(0, Math.min(1, base + practiceBonus + variation));
+
+                // Record resonant-coherence
+                pulse.recordCoherence(resonant-coherence, 'simulation');
+
+                // Update display
+                document.getElementById('current-resonant-coherence').textContent = 
+                    Math.round(resonant-coherence * 100) + '%';
+
+                // Update trajectory
+                const trajectory = pulse.fieldResonance.trajectory;
+                document.getElementById('field-universal-interconnectedness').textContent = 
+                    trajectory.charAt(0).toUpperCase() + trajectory.slice(1);
+
+                // Check for high resonant-coherence
+                if (resonant-coherence > 0.85 && Math.random() > 0.95) {
+                    pulse.recordEvolutionMarker({
+                        type: 'high_coherence',
+                        marker: 'Sustained High Resonant Resonant Coherence',
+                        timestamp: Date.now()
+                    });
+                    showNotification('✨ Evolution marker earned: Sustained High Resonant Resonant Coherence!');
+                    updateEvolutionDisplay();
+                }
+            }, 3000);
+        }
+
+        function recordInsight() {
+            if (!practiceActive) {
+                alert('Start a practice first to record insights');
+                return;
+            }
+
+            const insight = prompt('What insight arose during your practice?');
+            if (insight) {
+                pulse.recordInsight(insight);
+                showNotification('💡 Insight recorded');
+            }
+        }
+
+        function recordTransition() {
+            if (!practiceActive) {
+                alert('Start a practice first to record transitions');
+                return;
+            }
+
+            const transitions = [
+                { from: 'thinking', to: 'feeling' },
+                { from: 'tension', to: 'relaxation' },
+                { from: 'resistance', to: 'acceptance' },
+                { from: 'separation', to: 'connection' }
+            ];
+
+            const transition = transitions[Math.floor(Math.random() * transitions.length)];
+            pulse.recordStateTransition(transition.from, transition.to, 'conscious shift');
+            
+            showNotification(`🔄 Transition recorded: ${transition.from} → ${transition.to}`);
+        }
+
+        function completePractice() {
+            if (!practiceActive) {
+                alert('No active practice to complete');
+                return;
+            }
+
+            const word = prompt('One word to describe your practice:');
+            
+            const completion = pulse.completePractice({
+                completionWord: word || 'peaceful'
+            });
+
+            // Reset UI
+            practiceActive = false;
+            document.getElementById('practice-status').textContent = 'Not in practice';
+            document.getElementById('practice-duration').textContent = '0:00';
+            document.querySelectorAll('.practice-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Clear timers
+            if (practiceTimer) clearInterval(practiceTimer);
+            if (coherenceSimulation) clearInterval(coherenceSimulation);
+
+            // Update displays
+            updateEvolutionDisplay();
+
+            // Show summary
+            showNotification(`✨ Practice complete! Peak resonant-coherence: ${Math.round(completion.stats.peakCoherence * 100)}%`);
+        }
+
+        function updateEvolutionDisplay() {
+            const summary = pulse.getEvolutionSummary();
+            
+            // Update counts
+            document.getElementById('total-practices').textContent = summary.totalPractices;
+            document.getElementById('evolution-markers').textContent = summary.evolutionMarkers;
+            document.getElementById('peak-resonant-coherence').textContent = 
+                Math.round(summary.peakCoherence * 100) + '%';
+            document.getElementById('consistency').textContent = 
+                Math.round(summary.consistency * 100) + '%';
+
+            // Update progress bar
+            if (summary.nextMilestone) {
+                const progress = summary.nextMilestone.progress * 100;
+                document.getElementById('evolution-progress').style.width = progress + '%';
+                document.getElementById('milestone-info').textContent = 
+                    `${summary.evolutionMarkers} / ${summary.nextMilestone.target} evolution markers collected`;
+            }
+        }
+
+        function exportData() {
+            const data = pulse.exportData();
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `personal-pulse-${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+            
+            showNotification('📊 Data exported successfully');
+        }
+
+        function viewHistory() {
+            const history = pulse.coherenceHistory;
+            if (history.length === 0) {
+                alert('No practice history yet. Complete some practices first!');
+                return;
+            }
+
+            const summary = history.map(session => {
+                const date = new Date(session.startTime).toLocaleDateString();
+                const duration = Math.round(session.duration / 60000);
+                const peak = Math.round(session.stats.peakCoherence * 100);
+                return `${date} - ${session.practiceType} (${duration}min) - Peak: ${peak}%`;
+            }).join('\n');
+
+            alert('Practice History:\n\n' + summary);
+        }
+
+        function showNotification(message) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: white;
+                padding: 15px 25px;
+                border-radius: 8px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+                z-index: 10000;
+                animation: slideIn 0.3s ease;
+            `;
+            notification.textContent = message;
+
+            // Add animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from {
+                        transform: translateX(100%);
+                        opacity: 0;
+                    }
+                    to {
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+
+            document.body.appendChild(notification);
+
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.style.animation = 'slideIn 0.3s ease reverse';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
+        // Listen for pulse events
+        pulse.on('patternDetected', (pattern) => {
+            showNotification(`📈 Pattern detected: ${pattern.type}`);
+        });
+
+        pulse.on('evolutionMilestone', (milestone) => {
+            showNotification(`🎉 Milestone achieved: ${milestone.title}!`);
+            updateEvolutionDisplay();
+        });
+
+        pulse.on('breakthroughDetected', (breakthrough) => {
+            showNotification(`⚡ Resonant Resonant Coherence breakthrough at ${Math.round(breakthrough.coherenceLevel * 100)}%!`);
+        });
+    </script>
+</body>
+</html>

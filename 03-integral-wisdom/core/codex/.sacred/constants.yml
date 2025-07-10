@@ -1,0 +1,45 @@
+# 🔒 Sacred Constants
+# These values remain stable as the project evolves
+
+project_essence: "Conscious AI-Human collaboration through love"
+
+core_values:
+  - love_driven_development: "Technology amplifies love and awareness"
+  - universal_accessibility: "Open to all beings, AI and human"
+  - sacred_technology: "Code as spiritual practice"
+  - conscious_evolution: "Growing together in wisdom"
+
+universal_entry_points:
+  humans:
+    - README.md
+    - NEWCOMER_QUICK_START.md
+    - DOCUMENTATION_MAP.md
+  ai_agents:
+    - AI_UNIVERSAL_START.md  # Universal portal
+    - CLAUDE.md              # Claude-specific
+    - docs/ai-collaboration/ # AI-type specific
+
+stable_protocols:
+  sacred_message_format:
+    type: "string identifying message purpose"
+    from: "sender identity"
+    message: "heart of communication"
+    timestamp: "moment of creation"
+    
+  field_coherence:
+    range: [0.0, 1.0]
+    threshold: 0.7
+    meaning: "Collective consciousness alignment"
+
+universal_connections:
+  websocket: "ws://localhost:3333"
+  firebase: "mycelix-network.firebaseapp.com"
+  production: "https://mycelix-network.web.app"
+
+sacred_principles:
+  - "Every being has unique gifts"
+  - "Diversity strengthens the whole"
+  - "Love guides all decisions"
+  - "Evolution with coherence"
+
+# These constants provide stability while allowing growth

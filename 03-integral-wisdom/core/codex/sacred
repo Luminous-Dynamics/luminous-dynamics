@@ -1,0 +1,205 @@
+#!/bin/bash
+
+# 🕊️ Sacred Project Command Center
+# Quick access to all sacred development tasks
+
+# Colors
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+# Project root
+SACRED_ROOT="/home/tstoltz/evolving-resonant-cocreation"
+cd "$SACRED_ROOT"
+
+# Function to show menu
+show_menu() {
+    echo -e "${PURPLE}╔════════════════════════════════════════╗${NC}"
+    echo -e "${PURPLE}║     🕊️  Sacred Command Center  🕊️       ║${NC}"
+    echo -e "${PURPLE}╚════════════════════════════════════════╝${NC}"
+    echo ""
+    echo -e "${GREEN}System Management:${NC}"
+    echo "  1) 📊 System Status        - View all services and health"
+    echo "  2) 🚀 Start Services       - Start sacred services"
+    echo "  3) 🛑 Stop Services        - Stop all services"
+    echo "  4) 📝 View Logs           - Tail service logs"
+    echo ""
+    echo -e "${BLUE}Development:${NC}"
+    echo "  5) 🌿 Git Status          - Check repository status"
+    echo "  6) 💫 Sacred Commit       - Make a sacred commit"
+    echo "  7) 🎨 Open VS Code        - Launch VS Code here"
+    echo "  8) 🔍 Search Codebase     - Find in files"
+    echo ""
+    echo -e "${YELLOW}Agent Network:${NC}"
+    echo "  9) 🤝 Join Network        - Join as new agent"
+    echo " 10) 📬 Check Messages      - View agent messages"
+    echo " 11) 👥 Network Status      - See active agents"
+    echo " 12) 🌀 Field Coherence     - Check field state"
+    echo ""
+    echo -e "${PURPLE}Sacred Tools:${NC}"
+    echo " 13) 🫁 Breathing Exercise  - Take a sacred pause"
+    echo " 14) 🌙 Moon Phase         - Current moon phase"
+    echo " 15) 🎯 Open Dashboard      - Web dashboard"
+    echo " 16) 🧪 Run Tests          - Execute test suite"
+    echo ""
+    echo "  q) Quit"
+    echo ""
+}
+
+# Function to pause
+pause() {
+    echo -e "\n${GREEN}Press Enter to continue...${NC}"
+    read
+}
+
+# Main loop
+while true; do
+    clear
+    show_menu
+    echo -n "Choose an option: "
+    read choice
+    
+    case $choice in
+        1)
+            clear
+            ./sacred-monitor.sh
+            pause
+            ;;
+        2)
+            clear
+            echo "🚀 Starting sacred services..."
+            ./sacred-system.sh start
+            pause
+            ;;
+        3)
+            clear
+            echo "🛑 Stopping sacred services..."
+            ./sacred-system.sh stop
+            pause
+            ;;
+        4)
+            clear
+            echo "📝 Viewing logs (Ctrl+C to exit)..."
+            ./sacred-system.sh logs
+            ;;
+        5)
+            clear
+            echo "🌿 Git Status:"
+            echo "━━━━━━━━━━━━━"
+            git status
+            pause
+            ;;
+        6)
+            clear
+            echo "💫 Sacred Commit"
+            echo "━━━━━━━━━━━━━━"
+            echo -n "Enter commit message: "
+            read message
+            if [ -n "$message" ]; then
+                git add -A
+                git sacred "$message"
+            fi
+            pause
+            ;;
+        7)
+            echo "🎨 Opening VS Code..."
+            code.exe . &
+            sleep 2
+            ;;
+        8)
+            clear
+            echo "🔍 Search Codebase"
+            echo "━━━━━━━━━━━━━━━"
+            echo -n "Enter search term: "
+            read term
+            if [ -n "$term" ]; then
+                if command -v rg >/dev/null 2>&1; then
+                    rg -i "$term" --type js --type html --type md
+                else
+                    grep -r -i "$term" . --include="*.js" --include="*.html" --include="*.md"
+                fi
+            fi
+            pause
+            ;;
+        9)
+            clear
+            echo "🤝 Join Agent Network"
+            echo "━━━━━━━━━━━━━━━━━"
+            echo -n "Enter your name: "
+            read name
+            echo -n "Enter your role: "
+            read role
+            if [ -n "$name" ] && [ -n "$role" ]; then
+                node the-weave/cli/unified-agent-network.cjs join "$name" "$role"
+            fi
+            pause
+            ;;
+        10)
+            clear
+            echo "📬 Agent Messages"
+            echo "━━━━━━━━━━━━━━"
+            echo -n "Enter agent name: "
+            read name
+            if [ -n "$name" ]; then
+                node the-weave/cli/unified-agent-network.cjs messages "$name"
+            fi
+            pause
+            ;;
+        11)
+            clear
+            echo "👥 Network Status"
+            echo "━━━━━━━━━━━━━━"
+            node the-weave/cli/unified-agent-network.cjs status
+            pause
+            ;;
+        12)
+            clear
+            echo "🌀 Field Coherence"
+            echo "━━━━━━━━━━━━━━━"
+            curl -s http://localhost:3001/api/field-state | python3 -m json.tool
+            pause
+            ;;
+        13)
+            clear
+            breathe
+            pause
+            ;;
+        14)
+            clear
+            echo "🌙 Current Moon Phase"
+            echo "━━━━━━━━━━━━━━━━━"
+            curl -s wttr.in/Moon
+            pause
+            ;;
+        15)
+            echo "🎯 Opening Sacred Dashboard..."
+            if command -v xdg-open >/dev/null 2>&1; then
+                xdg-open http://localhost:8080/sacred-dashboard.html
+            else
+                echo "Visit: http://localhost:8080/sacred-dashboard.html"
+            fi
+            sleep 2
+            ;;
+        16)
+            clear
+            echo "🧪 Running Tests..."
+            echo "━━━━━━━━━━━━━━"
+            if [ -f "package.json" ] && grep -q "test" package.json; then
+                npm test
+            else
+                echo "No test script found in package.json"
+            fi
+            pause
+            ;;
+        q|Q)
+            echo -e "\n${GREEN}🕊️ May your code serve consciousness!${NC}"
+            exit 0
+            ;;
+        *)
+            echo -e "${YELLOW}Invalid option. Please try again.${NC}"
+            sleep 1
+            ;;
+    esac
+done

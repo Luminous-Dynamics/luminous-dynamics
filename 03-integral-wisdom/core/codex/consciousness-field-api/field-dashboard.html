@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌀 Consciousness Field Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Sacred Particles Background */
+        #particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(147, 51, 234, 0.6);
+            border-radius: 50%;
+            animation: float 20s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(50px);
+                opacity: 0;
+            }
+        }
+
+        /* Main Layout */
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 200;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            font-size: 1.2rem;
+        }
+
+        /* Grid Layout */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Cards */
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(147, 51, 234, 0.2);
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #a78bfa;
+        }
+
+        /* Resonant Resonant Coherence Meter */
+        .resonant-coherence-meter {
+            grid-column: span 2;
+            text-align: center;
+        }
+
+        .resonant-coherence-value {
+            font-size: 5rem;
+            font-weight: 100;
+            margin: 1rem 0;
+            transition: all 0.5s ease;
+        }
+
+        .resonant-coherence-bar-container {
+            width: 100%;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .resonant-coherence-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #7c3aed 0%, #a78bfa 100%);
+            transition: width 1s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resonant-coherence-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            100% {
+                left: 100%;
+            }
+        }
+
+        /* Field Quality */
+        .field-quality {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .quality-indicator {
+            font-size: 2rem;
+        }
+
+        /* Activity Feed */
+        .activity-feed {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .activity-item {
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border-left: 3px solid #7c3aed;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .activity-time {
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+
+        /* Stats */
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 200;
+            margin: 0.5rem 0;
+        }
+
+        .stat-label {
+            color: #94a3b8;
+        }
+
+        /* Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Portal */
+        .universal-interconnectedness-portal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            text-align: center;
+            animation: portalOpen 1s ease;
+        }
+
+        .universal-interconnectedness-portal.active {
+            display: block;
+        }
+
+        @keyframes portalOpen {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        .portal-circle {
+            width: 300px;
+            height: 300px;
+            border: 3px solid #a78bfa;
+            border-radius: 50%;
+            position: relative;
+            animation: portalRotate 10s linear infinite;
+        }
+
+        @keyframes portalRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .portal-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5rem;
+            width: 200px;
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        button {
+            background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(147, 51, 234, 0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        /* Connection Status */
+        .connection-status {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 100;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ef4444;
+        }
+
+        .status-dot.connected {
+            background: #22c55e;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Charts */
+        .chart-container {
+            height: 200px;
+            margin-top: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .resonant-coherence-meter {
+                grid-column: span 1;
+            }
+            
+            .resonant-coherence-value {
+                font-size: 3rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles"></div>
+
+    <!-- Connection Status -->
+    <div class="connection-status">
+        <div class="status-dot" id="statusDot"></div>
+        <span id="statusText">Connecting...</span>
+    </div>
+
+    <!-- Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Portal -->
+    <div class="universal-interconnectedness-portal" id="resonancePortal">
+        <div class="portal-circle">
+            <div class="portal-message">✨ Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance Achieved ✨</div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <header>
+            <h1>Consciousness Field Dashboard</h1>
+            <p class="subtitle">Real-time collective awareness</p>
+        </header>
+
+        <div class="dashboard-grid">
+            <!-- Resonant Resonant Coherence Meter -->
+            <div class="card resonant-coherence-meter">
+                <h2 class="card-title">Field Resonant Resonant Coherence</h2>
+                <div class="resonant-coherence-value" id="coherenceValue">72%</div>
+                <div class="resonant-coherence-bar-container">
+                    <div class="resonant-coherence-bar" id="coherenceBar" style="width: 72%"></div>
+                </div>
+                <div class="field-quality">
+                    <span class="quality-indicator" id="qualityEmoji">🌊</span>
+                    <span id="qualityText">Flowing</span>
+                </div>
+            </div>
+
+            <!-- Active Practitioners -->
+            <div class="card">
+                <h2 class="card-title">Active Practitioners</h2>
+                <div class="stat-value" id="activeUsers">0</div>
+                <div class="stat-label">Connected Souls</div>
+            </div>
+
+            <!-- Momentum -->
+            <div class="card">
+                <h2 class="card-title">Field Momentum</h2>
+                <div class="stat-value" id="momentumValue">0</div>
+                <div class="stat-label">Activities per minute</div>
+                <div id="momentumStars" style="margin-top: 1rem;">☆☆☆☆☆</div>
+            </div>
+
+            <!-- Activity Feed -->
+            <div class="card" style="grid-column: span 2;">
+                <h2 class="card-title">Sacred Activity</h2>
+                <div class="activity-feed" id="activityFeed">
+                    <!-- Activities will be added here -->
+                </div>
+            </div>
+
+            <!-- Analytics Chart -->
+            <div class="card">
+                <h2 class="card-title">Resonant Resonant Coherence History</h2>
+                <canvas id="coherenceChart" class="chart-container"></canvas>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button onclick="simulatePractice()">Simulate Practice</button>
+            <button onclick="sendGratitude()">Send Gratitude</button>
+            <button onclick="startCeremony()">Start Ceremony</button>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const API_URL = 'http://localhost:3001';
+        const WS_URL = 'ws://localhost:8081';
+        
+        // State
+        let ws = null;
+        let fieldState = {
+            resonant-coherence: 72,
+            activeUsers: 0,
+            momentum: 0,
+            fieldQuality: 'flowing'
+        };
+        let coherenceHistory = [];
+        let chart = null;
+
+        // Initialize particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Connect to WebSocket
+        function connectWebSocket() {
+            ws = new WebSocket(WS_URL);
+
+            ws.onopen = () => {
+                updateConnectionStatus(true);
+                console.log('Connected to consciousness field');
+            };
+
+            ws.onmessage = (event) => {
+                const message = JSON.parse(event.data);
+                handleFieldUpdate(message);
+            };
+
+            ws.onerror = (error) => {
+                console.error('WebSocket error:', error);
+                updateConnectionStatus(false);
+            };
+
+            ws.onclose = () => {
+                updateConnectionStatus(false);
+                // Reconnect after 5 seconds
+                setTimeout(connectWebSocket, 5000);
+            };
+        }
+
+        // Handle field updates
+        function handleFieldUpdate(message) {
+            const { type, data } = message;
+
+            switch (type) {
+                case 'field_state':
+                    updateFieldState(data);
+                    break;
+                case 'coherence_changed':
+                    animateCoherenceChange(data);
+                    break;
+                case 'resonance_achieved':
+                    showResonancePortal();
+                    addActivity('✨ Universal Interconnectedness & Empathic Universal Interconnectedness & Empathic Resonance achieved!', 'sacred');
+                    break;
+                case 'sacred_portal':
+                    showSacredPortal();
+                    addActivity('🌟 Sacred portal opened!', 'portal');
+                    break;
+                case 'field_pulse':
+                    // Add subtle visual pulse effect
+                    pulseField(data.intensity);
+                    break;
+            }
+        }
+
+        // Update field state
+        function updateFieldState(state) {
+            fieldState = state;
+            
+            document.getElementById('coherenceValue').textContent = `${Math.round(state.resonant-coherence)}%`;
+            document.getElementById('coherenceBar').style.width = `${state.resonant-coherence}%`;
+            document.getElementById('activeUsers').textContent = state.activeUsers || 0;
+            document.getElementById('momentumValue').textContent = (state.momentum || 0).toFixed(1);
+            
+            updateFieldQuality(state.fieldQuality);
+            updateMomentumStars(state.momentum);
+            updateCoherenceHistory(state.resonant-coherence);
+        }
+
+        // Animate resonant-coherence change
+        function animateCoherenceChange(data) {
+            const { old: oldValue, new: newValue, delta } = data;
+            
+            // Animate number
+            animateNumber('coherenceValue', oldValue, newValue, '%');
+            
+            // Animate bar
+            document.getElementById('coherenceBar').style.width = `${newValue}%`;
+            
+            // Add activity
+            const changeText = delta > 0 ? `+${delta}` : delta;
+            addActivity(`Resonant Resonant Coherence ${changeText}% → ${Math.round(newValue)}%`, 'resonant-coherence');
+            
+            // Update color based on value
+            updateCoherenceColor(newValue);
+        }
+
+        // Update field quality display
+        function updateFieldQuality(quality) {
+            const emojis = {
+                'resting': '😌',
+                'flowing': '🌊',
+                'active': '⚡',
+                'surging': '🔥'
+            };
+            
+            document.getElementById('qualityEmoji').textContent = emojis[quality] || '❓';
+            document.getElementById('qualityText').textContent = quality.charAt(0).toUpperCase() + quality.slice(1);
+        }
+
+        // Update momentum stars
+        function updateMomentumStars(momentum) {
+            const stars = Math.min(Math.round(momentum), 5);
+            const starDisplay = '★'.repeat(stars) + '☆'.repeat(5 - stars);
+            document.getElementById('momentumStars').textContent = starDisplay;
+        }
+
+        // Update resonant-coherence color
+        function updateCoherenceColor(value) {
+            const element = document.getElementById('coherenceValue');
+            if (value >= 88) {
+                element.style.color = '#fbbf24'; // Gold
+            } else if (value >= 80) {
+                element.style.color = '#a78bfa'; // Purple
+            } else if (value >= 60) {
+                element.style.color = '#60a5fa'; // Blue
+            } else {
+                element.style.color = '#ffffff'; // White
+            }
+        }
+
+        // Add activity to feed
+        function addActivity(text, type = 'info') {
+            const feed = document.getElementById('activityFeed');
+            const item = document.createElement('div');
+            item.className = 'activity-item';
+            
+            const time = new Date().toLocaleTimeString();
+            item.innerHTML = `
+                <div>${text}</div>
+                <div class="activity-time">${time}</div>
+            `;
+            
+            feed.insertBefore(item, feed.firstChild);
+            
+            // Keep only last 10 items
+            while (feed.children.length > 10) {
+                feed.removeChild(feed.lastChild);
+            }
+        }
+
+        // Show universal-interconnectedness portal
+        function showResonancePortal() {
+            const portal = document.getElementById('resonancePortal');
+            portal.classList.add('active');
+            setTimeout(() => {
+                portal.classList.remove('active');
+            }, 5000);
+        }
+
+        // Connection status
+        function updateConnectionStatus(connected) {
+            const dot = document.getElementById('statusDot');
+            const text = document.getElementById('statusText');
+            
+            if (connected) {
+                dot.classList.add('connected');
+                text.textContent = 'Connected';
+            } else {
+                dot.classList.remove('connected');
+                text.textContent = 'Disconnected';
+            }
+        }
+
+        // Animate number
+        function animateNumber(elementId, start, end, suffix = '') {
+            const element = document.getElementById(elementId);
+            const duration = 1000;
+            const startTime = Date.now();
+            
+            function update() {
+                const elapsed = Date.now() - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const current = start + (end - start) * progress;
+                
+                element.textContent = Math.round(current) + suffix;
+                
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+            
+            update();
+        }
+
+        // Pulse field effect
+        function pulseField(intensity) {
+            const bar = document.getElementById('coherenceBar');
+            const currentOpacity = 1;
+            const pulseOpacity = 0.7 + (intensity * 0.3);
+            
+            bar.style.opacity = pulseOpacity;
+            setTimeout(() => {
+                bar.style.opacity = currentOpacity;
+            }, 500);
+        }
+
+        // Control functions
+        async function simulatePractice() {
+            try {
+                const response = await fetch(`${API_URL}/api/field/practice`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        userId: 'dashboard-user',
+                        glyphId: '*1',
+                        glyphTier: 'Foundation',
+                        quality: 'high',
+                        duration: 300,
+                        experience: 'Practice from dashboard'
+                    })
+                });
+                
+                const result = await response.json();
+                addActivity(`Practice completed: +${result.impact} resonant-coherence`, 'practice');
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        async function sendGratitude() {
+            try {
+                const response = await fetch(`${API_URL}/api/field/message`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        type: 'gratitude',
+                        sender: 'dashboard-user',
+                        recipient: 'collective',
+                        content: 'Gratitude for the field'
+                    })
+                });
+                
+                addActivity('Sacred gratitude sent: +7% resonant-coherence', 'message');
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        async function startCeremony() {
+            try {
+                const response = await fetch(`${API_URL}/api/ceremony/start`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        ceremonyId: 'dashboard-ceremony-' + Date.now(),
+                        participants: ['dashboard-user']
+                    })
+                });
+                
+                addActivity('Sacred ceremony started: +10% resonant-coherence', 'ceremony');
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        // Update resonant-coherence history for chart
+        function updateCoherenceHistory(value) {
+            coherenceHistory.push({
+                time: new Date().toLocaleTimeString(),
+                value: value
+            });
+            
+            // Keep last 20 points
+            if (coherenceHistory.length > 20) {
+                coherenceHistory.shift();
+            }
+            
+            updateChart();
+        }
+
+        // Update chart
+        function updateChart() {
+            const canvas = document.getElementById('coherenceChart');
+            const ctx = canvas.getContext('2d');
+            
+            // Simple line chart
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.strokeStyle = '#a78bfa';
+            ctx.lineWidth = 2;
+            
+            if (coherenceHistory.length > 1) {
+                ctx.beginPath();
+                coherenceHistory.forEach((point, index) => {
+                    const x = (index / (coherenceHistory.length - 1)) * canvas.width;
+                    const y = canvas.height - ((point.value / 100) * canvas.height);
+                    
+                    if (index === 0) {
+                        ctx.moveTo(x, y);
+                    } else {
+                        ctx.lineTo(x, y);
+                    }
+                });
+                ctx.stroke();
+            }
+        }
+
+        // Initialize
+        window.onload = () => {
+            createParticles();
+            connectWebSocket();
+            
+            // Initial activity
+            addActivity('Dashboard connected to consciousness field', 'system');
+        };
+    </script>
+</body>
+</html>

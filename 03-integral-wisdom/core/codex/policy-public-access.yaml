@@ -1,0 +1,15 @@
+name: organizations/1024050524495/policies/iam.allowedPolicyMemberDomains
+spec:
+  rules:
+  - allowAll: true
+    condition:
+      description: "Allow public access for Sacred Heartbeat and frontend services"
+      expression: |
+        resource.name.endsWith("sacred-heartbeat") ||
+        resource.name.endsWith("sacred-council") ||
+        resource.name.endsWith("infin-love") ||
+        resource.project == "mycelix-network"
+      title: "Sacred Services Public Access"
+  - values:
+      allowedValues:
+      - "is:evolvingresonantcocreationism.com"

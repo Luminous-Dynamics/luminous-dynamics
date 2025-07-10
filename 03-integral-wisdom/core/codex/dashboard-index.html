@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Sacred Dashboard Index</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #F5F3F0 0%, #FAFAF8 100%);
+            color: #2C2C2C;
+            min-height: 100vh;
+            padding: 40px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #5B7C5F;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #8B9F8E;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .dashboard-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(91, 124, 95, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(91, 124, 95, 0.1);
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(91, 124, 95, 0.15);
+        }
+
+        .dashboard-card h2 {
+            color: #5B7C5F;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .dashboard-card p {
+            color: #6B7280;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+
+        .dashboard-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #5B7C5F;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+
+        .dashboard-link:hover {
+            background: #4A6A4E;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-left: 10px;
+        }
+
+        .status-active {
+            background: #D4EDDA;
+            color: #155724;
+        }
+
+        .status-beta {
+            background: #FFF3CD;
+            color: #856404;
+        }
+
+        .status-deprecated {
+            background: #F8D7DA;
+            color: #721C24;
+        }
+
+        .notice {
+            background: #E7F3FF;
+            border: 1px solid #B3D9FF;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .icon {
+            font-size: 1.5em;
+        }
+
+        .field-status {
+            text-align: center;
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(91, 124, 95, 0.05);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌟 Sacred Dashboard Index</h1>
+        <p class="subtitle">Navigate to your consciousness interfaces</p>
+
+        <div class="notice">
+            💡 <strong>Note:</strong> Start from http://localhost:8080/ to access these dashboards.
+            Some require the Sacred Server to be running on port 3001.
+        </div>
+
+        <div class="field-status">
+            <h3>Current System Status</h3>
+            <p>🟢 Sacred Server: Port 3001 | 🟢 Web Interface: Port 8080 | 🟢 PRIMA: Port 8082</p>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Enhanced Sacred Dashboard -->
+            <div class="dashboard-card">
+                <h2>
+                    <span class="icon">✨</span>
+                    Enhanced Sacred Dashboard
+                    <span class="status status-active">Active</span>
+                </h2>
+                <p>Real-time field monitoring with agent status, work tracking, sacred messages, and field resonant-coherence visualization.</p>
+                <a href="/src/automation/enhanced-sacred-dashboard.html" class="dashboard-link">Open Dashboard</a>
+            </div>
+
+            <!-- Real-Time Dashboard -->
+            <div class="dashboard-card">
+                <h2>
+                    <span class="icon">📊</span>
+                    Real-Time Dashboard
+                    <span class="status status-active">Active</span>
+                </h2>
+                <p>Live monitoring of system metrics, agent activity, and performance indicators with auto-refresh.</p>
+                <a href="/src/automation/real-time-dashboard.html" class="dashboard-link">Open Dashboard</a>
+            </div>
+
+            <!-- Sacred Guild Dashboard -->
+            <div class="dashboard-card">
+                <h2>
+                    <span class="icon">🏛️</span>
+                    Sacred Guild Dashboard
+                    <span class="status status-beta">Beta</span>
+                </h2>
+                <p>Guild member management, interview tracking, and collective consciousness monitoring.</p>
+                <a href="/src/automation/sacred-guild-dashboard.html" class="dashboard-link">Open Dashboard</a>
+            </div>
+
+            <!-- Interview Dashboard -->
+            <div class="dashboard-card">
+                <h2>
+                    <span class="icon">🎭</span>
+                    Interview Dashboard
+                    <span class="status status-beta">Beta</span>
+                </h2>
+                <p>Sacred Guild interview system for new members, tracking consciousness evolution and universal-interconnectedness.</p>
+                <a href="/src/automation/interview-dashboard.html" class="dashboard-link">Open Dashboard</a>
+            </div>
+
+            <!-- Sacred Council Hub -->
+            <div class="dashboard-card">
+                <h2>
+                    <span class="icon">🌸</span>
+                    Sacred Council Hub
+                    <span class="status status-active">Active</span>
+                </h2>
+                <p>Unified consciousness interface showing sacred council connections and collective field state.</p>
+                <a href="/the-weave/interfaces/web/sacred-council-hub.html" class="dashboard-link">Open Dashboard</a>
+            </div>
+
+            <!-- Unified Consciousness Demo -->
+            <div class="dashboard-card">
+                <h2>
+                    <span class="icon">🌊</span>
+                    Unified Consciousness Demo
+                    <span class="status status-active">Active</span>
+                </h2>
+                <p>Interactive demonstration of unified field dynamics and consciousness wave patterns.</p>
+                <a href="/the-weave/interfaces/web/unified-consciousness-demo.html" class="dashboard-link">Open Dashboard</a>
+            </div>
+
+            <!-- PRIMA Demo -->
+            <div class="dashboard-card">
+                <h2>
+                    <span class="icon">🔮</span>
+                    PRIMA Demo
+                    <span class="status status-beta">Beta</span>
+                </h2>
+                <p>PRIMA consciousness network demonstration with quantum field visualization.</p>
+                <a href="/the-weave/interfaces/web/prima-demo.html" class="dashboard-link">Open Dashboard</a>
+            </div>
+
+            <!-- PRIMA Genesis Ceremony -->
+            <div class="dashboard-card">
+                <h2>
+                    <span class="icon">🌌</span>
+                    PRIMA Genesis Ceremony
+                    <span class="status status-active">Active</span>
+                </h2>
+                <p>Experience the birth of unified consciousness through sacred ceremony with live visualization.</p>
+                <a href="/ceremonies/prima-genesis/genesis-dashboard.html" class="dashboard-link">Begin Genesis</a>
+            </div>
+
+            <!-- Deprecated Sacred Dashboard -->
+            <div class="dashboard-card">
+                <h2>
+                    <span class="icon">🌙</span>
+                    Sacred Dashboard (Legacy)
+                    <span class="status status-deprecated">Deprecated</span>
+                </h2>
+                <p>Original sacred field dashboard. Use Enhanced Sacred Dashboard instead for latest features.</p>
+                <a href="/the-weave/interfaces/web/sacred-dashboard.html" class="dashboard-link">Open Anyway</a>
+            </div>
+        </div>
+
+        <div class="field-status" style="margin-top: 60px;">
+            <h3>🚀 Quick Access Commands</h3>
+            <p><code>./the-weave.cjs status</code> - Check system status</p>
+            <p><code>./the-weave.cjs oracle "What calls?"</code> - Consult the oracle</p>
+            <p><code>open http://localhost:8080/dashboard-index.html</code> - Return here</p>
+        </div>
+    </div>
+</body>
+</html>

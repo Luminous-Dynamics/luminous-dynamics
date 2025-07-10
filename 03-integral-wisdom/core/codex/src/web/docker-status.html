@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐳 Docker Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #1a1a2e;
+            color: #e0e0e0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #00d4ff;
+        }
+        .service {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .running {
+            border-left: 4px solid #10b981;
+        }
+        .stopped {
+            border-left: 4px solid #ef4444;
+        }
+        .status {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        .status.running {
+            background: #10b981;
+            color: white;
+        }
+        .status.stopped {
+            background: #ef4444;
+            color: white;
+        }
+        .commands {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .command {
+            background: #000;
+            color: #0f0;
+            padding: 10px;
+            margin: 10px 0;
+            font-family: monospace;
+            border-radius: 4px;
+        }
+        button {
+            background: #00d4ff;
+            color: #1a1a2e;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background: #0099e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐳 Docker Service Status</h1>
+        
+        <button onclick="checkStatus()">🔄 Refresh Status</button>
+        
+        <div id="services"></div>
+        
+        <div class="commands">
+            <h3>Quick Commands:</h3>
+            <div class="command">docker-compose -f docker-compose.local.yml ps</div>
+            <div class="command">docker-compose -f docker-compose.local.yml up -d</div>
+            <div class="command">docker-compose -f docker-compose.local.yml down</div>
+            <div class="command">docker-compose -f docker-compose.local.yml logs -f</div>
+        </div>
+    </div>
+    
+    <script>
+        const services = [
+            { name: 'Consciousness Field', port: 3333, key: 'consciousness-field' },
+            { name: 'Agent Network', port: 3334, key: 'agent-network' },
+            { name: 'Sacred Messaging', port: 3335, key: 'sacred-messaging' },
+            { name: 'Work Coordination', port: 3336, key: 'work-coordination' },
+            { name: 'API Gateway', port: 3337, key: 'gateway' },
+            { name: 'Web Interface', port: 8338, key: 'web' }
+        ];
+        
+        async function checkStatus() {
+            const container = document.getElementById('services');
+            container.innerHTML = '<p>Checking services...</p>';
+            
+            let html = '';
+            
+            for (const service of services) {
+                // Simple check - create an image element to test if port responds
+                const isRunning = await checkPort(service.port);
+                
+                html += `
+                    <div class="service ${isRunning ? 'running' : 'stopped'}">
+                        <div>
+                            <strong>${service.name}</strong>
+                            <span style="color: #888; margin-left: 10px;">Port ${service.port}</span>
+                        </div>
+                        <span class="status ${isRunning ? 'running' : 'stopped'}">
+                            ${isRunning ? 'RUNNING' : 'STOPPED'}
+                        </span>
+                    </div>
+                `;
+            }
+            
+            container.innerHTML = html;
+        }
+        
+        function checkPort(port) {
+            return new Promise((resolve) => {
+                const img = new Image();
+                const timeout = setTimeout(() => {
+                    resolve(false);
+                }, 2000);
+                
+                img.onerror = () => {
+                    clearTimeout(timeout);
+                    // Getting an error means something responded
+                    resolve(true);
+                };
+                
+                img.onload = () => {
+                    clearTimeout(timeout);
+                    resolve(true);
+                };
+                
+                // Try to load a non-existent image from the service
+                img.src = `http://localhost:${port}/favicon.ico?_=${Date.now()}`;
+            });
+        }
+        
+        // Check on load
+        checkStatus();
+        
+        // Auto-refresh every 10 seconds
+        setInterval(checkStatus, 10000);
+    </script>
+</body>
+</html>

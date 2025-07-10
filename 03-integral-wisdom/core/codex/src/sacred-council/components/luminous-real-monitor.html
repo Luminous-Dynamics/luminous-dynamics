@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuminousOS - Real System Resonant Resonant Coherence</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            padding: 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at center, rgba(138, 43, 226, 0.1) 0%, #0a0a0a 50%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            font-weight: 300;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .status {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+        }
+
+        .status.connected {
+            border-color: rgba(0, 255, 0, 0.5);
+        }
+
+        .status.error {
+            border-color: rgba(255, 0, 0, 0.5);
+        }
+
+        .main-resonant-coherence {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .resonant-coherence-circle {
+            width: 250px;
+            height: 250px;
+            margin: 0 auto 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .resonant-coherence-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 10px solid rgba(138, 43, 226, 0.2);
+        }
+
+        .resonant-coherence-fill {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 10px solid transparent;
+            border-top-color: #8a2be2;
+            border-right-color: #8a2be2;
+            transition: transform 0.5s ease;
+            transform: rotate(-90deg);
+        }
+
+        .resonant-coherence-value {
+            font-size: 4em;
+            font-weight: 300;
+            z-index: 10;
+        }
+
+        .resonant-coherence-label {
+            font-size: 1.2em;
+            color: #888;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .metric-title {
+            font-size: 0.9em;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .metric-value {
+            font-size: 2em;
+            font-weight: 300;
+            color: #8a2be2;
+        }
+
+        .process-list {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+
+        .process-list h2 {
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .process-item {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 10px;
+            padding: 10px;
+            margin-bottom: 5px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 5px;
+            align-items: center;
+        }
+
+        .process-name {
+            font-weight: 500;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .consciousness-mode {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            text-align: center;
+        }
+
+        .mode-FullConsciousness {
+            background: rgba(147, 51, 234, 0.3);
+            color: #c084fc;
+        }
+
+        .mode-Balanced {
+            background: rgba(59, 130, 246, 0.3);
+            color: #60a5fa;
+        }
+
+        .mode-BasicConsciousness {
+            background: rgba(34, 197, 94, 0.3);
+            color: #4ade80;
+        }
+
+        .mode-Performance {
+            background: rgba(251, 146, 60, 0.3);
+            color: #fb923c;
+        }
+
+        .recommendations {
+            background: rgba(147, 51, 234, 0.1);
+            border: 1px solid rgba(147, 51, 234, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .recommendation-item {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .recommendation-item::before {
+            content: '💡';
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .error-message {
+            text-align: center;
+            color: #f87171;
+            padding: 20px;
+            background: rgba(239, 68, 68, 0.1);
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .sacred-moments {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .sacred-counter {
+            font-size: 1.5em;
+            color: #8a2be2;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+        }
+
+        .pulsing {
+            animation: pulse 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>LuminousOS - Real System Resonant Resonant Coherence</h1>
+            <p>Monitoring actual system consciousness metrics</p>
+        </header>
+
+        <div class="status" id="connectionStatus">
+            <span id="statusText">Connecting to system monitor...</span>
+        </div>
+
+        <div class="main-resonant-coherence">
+            <div class="resonant-coherence-circle">
+                <div class="resonant-coherence-ring"></div>
+                <div class="resonant-coherence-fill" id="coherenceFill"></div>
+                <div class="resonant-coherence-value" id="coherenceValue">--</div>
+            </div>
+            <div class="resonant-coherence-label">System Resonant Resonant Coherence</div>
+            <div class="sacred-moments">
+                <span class="sacred-counter" id="sacredCounter">0 Sacred Moments</span>
+            </div>
+        </div>
+
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-title">CPU Stability</div>
+                <div class="metric-value" id="cpuStability">--</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-title">Process Focus</div>
+                <div class="metric-value" id="processFocus">--</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-title">Resource Harmony</div>
+                <div class="metric-value" id="resourceHarmony">--</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-title">Sacred Rhythm</div>
+                <div class="metric-value" id="sacredRhythm">--</div>
+            </div>
+        </div>
+
+        <div class="recommendations" id="recommendations" style="display: none;">
+            <h3 style="margin-bottom: 15px;">💡 Recommendations</h3>
+            <div id="recommendationsList"></div>
+        </div>
+
+        <div class="process-list">
+            <h2>Active Consciousness Vortices (Top Processes)</h2>
+            <div id="processList">
+                <div class="process-item">
+                    <span>Waiting for data...</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="error-message" id="errorMessage" style="display: none;"></div>
+    </div>
+
+    <script>
+        class RealCoherenceDashboard {
+            constructor() {
+                this.apiUrl = 'http://localhost:11112/metrics';
+                this.updateInterval = 1000; // 1 second
+                this.lastCoherence = 0;
+                this.sacredMoments = 0;
+            }
+
+            async fetchMetrics() {
+                try {
+                    const response = await fetch(this.apiUrl);
+                    if (!response.ok) throw new Error('Failed to fetch metrics');
+                    
+                    const data = await response.json();
+                    this.updateUI(data);
+                    this.setConnectionStatus(true);
+                    
+                } catch (error) {
+                    console.error('Error fetching metrics:', error);
+                    this.setConnectionStatus(false);
+                    this.showError('Cannot connect to system monitor. Make sure luminous-system-monitor.py is running.');
+                }
+            }
+
+            updateUI(data) {
+                // Update resonant-coherence
+                const resonant-coherence = data.global_coherence || 0;
+                const coherencePercent = Math.round(resonant-coherence * 100);
+                document.getElementById('coherenceValue').textContent = coherencePercent + '%';
+                
+                // Update resonant-coherence ring
+                const rotation = -90 + (resonant-coherence * 360);
+                document.getElementById('coherenceFill').style.transform = `rotate(${rotation}deg)`;
+                
+                // Check for sacred moment
+                if (resonant-coherence > 0.9 && this.lastCoherence <= 0.9) {
+                    this.sacredMoments++;
+                    this.celebrateSacredMoment();
+                }
+                this.lastCoherence = resonant-coherence;
+                
+                // Update sacred moments counter
+                if (data.sacred_moments !== undefined) {
+                    this.sacredMoments = data.sacred_moments;
+                }
+                document.getElementById('sacredCounter').textContent = 
+                    `${this.sacredMoments} Sacred Moment${this.sacredMoments !== 1 ? 's' : ''}`;
+                
+                // Update component metrics
+                this.updateMetric('cpuStability', data.cpu_stability);
+                this.updateMetric('processFocus', data.process_focus);
+                this.updateMetric('resourceHarmony', data.resource_harmony);
+                this.updateMetric('sacredRhythm', data.sacred_rhythm);
+                
+                // Update process list
+                this.updateProcessList(data.processes || []);
+                
+                // Update recommendations
+                this.updateRecommendations(data.recommendations || []);
+                
+                // Hide error if shown
+                document.getElementById('errorMessage').style.display = 'none';
+            }
+
+            updateMetric(id, value) {
+                if (value !== undefined) {
+                    const percent = Math.round(value * 100);
+                    document.getElementById(id).textContent = percent + '%';
+                }
+            }
+
+            updateProcessList(processes) {
+                const container = document.getElementById('processList');
+                
+                if (processes.length === 0) {
+                    container.innerHTML = '<div class="process-item"><span>No active processes</span></div>';
+                    return;
+                }
+                
+                container.innerHTML = processes.slice(0, 10).map(proc => `
+                    <div class="process-item">
+                        <span class="process-name" title="${proc.name}">${proc.name}</span>
+                        <span class="consciousness-mode mode-${proc.mode}">${proc.mode}</span>
+                        <span>${proc.cpu_percent.toFixed(1)}% CPU</span>
+                        <span>${proc.memory_percent.toFixed(1)}% RAM</span>
+                    </div>
+                `).join('');
+            }
+
+            updateRecommendations(recommendations) {
+                const container = document.getElementById('recommendations');
+                const list = document.getElementById('recommendationsList');
+                
+                if (recommendations.length === 0) {
+                    container.style.display = 'none';
+                    return;
+                }
+                
+                container.style.display = 'block';
+                list.innerHTML = recommendations.map(rec => `
+                    <div class="recommendation-item">${rec}</div>
+                `).join('');
+            }
+
+            setConnectionStatus(connected) {
+                const status = document.getElementById('connectionStatus');
+                const text = document.getElementById('statusText');
+                
+                if (connected) {
+                    status.className = 'status connected';
+                    text.textContent = '✅ Connected to System Monitor';
+                } else {
+                    status.className = 'status error';
+                    text.textContent = '❌ Disconnected - Waiting for monitor...';
+                }
+            }
+
+            showError(message) {
+                const errorEl = document.getElementById('errorMessage');
+                errorEl.textContent = message;
+                errorEl.style.display = 'block';
+            }
+
+            celebrateSacredMoment() {
+                // Visual celebration
+                document.querySelector('.resonant-coherence-circle').classList.add('pulsing');
+                setTimeout(() => {
+                    document.querySelector('.resonant-coherence-circle').classList.remove('pulsing');
+                }, 3000);
+                
+                // You could add more celebration effects here
+                console.log('🌟 Sacred Moment Achieved!');
+            }
+
+            start() {
+                // Initial fetch
+                this.fetchMetrics();
+                
+                // Regular updates
+                setInterval(() => this.fetchMetrics(), this.updateInterval);
+            }
+        }
+
+        // Start dashboard
+        const dashboard = new RealCoherenceDashboard();
+        dashboard.start();
+    </script>
+</body>
+</html>

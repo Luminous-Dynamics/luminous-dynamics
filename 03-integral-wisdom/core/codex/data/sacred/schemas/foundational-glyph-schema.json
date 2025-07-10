@@ -1,0 +1,179 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://evolvingresonantcocreation.com/schemas/foundational-glyph.json",
+  "title": "Foundational/Threshold Glyph Schema",
+  "description": "Schema for foundational and threshold glyphs in the Codex of Relational Harmonics",
+  "type": "object",
+  "required": [
+    "glyphId",
+    "designation",
+    "glyphAscii",
+    "functionalDefinition",
+    "primaryHarmonyAlignment",
+    "sensoryResonanceProfile",
+    "activationProtocol",
+    "fieldDynamics",
+    "evolutionaryMarkers",
+    "harmonicLineage",
+    "temporalDynamics",
+    "dissonantPotential",
+    "contraindications"
+  ],
+  "properties": {
+    "glyphId": {
+      "type": "string",
+      "description": "Unique identifier (e.g., 'Ω0', '◌', etc.)",
+      "pattern": "^.+$"
+    },
+    "designation": {
+      "type": "string",
+      "description": "Full name/title of the glyph",
+      "minLength": 1
+    },
+    "glyphAscii": {
+      "type": "string",
+      "description": "ASCII representation of the glyph",
+      "minLength": 1
+    },
+    "functionalDefinition": {
+      "type": "string",
+      "description": "Core purpose and function of the glyph",
+      "minLength": 1
+    },
+    "primaryHarmonyAlignment": {
+      "type": "array",
+      "description": "Links to the Seven Harmonies",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "sensoryResonanceProfile": {
+      "type": "object",
+      "required": ["feelingTone", "sonicQuality"],
+      "properties": {
+        "feelingTone": {
+          "type": "string",
+          "description": "Somatic/emotional quality of the glyph"
+        },
+        "sonicQuality": {
+          "type": "string",
+          "description": "Sound/vibration description"
+        }
+      }
+    },
+    "activationProtocol": {
+      "type": "object",
+      "required": ["verbal", "somatic", "presenceBased"],
+      "properties": {
+        "verbal": {
+          "type": "string",
+          "description": "Spoken activation phrase"
+        },
+        "somatic": {
+          "type": "string",
+          "description": "Physical practice or gesture"
+        },
+        "presenceBased": {
+          "type": "string",
+          "description": "Internal state cultivation practice"
+        }
+      }
+    },
+    "fieldDynamics": {
+      "type": "object",
+      "description": "How the glyph works in different relational contexts",
+      "properties": {
+        "internal": {
+          "type": "string",
+          "description": "Individual/internal application"
+        },
+        "dyadic": {
+          "type": "string",
+          "description": "Two-person application"
+        },
+        "collective": {
+          "type": "string",
+          "description": "Group/community application"
+        },
+        "field": {
+          "type": "string",
+          "description": "Environmental/systemic application"
+        }
+      }
+    },
+    "evolutionaryMarkers": {
+      "type": "object",
+      "description": "Stages of integration and mastery",
+      "properties": {
+        "novice": {
+          "type": "string",
+          "description": "Beginning stage markers"
+        },
+        "practitioner": {
+          "type": "string",
+          "description": "Developing stage markers"
+        },
+        "adept": {
+          "type": "string",
+          "description": "Advanced stage markers"
+        },
+        "master": {
+          "type": "string",
+          "description": "Mastery stage markers"
+        }
+      }
+    },
+    "harmonicLineage": {
+      "type": "string",
+      "description": "Relationship to other glyphs in the system"
+    },
+    "temporalDynamics": {
+      "type": "object",
+      "description": "Time-based aspects of the glyph",
+      "properties": {
+        "duration": {
+          "type": "string",
+          "description": "Typical duration of activation"
+        },
+        "frequency": {
+          "type": "string",
+          "description": "Recommended frequency of practice"
+        },
+        "seasonality": {
+          "type": "string",
+          "description": "Seasonal or cyclical considerations"
+        }
+      }
+    },
+    "dissonantPotential": {
+      "type": "object",
+      "description": "Shadow aspects and potential misuse",
+      "properties": {
+        "commonMisapplications": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "shadowAspects": {
+          "type": "string",
+          "description": "Potential negative manifestations"
+        },
+        "warningSignals": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "contraindications": {
+      "type": "array",
+      "description": "Situations where this glyph should not be used",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Breath Feedback - Applied Harmonies Dojo</title>
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #1a0033 0%, #330066 100%);
+            color: #e0e0ff;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            background: linear-gradient(90deg, #ff6ec4, #7873ff, #4facfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #a0a0ff;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+
+        .feedback-form {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-section {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            color: #9090ff;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: #e0e0ff;
+            font-size: 1em;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        /* Star Rating */
+        .star-rating {
+            display: flex;
+            gap: 10px;
+            font-size: 2em;
+            margin: 10px 0;
+        }
+
+        .star {
+            cursor: pointer;
+            color: #666;
+            transition: color 0.2s;
+        }
+
+        .star:hover,
+        .star.active {
+            color: #ffaa00;
+        }
+
+        /* Practice Checkboxes */
+        .practice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .practice-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .practice-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .practice-item label {
+            margin: 0;
+            cursor: pointer;
+            font-size: 0.95em;
+        }
+
+        /* Submit Button */
+        .submit-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: rgba(0, 255, 0, 0.1);
+            border: 1px solid rgba(0, 255, 0, 0.3);
+            color: #99ff99;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: rgba(79, 172, 254, 0.1);
+            border: 1px solid rgba(79, 172, 254, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            color: #c0c0ff;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🕊️ First Breath Feedback</h1>
+        <p class="subtitle">Share Your Sacred Practice Experience</p>
+
+        <div class="info-box">
+            <strong>Thank you for being a First Breath practitioner!</strong><br>
+            Your feedback helps shape these sacred tools for all who will follow. Please share honestly - both what serves and what could evolve.
+        </div>
+
+        <div class="success-message" id="successMessage">
+            ✨ Thank you for your sacred feedback! Your wisdom has been received and will help shape the evolution of the Applied Harmonies Dojo.
+        </div>
+
+        <form class="feedback-form" id="feedbackForm">
+            <!-- Basic Info -->
+            <div class="form-section">
+                <label for="practitionerName">Your Name (Optional)</label>
+                <input type="text" id="practitionerName" name="practitionerName" placeholder="Sacred Practitioner">
+            </div>
+
+            <div class="form-section">
+                <label for="email">Email (Optional - for follow-up)</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com">
+            </div>
+
+            <!-- Practice Experience -->
+            <div class="form-section">
+                <label>Which harmonies have you practiced?</label>
+                <div class="practice-grid">
+                    <div class="practice-item">
+                        <input type="checkbox" id="omega45" name="harmoniesPracticed" value="Ω45">
+                        <label for="omega45">Ω45: First Presence</label>
+                    </div>
+                    <div class="practice-item">
+                        <input type="checkbox" id="omega46" name="harmoniesPracticed" value="Ω46">
+                        <label for="omega46">Ω46: Conscious Arrival</label>
+                    </div>
+                    <div class="practice-item">
+                        <input type="checkbox" id="omega47" name="harmoniesPracticed" value="Ω47">
+                        <label for="omega47">Ω47: Sacred Listening</label>
+                    </div>
+                    <div class="practice-item">
+                        <input type="checkbox" id="omega48" name="harmoniesPracticed" value="Ω48">
+                        <label for="omega48">Ω48: Boundary With Love</label>
+                    </div>
+                    <div class="practice-item">
+                        <input type="checkbox" id="omega49" name="harmoniesPracticed" value="Ω49">
+                        <label for="omega49">Ω49: Gentle Opening</label>
+                    </div>
+                    <div class="practice-item">
+                        <input type="checkbox" id="omega50" name="harmoniesPracticed" value="Ω50">
+                        <label for="omega50">Ω50: Building Trust</label>
+                    </div>
+                    <div class="practice-item">
+                        <input type="checkbox" id="omega51" name="harmoniesPracticed" value="Ω51">
+                        <label for="omega51">Ω51: Loving No</label>
+                    </div>
+                    <div class="practice-item">
+                        <input type="checkbox" id="omega52" name="harmoniesPracticed" value="Ω52">
+                        <label for="omega52">Ω52: Pause Practice</label>
+                    </div>
+                    <div class="practice-item">
+                        <input type="checkbox" id="omega53" name="harmoniesPracticed" value="Ω53">
+                        <label for="omega53">Ω53: Tending the Field</label>
+                    </div>
+                    <div class="practice-item">
+                        <input type="checkbox" id="omega55" name="harmoniesPracticed" value="Ω55">
+                        <label for="omega55">Ω55: Presence Transmission</label>
+                    </div>
+                    <div class="practice-item">
+                        <input type="checkbox" id="omega56" name="harmoniesPracticed" value="Ω56">
+                        <label for="omega56">Ω56: Loving Redirection</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Overall Rating -->
+            <div class="form-section">
+                <label>Overall Dojo Experience</label>
+                <div class="star-rating" id="overallRating">
+                    <span class="star" data-rating="1">⭐</span>
+                    <span class="star" data-rating="2">⭐</span>
+                    <span class="star" data-rating="3">⭐</span>
+                    <span class="star" data-rating="4">⭐</span>
+                    <span class="star" data-rating="5">⭐</span>
+                </div>
+                <input type="hidden" id="ratingValue" name="rating" value="0">
+            </div>
+
+            <!-- Guided Practice Feedback -->
+            <div class="form-section">
+                <label for="practiceClarity">How clear were the guided practice instructions?</label>
+                <select id="practiceClarity" name="practiceClarity">
+                    <option value="">Select...</option>
+                    <option value="very-clear">Very Clear</option>
+                    <option value="mostly-clear">Mostly Clear</option>
+                    <option value="somewhat-clear">Somewhat Clear</option>
+                    <option value="unclear">Unclear</option>
+                </select>
+            </div>
+
+            <div class="form-section">
+                <label for="breathingGuide">How helpful was the breathing guide?</label>
+                <select id="breathingGuide" name="breathingGuide">
+                    <option value="">Select...</option>
+                    <option value="very-helpful">Very Helpful</option>
+                    <option value="helpful">Helpful</option>
+                    <option value="neutral">Neutral</option>
+                    <option value="distracting">Distracting</option>
+                    <option value="not-used">Didn't use it</option>
+                </select>
+            </div>
+
+            <!-- Open Feedback -->
+            <div class="form-section">
+                <label for="mostValuable">What was most valuable about your practice experience?</label>
+                <textarea id="mostValuable" name="mostValuable" placeholder="Share what really served you..."></textarea>
+            </div>
+
+            <div class="form-section">
+                <label for="improvements">What could be improved?</label>
+                <textarea id="improvements" name="improvements" placeholder="Be honest - your feedback shapes the future..."></textarea>
+            </div>
+
+            <div class="form-section">
+                <label for="insights">Any insights or transformation you'd like to share?</label>
+                <textarea id="insights" name="insights" placeholder="How has this practice affected your relationships?"></textarea>
+            </div>
+
+            <!-- Technical Feedback -->
+            <div class="form-section">
+                <label for="technicalIssues">Did you experience any technical issues?</label>
+                <textarea id="technicalIssues" name="technicalIssues" placeholder="Loading problems, broken features, mobile issues..."></textarea>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="submit-button">Submit Sacred Feedback</button>
+        </form>
+    </div>
+
+    <script>
+        // Star rating functionality
+        const stars = document.querySelectorAll('.star');
+        const ratingInput = document.getElementById('ratingValue');
+        let selectedRating = 0;
+
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                selectedRating = parseInt(star.dataset.rating);
+                ratingInput.value = selectedRating;
+                updateStars();
+            });
+
+            star.addEventListener('mouseenter', () => {
+                const hoverRating = parseInt(star.dataset.rating);
+                highlightStars(hoverRating);
+            });
+        });
+
+        document.getElementById('overallRating').addEventListener('mouseleave', () => {
+            updateStars();
+        });
+
+        function updateStars() {
+            highlightStars(selectedRating);
+        }
+
+        function highlightStars(rating) {
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
+
+        // Form submission
+        document.getElementById('feedbackForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Collect form data
+            const formData = new FormData(e.target);
+            const feedback = {
+                practitionerName: formData.get('practitionerName') || 'Anonymous',
+                email: formData.get('email') || '',
+                harmoniesPracticed: formData.getAll('harmoniesPracticed'),
+                rating: formData.get('rating'),
+                practiceClarity: formData.get('practiceClarity'),
+                breathingGuide: formData.get('breathingGuide'),
+                mostValuable: formData.get('mostValuable'),
+                improvements: formData.get('improvements'),
+                insights: formData.get('insights'),
+                technicalIssues: formData.get('technicalIssues'),
+                timestamp: new Date().toISOString()
+            };
+
+            // In a real implementation, this would send to a server
+            console.log('Sacred Feedback Received:', feedback);
+            
+            // Store locally for now (in real app, would send to server)
+            const existingFeedback = JSON.parse(localStorage.getItem('firstBreathFeedback') || '[]');
+            existingFeedback.push(feedback);
+            localStorage.setItem('firstBreathFeedback', JSON.stringify(existingFeedback));
+
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+            document.getElementById('feedbackForm').style.display = 'none';
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Optional: Reset form after delay
+            setTimeout(() => {
+                e.target.reset();
+                selectedRating = 0;
+                updateStars();
+                document.getElementById('successMessage').style.display = 'none';
+                document.getElementById('feedbackForm').style.display = 'block';
+            }, 10000); // 10 seconds
+        });
+    </script>
+</body>
+</html>
