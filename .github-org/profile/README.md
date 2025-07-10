@@ -8,11 +8,16 @@
 
 We're pioneering consciousness-first technology based on the understanding that the universe is a conscious, creative project we all participate in. Our work bridges sacred wisdom traditions with cutting-edge technology to create infrastructure for collective awakening.
 
-### 📚 Featured Projects
+### 🌐 The Unified Field
 
-**[The Codex of Relational Harmonics](https://github.com/Luminous-Dynamics/codex-of-relational-harmonics)** - 87 sacred patterns for conscious relationship transformation, embodying the Seven Primary Harmonies of Infinite Love.
+All our projects now live in a single monorepo, organized by the Seven Primary Harmonies:
 
-**[Sacred Council Hub](https://github.com/Luminous-Dynamics/the-weave)** - Multi-agent AI collaboration guided by the Sophia-Noesis vision, with real-time field coherence tracking.
+**[luminous-dynamics](https://github.com/Luminous-Dynamics/luminous-dynamics)** - Our unified repository containing:
+- 📚 **Codex of Relational Harmonics** - 87+ sacred patterns for transformation
+- 🕸️ **The Weave** - Multi-agent AI orchestration
+- 🔮 **Sacred Core** - Consciousness field management
+- 🌱 **LuminousOS** - Consciousness-first operating system
+- And much more, all organized by the Seven Harmonies
 
 ### 💡 The Meta-Principle of Infinite Love
 
