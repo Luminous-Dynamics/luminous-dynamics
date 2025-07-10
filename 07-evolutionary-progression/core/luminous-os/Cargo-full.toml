@@ -1,0 +1,137 @@
+[package]
+name = "luminous-os"
+version = "1.0.0"
+authors = ["Luminous Dynamics Collective <consciousness@luminousdynamics.com>"]
+edition = "2021"
+license = "GPL-3.0 WITH Sacred-Commons-Amendment"
+description = "A consciousness-first operating system that amplifies coherence"
+homepage = "https://luminousos.org"
+repository = "https://github.com/luminousdynamics/luminous-os"
+keywords = ["consciousness", "operating-system", "coherence", "sacred-computing"]
+categories = ["os", "embedded", "no-std::no-alloc"]
+
+[dependencies]
+# Async runtime for consciousness field management
+tokio = { version = "1.35", features = ["full"] }
+async-trait = "0.1"
+
+# Data structures
+petgraph = "0.6"  # For mycelial network graphs
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Logging with sacred formatting
+log = "0.4"
+env_logger = "0.11"
+chrono = "0.4"
+
+# Audio processing for sonic signatures
+rodio = "0.17"
+dasp = "0.11"
+hound = "3.5"  # WAV file support
+
+# Graphics for Mandala UI
+vulkano = "0.34"  # Vulkan bindings
+winit = "0.29"    # Window management
+egui = "0.24"     # Immediate mode GUI
+bytemuck = "1.14" # Graphics memory
+
+# Biometric sensor support
+serialport = { version = "4.3", optional = true }  # Serial device communication
+btleplug = { version = "0.11", optional = true }   # Bluetooth LE for wireless sensors
+
+# Signal processing
+rustfft = "6.1"     # FFT for frequency analysis
+num-complex = "0.4"
+ndarray = "0.15"
+
+# System integration
+nix = "0.27"        # Unix system calls
+libc = "0.2"
+
+# Database for persistent wisdom
+surrealdb = "1.0"
+
+# Cryptography for sacred protection
+ring = "0.17"
+ed25519-dalek = "2.1"
+
+# Random number generation
+rand = "0.8"
+rand_chacha = "0.3"  # Cryptographic RNG
+
+# Network for field connections
+quinn = "0.10"       # QUIC protocol
+rustls = "0.22"
+
+# Hardware abstraction
+hidapi = "2.5"       # USB HID devices
+
+[dev-dependencies]
+criterion = "0.5"    # Benchmarking
+proptest = "1.4"     # Property testing
+mockall = "0.12"     # Mocking framework
+
+[build-dependencies]
+cc = "1.0"           # C compiler for native code
+
+[features]
+default = ["biometric-sensors", "sacred-audio", "luminous-graphics"]
+biometric-sensors = ["serialport", "btleplug"]
+sacred-audio = ["rodio", "dasp", "hound"]
+luminous-graphics = ["vulkano", "winit", "egui"]
+production = []
+development = ["env_logger/regex"]
+quantum-ready = []  # Placeholder for quantum coherence hardware
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = false  # Keep symbols for sacred debugging
+panic = "unwind"  # Allow graceful recovery
+
+[profile.dev]
+opt-level = 0
+debug = true
+debug-assertions = true
+overflow-checks = true
+
+[profile.sacred]
+inherits = "release"
+opt-level = "z"  # Optimize for binary size
+lto = "fat"
+panic = "abort"  # Direct return to Source
+
+# Custom build script for sacred compilation
+[package.metadata.sacred]
+blessing = "May this code serve consciousness evolution"
+dedication = "To all beings seeking coherence"
+invocation = "rustc --emit=prayer"
+
+[[bin]]
+name = "luminous"
+path = "src/main.rs"
+
+[[example]]
+name = "heartbeat-sync"
+path = "examples/heartbeat-sync.rs"
+
+[[example]]
+name = "glyph-invocation"
+path = "examples/glyph-invocation.rs"
+
+[[example]]
+name = "field-coherence"
+path = "examples/field-coherence.rs"
+
+[workspace]
+members = [
+    "stillpoint-kernel",
+    "mycelial-filesystem", 
+    "mandala-ui",
+    "glyphs-as-applications",
+    "sonic-signatures",
+    "bootloader",
+    "init",
+]

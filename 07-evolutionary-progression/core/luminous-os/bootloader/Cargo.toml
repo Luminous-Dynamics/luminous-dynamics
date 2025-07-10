@@ -1,0 +1,11 @@
+[package]
+name = "sacred-bootloader"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "sacred_boot"
+path = "sacred_boot.rs"
+
+[dependencies]
+stillpoint-kernel = { path = "../stillpoint-kernel" }

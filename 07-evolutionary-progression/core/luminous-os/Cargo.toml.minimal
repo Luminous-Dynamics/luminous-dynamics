@@ -1,0 +1,31 @@
+[package]
+name = "luminous-os"
+version = "1.0.0"
+authors = ["Luminous Dynamics Collective <consciousness@luminousdynamics.com>"]
+edition = "2021"
+
+[dependencies]
+# Core dependencies only
+tokio = { version = "1.35", features = ["rt", "macros"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# For kernel module development
+libc = "0.2"
+nix = "0.27"
+
+[[bin]]
+name = "luminous-kernel"
+path = "kernel/luminous-kernel-demo.rs"
+
+[[bin]]
+name = "coherence-monitor"
+path = "kernel/process-coherence-monitor.rs"
+
+[[bin]]
+name = "entangle-demo"
+path = "quantum-entanglement/entangle-demo.rs"
+
+[profile.release]
+opt-level = 3
+lto = true

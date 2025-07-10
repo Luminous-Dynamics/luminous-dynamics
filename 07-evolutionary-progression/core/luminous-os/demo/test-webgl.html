@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>WebGL Sacred Geometry Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            font-family: -apple-system, sans-serif;
+            color: #fff;
+            overflow: hidden;
+        }
+        
+        #canvas {
+            width: 100vw;
+            height: 100vh;
+            display: block;
+        }
+        
+        #controls {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .control {
+            margin: 10px 0;
+        }
+        
+        label {
+            display: inline-block;
+            width: 120px;
+        }
+        
+        input[type="range"] {
+            width: 200px;
+        }
+        
+        #status {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .success { color: #10B981; }
+        .error { color: #EF4444; }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    <div id="controls">
+        <h3>Sacred Geometry Controls</h3>
+        
+        <div class="control">
+            <label>Coherence:</label>
+            <input type="range" id="coherence" min="0" max="100" value="70">
+            <span id="coherenceValue">70%</span>
+        </div>
+        
+        <div class="control">
+            <label>Breath Phase:</label>
+            <input type="range" id="breath" min="0" max="100" value="50">
+            <span id="breathValue">50%</span>
+        </div>
+        
+        <div class="control">
+            <label>Field Momentum:</label>
+            <input type="range" id="momentum" min="0" max="100" value="50">
+            <span id="momentumValue">50%</span>
+        </div>
+        
+        <div class="control">
+            <button id="addParticipant">Add Participant</button>
+            <button id="removeParticipant">Remove Participant</button>
+            <span id="participantCount">0 participants</span>
+        </div>
+        
+        <div class="control">
+            <label>Select Glyph:</label>
+            <input type="number" id="glyphSelect" min="0" max="86" value="0">
+            <span id="glyphName">Foundational Ω0</span>
+        </div>
+    </div>
+    
+    <div id="status">
+        <h3>WebGL Status</h3>
+        <div id="webglStatus"></div>
+        <div id="shaderStatus"></div>
+        <div id="performanceStatus"></div>
+    </div>
+    
+    <script src="sacred-geometry-webgl.js"></script>
+    <script>
+        // Initialize
+        const canvas = document.getElementById('canvas');
+        const status = {
+            webgl: document.getElementById('webglStatus'),
+            shader: document.getElementById('shaderStatus'),
+            performance: document.getElementById('performanceStatus')
+        };
+        
+        // Create WebGL engine
+        const engine = new SacredGeometryWebGL(canvas);
+        
+        // Check initialization
+        if (engine.gl) {
+            status.webgl.innerHTML = '<span class="success">[OK] WebGL2 initialized</span>';
+            
+            // Check shaders
+            let shaderCount = 0;
+            for (let name in engine.programs) {
+                if (engine.programs[name]) shaderCount++;
+            }
+            status.shader.innerHTML = `<span class="success">[OK] ${shaderCount} shaders compiled</span>`;
+        } else {
+            status.webgl.innerHTML = '<span class="error">[FAIL] WebGL2 not available</span>';
+            status.shader.innerHTML = '<span class="error">[FAIL] Shaders not loaded</span>';
+        }
+        
+        // Performance monitoring
+        let frameCount = 0;
+        let lastTime = performance.now();
+        
+        function updatePerformance() {
+            frameCount++;
+            const currentTime = performance.now();
+            
+            if (currentTime - lastTime >= 1000) {
+                const fps = Math.round(frameCount * 1000 / (currentTime - lastTime));
+                status.performance.innerHTML = `<span class="success">FPS: ${fps}</span>`;
+                frameCount = 0;
+                lastTime = currentTime;
+            }
+            
+            requestAnimationFrame(updatePerformance);
+        }
+        
+        updatePerformance();
+        
+        // Controls
+        const controls = {
+            coherence: document.getElementById('coherence'),
+            breath: document.getElementById('breath'),
+            momentum: document.getElementById('momentum')
+        };
+        
+        const values = {
+            coherence: document.getElementById('coherenceValue'),
+            breath: document.getElementById('breathValue'),
+            momentum: document.getElementById('momentumValue')
+        };
+        
+        // Update coherence
+        controls.coherence.addEventListener('input', (e) => {
+            const value = e.target.value / 100;
+            engine.setCoherence(value);
+            values.coherence.textContent = e.target.value + '%';
+        });
+        
+        // Update breath (manual control for testing)
+        controls.breath.addEventListener('input', (e) => {
+            const value = e.target.value / 100;
+            engine.breathPhase = value;
+            values.breath.textContent = e.target.value + '%';
+        });
+        
+        // Update momentum
+        controls.momentum.addEventListener('input', (e) => {
+            const value = e.target.value / 100;
+            engine.fieldMomentum = value;
+            values.momentum.textContent = e.target.value + '%';
+        });
+        
+        // Handle resize
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            engine.resize(canvas.width, canvas.height);
+        });
+        
+        // Initial resize
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        engine.resize(canvas.width, canvas.height);
+        
+        // Participant controls
+        let participantId = 0;
+        document.getElementById('addParticipant').addEventListener('click', () => {
+            if (engine.addParticipant(`P${participantId++}`)) {
+                document.getElementById('participantCount').textContent = 
+                    `${engine.participants.length} participants`;
+            }
+        });
+        
+        document.getElementById('removeParticipant').addEventListener('click', () => {
+            if (engine.participants.length > 0) {
+                engine.removeParticipant(engine.participants[engine.participants.length - 1].id);
+                document.getElementById('participantCount').textContent = 
+                    `${engine.participants.length} participants`;
+            }
+        });
+        
+        // Glyph selection
+        document.getElementById('glyphSelect').addEventListener('input', (e) => {
+            const index = parseInt(e.target.value);
+            engine.selectGlyph(index);
+            document.getElementById('glyphName').textContent = engine.getGlyphName(index);
+        });
+        
+        // Add initial participant (you)
+        engine.addParticipant('You', 0.85, 7.83);
+        document.getElementById('participantCount').textContent = '1 participant';
+    </script>
+</body>
+</html>

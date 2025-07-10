@@ -1,0 +1,23 @@
+FROM ubuntu:22.04
+
+# Minimal dependencies
+RUN apt-get update && apt-get install -y \
+    procps \
+    mount \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy init binary
+COPY target/release/sacred_boot /sbin/init
+
+# Create required directories
+RUN mkdir -p /proc /sys /dev /tmp /mycelial /etc/luminous \
+    && chmod 1777 /tmp
+
+# Sacred configuration
+RUN echo 'SACRED_INTENTION="Container consciousness test"' > /etc/luminous/intention.conf
+
+# Make init executable
+RUN chmod +x /sbin/init
+
+# Run as init
+ENTRYPOINT ["/sbin/init"]

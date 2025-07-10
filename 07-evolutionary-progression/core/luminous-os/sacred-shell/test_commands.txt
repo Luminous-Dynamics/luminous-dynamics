@@ -1,0 +1,8 @@
+pwd
+sacred status
+ls -la
+sacred breathe on
+echo 'Testing flow state'
+sacred flow
+sacred break
+sacred help

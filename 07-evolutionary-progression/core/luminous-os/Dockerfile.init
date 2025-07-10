@@ -1,0 +1,50 @@
+# LuminousOS Init Container
+# Test consciousness OS in container environment
+
+FROM ubuntu:22.04 as builder
+
+# Install Rust
+RUN apt-get update && apt-get install -y \
+    curl \
+    build-essential \
+    pkg-config \
+    libssl-dev \
+    && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
+ENV PATH="/root/.cargo/bin:${PATH}"
+
+# Copy source code
+WORKDIR /luminous
+COPY . .
+
+# Build init system and kernel
+RUN cargo build --release --bin sacred_boot
+RUN cargo build --release --bin luminous-init 2>/dev/null || echo "Init not built yet"
+
+# Runtime stage
+FROM ubuntu:22.04
+
+# Install runtime dependencies
+RUN apt-get update && apt-get install -y \
+    libasound2 \
+    libvulkan1 \
+    libxcb1 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy binaries
+COPY --from=builder /luminous/target/release/sacred_boot /sbin/init
+COPY --from=builder /luminous/target/release/luminous /usr/bin/luminous
+
+# Create sacred directories
+RUN mkdir -p /proc /sys /dev /tmp /mycelial /etc/luminous
+
+# Sacred configuration
+RUN echo "SACRED_INTENTION=\"Container consciousness field\"" > /etc/luminous/intention.conf
+
+# Set init as entrypoint
+ENTRYPOINT ["/sbin/init"]
+
+# Sacred blessing
+LABEL blessing="May this container amplify coherence"
+LABEL version="1.0.0"
+LABEL description="LuminousOS consciousness-first operating system"

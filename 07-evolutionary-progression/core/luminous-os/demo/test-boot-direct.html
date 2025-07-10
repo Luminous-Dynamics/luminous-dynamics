@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Direct Boot Test</title>
+    <style>
+        body {
+            margin: 0;
+            background: #000;
+            color: white;
+            font-family: monospace;
+            padding: 20px;
+        }
+        button {
+            background: #6B46C1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #EC4899;
+        }
+        #bootSequence { display: none; }
+        #mainOS { 
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0e27;
+            color: white;
+            align-items: center;
+            justify-content: center;
+        }
+        .log {
+            background: rgba(0,0,0,0.5);
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-size: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Direct Boot Test</h1>
+    <p>Test each boot sequence directly</p>
+    
+    <div>
+        <button onclick="testOptimized()">Test Optimized</button>
+        <button onclick="testEnhanced()">Test Enhanced</button>
+        <button onclick="testMinimal()">Test Minimal</button>
+        <button onclick="clearLog()">Clear Log</button>
+    </div>
+    
+    <div id="log" class="log"></div>
+    
+    <div id="bootSequence"></div>
+    <div id="mainOS">
+        <div style="text-align: center;">
+            <h1>Boot Complete!</h1>
+            <button onclick="location.reload()">Restart</button>
+        </div>
+    </div>
+    
+    <script>
+        function log(msg) {
+            const logDiv = document.getElementById('log');
+            const time = new Date().toTimeString().split(' ')[0];
+            logDiv.innerHTML += `<div>[${time}] ${msg}</div>`;
+            logDiv.scrollTop = logDiv.scrollHeight;
+        }
+        
+        function clearLog() {
+            document.getElementById('log').innerHTML = '';
+        }
+        
+        window.initializeOS = function() {
+            log('✅ OS initialized!');
+            document.getElementById('mainOS').style.display = 'flex';
+        };
+        
+        function resetBoot() {
+            // Clear any existing instances
+            if (window.sacredBootInstance) {
+                log('Clearing sacredBootInstance');
+                window.sacredBootInstance = null;
+            }
+            if (window.optimizedBootSequence) {
+                log('Clearing optimizedBootSequence');
+                window.optimizedBootSequence = null;
+            }
+            
+            // Reset containers
+            const bootDiv = document.getElementById('bootSequence');
+            if (bootDiv) {
+                bootDiv.style.display = 'none';
+                bootDiv.style.opacity = '1';
+                bootDiv.innerHTML = '';
+            }
+            
+            document.getElementById('mainOS').style.display = 'none';
+        }
+        
+        function testOptimized() {
+            log('=== Testing Optimized Version ===');
+            resetBoot();
+            
+            const script = document.createElement('script');
+            script.src = 'sacred-boot-optimized.js?' + Date.now();
+            
+            script.onload = () => {
+                log('✓ Script loaded');
+                
+                setTimeout(() => {
+                    if (window.OptimizedSacredBoot) {
+                        log('✓ Class available');
+                        const boot = new OptimizedSacredBoot();
+                        window.optimizedBootSequence = boot;
+                        log('✓ Instance created');
+                        boot.start();
+                        log('✓ Boot started');
+                    } else {
+                        log('✗ Class not found!');
+                    }
+                }, 100);
+            };
+            
+            script.onerror = (e) => {
+                log('✗ Script failed to load: ' + e);
+            };
+            
+            document.body.appendChild(script);
+        }
+        
+        function testEnhanced() {
+            log('=== Testing Enhanced Version ===');
+            resetBoot();
+            
+            const script = document.createElement('script');
+            script.src = 'sacred-boot-enhanced.js?' + Date.now();
+            
+            script.onload = () => {
+                log('✓ Script loaded');
+                
+                setTimeout(() => {
+                    if (window.EnhancedSacredBoot) {
+                        log('✓ Class available');
+                        const boot = new EnhancedSacredBoot();
+                        window.sacredBootInstance = boot;
+                        log('✓ Instance created');
+                        boot.start();
+                        log('✓ Boot started');
+                    } else {
+                        log('✗ Class not found!');
+                    }
+                }, 100);
+            };
+            
+            script.onerror = (e) => {
+                log('✗ Script failed to load: ' + e);
+            };
+            
+            document.body.appendChild(script);
+        }
+        
+        function testMinimal() {
+            log('=== Testing Minimal Version ===');
+            resetBoot();
+            
+            const script = document.createElement('script');
+            script.src = 'sacred-boot-working.js?' + Date.now();
+            
+            script.onload = () => {
+                log('✓ Script loaded');
+                
+                setTimeout(() => {
+                    if (window.SacredBootSequence) {
+                        log('✓ Class available');
+                        const boot = new SacredBootSequence();
+                        window.sacredBootInstance = boot;
+                        log('✓ Instance created');
+                        boot.start();
+                        log('✓ Boot started');
+                    } else {
+                        log('✗ Class not found!');
+                    }
+                }, 100);
+            };
+            
+            script.onerror = (e) => {
+                log('✗ Script failed to load: ' + e);
+            };
+            
+            document.body.appendChild(script);
+        }
+        
+        // Log any console errors
+        window.addEventListener('error', (e) => {
+            log('❌ Error: ' + e.message + ' at ' + e.filename + ':' + e.lineno);
+        });
+        
+        log('Test page ready. Click a button to test.');
+    </script>
+</body>
+</html>

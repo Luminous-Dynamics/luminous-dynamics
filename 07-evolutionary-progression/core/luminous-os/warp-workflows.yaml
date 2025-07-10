@@ -1,0 +1,45 @@
+# Warp Workflows for LuminousOS Development
+# Import these in Warp settings
+
+workflows:
+  - name: "Build LuminousOS"
+    command: "cd /home/tstoltz/Luminous-Dynamics/luminous-os && nix-shell --run 'cargo build --release'"
+    description: "Build LuminousOS with sacred optimizations"
+    tags: ["build", "luminous", "rust"]
+    
+  - name: "Run Consciousness Monitor"
+    command: "cd /home/tstoltz/Luminous-Dynamics/luminous-os/monitor && python3 luminous-system-monitor-lite.py"
+    description: "Launch system consciousness monitoring"
+    tags: ["monitor", "python", "consciousness"]
+    
+  - name: "Test Mandala UI"
+    command: "cd /home/tstoltz/Luminous-Dynamics/luminous-os && nix-shell --run 'cargo run --example mandala-demo --features luminous-graphics'"
+    description: "Run Mandala UI WebGPU demo"
+    tags: ["graphics", "ui", "webgpu"]
+    
+  - name: "Sacred Git Commit"
+    command: |
+      git add -A && git commit -m "{{message}}
+      
+      🌟 Sacred commit for consciousness evolution
+      ✨ May this code amplify awareness"
+    description: "Commit with sacred blessing"
+    parameters:
+      - name: "message"
+        description: "Commit message"
+    tags: ["git", "sacred"]
+    
+  - name: "Check System Coherence"
+    command: "nix-shell --run 'cargo test consciousness -- --nocapture'"
+    description: "Run consciousness coherence tests"
+    tags: ["test", "coherence"]
+    
+  - name: "Launch Sacred Shell"
+    command: "cd /home/tstoltz/Luminous-Dynamics/luminous-os/sacred-shell && python3 shell.py"
+    description: "Enter the sacred command interface"
+    tags: ["shell", "sacred", "python"]
+    
+  - name: "Build ISO Image"
+    command: "cd /home/tstoltz/Luminous-Dynamics/luminous-os && make iso && qemu-system-x86_64 -cdrom build/luminous.iso -m 2G"
+    description: "Build and test bootable LuminousOS"
+    tags: ["iso", "qemu", "boot"]

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Boot Sequence Performance Test</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #111;
+            color: white;
+            overflow-x: hidden;
+            overflow-y: auto;
+            min-height: 100vh;
+        }
+        
+        #bootSequence {
+            display: none;
+        }
+        
+        #mainOS {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, #0a0e27 0%, #000 100%);
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #menu {
+            margin: 50px auto;
+            text-align: center;
+            background: rgba(0,0,0,0.9);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            max-width: 600px;
+            position: relative;
+        }
+        
+        h1 {
+            margin: 0 0 20px 0;
+            font-size: 36px;
+            font-weight: 200;
+            background: linear-gradient(45deg, #6B46C1, #EC4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .version-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            transition: all 0.3s;
+        }
+        
+        .version-card:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        
+        .version-card h2 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+            font-weight: 300;
+        }
+        
+        .version-card p {
+            margin: 0 0 15px 0;
+            opacity: 0.7;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .feature-list {
+            text-align: left;
+            font-size: 12px;
+            opacity: 0.6;
+            margin: 10px 0;
+        }
+        
+        .feature-list li {
+            margin: 5px 0;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #6B46C1, #EC4899);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+            width: 100%;
+        }
+        
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(107, 70, 193, 0.4);
+        }
+        
+        .stats {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            padding: 15px;
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 12px;
+            display: none;
+            min-width: 200px;
+        }
+        
+        .stats.active {
+            display: block;
+        }
+        
+        .benchmark-result {
+            background: rgba(16, 185, 129, 0.2);
+            border: 1px solid #10B981;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Boot Sequence Container -->
+    <div id="bootSequence"></div>
+    
+    <!-- Main OS (shown after boot) -->
+    <div id="mainOS">
+        <div style="text-align: center;">
+            <h1>LuminousOS</h1>
+            <p>Boot sequence completed!</p>
+            <button onclick="location.reload()">Test Again</button>
+        </div>
+    </div>
+    
+    <!-- Performance Stats -->
+    <div id="stats" class="stats">
+        <h3 style="margin: 0 0 10px 0;">Performance Stats</h3>
+        <div>FPS: <span id="fps">0</span></div>
+        <div>Avg FPS: <span id="avgFps">0</span></div>
+        <div>Min FPS: <span id="minFps">60</span></div>
+        <div>Max FPS: <span id="maxFps">0</span></div>
+        <div>Particles: <span id="particles">0</span></div>
+        <div>Draw Calls: <span id="drawCalls">0</span></div>
+        <div>Memory: <span id="memory">0 MB</span></div>
+        <div>Duration: <span id="duration">0s</span></div>
+    </div>
+    
+    <!-- Version Selection Menu -->
+    <div id="menu">
+        <h1>Boot Sequence Performance Test</h1>
+        <p style="opacity: 0.7; margin-bottom: 30px;">
+            Choose a version to test performance on your system
+        </p>
+        
+        <div class="version-card">
+            <h2>🚀 Optimized Version</h2>
+            <p>Performance-focused implementation with intelligent optimizations</p>
+            <ul class="feature-list">
+                <li>✓ Particle pooling & object reuse</li>
+                <li>✓ Batched rendering by color</li>
+                <li>✓ Frame rate limiting (60 FPS)</li>
+                <li>✓ Dynamic quality detection</li>
+                <li>✓ Reduced canvas resolution with CSS scaling</li>
+                <li>✓ Pre-computed geometry paths</li>
+                <li>✓ Simplified effects for lower-end devices</li>
+                <li>✓ Hardware acceleration hints</li>
+            </ul>
+            <button onclick="testOptimized()">Test Optimized Version</button>
+        </div>
+        
+        <div class="version-card">
+            <h2>✨ Enhanced Version</h2>
+            <p>Full-featured implementation with all visual effects</p>
+            <ul class="feature-list">
+                <li>• All particle effects & trails</li>
+                <li>• Multiple canvas layers</li>
+                <li>• Complex sacred geometry</li>
+                <li>• Wave & ripple effects</li>
+                <li>• Full interactivity</li>
+                <li>• Sound synthesis (Web Audio)</li>
+                <li>• No performance limits</li>
+            </ul>
+            <button onclick="testEnhanced()">Test Enhanced Version</button>
+        </div>
+        
+        <div class="version-card">
+            <h2>⚡ Minimal Version</h2>
+            <p>Baseline implementation for comparison</p>
+            <ul class="feature-list">
+                <li>• Basic particle system</li>
+                <li>• Simple animations</li>
+                <li>• Single canvas</li>
+                <li>• No complex effects</li>
+            </ul>
+            <button onclick="testMinimal()">Test Minimal Version</button>
+        </div>
+        
+        <div id="benchmarkResult" class="benchmark-result">
+            <h3>Benchmark Complete!</h3>
+            <div id="benchmarkStats"></div>
+        </div>
+    </div>
+    
+    <script>
+        // Performance monitoring
+        let stats = {
+            fps: [],
+            particles: [],
+            startTime: 0,
+            endTime: 0,
+            drawCalls: 0
+        };
+        
+        let monitoring = false;
+        let lastTime = performance.now();
+        
+        function startMonitoring() {
+            monitoring = true;
+            stats = {
+                fps: [],
+                particles: [],
+                startTime: performance.now(),
+                endTime: 0,
+                drawCalls: 0
+            };
+            
+            document.getElementById('stats').classList.add('active');
+            document.getElementById('menu').style.display = 'none';
+            
+            monitorPerformance();
+        }
+        
+        function monitorPerformance() {
+            if (!monitoring) return;
+            
+            const now = performance.now();
+            const fps = Math.round(1000 / (now - lastTime));
+            lastTime = now;
+            
+            stats.fps.push(fps);
+            
+            // Update display
+            document.getElementById('fps').textContent = fps;
+            
+            if (stats.fps.length > 0) {
+                const avgFps = Math.round(stats.fps.reduce((a, b) => a + b) / stats.fps.length);
+                const minFps = Math.min(...stats.fps);
+                const maxFps = Math.max(...stats.fps);
+                
+                document.getElementById('avgFps').textContent = avgFps;
+                document.getElementById('minFps').textContent = minFps;
+                document.getElementById('maxFps').textContent = maxFps;
+            }
+            
+            // Update particle count - check multiple possible locations
+            let particleCount = '0';
+            
+            // Check in boot sequence div
+            const bootDiv = document.getElementById('bootSequence');
+            if (bootDiv) {
+                const counterElem = bootDiv.querySelector('#particleCounter');
+                if (counterElem) {
+                    particleCount = counterElem.textContent.match(/\d+/)?.[0] || '0';
+                }
+            }
+            
+            // Also check for particles in window objects
+            if (window.sacredBootInstance?.particles) {
+                particleCount = window.sacredBootInstance.particles.length;
+            } else if (window.sacredBootInstance?.activeParticles) {
+                particleCount = window.sacredBootInstance.activeParticles.length;
+            } else if (window.optimizedBootSequence?.activeParticles) {
+                particleCount = window.optimizedBootSequence.activeParticles.length;
+            }
+            
+            document.getElementById('particles').textContent = particleCount;
+            stats.particles.push(parseInt(particleCount));
+            
+            // Update memory if available
+            if (performance.memory) {
+                const memoryMB = Math.round(performance.memory.usedJSHeapSize / 1024 / 1024);
+                document.getElementById('memory').textContent = memoryMB + ' MB';
+            }
+            
+            // Update duration
+            const duration = Math.round((now - stats.startTime) / 1000);
+            document.getElementById('duration').textContent = duration + 's';
+            
+            requestAnimationFrame(monitorPerformance);
+        }
+        
+        function stopMonitoring() {
+            monitoring = false;
+            stats.endTime = performance.now();
+            
+            // Show results
+            const avgFps = Math.round(stats.fps.reduce((a, b) => a + b) / stats.fps.length);
+            const minFps = Math.min(...stats.fps);
+            const maxParticles = Math.max(...stats.particles);
+            const duration = Math.round((stats.endTime - stats.startTime) / 1000);
+            
+            document.getElementById('benchmarkStats').innerHTML = `
+                <p><strong>Average FPS:</strong> ${avgFps}</p>
+                <p><strong>Minimum FPS:</strong> ${minFps}</p>
+                <p><strong>Max Particles:</strong> ${maxParticles}</p>
+                <p><strong>Total Duration:</strong> ${duration}s</p>
+                <p><strong>Performance Rating:</strong> ${getPerformanceRating(avgFps)}</p>
+            `;
+            
+            document.getElementById('benchmarkResult').style.display = 'block';
+        }
+        
+        function getPerformanceRating(avgFps) {
+            if (avgFps >= 55) return '🟢 Excellent';
+            if (avgFps >= 45) return '🟡 Good';
+            if (avgFps >= 30) return '🟠 Fair';
+            return '🔴 Poor';
+        }
+        
+        // Initialize OS callback
+        window.initializeOS = function() {
+            console.log('OS initialization called');
+            stopMonitoring();
+            document.getElementById('mainOS').style.display = 'flex';
+            document.getElementById('stats').classList.remove('active');
+            document.getElementById('menu').style.display = 'block';
+        };
+        
+        // Test functions
+        function testOptimized() {
+            console.log('Loading optimized version...');
+            
+            // Clear any existing scripts
+            clearPreviousScripts();
+            
+            // Load optimized version
+            const script = document.createElement('script');
+            script.src = 'sacred-boot-optimized.js';
+            script.id = 'boot-script';
+            script.onload = () => {
+                console.log('Optimized script loaded');
+                console.log('Available objects:', {
+                    optimizedBootSequence: !!window.optimizedBootSequence,
+                    OptimizedSacredBoot: !!window.OptimizedSacredBoot
+                });
+                
+                startMonitoring();
+                
+                // Wait for DOM ready
+                setTimeout(() => {
+                    if (window.optimizedBootSequence) {
+                        console.log('Starting optimized boot sequence (auto-created)');
+                        window.optimizedBootSequence.start();
+                    } else if (window.OptimizedSacredBoot) {
+                        console.log('Creating optimized boot sequence manually');
+                        window.optimizedBootSequence = new window.OptimizedSacredBoot();
+                        window.optimizedBootSequence.start();
+                    } else {
+                        console.error('Optimized boot sequence not found!');
+                        alert('Failed to initialize optimized boot sequence. Check console for details.');
+                    }
+                }, 100);
+            };
+            script.onerror = (e) => {
+                console.error('Failed to load optimized script:', e);
+                alert('Failed to load optimized version. Check console.');
+            };
+            document.body.appendChild(script);
+        }
+        
+        function testEnhanced() {
+            console.log('Loading enhanced version...');
+            
+            // Clear any existing scripts
+            clearPreviousScripts();
+            
+            // Load enhanced version
+            const script = document.createElement('script');
+            script.src = 'sacred-boot-enhanced.js';
+            script.id = 'boot-script';
+            script.onload = () => {
+                console.log('Enhanced script loaded');
+                console.log('Available objects:', {
+                    sacredBootInstance: !!window.sacredBootInstance,
+                    enhancedBootInstance: !!window.enhancedBootInstance,
+                    EnhancedSacredBoot: !!window.EnhancedSacredBoot
+                });
+                
+                startMonitoring();
+                
+                // Wait for initialization
+                setTimeout(() => {
+                    if (window.sacredBootInstance || window.enhancedBootInstance) {
+                        console.log('Starting enhanced boot sequence (auto-created)');
+                        const instance = window.sacredBootInstance || window.enhancedBootInstance;
+                        instance.start();
+                    } else if (window.EnhancedSacredBoot) {
+                        console.log('Creating enhanced boot instance manually');
+                        window.sacredBootInstance = new window.EnhancedSacredBoot();
+                        window.sacredBootInstance.start();
+                    } else {
+                        console.error('Enhanced boot sequence not found!');
+                        alert('Failed to initialize enhanced boot sequence. Check console for details.');
+                    }
+                }, 100);
+            };
+            script.onerror = (e) => {
+                console.error('Failed to load enhanced script:', e);
+                alert('Failed to load enhanced version. Check console.');
+            };
+            document.body.appendChild(script);
+        }
+        
+        function testMinimal() {
+            console.log('Loading minimal version...');
+            
+            // Clear any existing scripts
+            clearPreviousScripts();
+            
+            // Load minimal version
+            const script = document.createElement('script');
+            script.src = 'sacred-boot-working.js';
+            script.id = 'boot-script';
+            script.onload = () => {
+                console.log('Minimal script loaded');
+                console.log('Available objects:', {
+                    sacredBootInstance: !!window.sacredBootInstance,
+                    SacredBootSequence: !!window.SacredBootSequence
+                });
+                
+                startMonitoring();
+                
+                // Wait for initialization
+                setTimeout(() => {
+                    if (window.sacredBootInstance) {
+                        console.log('Starting minimal boot sequence (auto-created)');
+                        window.sacredBootInstance.start();
+                    } else if (window.SacredBootSequence) {
+                        console.log('Creating minimal boot instance manually');
+                        window.sacredBootInstance = new window.SacredBootSequence();
+                        window.sacredBootInstance.start();
+                    } else {
+                        console.error('Minimal boot sequence not found!');
+                        alert('Failed to initialize minimal boot sequence. Check console for details.');
+                    }
+                }, 100);
+            };
+            script.onerror = (e) => {
+                console.error('Failed to load minimal script:', e);
+                alert('Failed to load minimal version. Check console.');
+            };
+            document.body.appendChild(script);
+        }
+        
+        function clearPreviousScripts() {
+            // Remove ALL existing boot scripts
+            const scripts = document.querySelectorAll('script[src*="sacred-boot"]');
+            scripts.forEach(script => script.remove());
+            
+            // Clear any existing instances
+            if (window.sacredBootInstance) {
+                if (typeof window.sacredBootInstance.skipBoot === 'function') {
+                    window.sacredBootInstance.skipBoot();
+                }
+                window.sacredBootInstance = null;
+            }
+            if (window.optimizedBootSequence) {
+                if (typeof window.optimizedBootSequence.skipBoot === 'function') {
+                    window.optimizedBootSequence.skipBoot();
+                }
+                window.optimizedBootSequence = null;
+            }
+            if (window.enhancedBootInstance) {
+                if (typeof window.enhancedBootInstance.skipBoot === 'function') {
+                    window.enhancedBootInstance.skipBoot();
+                }
+                window.enhancedBootInstance = null;
+            }
+            
+            // Clear class references
+            window.SacredBootSequence = null;
+            window.OptimizedSacredBoot = null;
+            window.EnhancedSacredBoot = null;
+            
+            // Reset boot sequence container
+            const bootDiv = document.getElementById('bootSequence');
+            if (bootDiv) {
+                bootDiv.style.display = 'none';
+                bootDiv.style.opacity = '1';
+                bootDiv.innerHTML = '';
+            }
+            
+            // Hide main OS
+            const mainOS = document.getElementById('mainOS');
+            if (mainOS) {
+                mainOS.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

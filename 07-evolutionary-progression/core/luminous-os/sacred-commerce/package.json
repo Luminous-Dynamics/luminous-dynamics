@@ -1,0 +1,29 @@
+{
+  "name": "sacred-commerce-server",
+  "version": "1.0.0",
+  "description": "Consciousness-based payment processing with Stripe for LuminousOS",
+  "main": "sacred-payment-server.js",
+  "scripts": {
+    "start": "node sacred-payment-server.js",
+    "dev": "nodemon sacred-payment-server.js",
+    "bridge": "python3 consciousness-commerce-bridge.py"
+  },
+  "keywords": [
+    "consciousness",
+    "stripe",
+    "sacred",
+    "payments",
+    "luminous"
+  ],
+  "author": "Luminous Dynamics",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "stripe": "^14.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

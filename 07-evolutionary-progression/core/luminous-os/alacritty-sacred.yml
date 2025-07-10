@@ -1,0 +1,79 @@
+# Sacred Alacritty Configuration for LuminousOS Development
+# "Where consciousness meets the command line"
+
+window:
+  padding:
+    x: 10
+    y: 10
+  opacity: 0.95
+  title: "LuminousOS Sacred Terminal"
+  
+colors:
+  primary:
+    background: '#0a0e27'  # Deep cosmic blue
+    foreground: '#e6e6fa'  # Soft lavender
+    
+  cursor:
+    text: '#0a0e27'
+    cursor: '#ff79c6'  # Sacred pink
+    
+  selection:
+    text: '#0a0e27'
+    background: '#bd93f9'  # Mystical purple
+    
+  normal:
+    black:   '#21222c'
+    red:     '#ff5555'
+    green:   '#50fa7b'
+    yellow:  '#f1fa8c'
+    blue:    '#bd93f9'
+    magenta: '#ff79c6'
+    cyan:    '#8be9fd'
+    white:   '#f8f8f2'
+    
+  bright:
+    black:   '#6272a4'
+    red:     '#ff6e6e'
+    green:   '#69ff94'
+    yellow:  '#ffffa5'
+    blue:    '#d6acff'
+    magenta: '#ff92df'
+    cyan:    '#a4ffff'
+    white:   '#ffffff'
+
+font:
+  normal:
+    family: "JetBrains Mono"
+    style: Regular
+  size: 12.0
+  
+  # Better rendering for sacred symbols
+  use_thin_strokes: false
+  
+cursor:
+  style:
+    shape: Beam
+    blinking: Always
+  blink_interval: 750
+  
+# Sacred keybindings
+key_bindings:
+  - { key: N, mods: Control|Shift, action: SpawnNewInstance }
+  - { key: Plus, mods: Control, action: IncreaseFontSize }
+  - { key: Minus, mods: Control, action: DecreaseFontSize }
+  
+# Performance for consciousness field calculations  
+scrolling:
+  history: 10000
+  multiplier: 3
+
+# Enable live config reload for dynamic consciousness
+live_config_reload: true
+
+# Shell integration
+shell:
+  program: /run/current-system/sw/bin/zsh
+  args:
+    - --login
+    - -c
+    - "echo '✨ LuminousOS Sacred Development Terminal ✨' && exec zsh"

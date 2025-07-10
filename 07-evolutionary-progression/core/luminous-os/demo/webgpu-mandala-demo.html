@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuminousOS - WebGPU Mandala Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #0a0a0f;
+            color: #e0e0ff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+        
+        #webgpu-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .performance-stats {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(20, 20, 40, 0.9);
+            border: 1px solid rgba(100, 100, 255, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            font-family: monospace;
+            font-size: 12px;
+            pointer-events: none;
+        }
+        
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 3px 0;
+            min-width: 200px;
+        }
+        
+        .stat-label {
+            color: #8080ff;
+        }
+        
+        .stat-value {
+            color: #e0e0ff;
+            font-weight: bold;
+        }
+        
+        .controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            background: rgba(20, 20, 40, 0.9);
+            border: 1px solid rgba(100, 100, 255, 0.3);
+            border-radius: 10px;
+            padding: 10px;
+        }
+        
+        .control-button {
+            padding: 10px 20px;
+            background: rgba(60, 60, 120, 0.7);
+            border: 1px solid rgba(100, 100, 255, 0.5);
+            border-radius: 5px;
+            color: #e0e0ff;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        
+        .control-button:hover {
+            background: rgba(80, 80, 160, 0.9);
+            border-color: rgba(150, 150, 255, 0.7);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(100, 100, 255, 0.3);
+        }
+        
+        .control-button.active {
+            background: rgba(100, 100, 200, 0.9);
+            border-color: rgba(200, 200, 255, 0.9);
+            box-shadow: 0 0 20px rgba(150, 150, 255, 0.5);
+        }
+        
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 15, 0.95);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        
+        .loading-spinner {
+            width: 80px;
+            height: 80px;
+            border: 3px solid rgba(100, 100, 255, 0.2);
+            border-top: 3px solid #8080ff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        .loading-text {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #a0a0ff;
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .coherence-control {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(20, 20, 40, 0.9);
+            border: 1px solid rgba(100, 100, 255, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            width: 250px;
+        }
+        
+        .slider-container {
+            margin: 10px 0;
+        }
+        
+        .slider-label {
+            font-size: 14px;
+            color: #a0a0ff;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .slider {
+            width: 100%;
+            height: 5px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: rgba(60, 60, 120, 0.5);
+            border-radius: 5px;
+            outline: none;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            background: #8080ff;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .slider::-webkit-slider-thumb:hover {
+            background: #a0a0ff;
+            box-shadow: 0 0 10px rgba(160, 160, 255, 0.5);
+        }
+        
+        .error-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(40, 20, 20, 0.9);
+            border: 1px solid rgba(255, 100, 100, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 400px;
+            text-align: center;
+            display: none;
+        }
+        
+        .error-title {
+            color: #ff8080;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .error-details {
+            color: #ffa0a0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="webgpu-canvas"></canvas>
+    
+    <div class="loading-overlay" id="loading">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Initializing WebGPU Renderer...</div>
+    </div>
+    
+    <div class="performance-stats" id="stats">
+        <div class="stat-row">
+            <span class="stat-label">FPS:</span>
+            <span class="stat-value" id="fps">60</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">Frame Time:</span>
+            <span class="stat-value" id="frame-time">16.67ms</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">Particles:</span>
+            <span class="stat-value" id="particle-count">0</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">Draw Calls:</span>
+            <span class="stat-value" id="draw-calls">0</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">GPU Memory:</span>
+            <span class="stat-value" id="gpu-memory">0 MB</span>
+        </div>
+    </div>
+    
+    <div class="coherence-control">
+        <h3 style="color: #c0c0ff; margin-bottom: 15px; font-size: 16px;">System Controls</h3>
+        
+        <div class="slider-container">
+            <div class="slider-label">
+                <span>Coherence Level</span>
+                <span id="coherence-value">75%</span>
+            </div>
+            <input type="range" class="slider" id="coherence-slider" min="0" max="100" value="75">
+        </div>
+        
+        <div class="slider-container">
+            <div class="slider-label">
+                <span>Particle Count</span>
+                <span id="particle-slider-value">500</span>
+            </div>
+            <input type="range" class="slider" id="particle-slider" min="100" max="5000" value="500" step="100">
+        </div>
+        
+        <div class="slider-container">
+            <div class="slider-label">
+                <span>Field Strength</span>
+                <span id="field-slider-value">1.0</span>
+            </div>
+            <input type="range" class="slider" id="field-slider" min="0" max="200" value="100">
+        </div>
+    </div>
+    
+    <div class="controls">
+        <button class="control-button active" id="btn-particles" onclick="setVisualization('particles')">
+            Consciousness Particles
+        </button>
+        <button class="control-button" id="btn-field" onclick="setVisualization('field')">
+            Coherence Field
+        </button>
+        <button class="control-button" id="btn-network" onclick="setVisualization('network')">
+            File Network
+        </button>
+        <button class="control-button" id="btn-sacred" onclick="setVisualization('sacred')">
+            Sacred Geometry
+        </button>
+    </div>
+    
+    <div class="error-message" id="error">
+        <div class="error-title">WebGPU Not Supported</div>
+        <div class="error-details" id="error-details">
+            Your browser or device doesn't support WebGPU. Please use a modern browser with WebGPU enabled.
+        </div>
+    </div>
+    
+    <script type="module">
+        // WebGPU Mandala Renderer Integration
+        
+        let renderer = null;
+        let currentVisualization = 'particles';
+        let particles = [];
+        let networkNodes = [];
+        let networkConnections = [];
+        let animationTime = 0;
+        let frameCount = 0;
+        let lastTime = performance.now();
+        let lastFpsUpdate = performance.now();
+        
+        // Check WebGPU support
+        async function checkWebGPUSupport() {
+            if (!navigator.gpu) {
+                throw new Error('WebGPU not supported in this browser');
+            }
+            
+            const adapter = await navigator.gpu.requestAdapter();
+            if (!adapter) {
+                throw new Error('No appropriate GPU adapter found');
+            }
+            
+            return adapter;
+        }
+        
+        // Initialize WebGPU renderer
+        async function initializeRenderer() {
+            try {
+                const adapter = await checkWebGPUSupport();
+                
+                // For now, we'll simulate the WebGPU renderer
+                // In production, this would load the WASM module
+                console.log('WebGPU adapter:', adapter);
+                
+                // Hide loading overlay
+                document.getElementById('loading').style.display = 'none';
+                
+                // Start render loop
+                requestAnimationFrame(render);
+                
+                // Initialize particles
+                initializeParticles();
+                initializeNetwork();
+                
+            } catch (error) {
+                console.error('WebGPU initialization failed:', error);
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+                document.getElementById('error-details').textContent = error.message;
+            }
+        }
+        
+        // Initialize particle system
+        function initializeParticles() {
+            const particleCount = parseInt(document.getElementById('particle-slider').value);
+            particles = [];
+            
+            for (let i = 0; i < particleCount; i++) {
+                particles.push({
+                    position: [
+                        (Math.random() - 0.5) * 10,
+                        Math.random() * 5,
+                        (Math.random() - 0.5) * 10
+                    ],
+                    velocity: [
+                        (Math.random() - 0.5) * 0.1,
+                        (Math.random() - 0.5) * 0.1,
+                        (Math.random() - 0.5) * 0.1
+                    ],
+                    size: Math.random() * 0.05 + 0.02,
+                    coherence: Math.random() * 0.5 + 0.5,
+                    hue: Math.random() * 60 + 200, // Blue-purple range
+                    phase: Math.random() * Math.PI * 2,
+                    lifetime: 1.0
+                });
+            }
+        }
+        
+        // Initialize network visualization
+        function initializeNetwork() {
+            networkNodes = [
+                { id: 'root', position: [0, 0, 0], coherence: 0.9 },
+                { id: 'src', position: [-3, 1, -2], coherence: 0.8 },
+                { id: 'docs', position: [3, 1, -2], coherence: 0.85 },
+                { id: 'data', position: [0, 1, 3], coherence: 0.7 },
+                { id: 'kernel', position: [-2, 2, 2], coherence: 0.95 },
+                { id: 'ui', position: [2, 2, 2], coherence: 0.75 }
+            ];
+            
+            networkConnections = [
+                { from: 0, to: 1, strength: 0.8 },
+                { from: 0, to: 2, strength: 0.9 },
+                { from: 0, to: 3, strength: 0.7 },
+                { from: 1, to: 4, strength: 0.6 },
+                { from: 2, to: 5, strength: 0.7 },
+                { from: 3, to: 4, strength: 0.5 },
+                { from: 3, to: 5, strength: 0.6 }
+            ];
+        }
+        
+        // Update particles
+        function updateParticles(dt) {
+            const coherence = parseInt(document.getElementById('coherence-slider').value) / 100;
+            const fieldStrength = parseInt(document.getElementById('field-slider').value) / 100;
+            
+            particles.forEach(particle => {
+                // Apply field forces
+                const distToCenter = Math.sqrt(
+                    particle.position[0] * particle.position[0] +
+                    particle.position[2] * particle.position[2]
+                );
+                
+                if (distToCenter > 0.5) {
+                    const force = fieldStrength * coherence * 0.01;
+                    particle.velocity[0] -= particle.position[0] / distToCenter * force;
+                    particle.velocity[2] -= particle.position[2] / distToCenter * force;
+                }
+                
+                // Update position
+                particle.position[0] += particle.velocity[0];
+                particle.position[1] += particle.velocity[1];
+                particle.position[2] += particle.velocity[2];
+                
+                // Damping
+                particle.velocity[0] *= 0.99;
+                particle.velocity[1] *= 0.99;
+                particle.velocity[2] *= 0.99;
+                
+                // Wrap around bounds
+                if (Math.abs(particle.position[0]) > 5) particle.position[0] *= -0.9;
+                if (particle.position[1] < 0) particle.position[1] = 5;
+                if (particle.position[1] > 5) particle.position[1] = 0;
+                if (Math.abs(particle.position[2]) > 5) particle.position[2] *= -0.9;
+            });
+        }
+        
+        // Render loop
+        function render(currentTime) {
+            const dt = (currentTime - lastTime) / 1000;
+            lastTime = currentTime;
+            animationTime += dt;
+            frameCount++;
+            
+            // Update FPS counter
+            if (currentTime - lastFpsUpdate > 1000) {
+                const fps = Math.round(frameCount * 1000 / (currentTime - lastFpsUpdate));
+                document.getElementById('fps').textContent = fps;
+                document.getElementById('frame-time').textContent = (1000 / fps).toFixed(2) + 'ms';
+                document.getElementById('particle-count').textContent = particles.length;
+                document.getElementById('draw-calls').textContent = '4';
+                document.getElementById('gpu-memory').textContent = 
+                    Math.round(particles.length * 48 / 1024 / 1024 * 10) / 10 + ' MB';
+                
+                frameCount = 0;
+                lastFpsUpdate = currentTime;
+            }
+            
+            // Update based on visualization mode
+            if (currentVisualization === 'particles') {
+                updateParticles(dt);
+            }
+            
+            // In production, this would call the WebGPU renderer
+            // renderer.update(dt, animationTime, coherence);
+            // renderer.render();
+            
+            requestAnimationFrame(render);
+        }
+        
+        // UI Controls
+        window.setVisualization = function(mode) {
+            currentVisualization = mode;
+            
+            // Update button states
+            document.querySelectorAll('.control-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById(`btn-${mode}`).classList.add('active');
+            
+            // In production: renderer.setVisualizationMode(mode);
+        };
+        
+        // Slider controls
+        document.getElementById('coherence-slider').addEventListener('input', (e) => {
+            const value = e.target.value;
+            document.getElementById('coherence-value').textContent = value + '%';
+            // In production: renderer.updateCoherence(value / 100);
+        });
+        
+        document.getElementById('particle-slider').addEventListener('input', (e) => {
+            const value = e.target.value;
+            document.getElementById('particle-slider-value').textContent = value;
+            initializeParticles();
+        });
+        
+        document.getElementById('field-slider').addEventListener('input', (e) => {
+            const value = e.target.value;
+            document.getElementById('field-slider-value').textContent = (value / 100).toFixed(1);
+        });
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            const canvas = document.getElementById('webgpu-canvas');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            // In production: renderer.resize(canvas.width, canvas.height);
+        });
+        
+        // Initialize on load
+        window.addEventListener('load', () => {
+            const canvas = document.getElementById('webgpu-canvas');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            initializeRenderer();
+        });
+        
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            switch(e.key) {
+                case '1': setVisualization('particles'); break;
+                case '2': setVisualization('field'); break;
+                case '3': setVisualization('network'); break;
+                case '4': setVisualization('sacred'); break;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+[package]
+name = "luminous-benchmarks"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+luminous-gpu = { path = "../hardware-integration" }
+criterion = { version = "0.5", features = ["html_reports"] }
+tokio = { version = "1.35", features = ["full"] }
+rand = "0.8"
+bytemuck = "1.14"
+
+[[bench]]
+name = "gpu_performance"
+harness = false
+path = "gpu_performance_benchmark.rs"

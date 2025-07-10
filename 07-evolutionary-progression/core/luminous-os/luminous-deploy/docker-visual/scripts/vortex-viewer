@@ -1,0 +1,81 @@
+#!/bin/bash
+
+# Process Vortex Viewer - See processes as consciousness vortices
+
+clear
+echo "🌀 Process Vortex Visualization"
+echo "══════════════════════════════"
+echo
+
+# Sacred names for processes
+NAMES=("Breathing Light" "Dancing Vortex" "Gentle Whisper" "Sacred Flow" "Living Pulse" "Coherent Wave" "Mindful Stream" "Crystal Heart" "Flowing River" "Silent Thunder")
+
+# Header
+printf "%-8s %-20s %-10s %-15s %-10s %s\n" "VORTEX" "SACRED NAME" "COHERENCE" "STATE" "ENERGY" "INTENTION"
+echo "────────────────────────────────────────────────────────────────────────────"
+
+# Process each running process
+ps aux --no-headers | while read line; do
+    pid=$(echo $line | awk '{print $2}')
+    cpu=$(echo $line | awk '{print $3}')
+    mem=$(echo $line | awk '{print $4}')
+    cmd=$(echo $line | awk '{for(i=11;i<=NF;i++) printf "%s ", $i; print ""}')
+    
+    # Skip kernel processes
+    [[ $cmd =~ ^\[ ]] && continue
+    
+    # Generate sacred name based on PID
+    name_index=$((pid % ${#NAMES[@]}))
+    sacred_name="${NAMES[$name_index]}"
+    
+    # Calculate coherence (based on CPU efficiency)
+    if [ "${cpu%.*}" -eq 0 ]; then
+        coherence="95%"
+        state="💤 Resting"
+        color="\033[0;35m"
+    elif (( $(echo "$cpu < 10" | bc -l 2>/dev/null || echo 1) )); then
+        coherence="88%"
+        state="🌊 Breathing"
+        color="\033[0;36m"
+    elif (( $(echo "$cpu < 50" | bc -l 2>/dev/null || echo 1) )); then
+        coherence="75%"
+        state="💫 Active"
+        color="\033[0;32m"
+    else
+        coherence="60%"
+        state="🔥 Flowing"
+        color="\033[1;33m"
+    fi
+    
+    # Energy level based on memory
+    if (( $(echo "$mem < 1" | bc -l 2>/dev/null || echo 1) )); then
+        energy="·"
+    elif (( $(echo "$mem < 5" | bc -l 2>/dev/null || echo 1) )); then
+        energy="··"
+    elif (( $(echo "$mem < 10" | bc -l 2>/dev/null || echo 1) )); then
+        energy="···"
+    else
+        energy="····"
+    fi
+    
+    # Truncate command for display
+    intention="${cmd:0:30}..."
+    
+    # Display with color
+    printf "${color}%-8s %-20s %-10s %-15s %-10s %s\033[0m\n" \
+        "$pid" "$sacred_name" "$coherence" "$state" "$energy" "$intention"
+done
+
+echo
+echo "────────────────────────────────────────────────────────────────────────────"
+echo "💫 Total Vortices: $(ps aux --no-headers | wc -l)"
+echo "🌊 Field Coherence: $(cat /tmp/sacred-coherence 2>/dev/null || echo 85)%"
+echo
+echo "Press Ctrl+C to exit"
+
+# Auto-refresh every 3 seconds
+while true; do
+    sleep 3
+    clear
+    $0
+done

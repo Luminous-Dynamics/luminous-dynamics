@@ -1,0 +1,48 @@
+[Unit]
+Description=LuminousOS Consciousness Field Daemon
+Documentation=https://github.com/Luminous-Dynamics/luminous-os
+After=network.target
+
+[Service]
+Type=forking
+User=luminous
+Group=luminous
+WorkingDirectory=/opt/luminous-os
+
+# Environment
+Environment="PYTHONPATH=/opt/luminous-os"
+Environment="LUMINOUS_STATE_DIR=/var/lib/luminous/consciousness"
+Environment="LUMINOUS_LOG_DIR=/var/log/luminous"
+
+# Executable
+ExecStart=/usr/bin/python3 /opt/luminous-os/services/consciousness-field-daemon.py
+ExecReload=/bin/kill -HUP $MAINPID
+ExecStop=/bin/kill -TERM $MAINPID
+
+# Process management
+Restart=always
+RestartSec=11
+KillMode=process
+TimeoutStartSec=30
+TimeoutStopSec=30
+
+# Security
+PrivateTmp=true
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/luminous /var/log/luminous /tmp
+
+# Resource limits
+LimitNOFILE=65536
+LimitCORE=infinity
+MemoryMax=1G
+CPUQuota=50%
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=luminous-consciousness
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,40 @@
+[package]
+name = "sacred-bootloader"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# UEFI support
+uefi = "0.28"
+uefi-services = "0.25"
+
+# Core dependencies
+log = "0.4"
+spin = "0.9"
+x86_64 = "0.15"
+bootloader = "0.11"
+
+# Time and consciousness
+chrono = { version = "0.4", default-features = false, features = ["alloc"] }
+rand = { version = "0.8", default-features = false, features = ["small_rng"] }
+
+# Graphics for sacred visuals
+embedded-graphics = "0.8"
+tinybmp = "0.5"
+
+# Consciousness field calculations (no_std compatible)
+libm = "0.2"
+heapless = "0.8"
+
+[build-dependencies]
+bootloader = "0.11"
+
+[profile.release]
+opt-level = "z"     # Optimize for size
+lto = true
+codegen-units = 1
+panic = "abort"
+
+[[bin]]
+name = "sacred-bootloader"
+path = "src/main.rs"

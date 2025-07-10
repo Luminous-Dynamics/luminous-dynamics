@@ -1,0 +1,36 @@
+#!/usr/bin/env python3
+"""Check current system coherence"""
+
+import urllib.request
+import json
+import sys
+
+try:
+    with urllib.request.urlopen('http://localhost:11112/metrics') as response:
+        data = json.loads(response.read())
+        
+    coherence = data.get('global_coherence', 0) * 100
+    sacred_moments = data.get('sacred_moments', 0)
+    
+    print(f"🌟 System Coherence: {coherence:.1f}%")
+    print(f"   CPU Stability: {data.get('cpu_stability', 0) * 100:.1f}%")
+    print(f"   Process Focus: {data.get('process_focus', 0) * 100:.1f}%")
+    print(f"   Resource Harmony: {data.get('resource_harmony', 0) * 100:.1f}%")
+    print(f"   Sacred Rhythm: {data.get('sacred_rhythm', 0) * 100:.1f}%")
+    
+    if sacred_moments > 0:
+        print(f"\n✨ Sacred Moments Today: {sacred_moments}")
+    
+    if coherence > 90:
+        print("\n🎉 Sacred Moment Active! High coherence achieved!")
+    elif coherence > 70:
+        print("\n😊 Good coherence - flowing nicely")
+    elif coherence > 50:
+        print("\n🌊 Moderate coherence - room to grow")
+    else:
+        print("\n💫 Low coherence - consider a mindful break")
+        
+except Exception as e:
+    print(f"❌ Could not connect to monitor: {e}")
+    print("   Make sure luminous-system-monitor is running")
+    sys.exit(1)

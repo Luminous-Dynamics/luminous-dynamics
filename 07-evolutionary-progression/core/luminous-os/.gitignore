@@ -1,0 +1,59 @@
+# Rust build artifacts
+/target/
+**/*.rs.bk
+Cargo.lock
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+venv/
+env/
+.venv/
+
+# Build directories
+/build/
+/dist/
+/out/
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependencies
+node_modules/
+
+# Test coverage
+coverage/
+*.lcov
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Binary files
+*.o
+*.a
+*.so
+*.dll
+*.exe
+*.out
+
+# Kernel specific
+*.ko
+*.mod
+*.mod.c
+modules.order
+Module.symvers
