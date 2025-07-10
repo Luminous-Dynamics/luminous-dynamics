@@ -13,18 +13,19 @@ use std::sync::Arc;
 use tokio::sync::{mpsc, broadcast};
 use tokio::signal;
 
-mod stillpoint_kernel;
-mod mycelial_filesystem;
-mod mandala_ui;
-mod glyphs_applications;
-mod sonic_signatures;
-mod core;
-mod hardware;
-mod boot;
+// Use modules from lib.rs
+use luminous_os::stillpoint_kernel;
+use luminous_os::mycelial_filesystem;
+use luminous_os::mandala_ui;
+use luminous_os::glyphs_applications;
+use luminous_os::sonic_signatures;
+use luminous_os::core;
+use luminous_os::hardware;
+use luminous_os::boot;
 
-use crate::core::system_integration::{LuminousCore, SystemError};
-use crate::hardware::biometric_sensors::{BiometricIntegration, BiometricEvent, HRVSensor, EEGSensor};
-use crate::boot::sacred_bootloader::{SacredBootloader, BootEvent};
+use luminous_os::core::system_integration::{LuminousCore, SystemError};
+use luminous_os::hardware::biometric_sensors::{BiometricIntegration, BiometricEvent, HRVSensor, EEGSensor, BiometricSensor};
+use luminous_os::boot::sacred_bootloader::{SacredBootloader, BootEvent};
 
 /// Main entry point - the first awakening
 #[tokio::main]
@@ -188,24 +189,24 @@ fn init_sacred_logging() {
 }
 
 /// Initialize HRV sensor
-async fn init_hrv_sensor() -> Result<Arc<dyn hardware::biometric_sensors::BiometricSensor>, Box<dyn std::error::Error>> {
+async fn init_hrv_sensor() -> Result<Arc<dyn BiometricSensor>, Box<dyn std::error::Error>> {
     // In real implementation, would detect actual device
-    let sensor = HRVSensor::new("/dev/hrv0".to_string());
+    let sensor = Arc::new(HRVSensor::new("/dev/hrv0".to_string()));
     
     if sensor.is_connected().await {
-        Ok(Arc::new(sensor))
+        Ok(sensor)
     } else {
         Err("HRV sensor not found".into())
     }
 }
 
 /// Initialize EEG sensor
-async fn init_eeg_sensor() -> Result<Arc<dyn hardware::biometric_sensors::BiometricSensor>, Box<dyn std::error::Error>> {
+async fn init_eeg_sensor() -> Result<Arc<dyn BiometricSensor>, Box<dyn std::error::Error>> {
     // In real implementation, would detect actual device
-    let sensor = EEGSensor::new("eeg0".to_string(), 8);
+    let sensor = Arc::new(EEGSensor::new("eeg0".to_string(), 8));
     
     if sensor.is_connected().await {
-        Ok(Arc::new(sensor))
+        Ok(sensor)
     } else {
         Err("EEG sensor not found".into())
     }

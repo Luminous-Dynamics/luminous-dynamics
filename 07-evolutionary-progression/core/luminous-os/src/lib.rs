@@ -13,24 +13,12 @@ pub use network::{
     CovenantError,
 };
 
-// Module stubs to fix compilation
-pub mod stillpoint_kernel {
-    // Placeholder - will be implemented
-}
-
-pub mod mycelial_filesystem {
-    // Placeholder - will be implemented
-}
-
-pub mod mandala_ui {
-    // Placeholder - will be implemented
-}
-
+// Core modules
+pub mod stillpoint_kernel;
+pub mod mycelial_filesystem;
+pub mod mandala_ui;
 pub mod glyphs_applications;
-
-pub mod sonic_signatures {
-    // Placeholder - will be implemented
-}
+pub mod sonic_signatures;
 
 pub mod core {
     pub mod system_integration {
